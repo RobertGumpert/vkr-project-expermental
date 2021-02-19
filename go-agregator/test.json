@@ -1,0 +1,1946 @@
+{
+   "key_list":{
+      "javascript":[
+         {
+            "id":28457823,
+            "node_id":"MDEwOlJlcG9zaXRvcnkyODQ1NzgyMw==",
+            "name":"freeCodeCamp",
+            "full_name":"freeCodeCamp/freeCodeCamp",
+            "description":"freeCodeCamp.org's open source codebase and curriculum. Learn to code at home.",
+            "language":"JavaScript",
+            "topics":[
+               "careers",
+               "certification",
+               "community",
+               "curriculum",
+               "d3",
+               "education",
+               "freecodecamp",
+               "javascript",
+               "learn-to-code",
+               "math",
+               "nodejs",
+               "nonprofits",
+               "programming",
+               "react",
+               "teachers"
+            ],
+            "has_issues":true,
+            "has_projects":false,
+            "has_wiki":false,
+            "url":"https://api.github.com/repos/freeCodeCamp/freeCodeCamp",
+            "issues_url":"https://api.github.com/repos/freeCodeCamp/freeCodeCamp/issues{/number}",
+            "languages_url":"https://api.github.com/repos/freeCodeCamp/freeCodeCamp/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "freecodecamp",
+                  "org's",
+                  "open",
+                  "source",
+                  "codebase",
+                  "curriculum",
+                  "learn",
+                  "code",
+                  "home",
+                  "careers",
+                  "certification",
+                  "community",
+                  "curriculum",
+                  "d",
+                  "education",
+                  "freecodecamp",
+                  "javascript",
+                  "learn",
+                  "code",
+                  "math",
+                  "nodejs",
+                  "nonprofits",
+                  "programming",
+                  "react",
+                  "teachers"
+               ],
+               "lemmas":[
+                  "freecodecamp",
+                  "org's",
+                  "open",
+                  "source",
+                  "codebase",
+                  "curriculum",
+                  "learn",
+                  "code",
+                  "home",
+                  "career",
+                  "certification",
+                  "community",
+                  "curriculum",
+                  "have",
+                  "education",
+                  "freecodecamp",
+                  "javascript",
+                  "learn",
+                  "code",
+                  "math",
+                  "nodejs",
+                  "nonprofit",
+                  "programme",
+                  "react",
+                  "teacher"
+               ],
+               "stems":[
+                  "freecodecamp",
+                  "org",
+                  "open",
+                  "sourc",
+                  "codebas",
+                  "curriculum",
+                  "learn",
+                  "code",
+                  "home",
+                  "career",
+                  "certif",
+                  "communiti",
+                  "curriculum",
+                  "d",
+                  "educ",
+                  "freecodecamp",
+                  "javascript",
+                  "learn",
+                  "code",
+                  "math",
+                  "nodej",
+                  "nonprofit",
+                  "program",
+                  "react",
+                  "teacher"
+               ],
+               "lemmas_frequency":{
+                  "career":1,
+                  "certification":1,
+                  "code":2,
+                  "codebase":1,
+                  "community":1,
+                  "curriculum":2,
+                  "education":1,
+                  "freecodecamp":2,
+                  "have":1,
+                  "home":1,
+                  "javascript":1,
+                  "learn":2,
+                  "math":1,
+                  "nodejs":1,
+                  "nonprofit":1,
+                  "open":1,
+                  "org's":1,
+                  "programme":1,
+                  "react":1,
+                  "source":1,
+                  "teacher":1
+               },
+               "stems_frequency":{
+                  "career":1,
+                  "certif":1,
+                  "code":2,
+                  "codebas":1,
+                  "communiti":1,
+                  "curriculum":2,
+                  "d":1,
+                  "educ":1,
+                  "freecodecamp":2,
+                  "home":1,
+                  "javascript":1,
+                  "learn":2,
+                  "math":1,
+                  "nodej":1,
+                  "nonprofit":1,
+                  "open":1,
+                  "org":1,
+                  "program":1,
+                  "react":1,
+                  "sourc":1,
+                  "teacher":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "career certification":1,
+                  "certification community":1,
+                  "code home":1,
+                  "code math":1,
+                  "codebase curriculum":1,
+                  "community curriculum":1,
+                  "curriculum have":1,
+                  "curriculum learn":1,
+                  "education freecodecamp":1,
+                  "freecodecamp javascript":1,
+                  "freecodecamp org's":1,
+                  "have education":1,
+                  "home career":1,
+                  "javascript learn":1,
+                  "learn code":2,
+                  "math nodejs":1,
+                  "nodejs nonprofit":1,
+                  "nonprofit programme":1,
+                  "open source":1,
+                  "org's open":1,
+                  "programme react":1,
+                  "react teacher":1,
+                  "source codebase":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "career certif":1,
+                  "certif communiti":1,
+                  "code home":1,
+                  "code math":1,
+                  "codebas curriculum":1,
+                  "communiti curriculum":1,
+                  "curriculum d":1,
+                  "curriculum learn":1,
+                  "d educ":1,
+                  "educ freecodecamp":1,
+                  "freecodecamp javascript":1,
+                  "freecodecamp org":1,
+                  "home career":1,
+                  "javascript learn":1,
+                  "learn code":2,
+                  "math nodej":1,
+                  "nodej nonprofit":1,
+                  "nonprofit program":1,
+                  "open sourc":1,
+                  "org open":1,
+                  "program react":1,
+                  "react teacher":1,
+                  "sourc codebas":1
+               },
+               "lemmas_mi":{
+                  "career certification":4.643856189774724,
+                  "certification community":4.643856189774724,
+                  "code home":3.643856189774725,
+                  "code math":3.643856189774725,
+                  "codebase curriculum":3.643856189774725,
+                  "community curriculum":3.643856189774725,
+                  "curriculum have":3.643856189774725,
+                  "curriculum learn":2.643856189774725,
+                  "education freecodecamp":3.643856189774725,
+                  "freecodecamp javascript":3.643856189774725,
+                  "freecodecamp org's":3.643856189774725,
+                  "have education":4.643856189774724,
+                  "home career":4.643856189774724,
+                  "javascript learn":3.643856189774725,
+                  "learn code":3.643856189774725,
+                  "math nodejs":4.643856189774724,
+                  "nodejs nonprofit":4.643856189774724,
+                  "nonprofit programme":4.643856189774724,
+                  "open source":4.643856189774724,
+                  "org's open":4.643856189774724,
+                  "programme react":4.643856189774724,
+                  "react teacher":4.643856189774724,
+                  "source codebase":4.643856189774724
+               },
+               "stems_mi":{
+                  "career certif":4.643856189774724,
+                  "certif communiti":4.643856189774724,
+                  "code home":3.643856189774725,
+                  "code math":3.643856189774725,
+                  "codebas curriculum":3.643856189774725,
+                  "communiti curriculum":3.643856189774725,
+                  "curriculum d":3.643856189774725,
+                  "curriculum learn":2.643856189774725,
+                  "d educ":4.643856189774724,
+                  "educ freecodecamp":3.643856189774725,
+                  "freecodecamp javascript":3.643856189774725,
+                  "freecodecamp org":3.643856189774725,
+                  "home career":4.643856189774724,
+                  "javascript learn":3.643856189774725,
+                  "learn code":3.643856189774725,
+                  "math nodej":4.643856189774724,
+                  "nodej nonprofit":4.643856189774724,
+                  "nonprofit program":4.643856189774724,
+                  "open sourc":4.643856189774724,
+                  "org open":4.643856189774724,
+                  "program react":4.643856189774724,
+                  "react teacher":4.643856189774724,
+                  "sourc codebas":4.643856189774724
+               }
+            }
+         },
+         {
+            "id":11730342,
+            "node_id":"MDEwOlJlcG9zaXRvcnkxMTczMDM0Mg==",
+            "name":"vue",
+            "full_name":"vuejs/vue",
+            "description":"🖖 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.",
+            "language":"JavaScript",
+            "topics":[
+               "framework",
+               "frontend",
+               "javascript",
+               "vue"
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":true,
+            "url":"https://api.github.com/repos/vuejs/vue",
+            "issues_url":"https://api.github.com/repos/vuejs/vue/issues{/number}",
+            "languages_url":"https://api.github.com/repos/vuejs/vue/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "vue",
+                  "js",
+                  "progressive",
+                  "incrementally",
+                  "adoptable",
+                  "javascript",
+                  "framework",
+                  "building",
+                  "ui",
+                  "web",
+                  "framework",
+                  "frontend",
+                  "javascript",
+                  "vue"
+               ],
+               "lemmas":[
+                  "vue",
+                  "js",
+                  "progressive",
+                  "incrementally",
+                  "adoptable",
+                  "javascript",
+                  "framework",
+                  "building",
+                  "ui",
+                  "web",
+                  "framework",
+                  "frontend",
+                  "javascript",
+                  "vue"
+               ],
+               "stems":[
+                  "vue",
+                  "js",
+                  "progress",
+                  "increment",
+                  "adopt",
+                  "javascript",
+                  "framework",
+                  "build",
+                  "ui",
+                  "web",
+                  "framework",
+                  "frontend",
+                  "javascript",
+                  "vue"
+               ],
+               "lemmas_frequency":{
+                  "adoptable":1,
+                  "building":1,
+                  "framework":2,
+                  "frontend":1,
+                  "incrementally":1,
+                  "javascript":2,
+                  "js":1,
+                  "progressive":1,
+                  "ui":1,
+                  "vue":2,
+                  "web":1
+               },
+               "stems_frequency":{
+                  "adopt":1,
+                  "build":1,
+                  "framework":2,
+                  "frontend":1,
+                  "increment":1,
+                  "javascript":2,
+                  "js":1,
+                  "progress":1,
+                  "ui":1,
+                  "vue":2,
+                  "web":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "adoptable javascript":1,
+                  "building ui":1,
+                  "framework building":1,
+                  "framework frontend":1,
+                  "frontend javascript":1,
+                  "incrementally adoptable":1,
+                  "javascript framework":1,
+                  "javascript vue":1,
+                  "js progressive":1,
+                  "progressive incrementally":1,
+                  "ui web":1,
+                  "vue js":1,
+                  "web framework":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "adopt javascript":1,
+                  "build ui":1,
+                  "framework build":1,
+                  "framework frontend":1,
+                  "frontend javascript":1,
+                  "increment adopt":1,
+                  "javascript framework":1,
+                  "javascript vue":1,
+                  "js progress":1,
+                  "progress increment":1,
+                  "ui web":1,
+                  "vue js":1,
+                  "web framework":1
+               },
+               "lemmas_mi":{
+                  "adoptable javascript":2.807354922057604,
+                  "building ui":3.807354922057604,
+                  "framework building":2.807354922057604,
+                  "framework frontend":2.807354922057604,
+                  "frontend javascript":2.807354922057604,
+                  "incrementally adoptable":3.807354922057604,
+                  "javascript framework":1.8073549220576042,
+                  "javascript vue":1.8073549220576042,
+                  "js progressive":3.807354922057604,
+                  "progressive incrementally":3.807354922057604,
+                  "ui web":3.807354922057604,
+                  "vue js":2.807354922057604,
+                  "web framework":2.807354922057604
+               },
+               "stems_mi":{
+                  "adopt javascript":2.807354922057604,
+                  "build ui":3.807354922057604,
+                  "framework build":2.807354922057604,
+                  "framework frontend":2.807354922057604,
+                  "frontend javascript":2.807354922057604,
+                  "increment adopt":3.807354922057604,
+                  "javascript framework":1.8073549220576042,
+                  "javascript vue":1.8073549220576042,
+                  "js progress":3.807354922057604,
+                  "progress increment":3.807354922057604,
+                  "ui web":3.807354922057604,
+                  "vue js":2.807354922057604,
+                  "web framework":2.807354922057604
+               }
+            }
+         },
+         {
+            "id":10270250,
+            "node_id":"MDEwOlJlcG9zaXRvcnkxMDI3MDI1MA==",
+            "name":"react",
+            "full_name":"facebook/react",
+            "description":"A declarative, efficient, and flexible JavaScript library for building user interfaces.",
+            "language":"JavaScript",
+            "topics":[
+               "declarative",
+               "frontend",
+               "javascript",
+               "library",
+               "react",
+               "ui"
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":true,
+            "url":"https://api.github.com/repos/facebook/react",
+            "issues_url":"https://api.github.com/repos/facebook/react/issues{/number}",
+            "languages_url":"https://api.github.com/repos/facebook/react/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "declarative",
+                  "efficient",
+                  "flexible",
+                  "javascript",
+                  "library",
+                  "building",
+                  "user",
+                  "interfaces",
+                  "declarative",
+                  "frontend",
+                  "javascript",
+                  "library",
+                  "react",
+                  "ui"
+               ],
+               "lemmas":[
+                  "declarative",
+                  "efficient",
+                  "flexible",
+                  "javascript",
+                  "library",
+                  "building",
+                  "user",
+                  "interface",
+                  "declarative",
+                  "frontend",
+                  "javascript",
+                  "library",
+                  "react",
+                  "ui"
+               ],
+               "stems":[
+                  "declar",
+                  "effici",
+                  "flexibl",
+                  "javascript",
+                  "librari",
+                  "build",
+                  "user",
+                  "interfac",
+                  "declar",
+                  "frontend",
+                  "javascript",
+                  "librari",
+                  "react",
+                  "ui"
+               ],
+               "lemmas_frequency":{
+                  "building":1,
+                  "declarative":2,
+                  "efficient":1,
+                  "flexible":1,
+                  "frontend":1,
+                  "interface":1,
+                  "javascript":2,
+                  "library":2,
+                  "react":1,
+                  "ui":1,
+                  "user":1
+               },
+               "stems_frequency":{
+                  "build":1,
+                  "declar":2,
+                  "effici":1,
+                  "flexibl":1,
+                  "frontend":1,
+                  "interfac":1,
+                  "javascript":2,
+                  "librari":2,
+                  "react":1,
+                  "ui":1,
+                  "user":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "building user":1,
+                  "declarative efficient":1,
+                  "declarative frontend":1,
+                  "efficient flexible":1,
+                  "flexible javascript":1,
+                  "frontend javascript":1,
+                  "interface declarative":1,
+                  "javascript library":2,
+                  "library building":1,
+                  "library react":1,
+                  "react ui":1,
+                  "user interface":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "build user":1,
+                  "declar effici":1,
+                  "declar frontend":1,
+                  "effici flexibl":1,
+                  "flexibl javascript":1,
+                  "frontend javascript":1,
+                  "interfac declar":1,
+                  "javascript librari":2,
+                  "librari build":1,
+                  "librari react":1,
+                  "react ui":1,
+                  "user interfac":1
+               },
+               "lemmas_mi":{
+                  "building user":3.807354922057604,
+                  "declarative efficient":2.807354922057604,
+                  "declarative frontend":2.807354922057604,
+                  "efficient flexible":3.807354922057604,
+                  "flexible javascript":2.807354922057604,
+                  "frontend javascript":2.807354922057604,
+                  "interface declarative":2.807354922057604,
+                  "javascript library":2.807354922057604,
+                  "library building":2.807354922057604,
+                  "library react":2.807354922057604,
+                  "react ui":3.807354922057604,
+                  "user interface":3.807354922057604
+               },
+               "stems_mi":{
+                  "build user":3.807354922057604,
+                  "declar effici":2.807354922057604,
+                  "declar frontend":2.807354922057604,
+                  "effici flexibl":3.807354922057604,
+                  "flexibl javascript":2.807354922057604,
+                  "frontend javascript":2.807354922057604,
+                  "interfac declar":2.807354922057604,
+                  "javascript librari":2.807354922057604,
+                  "librari build":2.807354922057604,
+                  "librari react":2.807354922057604,
+                  "react ui":3.807354922057604,
+                  "user interfac":3.807354922057604
+               }
+            }
+         },
+         {
+            "id":2126244,
+            "node_id":"MDEwOlJlcG9zaXRvcnkyMTI2MjQ0",
+            "name":"bootstrap",
+            "full_name":"twbs/bootstrap",
+            "description":"The most popular HTML, CSS, and JavaScript framework for developing responsive, mobile first projects on the web.",
+            "language":"JavaScript",
+            "topics":[
+               "bootstrap",
+               "css",
+               "css-framework",
+               "html",
+               "javascript",
+               "sass",
+               "scss"
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":false,
+            "url":"https://api.github.com/repos/twbs/bootstrap",
+            "issues_url":"https://api.github.com/repos/twbs/bootstrap/issues{/number}",
+            "languages_url":"https://api.github.com/repos/twbs/bootstrap/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "popular",
+                  "html",
+                  "css",
+                  "javascript",
+                  "framework",
+                  "developing",
+                  "responsive",
+                  "mobile",
+                  "projects",
+                  "web",
+                  "bootstrap",
+                  "css",
+                  "css",
+                  "framework",
+                  "html",
+                  "javascript",
+                  "sass",
+                  "scss"
+               ],
+               "lemmas":[
+                  "popular",
+                  "html",
+                  "css",
+                  "javascript",
+                  "framework",
+                  "develop",
+                  "responsive",
+                  "mobile",
+                  "project",
+                  "web",
+                  "bootstrap",
+                  "css",
+                  "css",
+                  "framework",
+                  "html",
+                  "javascript",
+                  "sass",
+                  "scss"
+               ],
+               "stems":[
+                  "popular",
+                  "html",
+                  "css",
+                  "javascript",
+                  "framework",
+                  "develop",
+                  "respons",
+                  "mobil",
+                  "project",
+                  "web",
+                  "bootstrap",
+                  "css",
+                  "css",
+                  "framework",
+                  "html",
+                  "javascript",
+                  "sass",
+                  "scss"
+               ],
+               "lemmas_frequency":{
+                  "bootstrap":1,
+                  "css":3,
+                  "develop":1,
+                  "framework":2,
+                  "html":2,
+                  "javascript":2,
+                  "mobile":1,
+                  "popular":1,
+                  "project":1,
+                  "responsive":1,
+                  "sass":1,
+                  "scss":1,
+                  "web":1
+               },
+               "stems_frequency":{
+                  "bootstrap":1,
+                  "css":3,
+                  "develop":1,
+                  "framework":2,
+                  "html":2,
+                  "javascript":2,
+                  "mobil":1,
+                  "popular":1,
+                  "project":1,
+                  "respons":1,
+                  "sass":1,
+                  "scss":1,
+                  "web":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "bootstrap css":1,
+                  "css css":1,
+                  "css framework":1,
+                  "css javascript":1,
+                  "develop responsive":1,
+                  "framework develop":1,
+                  "framework html":1,
+                  "html css":1,
+                  "html javascript":1,
+                  "javascript framework":1,
+                  "javascript sass":1,
+                  "mobile project":1,
+                  "popular html":1,
+                  "project web":1,
+                  "responsive mobile":1,
+                  "sass scss":1,
+                  "web bootstrap":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "bootstrap css":1,
+                  "css css":1,
+                  "css framework":1,
+                  "css javascript":1,
+                  "develop respons":1,
+                  "framework develop":1,
+                  "framework html":1,
+                  "html css":1,
+                  "html javascript":1,
+                  "javascript framework":1,
+                  "javascript sass":1,
+                  "mobil project":1,
+                  "popular html":1,
+                  "project web":1,
+                  "respons mobil":1,
+                  "sass scss":1,
+                  "web bootstrap":1
+               },
+               "lemmas_mi":{
+                  "bootstrap css":2.584962500721156,
+                  "css css":1,
+                  "css framework":1.5849625007211563,
+                  "css javascript":1.5849625007211563,
+                  "develop responsive":4.169925001442312,
+                  "framework develop":3.1699250014423126,
+                  "framework html":2.1699250014423126,
+                  "html css":1.5849625007211563,
+                  "html javascript":2.1699250014423126,
+                  "javascript framework":2.1699250014423126,
+                  "javascript sass":3.1699250014423126,
+                  "mobile project":4.169925001442312,
+                  "popular html":3.1699250014423126,
+                  "project web":4.169925001442312,
+                  "responsive mobile":4.169925001442312,
+                  "sass scss":4.169925001442312,
+                  "web bootstrap":4.169925001442312
+               },
+               "stems_mi":{
+                  "bootstrap css":2.584962500721156,
+                  "css css":1,
+                  "css framework":1.5849625007211563,
+                  "css javascript":1.5849625007211563,
+                  "develop respons":4.169925001442312,
+                  "framework develop":3.1699250014423126,
+                  "framework html":2.1699250014423126,
+                  "html css":1.5849625007211563,
+                  "html javascript":2.1699250014423126,
+                  "javascript framework":2.1699250014423126,
+                  "javascript sass":3.1699250014423126,
+                  "mobil project":4.169925001442312,
+                  "popular html":3.1699250014423126,
+                  "project web":4.169925001442312,
+                  "respons mobil":4.169925001442312,
+                  "sass scss":4.169925001442312,
+                  "web bootstrap":4.169925001442312
+               }
+            }
+         },
+         {
+            "id":6498492,
+            "node_id":"MDEwOlJlcG9zaXRvcnk2NDk4NDky",
+            "name":"javascript",
+            "full_name":"airbnb/javascript",
+            "description":"JavaScript Style Guide",
+            "language":"JavaScript",
+            "topics":[
+               "arrow-functions",
+               "es2015",
+               "es2016",
+               "es2017",
+               "es2018",
+               "es6",
+               "eslint",
+               "javascript",
+               "linting",
+               "naming-conventions",
+               "style-guide",
+               "style-linter",
+               "styleguide",
+               "tc39"
+            ],
+            "has_issues":true,
+            "has_projects":false,
+            "has_wiki":true,
+            "url":"https://api.github.com/repos/airbnb/javascript",
+            "issues_url":"https://api.github.com/repos/airbnb/javascript/issues{/number}",
+            "languages_url":"https://api.github.com/repos/airbnb/javascript/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "javascript",
+                  "style",
+                  "guide",
+                  "arrow",
+                  "functions",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "eslint",
+                  "javascript",
+                  "linting",
+                  "naming",
+                  "conventions",
+                  "style",
+                  "guide",
+                  "style",
+                  "linter",
+                  "styleguide",
+                  "tc"
+               ],
+               "lemmas":[
+                  "javascript",
+                  "style",
+                  "guide",
+                  "arrow",
+                  "function",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "eslint",
+                  "javascript",
+                  "linting",
+                  "name",
+                  "convention",
+                  "style",
+                  "guide",
+                  "style",
+                  "linter",
+                  "styleguide",
+                  "tc"
+               ],
+               "stems":[
+                  "javascript",
+                  "style",
+                  "guid",
+                  "arrow",
+                  "function",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "es",
+                  "eslint",
+                  "javascript",
+                  "lint",
+                  "name",
+                  "convent",
+                  "style",
+                  "guid",
+                  "style",
+                  "linter",
+                  "styleguid",
+                  "tc"
+               ],
+               "lemmas_frequency":{
+                  "arrow":1,
+                  "convention":1,
+                  "es":5,
+                  "eslint":1,
+                  "function":1,
+                  "guide":2,
+                  "javascript":2,
+                  "linter":1,
+                  "linting":1,
+                  "name":1,
+                  "style":3,
+                  "styleguide":1,
+                  "tc":1
+               },
+               "stems_frequency":{
+                  "arrow":1,
+                  "convent":1,
+                  "es":5,
+                  "eslint":1,
+                  "function":1,
+                  "guid":2,
+                  "javascript":2,
+                  "lint":1,
+                  "linter":1,
+                  "name":1,
+                  "style":3,
+                  "styleguid":1,
+                  "tc":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "arrow function":1,
+                  "convention style":1,
+                  "es es":4,
+                  "es eslint":1,
+                  "eslint javascript":1,
+                  "function es":1,
+                  "guide arrow":1,
+                  "guide style":1,
+                  "javascript linting":1,
+                  "javascript style":1,
+                  "linter styleguide":1,
+                  "linting name":1,
+                  "name convention":1,
+                  "style guide":2,
+                  "style linter":1,
+                  "styleguide tc":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "arrow function":1,
+                  "convent style":1,
+                  "es es":4,
+                  "es eslint":1,
+                  "eslint javascript":1,
+                  "function es":1,
+                  "guid arrow":1,
+                  "guid style":1,
+                  "javascript lint":1,
+                  "javascript style":1,
+                  "lint name":1,
+                  "linter styleguid":1,
+                  "name convent":1,
+                  "style guid":2,
+                  "style linter":1,
+                  "styleguid tc":1
+               },
+               "lemmas_mi":{
+                  "arrow function":4.392317422778761,
+                  "convention style":2.807354922057604,
+                  "es es":1.7484612330040354,
+                  "es eslint":2.070389327891398,
+                  "eslint javascript":3.3923174227787602,
+                  "function es":2.070389327891398,
+                  "guide arrow":3.3923174227787602,
+                  "guide style":1.8073549220576042,
+                  "javascript linting":3.3923174227787602,
+                  "javascript style":1.8073549220576042,
+                  "linter styleguide":4.392317422778761,
+                  "linting name":4.392317422778761,
+                  "name convention":4.392317422778761,
+                  "style guide":2.807354922057604,
+                  "style linter":2.807354922057604,
+                  "styleguide tc":4.392317422778761
+               },
+               "stems_mi":{
+                  "arrow function":4.392317422778761,
+                  "convent style":2.807354922057604,
+                  "es es":1.7484612330040354,
+                  "es eslint":2.070389327891398,
+                  "eslint javascript":3.3923174227787602,
+                  "function es":2.070389327891398,
+                  "guid arrow":3.3923174227787602,
+                  "guid style":1.8073549220576042,
+                  "javascript lint":3.3923174227787602,
+                  "javascript style":1.8073549220576042,
+                  "lint name":4.392317422778761,
+                  "linter styleguid":4.392317422778761,
+                  "name convent":4.392317422778761,
+                  "style guid":2.807354922057604,
+                  "style linter":2.807354922057604,
+                  "styleguid tc":4.392317422778761
+               }
+            }
+         },
+         {
+            "id":943149,
+            "node_id":"MDEwOlJlcG9zaXRvcnk5NDMxNDk=",
+            "name":"d3",
+            "full_name":"d3/d3",
+            "description":"Bring data to life with SVG, Canvas and HTML. :bar_chart::chart_with_upwards_trend::tada:",
+            "language":"JavaScript",
+            "topics":[
+               "visualization"
+            ],
+            "has_issues":true,
+            "has_projects":false,
+            "has_wiki":true,
+            "url":"https://api.github.com/repos/d3/d3",
+            "issues_url":"https://api.github.com/repos/d3/d3/issues{/number}",
+            "languages_url":"https://api.github.com/repos/d3/d3/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "bring",
+                  "data",
+                  "life",
+                  "svg",
+                  "canvas",
+                  "html",
+                  "bar_chart",
+                  "chart_with_upwards_trend",
+                  "tada",
+                  "visualization"
+               ],
+               "lemmas":[
+                  "bring",
+                  "datum",
+                  "life",
+                  "svg",
+                  "canvas",
+                  "html",
+                  "bar_chart",
+                  "chart_with_upwards_trend",
+                  "tada",
+                  "visualization"
+               ],
+               "stems":[
+                  "bring",
+                  "data",
+                  "life",
+                  "svg",
+                  "canva",
+                  "html",
+                  "bar_chart",
+                  "chart_with_upwards_trend",
+                  "tada",
+                  "visual"
+               ],
+               "lemmas_frequency":{
+                  "bar_chart":1,
+                  "bring":1,
+                  "canvas":1,
+                  "chart_with_upwards_trend":1,
+                  "datum":1,
+                  "html":1,
+                  "life":1,
+                  "svg":1,
+                  "tada":1,
+                  "visualization":1
+               },
+               "stems_frequency":{
+                  "bar_chart":1,
+                  "bring":1,
+                  "canva":1,
+                  "chart_with_upwards_trend":1,
+                  "data":1,
+                  "html":1,
+                  "life":1,
+                  "svg":1,
+                  "tada":1,
+                  "visual":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "bar_chart chart_with_upwards_trend":1,
+                  "bring datum":1,
+                  "canvas html":1,
+                  "chart_with_upwards_trend tada":1,
+                  "datum life":1,
+                  "html bar_chart":1,
+                  "life svg":1,
+                  "svg canvas":1,
+                  "tada visualization":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "bar_chart chart_with_upwards_trend":1,
+                  "bring data":1,
+                  "canva html":1,
+                  "chart_with_upwards_trend tada":1,
+                  "data life":1,
+                  "html bar_chart":1,
+                  "life svg":1,
+                  "svg canva":1,
+                  "tada visual":1
+               },
+               "lemmas_mi":{
+                  "bar_chart chart_with_upwards_trend":3.321928094887362,
+                  "bring datum":3.321928094887362,
+                  "canvas html":3.321928094887362,
+                  "chart_with_upwards_trend tada":3.321928094887362,
+                  "datum life":3.321928094887362,
+                  "html bar_chart":3.321928094887362,
+                  "life svg":3.321928094887362,
+                  "svg canvas":3.321928094887362,
+                  "tada visualization":3.321928094887362
+               },
+               "stems_mi":{
+                  "bar_chart chart_with_upwards_trend":3.321928094887362,
+                  "bring data":3.321928094887362,
+                  "canva html":3.321928094887362,
+                  "chart_with_upwards_trend tada":3.321928094887362,
+                  "data life":3.321928094887362,
+                  "html bar_chart":3.321928094887362,
+                  "life svg":3.321928094887362,
+                  "svg canva":3.321928094887362,
+                  "tada visual":3.321928094887362
+               }
+            }
+         },
+         {
+            "id":126577260,
+            "node_id":"MDEwOlJlcG9zaXRvcnkxMjY1NzcyNjA=",
+            "name":"javascript-algorithms",
+            "full_name":"trekhleb/javascript-algorithms",
+            "description":"📝 Algorithms and data structures implemented in JavaScript with explanations and links to further readings",
+            "language":"JavaScript",
+            "topics":[
+               "algorithm",
+               "algorithms",
+               "computer-science",
+               "data-structures",
+               "interview",
+               "interview-preparation",
+               "javascript",
+               "javascript-algorithms"
+            ],
+            "has_issues":true,
+            "has_projects":false,
+            "has_wiki":false,
+            "url":"https://api.github.com/repos/trekhleb/javascript-algorithms",
+            "issues_url":"https://api.github.com/repos/trekhleb/javascript-algorithms/issues{/number}",
+            "languages_url":"https://api.github.com/repos/trekhleb/javascript-algorithms/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "algorithms",
+                  "data",
+                  "structures",
+                  "implemented",
+                  "javascript",
+                  "explanations",
+                  "links",
+                  "readings",
+                  "algorithm",
+                  "algorithms",
+                  "computer",
+                  "science",
+                  "data",
+                  "structures",
+                  "interview",
+                  "interview",
+                  "preparation",
+                  "javascript",
+                  "javascript",
+                  "algorithms"
+               ],
+               "lemmas":[
+                  "algorithm",
+                  "datum",
+                  "structure",
+                  "implement",
+                  "javascript",
+                  "explanation",
+                  "link",
+                  "reading",
+                  "algorithm",
+                  "algorithm",
+                  "computer",
+                  "science",
+                  "datum",
+                  "structure",
+                  "interview",
+                  "interview",
+                  "preparation",
+                  "javascript",
+                  "javascript",
+                  "algorithm"
+               ],
+               "stems":[
+                  "algorithm",
+                  "data",
+                  "structur",
+                  "implement",
+                  "javascript",
+                  "explan",
+                  "link",
+                  "read",
+                  "algorithm",
+                  "algorithm",
+                  "comput",
+                  "scienc",
+                  "data",
+                  "structur",
+                  "interview",
+                  "interview",
+                  "prepar",
+                  "javascript",
+                  "javascript",
+                  "algorithm"
+               ],
+               "lemmas_frequency":{
+                  "algorithm":4,
+                  "computer":1,
+                  "datum":2,
+                  "explanation":1,
+                  "implement":1,
+                  "interview":2,
+                  "javascript":3,
+                  "link":1,
+                  "preparation":1,
+                  "reading":1,
+                  "science":1,
+                  "structure":2
+               },
+               "stems_frequency":{
+                  "algorithm":4,
+                  "comput":1,
+                  "data":2,
+                  "explan":1,
+                  "implement":1,
+                  "interview":2,
+                  "javascript":3,
+                  "link":1,
+                  "prepar":1,
+                  "read":1,
+                  "scienc":1,
+                  "structur":2
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "algorithm algorithm":1,
+                  "algorithm computer":1,
+                  "algorithm datum":1,
+                  "computer science":1,
+                  "datum structure":2,
+                  "explanation link":1,
+                  "implement javascript":1,
+                  "interview interview":1,
+                  "interview preparation":1,
+                  "javascript algorithm":1,
+                  "javascript explanation":1,
+                  "javascript javascript":1,
+                  "link reading":1,
+                  "preparation javascript":1,
+                  "reading algorithm":1,
+                  "science datum":1,
+                  "structure implement":1,
+                  "structure interview":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "algorithm algorithm":1,
+                  "algorithm comput":1,
+                  "algorithm data":1,
+                  "comput scienc":1,
+                  "data structur":2,
+                  "explan link":1,
+                  "implement javascript":1,
+                  "interview interview":1,
+                  "interview prepar":1,
+                  "javascript algorithm":1,
+                  "javascript explan":1,
+                  "javascript javascript":1,
+                  "link read":1,
+                  "prepar javascript":1,
+                  "read algorithm":1,
+                  "scienc data":1,
+                  "structur implement":1,
+                  "structur interview":1
+               },
+               "lemmas_mi":{
+                  "algorithm algorithm":0.3219280948873623,
+                  "algorithm computer":2.321928094887362,
+                  "algorithm datum":1.3219280948873622,
+                  "computer science":4.321928094887363,
+                  "datum structure":3.321928094887362,
+                  "explanation link":4.321928094887363,
+                  "implement javascript":2.736965594166206,
+                  "interview interview":2.321928094887362,
+                  "interview preparation":3.321928094887362,
+                  "javascript algorithm":0.7369655941662062,
+                  "javascript explanation":2.736965594166206,
+                  "javascript javascript":1.15200309344505,
+                  "link reading":4.321928094887363,
+                  "preparation javascript":2.736965594166206,
+                  "reading algorithm":2.321928094887362,
+                  "science datum":3.321928094887362,
+                  "structure implement":3.321928094887362,
+                  "structure interview":2.321928094887362
+               },
+               "stems_mi":{
+                  "algorithm algorithm":0.3219280948873623,
+                  "algorithm comput":2.321928094887362,
+                  "algorithm data":1.3219280948873622,
+                  "comput scienc":4.321928094887363,
+                  "data structur":3.321928094887362,
+                  "explan link":4.321928094887363,
+                  "implement javascript":2.736965594166206,
+                  "interview interview":2.321928094887362,
+                  "interview prepar":3.321928094887362,
+                  "javascript algorithm":0.7369655941662062,
+                  "javascript explan":2.736965594166206,
+                  "javascript javascript":1.15200309344505,
+                  "link read":4.321928094887363,
+                  "prepar javascript":2.736965594166206,
+                  "read algorithm":2.321928094887362,
+                  "scienc data":3.321928094887362,
+                  "structur implement":3.321928094887362,
+                  "structur interview":2.321928094887362
+               }
+            }
+         },
+         {
+            "id":29028775,
+            "node_id":"MDEwOlJlcG9zaXRvcnkyOTAyODc3NQ==",
+            "name":"react-native",
+            "full_name":"facebook/react-native",
+            "description":"A framework for building native apps with React.",
+            "language":"JavaScript",
+            "topics":[
+               
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":true,
+            "url":"https://api.github.com/repos/facebook/react-native",
+            "issues_url":"https://api.github.com/repos/facebook/react-native/issues{/number}",
+            "languages_url":"https://api.github.com/repos/facebook/react-native/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "framework",
+                  "building",
+                  "native",
+                  "apps",
+                  "react"
+               ],
+               "lemmas":[
+                  "framework",
+                  "building",
+                  "native",
+                  "app",
+                  "react"
+               ],
+               "stems":[
+                  "framework",
+                  "build",
+                  "nativ",
+                  "app",
+                  "react"
+               ],
+               "lemmas_frequency":{
+                  "app":1,
+                  "building":1,
+                  "framework":1,
+                  "native":1,
+                  "react":1
+               },
+               "stems_frequency":{
+                  "app":1,
+                  "build":1,
+                  "framework":1,
+                  "nativ":1,
+                  "react":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "app react":1,
+                  "building native":1,
+                  "framework building":1,
+                  "native app":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "app react":1,
+                  "build nativ":1,
+                  "framework build":1,
+                  "nativ app":1
+               },
+               "lemmas_mi":{
+                  "app react":2.321928094887362,
+                  "building native":2.321928094887362,
+                  "framework building":2.321928094887362,
+                  "native app":2.321928094887362
+               },
+               "stems_mi":{
+                  "app react":2.321928094887362,
+                  "build nativ":2.321928094887362,
+                  "framework build":2.321928094887362,
+                  "nativ app":2.321928094887362
+               }
+            }
+         },
+         {
+            "id":63537249,
+            "node_id":"MDEwOlJlcG9zaXRvcnk2MzUzNzI0OQ==",
+            "name":"create-react-app",
+            "full_name":"facebook/create-react-app",
+            "description":"Set up a modern web app by running one command.",
+            "language":"JavaScript",
+            "topics":[
+               "build-tools",
+               "react",
+               "zero-configuration"
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":false,
+            "url":"https://api.github.com/repos/facebook/create-react-app",
+            "issues_url":"https://api.github.com/repos/facebook/create-react-app/issues{/number}",
+            "languages_url":"https://api.github.com/repos/facebook/create-react-app/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "set",
+                  "modern",
+                  "web",
+                  "app",
+                  "running",
+                  "command",
+                  "build",
+                  "tools",
+                  "react",
+                  "zero",
+                  "configuration"
+               ],
+               "lemmas":[
+                  "set",
+                  "modern",
+                  "web",
+                  "app",
+                  "run",
+                  "command",
+                  "build",
+                  "tool",
+                  "react",
+                  "zero",
+                  "configuration"
+               ],
+               "stems":[
+                  "set",
+                  "modern",
+                  "web",
+                  "app",
+                  "run",
+                  "command",
+                  "build",
+                  "tool",
+                  "react",
+                  "zero",
+                  "configur"
+               ],
+               "lemmas_frequency":{
+                  "app":1,
+                  "build":1,
+                  "command":1,
+                  "configuration":1,
+                  "modern":1,
+                  "react":1,
+                  "run":1,
+                  "set":1,
+                  "tool":1,
+                  "web":1,
+                  "zero":1
+               },
+               "stems_frequency":{
+                  "app":1,
+                  "build":1,
+                  "command":1,
+                  "configur":1,
+                  "modern":1,
+                  "react":1,
+                  "run":1,
+                  "set":1,
+                  "tool":1,
+                  "web":1,
+                  "zero":1
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "app run":1,
+                  "build tool":1,
+                  "command build":1,
+                  "modern web":1,
+                  "react zero":1,
+                  "run command":1,
+                  "set modern":1,
+                  "tool react":1,
+                  "web app":1,
+                  "zero configuration":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "app run":1,
+                  "build tool":1,
+                  "command build":1,
+                  "modern web":1,
+                  "react zero":1,
+                  "run command":1,
+                  "set modern":1,
+                  "tool react":1,
+                  "web app":1,
+                  "zero configur":1
+               },
+               "lemmas_mi":{
+                  "app run":3.4594316186372973,
+                  "build tool":3.4594316186372973,
+                  "command build":3.4594316186372973,
+                  "modern web":3.4594316186372973,
+                  "react zero":3.4594316186372973,
+                  "run command":3.4594316186372973,
+                  "set modern":3.4594316186372973,
+                  "tool react":3.4594316186372973,
+                  "web app":3.4594316186372973,
+                  "zero configuration":3.4594316186372973
+               },
+               "stems_mi":{
+                  "app run":3.4594316186372973,
+                  "build tool":3.4594316186372973,
+                  "command build":3.4594316186372973,
+                  "modern web":3.4594316186372973,
+                  "react zero":3.4594316186372973,
+                  "run command":3.4594316186372973,
+                  "set modern":3.4594316186372973,
+                  "tool react":3.4594316186372973,
+                  "web app":3.4594316186372973,
+                  "zero configur":3.4594316186372973
+               }
+            }
+         },
+         {
+            "id":23088740,
+            "node_id":"MDEwOlJlcG9zaXRvcnkyMzA4ODc0MA==",
+            "name":"axios",
+            "full_name":"axios/axios",
+            "description":"Promise based HTTP client for the browser and node.js",
+            "language":"JavaScript",
+            "topics":[
+               "http-client",
+               "javascript",
+               "nodejs",
+               "promise"
+            ],
+            "has_issues":true,
+            "has_projects":true,
+            "has_wiki":false,
+            "url":"https://api.github.com/repos/axios/axios",
+            "issues_url":"https://api.github.com/repos/axios/axios/issues{/number}",
+            "languages_url":"https://api.github.com/repos/axios/axios/languages",
+            "homepage_url":"",
+            "count_open_issues":0,
+            "description_preprossecing":{
+               "words":[
+                  "promise",
+                  "based",
+                  "http",
+                  "client",
+                  "browser",
+                  "node",
+                  "js",
+                  "http",
+                  "client",
+                  "javascript",
+                  "nodejs",
+                  "promise"
+               ],
+               "lemmas":[
+                  "promise",
+                  "base",
+                  "http",
+                  "client",
+                  "browser",
+                  "node",
+                  "js",
+                  "http",
+                  "client",
+                  "javascript",
+                  "nodejs",
+                  "promise"
+               ],
+               "stems":[
+                  "promis",
+                  "base",
+                  "http",
+                  "client",
+                  "browser",
+                  "node",
+                  "js",
+                  "http",
+                  "client",
+                  "javascript",
+                  "nodej",
+                  "promis"
+               ],
+               "lemmas_frequency":{
+                  "base":1,
+                  "browser":1,
+                  "client":2,
+                  "http":2,
+                  "javascript":1,
+                  "js":1,
+                  "node":1,
+                  "nodejs":1,
+                  "promise":2
+               },
+               "stems_frequency":{
+                  "base":1,
+                  "browser":1,
+                  "client":2,
+                  "http":2,
+                  "javascript":1,
+                  "js":1,
+                  "node":1,
+                  "nodej":1,
+                  "promis":2
+               },
+               "lemmas_bigram_frequency":{
+                  "":1,
+                  "base http":1,
+                  "browser node":1,
+                  "client browser":1,
+                  "client javascript":1,
+                  "http client":2,
+                  "javascript nodejs":1,
+                  "js http":1,
+                  "node js":1,
+                  "nodejs promise":1,
+                  "promise base":1
+               },
+               "stems_bigram_frequency":{
+                  "":1,
+                  "base http":1,
+                  "browser node":1,
+                  "client browser":1,
+                  "client javascript":1,
+                  "http client":2,
+                  "javascript nodej":1,
+                  "js http":1,
+                  "node js":1,
+                  "nodej promis":1,
+                  "promis base":1
+               },
+               "lemmas_mi":{
+                  "base http":2.584962500721156,
+                  "browser node":3.584962500721156,
+                  "client browser":2.584962500721156,
+                  "client javascript":2.584962500721156,
+                  "http client":2.584962500721156,
+                  "javascript nodejs":3.584962500721156,
+                  "js http":2.584962500721156,
+                  "node js":3.584962500721156,
+                  "nodejs promise":2.584962500721156,
+                  "promise base":2.584962500721156
+               },
+               "stems_mi":{
+                  "base http":2.584962500721156,
+                  "browser node":3.584962500721156,
+                  "client browser":2.584962500721156,
+                  "client javascript":2.584962500721156,
+                  "http client":2.584962500721156,
+                  "javascript nodej":3.584962500721156,
+                  "js http":2.584962500721156,
+                  "node js":3.584962500721156,
+                  "nodej promis":2.584962500721156,
+                  "promis base":2.584962500721156
+               }
+            }
+         }
+      ]
+   }
+}
+
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилДобавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файлДобавилм
+Добавил из-за того что сранный мессенджер не разрешает скидывать слишком бл*ть маленький файл

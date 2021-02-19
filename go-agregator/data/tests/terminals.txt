@@ -1,0 +1,4742 @@
+
+**
+Topics
+
+
+cmd
+command-line
+console
+terminal
+windows-console
+windows-terminal
+wsl
+animated
+bash
+bash-profile
+capture
+colors
+command-line
+font
+generate
+gif
+powershell
+pty
+record
+render
+repeat
+shell
+shot
+terminal
+theme
+tty
+zsh
+ansi-art
+cli
+command
+command-line
+emulator
+interpreter
+interpreters
+javascript
+jquery-terminal
+json-rpc
+parse
+parse-commands
+shell
+terminal
+awesome-lists
+cli-lovers
+curated-list
+terminal
+color-schemes
+macos
+terminal
+terminal-themes
+command-line
+notifications
+objective-c
+osx
+ruby
+css
+html
+hyper
+javascript
+linux
+macos
+react
+terminal
+terminal-emulators
+asciicast
+recorder
+recording
+terminal
+terminal-recording
+client
+putty
+rdp
+remote-control
+ssh
+telnet
+terminal
+terminals
+bash
+color-scheme
+gnome-terminal
+linux
+mint
+pantheon-terminal
+shell
+terminal
+dircolors
+gnome-terminal-themes
+solarized
+bsd
+gpu
+linux
+macos
+opengl
+rust
+terminal
+terminal-emulators
+vte
+windows
+ansi
+ansi-escape-codes
+chalk
+cli
+color
+commandline
+console
+javascript
+strip-ansi
+terminal
+terminal-emulators
+mintty
+terminal-emulator
+windows-subsystem-linux
+wsl
+ansi-colors
+ascii-graphics
+cpp
+terminal-graphics
+gtk
+gtk3
+hacktoberfest
+meson
+vala
+vte
+browser
+go
+javascript
+terminal
+tty
+typescript
+web
+websocket
+android
+linux
+linux-distribution
+packages
+termux
+blog
+duotone
+firacode
+hugo
+hugo-theme
+minimal
+monospace
+personal-site
+terminal
+bash
+console
+shell
+terminal
+antd
+antd-design
+docker
+go
+golang
+guacamole
+rdp
+react
+ssh
+vnc
+ascii-art
+ascii-table
+forecast
+go
+terminal
+weather
+wego
+angular
+electron
+terminal
+terminal-emulators
+typescript
+guake
+guake-terminal
+terminal
+terminal-emulator
+mosh
+remote-shell
+ssh
+terminal
+tmux
+android
+linux
+terminal
+termux
+cli
+git
+terminal
+command-line
+console
+google
+google-news
+google-search
+google-site-search
+search
+standalone
+terminal
+web-search
+console
+electron
+pty
+react
+shell
+terminal
+terminal-emulators
+terminals
+tty
+typescript
+color-scheme
+freebsd-vt
+iterm
+iterm2
+konsole
+konsole-color-schemes
+lxterminal
+osx-terminal-themes
+putty
+putty-color-schemes
+schemes
+terminal
+terminal-schemes
+terminal-themes
+terminator
+theme
+themes
+windows-terminal
+xrdb
+xresources
+bandwidth
+cli
+dashboard
+networking
+css
+design
+javascript
+react
+svg
+terminal
+webapp
+webpack
+devtools
+javascript
+terminal
+ascii
+box
+console
+library
+python
+table
+terminal
+javascript
+node
+slack
+terminal
+command-line
+curses
+python
+reddit
+reddit-client
+terminal
+tui
+awesome
+awesome-list
+list
+macos
+macosx
+shell
+terminal
+android
+batch-renamer
+c
+cli
+command-line
+console
+disk-usage
+file-manager
+file-preview
+filesystem
+launcher
+multi-platform
+ncurses
+productivity
+raspberry-pi
+search
+suckless
+terminal
+vim
+wsl
+atom
+iterm
+one-dark
+terminal
+theme
+zsh
+cli
+go
+golang
+slack
+terminal
+tui
+animation
+cli
+recorder
+recording
+shell
+svg
+svg-animations
+terminal
+chat
+collaboration
+python
+python3
+terminal
+urwid
+zulip
+zulip-client
+java
+javafx
+shell
+terminal
+terminal-emulators
+cli
+json
+file-manager
+terminal
+can-bus
+qt
+scripting
+serial
+serialport
+spi-master
+tcp
+terminal
+udp
+libwebsockets
+openwrt
+terminal
+terminal-emulators
+tty
+websocket
+xterm
+hacktoberfest
+productivity
+shell
+terminal
+theme
+zsh-configuration
+command-line
+cross-platform
+editor
+go
+golang
+micro
+terminal
+text-editor
+cli
+rust
+spotify
+spotify-api
+spotify-tui
+terminal
+terminal-based
+emoji
+python
+instagram
+python
+python-console
+python-terminal
+terminal-based
+backup
+bash
+cheatsheet
+currency-converter
+encryption
+movies
+qrencode
+recommendation-engine
+stock-prices
+url-shortner
+weather
+youtube-player
+electerm
+electron
+file-manager
+sftp
+ssh
+terminal
+artisan
+laravel
+terminal
+web
+auto-completion
+database
+mycli
+mysql
+python
+syntax-highlighting
+c
+opengl
+python
+terminal-emulators
+terminfo
+vt100
+cli
+cli-menu
+menu
+terminal
+cheatsheets
+command-line
+command-line-tool
+linux
+macos
+terminal
+2048
+c
+cli
+game
+ncurses
+nyan-cat
+poptart-cat
+telnet
+terminal
+brick
+game
+haskell
+terminal-game
+tetris
+tui
+vty
+ocaml
+rust
+text-editor
+charts
+dashboard
+gauges
+python
+python3
+terminal
+terminal-based
+http
+http-client
+http-requests
+terminal
+terminal-based
+user-interface
+clojure
+clojure-library
+clojurescript
+readline-library
+repl
+hyper
+icon-pack
+icons
+iterm2
+sketchapp
+terminal
+editor
+editors
+ox
+rust
+terminal
+terminal-based
+termion
+tui
+hexo-theme
+simple
+app
+bash
+cli
+ios
+terminal
+angular
+angular7
+angular8
+component
+keyboard-events
+shell
+telnet
+terminal
+xterm
+xtermjs
+art
+linux
+macos
+rust
+terminal
+fortune
+motivation
+python
+python-3
+terminal
+appkit
+ios
+macos
+swift
+uikit
+vt100
+xterm
+xterm-256color
+cli
+markdown
+presentation
+slide-deck
+slides
+terminal
+filemanager
+linux
+osx
+terminal
+cloud
+docker
+emulator
+java
+shell
+terminal
+tty
+web
+websocket
+arm
+avr
+c
+cli
+command-line
+command-line-interface
+embedded-c
+lpc
+microcontroller
+rs232
+stm32
+terminal
+uart
+template
+terminal-theme
+openhardware
+vt100
+bash
+command-line-tool
+snippets
+broadcast
+hacktoberfest
+live-broadcasts
+shell
+terminal-share
+bash
+cli
+color-theme
+colorscheme
+nord
+shell
+terminal
+terminal-theme
+xfce
+zsh
+color-scheme
+macos
+snazzy
+terminal
+terminal-theme
+reddit
+vue
+bash
+bashrc
+beautifier
+beautify
+color-scheme
+command-line
+git
+git-beautify
+macos
+os-x
+osx
+terminal
+theme
+tmux
+vim
+git-scraping
+deprecated
+awesome
+awesome-list
+curl
+resources
+terminal
+command-line
+runtime
+terminal
+unity
+hyper
+pikachu
+pokemon
+theme
+coco
+django
+jumpserver
+koko
+luna
+python
+ssh-server
+terminal
+web-terminal
+console
+library
+sixel
+sixel-graphics
+terminal-emulators
+unicode
+unicode-support
+vte
+xterm
+console
+console-application
+cpp
+reactive
+reactive-streams
+terminal
+ascii
+doom
+game-engine
+raycasting
+raycasting-engine
+remote-console
+remote-control
+remote-debug
+remote-shell
+tty
+ttyd
+webshell
+game-engine
+golang
+terminal
+terminal-game
+mate-desktop
+solarized
+terminal
+awesome
+awesome-list
+hyper
+hyperterm
+terminal
+zeit
+cli
+dev-tool
+hacktoberfest
+linux
+shell
+ubuntu
+terminal
+terminal-based
+website
+website-portfolio
+ascii
+ascii-art
+cpp
+curse
+simple
+terminal
+terminal-based
+tui
+ui
+user-interface
+xterm
+emacs
+libvterm
+terminal
+terminal-emulator
+powershell-core
+windows-terminal
+android
+termux
+nodejs
+wechat-client
+feed
+news-feed
+reader
+rss-reader
+terminal
+flask
+flask-application
+flask-socketio
+terminal
+terminal-emulators
+xterm-js
+im
+keyboard-layout
+linux
+mac
+terminal
+windows
+emacs
+terminal-emulators
+effect
+hacker
+matrix
+movie
+sneakers
+terminal
+rust
+stocks
+tui
+bash
+efficiency
+productivity
+project-management
+shell
+workspace-manager
+multiplexer
+node
+npm
+script
+simple
+terminal
+machine-learning
+nlp
+python
+search
+c
+console
+terminal
+terminal-app
+terminal-emulators
+cheatsheet
+cli
+command-line
+curl
+documentation
+examples
+help
+terminal
+tldr
+cli
+cli-game
+console
+game
+games
+hangman
+hangman-cli
+hangman-console
+hangman-game
+salifm
+terminal
+terminal-game
+tic-tac-toe
+tictactoe
+file-browser
+file-manager
+terminal
+binaries
+enumeration
+exe
+exploit
+gtfobins
+linux
+lolbas
+windows
+command-line
+decentralized
+instant-messaging
+p2p
+terminal
+chalk
+c
+image
+linux
+macos
+terminal
+terminal-app
+terminal-graphics
+video
+videos
+youtube
+readline
+terminal
+baidu
+fanyi
+iciba
+terminal
+tools
+translate
+translation
+youdao
+cloudcmd
+console
+emulator
+nodejs
+terminal
+tty
+vt100
+web
+xterm
+terminal
+gtk
+lxde
+terminal
+terminal-emulators
+vte
+bitwise
+bitwise-operation
+c
+curses
+linux
+terminal-app
+applied-energistics
+bukkit
+chest-terminal
+minecraft
+mod
+slimefun
+slimefun-addon
+terminal
+zsh
+zsh-theme
+bash
+cli
+daily-notes
+linux
+note-taking
+notes
+productivity
+shell
+shell-script
+standup
+standup-meetings
+terminal
+tools
+command-line
+shell
+terminal
+terminal-emulators
+tty
+font
+typeface
+curses
+ncurses
+ncurses-library
+ncurses-tui
+terminal
+terminal-colors
+tui
+asymmetric-cryptography
+blockchain
+hyperledger-fabric
+ipfs
+medical-records
+cli
+client
+discord
+discord-py
+linux
+terminal
+cli
+loading-animations
+spinner
+monitoring
+multi-platform
+python
+restful
+restful-api
+system
+terminal
+web
+advancednewfile
+mkdir
+python
+terminal
+touch
+darth-vader
+hyper
+star-wars
+theme
+yoda
+golang
+matrix
+matrix-client
+matrix-org
+tui
+cli
+command-line
+interactive
+prompt
+terminal
+vt100
+chat
+cli
+instagram
+dotfiles
+plugins
+shell
+zsh
+c
+console-app
+console-application
+multiplexer
+terminal
+terminal-emulators
+audio
+linux
+music
+youtube-search
+benchmark
+cli
+command-line
+rust
+terminal
+tool
+ebook-server
+hacktoberfest
+python3
+terminal-based
+attack-defense
+ctf
+python
+reverse-shell
+socket
+bash
+dotfiles
+shell
+terminal
+zsh
+bash-configuration
+oh-my-bash
+productivity
+shell
+terminal
+theme
+fitbit
+fitbit-clockface
+fitbit-ionic
+fitbit-versa
+horology
+terminal
+alacritty
+colorscheme
+gnome-terminal
+iterm
+iterm2
+neovim
+sublimetext
+terminal
+vim
+xcode
+xcode-color-theme
+hint
+keyboard-shortcuts
+productivity
+tmux
+tmux-plugins
+vimium
+vimperator
+cli
+cursive
+rust
+stackexchange
+stackoverflow
+terminal
+tui
+cli
+curses
+python
+terminal
+curses
+lua
+terminal
+tui
+ui
+xmake
+client
+telegram
+term
+terminal
+tg
+tui
+files
+graphics
+imagemagick
+ls
+montage
+sixel-graphics
+terminal
+terminal-graphics
+thumbnails
+vt340
+xterm
+cmd
+command-line
+console
+terminal
+windows-console
+windows-terminal
+wsl
+animated
+bash
+bash-profile
+capture
+colors
+command-line
+font
+generate
+gif
+powershell
+pty
+record
+render
+repeat
+shell
+shot
+terminal
+theme
+tty
+zsh
+ansi-art
+cli
+command
+command-line
+emulator
+interpreter
+interpreters
+javascript
+jquery-terminal
+json-rpc
+parse
+parse-commands
+shell
+terminal
+awesome-lists
+cli-lovers
+curated-list
+terminal
+color-schemes
+macos
+terminal
+terminal-themes
+command-line
+notifications
+objective-c
+osx
+ruby
+css
+html
+hyper
+javascript
+linux
+macos
+react
+terminal
+terminal-emulators
+asciicast
+recorder
+recording
+terminal
+terminal-recording
+client
+putty
+rdp
+remote-control
+ssh
+telnet
+terminal
+terminals
+bash
+color-scheme
+gnome-terminal
+linux
+mint
+pantheon-terminal
+shell
+terminal
+console
+development
+ssh
+terminal
+terminal-emulator
+tty
+typescript
+xterm
+bash
+iterm2
+linux
+pikachu
+pokemon
+pokemon-terminal
+style
+terminal
+terminology
+theme
+tilix
+dircolors
+gnome-terminal-themes
+solarized
+bsd
+gpu
+linux
+macos
+opengl
+rust
+terminal
+terminal-emulators
+vte
+windows
+ansi
+ansi-escape-codes
+chalk
+cli
+color
+commandline
+console
+javascript
+strip-ansi
+terminal
+terminal-emulators
+mintty
+terminal-emulator
+windows-subsystem-linux
+wsl
+ansi-colors
+ascii-graphics
+cpp
+terminal-graphics
+gtk
+gtk3
+hacktoberfest
+meson
+vala
+vte
+browser
+go
+javascript
+terminal
+tty
+typescript
+web
+websocket
+android
+linux
+linux-distribution
+packages
+termux
+blog
+duotone
+firacode
+hugo
+hugo-theme
+minimal
+monospace
+personal-site
+terminal
+bash
+console
+shell
+terminal
+antd
+antd-design
+docker
+go
+golang
+guacamole
+rdp
+react
+ssh
+vnc
+ascii-art
+ascii-table
+forecast
+go
+terminal
+weather
+wego
+angular
+electron
+terminal
+terminal-emulators
+typescript
+guake
+guake-terminal
+terminal
+terminal-emulator
+mosh
+remote-shell
+ssh
+terminal
+tmux
+android
+linux
+terminal
+termux
+cli
+git
+terminal
+command-line
+console
+google
+google-news
+google-search
+google-site-search
+search
+standalone
+terminal
+web-search
+console
+electron
+pty
+react
+shell
+terminal
+terminal-emulators
+terminals
+tty
+typescript
+color-scheme
+freebsd-vt
+iterm
+iterm2
+konsole
+konsole-color-schemes
+lxterminal
+osx-terminal-themes
+putty
+putty-color-schemes
+schemes
+terminal
+terminal-schemes
+terminal-themes
+terminator
+theme
+themes
+windows-terminal
+xrdb
+xresources
+cui
+dashboard
+devops
+go
+golang
+terminal
+tui
+wtf
+wtfutil
+bandwidth
+cli
+dashboard
+networking
+css
+design
+javascript
+react
+svg
+terminal
+webapp
+webpack
+devtools
+javascript
+terminal
+ascii
+box
+console
+library
+python
+table
+terminal
+javascript
+node
+slack
+terminal
+command-line
+curses
+python
+reddit
+reddit-client
+terminal
+tui
+awesome
+awesome-list
+list
+macos
+macosx
+shell
+terminal
+android
+batch-renamer
+c
+cli
+command-line
+console
+disk-usage
+file-manager
+file-preview
+filesystem
+launcher
+multi-platform
+ncurses
+productivity
+raspberry-pi
+search
+suckless
+terminal
+vim
+wsl
+atom
+iterm
+one-dark
+terminal
+theme
+zsh
+cli
+go
+golang
+slack
+terminal
+tui
+animation
+cli
+recorder
+recording
+shell
+svg
+svg-animations
+terminal
+chat
+collaboration
+python
+python3
+terminal
+urwid
+zulip
+zulip-client
+java
+javafx
+shell
+terminal
+terminal-emulators
+markdown
+python
+terminal
+theme
+viewer
+cli
+json
+file-manager
+terminal
+can-bus
+qt
+scripting
+serial
+serialport
+spi-master
+tcp
+terminal
+udp
+libwebsockets
+openwrt
+terminal
+terminal-emulators
+tty
+websocket
+xterm
+hacktoberfest
+productivity
+shell
+terminal
+theme
+zsh-configuration
+command-line
+cross-platform
+editor
+go
+golang
+micro
+terminal
+text-editor
+cli
+rust
+spotify
+spotify-api
+spotify-tui
+terminal
+terminal-based
+emoji
+python
+instagram
+python
+python-console
+python-terminal
+terminal-based
+backup
+bash
+cheatsheet
+currency-converter
+encryption
+movies
+qrencode
+recommendation-engine
+stock-prices
+url-shortner
+weather
+youtube-player
+color-palette
+color-scheme
+color-themes
+configuration
+hacktoberfest
+srcery
+commandline
+linux
+open-source
+serial
+terminal
+tty
+uart
+r
+hyper
+iterm
+iterm2
+iterm2-theme
+konsole
+konsole-color-schemes
+putty
+putty-color-schemes
+relaxed
+relaxed-theme
+terminal
+terminal-theme
+terminal-themes
+terminator
+termite
+theme
+xresources
+animation
+css
+html-api
+javascript
+javascript-library
+terminal
+cli
+image-viewer
+rust
+terminal
+2048
+2048-game
+cpp
+cpp11
+game
+dotfiles
+tmux
+tmux-config
+tmux-configs
+tmux-configuration
+golang
+sharing
+ssh
+terminal
+tools
+upterm
+color-scheme
+vim
+dotfiles
+shell
+terminal
+theme
+zsh
+cli
+dashboard
+github
+go
+golang
+google-analytics
+google-search-console
+gopher
+metrics
+monitoring
+terminal
+terminal-dashboards
+tui
+colorization
+gem
+ruby
+cli
+command-line
+golang
+interactive
+prompt
+unix
+windows
+bash
+cli
+framework
+ios
+iossystem
+no-jailbreak
+openterm
+sandbox
+script
+shell
+terminal
+unix
+chat
+chat-application
+cli
+socket
+socket-io
+terminal
+ansi-escape-codes
+terminal-emulators
+bbs
+kermit
+vt100
+xmodem
+xterm
+ymodem
+zmodem
+c
+ncurses
+solitaire-game
+tty-game
+csharp
+curses
+dotnet
+gui
+terminal
+toolkit
+cli
+cli-app
+slack
+slack-api
+terminal
+ansi
+cli
+graphics
+graphics-library
+image-processing
+image-viewer
+images
+sixel
+terminal
+terminal-based
+terminal-graphics
+unicode-characters
+command-line
+curses
+hacktoberfest
+podcast
+podcast-client
+terminal
+tui
+docker
+js
+terminal
+websocket
+algolia
+cli
+npm
+terminal
+yarn
+ansi
+ansi-escape-codes
+carthage
+cocoapods
+color
+swift
+terminal
+xcode
+command-line
+git
+rat
+shell
+terminal
+alsa
+audio-engine
+audio-player
+coreaudio
+cross-platform
+curses
+directsound
+music-library
+music-player
+music-player-client
+pulseaudio
+terminal
+wasapi
+configuration
+dot-config
+dotfile
+dotfiles
+shell
+terminal
+tmux
+client
+slack
+swift
+terminal
+parser
+rust
+terminal
+vte
+logging-library
+mobile-app
+trojan
+ansi
+bmp
+cli
+color
+gif
+go
+golang
+image
+jpeg
+png
+terminal
+tiff
+tool
+true
+webp
+r
+android
+linux
+neoterm
+terminal
+terminal-app
+terminal-emulators
+cli-app
+image
+nodejs
+npm-package
+terminal-image
+cli
+cli-tool
+music
+music-player
+python
+python3
+spotify
+spotify-api
+spotify-connect
+spotify-tui
+spotui
+terminal
+terminal-app
+terminal-based
+tui
+command
+manager
+restore
+setup
+startup
+terminals
+color
+console
+gradient
+nodejs
+terminal
+apollo
+cli
+graphql
+schema
+terminal
+atom
+atom-feed
+atom-reader
+go
+golang
+gorss
+opml
+reader
+rss
+rss-feed
+rss-reader
+commandline
+commandline-interface
+hacktoberfest
+pypi
+python
+stackoverflow
+terminal-app
+console
+console-application
+ncurses
+spreadsheet
+terminal
+terminal-app
+vim
+ascii-art
+terminal
+video-player
+youtube
+c
+console
+editor
+hacktoberfest
+terminal
+text
+text-editor
+ansi-colors
+command-history
+console
+jline
+log4j
+log4j2
+log4j2-appender
+terminal
+rust
+supports-redox
+terminal
+tty
+tui
+bash
+bash-alias
+bash-completion
+bash-configuration
+bash-hacks
+bash-prompt
+productivity
+shell
+terminal
+themes
+bitcoin
+blockchain
+cli
+coin
+coingecko
+coinmarketcap
+command-line
+console
+cryptocurrency
+digital-currency
+ethereum
+go
+golang
+holdings
+homebrew
+linux
+macos
+monitoring
+portfolio
+terminal
+julia
+plots
+plotting
+repl
+terminal
+unicode
+customisation
+customization
+status-bar
+terminal
+ascii
+cli
+go
+golang
+table
+terminal
+cli-app
+getpocket
+python
+dark-syntax-theme
+panda-syntax
+theme
+visual-studio-code
+ascii
+nodejs
+progress
+progress-bar
+applescript
+finder
+finder-toolbar
+iterm2
+mac
+terminal
+autocomplete
+bash
+cli
+fish
+iterm2
+macos
+shell
+terminal
+zsh
+cli
+color
+eye-candy
+gem
+icons
+ls
+ruby
+terminal
+cli
+command-line
+git
+hacktoberfest
+rust
+syntax-highlighting
+terminal
+tool
+ansi-colors
+cron
+html
+logging
+python
+syslog
+terminal
+oh-my-zsh
+prompt
+shell
+shell-prompt
+shell-theme
+spaceship
+terminal
+zsh
+zsh-theme
+zsh-users
+cli-spinners
+ruby
+spinner
+spinner-frames
+spinner-icon
+terminal
+unicode-symbols
+elixir
+terminal
+tui
+addon
+chrome
+cli
+firefox
+javascript
+ssh
+1secmail
+aur
+bash
+commandline
+disposable-email
+linux
+macos
+posix
+posix-sh
+receive-emails
+temporary-email
+tmpmail
+terminal
+webpage
+aidungeon
+terminal
+abrir
+arquivo
+arquivo-json
+distro
+linux
+linux-terminal
+linux-ubuntu-lts
+precisamos
+seguinte-comando
+subistema
+vamos-instalar
+windows
+windows-terminal
+windows-terminal-configure
+windows-terminal-preview
+windows10
+wsl
+wsl2
+zsh
+cli
+mellplayer
+player
+terminal
+bash
+color
+pineapple
+shell
+terminal
+zsh
+cli
+cli-app
+computer-graphics
+graphics
+graphics-3d
+hacktoberfest
+rust
+chat
+command-line-tool
+lan
+terminal
+gnome
+nautilus
+nautilus-extension
+python
+bitcoin
+bitcoin-price
+bitcoin-price-prediction
+machine-learning
+technical-analysis
+trading
+trading-bot
+trading-systems
+cli
+docker
+golang
+javascript
+netcat
+real-time
+stdout
+stream
+streamhut
+telnet
+terminal
+terminal-share
+web
+websockets
+go
+linux-terminal
+osx-terminal
+terminal-session
+terminal-share
+terminal-sharing
+tty
+unix-terminal
+monitoring
+raspberry-pi
+terminal-based
+analytics
+apache
+c
+cli
+command-line
+dashboard
+data-analysis
+gdpr
+goaccess
+google-analytics
+monitoring
+ncurses
+nginx
+privacy
+real-time
+terminal
+tui
+web-analytics
+webserver
+ascii-art
+graphics
+javascript
+nodejs
+rasterizer
+terminal
+git
+minimal
+prompt
+pure
+shell
+shell-prompt
+shell-theme
+terminal
+theme
+zsh
+idea-plugin
+intellij-plugin
+intellijidea-plugin
+jetbrains-plugin
+clojure
+clojure-library
+terminal
+golang
+terminal-colors
+windows-10
+elixir
+game
+browser-based
+dash-docset
+documentation-tool
+offline-first
+shell-scripts
+terminal-based
+w3m
+hacktoberfest
+c-plus-plus
+feed-reader
+rss
+rss-reader
+terminal
+typescript
+visual-studio-code
+vscode
+vscode-extension
+addon
+addons
+home-assistant
+home-automation
+homeassistant
+ssh
+ssh-server
+2048
+ncurses
+terminal
+terminal-game
+aarch64
+assembly
+gui
+linux
+lisp
+os
+osx
+raspberry-pi-3
+vm
+x86-64
+patches
+st
+suckless
+terminal
+xst
+choice
+cli
+cli-app
+cmd
+command-line
+command-line-interface
+command-line-tool
+inquirer
+loading
+progress
+progress-bar
+prompt-toolkit
+pyinquirer
+select
+terminal-colors
+terminal-ui
+ansi-colors
+go
+terminal
+browser
+gemini
+gemini-protocol
+go
+golang
+hacktoberfest
+terminal
+tui
+animation
+code
+demo
+editor
+mac
+snippet
+terminal
+admin-tools
+ncurses
+systemd
+chat-robot
+node
+pip3
+python
+python3
+cli
+command-line
+filesystem
+regex
+rust
+search
+terminal
+tool
+android
+termux
+liri
+qml
+qtquick
+qtquick-controls2
+terminal
+game
+javascript
+node
+snake
+android
+cli
+console
+launcher
+linux
+shell
+terminal
+command-line
+git
+log
+dark-theme
+emacs
+light-theme
+spacemacs
+spacemacs-theme
+theme
+bash
+curses
+terminal
+command
+terminal
+chess
+hacktoberfest
+python
+cmd
+entertainment
+funny
+python
+terminal-based
+text-based
+wikipedia
+bar
+bar-chart
+chart
+cli
+library
+nodejs
+terminal
+command-line
+regex
+rust
+terminal
+text-processing
+cli
+cowsay
+fortune
+party-parrot
+partyparrot
+terminal
+ansi
+ascii
+ascii-chart
+browser
+chart
+charting
+charting-library
+console
+console-log
+graph
+javascript
+js
+line-charts
+lines
+node-js
+nodejs
+plot
+terminal
+text-chart
+bash
+screen
+tmux
+ubuntu
+wsd
+boltdb
+command-line-tool
+go
+golang
+cli
+fzf
+tmux
+tmux-plugin
+tui
+cli
+console
+fancy
+log
+node
+terminal
+hacktoberfest
+cli
+collaboration
+pair-programming
+ssh
+terminal-based
+tools
+tunnel
+golang
+pty
+terminal
+terminal-colors
+ansi
+canvas
+cursor
+javascript
+low-level
+nodejs
+terminal
+wrapper
+hyper
+hyper-theme
+solarized
+solarized-dark-theme
+theme
+hass
+hassio
+hassio-addons
+home-assistant
+home-automation
+homeassistant
+shell
+terminal
+webterminal
+minesweeper
+minesweeper-game
+roguelike
+terminal
+bash
+cmd
+javascript
+shell
+terminal
+vue
+vuejs
+ansi-colors
+ascii
+bash
+cli
+console
+ffmpeg
+opencv
+opensource
+pip
+pixel
+play-videos
+portaudio
+python
+python3
+terminal
+video
+wav
+dotfiles
+fancy
+yay
+colors
+escape-sequences
+ruby
+ruby-gem
+string-styling
+style
+terminal-emulators
+terminal-themes
+c
+irc
+irc-client
+rirc
+cli
+progress
+progress-bar
+progressbar
+progressbars
+terminal
+exec
+java
+kubernetes
+terminal
+client
+golang
+mac
+terminal
+wechat
+wechat-bot
+wechat-sdk
+dec
+terminal
+terminal-emulators
+vt100
+command-line-tool
+redis
+redis-cli
+redis-client
+cat
+iterm2
+markdown
+rust
+terminal
+forkpty
+openpty
+pseudoterminal
+pty
+terminal
+winpty
+console
+java
+jvm
+kotlin
+monitoring
+terminal
+base16
+base16-shell
+color-scheme
+visual-studio-code
+python
+terminator
+chat-board
+gitter-cli
+gitter-client
+javascript
+dahliaos
+dart
+flutter
+linux
+terminal
+kubernetes
+shell
+terminal
+web
+electerm
+electron
+file-manager
+sftp
+ssh
+terminal
+artisan
+laravel
+terminal
+web
+auto-completion
+database
+mycli
+mysql
+python
+syntax-highlighting
+c
+opengl
+python
+terminal-emulators
+terminfo
+vt100
+command-line
+console
+duckduckgo
+duckduckgo-bang
+privacy-aware
+standalone
+terminal
+web-search
+dashboard
+golang
+terminal-based
+colorama
+print-color
+terminal-colors
+javascript
+terminal
+c
+matrix
+screensaver
+bash
+commands
+console
+fake
+ftw
+javascript
+js
+linux
+template
+terminal
+website
+cli
+game
+python
+facebook
+messenger
+terminal
+email
+mua
+notmuch
+urwid
+graphics
+lisp
+repl
+doge
+python
+shibe
+wow
+asciicast
+player
+terminal
+tty
+unix
+video
+video-playback
+unity
+color
+console
+cross-platform
+cursor
+input
+terminal
+tui
+ascii
+blog
+chart
+cli
+console
+data-visualization
+terminal
+terminal
+vue
+vue-terminal
+bash
+pipes-sh
+pipeseroni
+terminal-screensaver
+cli-utility
+image
+nodejs
+npm-package
+terminal-image
+android
+usb
+cli
+command-line
+command-line-interface
+git
+rust
+tool
+desktop
+edex-ui
+electron
+linux
+macos
+nodejs
+science-fiction
+shell
+terminal
+touchscreen
+tron
+unixporn
+windows
+android
+bluetooth
+bash
+desktop
+information-retrieval
+shell
+golang
+pion-webrtc
+tty
+webrtc
+webrtc-experiments
+golang
+terminal-based
+user-interface
+async
+halo
+ipython
+jupyter
+ora
+python
+spinner
+go
+golang
+gowid
+pcap
+tcell
+tshark
+tui
+wireshark
+terminal
+terminal-app
+tui
+ui
+cli
+console
+cpu
+frequency
+monitoring
+power
+psutil
+stress
+stress-test
+temperature
+terminal
+tui
+urwid
+utilization
+console
+cui
+dashboard
+gui
+kubernetes
+monitoring
+openshift
+terminal
+tui
+curl
+parrot
+party
+terminal
+apps
+awesome
+awesome-list
+list
+shell
+software
+unix
+tilix-terminal
+tilix-themes
+dlang
+gtk3
+terminal
+terminal-emulators
+vte
+dashboard
+rust
+terminal
+tui
+docker
+docker-cli
+docker-engine
+docker-swarm
+golang
+es6
+nodejs
+golang
+search
+terminal
+command-line
+sharing
+shell
+terminal
+tls
+context-menu
+enhancement
+windows-terminal
+analytics
+cli
+terminal
+wappalyzer
+material-design
+materialshell
+shell
+zsh
+css
+electron
+html
+javascript
+terminal
+terminal-emulators
+typescript
+windows-subsystem-linux
+wsl
+rust
+terminal
+text-editor
+vim
+current
+extension
+finder
+folder
+go
+hyper
+iterm
+shell
+sync
+terminal
+toolbar
+ascii
+emulator
+game
+gameboy
+ternimal
+python
+rainbowstream
+terminal
+twitter
+arduino
+ble
+bluetooth
+bluetooth-low-energy
+bluetooth-smart
+communication
+iot
+physical-web
+pwa
+serial
+terminal
+haskell
+markdown
+pandoc
+presentation
+slides
+slideshow
+embedded
+http-proxy
+libev
+nat
+proxy
+remote-console
+remote-control
+remote-debug
+remote-shell
+ssh-bridge
+tty
+ttyd
+webshell
+webssh
+monitoring
+nodejs
+telemetry
+bash
+bash-script
+cli
+commands
+tmux
+tmux-plugins
+zsh-completions
+binance
+bitcoin
+bot
+ccxt
+crypto
+cryptocurrency
+dashboard
+exchange
+exchange-markets
+exchange-trading
+stock
+stock-data
+terminal
+trade
+trader
+trader-workstation
+trading
+trading-api
+trading-platform
+trading-strategies
+dark-theme
+dracula
+gnome-terminal
+command-line
+hyper
+nextjs
+plugins
+terminal
+themes
+website
+dark-theme
+dracula
+terminal
+theme
+android
+bluetooth-le
+ansi-colors
+emoji
+hacktoberfest
+markdown
+progress-bar
+progress-bar-python
+python
+python-library
+python3
+rich
+syntax-highlighting
+tables
+terminal
+terminal-color
+traceback
+tracebacks-rich
+hacktoberfest
+i3
+i3wm
+tmux
+tui
+preview-themes
+cheatsheet
+ubuntu
+leetcode
+leetcode-website-viewer
+python
+terminal
+command-line
+commandlineparser
+completions
+dotnet-core
+dotnet-standard
+dotnet-suggest
+parser
+parsing
+posix
+system-commandline
+terminal
+vt100
+cryptocurrencies
+financial-markets
+golang
+golang-application
+quotes
+stock-market
+stock-positions
+stocks
+stocks-app
+symbols
+terminal
+terminal-app
+ticker
+tui
+go
+progress-bar
+terminal
+cli
+csv
+datajournalism
+datawrangling
+devops-tools
+eda
+hdf5
+json
+opendata
+pandas
+python
+reconciliation
+spreadsheet
+sqlite
+tabular-data
+tsv
+tui
+unix-toolkit
+npyscreen
+python
+telegram
+telegram-client
+telethon
+quake
+terminal
+windows
+eurorack
+bash
+compressed-files
+linux
+nmap
+sqlmap
+ssh
+sudo
+superuser
+tar
+terminal
+trivia
+unix
+unix-command
+unix-shell
+linux
+macos
+qml
+qt
+retro
+terminal
+cli
+disk-space
+navigator
+terminal
+visualization
+cli
+cli-app
+cli-application
+cli-command
+cli-tool
+cli-utilities
+cli-utility
+command-line
+node
+nodejs
+game
+slacker
+terminal
+tetris
+abp-vnext
+dotnet-core-webapi
+prism
+qt-quick
+wpf
+xamarin-forms
+kano-os
+animation
+chalk
+color
+console
+nodejs
+npm-package
+terminal
+terminal
+atom-command
+atom-editor
+atom-package
+atom-terminal
+coffeescript
+fancy
+plugin
+csharp
+unity
+assistant
+linux
+nlp-machine-learning
+sarah
+semicode-os
+bash
+cli
+color
+color-scheme
+color-theme
+colorscheme
+gnome
+gnome-terminal
+gnome-terminal-themes
+nord
+shell
+terminal
+theme
+zsh
+irc-client
+rust
+terminal-app
+pentest
+php
+python
+security-tools
+webshell
+webshell-sniper
+efficiency
+mind-mapping
+mindmaps
+organizer
+personal-organizer
+priorities
+rust
+sparkline
+task
+task-framework
+task-list
+task-tracker
+terminal
+terminal-based
+text-editor
+time-series
+recording
+sharing
+terminal
+web
+command-line
+hyperlink
+hyperlink-support
+nodejs
+npm-package
+terminal
+julia
+terminal
+gnome
+gtk
+linux
+terminal
+terminal-emulators
+dark-theme
+dracula
+windows-terminal
+async
+command-line-interface
+command-line-tool
+git
+hacktoberfest
+rust
+terminal
+tui
+cli
+command-line-tool
+console
+containers
+docker
+nodejs
+bash
+cli
+color
+color-scheme
+color-theme
+nord
+shell
+terminal
+terminal-app
+theme
+zsh
+countdown
+python
+stopwatch
+terminal
+timer
+git
+iterm2
+productivity
+touchbar
+zsh
+console
+icon
+icons
+powershell
+terminal
+dashboard
+grafana
+graphs
+metrics
+observability
+prometheus
+terminal
+color-schemes
+kitty
+kitty-terminal
+kitty-themes
+terminal
+terminal-themes
+themes
+cli
+shell
+utils
+ansi
+terminal
+unicode
+weather
+colorscheme
+dark-theme
+gnome
+gnome-terminal
+light-theme
+palette
+theme
+automation
+choice
+cli
+components
+create-react-app
+generate-component
+react
+react-components
+reactjs
+terminal
+tool
+academic
+bash
+bryan-jenks
+cli
+command-line
+command-line-app
+command-line-tool
+flashcards
+hacktoberfest
+learning
+student
+study
+studying
+terminal
+cassia
+powershell
+powershell-script
+ps1
+remote-machine
+terminal-session
+winforms
+ayu
+ayu-theme
+terminal-app
+terminal-theme
+arbitrary-code-execution
+deception
+escape-injection
+escape-sequences
+injection
+linux
+macos
+safety
+terminal-emulator
+windows
+cli
+hacker-news
+hn
+terminal
+color
+python
+regex
+terminal
+roguelike
+roguelike-library
+roguelikedev
+terminal
+brick
+client
+haskell
+mattermost
+mattermost-chat
+tui
+reader
+terminal
+text
+tui
+commandline
+commandline-interface
+pixel
+pixel-art
+pixel-art-maker
+terminal
+tui
+command-line-tool
+file-sharing
+linux
+macos
+mobile
+python
+qr-filetransfer
+qrcode
+smartphone
+terminal
+transfer
+transfer-files
+wifi
+rust
+terminal
+text-editor
+utf-8
+256-colors
+ansi
+colors
+console
+linux
+macosx
+nesting-styles
+python
+python3
+string
+style
+terminal
+truecolor
+windows
+remote-shell
+ruby-on-rails
+ssh
+bitcoin
+bitcoin-price
+charts
+cli
+coingraph
+cryptocompare-api
+cryptocurrencies
+cryptocurrencies-graph
+cryptocurrency
+cryptocurrency-graph
+es7-async
+ethereum-price
+functional-programming
+javascript
+nodejs
+npm-package
+terminal
+cli
+go
+todo
+cash-cli
+cli
+convert-currency-rates
+currencies
+currency
+exchange
+exchange-rates
+fixer-io
+javascript
+money
+nodejs
+npm
+npm-package
+open-source
+rates
+terminal
+xo
+color-scheme
+gnome
+gnome-terminal
+linux
+oceanic
+palette
+theme
+bash
+data-processing
+grep
+hardware
+linux
+linux-administration
+one-liners
+oneliner-commands
+shell
+shell-oneliner
+system
+terminal
+variables
+xargs
+xwindow
+alfred
+atom
+chrome
+cmd
+conemu
+hacktoberfest
+hyper
+iterm
+lightline
+sketch
+slack
+sublime-text
+terminal
+theme
+themer
+trianglify
+vim
+vscode
+wallpapers
+xcode
+bash
+plugin
+productivity
+shell-script
+thirsty
+zsh
+golang
+qrcode
+utility
+android-application
+java
+terminal
+usb-hid
+command-line
+iterm2
+matplotlib
+plot
+python
+visualization
+jabber
+remote-control
+remote-shell
+ruby
+shell
+animation
+decorating
+decorators
+python
+terminal
+cli
+mac
+nodejs
+spotify
+color
+python
+terminal
+lyrics
+lyrics-fetcher
+mpris2
+python
+spotify-lyrics
+terminal
+linux
+netease-cloud-music
+netease-cloudmusic
+netease-music-tui
+rust
+rust-language
+tui
+bash
+cheatsheets
+cli
+command-line
+hacktoberfest
+rust
+shell
+snippet
+snippets
+terminal
+ansi-term
+colors
+crates
+rust
+terminal
+color-palette
+color-schemes
+palettes
+terminal
+console
+cross-platform
+emulator
+terminal
+terminal-emulator
+xterm
+xterm256
+display
+image
+linux
+python
+terminal
+keyboard
+macos
+shortcuts
+terminal
+animation
+extension
+gradient-border
+hyper
+hyperterm
+console-tool
+frequency
+interval
+progressbar
+rubygem
+terminal
+tty
+tty-components
+ansii
+command-line
+markdown
+markdown-slides
+markdown-viewer
+python
+slides
+terminal
+theme
+cli
+cli-app
+ruby-cli
+ruby-gem
+terminal
+tty-components
+ble
+bluetooth
+bluetooth-low-energy
+bluetooth-smart
+communication
+iot
+physical-web
+serial
+terminal
+music
+pafy
+player
+python
+terminal
+urwid
+youtube
+ansi
+ansi-colors
+escape-sequences
+fast
+rgb-colors
+ruby
+ruby-cli
+terminal
+true-color
+asynchronous
+django
+gateone
+jumpserver
+management-system
+multiuser
+realtime
+ssh
+terminal
+terminal-emulators
+websocket
+webssh
+webterminal
+android
+android-rocket-launcher
+deployment
+launch
+library
+plugin
+tool
+console
+framework
+gui
+terminal
+tui
+atom
+cmd
+coffeescript
+linux
+macos
+powershell
+terminal
+windows
+xterm
+colour-scheme
+exa
+iterm2
+kitty
+neovim
+prismjs
+terminal-theme
+vim
+vim-colorscheme
+browser
+gui
+javascript
+nodejs
+terminal
+cli
+docker
+dockerhub
+python
+table
+mutt
+python
+urlscan
+urlview
+julia
+logging
+terminal-based
+azerothcore
+mangos
+php
+server
+trinitycore
+worldofwarcraft
+ansi-escape-codes
+console
+logging
+nodejs
+macos
+terminal
+ansi
+async-programming
+bbs
+c-plus-plus
+cpp
+sdl2
+sdl2-net
+ssh-client
+telnet-client
+terminal-emulator
+color
+prettyprint
+syntax-highlighting
+linux
+python3
+server
+vps
+cli
+man
+npm
+eye-candy
+hackerman
+maintenance
+productivity
+system-administration
+terminal
+utility
+ncurses
+rust
+terminal
+tui
+console
+sublime-text
+terminal
+frontend
+terminal
+text-editor
+tui
+xi
+console-app
+pomodoro
+pomodoro-timer
+productivity
+prompt-toolkit
+pydoro
+python
+terminal-app
+terminal-based
+tomato-timer
+git
+go
+golang
+ncurses-tui
+terminal-based
+react
+react-component
+terminal
+cli
+console
+jvm
+progressbar
+terminal
+javascript
+rpg-tool
+terminal-emulator
+atom-feed-reader
+hacktoberfest
+newsbeuter
+rss-feed-reader
+bash
+file-manager
+terminal
+tui
+command-line
+conemu
+console
+customizable
+shell
+terminal
+windows
+game
+game-2d
+golang
+snake-game
+terminal-game
+containers
+docker
+docker-engine
+docker-tui
+pypi
+python3
+sen
+vim
+cmd
+command-line
+console
+cross-platform
+curses
+mitype
+pypi
+python
+python-curses
+python-terminal
+pythonconsole
+replay
+terminal
+terminal-app
+terminal-based
+terminal-game
+typing
+windows-curses
+discord
+discord-bot
+discord-client
+discord-js
+discordapp
+discordbot
+discordjs
+terminal
+command-line
+command-line-tool
+hardening
+macos
+macos-setup
+osx
+security
+security-hardening
+ssh-client
+telnet-client
+terminal-emulator
+py-qrcode
+python
+qrcode-terminal
+aws
+iam-role
+sts
+elasticsearch
+journald
+json
+log
+playback
+recording
+rsyslog
+session
+stream
+syslog
+terminal
+astronomy
+map
+orbit
+python
+satellite
+space
+world
+sublime-text
+terminal
+terminus
+hacktoberfest
+shell
+themes
+windows
+windows-10
+windows-terminal
+atom
+atom-package
+terminal
+xterm
+amp
+beginner
+hacktoberfest
+i18n
+jekyll
+l10n
+terminals
+translations
+chat
+chatbot
+cli
+devtools
+diary
+dude
+learn
+learning
+love
+money
+personal-assistant
+python
+vocabulary
+eye-candy
+powerline-fonts
+terminal
+terminal-themes
+tools
+zsh
+command-line
+discord
+calendar
+icalendar
+python
+terminal
+floating-window
+neovim
+vim-terminal
+golang
+opengl
+terminal
+terminal-emulator
+terminal-emulators
+vt100
+xterm
+xterm-256color
+c
+cli
+fuzzy
+fuzzy-finders
+fuzzy-search
+fuzzyfinder
+fzy
+unix
+vim
+alternative
+cli
+client
+commandline
+discord
+discordgo
+terminal
+tui
+tview
+curses
+framework
+haskell
+terminal
+tui
+ui
+vty
+ajaxterm
+anyterm
+hacktoberfest
+terminal
+wetty
+xterm
+xterm-js
+xtermjs
+gatsby
+gatsby-theme
+gatsbyjs
+mdx
+configurable
+gtk
+hacktoberfest
+haskell
+terminal-emulator
+vte
+javascript
+terminal
+cli
+gotty
+gotty-client
+hack
+proxy
+terminal
+command-snippet
+deployment
+devops
+disk-space-analyzer
+linux
+log-viewer
+monitoring
+monitoring-tool
+remote-admin-tool
+remote-execution
+remote-shell
+sftp
+ssh
+terminal
+terminal-emulator
+terminal-emulators
+ansi
+cli
+color
+command-line
+console
+cplusplus
+cpp
+cpp-library
+cpp11
+cpp14
+cpp17
+rang
+terminal
+ansi
+cli
+colors
+node
+neovim
+repl
+terminal
+vim
+c
+catimg
+fun
+imagemagick
+shell
+terminal
+cli
+go
+golang
+spinner
+statusbar
+terminal
+ci
+cli
+console
+cypress
+hacktoberfest
+logs
+output
+pretty
+print
+ascii-art
+curl
+terminal
+weather
+weather-api
+weather-app
+weather-information
+go
+golang
+linux
+mouse
+osx
+terminal
+tui
+beautifulsoup
+flask
+football-streams
+highlight
+live-stats
+reddit-api
+scraping
+soccer
+soccer-matches
+tabline
+vim
+golang
+kubernetes
+web-terminal
+
+**
+Descriptions
+
+
+The new Windows Terminal and the original Windows console host, all in the same place!
+🦄 Record your terminal and generate animated gif images or share a web player
+List of my most used commands and shortcuts in the terminal for Mac
+A Terminal Emulator based on UWP and web technologies.
+jQuery Terminal Emulator - library for creating web based terminals
+A VT-100 terminal emulator for the Android OS
+💥 A curated list of Terminal frameworks, plugins & resources for CLI lovers.
+Color schemes for default macOS Terminal.app
+Send User Notifications on macOS from the command-line.
+A terminal built on web technologies
+Terminal session recorder 📹
+Terminals is a secure, multi tab terminal services/remote desktop client. It uses Terminal Services ActiveX Client (mstscax.dll).  The project started from the need of controlling multiple connections simultaneously. It is a complete replacement for the mstsc.exe (Terminal Services) client. This is official source moved from Codeplex.
+Color Scheme for Gnome Terminal and Pantheon Terminal
+💖💻 A little dashboard that tries to take care of you when you're using your terminal.
+Solarized Gnome Terminal colors, based on http://ethanschoonover.com/solarized
+A cross-platform, OpenGL terminal emulator.
+🖍 Terminal string styling done right
+Terminal emulator for Windows Subsystem for Linux (WSL)
+Small C++ program to display images in a (modern) terminal using RGB ANSI codes and unicode block graphics characters
+Terminal emulator designed for elementary OS
+Share your terminal as a web application
+Terminal utilities for node.js
+A terminal package for Atom, complete with themes and more.
+Tools and instructions on how to have awesome symbols in a terminal with a monospace font
+Android terminal and Linux environment - packages repository.
+A simple, retro theme for Hugo
+Terminal inside Sublime Text 3 view
+Next Terminal是使用Golang和React开发的一款HTML5的远程桌面网关，具有小巧、易安装、易使用、资源占用小的特点，支持RDP、SSH、VNC和Telnet协议的连接和管理。
+✨ Finder Toolbar app for macOS to open the current directory in Terminal, iTerm, Hyper or Alacritty.
+weather app for the terminal
+A terminal for a more modern age
+Elegant terminal spinner
+Drop-down terminal for GNOME
+Re-Connectable secure remote shell
+Android terminal and Linux environment - app repository.
+simple terminal UI for git commands
+:mag: Google from the terminal
+A terminal emulator for the 21st century.
+Over 230 terminal color schemes/themes for iTerm/iTerm2. Includes ports to Terminal, Konsole, PuTTY, Xresources, XRDB, Remmina, Termite, XFCE, Tilda, FreeBSD VT, Terminator, Kitty, MobaXterm, LXTerminal, Microsoft's Windows Terminal, Visual Studio, Alacritty
+Solarized color theme for OS X 10.7+ Terminal.app
+Ruby ASCII Table Generator, simple and feature rich.
+System monitoring dashboard for terminal
+Instant Terminal Sharing
+Terminal bandwidth utilization tool
+stackoverflow from the terminal
+👨‍💻  A component that renders a terminal
+Terminal in Chrome Devtools
+Launch terminals from the current file or the root project folder
+Generate simple tables in terminals from a nested list of strings.
+Terminal client for slack
+Browse Reddit from your terminal
+Atom Terminal package - *not currently maintained*
+Terminal based YouTube player and downloader
+Use your macOS terminal shell to do awesome things.
+n³ The unorthodox terminal file manager.
+QRCodes in your terminal, cause thats hot.
+A Terminal theme that mimics the One Dark theme made by the Atom team.
+A PHP Terminal GameBoy Emulator
+Slack client for your terminal
+Web-Terminal is a terminal server that provides remote CLI via standard web browser and HTTP protocol.
+A GNU/Linux Terminal inside @Telegram
+:rainbow: Default theme for Sublime Text for OS X Terminal and iTerm
+A terminal written in javascript.
+The Cygwin Terminal – terminal emulator for Cygwin, MSYS, and WSL
+Record terminal sessions as SVG animations
+The official terminal client for Zulip
+Java FX Terminal Emulator
+Command-line tool and terminal JSON viewer 🔥
+Terminal file manager
+Scriptable cross-platform data terminal which supports: serial port, UDP, TCP, SPI, I2C and CAN.
+An Elegent wrapper around Symfony's Process component.
+Share your terminal over the web
+terminal game to test git skills
+terminal.js is a dead simple JavaScript library for emulating a shell environment.
+🙃   A delightful community-driven (with 1800+ contributors) framework for managing your zsh configuration. Includes nearly 300 optional plugins (rails, git, OSX, hub, docker, homebrew, node, php, python, etc), over 140 themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.
+Alfred workflow to open current Finder window in Terminal/iTerm and vice versa.
+Terminal task list
+A modern and intuitive terminal-based text editor
+Javascript terminal emulator library that aims to be xterm compliant and is supposed to work in browsers and node.js.
+Spotify for the terminal written in Rust 🚀
+Build terminal dashboards using ascii/ansi art and javascript
+plotting in the terminal
+Read-only mirror of https://gitlab.gnome.org/GNOME/gnome-terminal
+Terminal Color Scheme Designer
+Create, view and edit terminal colorschemes.
+Sublime-like terminal-based text editor
+emoji terminal output for Python
+Instagram in terminal :alien::alien::fire::fire:
+Terminal Keynote - A hack for terminal-based talks
+A collection of small bash scripts for heavy terminal users
+Colorful terminal output for Golang
+80x23 terminal tetris!
+📻Terminal/ssh/sftp client(linux, mac, win)
+The terminal command palette
+Runs artisan command in web application
+A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting.
+Cross-platform, fast, feature-rich, GPU based terminal
+终端版知乎客户端
+🖥  Build beautiful PHP CLI menus. Simple yet Powerful. Expressive DSL.
+terminal_systemizer
+Atom terminal status
+Lightning Terminal: Your Home for Lightning Liquidity
+⌨️ - A cheatsheet to the Mac OS Terminal Application including commands, helpful hints and a lot of other things.
+A realtime terminal-based top-like monitor for MySQL
+Pure Java Terminal Emulator. Works with SSH and PTY.
+Animated console version of the 2048 game
+deepin-terminal-reborn
+基于某城市移动终端用户的运营商数据预测未来三月内用户是否会终端变迁(用户从当前使用的手机品牌更换为其他手机品牌)。应用xgboost算法和随机森林算法组合成多学习器预测模型。
+Nyancat in your terminal, rendered through ANSI escape sequences. This is the source for the Debian package `nyancat`.
+A terminal image and video viewer.
+Terminal workspace (WIP)
+A terminal interface for Tetris
+Drawing in terminal with unicode braille characters
+A powerful terminal app for iOS; a continuation of the Mobile Terminal project
+🎨 PaintAndGuess Game in multi-terminal including PC + Android + Web
+Terminal manipulation library for OCaml
+A terminal-based text editor written in Rust
+Detect whether a terminal supports color
+A Python module for controlling interactive programs in a pseudo-terminal
+A collaborative terminal. 
+Demo app for the Stripe Terminal JS SDK
+Terminal.app configuration handling Fn keys right
+Source code of my application "Bluetooth Terminal" on the playstore.
+Terminal dashboards for Python
+Terminal component that can be used in a spectacle slide deck
+The terminal-first http client
+Terminal readline library for Clojure dialects
+A recreation of the Fallout 3 terminal via a linux bash script! Requires cool-retro-term, sox and pv installed as packages.
+Beautiful icons for your favourite terminal apps like Hyper and iTerm2
+Base16 template for xfce4-terminal
+Wrapper for running neovim in a separate instance of gnome-terminal
+An independent Rust text editor that runs in your terminal!
+A terminal interface for streaming real-time updates for MLB games
+A simple theme based on hexo 👻👻👻
+OpenTerm, a sandboxed command line interface for iOS
+NgTerminal is a terminal component on Angular8 or higher. 
+Simulate a lifeform in the terminal
+Small changes make vim/nvim's internal terminal great again !!
+:zap: motivate :zap: - A simple script to print random motivational quotes. Highly influenced by linux command fortune.
+VT100/Xterm Terminal emulator in Swift
+Terminal SlideDeck, supporting markdown.
+Linux port of FAR v2
+Cloud Web Terminal Emulator. Opens your terminal to Web.
+Terminal inside the microcontroller (cli for mcu)
+Smarter Coffee terminal client.
+Display current Git branch name in your terminal prompt when in a Git working directory.
+A terminal for iOS, with multiple windows
+A command line CV for sysadmins
+an old terminal template for html pages
+A rust console and terminal abstraction
+Geoff's VT100 Terminal
+Search and save shell snippets without leaving your terminal
+Live terminal broadcasts
+Visualize data in the terminal
+An arctic, north-bluish clean and elegant Xfce Terminal color theme.
+Elegant Terminal theme with bright colors
+Terminal recorder: Record your termial session into HTML
+An open source terminal daemon library providing terminal handling in Java under ASL 2.0
+An online terminal-based interface for reading Reddit built with Vue.js.
+Terminal spinner package for Golang
+An easy-to-use set of config files to beautify Git in your MacOS or OS X terminal. If you find it hard to parse a jumble of mono-colored type on your command line, this set-up can help you tame the ugly bash beast.
+🖥 Enhanced terminal integration for Vim
+Quick and easy terminal sharing.
+Track conferences and meetups on your terminal.
+💀 A full command line based Java / Android develpment kit, that runs on Android devices.
+Terminal Emulator Plugin for Codiad IDE
+A curated list of awesome console services (reachable via HTTP, HTTPS and other network protocols)
+qt-terminal
+Open Terminal for Unity3D. execute your commands in runtime!
+Tailor-made Pokémon themes for your Hyper terminal
+JumpServer 是全球首款开源的堡垒机，是符合 4A 的专业运维安全审计系统。
+A git tool with an easy terminal interface.
+Modern C++ Terminal Emulator
+AnderShell 3000 - Retro looking terminal in CSS
+Useful Terminal commands for working with AWS EC2 instances in a nginx, Node and PM2 Production environment
+Displays "The Matrix" in a terminal
+Functional reactive terminals in C++ ⚡⌨️
+Doom-like raycasting engine that renders to ascii for playing in terminal
+Package terminal is a vt10x terminal emulation backend.
+Access your device's terminal from anywhere via the web.
+Terminal-based game engine for Go, built on top of Termbox
+solarized mate terminal
+A nice little way for you all to practice Terminal 
+🖥 Delightful Hyper plugins, themes, and resources
+Keynotes in your flippin' TERMINAL!
+:penguin: Quick installation for Ubuntu terminal.
+Render a <canvas> node to your terminal
+Terminal based portfolio website for CodeNerve
+:computer: C++ Functional Terminal User Interface. :heart:
+Terra is a GTK+3.0 based terminal emulator developed in Python. Supports multiple terminals with splitting screen horizontally or vertically.
+Emacs libvterm integration
+在 Windows 右键菜单中添加 Windows Terminal 启动选项
+Customizable Tetris(tm) for the terminal.
+Termux add-on app to show the terminal in a floating terminal window.
+Wechat client in terminal
+Vocabulary on your terminal
+A terminal for Docker containers in js!
+Tabbed terminal for Cygwin based on mintty
+A simple terminal feed reader.
+A fully functional terminal in your browser.
+Expose a fully capable terminal in your browser
+Switch your input method through terminal 📟
+An Emacs package to open an external terminal emulator in the current directory
+Terminal operations for Lua
+A command line tool that recreates the famous data decryption effect seen in the 1992 movie Sneakers.
+Realtime ticker data in your terminal 📈
+Aurelia inspired Windows Terminal theme
+A minimal project manager for the terminal.
+Simple Terminal Multiplexer for Node.js Environments
+Ask coding questions directly from the terminal
+Terminal for KDE
+The best terminal emulator based on the Enlightenment Foundation Libraries
+View space usage in your terminal.
+the only cheat sheet you need
+Functional JavasScript implementation of Snake for the web and terminal.
+Games in the terminal
+simple file browser for the terminal
+A lightweight, but functional terminal emulator
+Search gtfobins and lolbas files from your terminal
+Terminal client for Cabal, the p2p chat platform.
+ANSI escape codes for styling strings in the terminal
+An utf-8/truecolor image and video viewer for the terminal
+GDB command line interface and terminal emulator in (G)Vim.
+Color themes for Xresources aware terminals.
+Output-agnostic readline-like package for any io.Reader(SSH, local terminals, etc)
+a terminal-translate tool
+交易终端
+web terminal emulator
+CSS Terminal is a bookmarklet for rapid CSS development, prototyping and debugging.
+A Python scirpt to emulate the visual effect of "The Matrix" screen-saver in a posix terminal
+A terminal based Happy Birthday card
+Hacker News on the Terminal
+VTE terminal emulator written in GTK
+simple demo application for child_pty and terminal.js.
+A bitcoin wallet and blockchain explorer for your terminal.
+Terminal based bit manipulator in ncurses
+Show and execute code in your presentation
+Rust library to getting the size of your terminal
+Go terminal and console support
+Scurses, terminal drawing API for Scala, and Onions, a Scurses framework for easy terminal UI
+Notes on code, Terminal, AWS, etc
+A Slimefun Addon that is inspired by the mod "Applied Energistics"
+🎀 Minimalistic Aphrodite theme for sexy terminals
+An IntelliJ plugin for opening current directory in terminal
+Daily notes in the terminal :penguin:
+Mintty as a terminal for Bash on Ubuntu on Windows / WSL
+Terminal Emulators
+Color Scheme for Terminal.app, iTerm2, Vim, MacVim, Sublime Text2 and Textmate
+A terminal UI library
+Pixel / Grotesque / Cyber Punk font
+Terminal Spinner for .NET Core/Standard
+tn3270 Terminal Emulator
+C++17 Terminal User Interface(TUI) Library.
+Monokai Night theme for Windows Terminal
+A simple terminal emulator in React 
+MobileTerminal for iOS 5 to iOS 8
+Declarative terminal graphics for OCaml
+Airmed Foundation's IPFS + Hyperledger Fabric web client
+🐍  A terminal Discord client that you can actually use.
+Swifty Terminal Spinner
+A simple markup language for creating rich terminal reports, presentations and infographics
+A color theme for the tmux terminal multiplexer using Ethan Schoonover’s Solarized color scheme
+Notifies you when long-running terminal commands complete
+Glances an Eye on your system. A top/htop alternative for GNU/Linux, BSD, Mac OS and Windows operating systems.
+Fast creation of files and directories. Mimics the operation of AdvancedNewFile (Vim plugin)
+QRCode terminal for golang.
+Super awesome your Hyper terminal shall look
+A terminal based Matrix client written in Go.
+AVR ATMega Terminal Emulator
+Building powerful interactive prompts in Go, inspired by python-prompt-toolkit.
+💻💬 Instagram Direct Messages in your terminal
+Config files for ZSH, Java, Ruby, Go, Editors, Terminals and more.
+experimental terminal-based heatmaps
+Perhaps the smallest useful terminal multiplexer in the world.
+step by step game things
+Fontes criados de AdvPL para o Terminal de Informação
+Search and play any song from terminal
+A command-line benchmarking tool
+A simple terminal based ebook server
+:hammer: A multiple reverse shell session/client manager via terminal
+My personal dotfiles
+A delightful community-driven framework for managing your bash configuration, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.
+Image to Ascii Text with color support, can output to html or ansi terminal.
+vim-fugitive like package for atom. make commits and other git things without the terminal
+Terminal is a Fitbit clock face styled to match a terminal session in a Unix environment
+Clean, vibrant and pleasing color schemes for Vim, Sublime Text, iTerm, gnome-terminal and more.
+copy pasting in terminal with vimium/vimperator like hints.
+A terminal interface for Stack Overflow
+create curses based interactive selection list in the terminal
+ 🍖 A cross-platform terminal ui library based on Lua
+terminal telegram client that really works
+Like "ls", but for images. Shows thumbnails in terminal using sixel graphics.
+ansi control sequences for terminal cursor hopping and colors
+NCurses terminal display library ported to android
+The new Windows Terminal and the original Windows console host, all in the same place!
+🦄 Record your terminal and generate animated gif images or share a web player
+List of my most used commands and shortcuts in the terminal for Mac
+A Terminal Emulator based on UWP and web technologies.
+jQuery Terminal Emulator - library for creating web based terminals
+A VT-100 terminal emulator for the Android OS
+💥 A curated list of Terminal frameworks, plugins & resources for CLI lovers.
+Color schemes for default macOS Terminal.app
+Send User Notifications on macOS from the command-line.
+A terminal built on web technologies
+Terminal session recorder 📹
+Golang terminal dashboard
+Terminals is a secure, multi tab terminal services/remote desktop client. It uses Terminal Services ActiveX Client (mstscax.dll).  The project started from the need of controlling multiple connections simultaneously. It is a complete replacement for the mstsc.exe (Terminal Services) client. This is official source moved from Codeplex.
+Color Scheme for Gnome Terminal and Pantheon Terminal
+A terminal for the web
+💖💻 A little dashboard that tries to take care of you when you're using your terminal.
+Pokemon terminal themes.
+Solarized Gnome Terminal colors, based on http://ethanschoonover.com/solarized
+A cross-platform, OpenGL terminal emulator.
+🖍 Terminal string styling done right
+Terminal emulator for Windows Subsystem for Linux (WSL)
+Small C++ program to display images in a (modern) terminal using RGB ANSI codes and unicode block graphics characters
+Terminal emulator designed for elementary OS
+Share your terminal as a web application
+Terminal utilities for node.js
+A terminal package for Atom, complete with themes and more.
+Tools and instructions on how to have awesome symbols in a terminal with a monospace font
+Android terminal and Linux environment - packages repository.
+A simple, retro theme for Hugo
+Terminal inside Sublime Text 3 view
+Next Terminal是使用Golang和React开发的一款HTML5的远程桌面网关，具有小巧、易安装、易使用、资源占用小的特点，支持RDP、SSH、VNC和Telnet协议的连接和管理。
+✨ Finder Toolbar app for macOS to open the current directory in Terminal, iTerm, Hyper or Alacritty.
+weather app for the terminal
+A terminal for a more modern age
+Elegant terminal spinner
+Drop-down terminal for GNOME
+Re-Connectable secure remote shell
+Android terminal and Linux environment - app repository.
+simple terminal UI for git commands
+:mag: Google from the terminal
+A terminal emulator for the 21st century.
+Over 230 terminal color schemes/themes for iTerm/iTerm2. Includes ports to Terminal, Konsole, PuTTY, Xresources, XRDB, Remmina, Termite, XFCE, Tilda, FreeBSD VT, Terminator, Kitty, MobaXterm, LXTerminal, Microsoft's Windows Terminal, Visual Studio, Alacritty
+Solarized color theme for OS X 10.7+ Terminal.app
+Ruby ASCII Table Generator, simple and feature rich.
+System monitoring dashboard for terminal
+The personal information dashboard for your terminal
+Instant Terminal Sharing
+Terminal bandwidth utilization tool
+stackoverflow from the terminal
+👨‍💻  A component that renders a terminal
+Terminal in Chrome Devtools
+Launch terminals from the current file or the root project folder
+Generate simple tables in terminals from a nested list of strings.
+Terminal client for slack
+Browse Reddit from your terminal
+Atom Terminal package - *not currently maintained*
+Terminal based YouTube player and downloader
+Use your macOS terminal shell to do awesome things.
+n³ The unorthodox terminal file manager.
+QRCodes in your terminal, cause thats hot.
+A Terminal theme that mimics the One Dark theme made by the Atom team.
+A PHP Terminal GameBoy Emulator
+Slack client for your terminal
+Web-Terminal is a terminal server that provides remote CLI via standard web browser and HTTP protocol.
+A GNU/Linux Terminal inside @Telegram
+:rainbow: Default theme for Sublime Text for OS X Terminal and iTerm
+A terminal written in javascript.
+The Cygwin Terminal – terminal emulator for Cygwin, MSYS, and WSL
+Record terminal sessions as SVG animations
+The official terminal client for Zulip
+Java FX Terminal Emulator
+Styled Terminal Markdown Viewer
+Command-line tool and terminal JSON viewer 🔥
+Terminal file manager
+Scriptable cross-platform data terminal which supports: serial port, UDP, TCP, SPI, I2C and CAN.
+An Elegent wrapper around Symfony's Process component.
+Share your terminal over the web
+terminal game to test git skills
+Flat design colours applied to terminal. Terminal is now sweeter than ever!
+terminal.js is a dead simple JavaScript library for emulating a shell environment.
+🙃   A delightful community-driven (with 1800+ contributors) framework for managing your zsh configuration. Includes nearly 300 optional plugins (rails, git, OSX, hub, docker, homebrew, node, php, python, etc), over 140 themes to spice up your morning, and an auto-update tool so that makes it easy to keep up with the latest updates from the community.
+Alfred workflow to open current Finder window in Terminal/iTerm and vice versa.
+Terminal task list
+A modern and intuitive terminal-based text editor
+Javascript terminal emulator library that aims to be xterm compliant and is supposed to work in browsers and node.js.
+Spotify for the terminal written in Rust 🚀
+Build terminal dashboards using ascii/ansi art and javascript
+plotting in the terminal
+Read-only mirror of https://gitlab.gnome.org/GNOME/gnome-terminal
+Terminal Color Scheme Designer
+Create, view and edit terminal colorschemes.
+Sublime-like terminal-based text editor
+emoji terminal output for Python
+Instagram in terminal :alien::alien::fire::fire:
+Terminal Keynote - A hack for terminal-based talks
+A collection of small bash scripts for heavy terminal users
+Colorful terminal output for Golang
+80x23 terminal tetris!
+Run a subprocess in a pseudo terminal
+Notify your devices from the terminal
+Srcery theme terminal configurations
+tio - A simple TTY terminal I/O application
+Progress bar in your R terminal
+🕶️ A relaxed terminal theme to take a more relaxed view of things. For iTerm, Hyper, the macOS Terminal and a bunch of others.
+Monospaced bitmap fonts for X11, good for terminal use.
+⬛️ Lightweight and modern terminal animations using async/await
+Stripe Terminal iOS SDK
+Base16 for XFCE4 Terminal
+Simple terminal image viewer written in Rust.
+🎮 Fully featured terminal version of the game "2048" written in C++
+Open Terminal contextual menu for Finder
+Terminal supporting inline HTML
+Tcell is an alternate terminal package, similar in some ways to termbox, but better in others.
+A Sublime Text 3 Plugin for Sublime Text's Internal Console
+Terminal::Print is a pure Perl 6 layer for printing to terminal screens
+Tmux configuration, that supercharges your tmux to build cozy and cool terminal environment
+Secure Terminal Sharing
+DOM/JavaScript-based terminal-emulator/console
+Demo application for the Serial API.
+Optimized Solarized colorschemes. Best served with true-color terminals!
+Colourful & robust configuration files and utilities for Mac, Linux and BSD
+:bento: Highly Configurable Terminal Dashboard for Developers
+Browser based SSH-Terminal Sharing
+Ruby gem for colorizing printed text on ANSI terminals
+Display images in an ANSI terminal
+A golang library for building interactive prompts with full support for windows and posix terminals.
+"HTML Terminal", or hterm, is an xterm-compatible terminal emulator written entirely in JavaScript. 
+iOS sandboxed terminal with Python, Lua and Clang
+enhanced vte terminal widget
+A web-based terminal for docker container.
+❯❯❯ Chat without leaving your terminal
+ANSI escape codes for manipulating the terminal
+A C++ library for interacting with ANSI terminal windows.
+Qodem Terminal Emulator
+A command line interface (CLI) for facebook written in javascript(node.js). You can facebook on your terminal.
+Play solitaire in your terminal!
+An extensible pseudo-terminal for your website (or whatever you do in the browser)
+Console-based user interface toolkit for .NET applications.
+This is a app for macOS that to open a new Finder window and change the current directory to the folder this app launched.
+A terminal bundle installer
+Finder Toolbar app to open the current directory in the Terminal
+Change terminal colors on the fly
+The best CLI client for Slack, because everything is terrible!
+A package that makes Julia take advantage of cool terminal emulator features.
+📺🗿 Terminal graphics for the 21st century.
+TUI podcast client for the terminal
+Visualize ROS topics inside a terminal with Unicode/ASCII art
+Web Terminal For Docker 
+📦 Terminal assistant to find and install node packages.
+What if you could do everything from terminal. :) 
+send and receive iMessages in a terminal or over ssh
+Video Terminal Master of Ceremonies; a terminal-based presentation program
+Browser based terminal using xterm.js and a python 3 server
+A command-line tool to generate colorful QRCode in terminal.
+Linux Terminal Tools. PDF slides.
+Terminal string styling for Swift.
+A bell for your terminal that is analog
+A simple PHP terminal emulator
+Compose shell commands to build interactive terminal applications
+a cross-platform, terminal-based music player, audio engine, metadata indexer, and server in c++
+:green_book: Example tmux configuration - screen + vim key-bindings, system stat, cpu load bar.
+Tilde Terminal Reddit Viewer
+Slack terminal client.
+Parser for virtual terminal emulators
+terminal_debloater
+Print images in the terminal using Ruby.
+Trojan is an efficient mobile terminal lightweight log SDK
+Draw images in your ANSI terminal with true color
+🖍️ R package for colored terminal output
+👍 A modern-designed Android terminal emulator for the 21st century.
+Free and open-source first person shooter / spiritual successor to Revenge Of The Cats: Ethernet
+Display images in the terminal
+Spotify in the terminal 💻🎶
+RGB colors for your terminal
+An extension for setting-up multiple terminals at once, or just running some commands.
+Pac-Man in the terminal!
+A terminal in your browser using go.crypto/ssh and websocket. Based on https://github.com/xtermjs/xterm.js
+:rainbow:  Beautiful color gradients in terminal output
+A simple console\terminal window for use in a WPF application 
+📟  Command line tool for common GraphQL development workflows
+Go Terminal Feed Reader
+Terminal emulator in Javascript
+a python command-line tool which draws basic graphs in the terminal
+Terminal Ip Lookup Tool
+Moderation Bot, for Discord. Coded in Javascript.
+Stack overflow command line client. Search and browse stack overflow without leaving the terminal :computer: 
+github terminal
+Terminal Faker - A client-side Linux-like cli terminal simulation written in Javascript. Originally forked from AVGP/terminal.js.
+SC-IM - Spreadsheet Calculator Improvised -- An ncurses spreadsheet program for terminal
+Terminal NBA Live 
+:tv: Stream YouTube videos as ascii art in the terminal!
+Flexible terminal-based text editor (C)
+JLine 3 appender for Log4j2, allows extending command line apps using colors and command completion
+Mirror of https://gitlab.redox-os.org/redox-os/termion
+A community Bash framework.
+A fast and lightweight interactive terminal based UI application for tracking cryptocurrencies 🚀
+Unicode-based scientific plotting for working in the terminal
+🍫 A customisable, universally compatible terminal status bar
+javascript canvas api for your terminal!
+Simple tables in terminal with Go
+A terminal application for Pocket
+txtcam — webcam for your terminal!
+Utilites around neovim's `:terminal`.
+Panda Project, created for Editors and Terminals
+Generates terminal colours from images.
+rtail(1) - Terminal output to the browser in seconds, using UNIX pipes.
+🍓 Ascii progress-bar(s) in the terminal.
+A dashboard for the terminal
+Generates an Applescript app that you can put in your Finder toolbar which will open an iTerm or Terminal tab at the current directory.
+A keystroke / terminal logger for Linux.
+A terminal theme for VuePress!
+Autocomplete for terminals on MacOS
+A Ruby gem that beautifies the terminal's ls command, with color and font-awesome icons. :tada:
+A cat(1) clone with wings.
+Colored terminal output for Python's logging module
+Play tetris in your terminal - in color
+Chrome extension that provides standard terminal colors in the Console panel of Jenkins
+:rocket::star: A Zsh prompt for Astronauts
+Terminal control for node.js scripts
+A collection of useful terminal aliases for rails/git developers
+Colorful Terminal Spinner for Ruby 😀︎
+Stripe Terminal Android SDK
+A TUI (terminal UI) kit for Elixir
+free, cross-platform SSH terminal client for Firefox and Chrome
+A temporary email right from your terminal written in POSIX sh
+Read the Word of God from your terminal
+Termpage allows you to create neat functional webpages that behave like a terminal
+Cross platform terminal colors for Rust.
+Rust library for ANSI terminal colours and styles (bold, underline)
+Who needs a GUI if you have a terminal?
+Weather from the terminal.
+:european_castle: A cli client to play.aidungeon.io
+Syntax highlighting for your terminal 💻✨
+Terminal string styling done right
+TETRIS for your terminal
+A citypicker of the mobile terminal
+Utilizando terminal Linux de forma nativa no Windows 10 - WSL 2
+A tiny terminal player based on Python3
+A terminal emulator in D.
+A keyboard-centric VTE-based terminal, aimed at use within a window manager with tiling and/or tabbing support.
+A simple terminal Christmas tree made with Python
+A collection of LS_COLORS definitions; needs your contribution!
+A 3D software rasterizer... for the terminal!
+Terminal chat through the LAN.
+Headless xterm emulator in JavaScript, forked from tty.js's term.js.
+Terminal dashboard for trading Bitcoin, predicting price movements, and losing all your money
+Stream your terminal to web without installing anything 🌐
+Android Bluetooth Low Energy Serial Port Terminal  gradle project
+a datepicker in the mobile terminal
+The Terminal (Daemon)
+Share your linux or osx terminal over the Internet.
+art for your terminal
+NICAR class to introduce reporters to the power of the terminal. Nothing fancy, just the fundamentals. Contributions welcome! Share your knowledge
+A terminal based horizontal guage aka, a progress bar
+Raspberry Pi terminal based activity monitor
+Site audit for your site from terminal
+Colorize R output in terminal emulators
+Base16 color scheme for OSX Terminal.app
+GoAccess is a real-time web log analyzer and interactive viewer that runs in a terminal in *nix systems or through your browser.
+A web-based terminal multiplexer
+3D Graphics Rendering Pipeline. Implemented in JavaScript. Run in a terminal.
+Pretty, minimal and fast ZSH prompt
+Native Terminal Plugin for JetBrains IDEs
+Terminal Based Mindful Workday System
+A Clojurey wrapper around the Lanterna terminal output library.
+Enable support for Windows Terminal Colors
+An elmish wrapper around Miguel de Icaza's 'Gui.cs' https://github.com/migueldeicaza/gui.cs including a fable like view DSL.
+Terminal-based 2048 game written in Elixir
+💁 Search API docs offline, in terminal or browser
+A websocket-based terminal proxy built with Go and term.js
+自己玩的，别乱下了
+Develop and share terminal environments
+A Rust library for terminfo parsing and terminal colors.
+Simple text-based Terminal Screensaver
+A terminal emulator written in Dart.
+Terminal spinner package for Python. 
+:tv: A fullscreen terminal in your browser.
+Newsbeuter is an open-source RSS/Atom feed reader for text terminals.
+beautiful charts in the terminal for static or streaming data
+Terminal for Visual Studio Code
+[OBSOLETE - see readme] A tool for creating GIF screencasts of a terminal, with key presses overlaid.
+In browser interactive terminal for workshops.
+terminal-based remote package update manager
+A traditional linux terminal activity for the Sugar learning environment
+A markdown renderer package for the terminal
+Terminal based Tetris game written in python
+[bash, command, line, terminal, lab]
+SSH & Web Terminal - Home Assistant Community Add-ons
+The game 2048 for your Linux terminal (https://github.com/gabrielecirulli/2048)
+Parallel OS, with GUI, Terminal, OO Assembler, Class libraries, C-Script compiler, Lisp interpreter and more...
+MarkDown Renderer for the terminal
+st fork that uses Xresources and some pretty good patches
+Support et TPs pour les cours de terminal/Git/Linux dispensés à l'école Hétic en Web1
+Utility to test color capabilities of terminal.
+terminal UI for npm
+Lazarus unit for console process control, with prompt detection.
+A project with a mission of helping beginners to learn Linux Commands right through a terminal implemented on Browser.
+The project help you to quickly build layouts in terminal，cross-platform(一个跨平台的命令行ui布局工具)
+Small, fast library to create ANSI colored strings and codes. [go, golang]
+A fancy terminal browser for the Gemini protocol.
+The easiest way to demonstrate your code in action.
+Systemd units manager with ncurses, terminal interface
+:alien:A chat-robot which runs in terminal.
+A simple, fast and user-friendly alternative to 'find'
+[Utils] A growing list of useful terminal utility/commands and bash scripts to automate your life!
+Termux add-on app for customizing the terminal font and color theme.
+:rocket: Terminal
+Signal Messenger client for terminal
+Module to help build a custom command-line vocabulary for your bot
+Outputs emoji aliases as raw characters.
+🐍 ‎ A terminal-based Snake implementation written in JavaScript.
+Linux CLI Launcher for Android
+Terminal session recorder that outputs self-contained HTML!
+An interactive way to peruse your git history from the terminal 
+Saturn terminal theme
+pipe a shell into an interactive browser terminal
+Light and dark theme for spacemacs that supports GUI and terminal
+Adds tabs for each terminal process to the status bar
+uilive is a go library for updating terminal output in realtime
+Terminal client for Spotify
+A simple curses library made in bash to draw terminal interfaces
+Exoteric *nix terminal tutorial 
+A minimal implementation of the UNIX tree command with colors!
+A python program to play chess against an AI in the terminal.
+Do a Wikirun directly from your Terminal!
+A simple terminal-based open source Spritz-alike (per-word RSVP aligned on optimal reading points)
+The correct colors for Terminal.app to run Solarized (changes Terminal's colorscheme)
+Simple horizontal bar chart printer for your terminal
+Intuitive find & replace CLI (sed alternative)
+✨🐦 The Party Parrot on your terminal 🐦✨ 
+Make your terminal beep
+Nice-looking lightweight console ASCII line charts ╭┈╯ for NodeJS, browsers and terminal, no dependencies
+Watch MLB games from the comfort of your own terminal
+repository for practice *nix terminal (Ubuntu prefer)
+VS Code extensions that creates an intergrated terminal session at the current file's directory
+WxWidgets Terminal Widget
+Command-line app for viewing BoltDB file in your terminal
+🚀 Quickly open urls on your terminal screen!
+A material color scheme for Windows Terminal
+Terminal-emulator State Machine
+Qt based serial port terminal emulator, data logger/plotter.
+ Elegant Console Logger for Node.js and Browser 🐨
+Advanced ANSI style & color support for your terminal applications
+Command line tool to share your UNIX terminal and forward local TCP ports to people you trust.
+Miku themed Windows terminal profile
+A reverse shell with terminal support, data tunneling, and advanced pivoting capabilities.
+Go Terminal library with PTY support and colors
+Manipulate the cursor in your terminal via high-performant, low-level, canvas-like API
+A javascript library that converts text with ANSI terminal codes into colorful HTML
+terminal image viewer
+:smiling_imp: Chagning cursor by mode for evil on terminal.
+💻 Solarized Dark theme for Hyper terminal
+Another terminal emulator for Android.
+Terminal - Community Hass.io Add-on for Home Assistant
+全功能终端模拟器，可切换悬浮窗
+Modern, minimalist, minty-fresh terminal
+An ncurses-based minesweeper game
+Clone all of your Github repositories, just single command from your terminal.
+A fully working, most feature-rich Vue.js terminal emulator
+It is a simple python package to play videos in the terminal using characters as pixels
+Fancy terminal
+This is a fun, new monospaced font that includes programming ligatures and is designed to enhance the modern look and feel of the Windows Terminal.
+:pencil: Terminal-based crossword puzzle solving interface
+VTE based, highly customizable terminal emulator
+Web component version of terminal.js (https://github.com/avgp/terminal.js)
+record and replay interactive terminal sessions
+Drop-down terminal emulator based on Konsole technologies
+Terminal output styling with intuitive and clean API.
+A terminal IRC client in C
+A terminal-only version of Sumo written in Go
+Ruby/ProgressBar is a text progress bar library for Ruby.
+A k8s web terminal connect tool, java lightweight implementation.
+Free Terminal Server
+提供微信终端版本、微信命令行版本聊天功能、微信机器人
+It's terminal.
+Interactive Redis: A Terminal Client for Redis with AutoCompletion and Syntax Highlighting.
+Blocks IP addresses generating invalid Terminal Services logons
+Finder toolbar application to open selected directory/directories in Terminal or iTerm2
+cat for markdown
+Clock, Weather, Terminal ... евала :)
+Fork pseudoterminals in Node.JS
+Quickly open any url on your terminal window!
+Console-based JVM monitoring tool
+Base16 Terminal Colors for Visual Studio Code
+Terminator terminal plugins
+An extremely simple Gitter client for your terminal 
+Terminal emulator for dahliaOS
+Sahaba Kubernetes WebShell Terminal
+Terminal for working with Mifare Classic 1-4k Tags
+Terminal Emulator written in C++ and qml
+📻Terminal/ssh/sftp client(linux, mac, win)
+The terminal command palette
+Runs artisan command in web application
+A Terminal Client for MySQL with AutoCompletion and Syntax Highlighting.
+Cross-platform, fast, feature-rich, GPU based terminal
+终端版知乎客户端
+A terminal workshop runner framework
+Feature complete web terminal
+:duck: DuckDuckGo from the terminal
+Learn JavaScript by adventuring around in the terminal.
+Terminal based dashboard.
+A high-level terminal interface library for node.js.
+Print awesomely in terminals.
+TerminalMACS, Chinese full name：多终端管理与检测系统, English full name：Terminal Management and Check System
+Drop Down Terminal extension for the Gnome Shell
+Command-line terminal that runs in a web browser
+Terminal automation
+Terminal based "The Matrix" like implementation
+A fully customizable terminal-like website template
+:tada: 2048 in your terminal
+A Renderer for the marked project. Allowing you to render Markdown to print to your Terminal
+precision color scheme for multiple applications (terminal, vim, etc.) with both dark/light modes
+Deprecated, please see Readme
+retro ansi terminal menus for serious 80s technicolor business
+Allows user to take full control of the terminal of their computer through Facebook's messaging service.
+Terminal-based Mail User Agent
+A terminal for your browser, using node/express/socket.io
+Experimental Graphics Terminal
+wow very terminal doge
+Web player for terminal session recordings ⏩
+Deepin Terminal written by vala
+A fast note-taking app for the UNIX terminal
+C, C++, Java IDE for Android devices
+Unity Command Terminal: In-Game Console
+Cross platform terminal library rust
+Bring charts to terminal.
+A terminal emulator in Vue. https://vue-terminal.now.sh/
+DDE terminal emulator application
+The terminal widget for QTerminal
+Animated pipes terminal screensaver
+JMESPath exploration tool in the terminal
+Modern and minimalistic CSS framework for terminal enthusiasts
+Display images in the terminal
+Android terminal app for devices with a serial / UART interface connected with a USB-to-serial-converter
+Git repository summary on your terminal
+A cross-platform, customizable science fiction terminal emulator with advanced monitoring & touchscreen support.
+Android terminal app for Bluetooth classing devices using SPP profile
+Jupyter Terminal Console
+Fetches system/theme information in terminal for Linux desktop screenshots.
+Terminal log analysis tools
+The MATE Terminal Emulator
+Share a terminal session over WebRTC
+Rich interactive widgets for your terminal UI, written in Go
+A PHP terminal NES emulator
+xkcd CLI + jQuery terminal implementation
+💫 Beautiful spinners for terminal, IPython and Jupyter
+Converts arbitrary shell output (with ANSI) into beautifully rendered HTML
+Rick Astley invades your terminal.
+a webcam that can be run on a bare terminal
+A terminal UI for tshark, inspired by Wireshark
+A UI library for terminal applications.
+CryptoTerminal is an open-source terminal application with which merchants can accept in-person cryptocurrency payments.
+Terminal-based CPU stress and monitoring utility
+⎈❏ Terminal and Web console for Kubernetes
+Run system terminals inside Spyder. Works on Linux, macOS and Windows.
+🐦  Bringing animated parrots to terminals everywhere
+A web terminal based on websocket and tornado
+An OS X Terminal.app profile based on the base16 Ocean theme.
+:shell: Use your terminal shell to do awesome things.
+Share terminal sessions via SVG and CSS
+PHP's best friend for the terminal.
+Theme for Tilix Terminal
+A tiling terminal emulator for Linux using GTK+ 3
+Accessories for mahoshojoHCG.github.io
+Build terminal user interfaces and dashboards using Rust
+Terminal Emulator Poderosa - Source
+dry - A Docker manager for the terminal @
+A terminal-like douban.fm Chrome extension
+GNU ncurses terminal synthesizer
+💻 Web 模拟终端博客系统
+Open a web search in your terminal.
+Secure and simple terminal sharing
+bluetooth terminal for Android (based on Android Bluetooth chat sample)
+📃 This is a simple script to add right click context menu for your best Windows terminal ❤
+Terminal countdown timer
+📊 Analyze website stack from the terminal  💻 
+A SIMBL plugin for Terminal.app which enable us to copy on selection.
+Toy terminal emulator built with Angular JS. 
+Spinners for use in the terminal
+A material design theme for your terminal. ✨
+The swiss army chainsaw of terminal emulators
+Use any fonts in the terminal without replacing or patching 
+Open Terminal Window to execute command in Windows / Cygwin / Ubuntu / OS X
+A complete text editor for your terminal.
+At last – a modern terminal emulator (NO LONGER MAINTAINED)
+Command line pastebin for sharing terminal output.
+🐢 Open terminal quickly from Finder
+A new kind of terminal
+A point to point color terminal video chat.
+🕹️ A basic gameboy emulator with terminal "Cloud Gaming" support
+A smart and nice Twitter client on terminal written in Python.
+Minimal dumb-terminal emulation program
+iTerm2 is a terminal emulator for Mac OS X that does amazing things.
+Create boxes in the terminal
+Progressive Web Application for serial communication with your own Bluetooth Low Energy (Smart) devices
+Terminal-based presentations using Pandoc
+Access your terminal from anywhere via the web.
+ Telemetry dashboard for node.js apps from the terminal!
+Angular4 project for web terminal
+Awesome tmux-based terminal divider
+Reparent a running program to a new terminal
+Ccxt based, open source, customized, extendable trading platform that supports 130+ crypto exchanges.
+Highlight PHP code in terminal
+🧛🏻‍♂️ Dark theme for Gnome Terminal
+Terminal emulator by KDE
+Advanced terminal output in Go
+The official website for the Hyper terminal
+🧛🏻‍♂️ Dark theme for Terminal.app
+Android terminal app for Bluetooth LE devices using custom serial profiles
+Solarized colour scheme for the Xfce4 terminal
+A terminal client for https://soundcloud.com
+A terminal multiplexer (like tmux) in Python
+Rich is a Python library for rich text and beautiful formatting in the terminal.
+Terminal multiplexer inspired by i3
+Themes for Windows Terminal
+Simple cross-platform colored terminal text in Python
+A terminal-based presentation tool with colors and effects.
+Ubuntu Terminal Cheatsheet
+JavaScript terminal using a JSON pseudo-filesystem.
+Terminal-Leetcode is a terminal based leetcode website viewer.
+Stand alone PHP terminal emulator - useful when you don't have shell access.
+a .inf file for a right click Explorer "windows terminal here" for Windows Terminal until it's supported directly
+Terminal-based clones of popular arcade games.
+Command line parsing, invocation, and rendering of terminal output.
+Twitter terminal client with streaming API support.
+Terminal stock ticker with live updates and position tracking
+Console progress bar for Golang
+A terminal spreadsheet multitool for discovering and arranging data
+Telegram client on your terminal
+Companion program for the new Windows Terminal that enables Quake-style drop down
+eurorack / pi codec 
+Gate One is an HTML5-powered terminal emulator and SSH client
+An awesome resource listing and explaining various commonly used *nix commands
+A good looking terminal emulator which mimics the old cathode display...
+A lightweight Qt-based terminal emulator
+Terminal disk space navigator 🔭
+Package term manages POSIX terminals.
+The "Piperita" terminal theme
+🎨 Beautiful images of your code — from right inside your terminal.
+It’s everything you could want from a 1984 Russian-made video game, but now without leaving the comfort of your favorite shell!
+A Ruby terminal progress_bar
+Yank terminal output to clipboard
+TerminalMACS, Chinese full name：多终端管理与检测系统, English full name：Terminal Management and Check System
+:clapper: Colorful animations in terminal output
+💻 For everyone who wants to know more about the terminal I use
+yet another framebuffer terminal
+Advanced terminal interface for Atom editor
+C# functions, refactoring, enumerations, basic state machines. Arguments, parameters, strings, conditionals, variables. Whitespace management, bug fixes and basic game design. (REF: TH_CU2) http://gdev.tv/cu2github
+Terminal Assistant For SemiCode OS
+Terminal Emulator for Visual Studio
+An arctic, north-bluish clean and elegant GNOME Terminal color theme.
+A terminal IRC client 
+:hammer: Manage your website via terminal
+Abusing dlopen to load & run mach binaries on iOS
+Pixel graphics in terminal with unicode braille characters
+Terminal user interface library
+terminal-based personal organizer
+Terminals served by tornado websockets
+Web app for hosting asciicasts
+A terminal-to-gif recorder minus the headaches.
+USB Serial Terminal for Android
+Create clickable links in the terminal
+Simple interactive menus for the terminal (Now ships with Julia!)
+multiple GNOME terminals in one window
+🧛🏻‍♂️ Dark theme for Windows Terminal
+Blazing 💥 fast terminal-ui for git written in rust 🦀
+Immersive terminal interface for managing docker containers and services
+github like contributions calendar on terminal
+An arctic, north-bluish clean and elegant Terminal.app color theme.
+Angular Dashboard rendered into system’s terminal! 🔥
+Countdown timer and stopwatch in your terminal
+Display feedback of terminal in the 🍏 Touchbar
+A PowerShell module to show file and folder icons in the terminal
+Atom package to open terminal on current file's directory with "ctrl-shift-t"
+Serial Com Port Data Terminal written in Python 3.5 on Windows 10
+Metrics dashboards on terminal (a grafana inspired terminal version)
+A collection of themes for kitty terminal 😻
+A SIMBL plug-in for the Terminal in Leopard which changes the number keyboard shortcuts to switch tabs instead of windows
+ A horizontal :straight_ruler: for your terminal
+Simple VTXXX-compatible linux terminal emulator
+A graphical serial terminal
+Super fast multi user pseudo bash Terminal in Node.js & SockJS
+Terminal Watch Face for Apple Watch
+A terminal embedded in Nautilus, the GNOME's file browser
+百度网盘命令行工具。The terminal utility for Baidu Network Disk.
+Weather in terminal, with ANSI colors and Unicode symbols
+Atom's One Dark and One Light theme for GNOME Terminal
+Collection of converted Xresources color schemes to xfce4-terminal, the XFCE terminal emulator
+PuTTY Terminal Color Schemes/Themes Gallery
+Solutions for our free Terminal and UNIX course
+Tool to generate different types of React components from the terminal. 💻
+💥 flashcards in your terminal
+PowerShell Script (GUI) to manage Terminal Sessions
+Second version of the terminal based game that teaches users git commands
+For teachers: Explain the terminal (cmd or command line) to your students with this super fun game.
+ayu color themes for Terminal.app
+render multiple progress bars at once on the terminal
+A repository dedicated to terminal escape injections.
+:newspaper: CLI to browse Hacker News
+:rainbow: Colorize commands output or STDIN using patterns.
+The web in your terminal
+C and C++ utilities for cross-platform console roguelike game creation.
+A feature-rich Unix terminal client for the Mattermost chat system
+A TUI text reader for the terminal.
+A colourful wrapper for terminal programs
+WebSocket client for the terminal
+🖌️ pxltrm - [WIP] A pixel art editor inside the terminal
+Adds xterm mouse reporting to Terminal.app
+Go (golang) library for colorizing strings for terminal output.
+An adaptation of the Zenburn color scheme for the OS X Terminal app
+Transfer files over WiFi between your computer and your smartphone from the terminal
+A terminal UTF-8 text editor written in Rust 📝🦀
+Terminal string styling done right, in Python :snake: :tada:
+Remote Terminal for the Browser.
+:mailbox_with_mail: Query iMessage from terminal and NodeJS
+Open your Hyper terminal from anywhere with a global hotkey.
+Bitcoin chart for the terminal as command line util
+Your todo list in your terminal
+Make terminal vim and tmux work better together.
+💰💰 Convert currency rates directly from your terminal!
+Parrot OS Terminal For Kali linux
+Oceanic Next theme for GNOME Terminal
+A collection of handy Bash One-Liners and terminal tricks for data processing and Linux system maintenance.
+Interactive and scriptable console terminal on Android (build framework)
+🎨 themer takes a set of colors and generates themes for your apps (editors, terminals, wallpapers, and more).
+Reminds you to drink water - on your terminal.
+:zap: Transfer files over wifi from your computer to your mobile device by scanning a QR code without leaving the terminal.
+USBHIDTerminal
+My favorite theme for ST3 and iTerm2 on OSX Terminal!
+Socks5/4/4a Proxy support for Remote Desktop Protocol / Terminal Services / Citrix / XenApp / XenDesktop
+An awesome iTerm2 backend for Matplotlib, so you can plot directly in your terminal.
+Terminal shell accessible through a jabber connection
+decorating: Literally decorating your terminal with decorators
+🎶 A nodejs app to control Spotify without leaving your terminal. 🎶
+Drop-in single file library for printing color in terminal
+Python curses application to view lyrics of current playing song in terminal.
+Termic is an idea for personal pages and terminal lovers! <3
+netease cloud music terminal client by rust :zap:
+An interactive cheatsheet tool for the command-line and application launchers
+(Rust) Coloring terminal so simple you already know how to do it !
+Change terminal colors on-the-fly independent of terminal emulator.
+cross-platform terminal emulator
+🎥🗣 video chat in your terminal 💻🔠
+A Simple Python Script to Display Images in Linux Terminal
+Useful and common terminal shortcuts for macOS
+adds a gradient border to the Hyper terminal
+Terminal stopwatch
+🖥Terminal UI emulator VueJS component
+A simple wrapper around https://github.com/icholy/ttygif that allows you to record terminal commands to a gif in one command
+Display a single or multiple progress bars in the terminal.
+Automates a 3270 Terminal Emulator
+Write hyperlinks in the terminal
+Serial com port data terminal in C# with Visual Studio 2017 on Windows 10.
+An interactive, terminal-based markdown presenter
+Toolkit for developing sleek command line apps.
+Automate Mac iTerm Terminal with Consular
+ES6 class for serial communication with your own Bluetooth Low Energy (Smart) devices
+(OS-X Only) Adds a shortcut to Tree View - Open Terminal Here in the context menu
+Stream youtube playlists as audio on linux terminal
+A simple PHP/JS terminal for making credit card charges with the stripe.com API
+一键美化和优化Mac终端
+Ruby gem for ANSI terminal colors 🎨︎ VERY FAST
+gateone implemented by django web terminal ssh
+Pipeable javascript. Quickly filter, map, and reduce from the terminal
+:rocket: Launch android modules from the terminal
+A GUI framework for C# console applications
+Integrated terminal for Atom. Looks like terminal-plus, acts like your native terminal (except every other Friday). Looking for collaborators! :-)
+A colour scheme for terminals, Vim and friends.
+High-level DOM-like terminal interface library
+A simple Python menu system for building terminal user interfaces.
+Small utility for interacting with with the terminal
+Docker Hub in your terminal
+Simple Meduza terminal client
+Mutt and terminal url selector (similar to urlview)
+Logging sinks and utilites for interactive terminals
+Manage your World of Warcraft Server Console with Web. Support TrinityCore/Mangos/AzerothCore.
+📜 Create updatable log lines into the terminal, and give life to your logs!
+Keep the input line at the top of the terminal
+ANSI terminal color manipulation for Lua.
+Port of the Oceanic Next theme for macOS terminal
+EtherTerm (SDL2) Telnet/SSH Terminal
+Run an inferior Julia REPL in a terminal inside Emacs
+Beautifully formatted output for your terminal 🌈
+create a free server in dply.co from terminal
+BearLibTerminal FFI for Rust
+Shows the relevant part of NPM module's README file right in your terminal
+JavaScript Terminal For Firefox
+A SIMBL plug-in for Terminal in Leopard which allows customisation of the text colours
+Boost your terminal, script by script
+A Text User Interface library for the Rust programming language
+Animation of the SHA-256 hash function in your terminal.
+Python implementation of Yik Yak using the pyak API by joseph346. Read, post, upvote, and downvote yaks.
+Bring a real terminal to Sublime Text
+A terminal frontend for Xi
+Dead easy terminal GIFs, from the terminal.
+🍅 pydoro - Terminal Pomodoro Timer
+GRV is a terminal interface for viewing git repositories
+Terminal emulator component for React. Emulate a terminal/console with autocomplete, commands, a file-system and themes.
+Terminal-based progress bar for Java / JVM
+For use in tabletop rpgs. Login: 8A73B5@trustno1 or admin@admin
+An RSS/Atom feed reader for text terminals
+📁 A simple file manager written in bash.
+A quick way to spruce up your terminal in OSX.
+Customizable Windows terminal with tabs, splits, quake-style, hotkeys and more
+Terminal-based Snake game
+A Gtk based drop down terminal for Linux and Unix
+Terminal User Interface for docker engine
+A go library to render progress bars in terminal applications
+Typing speed test in terminal
+Display images in the terminal
+Extensible Discord terminal client
+Easily configure macOS security settings from the terminal.
+Go terminal prompts.
+An SSH/Telnet terminal emulator for Microsoft Windows
+在控制台打印二维码 Draw QRCodes in your terminal by Python
+Easily assume AWS roles in your terminal.
+Terminal I/O logger
+Track satellites in your terminal
+Command Line & Ruby Interface to Mac OS X Sharing Services
+Use (Windows) Terminals within Sublime Text 3 such as: Command Prompt, Git Bash, Google Cloud SDK Shell, etc
+Repository with some awesome Windows Terminals themes
+A simple tool to allow modification of an insteonplm or a insteonhub
+A configurable/extendable bash terminal React component
+Given a Profile and folder name, rotates the background of a Terminal
+Simple terminal for the Atom text editor.
+All the knowledge you need to get up and running on terminals across operating systems. If you are contributing to open issue on this repo, please ask to be assigned to the issue so people know you are working on it.
+ANSI terminal support for Haskell, with Windows compatibility
+Wise and powerful personal assistant, available in your nearest terminal
+A terminal environment tools for python.
+A simple, easy-to-deploy backend that you can use to run the Stripe Terminal example apps
+Powerlevel9k was a tool for building a beautiful and highly functional CLI, customized for you. P9k had a substantial impact on CLI UX, and its legacy is now continued by P10k.
+NOT MAINTAINED Simple terminal client for discord with a minimal look and UI
+Colors in your terminal. Unmaintained.
+render images on the terminal
+:calendar: CLI calendar application
+:star2: Terminal manager for (neo)vim
+A modern cross-platform terminal emulator in Go
+Monitor the output of terminals and processes.
+Setup a functioning terminal for Windows
+A dark vim color scheme for 256-color terminals.
+Chat using iMessage from your terminal!
+:mag: A simple, fast fuzzy finder for the terminal
+The Discord terminal client you never knew you wanted.
+A declarative Unix terminal UI programming library written in Haskell
+A thin, practical wrapper around terminal capabilities in Python
+A dashboard that displays in the terminal
+Luke's fork of the suckless simple terminal (st) with vim bindings and Xresource compatibility.
+It’s that terminal! This project was mostly created (or started) in a livestream series.
+Terminal in browser over http/https. (Ajaxterm/Anyterm alternative, but much better)
+Generate animated GIFs from asciinema terminal recordings
+A zero component Gatsby theme for developers 🔋
+:sushi: emoji terminal output for golang
+Terminal emulator configurable in Haskell.
+JavaScript terminal emulator library that works in your browser and Node.js
+Program to introduce MongoDB and Object-Oriented Programming by creating a simple terminal-based blog
+Kubernetes web terminal
+:wrench: terminal client for GoTTY
+Control Spotify through the OS X Terminal
+Graphical SFTP client and terminal emulator with helpful utilities
+Install/uninstall scripts for Windows Terminal context menu items
+A Minimal, Header only Modern c++ library for terminal goodies 💄✨
+Color your terminal using pure idiomatic JavaScript.
+Wrapper of some vim/neovim's :terminal functions.
+QR Codes in your terminal
+Terminal window manager for OS X
+🦦 Insanely fast image printing in your terminal
+Go (golang) package with 70+ configurable terminal spinner/progress indicators.
+Linux society's response to Guitar Hero. :)
+Better terminal and file output for cypress test logs.
+An elegant web & terminal interface for Unitech/PM2.
+:partly_sunny: The right way to check the weather
+Terminal Emulator for Brackets test editor
+Mirror repository, PRs are not watched, please use Xfce's GitLab
+mirrored from https://cr.deepin.io/#/admin/projects/deepin-terminal
+Applied Energistics 2 Wireless Crafting Terminal
+A terminal based graphical activity monitor inspired by gtop and vtop
+Share your terminal as a web application. PHP terminal emulator based on workerman.
+一个k8s web终端连接工具，在前后端分离或未分离项目中心中，也可以把此项目无缝集成，开箱即用。
+:soccer: Instantly find :trophy:EURO 2016 live-streams & highlights, now a Web App!
+Configure tabs within Terminal Vim
+React Native bindings for the Stripe Terminal SDK. (Unofficial)
+OSX screensaver simulating a terminal
+Terminal like Geohot aka George Hotz. UPDATED VERSION LIKE IN STREAM
+Terminal.app plugin for quick access to terminal window (Quake-style)
+implementat k8s/docker web terminal with golang
+Perl extensions for the rxvt-unicode terminal emulator

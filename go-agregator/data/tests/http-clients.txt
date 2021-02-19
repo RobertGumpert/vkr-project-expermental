@@ -1,0 +1,3940 @@
+
+**
+Topics
+
+
+api-client
+instagram
+reverse-engineering
+ruby
+client
+deep-learning
+http
+machine-learning
+savedmodel
+serving
+tensorflow
+tensorflow-models
+api
+client
+fetch
+hacktoberfest
+http
+javascript
+kinto
+certificate
+certificates
+certificates-signed
+client-certificate
+golang
+server-certificate
+signed
+trust
+fetch
+http-client
+http-request
+javascript
+js
+json
+npm-package
+request
+rest
+tiny
+whatwg-fetch
+cloud
+eureka-js-client
+eureka-server
+microservices
+netflix
+nodejs
+service-discovery
+codegen
+elasticsearch
+sbt
+sbt-plugin
+scala
+csharp
+dotnet
+httpclient
+jsonnet
+sample
+android-sdk
+java
+jni-android
+mediasoup
+webrtc
+http
+http2
+http2-client
+javascript
+nodejs
+request
+api-client
+consul
+linux
+memcached
+metrics
+monitor
+mysql
+nodeexporter
+prometheus
+prometheus-client
+prometheus-exporter
+prometheus-metrics
+requests
+client
+cross-platform
+haxe
+http
+server
+client
+server
+socket
+tcp
+common-lisp
+http2
+lua-resty
+openresty
+http
+http-client
+rust
+elixir
+http-client
+apollo
+apollo-client
+client-library
+client-side
+configuration-management
+godoc
+golang
+httpclient
+netcore
+netframework
+client
+developer-experience
+http
+http-framework
+https
+middleware
+native
+ocaml
+reasonml
+server
+elasticsearch
+gtk
+rdp
+remote-control
+spice
+ssh-client
+vnc
+apache
+apache-http-client
+hactoberfest
+httpclient
+java
+mock
+client
+data-analytics
+druid
+nodejs
+java
+realtime
+stream
+tweets
+twitter4j
+cache
+client
+hacktoberfest
+http
+kinto
+offline
+offline-first
+sync
+synchronization
+http
+java
+rabbitmq
+http
+kotlin
+multiplatform
+bundle
+cache
+guzzle
+oauth2
+php
+symfony
+wsse
+build-runner
+chopper
+dart
+dio
+http
+retrofit
+source-gen
+crates
+http
+http-client
+rust
+ajax
+angular2
+decorators
+http
+java-jpa
+rebirth
+rebirth-http
+hacktoberfest
+http
+http-client
+http2
+https
+rust
+asynchronous
+http
+observable
+request
+rxjs6
+http
+https
+mock
+testing
+cookie
+header
+http
+http-cookies
+http-header
+parser
+rfc-6265
+rfc-7230
+api
+client
+http
+https
+javascript
+js
+node
+nodejs
+rest
+http-parser
+http-server
+swift
+android
+ios
+movies
+react
+react-native
+http
+http-client
+janet
+janet-lang
+client
+consul
+golang
+http
+http-client
+middleware
+modular
+pluggable
+retry
+sdk
+fetch
+http
+request
+c-plus-plus
+consul
+cpp
+cpp11
+client-server
+functional-testing
+http
+http-server
+javascript
+test
+angular
+angular6
+angularjs
+api
+client
+example
+http
+http-client
+httpclient
+rest
+restful
+restful-api
+tutorial
+china
+client
+ios
+network
+proxy
+shadowsocks
+shadowsocks-client
+ss
+ssr
+azure
+azure-functions
+azure-webjobs-sdk
+httpclient
+httpclientfactory
+ace
+backend
+cowboy
+elixir
+elixir-webservers
+framework
+rack
+umbrella
+web
+web-application-framework
+hacktoberfest
+esl
+esl-client
+event-socket
+freeswitch
+freeswitch-event-socket
+java
+netty
+telephony
+voip
+http
+http-client
+lwt
+ocaml
+unix
+deprecated
+linux
+macos
+nextcloud
+open-source
+opensource
+windows
+dylan
+network
+ios
+live
+player
+publisher
+rtmp
+rtsp
+sdk
+haskell-library
+http2
+protocol
+context
+ctx
+golang
+handler
+http
+middleware
+roundtripper
+http
+http-client
+https
+javascript
+node
+nodejs
+npm
+phin
+request
+hacktoberfest
+client
+godoc
+golang
+graphql
+machinebox
+sdk
+hacktoberfest
+c
+client
+curl
+ftp
+http
+https
+ldap
+libcurl
+library
+mqtt
+scp
+sftp
+transfer-data
+user-agent
+cowboy
+erlang
+functional
+high-performance
+http
+http-client
+http2
+http2-client
+https
+production-ready
+rest
+web
+websocket
+websocket-client
+websockets
+go
+golang
+monitoring
+rabbitmq
+add-on
+firefox
+http
+rest
+android
+client
+geolocation
+http
+java
+json
+mqtt
+owntracks
+api
+c-sharp
+ipfs
+portable-library
+client
+dgraph
+http
+javascript
+api-client
+http
+java
+java8
+salt
+salt-api
+salt-master
+salt-minion
+http2
+rust
+tokio
+c
+http-client
+linux
+socket
+eventmachine
+rabbitmq
+ruby
+aiohttp
+api-client
+http
+http-client
+python
+requests
+rest-api
+retrofit
+email
+golang
+http
+smtp
+client
+go
+http
+c-sharp
+cloud-storage
+mega
+mono
+myget
+netcore
+netstandard
+nuget
+uwp
+xamarin
+automated-testing
+http
+java
+rest
+restful-api
+stub
+elixir
+elixir-http
+elixir-lang
+elixir-language
+http
+http-client
+csharp
+dotnet
+fluent-api
+fluentapi
+http-client
+httpclient
+middleware
+netstandard
+rest
+rest-client
+cats
+fp
+http
+scala
+typelevel
+apollo
+fetch
+graphql
+graphql-client
+http
+client
+h2
+http
+https
+load-testing
+client
+http
+library
+python
+rest
+servicenow
+kit
+property-pane
+sharepoint
+sharepoint-framework
+sharepoint-online
+spfx
+webpart
+axios
+http-client
+redux
+redux-middleware
+client
+restful-client
+client
+github
+go
+graphql
+data-science
+database
+database-wrapper
+elasticsearch
+etl
+http
+json
+r
+r-package
+rstats
+http-client
+http-requests
+java
+http
+http-client
+iot
+dart
+dartlang
+flutter
+quire
+socket-io
+socket-io-client
+websocket
+baserecyclerviewadapterhelper
+butterknife
+glidev4
+greendao
+meterial-design
+mvp-architecture
+okhttp3
+rxbus
+rxjava2-dagger2-retrofit2
+smartrefreshlayout
+wanandoidclient
+async
+httpx
+oauth
+oauth2
+python3
+async
+client-side
+http
+java
+json-stream
+microservices
+plugin-extension
+resilience
+routing
+spring
+spring-boot-starter
+web
+http
+http-client
+http-server
+webrtc
+bandersnatch
+mirror
+mirroring
+pep381
+pypi
+pypi-mirror-client
+angular
+angular8
+api
+client
+examples
+http
+httpclient
+rest
+restapi
+tutorial
+circuit-breaker
+dotnet
+http-request
+polly
+resiliency
+xamarin
+android
+free-torrent-client
+freedom-torrent-client
+open-source-torrent-client
+torrent
+torrent-client
+benchmarks
+client
+erlang
+http
+go
+golang
+http
+resumable-upload
+tus
+tus-protocol
+upload
+uploader
+async
+h2
+http2
+python
+tornado
+async
+http
+http-server
+https
+https-server
+low-latency
+performance
+socket-client
+socket-server
+ssl
+tcp-client
+tcp-server
+tls
+udp-client
+udp-server
+websocket
+websocket-server
+api-client
+async
+ipfs
+javascript
+p2p
+textile
+typescript
+decentralization
+decentralized-applications
+dht
+dht-network
+ncurses
+p2p
+privacy
+privacy-tools
+security
+security-tools
+tox
+tox-client
+php
+sentry
+sentry-client
+typo3
+typo3-extension
+api
+client
+http
+python
+type-library
+typeform
+use-nonproduction
+ant-design
+commitlint
+create-react-app
+eslint
+jest
+react
+redux
+redux-saga
+fetch
+httpclient
+node-fetch
+sapper
+svelte
+xhr
+api
+api-client
+client
+ipfs
+guzzle
+http
+laravel
+javascript
+node-sp
+nodejs
+request
+sharepoint
+sp-request
+typescript
+d
+dlang
+dlang-requests
+http-client
+cpp
+lab
+eclipse-paho
+eclipseiot
+internet-of-things
+iot
+mqtt
+java
+oauth2
+oauth2-client
+http
+ip
+middleware
+psr-15
+acme
+acme-client
+certbot
+certificate
+letsencrypt
+python
+nuxtjs
+scraper
+vue
+awareframework
+context-awareness
+esm
+ios
+sensors
+aac
+golang-rtmp
+h264-avc
+h265-hevc
+hls
+http-flv
+http-ts
+https-flv
+lal
+live-media-server
+m3u8
+mpegts
+record
+relay
+rtcp
+rtmp
+rtp
+rtsp
+sdp
+stun
+cqrs
+eventsourcing
+geteventstore
+golang
+client
+http
+http-client
+ruby
+ahc
+async
+asynchttpclient
+java
+netty
+httpcomponents
+api
+api-client
+api-testing
+cli
+client
+curl
+debugging
+developer-tools
+development
+devops
+http
+http-client
+httpie
+json
+python
+rest
+rest-api
+terminal
+usability
+web
+asyncio
+http
+python
+trio
+http
+http-client
+http-server
+https
+php
+reactphp
+response-stream
+streaming-request
+streaming-response
+cpp
+cpp11
+header-only
+http
+https
+ipfs-client
+javascript
+go
+gorilla
+elixir
+hackney
+http
+http-client
+http-client
+javascript
+nodejs
+promise
+http
+http-client
+lua
+luajit
+nginx
+nginx-lua
+openresty
+streaming
+curl
+guzzle
+http-client
+httpclient
+php
+psr-7
+requests
+webservices
+haskell
+http-client
+http-conduit
+client
+erlang
+http
+client
+cookies
+forhumans
+http
+humans
+python
+python-requests
+requests
+android
+java
+client
+elixir
+http
+ibrowse
+rest
+decorators
+fakeweb
+http
+httpretty
+mock
+mocking
+python
+python2
+streaming-response
+tdd
+testing
+testing-tools
+http
+http-client
+rust
+http-client
+javascript
+vue
+vue-resource
+asp-product
+curl
+hacktoberfest
+http
+http-client
+yii
+yii2
+dns
+dns-over-https
+doh
+google-dns
+ietf-doh
+rfc-8484
+http-client
+interface
+java
+jax-rs
+okhttp3
+slf4j
+circe
+elasticsearch
+http
+reactive-streams
+rest-api
+scala
+asynchronous
+http
+http-client
+https
+https-client
+java
+test-harness
+api
+api-cli
+api-testing
+autocomplete
+cli
+developer-tools
+development
+http
+http-client
+httpie
+json
+python
+rest-api
+shell
+syntax-highlighting
+terminal
+web-development
+amphp
+artax
+async
+http
+http-client
+https
+php
+aiohttp
+async
+asyncio
+http
+http-client
+http-server
+python
+async
+clojure
+http-client
+http-server
+websockets
+component
+http
+http-client
+php
+psr-18
+symfony
+symfony-component
+curl
+go
+golang
+http
+httpclient
+http
+http-client
+php
+reactphp
+android
+bilibili
+ijkplayer
+okhttp3
+retrofit2
+rxjava
+http
+http-client
+httpclient
+php
+psr-18
+http-client
+swift-nio
+swift-server
+swift5
+cache
+go
+http
+transport
+http
+http-client
+network
+python
+fault-tolerance
+http
+http-client
+laravel
+php
+http
+http-client
+java
+java-http-client
+amazon-elasticsearch
+aws-sdk
+elasticsearch
+elasticsearch-js
+c-sharp
+dotnet
+http
+rest-client
+url-builder
+curl
+go
+http
+httprequest
+request
+eclipse
+embedded
+fcgi
+http
+http-client
+http-server
+http2
+http2-push
+https
+java
+jetty
+jsp
+osgi
+servlet
+ssl
+tls
+unix-socket
+websockets
+client
+gem
+http2
+http
+http-client
+rest
+elixir
+http
+oauth2
+cross-platform
+curl
+http
+http-client
+http-parser
+https
+linux
+mbedtls
+request
+rtos
+ssl
+tcpip
+wget
+http
+http-client
+http-requests
+terminal
+terminal-based
+user-interface
+guzzlehttp
+http
+http-client
+sdk-client
+sdk-php
+c-plus-plus
+http
+http-client
+libcurl
+packagecloud
+rest
+rest-client
+restclient
+android
+http
+java
+kalle
+http
+jira
+jira-client
+jql-search
+swift
+amqp
+batch
+eph
+event-processor-host
+eventhubs
+receive-events
+receive-messages
+sdk
+send-events
+typescript
+axios
+benchmark
+fetch
+got
+http
+http-client
+nodejs
+request
+android
+chat
+smack
+tutorial
+xmpp-client
+amazon-sqs
+queues
+request-response
+sqs
+sqs-clent
+cross-platform
+gateway
+microservice
+microservices
+rpc
+rpcx
+service-mesh
+sidecar
+c
+http
+http-client
+webdav
+webdav-client
+http
+http-digest
+lua
+luasocket
+api
+golang
+http
+json-api
+json-rpc
+rpc
+rpc-framework
+typescript
+angular2
+local
+offline
+offline-first
+requests
+react
+react-native
+redux
+redux-observable
+rxjs
+uestc
+client
+crux
+database
+rust-lang
+api-client
+blockchain
+blockchain-technology
+cryptocurrency
+currency
+nem
+nem-blockchain
+nem-blockchain-platform
+nis
+python
+xem
+cli
+client
+firebase
+firestore
+firestore-client
+hacktoberfest
+api
+client
+http
+labelary
+rest
+dart
+database
+faunadb
+flutter
+boost
+http-client
+c
+client
+http
+socket
+study
+asyncio
+http
+http-client
+python
+finagle
+http4s
+api
+client
+hal
+http
+hypertext-application-language
+php
+octo-correct-managed
+akka
+akka-http
+json
+marshaller
+rest
+rest-client
+simple
+guzzle
+http
+http-client
+php
+psr-7
+android-client
+java
+mathjax
+swad
+swad-platform
+swadroid
+ugr
+argo-client
+argo-workflows
+kubernetes
+python-client
+client
+http
+python
+react
+react-hooks
+reactjs
+amazon-elasticsearch
+aws
+elasticsearch
+iam-role
+proxy
+sign
+elixir
+email
+sparkpost
+cpp11
+curl
+requests
+rest
+http
+python
+tornado
+golang
+http
+mock
+mocking
+restfu
+testing
+apex
+http
+salesforce
+salesforce-developers
+android
+c-plus-plus
+chromeos
+evolonline
+game
+game-2d
+gpl
+libcurl
+libpng
+linux
+mana
+manaplus
+manaworld
+mmorpg
+opengl
+opengles
+sdl
+windows
+ab-testing
+feature-flags
+feature-toggles
+ddd
+event-sourcing
+event-store
+eventsourcing
+eventstore
+php
+prooph
+android
+http
+java
+kalle
+proxy-client
+socks
+tor
+cocoa
+macos
+objective-c
+osx
+rest
+client
+reactive
+server
+sockjs
+vertx
+web
+api
+http
+monitoring
+rabbitmq
+ruby
+f-sharp
+http
+http-client
+http
+http-client
+pony-language
+ponylang
+cqueues
+http
+http2
+lua
+network
+backoff
+circuit-breaker
+distributed-systems
+golang
+httpclient
+hystrix
+retries
+scale
+akka-http
+asynchronous
+cats
+distributed-tracing
+http
+httpclient
+interpolator
+monix
+okhttp
+reactive-streams
+scala
+scalaz
+synchronous
+uri
+zipkin
+zipkin-brave
+backoff
+go
+go-resty
+golang
+golang-library
+http-client
+middleware
+redirects
+rest-client
+retry
+srv-record
+graphql
+http
+http-client
+rest
+rest-api
+rest-client
+typescript
+visual-studio-code
+vscode
+vscode-extension
+go
+golang
+gorequest
+json
+library
+flv
+gb28181
+hls
+http
+http-flv
+http-fmp4
+http-ts
+mp4
+rtmp
+rtsp
+ts
+websocket
+websocket-flv
+websocket-fmp4
+websocket-ts
+akka
+akka-http
+csrf
+java
+scala
+session
+session-cookie
+session-management
+deprecated
+flux
+http
+ipc
+mono
+netty
+reactive
+reactive-streams
+reactor
+reactor3
+tcp
+udp
+chatclient
+linux
+macos
+twitch
+windows
+boost
+c-plus-plus
+cpp-library
+cpp11
+cpp14
+curl
+http-client
+http-server
+httpp
+https
+tbb
+failure-handling
+http
+networking
+python
+http
+http-client
+nodejs
+promises
+http
+python
+twisted
+android
+live
+player
+publisher
+rtmfp
+rtmp
+rtsp
+sdk
+vr
+asio
+client
+cpp
+http
+https
+library
+rest
+server
+web
+gleam
+http
+types
+ajax
+async-requests
+http
+http-client
+http-requests
+httpclient
+json
+promises
+request-promise
+requests
+rest
+rest-api
+rest-client
+unity
+unity-asset
+unity-scripts
+unity3d
+unity3d-plugin
+web-request
+web-services
+fluent-interface
+http-client
+rest-client
+http-proxy
+shadowsocks
+socks5
+elegantobjects
+http
+java
+object-oriented-programming
+golang
+rest-client
+api
+client
+http
+https
+nativescript
+security
+ssl
+api-authentication
+hmac
+hmac-authentication
+hmac-md5
+hmac-sha1
+hmac-sha512
+hmac-signature
+ruby
+ruby-on-rails
+caching
+dotnet
+http
+http-cache
+dormant
+groovy
+http-builder-ng
+java
+http-client
+http-server
+scala
+scala-fs2
+scodec
+server-sent-events
+shapeless
+websocket-client
+websockets
+consul-api
+java
+java-client
+http
+qt
+qt5
+dart
+flutter
+digest-authentication
+golang
+golang-library
+async
+client
+http
+soap
+wrapper
+client
+form
+httpclient
+json
+json-rpc-client
+oauth2-client
+openapi
+restful
+retrofit
+swagger
+webapi
+webclient
+xml
+async
+client
+framework
+http
+performance
+python
+server
+web
+fast
+fasthttpclient
+http
+httpclient
+okhttp
+okhttp3
+c-sharp
+dotnet
+httpclient
+mock
+mocking
+testing
+elixir
+hackney
+http
+ibrowse
+json
+middleware
+dsl
+http-client
+http-dsl
+kotlin
+kotlin-dsl
+networking
+hacktoberfest
+go
+nlu
+wit
+blob-storage
+openstack
+openstack-swift
+axios
+client
+go
+golang
+gorequest
+http
+net
+request
+cassandra
+cdrs
+client
+database
+driver
+rust
+go
+golang
+http
+http-client
+request
+async
+asynchronous-tasks
+cloud
+cpp
+cpp-library
+cpp11
+http
+oauth
+oauth2
+sdk
+tasks
+websockets
+http
+https
+raspberry-pi
+ssh
+tunnel
+fxa
+e-government
+eet
+eet-client
+security
+soap
+webservices
+client
+html5
+php
+ssh2
+web
+csharp
+http
+http-client
+rest-client
+unity3d
+china
+privacy
+privacy-enhancing-technologies
+privacy-protection
+search-engine
+search-interface
+self-hosted
+elastic-search
+java
+haproxy
+http-client
+lua
+argonaut
+free-monad
+http-client
+json
+monad
+scala
+scalaz
+dotnet
+dotnet-core
+httpclient
+httpclientfactory
+mock
+moq
+unit-testing
+csharp
+dotnet
+netcore
+privoxy
+tor
+tor-privoxy
+crystal
+http
+http-client
+https
+rest-client
+elixir
+elixir-lang
+erlang
+h2spec
+http
+http2
+https
+tls
+web
+client
+coroutine
+http
+httpclient
+php
+swoft
+swoole
+doujinshi
+e-hentai
+exhentai
+manga
+r18
+uwp
+uwp-app
+artificial-intelligence
+autocomplete
+bash
+c
+cpp
+golang
+gpt-2
+java
+javascript
+lua
+php
+python
+ruby
+rust
+swift
+typescript
+vscode
+vscode-extension
+library
+rtmp
+rtmp-client
+srs
+srs-librtmp
+erlang
+high-performance
+http
+http-client
+client
+h5
+plus
+sns
+spa
+thinksns
+vue
+web
+async
+http
+http-server
+https
+https-server
+low-latency
+performance
+socket-client
+socket-server
+ssl
+tcp-client
+tcp-server
+tls
+udp-client
+udp-server
+websocket
+websocket-server
+api
+api-client
+http
+http-client
+ruby
+bitcoin
+coinbase
+go
+trading
+http
+node
+nodejs
+rest
+api-client
+javascript
+midtrans
+node-js
+nodejs
+npm-package
+payment
+payment-gateway
+http
+http2
+https
+scala
+web
+asyncio
+ftp
+ftp-client
+ftp-server
+python
+seq
+api
+filecoin
+http
+java
+retrofit2
+spring-boot
+client-lib
+golang
+golang-library
+golang-package
+logging
+logging-library
+splunk
+splunk-http
+digital-signature
+docusign
+docusign-api
+docusign-python-client
+docusign-rest
+electronic-signatures
+esignature
+sdk
+composer-package
+midtrans
+payment-gateway
+php-library
+contract
+http-client
+php
+symfony
+symfony-contract
+github-action
+graphql-client
+http-client
+cpp
+mock
+mockserver
+testing
+tests
+dcos
+dcos-compute-guild
+library
+mesos
+rxjava
+aio
+aiohttp
+async
+asynchronous
+asyncio
+kubernetes
+python
+nsurlsession
+rxswift
+streaming-data
+swift
+meteor
+webpack
+apigateway
+aws
+dazn
+dynamodb
+kinesis
+lambda
+nodejs
+serverless
+sns
+sqs
+stepfunctions
+c-sharp
+csharp
+dalsoft
+dotnetcore
+dynamic
+ihttpclientfactory
+json
+rest-client
+restclient
+asynchronous
+asynchttpclient
+http-client
+java
+playframework
+reactive
+reactive-streams
+scala
+artificial-intelligence
+collects-metrics
+hacktoberfest
+metrics-data
+metrics-fetched
+metrics-processing
+prometheus
+prometheus-api
+prometheus-metrics
+series-data
+ajax
+async
+axios
+coroutine
+http
+http-client
+php
+psr7
+psr7-http-client
+requests
+saber
+swoole
+apns
+apple
+client
+connection-pool
+http2
+notifications
+ruby-on-rails
+chat
+client
+desktop
+matrix
+qt
+qt5
+client
+http
+php
+asgi
+asyncio
+client
+cython
+http
+server
+uvloop
+hbase
+kafka
+redis
+rmdbs
+socket
+elixir
+http
+http-client
+https
+pool
+csharp
+dotnet
+odata
+odata-client
+simple
+android
+app
+client
+cnode
+cnodejs
+windows-universal
+winrt
+eclipseiot
+embedded
+internet-of-things
+iot
+mqtt
+client
+golang
+grafana
+grafana-api
+http
+library
+asynchronous
+fetch-api
+middleware
+react
+react-native
+rest-client
+api
+api-client
+class
+client
+curl
+framework
+http
+http-client
+http-proxy
+json
+php
+php-curl
+php-curl-library
+proxy
+requests
+restful
+web-scraper
+web-scraping
+web-service
+xml
+bittorrent
+go
+http
+microservice
+proxy
+service
+streaming
+torrent
+torrent-client
+alamofire
+asynchronous
+authentication
+cache
+framework
+http
+json
+moya
+networking
+progress
+request
+response
+stub
+swift
+swift-framework
+swift-library
+swift-package-manager
+synchronous
+task
+urlsession
+client
+http
+https
+pharo
+server
+smalltalk
+grunt-plugin
+homebrew
+java-client
+javascript-client
+mock-server
+node-client
+node-module
+proxy
+ruby-client
+clickhouse
+clickhouse-client
+htmlunit
+httpclient
+mybatis
+selenium
+adopt-this-plugin
+httpcomponents-client
+jenkins
+jenkins-api-plugin
+jenkins-plugin
+flexible
+http-client
+lua-resty
+angular
+angular4
+angularjs
+client
+example
+http
+httpclient
+ionic
+ionic3
+tutorial
+asio
+asio-http
+asynchronous
+boost
+connection-pool
+cpp17
+http
+http-client
+parallel-requests
+alexa
+alexapi
+artificial-intelligence
+assistant
+voice-commands
+access-token
+api
+boilerplate
+data-access-layer
+enterprise
+flux
+http-wrapper
+jwt
+realworld
+refresh-token
+spa
+vue-boilerplate
+vuejs
+vuex
+angularjs
+hacktoberfest
+react
+sharepoint-extensions
+sharepoint-framework
+sharepoint-page
+hacktoberfest
+hal
+hateoas
+hateoas-hal
+http
+hypermedia-client
+javascript
+rest
+go
+golang
+http
+microservices
+rpc
+api
+fil
+filecoin
+http
+javascript
+rest
+cpp
+http
+http-server
+websocket-client
+websocket-server
+websockets
+dicom
+dicom-json
+dicomweb
+http
+imaging-informatics
+javascript
+nci-itcr
+npm
+cli-tools
+client
+http
+client
+http
+http-client
+ruby
+ahc
+async
+asynchttpclient
+java
+netty
+httpcomponents
+api
+api-client
+api-testing
+cli
+client
+curl
+debugging
+developer-tools
+development
+devops
+http
+http-client
+httpie
+json
+python
+rest
+rest-api
+terminal
+usability
+web
+asyncio
+http
+python
+trio
+http
+http-client
+http-server
+https
+php
+reactphp
+response-stream
+streaming-request
+streaming-response
+cpp
+cpp11
+header-only
+http
+https
+ipfs-client
+javascript
+go
+gorilla
+elixir
+hackney
+http
+http-client
+http-client
+javascript
+nodejs
+promise
+http
+http-client
+lua
+luajit
+nginx
+nginx-lua
+openresty
+streaming
+curl
+guzzle
+http-client
+httpclient
+php
+psr-7
+requests
+webservices
+haskell
+http-client
+http-conduit
+client
+erlang
+http
+client
+cookies
+forhumans
+http
+humans
+python
+python-requests
+requests
+android
+java
+client
+elixir
+http
+ibrowse
+rest
+decorators
+fakeweb
+http
+httpretty
+mock
+mocking
+python
+python2
+streaming-response
+tdd
+testing
+testing-tools
+http
+http-client
+rust
+http-client
+javascript
+vue
+vue-resource
+asp-product
+curl
+hacktoberfest
+http
+http-client
+yii
+yii2
+dns
+dns-over-https
+doh
+google-dns
+ietf-doh
+rfc-8484
+http-client
+interface
+java
+jax-rs
+okhttp3
+slf4j
+circe
+elasticsearch
+http
+reactive-streams
+rest-api
+scala
+asynchronous
+http
+http-client
+https
+https-client
+java
+test-harness
+api
+api-cli
+api-testing
+autocomplete
+cli
+developer-tools
+development
+http
+http-client
+httpie
+json
+python
+rest-api
+shell
+syntax-highlighting
+terminal
+web-development
+amphp
+artax
+async
+http
+http-client
+https
+php
+aiohttp
+async
+asyncio
+http
+http-client
+http-server
+python
+async
+clojure
+http-client
+http-server
+websockets
+component
+http
+http-client
+php
+psr-18
+symfony
+symfony-component
+http
+http-server
+python
+wsgi
+wsgi-server
+curl
+go
+golang
+http
+httpclient
+http
+http-client
+php
+reactphp
+android
+bilibili
+ijkplayer
+okhttp3
+retrofit2
+rxjava
+http
+http-client
+httpclient
+php
+psr-18
+http-client
+swift-nio
+swift-server
+swift5
+cache
+go
+http
+transport
+http
+http-client
+network
+python
+fault-tolerance
+http
+http-client
+laravel
+php
+android
+graalvm
+java
+kotlin
+http
+http-client
+java
+java-http-client
+amazon-elasticsearch
+aws-sdk
+elasticsearch
+elasticsearch-js
+c-sharp
+dotnet
+http
+rest-client
+url-builder
+curl
+go
+http
+httprequest
+request
+eclipse
+embedded
+fcgi
+http
+http-client
+http-server
+http2
+http2-push
+https
+java
+jetty
+jsp
+osgi
+servlet
+ssl
+tls
+unix-socket
+websockets
+client
+gem
+http2
+http
+http-client
+rest
+c-sharp
+dotnet
+dotnet-core
+httpclient
+httpclientfactory
+elixir
+http
+oauth2
+cross-platform
+curl
+http
+http-client
+http-parser
+https
+linux
+mbedtls
+request
+rtos
+ssl
+tcpip
+wget
+http
+http-client
+http-requests
+terminal
+terminal-based
+user-interface
+guzzlehttp
+http
+http-client
+sdk-client
+sdk-php
+c-plus-plus
+http
+http-client
+libcurl
+packagecloud
+rest
+rest-client
+restclient
+http
+load-testing
+client
+http1
+http2
+ruby
+server
+websocket
+http
+metrics
+prometheus
+prometheus-client
+elixir
+elixir-lang
+http2
+web
+asynchronous
+event-driven
+http-client
+blazor
+angular
+angularjs
+client
+http
+protractor
+rest
+test
+tests
+security
+boost-asio
+boost-beast
+digest-authentication
+http
+http-client
+https
+https-client
+url
+haskell
+http-client
+client
+gui
+http
+https
+javascript
+nodejs
+vscode-extension
+webview
+curl
+http-client
+lush
+php
+irc
+irc-client
+mac-appstore
+xchat
+xchat-aqua
+xchat-azure
+cgo
+go
+golang
+http
+http-client
+httpclient
+mariadb
+mariadb-mysql
+mysql
+udf
+udf-libraries
+api
+client
+customerio
+http
+rest
+dns
+dns-over-https
+doh
+golang
+apache-httpcomponents
+connection-pool
+deserialization
+http-client
+http-requests
+httprequest
+supported-converting
+client
+http
+php
+psr-7
+aspnetcore
+dotnet
+dotnetcore
+file-download
+file-upload
+http
+httpclient
+netcore
+crypto
+crypto-exchange
+cryptocurrency
+cryptocurrency-exchanges
+python
+upbit
+upbit-api
+upbit-client
+upbit-exchange
+elixir
+gun
+http
+http2
+poolboy
+client
+cloud-native
+go
+go-liftbridge
+golang
+grpc
+liftbridge
+messaging
+nats
+pubsub
+streaming
+api
+authentication
+client
+fluent-api
+go
+go-sharepoint
+golang
+http
+rest
+sharepoint
+sharepoint-online
+client
+cpp
+json
+rosbridge
+websocket
+gtk3
+tox-client
+unmaintained-dont-use
+vala
+api
+http
+nuxt
+nuxt-module
+nuxtjs
+restful
+yaml
+api-client
+bitcoin
+bitflyer
+btc-fx-trading
+csharp
+dotnet
+dotnet-core
+amqp
+amqp1-0
+azure
+azure-eventhub
+event-hubs
+eventhub
+eventhubs
+messaging
+akka
+api
+api-consumer
+api-management
+async
+http
+http-client
+parallel
+parallel-requests
+parallel-ssh
+ping
+polling
+rest
+ssh
+tcp
+tcp-client
+udp
+http2
+httpclient
+java10
+java8
+java9
+cache
+cpp
+cross-platform
+http
+https
+networking
+gohttp
+golang
+http
+http-client
+http
+request-bin
+webhooks
+webhooks-catcher
+app
+chrome
+client
+elixir
+hacktoberfest
+nats
+nats-io
+api
+async
+curl
+http
+r
+r-package
+rstats
+cms
+express-js
+hapi
+koa
+node
+node-cms
+nodejs
+nodejs-cms
+angular
+angular7
+client
+example
+http
+interceptor
+ionic
+ionic4
+tutorial
+golang
+json-rpc
+client
+dashboards
+generator
+golang
+grafana
+http
+json
+library
+metrics
+monitoring
+parser
+sdk
+api-client
+wordpress
+cli
+cli-app
+client
+command-line
+developer-tools
+development
+git
+github
+github-api
+github-client
+github-enterprise
+linux
+macos
+programming
+python
+shell
+terminal
+utilities
+utility
+windows
+android
+api
+graphql
+graphql-client
+http
+java
+okhttp
+reactive
+rx
+rxjava
+asio
+beast
+boost
+cplusplus
+cpp
+http
+requests
+rest
+webcc
+webservice
+asynchronous
+chunking
+completablefuture-api
+filter
+h2c
+haproxy
+http2
+httpclient
+https
+interceptor
+netty
+redirect
+retry
+hacktoberfest
+hoppscotch
+circuit-breaker
+http
+javascript
+nodejs
+request
+services
+web
+browser
+finger
+finger-protocol
+gemini-protocol
+gopher
+gopher-client
+gopher-protocol
+qt5
+qt5-gui
+httpclient
+java
+mock
+test
+unit-testing
+go
+golang
+helper
+http
+http-client
+art
+design
+education
+graphics
+html
+javascript
+learning
+sound
+cpp
+uiautomation
+arduino
+bme280
+esp8266
+mqtt
+volkszaehler
+dart-webdav
+dart2
+flutter
+http
+webdav
+browser
+ethereum
+http
+ipc
+nodejs
+provider
+web3
+websocket
+dotnet
+push-api
+push-notifications
+web-push
+web-push-notification
+nodejs
+sctp
+upd
+webrtc
+dynamodb
+electron
+elementui
+gui-client
+vue-resource
+vuejs2
+vuex
+api
+bank
+banking
+cli
+command-line-tool
+n26
+number26
+python
+hackney
+http
+http-client
+httpc
+ibrowse
+middleware
+wrapper
+crystal
+proxy-client
+proxy-server
+angular
+http
+http-client
+ng2
+ng4
+ng5
+oauth
+oauth2-client
+golang
+steem
+go
+http
+api-rest
+api-testing
+desktop-application
+openapi3
+pyqt5
+python
+rest-client
+groovy
+http
+http-client
+https
+cli
+http-client
+rust
+scriptable
+asynchronous
+cpp
+cpp11
+multi-platform
+no-dependencies
+redis
+redis-client
+unix
+windows
+board-game
+game
+html5
+html5-game
+javascript
+royal-game-of-ur
+ur
+web-game
+chef
+knife-plugin
+ruby
+client
+honeypot
+httpbl
+python
+api-client
+midtrans
+payment
+payment-gateway
+python
+python-library
+python2
+python3
+api-client
+golang
+http-client
+ponzu
+ponzu-client
+ponzu-cms
+librato
+metrics
+metrics-gathering-daemon
+node
+aiohttp
+async
+asyncio
+clickhouse
+client
+driver
+python
+android
+http
+http-client
+java
+json
+xml
+
+**
+Descriptions
+
+
+The first Instagram website and lightweight API HTTP client
+Generic and easy-to-use serving service for machine learning models
+A JavaScript HTTP client for the Kinto API.
+Extremely simple HTTPS client in Go, along with all the openssl commands to make certs work. Errors and solutions in the documentation.
+🌳 Tiny & elegant JavaScript HTTP client based on the browser Fetch API
+JS implementation of a client for Eureka (https://github.com/Netflix/eureka), the Netflix OSS service registry.
+Scala client and code generator for Elasticsearch
+Unirest in Python: Simplified, lightweight HTTP client library.
+Unirest in .NET: Simplified, lightweight HTTP client library.
+httpPost Test Example for Android Client
+Source code illustrating how to make efficient HttpClient api calls in C#
+Super awesome HTTP Client for Appcelerator Titanium :)
+Moved to https://git.sr.ht/~thestr4ng3r/chiaki - Free and Open Source PS4 Remote Play Client
+mediasoup android client side library https://mediasoup.org
+A simple yet elegant client for accessing and controlling a Kubernetes cluster (https://github.com/kubernetes/kubernetes)
+ws-http: Simplified, lightweight HTTP client library
+Simple client for local, built-in HTTP server in the Spotify player.
+Moved to
+Fully managed HttpMessageHandler implementation based on sockets.
+Lightweight HTTP client for Android apps
+Scala Asynchronous ElasticSearch HTTP Client
+An example https client and server using OpenSSL and libevent, for the purpose of discussing some issues that came up on the libevent mailing list.  This was just a one-off that I'm not maintaining, but I'm happy to accept pull requests.
+Transparently make http request to both http1 / http2 server.
+Prometheus service http client， Use wrapper Automatic selection query mode, there is no need for any implementation
+Cross platform HTTP abstraction
+A native gRPC client in Haskell
+NetworkSocket是一个以中间件(middleware)扩展通讯协议，以插件(plug)扩展服务器功能的支持SSL安全传输的通讯框架；目前支持http、websocket、fast、flex策略与silverlight策略协议。
+This repository supports the continued development of the long moribund Incutio PHP HTTP Client Class. (Though this one is now fairly moribund, as well.)
+An asynchronous http client with support for sse
+HTTP client written in Common Lisp
+The HTTP/2 Protocol (Client Side) Implementation for OpenResty.
+simple HTTP client with built-in HTTPS support
+Java client to interact with the Pusher HTTP API
+Elixir HTTP Client focused on performance
+JSON-oriented HTTP server and client helpers
+http://brain.fm Desktop client
+🚀Go client for ctrip/apollo (https://github.com/ctripcorp/apollo)
+safe HttpClient For netcore And netframework
+⚡️ High-level, High-performance HTTP(S) Clients/Servers in Reason/OCaml
+Curl based HTTP Client - Simple but effective OOP wrapper around Curl php lib
+An Elixir flavored HTTP client and DSL library for Elasticsearch
+Benchmark for several Java HTTP clients
+This sample shows you how to securely stream data directly to Azure IoT Hub from an ESP8266 device flashed with the Arduino core for ESP8266 WiFi chip firmware
+Realtime iOS application framework (client) http://socket.io
+httpAsyncClient Util
+The HTTP library used by the Spotify iOS client
+Mirror of https://gitlab.com/Remmina/Remmina The GTK+ Remmina Remote Desktop Client
+Http client in c++
+通过http协议进行传输数据的远程控制软件.server端(被控端)是exe, client端是浏览器
+Library for mocking Apache HttpClient.
+Client of iComet server for Java/Android. iComet server: https://github.com/ideawu/icomet
+Build HTTP Clients easily with Perl 6
+Simple querying library for Druid (http://druid.io)
+A Java HTTP client for consuming Twitter's realtime Streaming API
+An Offline-First JavaScript Client for Kinto.
+A Simplified Golang Http Client
+Replaced by https://github.com/keycloak/keycloak-nodejs-admin-client
+Force HTTPS clients to present a valid certificate
+RabbitMQ HTTP API client for Java, Groovy, and other JVM languages
+A Python HTTP client for the Kinto API. 
+Kotlin multiplatform http-client
+⛽️  Integrates Guzzle 6.x, a PHP HTTP Client, into Symfony
+Simple HTTP client library written in JavaScript to be used in Adobe programs (such as Indesign).
+retrofit.dart is an dio client generator using source_gen and inspired by Chopper and Retrofit.
+A client wrapper around a rack app or live-http
+本项目是基于网络库okhttp、Async，封装的一个可以任意切换网络库的代码库，欢迎大家使用并提出意见。
+Simple, minimal-dependency HTTP client.
+Java JPA like HTTP client for Angular. 🍙
+Unirest in Ruby: Simplified, lightweight HTTP client library.
+Lightweight wrapper for littleBits Cloud HTTP API
+The practical HTTP client that is fun to use.
+The world-famous HTTP client Request now RxJS compliant, wrote in full Typescript | ES6 for client and server side.
+Mock HTTP::Client
+Bypass provides a quick way to create a custom plug that can be put in place instead of an actual HTTP server to return prebaked responses to client requests.
+Basic HTTP primitives which can be shared by servers and clients.
+Node.js SDK for the BlockCypher Web services. See http://www.blockcypher.com
+REST API Client Library
+C++ client for making simple HTTP requests
+Angular2 HTTP client to consume RESTful services. Built with TypeScript. 
+A simple GCD based HTTP client and server, written in 'pure' Swift
+React Native client for TMDb 🎬 https://www.themoviedb.org
+A janet http client library
+Full-featured, plugin-driven, extensible HTTP client toolkit for Go
+IPFS HTTP client in Rust
+A no-dependencies HTTP client library for browsers and Node.js with a promise-based or Node.js-style callback-based API to progress events, text and binary file upload and download, partial response body, request and response headers, status code.
+:postbox: Minimalistic Fetch based HTTP client
+HTTP REST Client Library for LabVIEW
+In this tutorial we will create a sample application that illustrates how to perform network operations in android. To make this post simplified, we will download the data from the following url and will show the article titles on a ListView. Refer the screenshot for an overview of how application looks
+C++ client for Consul (http://consul.io)
+HTTP client and server for JSON-RPC 2.0
+Unirest in Objective-C: Simplified, lightweight HTTP client library.
+Testing tool for HTTP-based-API clients
+Angular 6 HttpClient: Consume RESTful API Example
+Potatso is an iOS client that implements Shadowsocks proxy with the leverage of NetworkExtension framework. ***This project is unmaintained, try taking a look at this fork https://github.com/shadowcoel/shadowcoel instead.
+Nimble, streamable HTTP client for Node.js. With proxy, iconv, cookie, deflate & multipart support.
+[Archived] Azure Functions and Azure WebJobs binding extensions for HttpClientFactory. This is no longer the best approach: https://www.tpeczek.com/2019/10/alternative-approach-to-httpclient-in.html
+Interface for HTTP webservers, frameworks and clients
+Modem USB Huawei HTTP API Python client
+A parallel HTTP client written in pure PHP
+Make HTTP requests to servers that employ digest authentication.
+Simple, but flexible HTTP client library, with support for multiple backends.
+A Fork from http://git.freeswitch.org/git/freeswitch-contrib/tree/dvarnes/java/esl-client
+Common HTTP Client implementations and tools for HTTPlug
+Node Rest and Http Clients with typings for use with TypeScript
+An OCaml library for HTTP clients and servers using Lwt or Async
+A lightweight HTTP client optimized for use with actions, TypeScript with generics and async await.
+ARC Chrome is deprecated. Please move to https://github.com/advanced-rest-client/arc-electron/
+JDK 11+ http client implementation for http4s clients
+experimental new HTTP client API for #golang (WIP)
+A suite of HTTP tools, including clients and servers for openFrameworks.
+A Zhihu Daily(http://daily.zhihu.com/) App client implemented using React Native (Android and iOS).
+:computer: Nextcloud themed desktop client - Moved over to https://github.com/nextcloud/desktop
+HTTP server and client for Dylan
+NodeMedia RTMP/RTSP/HTTP Play/Publish Client SDK for iOS
+A native HTTP2 client in Haskell
+Go HTTP Server Middleware and Client Tripperware
+Node HTTP client
+Low-level HTTP client
+REST client for Sublime Text 2 and 3
+Simple low-level GraphQL HTTP client for Go
+A low-level Node.js HTTP client for communicating with the Elastic APM intake API
+Lua HTTP client driver for ngx_lua
+Unirest in Node.js: Simplified, lightweight HTTP client library.
+Ruby HTTP client based on libcurl
+Python client for the Consul HTTP API
+Python client for Consul (http://www.consul.io/)
+Websocket Client/Server with akka-http
+A command line tool and library for transferring data with URL syntax, supporting DICT, FILE, FTP, FTPS, GOPHER, GOPHERS, HTTP, HTTPS, IMAP, IMAPS, LDAP, LDAPS, MQTT, POP3, POP3S, RTMP, RTMPS, RTSP, SCP, SFTP, SMB, SMBS, SMTP, SMTPS, TELNET and TFTP. libcurl offers a myriad of powerful features
+  A review of HTTP clients for Node.js and browsers
+Desktop Client for http://api.susi.ai
+HTTP/1.1, HTTP/2 and Websocket client for Erlang/OTP.
+Go (golang) http digest authentication client.
+Barebones http client that uses the owin interface built on .NET socket API.
+RabbitMQ HTTP API client in Go
+A synchronous http(s) client for node.js
+:rocket: Supporting request forwarding and Promise based HTTP client for all JavaScript runtimes.
+A simple REST client for Firefox
+OwnTracks Android App
+HTTP Client
+Make HTTP requests from client-side JavaScript.
+.NET API client for the InterPlanetary File System (IPFS)
+A JavaScript HTTP client for Dgraph
+DEPRECATED - please use the official client at https://github.com/coreos/etcd/tree/master/client
+Torrent to HTTP client for https://github.com/steeve/xbmctorrent
+Java bindings for the Salt API
+基于 TcpClient 现实的 http请求库，编写于2007年做了几年数据采集工作。
+etest Assertions around HTTP (client-side)
+HTTP 2.0 client & server implementation for Rust.
+Go-IPFS API implementation over HTTP API
+A simple http client.
+Superseded by: https://github.com/snoyberg/http-client
+Java tool for mocking HTTP server behaviours for testing HTTP client code
+:anchor: Minimalist HTTP client for JSON payloads.
+EventMachine-based RabbitMQ client. Prefer Bunny: http://rubybunny.info. See documentation guides at http://rubyamqp.info.
+HTTP client library wrapping Apache HttpAsyncClient
+A Declarative HTTP Client for Python
+Lightweight SMTP client written in Go
+httpie-like HTTP client written in Go
+A ring-inspired, promise-returning, simple Clojure(Script) HTTP client.
+An HTTP Client based on the Fetch standard.
+Functional JS HTTP client (Node.js & Fetch) w/ async await
+General purpose HTTP / HTTPS client for node.js. Supports transparent gzip / deflate decoding. Successor of http-get.
+Generic HTTP types for Haskell (for both client and server code)
+MegaApiClient is a C# .Net library to access http://mega.co.nz / http://mega.nz cloud storage and file hosting service.
+httpsPostClient，一个关于发送HTTS Post数据的基础库，即使用HTTP Post的方式发送用户数据，HTTP数据包经过了openssl加密。使用异步方式收发数据，linux环境，C++实现。
+A Node.js HTTP Client
+[UNMAINTAINED] old HTTP client library for Rust
+Restito - mocking framework for testing rest clients
+Ruby HTTP client for the Heroku API
+An android client for http://gank.io/
+A fast async http client based on netty
+MOVED: now at https://opendev.org/x/golang-client
+Fast and friendly HTTP client framework for async Rust
+Lightweight and simple remote desktop server designed to use a WEB browser as client
+Functional HTTP client for Elixir with support for HTTP/1 and HTTP/2.
+Http Client for .NET Standard with fluent APIs which are intuitive, easy to use and also highly extensible.
+Purely functional HTTP client
+MicroPython HTTP Client
+:dog: Lightweight GraphQL client that supports middleware and afterware
+The simplified HTTP request client 'request' with Promise support. Powered by Bluebird.
+HTTP server load test and parallel curl utilities from Verizon Digital Media Services
+Python library for the ServiceNow REST API
+httpfs java client, read & write hdfs filesystem with the webhdfs REST HTTP API
+Socket HTTP Client
+An asynchronous HTTP client for Slack's web API
+Web Site: https://oliviercc.github.io/sp-client-custom-fields
+Redux middleware for fetching data with axios HTTP client
+Package surfer is a high level concurrency http client. It has surf andphantom download engines, highly simulated browser behavior, the function of analog login and so on.
+Package githubv4 is a client library for accessing GitHub GraphQL API v4 (https://docs.github.com/en/graphql).
+R client for the Elasticsearch HTTP API
+Convenient http client for java,  inspired by python request module
+3D Client for https://github.com/jsuarez5341/neural-mmo
+This repo is deprecated. Check https://0xacab.org/leap/bitmask-dev
+http client library by RT-Thread
+Hurray for server-side content negotiation
+Extension for Google Chrome to help construct custom HTTP requests to directly test your web services.
+socket.io-client-dart: Dartlang port of socket.io-client https://github.com/socketio/socket.io-client
+Asynchronous Scala HTTP client using Finagle, Shapeless and Cats
+:rainbow:打造一款有较好体验的WanAndroid客户端，在学习中不断提升自我。同款跨平台Flutter版本：https://github.com/maoqitian/flutter_wanandroid
+c++ http client for simple rest requests
+Async OAuth client using HTTPX
+Simple Clojure wrapper for IPFS API
+A cross platform HTTP client written in C++ based on raw sockets
+A super simple http client library for iOS and OSX in Swift
+Python client for Batfish: https://github.com/batfish/batfish
+Asynchronous HTTP client built on libcurl
+Http Client is a plugin that makes it easy to make HTTP / HTTPS REST calls in Unity games
+Client-side response routing for Spring
+Basic REST client using pecl http module
+gRPC over HTTP/2 for Haskell, client and server
+c++ api for http client & server 
+A PyPI mirror client according to PEP 381 http://www.python.org/dev/peps/pep-0381/
+Angular 8 Tutorial: REST API and HttpClient Examples
+Sample app using Polly for retying Http requests
+Free and Open Source, full-featured torrent client for Android. Mirrored from https://gitlab.com/proninyaroslav/libretorrent
+StackMob's HTTP client
+Straightforward HTTP Client
+Erlang HTTP client benchmarks 
+Chopper is an http client generator using source_gen and inspired from Retrofit.
+PHP Http Client
+A simple HTTP and REST client for Rust, inspired by Ruby's rest-client.
+HTTP API Client Builder
+HTTP client load balancer with retries
+iOS client - (Deprecated) - New version: https://github.com/standardnotes/mobile
+A pure Go client for the tus resumable upload protocol
+Example Node.js websocket client and server application setup to run on OpenShift.
+Tornado HTTP/2 Client
+Ultra fast and low latency asynchronous socket server & client C++ library with support TCP, SSL, UDP, HTTP, HTTPS, WebSocket protocols and 10K connections problem solution
+即时通讯 Socket自定义协议聊天，项目简介https://www.jianshu.com/p/fb0d9669815a ，当前开发版本1.0.1dev。
+[DEPRECATED] Official Textile JS HTTP Wrapper Client
+java client for prometheus http api
+An ncurses-based Tox client (please make pull requests on the development fork: https://github.com/toktok/toxic)
+TYPO3 Extension for exception logging with sentry, see http://www.getsentry.com
+HTTP client inside your PostgreSQL. Easy to install. No compilation required. API-friendly
+Typeform Python API client
+A simple HTTP Server-Client program in Java
+PHP client for the Etherpad Lite HTTP API.
+Pure C (or C++) webserver (and experimental http client) based on libuv and http-parser
+Human Resources Department Tool. https://ifactory-solutions.github.io/inside-client/
+Fast Parallel Async HTTP client as a Service to monitor and manage 10,000 web servers. (Java+Akka)
+Laravel CRUD application showcase using HTTP Client
+Specify common request and response processing in a single location
+Extensive Test Suite for AsyncHttpClient library
+Client for Eventbrite's HTTP-based API
+Simplified HTTP Client for Go
+A mock library for verifying requests made with the Guzzle Http Client, and mocking responses
+An enterprise-grade Java-based, Apache 2.0 licensed Ethereum client https://wiki.hyperledger.org/display/besu
+An isomorphic http client for Sapper
+Legacy client. New version here: https://github.com/namecoin/namecoin-core  Note the release branch! - Official website:
+Specialized HTTP Client
+A client library for the IPFS HTTP API, implemented in Ruby.
+A Simple Guzzle Client for a Laravel application
+a simply http client with gzip in C
+An HTTP/1.1 client, written from scratch for Node.js
+Modular, RFC 2616 compliant HTTP/1.1 server and client
+PHP HTTP client library for cybozu.com API.
+Netatmo connect API python client (for Netatmo information, see https://dev.netatmo.com)
+Raise your hand if you need a scala http client.
+[Deprecated] Simple, async PSR-7 HTTP client for concurrently processing any number of HTTP requests, built on top of ReactPHP.
+Command line HTTP client written in Crystal
+Meta package for ReactPHP HttpClient adapters/handles for Guzzle 4, 5, and 6.
+:spider: PhantomJS client for SERPS
+Simplified SharePoint HTTP client
+dlang http client library inspired by python-requests
+httpClient demo for angular 7 with a json-server as a sample api
+Реализация HTTP клиента
+An Eclipse Paho C client library for MQTT for Windows, Linux and MacOS. API documentation: https://eclipse.github.io/paho.mqtt.c/
+An OAuth2 client implementation based on http-client-essentials.
+Example Android project using HTTPS/SSL with client certificates and self-signed server certificate
+Ruby HTTP clients comparison for Oedo RubyKaigi 01
+An HTTP and WebSocket "echo" server for testing proxies and HTTP clients.
+A Scala port of the popular Python Requests HTTP client: flexible, intuitive, and straightforward to use.
+A gentle HTTP client
+a light weight library aimed to ease the development for your rest client
+Asynchronous Http Client for iOS
+A basic HTTP client.
+Rust lightweight HTTP 1.1 client
+Read-only mirror of https://hg.openjdk.java.net/jdk/client/
+http://shixian.com Android客户端
+JSON-RPC 2.0 Client for HTTP and WebSocket backends
+This is a laravel 4 package for the server and client side of datatables at http://datatables.net/
+Grafana HTTP API Client for Go
+PSR-15 middleware to detect the client ip and save it as a request attribute.
+Certbot is EFF's tool to obtain certs from Let's Encrypt and (optionally) auto-enable HTTPS on your server.  It can also act as a client for any other CA that uses the ACME protocol.
+Code for Linux,Http client which can send GET/POST requests
+client for https://ammobin.ca
+http://awareframework.com
+Http client for OSRM
+A tool to generate typescript http clients and types from swagger definitions
+🔥 Golang live stream lib/client/server. support RTMP/RTSP/HLS/HTTP[S]-FLV/HTTP-TS, H264/H265/AAC, relay, cluster, record, HTTP API/Notify, GOP cache. 官方文档见 https://pengrl.com/lal
+Docker client based on Akka HTTP
+Python client for Amazon Alexa Voice Service (AVS). http://ewenchou.github.io/blog/2016/03/20/alexa-voice-service/
+POE::Component::Client::HTTP is a parallel HTTP user-agent for POE. It lets other sessions run while HTTP transactions are being processed, and it lets several HTTP transactions be processed in parallel.  POE::Component::Client::HTTP supports keep-alive through POE::Component::Client::Keepalive, which in turn uses POE::Component::Client::DNS for non-blocking host name resolution.
+A Go Client for EventStore HTTP API
+HTTP (The Gem! a.k.a. http.rb) - a fast Ruby HTTP client with a chainable API, streaming support, and timeouts
+Asynchronous Http and WebSocket Client library for Java 
+Mirror of Apache HttpClient
+As easy as /aitch-tee-tee-pie/ 🥧 Modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more. https://twitter.com/httpie
+🏊🏾 Simplified HTTP request client.
+A next generation HTTP client for Python. 🦋
+Simple HTTP client in C
+Event-driven, streaming HTTP client and server implementation for ReactPHP.
+A C++ header-only HTTP/HTTPS server and client library
+Arduino HTTP library
+Google HTTP Client Library for Java
+[ARCHIVED] now part of the https://github.com/ipfs/js-ipfs repo
+An idiomatic clojure http client wrapping the apache client. Offically supported version.
+Simple & modern HTTP client for C++
+An HTTP/2 client and server implementation for node.js
+An alternative HTTP client implementation for Go.
+HttpClient implementations that use platform-native HTTP clients for :rocket:
+Http Client Library for the Spark Core (also well suited for Arduino and other embedded platforms).
+Yet Another HTTP client for Elixir powered by hackney
+:warning: Historical HTTP API - please use https://github.com/swift-server/async-http-client instead
+Promise based HTTP client for the browser and node.js
+Lua HTTP client cosocket driver for OpenResty / ngx_lua.
+Asynchronous HTTP Client (EventMachine + Ruby)
+HTTP Server/Client/Proxy Server
+Guzzle, an extensible PHP HTTP client
+An HTTP client engine, intended as a base layer for more user-friendly packages.
+simple HTTP client in Erlang
+A Chainable, REST Friendly, PHP HTTP Client.  A sane alternative to cURL.
+A simple, yet elegant HTTP library.
+A type-safe HTTP client for Android and the JVM
+(soft-deprecated) HTTP client for Elixir (use Tesla please)
+HTTP client mocking tool for Python - inspired by Fakeweb for Ruby
+An easy and powerful Rust HTTP Client
+The HTTP client for Vue.js
+A Java implementation of the HTTP IPFS API
+A python client library for the IPFS API
+[Archived] Contains an opinionated factory for creating HttpClient instances. Project moved to https://github.com/aspnet/Extensions
+Yii 2 HTTP client
+High performance DNS over HTTPS client & server
+Feign makes writing java http clients easier
+Common interface for Ruby's HTTP clients
+Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
+Elasticsearch Scala Client - Reactive, Non Blocking, Type Safe, HTTP Client
+An asynchronous http client in Java, with a clean, callback-based API, using Netty 4.x
+An interactive command-line HTTP and API testing client built on top of HTTPie featuring autocomplete, syntax highlighting, and more. https://twitter.com/httpie
+Async HTTP/1.1+2 client for PHP based on Amp.
+Asynchronous HTTP client/server framework for asyncio and Python
+http-kit is a minimalist, event-driven, high-performance Clojure HTTP server/client library with WebSocket and asynchronous support
+Tool to test HTTP/RESTful webservices.
+The HttpClient component provides powerful methods to fetch HTTP resources synchronously or asynchronously.
+Advanced HTTP client for golang
+[Deprecated] Event-driven, streaming HTTP client for ReactPHP.
+An unofficial bilibili client for android  http://www.jianshu.com/p/f69a55b94c05   -- 该项目已停止维护！
+Simple REST and HTTP API Client for .NET
+HTTPlug, the HTTP client abstraction for PHP
+SUSI.AI Web Client https://susi.ai
+HTTP client library built on SwiftNIO
+Ajax for Node.js and browsers (JS HTTP client)
+Twilio SendGrid's Python HTTP Client for calling APIs
+A Transport for http.Client that will cache responses according to the HTTP RFC
+HTTP Client for AS3
+Completely OBSOLETE Rust HTTP library (server and client)
+Small, fast HTTP client library for Python. Features persistent connections, cache, and Google App Engine support. Originally written by Joe Gregorio, now supported by community.
+Compose HTTP clients using JavaScript's fetch API
+PHP's lightweight HTTP client
+A simple, restful, message-based wrapper around XMLHttpRequest.
+封装了WinInet的强大http请求库
+A smart, simple and fault-tolerant HTTP client for sending and receiving JSON and XML
+Java Client for Consul HTTP API
+A quick and dirty HTTP client library in and for C.
+HTTP/HTTPS REST Client C Library
+Fluent Java HTTP client
+A basic C# HTTP/2 client library
+SendGrid's PHP HTTP Client for calling APIs
+Erlang HTTP client
+Async Http Client - Clojure
+Use the elasticsearch-js client with Amazon ES
+Fluent URL builder and testable HTTP client for .NET
+Asynchronous Http Client for Java
+Simplified HTTP client, A simplie golang HTTP client library.
+Eclipse Jetty® - Web Container & Clients - supports HTTP/2, HTTP/1.1, HTTP/1.0, websocket, servlets, and more
+NetHttp2 is an HTTP/2 client for Ruby.
+A modern async HTTP client for REST APIs. Its fluent interface lets you send an HTTP request and parse the response in one go.
+a Go HTTP client with timeouts
+An Elixir OAuth 2.0 Client Library
+A high-performance, high-stability, cross-platform HTTP client.
+The terminal-first http client
+HTTP client for PostgreSQL, retrieve a web page from inside the database.
+:cactus: A simple http client wrapper.
+A fast download client,support HTTP&P2P.
+RESTful HTTP client for JavaScript
+Updated and standalone version of AsyncHttpClient previously from XLibrary. Although this library will still work, it is considered deprecated as AsyncTask is deprecated.
+An Arduino HTTP Client
+C++ client for making HTTP/REST requests
+HTTP client. Spiritual successor to request.
+A Swift client library for the IPFS HTTP API.
+:apple: Http client for Android platform.
+SendGrid's Java HTTP Client for calling APIs
+Types and traits for http clients
+Jira Client for Swift
+Node client library for Azure Event Hubs https://azure.microsoft.com/services/event-hubs
+Benchmarks for all the popular Node.js HTTP client libraries
+An API client library for WordPress. Utilizes the WordPress HTTP API
+Use Windows.UI.Xaml.Controls.MediaPlayerElement with Windows.Web.Http.HttpClient.
+Http Server and Client code that supports HTTP PUT, GET and POST methods. It supports both IPv4 and IPv6
+flutter plugin that allows you to connect you to janus server using both websocket and http(rest) along with api to establish RTCPeerConnection and all other webrtc stuff
+Nonblocking Lua HTTP Client library for aLiLua & ngx_lua
+An HTTP client for Clojure, wrapping JDK 11's HttpClient
+A fluent, easy-to-use, object oriented Ruby HTTP/REST client library with support RFC2616 HTTP caching and async calls that runs on CRuby and JRuby.
+An angular port of a Javascript SOAP Client into a factory that has a similar syntax to $http.
+Simple android xmpp chat client source code for tutorial http://www.blikoontech.com/tutorials/android-smack-xmpp-introductionbuilding-a-simple-client
+An Amazon SQS client that supports creating lightweight, automatically-deleted temporary queues, for use in common messaging patterns such as Request/Response. See http://aws.amazon.com/sqs.
+http gateway for rpcx services. Clients in any programming languages can call them
+neon - an HTTP/1.1 and WebDAV client library with a C API
+Client side HTTP Digest Authentication for Lua
+Simple RPC style APIs with generated clients & servers.
+Speed up your remote requests by automatically caching them on client and add support for offline navigation.
+Ruby client for the Let's Freckle API (http://www.letsfreckle.com)
+This repository is for a react-native client to the https://www.reactrails.com/, source at https://github.com/shakacode/react-webpack-rails-tutorial/.
+Starcraft 2 Client API for .NET - similar to https://github.com/Blizzard/s2client-api
+:iphone: An iOS client for https://bbs.uestc.edu.cn/ written in react-native, redux and redux-observable.
+Osiris+ https://discord.gg/PmM6B68
+An easy HTTP client for Go. Inspired by the immortal Requests.
+https://crates.io/crates/transistor
+Python client for NEM NIS API (https://nemproject.github.io). XEM\NEM\Crypto
+Helper class for accessing the OX3 API - Requires https://github.com/simplegeo/python-oauth2
+A simple http client using only java.net classes, thus making it compatible with AppEngine's urlFetch service
+A simple and lightweight HTTP client. A Mac OS X Leopard developer tool for debugging HTTP services by graphically creating & inspecting complex HTTP messages. Forked.
+A simple Java HTTP client
+Fuego is a command line client for the firestore database (https://firebase.google.com/docs/firestore). 
+Easy ZPL to image conversion
+API client for Runkeeper (http://runkeeper.com)
+Chainable HTTP client middleware.
+Ruby binding against libmosquitto (http://mosquitto.org/) - a high performance MQTT protocol (http://mqtt.org) client
+Essence's HTTP client
+OpenS - Android HttpRequest is an asynchronous http client for android with caching, connection throttling and a simple to use callback mechanism. 
+A pure Dart implementation of a FaunaDB client and provides query classes that closely mimic FQL functions.
+A PHP client for the CKAN data catalog, used by https://github.com/GSA/ckan-php-manager
+A reverse HTTP client
+A http client written in C and pure socket, for understanding HTTP protocol. 用于理解 http 协议的 http 客户端
+A very fast Python asyncio http client
+Http4s on Finagle Server or Client
+DNS over HTTPS client written in C
+A lightweight client for consuming and manipulating Hypertext Application Language (HAL) resources.
+Web example https://tgrospic.github.io/rnode-client-js
+A Python Matrix client library, designed according to sans I/O (http://sans-io.readthedocs.io/) principles
+Opinionated libraries for HTTP&JSON-based RPC using Retrofit, Feign, OkHttp as clients and Jetty/Jersey as servers
+A tiny client for the http://clojuredocs.org API
+Http/https signaling server for WebRTC clients
+在AsyncHttpClient框架的基础上定制能直接返回对象数组的框架
+Ironic HTTP(S) Client
+An http tunnel server/client
+Ros interface for http://www.cs.unc.edu/Research/vrpn/
+A simple and ready to use akka http client for building HTTP requests and processing responses with custom response handlers
+The HTTP client for humans
+Android client for e-learning platform SWAD (http://openswad.org/).
+Simple Akka HTTP Client DSL for Scala
+Python client for Argo Workflows | Mirrored to https://github.com/argoproj-labs/argo-client-python
+REST service for Janet. Supports fully customizable requests, http-clients and converters
+A pretty simple HTTP client as handy as `curl` command
+A modern HTTP client framework for iOS/OSX built on top of libcurl.
+https://getsentry.com guzzle client
+HTTP client for Open API
+Library for building HTTP API clients
+Toolkit for building http client libraries over Network HTTP Conduit
+Simple PHP REST file server implementation. You put and retrieve files using any HTTP client e.g. wget
+Client libraries for connecting with HTTP, FTP, S3 and WebDAV servers
+JSON-RPC over HTTP client
+Python library for reading HTTP resources as random-access file-like objects using the `Range` header
+https://www.npmjs.com/package/use-socket.io-client
+Slowloris - the low bandwidth, yet greedy and poisonous HTTP client
+This fork is not maintained, please see: http://github.com/heroku/heroku
+aws-es-proxy is a small web server application sitting between your HTTP client (browser, curl, etc...) and Amazon Elasticsearch service.
+SparkPost client library for Elixir https://developers.sparkpost.com
+Deribit API python client library https://www.deribit.com/docs/api/
+Ruby client for working the SolusVM API  - http://solusvm.com/
+A C++ REST client. Make readable HTTP requests
+Collins API Client in Go - https://tumblr.github.io/collins
+HTTP Client Mixin for Tornado RequestHandlers
+模拟登陆微信公众平台 修改url和token
+A productive and performant HTTP client in Go
+Implementation of the EXPath HTTP Client for Java and Saxon
+A base class to make it quick and easy to implement a Http Client in Salesforce Apex
+A `package:http` `BaseClient` that speaks HTTP/2, and can maintain connections between requests.
+A Clojure ring compatible http interface for Apache HttpClient
+Advanced client for The Mana World and Evol Online (Mirror from https://gitlab.com/manaplus/manaplus)
+Unirest in Java: Simplified, lightweight HTTP client library.
+Asynchronous HTTP client built on top of Crochet and Twisted
+一个基于Java原生的Http客户端。HttpNet网络请求框架基于HttpUrlConnection，采用Client + Request + Call的请求模型，支持HTTPS、HTTP代理、证书管理等功能
+SSLKiller is used for killing SSL verification functions on Android client side. With SSLKiller, You can intercept app's HTTPS communication packages between the client and server.
+clients for https://www.github.com/soluto/tweek
+A C# client framework for consuming HTTP/REST services
+PHP 7.2 Event Store HTTP Client Implementation
+HTTP client integration tests
+A Swift client library for the IPFS HTTP API.
+:apple: Http client for Android platform.
+SendGrid's Java HTTP Client for calling APIs
+Types and traits for http clients
+A Java high performance throughput-oriented HTTP client library based on Netty.
+SOCKS v5 HTTP client implementation in JavaScript for Node.js.
+IPFS C++ HTTP API client library
+Unmaintained.  Free push/npm access to anyone interested.
+A free, native Apple macOS app for testing HTTP/REST endpoints
+HTTP web applications for Vert.x
+A minimal HTTP client. ⚙️
+Http client for windows 
+The client component of https://pubg.sh
+RabbitMQ HTTP API client for Ruby
+A simple, functional HTTP client library for F#
+A cross platform Http client with libcurl
+HTTP Client Utilities
+ponylang HTTP client library :horse: :spider_web: 
+使用C++11风格，基于libcurl库封装的HTTP客户端。
+Retryable HTTP client in Go
+php使用socket模拟post、get操作,支持http、socket4、5代理
+Tiny HTTP Client
+An in-app HTTP inspector for Android OkHttp clients
+Unirest in Java: Simplified, lightweight HTTP client library.
+SOCKS v5 HTTPS client implementation in JavaScript for Node.js.
+HTTP Library for Lua. Supports HTTP(S) 1.0, 1.1 and 2.0; client and server.
+An enhanced HTTP client for Go
+A simple HTTP client for Android to exchange JSON objects with a web server
+The Scala HTTP client you always wanted!
+Fully functioning finished sample code for my Using HttpClient to Consume APIs in .NET Core course
+http client openframeworks addon 
+Simple HTTP and REST client library for Go
+REST Client Extension for Visual Studio Code
+InterPlanetary File System client for .Net (C#, VB, F# ...)
+This repo is no longer maintained. Please use https://github.com/sendgrid/sendgrid-nodejs/tree/HEAD/packages/client instead
+GoRequest -- Simplified HTTP client ( inspired by nodejs SuperAgent )
+The Guacamole project is now Apache Guacamole (http://guacamole.apache.org/). This repository has been repurposed as the base for the Apache Guacamole packages built for Glyptodon Enterprise.
+HTTP REST client tool for emacs
+A lightweight RTSP/RTMP/HTTP/HLS/HTTP-FLV/WebSocket-FLV/HTTP-TS/HTTP-fMP4/WebSocket-TS/WebSocket-fMP4/GB28181 server and client framework based on C++11
+Web & mobile client-side akka-http sessions, with optional JWT support
+Client Tools for NuGet - including Visual Studio extensions, command line tools, and msbuild support. (Open issues on https://github.com/nuget/home/issues)
+Lua http client driver for the ngx_lua based on the cosocket API
+https://www.tortilla.academy/Urigo/WhatsApp-Clone-Tutorial
+Automatically exported from code.google.com/p/basic-http-client
+DEPRECATED - Project no longer supported, please consider using https://github.com/prey/prey-node-client instead
+SendGrid's Ruby HTTP Client for calling APIs
+TCP/HTTP/UDP client/server with Reactor over Netty
+Chat client for https://twitch.tv
+ModernHttpClient
+Micro http server and client written in C++
+Malformed servers to test your HTTP client
+A Node.js HTTP client as easy as pie! 🥧
+Python requests like API built on top of Twisted's HTTP client.
+Riak Erlang client using the HTTP interface
+📢  A http/https proxy client, using to analyze and mock.
+Asynchronous socket, http(s) (client+server) and websocket library for android. Based on nio, not threads.
+基于netty实现的支持并发的http客户端
+NodeMedia RTMP/RTMFP/RTSP/HTTP Play/Publish Client SDK for Android
+A very simple, fast, multithreaded, platform independent HTTP and HTTPS server and client library implemented using C++11 and Boost.Asio. Created to be an easy way to make REST resources available from C++ applications.
+🕸️ Types and functions for HTTP clients and servers!
+🦄 Simple HTTP and REST client for Unity based on Promises, also supports Callbacks! 🎮
+Twilio SendGrid's C# HTTP Client for calling APIs
+hpts(http-proxy-to-socks) is a nodejs client to convert socks proxy into http proxy
+Object-Oriented HTTP Client
+Unirest in PHP: Simplified, lightweight HTTP client library.
+AngularJS web client for https://guardian.gg
+a simple c# http client use HttpWebRequest
+Golang HTTP client library
+Secure HTTP client with SSL pinning for Nativescript - iOS/Android
+HMAC authentication for Rails and HTTP Clients
+An implementation of HTTP Caching in .NET Core and 4.5.2+ for both the client and the server
+The easy HTTP client for Groovy (and Java).
+Http Server and client using fs2
+Unified Scala.js + Scala HTTP client API
+Java client for Consul HTTP API
+a light-weight and asynchronous HTTP library (both server & client) in Qt5 and c++14
+Android REST client library (supports RESTful JSON API)
+A powerful Http client for Dart, which supports Interceptors, FormData, Request Cancellation, File Downloading, Timeout etc.
+A terminal client for https://soundcloud.com
+Haskell HTTP client library for use with io-streams
+Golang Http Digest Authentication Client
+An HTTP client for Clojure (DEPRECATED)
+෴ A node.js HTTP server in your browser ෴
+HttpClient wrapper for sending SOAP messages.
+An open source project based on the HttpClient. You only need to define the c# interface and modify the related features to invoke the client library of the remote http interface asynchronously.
+HTTP client plugin for Sublime Text 2 & 3
+Fast, asynchronous and elegant Python web framework.
+封装OkHttp3，对外提供了POST请求、GET请求、上传文件、下载文件、https请求、cookie管理等功能
+Node.js client to interact with the Pusher Channels REST API
+golang 代理库，和net一致的API。支持 socks4、socks4a、socks5、http、https 等代理协议。
+Some simple System.Net.Http.HttpClient test helpers
+Java Client Library for HTTP Signatures
+The flexible HTTP client library for Elixir, with support for middleware and multiple adapters.
+Kotlin DSL http client
+A python client for http://pushbullet.com
+Go client for wit.ai HTTP API
+A good-guy HTTP client that handles caching, retrying and collapsing similar requests for you.
+mio based async and sync http client
+Mana client. Development stalled. New client is developed at https://github.com/tales/tales-client
+Client-side in-memory mongodb backed by localstorage with server sync over http
+DEPRECATED: Please see https://github.com/docker/docker/tree/master/client 
+A command line HTTP client
+.NET Core async HTTP client for OpenStack Swift
+A minimalistic Clojure client for ElasticSearch, supports both HTTP and native transports
+A really simple http client library for scala
+SimpleHttpClient
+go request, go http client
+A DDP client written in java for the Meteor framework (https://github.com/meteor/meteor)
+Cassandra DB native client written in Rust language. Find 1.x versions on https://github.com/AlexPikalov/cdrs/tree/v.1.x Looking for an async version? - Check WIP https://github.com/AlexPikalov/cdrs-async
+HTTP client for Go
+Consul HTTP API client for Elixir
+The C++ REST SDK is a Microsoft project for cloud-based client-server communication in native code using a modern asynchronous C++ API design. This project aims to help C++ developers connect to and interact with services.
+Remote access and tunnels to your localhost from everywhere in the world.
+DEPRECATED - Migrated to https://github.com/mozilla/fxa
+Client and library for #EET communication - http://www.etrzby.cz/ , written in Java 
+PHP Web Client to connect by SSH to another servers | New project at https://github.com/roke22/Laravel-ssh-client
+A dead simple HTTP client for Unity3D
+apache http client for android
+A PHP foursquare API HTTP client
+An ES .Net HTTP client, with some subscriber stuff too
+A simple HTTP client library written in Swift
+An enhanced HTTP client based on fetch.
+一个开源，高隐私，自架自用的聚合搜索引擎。https://xinahn.com
+Modification of https://github.com/inconshreveable/ngrok c client here : https://github.com/koolshare/ngrok-libev
+Angular HttpClient Bob
+Flummi Elastic Search HTTP REST Client
+Simple Lua HTTP helper && client for use with HAProxy.
+purely functional http client with scalaz.Free
+A set of extension methods for mocking HttpClient and IHttpClientFactory with Moq.
+A high performance, concurrent http client library for python with gevent
+Use Tor for your C# HTTP clients. Tor + Privoxy = :heart:
+HTTP and WebSocket client worker with ZeroMQ interface
+HTTP and REST client for Crystal
+HTTP web server and client, supports http1 and http2
+HTTP Client Compoment for Swoft 1.x
+An UWP Client for https://e-hentai.org.
+A C++ library for building non-blocking (epoll Edge Triggered) HTTP servers/clients
+Visual Studio Code client for TabNine. https://marketplace.visualstudio.com/items?itemName=TabNine.tabnine-vscode
+The client library srs-librtmp of SRS(https://github.com/ossrs/srs)
+High-Performance Erlang HTTP 1.1 Client
+httpClient 工具类
+A Drupal rest client
+PHP Client for Event Store HTTP API
+A ROS client library for small, embedded devices, such as Arduino. See: http://wiki.ros.org/rosserial
+A thin wrapper of Apache HttpClient
+本库已经合并进入 https://github.com/slimkit/plus 中，仅提供 2.1 及以前版本下载使用！
+A strong http client for .NET with high usability
+The simplified HTTP request client 'request' with Promise support. Powered by native ES6 promises.
+Java HTTP Client in OOP style
+An arduino example（HTTP） with  Lewei50 (IOT)  platform for free use .
+Ultra fast and low latency asynchronous socket server & client C# .NET Core library with support TCP, SSL, UDP, HTTP, HTTPS, WebSocket protocols and 10K connections problem solution
+Off-chain gasless multi-governance client. Join us on Discord https://discord.snapshot.page
+Specialized Java client for handling GoodData authentication
+Human-friendly DSL for writing HTTP(s) clients in Ruby
+Go (golang) Client for the Coinbase Pro API https://docs.pro.coinbase.com
+https://www.huobi.com API Wrapper in Java.
+An HTTP client for Wiremock standalone instances
+A high-level HTTP / REST client for Node
+Specialised HTTP Client for service operations abstracted from the HTTP protocol.
+Java REST API client for Google's Kubernetes API (https://github.com/GoogleCloudPlatform/kubernetes)
+Python client for Netflix Eureka https://github.com/Netflix/eureka/
+Dart bindings for ElasticSearch HTTP API.
+A new Python HTTP client for everybody
+Client library agnostic way to stub HTTP endpoints in Clojure
+Official Midtrans Payment API Client for Node JS | https://midtrans.com
+A DNS client in Go that supports Google DNS over HTTPS
+HttpClientDiagnostics is a cross platform, portable class library that provides tracing/logging telemetry to Microsoft.Net.HttpClient. In the spirit of "applications decide the logging framework, libraries should play nice" this package does not require any external dependencies or abstractions like Common.Logging
+An HTTP Server and Client library for Scala.
+a http client for node.js that handles https, cookies and gzip compression
+Angular 2 Http Client (REST Web Services) Quickstart Tutorial 2016
+ftp client/server for asyncio (http://aioftp.readthedocs.org)
+HTTP API client for Seq
+An API client for Filecoin implemented in Java
+A simple and lightweight HTTP Splunk logging package for Go. Instantiates a client to your Splunk server and allows you to submit log events as desired.
+The Official DocuSign Python Client Library used to interact with the eSign REST API. Send, sign, and approve documents using this client. https://www.docusign.com/devcenter
+RESTful HTTP client for JavaScript powered web applications
+Official Midtrans Payment API Client for PHP | https://midtrans.com
+A set of HTTP client abstractions extracted out of the Symfony components
+Http Client to deal easily with JSON API
+An incredibly simple HTTP client library for Swift.
+GitHub Action to perform HTTP requests. Supports GraphQL!
+C++ HTTP mock server for client tests.
+Scalable HTTP/S and TCP client sockets for the cloud
+RxJava client for Apache Mesos HTTP APIs
+Deprecated in favor of existing PSR-18 implementations
+LGPL repo for Desura client. Potentially out of date. See https://github.com/desura/desura-app for newest (LGPL) client.
+lhttpc is a lightweight HTTP/1.1 client implemented in Erlang.
+SOAP over HTTPS with client certificate authentication
+Configurable HTTP/REST Client Library for Python
+A Tornado async HTTP/HTTPS client adaptor for python-requests
+Lightweight, promiseful http/https request client
+Python asynchronous client library for Kubernetes http://kubernetes.io/
+Simple Http client (Use RxSwift for stream data)
+Erlang HTTP client benchmarks
+https://blog.meteor.com/leverage-the-power-of-meteor-with-any-client-side-framework-bfb909141008
+Powertools (logger, HTTP client, AWS clients, middlewares, patterns) for Lambda functions.
+support oauth client with nginx
+pretty fast http client library for perl5
+A golang HTTP client library. Salute to python requests.
+Provides a Ruby library to the complete Bitcoin JSON-RPC API. Implements all methods listed at https://en.bitcoin.it/wiki/Original_Bitcoin_client/API_Calls_list .
+Use Java 11 HTTP client to parse astro data
+A command-line tool for using CommonCrawl Index API at http://index.commoncrawl.org/
+The C# REST Client - the only REST/ HTTP Client you will ever need
+Standalone Play WS, an async HTTP client with fluent API
+A fast HTTP client for Common Lisp
+async http client based on curl
+n.exchange is the planet's simplest and most transparent solution for cryptocurrency trading & liquidity for individuals and enterprises alike. it supports all major cryptocurrencies(BTC BCH BSV ETH LTC NANO XLM XMR XRP ZEC) and fiat currencies(USD GBP EUR JPY). Learn how to deploy this great open-source project here: https://www.youtube.com/watch?v=7ujmzb3HzCA
+Mock HTTP client
+A unified http/s client library for lua
+A python wrapper for the prometheus http api
+Java REST API Client for the Openfire to manage Openfire instances by sending an REST/HTTP request to the server
+⚔️ Saber, PHP异步协程HTTP客户端 | PHP Coroutine HTTP client - Swoole Humanization Library
+A Scala wrapper for OAuth 2.0 with Akka HTTP
+Non blocking ESP8266 Arduino Library for simple http communication  based on https://github.com/itead/ITEADLIB_Arduino_ESP8266
+Java client for http://druid.io/
+HTTPS client implementation for httplib and urllib2 based on PyOpenSSL
+The client libraries that support EJB, Naming and Transactions over HTTP
+A Ruby APNs HTTP/2 gem able to provide instant feedback.
+Http server for pytest to test http clients
+Native ZooKeeper client for Go. This project is no longer maintained. Please use https://github.com/go-zookeeper/zk instead.
+golang version of http://localtunnel.me client
+A simple HTTPS client based on Boost Asio.
+No longer maintained - Desktop client for the Matrix protocol (active fork https://github.com/Nheko-Reborn)
+Lanproxy is a reverse proxy to help you expose a local server behind a NAT or firewall to the internet. it supports any protocols over tcp (http https ssh ...)
+A feature-rich WinForms-based HTTP client
+Http client that handles retries, logging & dynamic headers.
+Fast ASGI web framework and HTTP client for Python asyncio
+php httpsqs client
+24/7 music designed for coding - https://coderadio.freecodecamp.org
+A developer-experience focused HTTP client, optimized for most common use cases.
+Microbenchmark of different python HTTP clients
+Easily include an HTTP client into your plugin
+A comparison of some ruby http clients
+Simple Ruby HTTP/REST client with a sane API
+http client to manage your dialect translations
+💥 A simple multi-purpose connection pool client (Kafka & Hbase & Redis & RMDB & Socket & Http)
+PHP Driver for ClickHouse columnar DBMS https://clickhouse.yandex
+The SWI-Prolog HTTP server and client libraries
+An easy-to-use Elixir HTTP client, built on the low-level Mint library.
+The simplest implementation of OData client.
+SendGrid's Golang HTTP Client for calling APIs
+An aglie http client .
+CAS client for nginx
+a unofficial android client of https://cnodejs.org/
+3rd Party Indoor Location using ESP8266/ESP32 and Find3 (https://github.com/schollz/find3)
+Microsoft Visual Studio Online HTTP Client for Java
+Use Windows.UI.Xaml.Controls.MediaElement with Windows.Web.Http.HttpClient.
+An HTTP/2 client and server implementation
+Paho MQTT C client library for embedded systems.  Paho is an Eclipse IoT project (https://iot.eclipse.org/)
+This Fiddler extension generates C# HttpClient code to duplicate a Web Request. 
+Grafana HTTP API Client for Go
+A http client wrapper for fetch api with middleware support.
+Reliable Http Client is a set of tools making HTTP communication more reliable. It supports: at least one delivery guaranty and retry strategies including durable exponential backoff and dead letter queue.
+Official Ruby client library for the Postmark HTTP API
+PHP Curl Class makes it easy to send HTTP requests and integrate with web APIs
+Torrent client as a HTTP service
+Manage client-side HTTP cookies in Ruby
+An HTTP Client written in C
+Versatile HTTP Networking in Swift
+Zinc HTTP Components is an open-source Smalltalk framework to deal with the HTTP networking protocol.
+A simple easy-to-use REST client for Java
+NO LONGER ACTIVELY MAINTAINED. USE https://github.com/thephpleague/oauth2-client INSTEAD
+MockServer enables easy mocking of any system you integrate with via HTTP or HTTPS with clients written in Java, JavaScript and Ruby.  MockServer also includes a proxy that introspects all proxied traffic including encrypted SSL traffic and supports Port Forwarding, Web Proxying (i.e. HTTP proxy), HTTPS Tunneling Proxying (using HTTP CONNECT) and SOCKS Proxying (i.e. dynamic port forwarding).
+Clickhouse client over HTTP
+Http/Https代理服务器客户端
+Проект-заготовка для воркшопа по HttpClient
+爬虫抓取框架,封装HttpClient,Htmlunit,Selenium等工具
+:spider: Curl Http client for SERPS
+Apache HttpClient 4.x API Plugin for Jenkins
+Lua HTTP client cosocket driver for OpenResty / ngx_lua, interfaces are more flexible
+Example of Ionic 3 and the new Angular 4.3 HTTPClient
+A Go HTTP client library for creating and sending API requests
+HTTP client library for Boost.Asio
+Ruby HTTP client for APIs represented with JSON schema
+HTTP4e is an REST HTTP Client plugin enabling developer to create HTTP packets directly from Eclipse.
+Alexa client for all your devices! # No active development. PRs welcome # consider https://github.com/respeaker/avs instead
+❤️ Real world base Vue.js app. Access/refresh tokens auth, api services, http client, vuex modules
+Code samples and developer content targeted towards SharePoint Framework client-side extensions. https://aka.ms/spfx-extensions
+Rust client libray for Consul HTTP API
+Ketting the HATEOAS client for javascript
+Client implementation of a subset of HTTP 1.1 protocol designed for embedded devices.
+DEPRECATED - Use https://github.com/alexa-pi/AlexaPi instead ...Turn a Raspberry Pi into an Alexa Client
+A wrapper around Go's net/http to provide safety and convenience. At Monzo, Typhon forms the basis of most clients and servers in our microservices platform.
+Minimalistic wrapper around the Apache HTTPClient adding Shibboleth support
+An API client for Filecoin
+Sample Application for the Blog post Angular HTTP Client Quickstart Guide
+express-http-to-https is a node.js package for providing an Express middleware that redirects the client to HTTPS if they attempt to connect over HTTP.
+PHP HTTP client for Emarsys webservice
+websocket and http client and server library, coming with ws, a command line swiss army knife utility
+HTTP client package with enumerator interface and HTTPS support.
+A simple android asynchronous library for android using okhttp
+DICOMweb client side JavaScript implementation
+instant coding answers via the command line (howdoi in rust)
+HTTP (The Gem! a.k.a. http.rb) - a fast Ruby HTTP client with a chainable API, streaming support, and timeouts
+Asynchronous Http and WebSocket Client library for Java 
+Mirror of Apache HttpClient
+As easy as /aitch-tee-tee-pie/ 🥧 Modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more. https://twitter.com/httpie
+🏊🏾 Simplified HTTP request client.
+A next generation HTTP client for Python. 🦋
+Simple HTTP client in C
+Event-driven, streaming HTTP client and server implementation for ReactPHP.
+A C++ header-only HTTP/HTTPS server and client library
+Arduino HTTP library
+Google HTTP Client Library for Java
+[ARCHIVED] now part of the https://github.com/ipfs/js-ipfs repo
+An idiomatic clojure http client wrapping the apache client. Offically supported version.
+Simple & modern HTTP client for C++
+An HTTP/2 client and server implementation for node.js
+An alternative HTTP client implementation for Go.
+HttpClient implementations that use platform-native HTTP clients for :rocket:
+Http Client Library for the Spark Core (also well suited for Arduino and other embedded platforms).
+Yet Another HTTP client for Elixir powered by hackney
+:warning: Historical HTTP API - please use https://github.com/swift-server/async-http-client instead
+Promise based HTTP client for the browser and node.js
+Lua HTTP client cosocket driver for OpenResty / ngx_lua.
+Asynchronous HTTP Client (EventMachine + Ruby)
+HTTP Server/Client/Proxy Server
+Guzzle, an extensible PHP HTTP client
+An HTTP client engine, intended as a base layer for more user-friendly packages.
+simple HTTP client in Erlang
+A Chainable, REST Friendly, PHP HTTP Client.  A sane alternative to cURL.
+A simple, yet elegant HTTP library.
+A type-safe HTTP client for Android and the JVM
+(soft-deprecated) HTTP client for Elixir (use Tesla please)
+HTTP client mocking tool for Python - inspired by Fakeweb for Ruby
+An easy and powerful Rust HTTP Client
+The HTTP client for Vue.js
+A Java implementation of the HTTP IPFS API
+A python client library for the IPFS API
+[Archived] Contains an opinionated factory for creating HttpClient instances. Project moved to https://github.com/aspnet/Extensions
+Yii 2 HTTP client
+High performance DNS over HTTPS client & server
+Feign makes writing java http clients easier
+Common interface for Ruby's HTTP clients
+Simple HTTP and REST client for Ruby, inspired by microframework syntax for specifying actions.
+Elasticsearch Scala Client - Reactive, Non Blocking, Type Safe, HTTP Client
+An asynchronous http client in Java, with a clean, callback-based API, using Netty 4.x
+An interactive command-line HTTP and API testing client built on top of HTTPie featuring autocomplete, syntax highlighting, and more. https://twitter.com/httpie
+Async HTTP/1.1+2 client for PHP based on Amp.
+Asynchronous HTTP client/server framework for asyncio and Python
+http-kit is a minimalist, event-driven, high-performance Clojure HTTP server/client library with WebSocket and asynchronous support
+Tool to test HTTP/RESTful webservices.
+The HttpClient component provides powerful methods to fetch HTTP resources synchronously or asynchronously.
+gunicorn 'Green Unicorn' is a WSGI HTTP Server for UNIX, fast clients and sleepy applications.
+Advanced HTTP client for golang
+[Deprecated] Event-driven, streaming HTTP client for ReactPHP.
+libHttpClient provides a platform abstraction layer for HTTP and WebSocket, and is designed for use by the Microsoft Xbox Live Service API (XSAPI) [https://github.com/Microsoft/xbox-live-api] and game devs.  If you want to contribute to the project, please talk to us to avoid overlap.
+An unofficial bilibili client for android  http://www.jianshu.com/p/f69a55b94c05   -- 该项目已停止维护！
+Simple REST and HTTP API Client for .NET
+HTTPlug, the HTTP client abstraction for PHP
+SUSI.AI Web Client https://susi.ai
+HTTP client library built on SwiftNIO
+Ajax for Node.js and browsers (JS HTTP client)
+Twilio SendGrid's Python HTTP Client for calling APIs
+A Transport for http.Client that will cache responses according to the HTTP RFC
+HTTP Client for AS3
+Completely OBSOLETE Rust HTTP library (server and client)
+Small, fast HTTP client library for Python. Features persistent connections, cache, and Google App Engine support. Originally written by Joe Gregorio, now supported by community.
+Compose HTTP clients using JavaScript's fetch API
+PHP's lightweight HTTP client
+A simple, restful, message-based wrapper around XMLHttpRequest.
+封装了WinInet的强大http请求库
+A smart, simple and fault-tolerant HTTP client for sending and receiving JSON and XML
+Java Client for Consul HTTP API
+A quick and dirty HTTP client library in and for C.
+Square’s meticulous HTTP client for the JVM, Android, and GraalVM.
+HTTP/HTTPS REST Client C Library
+Fluent Java HTTP client
+A basic C# HTTP/2 client library
+SendGrid's PHP HTTP Client for calling APIs
+Erlang HTTP client
+Async Http Client - Clojure
+Use the elasticsearch-js client with Amazon ES
+Fluent URL builder and testable HTTP client for .NET
+Asynchronous Http Client for Java
+Simplified HTTP client, A simplie golang HTTP client library.
+Eclipse Jetty® - Web Container & Clients - supports HTTP/2, HTTP/1.1, HTTP/1.0, websocket, servlets, and more
+NetHttp2 is an HTTP/2 client for Ruby.
+A modern async HTTP client for REST APIs. Its fluent interface lets you send an HTTP request and parse the response in one go.
+A sample ASP.NET Core project showing how to configure the HttpClientFactory
+a Go HTTP client with timeouts
+An Elixir OAuth 2.0 Client Library
+A high-performance, high-stability, cross-platform HTTP client.
+The terminal-first http client
+HTTP client for PostgreSQL, retrieve a web page from inside the database.
+:cactus: A simple http client wrapper.
+A fast download client,support HTTP&P2P.
+RESTful HTTP client for JavaScript
+Updated and standalone version of AsyncHttpClient previously from XLibrary. Although this library will still work, it is considered deprecated as AsyncTask is deprecated.
+An Arduino HTTP Client
+C++ client for making HTTP/REST requests
+HTTP client. Spiritual successor to request.
+Yii2 http client library based on Guzzle 6
+Access HTTP headers on both server and client.  Client IP with proxy support.
+Ruby client for the Swiftype API (docs: https://swiftype.com/documentation/clients/swiftype-rb/)
+Examples that use the standard HTTP Client API from JDK 11
+HTTP SSL Client Example
+SIPHON SIP VOIP Client that actually compiles and runs on ios5 non-jailbroken phones. Works on the device and simulator! (GPL). Here is the original repository: http://code.google.com/p/siphon/
+This is client of Mr.Paint, 茶绘君, located at http://mrspaint.com
+Load testing client + framework
+REST distributed filesystem in OCaml, client in C#
+.NET client for http://getstream.io
+Asynchronous WebSocket client and server, supporting HTTP/1 and HTTP/2 for Ruby.
+Metrics logging of request durations
+HTTP/2 client for Elixir
+An HTTP/2.0 client and server `Service` implementation.
+Another qiniu http://docs.qiniu.com/api/ API client for Node.js.
+Android client for https://github.com/RefugeRestrooms/refugerestrooms
+Asynchronous http client for PHP based on workerman.
+Multi-target Clojure/script HTTP client
+Intercept all of the sending HTTP requests on a client side Blazor application.
+HTTP Client library to use in protractor tests
+A HTTP client with a simple terminal interface.
+HTTP client with pipes interface
+DoH (DNS over HTTPS) PHP Client
+A high-level and lightweight HTTP client framework for Java. it makes sending HTTP requests in Java easier.
+Simple Erlang HTTP/2 client
+DEPRECATED - PHP Client Library for the Bronto SOAP API, created and maintained by the Bronto Professional Services team. It is free to use, but comes with no official support. However, you may ask questions on the Dev Q&A Forum (http://dev.bronto.com/questions) or contact your Account Manager to discuss a Professional Services engagement for more assistance.
+AngularJS wrapper for SimpleWebRTC client from https://simplewebrtc.com/
+BetterTLS:  A Name Constraints test suite for HTTPS clients.
+A http client package that plugs in with the standard asyncore/asynchat modules
+Duplex API for making an HTTP request (write the req, read the response)
+An HTTP Client wrapper around Curl, file_get_contents and a socket library
+An easy to use HTTP(S) client built on Boost.Beast
+A Java Server that can communicate with HTTP/2.0 client including server-push
+c、c++ http client
+Easy-to-use, type-safe, expandable, high-level HTTP client library
+A lightweight, async HTTP client
+Interactive ncurses client for the HAProxy TCP/HTTP load balancer
+A sample http endpoint for connecting to Azure Analysis Services over HTTP.  Clients will send DAX or MDX queries and return results as JSON.
+Objective-C Client Library for the Faye Pub-Sub messaging server (http://faye.jcoglan.com/)
+Simple SSE setup using HTTP module of NodeJS - server + client
+An HTTP client for Emacs
+Plex Roku Channel - original source from https://github.com/plexinc/roku-client-public
+Simple way to do HTTP requests in Visual Studio Code.
+a full-featured web based visual http client that can perform cross-domain requests ( ships with server-side proxy )
+Smart Http Client for PHP
+HTTP/1+2 Fetch API client for Node.js
+Playground project to experiment with SSL and HTTPS.
+Lightweight Java HTTP-Client for calling JSON REST-Services (especially for Android)
+An IRC client, OS X native front-end for XChat ( http://itunes.apple.com/app/id447521961 )
+A tool and library to parse HTTP videostream (e.g. from some web cameras)
+Basic HTTP client for the NodeMCU IoT
+SFTP/SCP/FTP/FTPS/WebDAV client for Far Manager (http://farmanager.com/)
+MySQL(or MariaDB) UDF(User-Defined Functions) Http Client Plugin.
+PHP API Integration with Customer.io
+ruby client for datomic's http api
+Exemplo de consumo de uma API REST protegida por tokens (JWT) em .NET Core 2.2 e utilizando a classe HttpClient
+A DNS over HTTPS client implementation written in Go
+Enhancing/simplify apache http client
+Please see https://github.com/newrelic/newrelic-client-go
+Log4j2 Elasticsearch appender using the Java JDK HTTP client
+DEPRECATED - Use https://github.com/alexa-pi/AlexaPi instead ... Code to turn a CHIP into an Alexa Client
+Partial/differential file download client over HTTP(S)
+PSR-18 compatible HTTP client with middleware support
+A guide on how to use MicroProfile Rest Client to invoke RESTful microservices over HTTP in a type-safe way: https://openliberty.io/guides/microprofile-rest-client.html
+The website of HTTP Toolkit: a beautiful, cross-platform & open-source HTTP(S) debugging proxy, analyzer & client
+R Client for http://data.taipei/
+Upload/Download Files Using HttpClient in C#
+A simple unofficial client for "dbmeinv"——http://www.dbmeinv.com/
+Client SDKs for the Eclipse Ditto Project https://eclipse.org/ditto/
+PHP example calling DirectKit Xml API with simple HTTP request
+Lightweight wrapper for java.net.HttpURLConnection
+Python Upbit(업비트) Client - Base: https://github.com/uJhin/upbit-client/
+HTTP client for Classic Pebble and Pebble Time (Aplite, Basalt, Chalk, Emery, Diorite support). Customize HTTP Request on your phone and trigger the call from your Pebble Watch.
+HTTP/1 and HTTP/2 client for Elixir. Based on Gun and Poolboy.
+A zero-dependency stripped-down http client request module based on the http://npm.im/request API.
+Pure Javascript HTTP Live Streaming Client
+Go client for Liftbridge. https://github.com/liftbridge-io/liftbridge
+BLIS Interface Client is a very lightweight Java based tool for Interfacing BLIS with equipment using Protocols like ;RS232,TCP/IP, HTTP. It can also connect directly to analyzer database such as MS Access or even from a flat file.
+A powerful HTTP CLI client written in Go.
+A simple ESP8266 http client library to make GET and POST requests with the native SDK
+⚡️ SharePoint authentication, HTTP client & fluent API wrapper for Go (Golang)
+More flexible http client library for Go
+A C++ Rosbridge client which uses https://gitlab.com/eidheim/Simple-WebSocket-Server for websocket communication and https://github.com/Tencent/rapidjson for JSON manipulation.
+Consul.NET is a .NET client library for the Consul HTTP API
+HTTP library (server, client, parser) for the Julia language
+HttpService for implementing REST clients in Android easily
+A dead simple, privacy oriented, instant messaging client! https://ricin.im
+The Angular 4.3 HttpClient for node.js
+YAHC - Yet another HTTP client
+YAML-based HTTP client code generation
+bitFlyer HTTP APIs Client Library for .NET (C#)
+Golang client library for Azure Event Hubs https://azure.microsoft.com/services/event-hubs
+Fast Parallel Async HTTP/SSH/TCP/UDP/Ping Client Java Library. Aggregate 100,000 APIs & send anywhere in 20 lines of code. Ping/HTTP Calls 8000 servers in 12 seconds. (Akka) www.parallec.io
+a golang library that can get client's real public ip address from http request headers
+node.js/express demonstration of https and client auth
+Experimental Java 8 backport of the incubating Java 10 HTTP/2 and WebSocket API
+https://github.com/forthxu/talkbox   的客户端
+Libmemcached library support for Amazon ElastiCache Memcached Cluster for PHP. The client is available at https://github.com/awslabs/aws-elasticache-cluster-client-memcached-for-php.
+CSP (coroutine) based Swift HTTP+HTTPS client for macOS and Linux
+A cross-platform HTTP client library with a focus on usability and speed
+A simple to use golang http client
+使用Android Asynchronous Http Client网络模块封装的煎蛋客户端
+A tool for debugging and testing webhooks, HTTP clients, etc.
+Java tool for mocking HTTP server behaviours for testing HTTP client code
+HTTP Client and Request Visualizer and Constructor tool, helps developers build, debug and test RESTful APIs
+Elixir client for NATS, the cloud native messaging system. https://nats.io
+R6 based http client for R (made for developers)
+HTTP/HTTPS client for Unity (iOS/Android/MacOSX) 
+Node/JS API client for ButterCMS (https://buttercms.com)
+FreeSWITCH socket client written in go (http://golang.org)
+https://chrome.google.com/webstore/detail/smart-websocket-client/omalebghpgejjiaoknljcfmglgbpocdp
+Ionic 4 and Angular 7 Tutorial: HTTP Interceptor Example
+Demos for aspnet/HttpClientFactory
+Client for the http://ourworldofpixels.com website
+Fakes HTTP requests using the Clojure http-kit client
+*DEPRECATED* Algolia Search API Client for Java, see https://github.com/algolia/algoliasearch-client-java-2
+Project moved to https://gitlab.com/gitlab-org/gitter/realtime-client
+A simple go implementation of json rpc 2.0 client over http
+Leverages Zlib.Portable to enable automatic GZIP and DEFLATE decompression for the new HttpClient Portable Class Library.
+Python support for Keycloak
+A collection of sample applications which demonstrate some potential requirements that may occur when using HttpClient and HttpClientFactory.
+Library for using Grafana' structures in Go programs and client for Grafana REST API.
+Standalone HTTP client for public WordPress.org API.
+A supercharged Git/GitHub command line interface (CLI).  An official integration for GitHub and GitHub Enterprise: https://github.com/works-with/category/desktop-tools
+Python client implementation for json api. http://jsonapi.org/
+It's .NET client for SoundCloud API https://developers.soundcloud.com/docs/api/reference
+Reactive GraphQl client for Android
+Lightweight C++ HTTP client and server library based on Asio for embedding purpose.
+NO LONGER MAINTAINED HERE, SEE FORK INSTEAD: https://github.com/Sparow199/apollo-client-maven-plugin
+ESA HttpClient is an asynchronous event-driven http client based on netty.
+HTTP client middleware that automatically retries requests
+HTTP client like cURL / HTTPie and a CLI client for https://hoppscotch.io
+一个Android和后端通信的demo，Client使用OkHttpClient，Server使用python flask
+A sane node.js client for web services
+Lightweitht HTTP client for Android
+Graphical small-internet client for windows, linux, MacOS X and BSDs. Supports gemini, http, https, gopher, finger.
+Library for mocking Java 11 HttpClient.
+An enhanced http client for Golang
+p5.js is a client-side JS platform that empowers artists, designers, students, and anyone to learn to code and express themselves creatively on the web. It is based on the core principles of Processing. http://twitter.com/p5xjs —
+the C++ source code of Python UIAutomation for Windows(https://github.com/yinkaisheng/Python-UIAutomation-for-Windows)
+Learn how a client and server interact over HTTP
+ESP8266 + BME280 -> MQTT, Serial, HTTP-Server, HTTP-Client/Volkszähler
+HTTP client middleware that throttles requests.
+10.7 Compatible version of this: http://code.google.com/p/mac-soapclient/
+Examples for working with the OpenEdge HTTP Client and Web Handler features
+A Easy WebDAV Client in Dart
+HttpClient for Objective-C
+A Universal Ethereum Provider Client
+Lib.Net.Http.WebPush is a library which provides a Web Push Protocol based client for Push Service. 
+This project is DEPRECATED, use https://github.com/mconf/bbb-air-client
+🦎 Real-time client/server communication over UDP using WebRTC and Node.js http://geckos.io
+transmission-remote-gtk is a GTK client for remote management of the Transmission BitTorrent client, using its HTTP RPC protocol.
+Asynchronous HTTP/1.1 client
+Python3 asyncio package to talk to Buderus KM200
+A simple client for SparkPost API https://www.sparkpost.com
+This is a sample client for the Vindinium AI game, written in Java, using the Google HTTP client and GSON.
+Gifzo Mac Client http://gifzo.net/
+A DynamoDB GUI client https://ieiayaobb.github.io/dynamoc/
+A remote VR display client for ALVR server. refer: https://github.com/polygraphene/ALVR
+💵 Unofficial Python client for n26 (Number 26) - https://n26.com/
+Rstats client for ClickHouse (https://clickhouse.yandex)
+Maxwell is an HTTP client which support for middleware and multiple adapters.
+A HTTP Proxy server and client written in Crystal
+An Angular4+ compatible OAuth2.0 compliant HTTP wrapper.
+Golang RPC client library for Steem - https://steem.io
+Paranoidhttp provides a pre-configured http.Client that protects you from harm.
+Lightweight SOAP client for invoking HTTP SOAP endpoints
+Simple and Powerful desktop client for working with JSON APIs
+An HTTP client abstraction that provides a common interface to several different client implementations.
+Ruby client gem for Consul HTTP API.
+Missing interfaces for HTTP-Client middlewares using PSR-7 messages.
+Resource-oriented HTTP client for node.js and browsers
+a useful HTTP client in EmacsLisp
+python ClickHouse client with support huge requests and http_progress
+dot-http is a text-based scriptable HTTP client
+C++11 Lightweight Redis client: async, thread-safe, no dependency, pipelining, multi-platform - NO LONGER MAINTAINED - Please check https://github.com/cpp-redis/cpp_redis
+ClojureScript + Om client for Kandan (http://kandanapp.com/)
+Migrated to https://github.com/fusionjs/fusionjs
+Go wrapper for http.Client for Signed AWS Requests
+Play The Royal Game of Ur online! https://royalur.net
+PACKAGE NO LONGER SUPPORTED. Adds a responseType option to HTTP.call on both the client and the server. It also adds an encoding option on the server.
+IRMA server, client, and tooling. Documentation: http://irma.app/docs
+Run chef-client/cinc-client at remote node with chef-zero(local-mode) via HTTP over SSH port fowarding.
+Pure Bash HTTP client
+Python client library for the project-honeypot.org Http:BL API
+Official Midtrans Payment API Client for Python | https://midtrans.com
+http://www.discourse.org  unofficial android client
+Fast GitHub command line client (deprecated). gh has been merged into https://github.com/github/hub, see https://github.com/github/hub/issues/475 for more info
+Go HTTP client for Ponzu
+An asynchronous HTTP client built on top of Java's HttpURLConnection
+DEPRECATED. Please use https://github.com/shapeshift/hdwallet instead
+A Node.js client for Librato (http://librato.com/)
+Lightweight async http(s) ClickHouse client for python 3.6+ with types converting
+Simple and lightweight HTTP client for Android
+An http-client library for C# (.Net 2.0). Based on Java HttpClient's API.

@@ -1,0 +1,3289 @@
+
+**
+Topics
+
+
+consul
+consul-configuration
+consul-template
+devops
+devops-tools
+docker
+hashi-ui
+hashicorp
+hashicorp-consul
+hashicorp-nomad
+nomad
+nomad-configuration
+nomad-server
+react
+ui
+frontend
+gui
+haproxy-configuration
+haproxy-gui
+haproxy-managment
+haproxy-servers
+haproxy-status
+haproxy-wi
+high-availibility
+interface
+lbs
+loadbalancer
+management
+openstack
+waf
+web
+web-gui
+web-interface
+web-manager
+webui
+chrome
+chrome-extension
+firefox
+firefox-addon
+javascript
+keyboard
+keyboard-interface
+saka
+saka-key
+web-extension
+hexo
+api
+article
+interface
+javascript
+wiki
+wikipedia
+wrapper
+bitshares
+blockchain
+javascript
+js-library
+reactjs
+websocket
+ui
+uikit
+vue
+vuejs
+browser
+css
+html5
+interface
+ipmi
+javascript
+kvm
+raspberry-pi
+remote
+remote-control
+vnc
+bitcoin
+grpc
+lightning
+lightning-network
+lnd
+datatables
+htmlwidgets
+javascript
+r
+r-package
+shiny
+data-visualization
+earth-science
+hacktoberfest
+nasa
+nasa-gibs
+satellite-imagery
+web-mapping
+chatbot
+nlp
+nlu
+react
+hyperapp
+library
+vdom
+web
+nginx
+nginx-proxy
+jupyter
+jupyter-nbextensions-configurator
+jupyter-notebook
+nbextension
+cli
+command-line
+command-line-tool
+developer-destination
+nexmo
+vonage
+cli
+command-line-tool
+cup
+fifa
+football
+javascript
+nodejs
+soccer
+world
+developer-tools
+devops
+devtools
+grpc
+grpc-client
+http2
+protobuf
+protobuf3
+selenium
+selenoid
+sse
+ui
+vnc
+webdriver
+3d
+es6
+gui
+interface
+inverse-kinematics
+javascript
+redux
+robot
+robotics
+threejs
+administration
+configuration
+home-automation
+iobroker
+monitoring
+smarthome
+samaritan
+graphql
+developer-tools
+development
+docker
+mailcatcher
+maildev
+nodejs
+nodemailer
+smtp
+smtp-server
+testing
+alpha
+ide
+javascript
+spreadsheet
+cnc
+cnc-milling-controller
+cncjs
+g2core
+gcode
+grbl
+linux
+marlin
+pendant
+raspberry-pi
+serial
+smoothie
+smoothieware
+tinyg
+bitshares
+bitshares-ui
+blockchain
+blockchain-wallet
+cryptocurrency
+javascript
+reactjs
+wallet
+web-app
+avatar
+crop
+image
+javascript
+profile-picture-component
+react
+admin
+admin-panel
+express
+javascript
+node
+node-module
+nodejs
+panel
+sequelize
+ext-mongodb
+ext-pdo
+mongodb
+php
+profiler
+profiling-data
+xhgui
+xhprof
+dropdown
+frontend
+picker
+react
+react-native
+select
+glob
+glob-stream
+glob-string
+gulpjs
+javascript
+node-glob
+stream
+streaming
+ami
+asterisk
+javascript
+nodejs
+argv
+cli
+command-line
+flags
+minimist
+parse
+antd
+frontend
+react
+shadowsocks
+shadowsocksr
+tcping
+ai-blocs
+artificial-intelligence
+deep-learning
+machine-learning
+modular
+neural-networks
+python
+tensorflow
+wysiwyg
+html5
+rtl-sdr
+sdr
+software-defined-radio
+waterfall
+css
+diff
+diff-image
+javascript
+visual-regression
+cli
+docker
+docker-image
+gitlab
+node
+nodejs
+time
+time-tracker
+time-tracking
+timetracker
+timetracking
+tracking
+javascript
+node
+steam
+steam-community
+ansible
+devops
+nodejs
+playbook
+argon
+b5som
+boron
+bsom
+cli
+electron
+eseries
+iot
+particle
+photon
+tracker
+framework
+javascript
+virtual-dom
+react
+recalbox
+recalbox-manager
+ilp
+interledger
+c-plus-plus
+http-server
+v4l2
+api
+css
+html
+javascript
+webex
+webex-component
+webex-teams
+browser-extension
+chrome-extension
+firefox-addon
+hacker-news
+hn
+ycombinator
+css
+cssom
+cssstyledeclaration
+jsdom
+chat
+decentralized
+p2p
+css
+design
+html
+interface
+lcars
+star-trek
+ui
+oraclejet
+open-source
+interface
+javascript
+lean
+mailto
+no-dependencies
+ui
+vanilla-javascript
+vanilla-js
+bus
+gtfs
+gtfs-generator
+gtfs-static
+india
+metro
+public-transport
+python
+static-gtfs
+tornado-web
+transit-agencies
+jira
+jira-cli
+jira-client
+cli
+music
+sonos
+angular
+ng-admin
+assets
+control
+digital-signage
+information
+interface
+monitoring
+multi
+ose
+php
+pi
+player
+raspberry
+raspberry-pi-3
+raspberry-pi-4
+screenly
+screenly-ose
+signage
+somo
+upload
+website
+fortis-interfaces
+reactjs
+bitcoin
+blockchain
+cli
+ethereum
+exchange
+price
+tmux
+salesforcedx
+docker
+docker-compose
+electron-app
+gui
+blockchain
+blockchain-technology
+blockchain-wallet
+crypto
+cryptocurrency
+eos
+ethereum
+tron
+js
+reactjs
+unitednations
+worldfoodprogramme
+ecommerce
+ecommerce-application
+ecommerce-framework
+ecommerce-platform
+ecommerce-shopping-solution
+ecommerce-site
+ecommerce-store
+ecommerce-storefront
+ecommerce-website
+ecommerce2
+php-app
+php-application
+php-applications
+php7
+php7-application
+php7-ecommerce
+php7-framework
+interface
+jsdoc
+static-types
+validate
+validation
+arctic-data-center
+data-repository
+dataone
+knb
+metacat
+metadata
+metadata-editor
+science-metadata
+blockchain
+electron
+react
+smart-contracts
+wallet
+zen-protocol
+interactjs
+reactjs
+tinder
+tinder-ui
+tweenjs
+banmanager
+minecraft
+nodejs
+react
+cli
+gtd
+rtm
+tasks
+terminal
+todo
+mobx
+react
+torrent
+torrent-client
+transmission
+behavior
+flexbe
+gui
+robotics
+ros
+statemachine
+api
+cloud
+docker-image
+dockerfile
+dorita980
+iot
+irobot
+rest
+robot
+roomba
+roomba980
+electron
+experimental
+arraybuffer
+base64
+low-level-javascript
+stringview
+typed-arrays
+atom
+atom-ethereum-interface
+ethereum
+ethereum-client
+ethereum-dapp
+ethereum-node
+solidity-codes
+solidity-compiler
+dojot
+gui
+iot
+cli
+devexpress
+devextreme
+devextreme-angular
+devextreme-cli
+theme-builder
+api
+cli
+contentful
+json
+api-design
+api-documentation
+open-api
+open-api-specification
+swagger
+swagger-spec
+swagger-specification
+cli
+shower
+delivery-presentation
+gossip
+impressjs
+outline
+ppt
+presentations
+share-stories
+slide
+stack
+storytelling
+bolsa
+bovespa
+bovespa-api
+node-bovespa
+stocks
+valores
+angularjs
+bmc
+npm
+openbmc
+apis
+automated
+automation
+development
+docker
+integrations
+javascript
+mqtt
+no-code
+node
+nodejs
+raspberry-pi
+react
+reactjs
+streamsheets
+workflow
+workflow-automation
+electron
+gui
+hacktoberfest
+javascript
+jsx
+photon
+react
+bbs
+synchronet
+javascript
+reporter
+standard
+testing
+es6
+high-order
+javascript
+streams
+template-string
+virtualdom
+css
+css-in-js
+cssinjs
+glamor
+glamorous
+glamorous-native
+js
+react
+react-native
+style
+stylesheet
+api
+github
+hmr
+interface
+node
+react
+scaffold
+webpack
+weixin
+admin
+ruby
+ruby-on-rails
+mongodb
+nodejs
+dataflow-programming
+flow-based-programming
+generative-art
+graphics-programming
+javascript
+kefir
+pure-data
+reactive-programming
+reactive-streams
+rpd-engine
+streams
+visualisation
+mastodon
+android
+automation
+integration-testing
+ios
+javascript
+react
+react-native
+testing
+classification
+entity
+entity-relation-labeling
+hacktoberfest
+nlp
+nlp-library
+nlp-machine-learning
+text
+text-classification
+text-entities
+text-entity-analysis
+text-mining
+framework
+javascript
+jsx
+linkedinlearning
+lynda
+lynda-com
+rayvillalobos
+react
+reactjs
+training
+tutorial
+breathecode
+coding-exercises
+components
+react
+browser
+chrome-debugging-protocol
+firefox
+google-chrome
+headless
+javascript
+microsoft-edge
+mobile-safari
+nodejs
+opera
+javascript
+jquery
+declarative
+frontend
+javascript
+library
+react
+ui
+animation
+css
+javascript-motion-engine
+motion
+physics
+popmotion
+svg
+tween
+cli
+scaffold
+webpack
+code-coverage
+istanbul
+javascript
+cli
+netlify
+gis
+leaflet-map
+r
+spatial
+javascript
+nodejs
+postgresql
+promise-library
+promises
+transaction
+typescript
+command-line
+javascript-library
+nodejs
+prompt
+docker
+docker-compose
+docker-swarm
+kvm
+libvirt
+linux
+web-application
+hacktoberfest
+computer-music
+electroacoustic-music
+javascript
+javascript-toolkit
+nexusui
+web-audio
+cli
+command-line
+development
+interface
+tools
+data
+dota
+hacktoberfest
+javascript
+react
+redux
+ui
+visualization
+webpack
+jewish
+talmud
+torah
+archiver
+javascript
+nodejs
+tar
+zip
+home-automation
+javascript
+music
+nodejs
+sonos
+hacky
+html
+mockup
+android
+ios
+nativescript
+webview
+controller
+interface
+javascript
+midi
+osc
+ai
+aws
+aws-lex
+bot
+chat
+chatbot
+cloudformation
+iframe
+interface
+lex
+polly
+polly-voice
+ui
+vue
+vuejs
+vuetify
+vuex
+web
+webrtc
+widget
+android
+browser-extension
+electron
+ios
+javascript
+material
+material-components
+material-design
+material-theme
+pwa
+quasar-framework
+server-side-rendering
+ssr
+vue
+vue-component
+vue-components
+vue2
+vuejs
+vuejs2
+cli
+macaca
+kodi
+gui
+mongo
+sql
+android
+cli
+cross-platform
+ios
+mobile
+nativescript
+blockchain
+blockchain-demos
+blockchain-technology
+cryptocurrencies
+cryptocurrency
+javascript
+nodejs
+choo
+dom
+interface
+minimal
+modular
+ui
+unidirectional
+vanilla
+functional-programming
+javascript
+moon
+ui
+content-management-system
+jquery-ui
+rdfa
+cli
+command-line
+gulp
+javascript
+iot
+mqtt
+mqtt-broker
+mqtt-client
+mqtt-panel
+panel
+websockets
+javascript
+nodejs
+wallpapers
+markdown
+markdownlint
+automation
+py2exe
+pyinstaller
+python
+inferno
+inferno-component
+inferno-js
+javascript-library
+jsx
+performance
+react
+vdom
+documentation
+dsfinv-k
+kassensichv
+middleware
+rksv
+dom
+html5
+javascript
+redom
+tiny
+web-development
+choice
+cli
+command-line
+interface
+nodejs
+prompt
+prompter
+prompts
+ccu
+homematic
+rgbw-device
+virtual-interface
+angular
+exceptionless
+grunt
+html
+javascript
+spa
+interface
+three-js
+threejs
+ui
+cli
+command-line-tool
+console
+containers
+docker
+nodejs
+admin-tool
+adminmongo
+database
+mongodb
+mongodb-connection
+blockchain
+blockchain-wallet
+desktop
+electron
+javascript
+lisk
+ui
+express-middleware
+gui
+hacktoberfest
+hacktoberfest2020
+javascript
+mongodb
+standalone
+steam
+chatbot
+javascript
+nodejs
+tmi
+tmijs
+twitch
+twitchdev
+dependency-free
+dom
+frontend
+joystick
+vanilla-javascript
+docker-image
+ubuntu-desktop
+vnc
+ccu
+home-automation
+homematic
+iobroker
+smarthome
+xml-rpc
+api
+express
+graphql
+graphql-schema
+middleware
+musicbrainz
+musicbrainz-api
+relay
+react
+storybook
+tests
+canvas
+canvas-html5
+gl
+react
+react-renderer
+render
+renderer
+webgl
+webgl2
+hacktoberfest
+thingpedia
+voice-assistant-skills
+web-apis
+angularjs
+awesome
+awesome-list
+json
+python
+scraper
+cli
+discord
+nodejs
+interface-wrappers
+javascript
+js
+node-js
+nodejs
+programming
+wrap
+wrapper
+wrapper-api
+wrapper-functions
+blockchain
+cli
+contracts
+deployment
+ethereum
+interaction
+orchestration
+smart
+cli
+nodejs
+passbolt
+composer
+electron
+gui
+php
+cli
+css
+csso
+minifier
+api-wrapper
+chamberlain
+garage-door-opener
+liftmaster
+light
+myq-garage-door
+nodejs
+ajax
+api
+api-wrapper
+es6
+fluent
+interface
+js
+laravel
+model
+orm
+promise
+rapid
+router
+oculus
+react
+reactvr
+rift
+ui-components
+uikit
+virtual-reality
+vive
+webvr
+webvr-framework
+file
+filesystem
+fluent-interface
+promise
+assert
+power-assert
+allen
+allen-bradley
+automation
+bradley
+communication
+communication-protocol
+datatype
+ethernet
+ethernet-ip
+ethernet-protocol
+javascript
+node-ethernet
+nodejs
+plc
+rockwell
+react
+redux
+coap
+coap-cli
+javascript
+node-coap
+controller
+gamepad
+nodejs
+xbox-controller
+xbox360
+axe-cli
+deprecated
+unmaintained
+cli
+command
+command-history
+command-line
+command-line-app
+console
+console-substitute
+html
+html5
+javascript
+log
+web
+django
+django-admin
+django-mptt-admin
+mptt-models
+clean-css
+cli
+css
+css-optimizer
+kdb
+qlang
+cratedb
+hacktoberfest
+hacktoberfest2020
+home-automation
+javascript
+machine-learning
+raspberry-pi
+switchboard
+blockchain
+forums
+frontend
+reactjs
+steem
+steem-blockchain
+mock-models
+sequelize
+sequelize-models
+unit-testing
+lg
+mqtt
+smart-tv
+smarthome
+tv
+webos
+check-it-out
+check-out
+checkout
+cli
+cli-tool
+command-line
+command-line-interface
+command-line-tool
+developer-tools
+devtool
+devtools
+git
+git-branch
+git-cli
+github-cli
+javascript
+js
+nodejs
+productivity
+frontend
+javascript
+owntracks
+owntracks-frontend
+owntracks-recorder
+owntracks-ui
+vue
+vuejs
+cordova-android
+jquery-mobile
+open-source
+ui5
+web-components
+dapp
+gnosis
+pm-js
+pm-trading
+reactjs
+redux
+redux-actions
+smart-contracts
+tradingdb
+web3js
+bot
+calendar
+discord
+discord-bot
+google-calendar
+directive
+filter
+vue
+vue-cli
+vue-material
+vue-router
+vuejs
+vuex
+vuex2
+coins
+cryptocurrency
+standard
+ai
+camera
+canvas-2d-context
+computer-vision
+javascript
+mobile-first
+webrtc-demos
+elasticsearch
+javascript
+netlify
+reactjs
+rss
+search-engine
+ens
+ethereum
+ethjs-ens
+handlebars
+handlebars-template
+high-performance
+mustache
+mustache-templates
+mustache-templating
+next-generation
+observable
+reactive
+rendering-engine
+template
+template-engine
+template-library
+templates
+templating
+virtual-dom
+atom
+atom-linter
+textlint
+openwhisk
+css
+grid
+grid-system
+playground
+absinthe
+apollo
+async
+es2018
+es6
+iterables
+javascript
+webworkers
+queue
+redis
+rsmq
+worker
+intent-driven-interface
+keyboard-navigation
+wordpress-plugin
+wp-admin
+css
+design-system
+js
+ui
+documentation
+documentation-tool
+javascript
+javascript-library
+jsdoc
+nodejs
+npm-package
+indexer
+pathofexile
+sniper
+iobroker
+mobile-web
+smarthome
+visualization
+biometrics
+face-antispoofing
+face-identification
+face-liveness-detection
+face-recognition
+face-verification
+facial-recognition
+html5
+javascript
+liveness-detection
+presentation-attack-detection
+replay-attack
+iris
+mopidy
+snapcast
+spotify
+clock
+clock-screensaver
+digital-clock
+evangelion
+mac-screensaver
+macos
+neon-genesis-evangelion
+screensaver
+screensavers
+home-automation
+pimatic
+browser
+chrome-debugging-protocol
+firefox
+google-chrome
+headless
+javascript
+microsoft-edge
+mobile-safari
+nodejs
+opera
+javascript
+jquery
+declarative
+frontend
+javascript
+library
+react
+ui
+animation
+css
+javascript-motion-engine
+motion
+physics
+popmotion
+svg
+tween
+cli
+scaffold
+webpack
+code-coverage
+istanbul
+javascript
+cli
+netlify
+gis
+leaflet-map
+r
+spatial
+javascript
+nodejs
+postgresql
+promise-library
+promises
+transaction
+typescript
+command-line
+javascript-library
+nodejs
+prompt
+docker
+docker-compose
+docker-swarm
+kvm
+libvirt
+linux
+web-application
+hacktoberfest
+computer-music
+electroacoustic-music
+javascript
+javascript-toolkit
+nexusui
+web-audio
+cli
+command-line
+development
+interface
+tools
+data
+dota
+hacktoberfest
+javascript
+react
+redux
+ui
+visualization
+webpack
+jewish
+talmud
+torah
+archiver
+javascript
+nodejs
+tar
+zip
+home-automation
+javascript
+music
+nodejs
+sonos
+hacky
+html
+mockup
+android
+ios
+nativescript
+webview
+controller
+interface
+javascript
+midi
+osc
+ai
+aws
+aws-lex
+bot
+chat
+chatbot
+cloudformation
+iframe
+interface
+lex
+polly
+polly-voice
+ui
+vue
+vuejs
+vuetify
+vuex
+web
+webrtc
+widget
+android
+browser-extension
+electron
+ios
+javascript
+material
+material-components
+material-design
+material-theme
+pwa
+quasar-framework
+server-side-rendering
+ssr
+vue
+vue-component
+vue-components
+vue2
+vuejs
+vuejs2
+cli
+macaca
+kodi
+gui
+mongo
+sql
+android
+cli
+cross-platform
+ios
+mobile
+nativescript
+blockchain
+blockchain-demos
+blockchain-technology
+cryptocurrencies
+cryptocurrency
+javascript
+nodejs
+choo
+dom
+interface
+minimal
+modular
+ui
+unidirectional
+vanilla
+functional-programming
+javascript
+moon
+ui
+content-management-system
+jquery-ui
+rdfa
+cli
+command-line
+gulp
+javascript
+iot
+mqtt
+mqtt-broker
+mqtt-client
+mqtt-panel
+panel
+websockets
+javascript
+nodejs
+wallpapers
+markdown
+markdownlint
+automation
+py2exe
+pyinstaller
+python
+inferno
+inferno-component
+inferno-js
+javascript-library
+jsx
+performance
+react
+vdom
+documentation
+dsfinv-k
+kassensichv
+middleware
+rksv
+dom
+html5
+javascript
+redom
+tiny
+web-development
+choice
+cli
+command-line
+interface
+nodejs
+prompt
+prompter
+prompts
+ccu
+homematic
+rgbw-device
+virtual-interface
+angular
+exceptionless
+grunt
+html
+javascript
+spa
+interface
+three-js
+threejs
+ui
+cli
+command-line-tool
+console
+containers
+docker
+nodejs
+admin-tool
+adminmongo
+database
+mongodb
+mongodb-connection
+blockchain
+blockchain-wallet
+desktop
+electron
+javascript
+lisk
+ui
+express-middleware
+gui
+hacktoberfest
+hacktoberfest2020
+javascript
+mongodb
+standalone
+steam
+chatbot
+javascript
+nodejs
+tmi
+tmijs
+twitch
+twitchdev
+dependency-free
+dom
+frontend
+joystick
+vanilla-javascript
+docker-image
+ubuntu-desktop
+vnc
+dom
+jquery
+ui
+cryptocurrency
+monero
+wallet
+web
+web-app
+web-application
+webapp
+apperta
+coronavirus
+coronavirus-screening
+covid
+covid-19
+dito
+ehrbase
+openehr
+opusvl
+react
+antd
+dashboard
+diagnostics
+hkube
+hkube-core
+react
+react-spring
+redux
+ui
+customizable
+game
+gui
+halo
+halo-online
+interface
+menu
+mod
+gordon-360
+react
+web
+crm
+customer
+dashboard
+dolibarr
+donation
+erp
+gdpr
+invoice
+management
+order
+php
+proposal
+worpress
+apertium-tools
+machine-translation
+natural-language
+static-site
+web-app
+chrome-extension
+hacktoberfest
+javascript
+replay
+testing
+home-automation
+homematic
+homematicip
+mqtt
+smarthome
+cli
+console
+loading
+loading-bar
+loading-indicator
+loading-spinner
+multiple
+node-js
+nodejs
+progress
+spinner
+spinners
+term
+terminal
+koa2
+middleware
+node
+bigchaindb
+graphql
+json
+nodejs
+blockchain
+css
+html
+javascript
+music
+npm
+web3
+yarn
+dialogflow
+nodejs
+github
+react
+redux
+comunica
+hacktoberfest
+jquery
+query-engine
+rdf
+sparql
+triple-pattern-fragments
+web-client
+ehri
+playframework
+scala
+dashboard
+mqtt
+mqtt-client
+real-time
+chat
+computer-vision
+crowdsourcing
+mechanical-turk
+nodejs
+socket-io
+cht
+hacktoberfest
+health
+javascript
+mhealth
+nodejs
+html5
+javascript
+joystick
+touchscreen
+vanilla-javascript
+cli
+cli-app
+javascript
+nodejs
+weather
+bfcache
+cache
+egjs
+persist
+storage
+audio
+flash
+javascript
+webaudio
+obdi
+wrapper
+cli
+command-line
+command-line-parser
+command-line-tool
+nodejs
+option-parser
+framer-motion
+react
+cli
+mac
+macos
+nodejs
+osx
+reminders
+terminal
+browse
+docker
+docker-registry
+registry
+ffi-wrapper
+nodejs
+iframes
+vue-components
+vuejs2
+builder
+concept
+demo
+generative
+generative-programming
+generator
+gui-builder
+meta-interface
+metaprogramming
+rapid-development
+ui-design
+ux-design
+workflow-automation
+blockchain
+decentralized
+exchange
+ico
+issue
+ito
+ripple
+send
+token
+trade
+wallet
+xrp
+binance
+bitcoin
+bitfinex
+bitmex
+coinbase-pro
+cryptocurrency
+kraken
+kucoin
+scripting
+react
+react-router-v4
+electron
+javascript
+json
+react
+airbnb
+blog
+reactjs
+grunt
+grunt-plugins
+javascript
+js
+nodejs
+json-schema
+css-3d-transitions
+gallery
+javascript
+library
+photos
+bose-soundtouch
+hassio
+home-automation
+html
+hypervisor
+javascript
+kvm
+libvirt
+mysql-database
+php
+qemu
+ubuntu
+vnc
+webbrowser
+open-data
+toronto
+uoft
+artnet
+dmx512
+led
+mqtt
+rgb
+smarthome
+stage-lighting
+api
+ccx
+conceal
+concealx
+cryptocurrency
+daemon
+daemon-rpc
+javascript
+js
+privacy
+rpc-server
+wallet-rpc
+audio
+component
+ui
+web-audio
+webaudio
+chain
+chain-able
+chainable
+chains
+define
+expressive
+factory
+fluent
+interface
+library
+bilibili-api
+bilibili-live
+javascript
+node
+websocket
+openstreetmap
+animation
+css
+desktop
+effects
+html
+javascript
+library
+svg
+ui
+ux
+p25
+police
+radio
+scanner
+sdr
+smartnet
+gpio
+i2c
+pigpio
+pwm
+raspberrypi
+serial
+servo
+waveforms
+blaze
+meteor
+meteor-package
+reactive-templates
+admin
+api-platform
+hacktoberfest
+hydra
+hypermedia
+hypermedia-client
+json-ld
+react
+rest
+rest-api
+mantra
+meteor
+electron
+golem
+react
+redux
+component
+draw
+floorplans
+interface
+react
+react-component
+reactjs
+svg
+threejs
+ui
+webgl
+es6
+eslint
+front-end
+frontend
+html
+html-css
+html5
+javascript
+js
+minions
+pam
+salt
+salt-command
+webapp
+yarn
+rdf
+sparql
+triple-pattern-fragments
+chess
+chess-engine
+lichess
+lichess-api
+android-security
+frida
+ios-security
+mobile-security
+reverse-engineering
+digital-thread
+digital-twin
+iso10303
+mtconnect
+qif
+removal-simulation
+step
+step-nc
+frontend
+frontend-tools
+frontend-toolset
+hacktoberfest
+sui
+p2p
+command-line
+command-line-tool
+nodejs
+onedrive
+onedrive-api
+onedrive-client
+onedrive-storage
+gui
+javascript
+javascript-framework
+ui
+blockchain
+blockchain-wallet
+javascript
+lisk
+mobile
+react-native
+ui
+mailserver
+mlmmj
+nodejs
+api
+crawling
+document
+interface
+ocr
+osint
+web
+audio
+ffmpeg
+js
+music
+sonos
+sonos-audio
+sonos-web
+soundcloud
+spotify
+youtube
+orienteering
+routegadget
+chess
+patchbay
+sbot
+checker
+notification
+package
+update
+javascript
+karma
+karma-cli
+d3js
+flask
+machine-learning
+mariadb
+mongodb
+puppet
+python
+reactjs
+browser
+gui
+javascript
+nodejs
+terminal
+annotate-images
+annotation-tool
+classification
+computer-vision
+csv
+dataset
+deep-learning
+desktop
+entity-recognition
+hacktoberfest
+image-annotation
+image-labeling-tool
+image-segmentation
+labeling
+labeling-tool
+machine-learning
+named-entity-recognition
+semantic-segmentation
+text-annotation
+text-labeling
+govuk-design-system
+govuk-design-system-team
+govuk-frontend
+portfolio
+bmw
+containers
+docker
+kubernetes
+linux
+sysdig
+troubleshooting
+hacktoberfest
+frontend
+interface
+kvm
+qemu
+virtual-machines
+virtualization
+web-frontend
+hacktoberfest
+r
+shiny
+cli
+tool
+database
+excel
+firebase
+ini
+javascript
+javascript-library
+json
+msaccess
+mysql
+node
+node-module
+postgresql
+sql
+sqlite
+wrapper
+digital-currency
+ui
+user-interface
+wallet
+webdollar
+blockchain
+cryptocurrency
+electron
+gui
+interface
+nexus
+react
+reactjs
+wallet
+admin-dashboard
+ceph
+dashboard
+apis
+hacktoberfest
+middleware
+nodejs
+iframe
+react
+cryptography
+es2019
+javascript
+libsodium-bindings
+node
+nodejs
+sodium
+alexa-skill
+alexa-skills-kit
+aws-cloudformation
+aws-lambda
+cli
+command-line
+command-line-tool
+skill-deployer
+blockchain-explorer
+front
+ui
+adapt
+authoring
+elearning
+javascript
+mongodb
+nodejs
+contentful
+expo
+graphql
+react
+react-native
+react-native-animated
+react-native-gesture-handler
+react-navigation
+react-redux
+css
+react
+react-with-styles
+chess
+gui
+lc0
+leela-chess-zero
+javascript
+user-interface
+web-components
+webcomponents
+cms
+javascript
+jekyll
+jekyll-plugin
+react
+ruby
+chat
+chatbot
+conversation
+conversational-ui
+prototype
+ui
+cesi
+flask
+reactjs
+supervisor
+hacktoberfest
+admin
+openvpn
+webapp
+browser-extension
+chrome-extension
+javascript
+twitter
+twitter-extension
+userstyle
+django
+xda
+xda-developers
+haskell
+javascipt
+react
+supercollider
+tidalcycles
+tracker
+cli
+gui
+interface
+ui
+webpack
+combustion
+react
+transmission
+ast
+cst
+javascript
+plugins
+processor
+syntax-tree
+unist
+vfile
+es6
+es6-proxies
+nodejs
+redis
+redis-database
+adobe-flash
+adobe-flex
+apache-flex
+clipboard
+dom
+flash
+frontend
+javascript
+web
+zeroclipboard
+cutelyst
+kvm
+kvm-hypervisor
+kvmwebui
+libvirt
+qt5
+virtualization
+aws
+cli
+gcp
+hacktoberfest
+javascript
+command-line
+javascript
+producthunt
+
+**
+Descriptions
+
+
+⛔️ DEPRECATED: interface-transport is now included in https://github.com/libp2p/js-interfaces
+A modern user interface for @hashicorp Consul & Nomad
+A bot for torrenting. Interfaces: web, telegram bot
+Web interface for managing Haproxy, Nginx and Keepalived servers
+A keyboard interface to the web
+datastore interface
+Web interface for the FiveM live_map addon
+:tropical_drink: Run webpack through a stream interface
+Command line interface for Hexo
+Interface to use react-with-styles with Aphrodite
+A server for generating OSC and MIDI messages from interfaces created using Interface.js
+Create and manage powerful backends with one click
+Wikipedia Interface for Node.js
+Javascript websocket interface for Bitshares
+A responsive Vue UI library for web site interfaces
+User interface components for Prototype.js
+Command-line Interface (CLI) for Visual Studio App Center
+Application programming interface to EOS blockchain nodes.
+DIY IP-KVM for Remote Desktop Access
+Node.js interface to LND
+A fresher, less annoying interface to YouTube.
+Simple web interface for Particle Cloud
+Tessel 2 Command Line Interface
+R Interface to the jQuery Plug-in DataTables
+Programmable interface to `clinic doctor`
+Interactive interface for browsing global, full-resolution satellite imagery
+A platform for building conversational interfaces with intelligent agents (chatbots)
+A collection of user interfaces for Atom IDE.
+Absolutely minimal view layer for building web interfaces.
+An elegant web & terminal interface for Unitech/PM2.
+A declarative React interface to Google Maps
+[Needs Maintainer] Formbuilder is a small graphical interface for letting users build their own webforms.
+Docker container for managing Nginx proxy hosts with a simple, powerful interface
+JSON Payment Protocol Interface
+A uniform interface for domain data (deprecated)
+Band.js - Music composer interface for the Web Audio API.
+Monkberry is a JavaScript library for building web user interfaces
+A repository for implementer interfaces like form builder, reporting, dashboard config etc.
+A completely new web interface for the Duet electronics
+Interface to use react-with-styles with React Native
+🖥 Minimal Lisk graphical user interface for desktop
+BitGo Command-Line Interface
+A standalone local web based user interface for git repositories
+slide tool interface for reveal.js
+A jupyter notebook serverextension providing config interfaces for nbextensions.
+youtube-dl web interface
+The Lodash command-line interface.
+A component library for crafting ambitious interfaces.
+Admin interface builder
+Nexmo CLI (Command Line Interface)
+⚽ Command line interface for Hackers who love football
+A gRPC cli interface for easy testing against gRPC servers
+Graphical user interface for Selenoid project
+fast interface to tiles with pluggable backends - NOT ACTIVELY MAINTAINED
+Interface to the bitcoin P2P network for bitcore
+A three.js based 3D robot interface. 
+user interface for configuration and administration
+Samaritan interface - Person of Interest (TV series) 📺
+UploadNetworkInterface for Apollo GraphQL Client
+:mailbox: SMTP Server + Web Interface for viewing and testing emails during development.
+WeeChat web interface
+Visualise data and edit JavaScript code using a spreadsheet interface.
+这是一个为了解决yapi的oauth2.0项目接口需要做鉴权操作的插件
+A design tool for interfaces
+A web-based interface for CNC milling controller running Grbl, Marlin, Smoothieware, or TinyG.
+Flow interface declarations for the Chrome extensions API
+Fully featured Graphical User Interface / Reference Wallet for the BitShares Blockchain
+Small avatar & profile picture component. Resize and crop uploaded images using a intuitive user interface.
+Skeuocard progressively enhances credit card inputs to provide a skeuomorphic interface.
+A git tool with an easy terminal interface.
+Library for provide Admin UI 
+Web interface for XHProf profiling data can store data in MongoDB or PDO database
+🔽 A Picker component for React Native which emulates the native <select> interfaces for iOS and Android
+Interface Web MQTT. Post blog FILIPEFLOP
+A lightweight wrapper for the JavaScript FileReader interface
+Reskinning Reddit into an Outlook interface
+This repository is for an assignment related to data collection and handling, and displaying that data using JS and HTML/CSS
+A Readable Stream interface over node-glob.
+Asterisk manager interface (ami) client for nodejs
+Toolkit for building command line interfaces
+Custom PDF interface using pdf.js
+HABmin - a graphical user interface for openHAB 2
+🌍 Web interface to tcping servers
+A powerful and intuitive WYSIWYG interface that allows anyone to create Machine Learning models!
+A clean & modern SQL data interface.
+[UNMAINTAINED] An interface component to give your site/app Medium.com style commenting.
+A user interface for the Saiku analytical tool
+Open source, multi-user SDR receiver software with a web interface
+Visual diffing in CI for user interfaces
+🦊🕘 A command line interface for GitLab's time tracking feature.
+A command-line interface to spritezero.
+Build expressive user interfaces with consistent code and reusable components
+Interact with various interfaces on Steam Community from Node.js
+Simple web interface for running Ansible playbooks
+Self documenting runtime interfaces.
+This package contains JavaScript implementations of common data structures with idiomatic interfaces.
+Command Line Interface for Particle Cloud and devices
+A collection of GitHub Actions for interfacing with Google Cloud Platform.
+Interfaces for IO using Q promises in JavaScript on Node
+Dyo is a JavaScript library for building user interfaces.
+JavaScript collections with idiomatic interfaces
+Standards for creating consistent, interoperable user interfaces
+🐣A remote data interface proxy service | 一个远程数据接口代理服务
+Translations for our CMS interface
+Easy interface for `head`
+A web interface to manage recalbox configuration
+Graphical interface for moneyd
+Provides an interface to convert PDF's pages to png files in Node.js by using ImageMagick
+A REST interface to neuraltalk2
+V4L2 web interface
+A web interface for Hashcat/oclHashcat
+Bootstrap Studio command line interface.
+Command Line Interface for MDB (https://mdbootstrap.com/)
+New react based user interface for BrewPi
+A food recipes website with clean user interface
+Interfaces for Adapters in the Webex Component System | https://github.com/webex/components
+✨ Hacker News, but refined — Interface tweaks and features to make the HN experience better
+W3C File Reader API streaming interfaces
+A Node.js implementation of the CSS Object Model CSSStyleDeclaration interface
+An intuitive interface for browsing and installing Windows Package Manager apps. 
+desarrollo de interfaces codigo de la asignatura
+interface for writing peer-to-peer distributed chat clients
+LCARS, Star Trek style, HTML + CSS interface.
+api项目接口管理系统
+react-native interface to login to instagram (iOS)
+Jam.py is an event-driven framework for the development of database applications with a Web interface.
+Design Explorer is an open source web interface for exploring multi-dimensional design spaces
+A Very basic chat interface written on node.js
+The Web interface for Peergos
+Oracle JET Command Line Interface
+Fiori 3, theme-able, accessible component library for building SAP user interfaces with any web technology.
+Integrate InfCloud into Radicale's web interface.
+Solrstrap is a Query-Result interface for Solr written in JavaScript, HTML and CSS
+A react-native interface for EventSource: Server-Sent Events for iOS and Android
+CV in terminal interface.
+Asch command line interface and dapp sdk/template inbuilt
+A simple way to enhance your mailto links with a convenient user interface.
+An optionally-asynchronous forEach with an interesting interface.
+A client interface for the Phonegap Build API using nodejs. 
+Mobile-centric interface for Tidepools 
+GUI interface for creating, editing, exporting of static GTFS data for a public transit authority
+A common interface for setting up 3D plots
+Interface Driver for all machines: Download from https://software.openbuilds.com
+Facet Search interface for MEMEX.
+R interface to wavesurfer
+ Backbone.js Plugin for using Json Rpc interfaces
+Web- and REST-interface to Collectd
+Modern JSON interface.
+JIRA command line interface written in NodeJS
+🎶 Command Line Interface for Sonos
+Configuration API to describe an administration interface. Used by ng-admin and react-admin.
+Manage multiple Screenly OSE Player in one web Interface
+Google maps interface themeable with jQuery UI
+Ultimately fast storage for billions of files with http interface
+ javascript library to implement the websocket interface towards the janus server
+A Node.js interface to exiftool command-line application.
+Get the MAC addresses (hardware addresses) of the hosts network interfaces.
+web interfaces for project fortis - A data gathering and intelligence pipeline that collects, analyzes and aggregates information from social media outlets and other public / private web data sources
+Convert TypeScript Interfaces (in code) to JSON-Schemata
+🐋 Show Ethereum and Bitcoin price in command line interface (CLI).
+Provide a simple UI interface for Salesforce DX
+Better TOML parsing and stringifying all in that familiar JSON interface.
+New line-delimeted JSON parser with a stream interface
+Android Debug Bridge Web Interface
+[ARCHIVED] Test suite for pull-blob-stores
+webaudio experimental mpd interface
+The Puppet Dashboard is a web interface providing node classification and reporting features for Puppet, an open source system configuration management tool
+APNS (Apple Push Notification Service) interface written in node.js
+Flow interfaces for Angular JS
+Docker Compose UI: Lifeboat is an easy way to launch projects with a graphical interface
+Link models easily via a REST interface between Mongoose/Node-Express/Angular.js 
+Provide presentation interface using pdf.js
+A command-line interface for Facebook Messenger.
+Connect to applications on EOS, Ethereum, and Tron. Exchange tokens with ease. Manage your assets safely. All in a simple to use interface.
+View your fantasy teams with nfldb using a web interface.
+A user interface for chess applications
+World Food Programme User Interface Kit. Developer kit for implementing WFP web style guideline.
+Home Assistant user interface for the Samsung Gear S3/S2 (tizen os)
+Bring extraction to your nextcloud web interface
+A REST interface to mnesia
+A chat interface using react
+An interactive visual feedback tool for developing user interface code
+Web user interface for the Terra platform
+[DEPRECATED] A web interface for the lovely virtual assistant Melissa.
+polymaps geojson browsing interface
+🛒 An advanced and complete PHP 7 eCommerce website along with MySQL database and Admin interface.
+IRCCloud Commandline Interface
+The Delving Search and Administrative Interface
+Argument validation library based on JSDOC syntax
+A Javascript interface to the (private) Starbucks ordering API
+IkaGo Web is a front-end interface for IkaGo.
+Wrap engine.io in a real stream interface
+MetacatUI: A client-side web interface for DataONE data repositories
+The [s4s] interface userscript.
+User interface for the Zen Protocol client.
+A visual interface for reading ancient texts for the Google Ancient Places project
+Create GraphQL schemas with a fluent/chainable interface
+[deprecated] Template-based HTML5 framework for smarthome user interfaces
+An app that mimics the functionality of Tinder
+help users make their own script solving puzzles or scoring lab puzzles in EteRNA.
+Web interface for BanManager using Next.js/React/GraphQL
+XMPP Client interface for node-xmpp
+A simple standard interface for an HD ethereum wallet.
+Remember the Milk Command Line Interface
+A javascript wiring library to create web wirable interfaces for dataflow applications, visual programming languages or graphical modeling.
+React Transmission is an ongoing reimplementation of Transmission web interface.
+User interface (editor + runtime control) for the FlexBE behavior engine.
+DEPRECATED: Web Interface to Open Source Chef Server 11
+Drop in console interface for running commands in web applications
+REST interface to control your iRobot Roomba 980 via local server on your lan.
+Node.js code that interfaces devices with the Ninja platform
+Class Repository for 2014 Dynamic Interfaces
+Ōryōki [応量器] is an experimental web browser with a thin interface.
+Programmatic interface in Node.js for executing Ansible ad-hoc commands and playbooks
+An interface to make API calls on a BigBlueButton server.
+LXC Linux Containers Interface for nodeJS
+Wiren Board HA web interface
+A SimpleDB Administration web-interface
+a minimal postgres interface for node
+Single page CloudFoundry web user interface using AngularJS and Bootstrap
+C-like string interface for JavaScript
+The Form.io command line interface.
+Small fluent interface for caching sequelize database query results in redis more easily
+Command Line Interface Utility for Node.js using ES6 idioms
+UI Interface for implementing Kamailio to provide PBX Hosting and SIP Trunking Services
+A Node.js file system walker with a Readable stream interface. Extracted from fs-extra.
+:dog2:  composable unidirectional user interfaces using pull streams
+Persistent database for Node.js/NW.js/Electron with MongoDB/Mongoose-like features and interface on top of LevelUp
+node.js AGI (Asterisk Gateway Interface)
+GUI-based debugger, profiler and runtime interface for node.js.
+Solidity compilation and Ethereum contract execution interface for hackable atom editor
+Dojot's graphical user interface 
+NPM package for interfacing with local NMAP installation
+Command line interface for the smartcrop library to provide content aware image cropping.
+A command-line interface for DevExtreme
+The official Contentful command line interface. Use Contentful features straight from the command line!
+Prototype graphical user interface for QIIME 2
+A web interface for Satis configuration
+Streamlined Flux abstract interface suitable for a variety of backends.
+🛑 Ad blocker for command line interface ads.
+API for the ledger command-line interface (ledger-cli.org).
+A Raspberry pi web interface
+A simplified Javascript interface for working with APIs.
+Design interface for creating Open API (Swagger) specification files
+A command line interface to convert markdown documents to an HTML slideshow
+Command line interface for Shower
+An online user interface to efficiently author and delivery awesome and informative presentation. 🚀
+Bovespa data extractor, server, and command line interface
+Web-based user interface for managing OpenBMC systems
+Command line interface for Variety - Schema Analyzer for MongoDB
+A Google inspired mobile interface for TT-RSS
+Vamp's user interface
+An open-source tool for processing stream data using a spreadsheet-like interface.
+provide rails interfaces example code (Rails 2.3.2)
+IntelMQ Manager is a graphical interface to manage configurations for IntelMQ framework.
+A web interface powered by SocketIO to control an Arduino robot
+An implementation of the js-git interface that mounts a live github repo.
+Google Query Language (GQL) interface for PouchDB
+Build beautiful Electron user interfaces with Photon and Etch
+A web interface for Synchronet BBS
+📋 Common Reporter Interface (CRI) for JavaScript testing frameworks.
+:mask: A minimal high order function for building user interfaces
+⛔️ DEPRECATED: interface-peer-routing is now included in https://github.com/libp2p/js-interfaces
+(unmaintained) node.js interface to the sox audio utility
+💄 style primitive React interfaces with glamorous
+💬node微信公众号开发
+WebInterface using Node.JS on a Linux Embedded board to remote control an R2C2 RepRap 3D printers/CNC board.
+The aim for this project is to create the worlds best and hottest interface to interact with aria2. Very simple to use, just download and open index.html in any web browser. 
+A robust Admin Interface for Ruby on Rails apps
+Web interface (GUI), web frontend to manage the LXD Containers
+SCXIB - Interface Builder for the Web 
+A web-based user interface for MongoDB and Amazon DocumentDB
+Nativescript Plugin to perform image manipulation using web-view canvas for Android/iOS.
+A NodeJS Application hosted @ Heroku that acts as a Connector Module between Android Version and its Backend at GAE,This is Just an Updated version for Repo @ https://github.com/SheikhZayed/Offline-Browser-NodeJS-Wrapper
+:ok_hand: A Minimal Engine for creating Node-Based Visual Programming User Interfaces
+A command line interface for the figlet.js library.
+Command Line Interface for Open Collective
+Naumanni is a Web user interface specially designed for Mastodon.
+Command line interface for Cavy
+Interface for making NLP annotations.
+A DB interface written in Rails
+This is the repository for my course, Building a Web Interface with React.js on LinkedIn Learning and Lynda.com.
+MyDomoAtHome - REST interface for ImperoHome with Domoticz (ISS)
+End user interface for Karuta
+An interface for reloading GLSL shaders on the fly.
+Custom Interface / API for the Busch Jäger free@home system.
+Command Line Interface for BreatheCode Students
+Python library and command-line interface for inspecting and visualizing RDF models.
+:busts_in_silhouette: Manage your CardDAV contacts from a feature-rich web-interface
+ParticleJS enabled page for easily controlling your Particle.io devices.
+Patches for ServiceNow UI16 interface.
+new version of interface.server incorporating multiple device types
+Antwerp City Platform as a Service User Interface (ACPaas UI) is a component interface library for building user interfaces and responsive web apps.
+An alternate command line interface to tilelive
+Powerbuilder -> Javascript OLE interface test 
+Web interface for PM2 built with react
+Chrome Debugging Protocol interface for Node.js
+LuCI - OpenWrt Configuration Interface
+The official jQuery user interface library.
+Application Architecture for Building User Interfaces
+node.js command-line interfaces made easy
+A declarative, efficient, and flexible JavaScript library for building user interfaces.
+[ARCHIVED] now part of the https://github.com/ipfs/js-ipfs repo
+Simple animation libraries for delightful user interfaces
+Node.js Foreign Function Interface
+Webpack's Command Line Interface
+the Istanbul command line interface
+web admin interface for elasticsearch
+Netlify Command Line Interface
+gui library for music / arts applications that works with touch, mouse and motion events
+R Interface to Leaflet Maps
+A Swagger interface for HAPI
+An Admin Interface for Hexo
+A Cross frame drag and drop interface for web browsers
+个人经历实属有限, 无力维护这个项目了, 如果有感兴趣的同学欢迎一起来搞~
+Implementation of Facebook Paper-like interactive UI in React Native.
+PostgreSQL interface for Node.js
+A collection of common interactive command line user interfaces.
+Building Touch Interfaces with HTML5 - Code Listings
+web interface for Docker Compose
+An HTML5 management interface for KVM guests
+Primitive React Interfaces Across Targets
+Grunt's command line interface.
+Administrative interface builder for Laravel
+R interface to dygraphs
+NexusUI: Web Audio Interfaces
+The development environment for `micro`
+Webhook Command Line Interface.
+An interface to ECharts
+React web interface for the OpenDota platform
+Scratch Blocks is a library for building creative computing interfaces.
+A high-level terminal interface library for node.js.
+GitBook's command line interface
+New Interfaces for Jewish Texts
+a streaming interface for archive generation
+🔈 Sonos Media Player Interface/Client
+HTML based interface mockups
+Plugin for bi-directional communication between webView and android/ios
+Libre and modular OSC / MIDI controller
+Sample Amazon Lex chat bot web interface
+Quasar Framework - Build high-performance VueJS user interfaces in record time
+Turtl's main app interface.
+Macaca command-line interface
+Official Kodi Web Interface
+Demo guiDesigner projects for CommandFusion iViewer
+jQuery plugin offering an interface to create complex queries
+Command-line interface for building NativeScript apps
+⛓️ A minimal blockchain command-line interface.
+:steam_locomotive::train: - sturdy 4kb frontend framework
+🌙 The minimal & fast library for functional user interfaces
+Midgard Create, a generic web editing interface for any CMS
+Volumio2 Web Based User Interface
+Mochi interface library
+Command Line Interface for gulp.
+User interface components built on React.
+PhoneGap and PhoneGap/Build command-line interface
+A web interface for MQTT
+Graphical User Interface for creating and running Scratch 3.0 projects.
+Interface for Kue
+twister HTML + Javascript User Interface
+:floppy_disk: InterfaceLIFT wallpaper auto-downloader.
+Class to localize the ReactNative interface
+User interface for BrowserSync
+MarkdownLint Command Line Interface
+Render interfaces using pure functions and virtual DOM
+Converts .py to .exe using a simple graphical interface 
+:fire: An extremely fast, React-like JavaScript library for building modern user interfaces
+Graphical User Interface for Kubeless
+The technical specification of the data interface that describes how to integrate the fiskaltrust Middleware into POS systems.
+Candidate User Interface
+WebVirtCloud is virtualization web interface for admins and users
+Deprecated
+Tiny (2 KB) turboboosted JavaScript library for creating user interfaces.
+❯ Lightweight, beautiful and user-friendly interactive prompts
+Pug's CLI interface
+Simple Google Sheets interface to track time
+Shinken Web User Interface
+Add your other HTTP Devices as Homematic Actors to your CCU
+Exceptionless web user interface
+MongoDB-like interface for HTML5 IndexedDB
+Yet another web interface for Redis
+UI solution for Three.js
+A web interface for Docker, formerly known as DockerUI. This repo is not maintained
+Immersive terminal interface for managing docker containers and services
+SVN Interface for Node.js
+adminMongo is a Web based user interface (GUI) to handle all your MongoDB connections/databases needs.
+R interface to wordcloud for data visualization.
+🖥 Lisk graphical user interface for desktop
+Web-based MongoDB admin interface, written with Node.js and express
+A JavaScript framework for creating user interfaces to Solr.
+Interface directly with Steam servers from Node.js
+💬 Javascript library for the Twitch Messaging Interface. (Twitch.tv)
+Music player server with a web-based user interface.
+:video_game: A virtual joystick for touch capable interfaces.
+User interface for OpenSOC
+A Docker image to provide web VNC interface to access Ubuntu LXDE/LxQT desktop environment.
+Connects HomeMatic Interface-Processes to ioBroker
+A fully-featured GraphQL interface for the MusicBrainz API.
+:book: Write tests next to your stories and display their results inside storybook interface
+Web application for interfacing with the AlarmDecoder family of devices.
+A Node.JS simple interface to Firebase Cloud Messaging (FCM) for Android & iOS
+Code for the 2019 TACL Paper "Trick Me If You Can: Human-in-the-loop Generation of Adversarial Question Answering Examples"
+🦍• [Work in Progress] React Renderer to build UI interfaces using canvas/WebGL
+easily create complex multi-column command-line-interfaces.
+Thingpedia interface code for commonly used devices
+Airfield is a web-interface for hipache-proxy.
+p5.gui magically generates a graphical user interface for your p5.js sketches
+Request-Answer-Interface
+[DEPRECATED]: deprecated in favor of https://github.com/ipfs/interface-datastore
+Buffer List: collect buffers and access with a standard readable Buffer interface, streamable too!
+AngularJS SPA interface for awesome lists. Awesome lists parsed using python.
+The best Discord Interface
+Magnet links search interface 🧲
+restful interface to a filesystem.
+Wrapper functions, Interface wrappers, etc.
+ 🗜️Ethereum blockchain orchestration, testing, and command line interface.
+Programmable interface to `clinic bubbleprof`
+Mobile friendly interface for CiviCRM
+[deprecated] Translation User Interface for i18next - successor locize.com
+Command line interface for passbolt API
+Programmable interface to `clinic flame`
+An extension to Backbone core that allows interfaces to be implemented for better organized code.
+nEDM User Interface for sub systems.  For Tablets, Smartphones, PCs
+k(Ink) is a kinky way to interact with the new Ink.js javascript framework
+A Composer user interface built using Electron.
+[UNMAINTAINED] Command line interface to Tessel 1.
+Command line interface for CSSO
+A command line interface for interacting with the Box API.
+Lightweight Tableau-style interface for visual analysis, built on Vega-lite. 
+persistent crossplatform online data interface for UE4
+Prototype of the user-interface of Radiant CMS.
+interface styles shaper
+A Realmjs interface for redux-persist
+node module to interface with onkyo receivers (eiscp protocol)
+Try Ethereum with an online interface
+An npm package for Node.js that provides an API to control a router node in a BLE mesh network via the serial port.
+An updated API to interface with myQ devices
+Command line interface for MIP
+A simple and lightweight SQL client terminal-based interface with cross database and platform support
+Simple module to localize the React interface using the same syntax used in the ReactNativeLocalization module.
+Build and Document Your Interface. Then Share the Code.
+A jQuery plugin to manage local storage and cookies simultaneously in a simple interface
+An ORM-like Interface and a Router For Your API Requests
+Yet Another PowerDNS web interface
+CentroUI is a library for building user interfaces for WebVR
+Código produzido durante o vídeo sobre criação da Interface do Uber com React Native
+[not maintained] a better interface for date/time input.
+Command line interface to Divshot.
+Node.js interface to Zstandard (zstd)
+A webpack bundle-loader ripoff with promise interface
+Flexible and fluent interface for searching the file system
+Power Assert in JavaScript. Provides descriptive assertion messages through standard assert interface. No API is the best API.
+A Lightweight Ethernet/IP API written to interface with Rockwell ControlLogix/CompactLogix Controllers.
+GlueStick is a command line interface for quickly developing universal web applications using React and Redux.
+Command Line Interface for MATRIX Open Source
+A command line interface for CoAP built on node-coap
+A blocks-based interface for tidy data manipulation and analysis.
+Grab User Interface on React Native
+Mime database interface
+Commerce data models, using a RESTful interface.
+A foreign function interface (FFI) for Node.js, N-API style
+Self Services Interfaces - Cloud Portal
+A toolkit for experimenting with new kinds of programming interfaces.
+A light weight plugin to simulate android like pattern lock interface for your hybrid app or website.
+:video_game: [UNMAINTAINED] Interface for Xbox 360 game controller into Node.js
+[Deprecated] A command-line interface for the aXe accessibility testing engine
+Add an elegant command-line interface to any page
+Django-mptt-admin provides a nice Django Admin interface for Mptt models
+trakt (for Plex) configuration interface
+The command line interface to clean-css CSS optimizer
+computable interfaces
+PiBox is a web control Interface written to control Embedded Board(Raspberry Pi).
+Alternative, lightweight user interface for PDF.js using Twitter Bootstrap
+NanoVNA interface implementation with WebSerial/WebUSB/Android.
+Q interfacing with Node.js
+An admin user interface for CrateDB.
+Control of Internet connected devices within a given network via web interface.
+Easy Way To Transfer ERC20 Tokens Directly From Your Browser
+Interface into Geckoboard's push API
+Generic search interface for all collections in Bifrost
+tile indexed geo database interface.
+AngularJS interface for OpenStack Swift
+Código do vídeo replicando a interface do Nubank com React Native
+Implements the MPRIS2 interface for Chrome and Firefox
+ReactJS frontend for the chainBB forum interface
+A command line interface for the browserstack api
+Interfaces. In JavaScript.
+3D Printer Interface
+A simple mock interface specifically for testing code relying on Sequelize models
+A meme generator where the URL is the user interface
+Interface between LG WebOS Smart TVs and MQTT :tv:
+A command line interface for Git Checkout. See branches available for checkout.
+🌍 Web interface for OwnTracks built with Vue.js
+A swipeable cards interface. The swipe-left/swipe-right for yes/no input. As seen in apps like Jelly and Tinder.
+a Graphical Interface for Reproducible Analysis oF workFlow Experiments
+PJLink interface for Nodejs
+node module: chai assertions about an object's interface
+An alternative more clean p2pool node status web interface
+Interface of app
+English Lemmer interface for Node.js
+PHPMiner is a web interface for cgminer on linux machines
+mp4 header reading and writing using the abstract-encoding interface
+UI5 Web Components - the enterprise-flavored sugar on top of native APIs! Build SAP Fiori user interfaces with the technology of your choice.
+Web interface to manage Serviio
+Prediction Market Trading Interface for Gnosis Contracts
+Simple cli interface for ZeroBin
+A command line management interface to Philips hue
+Niles - a Discord bot for interfacing with Google Calendar
+Wireguard Server-side Web-based User Interface
+😂vue is a progressive framework for building user interfaces. 
+A responsive web interface for the GoProController API.
+A web interface for editing documents on GitHub
+Web interface for XBMC/Kodi
+Zoomable user interface library for web apps.
+Command Line Interface for CloudConvert (https://cloudconvert.com)
+Uber Interface with React Native
+reasonable interface to nextbus written in Javascript
+lcd i2c interface for nodejs on raspberry pi
+[W3W Backend] Unified Hybrid Web3 Interface  (Same interface for all possible coins, tokens)
+Hindsight Administration User Interface
+Multiformats interface (multihash, multicodec, multibase and CID)
+(DEPRECATED) Web interface for viewing U.S. federal regulations and other regulatory information
+User Interface for multisend contract
+Node.js interface to the native liblzma compression library (.xz file format, among others)
+graphical user interface for mining safex cash
+Wrap node's Server interfaces to be compatible with the PROXY protocol
+User Interface Controls for Knockout
+A powerful, modern HTML5 web interface for Blue Iris.
+A HTML5, JS, CSS Camera interface template. Feel free to use it in your next Computer Vision or AI project. 
+Simple search interface around FeediRSS API.
+Lamassu Admin interface
+Interface between NodeJS and CasperJS
+CollectionSpace user interface
+An HTML5-based graphical interface to libmapper.
+A command line interface for angular-gettext-tools
+An Ethereum Name Service interface module built on EthJS
+Management interface for CacheInclude
+Mikado is the webs fastest template library for building user interfaces.
+A plugin for Atom Linter providing an interface to textlint.
+A web interface to OpenSCAD
+Curated catalog of Apache OpenWhisk packages to interface with event producers and consumers
+[DEPRECATED] A jQuery widget to query Triple Pattern Fragments interfaces
+A simple interface for experimenting with CSS Grid Layout.
+web based command line interface
+Pull-to-refresh interface for jQuery Mobile
+User Interface screens for galaxia
+Command-Option-Argument: Get more from defining your command line interface
+A zooming user interface
+A network interface for Apollo that enables file-uploading to Absinthe back ends.
+Web Interface for Charged Particles
+Async Iterables Interfaces for Web Workers
+Collection of low-level DOM tools for building high performant web interfaces
+Promise interface for RSMQ
+Roshan is a Django based administrative interface for ZooKeeper cluster.
+Application for interfacing with multiple versions of Dolphin and Smashladder
+A JSON aware developer's interface to Elasticsearch. Comes with handy machinery such as syntax highlighting, autocomplete, formatting and code folding.
+Interface to use react-with-styles with JSS. :tropical_fish:
+RPC interface for electron GUI toolkit
+User Interface for Jarvis
+VueJS Interface for using school-api
+Provides a RESTful interface to keystone lists.
+Javascript library to interface with SandCage's API
+Interactive user interface for your data in ItemsAPI
+Quickly access screens and content within wp-admin by typing the first few letters of the name.
+Resources for building interfaces with WeWork's design system
+Common User Interface for the BrewCore and BrewBerry projects. 
+Prototype web interface that enables remote teleoperation of the Stretch RE1 mobile manipulator from Hello Robot Inc.
+The Deployd Command Line Interface
+Navigate sequences of images in a zoomable, extensible interface.
+Control interface for a variety of web based media players
+A programmatic interface for jsdoc3 with a few extra features
+Interactive ThreeJS interfaces using HTML and CSS
+Dead simple storage interface
+Web interface displaying an image from an allsky camera.
+a pull-stream with a pushable interface
+A cross-platform open source Path of Exile item sniper with a user friendly interface
+Node.js library for interfacing with the Mapbox upload API.
+A Javascript display library for IF interfaces
+Open eMap user interface for the main map client
+jQuery Mobile based user interface
+Open source application to track your internet download and upload speeds with an elegant web interface.
+graph interface
+Enables webpages to be captured via Firefox Scrapbook plugin+POW via email 
+An interface to the Android Cloud to Device Messaging (C2DM) service for Node.js
+BWS HTML5 Unified User Interface
+JSON-LD command line interface tool
+Web interface for Linux Vistual Server and keepalived
+GTP Wrapper to allow bots to interface with the Online-Go.com Server
+A simple, consistent interface for managing user preferences within an Electron application.
+Interface de consulta de CEP com mapa de localização.
+Discover, explore and manage your music library across multiple sources with this beautiful web-based interface. Iris is a Mopidy frontend extension.
+An example of the CIC Interaction Web Tools API implementing web chat functionality using Angular JS
+A digital clock screensaver inspired by the graphical interfaces from Neon Genesis Evengelion.
+Provides a jQuery Mobile Web User Interface for pimatic.
+Chrome Debugging Protocol interface for Node.js
+LuCI - OpenWrt Configuration Interface
+The official jQuery user interface library.
+Application Architecture for Building User Interfaces
+node.js command-line interfaces made easy
+A declarative, efficient, and flexible JavaScript library for building user interfaces.
+[ARCHIVED] now part of the https://github.com/ipfs/js-ipfs repo
+Simple animation libraries for delightful user interfaces
+Node.js Foreign Function Interface
+Webpack's Command Line Interface
+the Istanbul command line interface
+web admin interface for elasticsearch
+Netlify Command Line Interface
+gui library for music / arts applications that works with touch, mouse and motion events
+R Interface to Leaflet Maps
+A Swagger interface for HAPI
+An Admin Interface for Hexo
+A Cross frame drag and drop interface for web browsers
+个人经历实属有限, 无力维护这个项目了, 如果有感兴趣的同学欢迎一起来搞~
+Implementation of Facebook Paper-like interactive UI in React Native.
+PostgreSQL interface for Node.js
+A collection of common interactive command line user interfaces.
+Building Touch Interfaces with HTML5 - Code Listings
+web interface for Docker Compose
+An HTML5 management interface for KVM guests
+Primitive React Interfaces Across Targets
+Grunt's command line interface.
+Administrative interface builder for Laravel
+R interface to dygraphs
+NexusUI: Web Audio Interfaces
+The development environment for `micro`
+Webhook Command Line Interface.
+An interface to ECharts
+React web interface for the OpenDota platform
+Scratch Blocks is a library for building creative computing interfaces.
+A high-level terminal interface library for node.js.
+GitBook's command line interface
+New Interfaces for Jewish Texts
+a streaming interface for archive generation
+🔈 Sonos Media Player Interface/Client
+HTML based interface mockups
+Plugin for bi-directional communication between webView and android/ios
+Libre and modular OSC / MIDI controller
+Sample Amazon Lex chat bot web interface
+Quasar Framework - Build high-performance VueJS user interfaces in record time
+Turtl's main app interface.
+Macaca command-line interface
+Official Kodi Web Interface
+Demo guiDesigner projects for CommandFusion iViewer
+jQuery plugin offering an interface to create complex queries
+Command-line interface for building NativeScript apps
+⛓️ A minimal blockchain command-line interface.
+:steam_locomotive::train: - sturdy 4kb frontend framework
+🌙 The minimal & fast library for functional user interfaces
+Midgard Create, a generic web editing interface for any CMS
+Volumio2 Web Based User Interface
+Mochi interface library
+Command Line Interface for gulp.
+User interface components built on React.
+PhoneGap and PhoneGap/Build command-line interface
+A web interface for MQTT
+Graphical User Interface for creating and running Scratch 3.0 projects.
+Interface for Kue
+twister HTML + Javascript User Interface
+:floppy_disk: InterfaceLIFT wallpaper auto-downloader.
+Class to localize the ReactNative interface
+User interface for BrowserSync
+MarkdownLint Command Line Interface
+Render interfaces using pure functions and virtual DOM
+Converts .py to .exe using a simple graphical interface 
+:fire: An extremely fast, React-like JavaScript library for building modern user interfaces
+Graphical User Interface for Kubeless
+The technical specification of the data interface that describes how to integrate the fiskaltrust Middleware into POS systems.
+Candidate User Interface
+WebVirtCloud is virtualization web interface for admins and users
+Deprecated
+Tiny (2 KB) turboboosted JavaScript library for creating user interfaces.
+❯ Lightweight, beautiful and user-friendly interactive prompts
+Pug's CLI interface
+Simple Google Sheets interface to track time
+Shinken Web User Interface
+Add your other HTTP Devices as Homematic Actors to your CCU
+Exceptionless web user interface
+MongoDB-like interface for HTML5 IndexedDB
+Yet another web interface for Redis
+UI solution for Three.js
+A web interface for Docker, formerly known as DockerUI. This repo is not maintained
+Immersive terminal interface for managing docker containers and services
+SVN Interface for Node.js
+adminMongo is a Web based user interface (GUI) to handle all your MongoDB connections/databases needs.
+R interface to wordcloud for data visualization.
+🖥 Lisk graphical user interface for desktop
+Web-based MongoDB admin interface, written with Node.js and express
+A JavaScript framework for creating user interfaces to Solr.
+Interface directly with Steam servers from Node.js
+💬 Javascript library for the Twitch Messaging Interface. (Twitch.tv)
+Music player server with a web-based user interface.
+:video_game: A virtual joystick for touch capable interfaces.
+User interface for OpenSOC
+A Docker image to provide web VNC interface to access Ubuntu LXDE/LxQT desktop environment.
+Command line interface for upnpserver
+Node.JS client library for Zimbra SOAP interface
+Chat interface for SMS / text messages
+Beginnings of a jQuery plugin that takes floated elements, positions them absolutely and allows them to expand fullscreen and then return to their original (floated, but absolute) position — using CSS3 transitions. 
+A jQuery library for building user interfaces
+Covid-19 Screening Interface using Covid-19 OpenEHR Clinical Models
+An htmlwidget interface for d3 word cloud
+Admin web interface for Centrifugo real-time messaging server
+🐟 Web-based HKube user interface. 🐠
+A simple, friendly interface to xlsx
+A JavaScript toolkit for building edX user interfaces.
+a proxy to use gtalk through a JSON+callback interface
+A data to XML converter with a nice interface (for NodeJS).
+A demo app showing cross platform image manipulation using nativescript-canvas-interface plugin
+Jitsi Logging Interface
+Simplified programmatic and command-line interface for YouTube Video API. Built for node.js
+Command Line Interface for React Web Applications
+Notebook Editor Interface
+Tool for creating argparse interfaces.
+A sailsjs node module for "systematic" scrud interface generation
+Sunder is a user-friendly graphical interface for Shamir's Secret Sharing.
+A simple web interface for Daily standup meeting with Jitsi
+Twitter Bootstrap for Nodebot Interfaces
+Possible replacement for Halo Online's UI heavily based on Halo: Reach
+A Node.js interface for working with Android's logcat output.
+JavaScript implementation of the TCP module that libp2p uses that implements the interface-transport spec
+ 😈 UI library for creating interfaces in Rambler guidelines with React power
+Web app & user interface for Modulus
+Gordon 360 User Interface
+Cross Platform Command Line Interface for Progress Telerik AppBuilder
+A configurable mock server with an intuitive configuration management interface and a http api
+This plugin will interface your Dolibarr within a customer interface in WordPress
+A centralized WebSocket Twitch Chat interface
+Web application providing a fully localised interface for text/website/document translation, analysis and generation powered by Apertium.
+JS interface to encapsulate the Audio Data API methods
+The DoneJS command line interface
+web interface for mumble
+A node-like buffer interface for the browser
+Different methods of scrolling and selecting from reddit using leap.js
+jQuery Twitter interface
+ReplayWeb is a collection of tools to accelerate building and maintaining functional tests for user interfaces.
+Video Interface app filmes
+Web Interface of the PLM (JavaScript + Play framework)
+Lets any browser currently viewing your lovelace interface act as an audio receiver with a media_player interface
+Web interface for Link
+Node.js based Interface between Homematic and MQTT
+A REST interface and GUI for Ansible (in very early development -- developer audiences only)
+Automated & Decentralized AMM orders engine
+Missing e is a set of tools, features and interface changes for Tumblr.
+AmiGO is the public interface for the Gene Ontology.
+Node.js library to interface with SandCage's API
+An AngularJs Virtual Keyboard Interface based on Mottie/Keyboard.
+Eos blockchain admin web interface.
+This is unmodified copy of Google Code hosted CryptoJS project. CryptoJS is a growing collection of standard and secure cryptographic algorithms implemented in JavaScript using best practices and patterns. They are fast, and they have a consistent and simple interface.
+Robot Control Web Interface
+A small node API to interface with the Okta API
+Node.js module to create and manage multiple spinners in command-line interface programs
+Ender interface to HTML5 drag and drop
+plugin/hooks interface
+An interface to authenticate AWS api requests from within google scripts
+The ngElectron service for AngularJS making it easier to interface with Electron.
+Web interface.
+🔧Cannon API interface components the A-Frame Physics System
+Implementation of NodeJS FS interface using Amazon Simple Storage Service (S3).
+Parking data explorer web interface
+use koa2 to establish a middle ware
+javascript interface for the piglow
+A GraphQL interface for BigchainDB in JavaScript
+GLTF 2.0 Typescript Interface Generator
+A JavaScript library to interface with the PureCloud Platform API.
+Skins for the Musicoin Desktop Wallet. Please claim bounties and open issues at the main (desktop) repo.
+This is an jianshu background API interface project.
+Core RESTful API interface to CouchDb Documents
+Graphical user interface for ONOS (µONOS Architecture)
+A simple Dialogflow agent, a server, and a web interface that shows an approach for handling text-based conversations between a Dialogflow agent and a human operator
+A React + Redux project demonstrating how to interface with the Github API
+🖼 A jQuery widget to query heterogeneous interfaces using Comunica SPARQL
+Streamable content addressable blob object store that is streams2 and implements the blob store interface
+The EHRI project's portal interface.
+A default implementation of the loader interface compatible with system.js and require-based loaders.
+A friendly web interface to ethereum node.
+Real-time web interface for MQTT.
+[CVPR 2017] AMT chat interface code used to collect the Visual Dialog dataset
+Web Control Interface for the RepRapPro Ormerod
+A clean journey planner interface.
+displays network interface info including hardware mac address, for versions of node < 0.12
+A command-line interface for configuring the Community Health Toolkit
+A simple JoyStick that use HTML5, Canvas and Vanilla JavaScript, for touch and mouse interfaces (no JQuery required), preview at:
+☀️ Command-line interface (CLI) for MetaWeather
+Web interface for network analysis.
+A simple standard interface for a series of Ethereum private keys
+Interface between d3.js and Adobe Illustrator
+Pm2 cli logs interface
+A jQuery plugin that creates an interface that allows the user to set multiple range based values
+Web admin interface for Factorio headless game server
+Web-based Memcached Administration Interface
+Provide cache interface to handle persisted data among history navigation.
+D3js-based download interface for SRTM elevation data.
+An interface for the Web Audio API with a Flash shim for older browsers
+A REST interface and GUI for running scripts.
+Add a git-like command interface to your app.
+WebSockets module that libp2p uses and that implements the interface-transport spec 
+A web based command line interface (Beaker)
+A sinatra based interface for browsing and admiring your gems
+A minimal rebuild of the abeg web interface.
+An idiomatic Clojure interface to the Leap Motion
+Command-line interface to interact with the Reminders.app
+Web interface to create Fedora Remixes
+An alternative Graphical User Interface for LambdaCD
+Gives you a simple web interface for browsing around a Docker Registry
+Administration interface in React JS, using Django's Rest Framework for the backend.
+A simple (perhaps dumb) web interface to quickly convert between GeoJSON and TopoJSON.
+fastcall - Fast, dyncall based foreign function interface library for Node.js
+The DeployR command line interface.
+Dynamic component for creation of interfaces with iframes
+Tool to build interface
+HTML5 interface to the Open Exoplanet Catalogue
+A purely client-side wallet and direct interface showcasing the full functionality of Ripple / blockchain.
+Trade on and script multiple crypto exchanges from a single user interface on desktop and mobile. In development.
+Monitor your docker containers with this web interface.
+A port of Rack for the JavaScript JSGI web server interface
+Netflix Clone interface using React
+A streaming interface for uploading multiple files to S3.
+The web admin interface to the modular events app.
+FLINT JSON User Interface: Helps to create and edit JSON files in an interactive way!
+接口测试工具使用demo
+Playground for evaluating the second iteration of the W3C automotive specification  
+ReactJS app developed in the series about recreating the Airbnb interface
+Node.js hdfs interface
+Command-line interface to Clutch.io
+Useful menu interface for listing/executing your configured tasks
+To Build User Interfaces
+Modular, extensible GPS tracker interface for Node.js
+💻 A command-line interface to install an NPM package and its peer dependencies automatically.
+A simple, configurable admin interface for Firebase, built on React.
+Enhancement Interface for VERA home automation system
+LocalStorage wrapper providing dojo/store interface
+Middleware for emulate REST interface
+Send and receive messages from the Asterisk Manager Interface via node.js
+User Interface for Etherpad Lite
+Converts TypeScript Interfaces to JSON Schema.
+🎧  Pure javascript music player user interface prototype for React Native framework.
+EarthBound text box animated GIF generator with interface
+AngularJS, Play and Scala web interface to Wedding Tables Planner
+A javascript interface for interacting with the PlatON network
+A terminal interface for jitsu.
+Browser based interface to manage your Vagrant environments
+This is a repository that contains Collection Space user interface layer code.
+A simple, content-focused photo gallery inspired by Microsoft's Metro interface and CSS 3D transitions.
+GitHub Interface - a minimal command-line tool 
+An alternative for Bose's Soundtouch-app with some basic functions (radio and intercom)
+Wrap AirFoil's Applescript interface with a JSON API.
+Logsene Command-line Interface
+The command line interface for deploying Node.js applications to Xervo.io.
+A Leaflet-based interface for selecting a "blurred" or low-resolution location, to preserve privacy
+A JavaScript cascading controller for fast interactive Web interfaces prototyping.
+A text analysis interface for the humanities
+Converts a select box into a searchable and keyboard friendly interface. Fallbacks to native select on mobile and ipad devices.
+web-based open source virtualization management interface for QEMU and KVM virtual machines
+The new SKOPE web portal interface.
+An implementation of the abstract Animator interface from templating which enables css-based animations.
+[ARCHIVED] Web interface for sTeam server
+Web interface for Domogik Home Automation free software
+Offers an interface for controlling some of the popular video players and providers.
+Command line interface for Facebook
+The new React interface for MoveOn Petitions
+Open data APIs for interfacing with public information from the University of Toronto.
+Web interface to easily deploy a crowdsale contract.
+User Interface for the Milestone Tracker
+User interfaces for the robots. 
+Create static asset (js, css) bundles from a config file: a common interface to combining, minifying, revisioning and more
+A simple ArtNet / DMX Controller with MQTT Interface 💡🎬
+Conceal API - JavaScript Interface (RPC/API)
+Simple commandline interface to allow you to run cli or bash style commands as if you were in the terminal.
+The extensible event-driven stateful interface.
+A project designed around the formal capture of juju interfaces as shareable code
+omxradio - A simple web interface for omxplayer.
+A fully multi-platform Javascript library for creating interactive user interfaces.
+A JavaScript interface to Youtube Flash Player
+Todo.txt Text Driven Interface for Dropbox
+wraps minecraft server and gives you a web interface
+A collection of visual (not audio) components developed for the GridSound's user interface.
+A web ui and http interface for archiving dats.
+webGL Three.js based interface demos for interactions with 3d data using mouse and touch
+Easy interfaces that describe their intentions
+The interface for Ahorta IoT plant
+A Node.js client for the Bilibili Live Danmaku Interface
+An OpenStreetMap Quality Assurance Tool - User Interface
+A Graphical Terminal Interface that extends xterm by adding GUI-like features and session sharing
+MQTT interface for C-Bus written in Node.js
+SVG virtual desktop library that lets you build beautiful desktop like user interfaces. 
+Rdio Scanner is an interface similar to a police radio scanner for software defined radio recorders
+AngularJS + Express application that demonstrates: Authentication with Passport, CRUD interface for creating posts with mongoDB, server and client validations for account creation, and authorization for editing posts.
+pull-stream interface to levelup
+A nodejs client for pigpio socket interface.
+A cordova plugin to interface with the BitPay API.
+An HTTP interface for BackboneORM
+A Jira Command Line Interface
+Graphical Drag and Drop interface database designer authored by Budi Prakosa
+A demo application for showing use of nativescript-webview-interface plugin for bi-directional communication between WebView and Android/iOS
+The W3C Geometry Interfaces implemented in JavaScript and polyfilled.
+Importable JavaScript library that allows web applications to directly interface with Scatter Desktop, Classic and Mobile.
+Cross platform command line interface for SQL Server
+An implementation of emcascript interfaces in Sweet.js.
+Code repo for the Reactive User Interfaces class
+Front-end web interface for Bull Job Manager
+A simple control interface for rspamd spam filtering system.
+📱Creating an interface similar to ❤️ Tinder Application with HTML5, CSS3 and JS for cats.
+A CouchDB interface for node.js
+Demo application of using nativescript-webview-interface plugin with Angular 2
+A command line interface for htmllint.
+Tesla node.js apps and javascript libraries using Tesla's HTTP interfaces
+This is the repository for the BrewPi web interface. The web interface will communicate with the Python script, which will in turn talk to the BrewPi Spark
+A command line interface for Slack implemented using node.
+View interface for the Nemo automation framework
+⛔️ DEPRECATED: interface-stream-muxer is now included in https://github.com/libp2p/js-interfaces
+Graphical user interface for Mender.
+dripr.io interface
+Dokku Web Interface and Account Management
+Moonstone UI library for TV user interfaces.
+An Operation Interface for react-addons-perf Package
+:fire: Meteor Blaze is a powerful library for creating live-updating user interfaces
+Spotmop Mopidy HTTP interface
+eQ-3 Max! Cube interface
+FeedHenry CLI, the Command Line Interface to FeedHenry
+A beautiful and fully-featured administration interface builder for hypermedia APIs
+Repository for the second version of my React Interface course on LinkedIn Learning and Lynda.com
+Command line interface for building Meteor apps with Mantra
+Interface monorepo
+Ninja User Interface, the jQuery plugin for lethal interaction.
+GUI interface based on Walletd for TurtleCoin
+Jasmin Sms Web Interface
+Image Picker is a simple jQuery plugin that transforms a select element into a more user friendly graphical interface.
+Graphical user interface for Golem Project
+:pencil2: A React Component for plans design. Draw a 2D floorplan and navigate it in 3D mode.
+A plugin for Atom Linter providing an interface to stylelint.
+postMessage interface
+A web interface for managing SaltStack based infrastructure.
+Web interface for Intuition.
+[DEPRECATED] A JavaScript client for Triple Pattern Fragments interfaces.
+User Interface for the ClojureScript Compiler
+A new interface to replace your old boring scrollbar
+Try out lichess' bot interface
+Runtime Mobile Security (RMS) 📱🔥  - is a powerful web interface that helps you to manipulate Android and iOS Apps at Runtime
+Voting-based interface for icecast
+Web interface for the Digital Thread
+Monorepo for SUI (Simple User Interface) packages.
+interface to the AXE p2p network
+⛔️ DEPRECATED: interface-peer-discovery is now included in https://github.com/libp2p/js-interfaces
+Command line interface for OneDrive
+A javascript framework to create user interfaces
+An AngularJs Virtual Keyboard Interface based on GreyWyvern VKI
+📱 Lisk graphical user interface for mobile
+Node.js Interface for RabbitMQ Management Statistics
+A very simple web frontend in node for mlmmj (http://mlmmj.org)
+Application Program Interface document genarator
+Web crawling and document processing through a usable interface.
+A port of CouchDB's Futon web interface to MongoDB
+Web interface for Sonos audio systems
+FFmpegUI is a graphical web interface for the famous FFmpeg.
+Interface for conditional markets for Gnosis' Conditional Token Standard
+The official JavaScript library for interfacing web apps with Xively™
+Command line interface for Adapt
+Web based interface for face detection with OpenCV
+Updated user interface for Routegadget
+Control the IR and RF interfaces within Broadlink RM devices.
+An alternative Secure Scuttlebutt client interface that is fully compatible with Patchwork
+The command line interface for scaffolding Feathers applications
+Minimalistic update notifications for command line interfaces
+A streaming interface for uploading multiple files to S3.
+Web interface for controlling a GRBL via a Raspberry Pi
+A command line interface Multisig HD Wallet, based on `bitcore-wallet-service`.
+The Karma command line interface.
+Web-interface + rest API for classification and regression (https://jeff1evesque.github.io/machine-learning.docs)
+interface for visualizing datomic schemas and queries
+High-level DOM-like terminal interface library
+Collaborate & label any type of data, images, text, or documents, in an easy web interface or desktop app.
+GOV.UK Frontend contains the code you need to start building a user interface for government platforms and services.
+node-bmw interface server, dbus+ibus+kbus+canbus <=> JSON socket
+Sysdig Inspect - A powerful opensource interface for container troubleshooting and security investigation
+Command line interface for Broccoli
+Convert a JSON to TypeScript interfaces.
+Qor Admin - Instantly create a beautiful, cross platform, configurable Admin Interface and API for managing your data in minutes.
+Web Interface for ReactOS CI services
+A Javascript interface for interacting with the Box API. You can find the node package at
+Vulnerability User Interface
+Web interface for reprap's, makerbot's, ultimakers attached to a raspberry pi with usb interface / pronsole
+Free GUI / Frontend / Management tool for simple setup, configure and control virtual machines (qemu / kvm) within your HTML5 Webbrowser. Virtualization with Node.js / Currently under complete rewrite.
+Webinterface for BungeeAdminTools, a bungeecord plugin
+A NodeJS interface to SoX audio utilities
+An Interface to 'jExcel.js' Library
+Splunk HTTP Event Collector logging interface for JavaScript
+The official command line interface for Clever Cloud 
+An ESP8266 command line interface.
+UI controls with an HTML interface.
+Common Database Interface for Node
+Contains test suites and interfaces you can use to implement the various components of js libp2p.
+⏹ Make VR user interfaces for Three.js
+Supercharge supertest with a promise interface
+Um clone da interface do banco Nubank com React Native
+A web interface for Apache Cassandra
+User Interface for WebDollar
+The official Logical and Interface layers of the Nexus Software Stack.
+A JavaScript interface for annotating and labeling audio files.
+cCurl Interface for NodeJS
+Spotify-like music player interface made using React Native
+inkScope is  a ceph visualization and admin interface
+User interface modules for RightJS
+API creation middleware with an admin interface
+ArduPilot web server interface
+Grails Admin
+:egg: A library for building asynchronous user interfaces.
+The official React interface for Iframe-Resizer
+An WYSIWYG editor for creating browser-based interfaces transmitting MIDI and OSC using Interface.js
+Developer-friendly libsodium interface
+🏦 yearn v2 web interface
+Command line interface to http://jsnice.org.
+Command Line Interface around api
+Apigee 127 Command Line Interface
+Path menu interface for Appcelerator Titanium
+Beautiful and functional interface for snap management
+Another JIRA Command Line Interface for node.js
+Lightweight interface for ClickHouse
+Alexa Skills Kit Command Line Interface
+blockchain web browser user interface
+An interface to manage the magic mirror
+A server-based user interface for authoring eLearning courses using the Adapt framework.
+Fission web interface
+⛔️ DEPRECATED: interface-connection is now included in https://github.com/libp2p/js-interfaces
+Admin Interface for Laravel 
+Wrapper for the yr.no weather service API.
+Xtream Codes 2.93 - Admin Interface
+Animations and Gestures Manipulation Heavy Interface App
+Rx functional interface to Facebook's React
+ES3 Shim for the MutationObserver interface via DOM diffing.
+ForkDelta's Next Generation interface
+Simplified interface for a steam chat bot
+Websites crawler with built-in exploration and control web interface
+🐭 An In-browser User Interface For JavaScript Development Workflows
+Javascript interface for XML for Analysis
+The jQuery Mockjax Plugin provides a simple and extremely flexible interface for mocking or simulating ajax requests and responses
+:page_with_curl: CSS interface for react-with-styles
+CasparCG interface for node.js
+A Universal ÐApp Interface
+Nibbler - Leela Chess Zero (Lc0) interface
+High-quality, customizable web components for common user interface patterns
+Core Implementation of the RDF Interfaces
+Sploosh Kaboom web interface
+A Jekyll plugin that provides users with a traditional CMS-style graphical interface to author content and administer Jekyll sites. 
+A promise-based node interface for NewsAPI
+**DEPRECATED & UNMAINTAINED** The payments frontend interface
+Conversational interface web app example
+CeSI is a web interface for managing multiple supervisors from the same place.
+Digital Securities (DS) protocol interfaces
+A web interface for Themis, written in Node.js
+An interface to schedule R scripts
+A simple document archive with REST interface
+This script generates all of the code necessary to create a tabbed interface.
+New interface for stock management on thin client with barcode scanner and labels printer
+A simple interface to the Alpha Vantage API.
+Web interface (with golang backend) for monitoring and administration of OpenVPN server
+Browser extension that simplifies the Twitter interface and adds useful features
+Web-based interface for the MOD
+XDA Labs Store interface
+command line interface for weixin-robot
+Algorithmic Composition Interface
+Web software for managing a database of members in a collaborative grassroots workshop, and also controlling Arclight of 23b Hackerspace's Arduino access control system via Ethernet ( https://github.com/zyphlar/Open_Access_Control_Ethernet )
+Tvheadend mobile web interface
+Node.js interfacing with PHP-FPM through FastCGI
+Node interface to DIAL/RAMP/ChromeCast
+A Grunt interface into the Amazon Node.JS SDK
+Web interface to control peerflix
+The Graphical User Interface for webpack
+Combustion is a sleek, modern web interface for Transmission
+😎 A nice web interface for managing your Docker Registry images
+User interface for fn project.
+Node.js interface to the GraphViz graphing tool
+Command Line Interface
+☔️ interface for parsing, inspecting, transforming, and serializing content through syntax trees
+An interface/theme for SABnzbd
+A flexible graphical user interface for changing variables within WebVR.
+A JavaScript plugin that provides snapping functionality to a set of panels within your interface.
+Command line interface for Svelte
+A transparent Javascript interface to Redis.
+Web interface for the Volatility Memory Forensics Framework
+Interfaces for music, art and virtual reality on mobile devices
+The user interface for Event Store
+Creates Photoshop-like guides and rulers interface on a web page
+Common Interface for HTTP Clients
+A command line interface to phillips hue
+The ZeroClipboard library provides an easy way to copy text to the clipboard using an invisible Adobe Flash movie and a JavaScript interface.
+Web interface to manage virtual machines with libvirt
+Generic drag-and-drop ordering for objects in the Django admin interface
+📝 Command line interface for open cloud
+Graphical User Interface Component Framework for A-Frame VR
+Product Hunt Command Line Interface
