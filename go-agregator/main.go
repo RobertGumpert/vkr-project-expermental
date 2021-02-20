@@ -3,17 +3,18 @@ package main
 import (
 	"bufio"
 	"fmt"
-	"go-agregator/pckg/runtimeinfo"
-	textPreprocessing "go-agregator/pckg/scratching/text-preprocessing"
-	"log"
+	cmap "github.com/streamrail/concurrent-map"
+	text_preprocessing "go-agregator/pckg/scratching/text-preprocessing"
+	"io/ioutil"
 	"os"
-	"path/filepath"
 	"runtime"
+	"strconv"
 	"strings"
 	"sync"
 )
 
 var (
+	dictFile  = "repositories-dictionary.txt"
 	repoFiles = []string{
 		"react.txt",
 		"angular.txt",
@@ -25,12 +26,78 @@ var (
 		"terminal.txt",
 		"alacritty.txt",
 	}
+	text1 = "When all else is quiet When quiet quiet"
+	text2 = "When is she supposed to bring When supposed to"
 )
 
 func main() {
 	scanner := bufio.NewScanner(os.Stdin)
 	runtime.GOMAXPROCS(runtime.NumCPU())
-	getFileContent("terminal.txt")
+
+	//_, terminalTitles, _ := getFileContent("terminal.txt")
+	//_, alacrittyTitles, _ := getFileContent("alacritty.txt")
+
+	//dict := concurrentMap.New()
+	//dict.Set("quiet", int64(0))
+
+	writeDictionaryAndVectorizedCorpus(dictFile, []string{
+		// "react.txt",
+		//"angular.txt",
+		//"vue.txt",
+		"gin.txt",
+		// "flask.txt",
+		//"okhttp.txt",
+		// "hyper.txt",
+		//"terminal.txt",
+		//"alacritty.txt",
+	})
+
+	//createAndWriteDictionary(dictFile, []string{
+	//	// "react.txt",
+	//	//"angular.txt",
+	//	"vue.txt",
+	//	"gin.txt",
+	//	// "flask.txt",
+	//	"okhttp.txt",
+	//	// "hyper.txt",
+	//	"terminal.txt",
+	//	"alacritty.txt",
+	//})
+
+	//p1 := text_preprocessing.NewTextPreprocessor(text1).DO()
+	//p2 := text_preprocessing.NewTextPreprocessor(text2).DO()
+	//////
+	//model1 := &text_preprocessing.VectorizedCorpusModel{
+	//	Key:            "terminal",
+	//	FrequencyWords: p1.LemmasFrequency,
+	//}
+	//model2 := &text_preprocessing.VectorizedCorpusModel{
+	//	Key:            "alacritty",
+	//	FrequencyWords: p2.LemmasFrequency,
+	//}
+	////
+	//slice, mp := text_preprocessing.CreateDictionaryFromCorpus(
+	//	model1,
+	//	model2,
+	//)
+	////
+	//vectorModel1 := text_preprocessing.VectorizedCorpus(
+	//	model1,
+	//	model2,
+	//)
+	////
+	//vectorModel2 := text_preprocessing.VectorizedWithDictionary(
+	//	&dict,
+	//	model1,
+	//	model2,
+	//)
+	//
+	//fmt.Println(vectorModel1)
+	// fmt.Println(vectorModel2)
+	//fmt.Println(slice)
+	//fmt.Println(mp)
+	//
+	//getFileContent("terminal.txt")
 	fmt.Println("Final...")
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
@@ -41,147 +108,125 @@ func main() {
 	return
 }
 
-func getFileContent(file string) (*textPreprocessing.TextPreprocessor, *textPreprocessing.TextPreprocessor, *textPreprocessing.TextPreprocessor) {
+func createAndWriteDictionary(fileDict, fileVec string, repos []string) {
 	var (
-		wg = new(sync.WaitGroup)
-		//
-		content                        = readFile(file)
-		description, topics, titles, _ = separateContent(content)
-		descriptionTopicsContent       = strings.Join([]string{*description, *topics}, " ")
-		//
-		descriptionPreprocessing = new(textPreprocessing.TextPreprocessor)
-		titlesPreprocessing      = new(textPreprocessing.TextPreprocessor)
-		// bodiesPreprocessing      = new(textPreprocessing.TextPreprocessor)
-		//
-		doPreprocessing = func(content *string, preprocessor *textPreprocessing.TextPreprocessor, wg *sync.WaitGroup) {
+		mx     = new(sync.Mutex)
+		wg     = new(sync.WaitGroup)
+		corpus = make([]*text_preprocessing.VectorizedCorpusModel, 0)
+	)
+	for _, repo := range repos {
+		wg.Add(1)
+		go func(repo string, corpus *[]*text_preprocessing.VectorizedCorpusModel, wg *sync.WaitGroup, mx *sync.Mutex) {
 			defer wg.Done()
-			*preprocessor = *textPreprocessing.NewTextPreprocessor(*content).DOPullThread(5)
+			fileContent := getFileContent(repo, true)
+			mx.Lock()
+			*corpus = append(*corpus, &text_preprocessing.VectorizedCorpusModel{
+				Key:            repo,
+				FrequencyWords: fileContent.TitlesPreprocessing.LemmasFrequency,
+			})
+			mx.Unlock()
 			return
+		}(repo, &corpus, wg, mx)
+
+	}
+	wg.Wait()
+	sliceDict, _ := text_preprocessing.CreateDictionaryFromCorpus(corpus...)
+	writeContent := make([]string, 0)
+	for i := 0; i < len(*sliceDict); i++ {
+		if *(*sliceDict)[i] == "" {
+			fmt.Println("empty.")
+			continue
 		}
-	)
-	//
-	wg.Add(2)
-	//
-	go doPreprocessing(&descriptionTopicsContent, descriptionPreprocessing, wg)
-	go doPreprocessing(titles, titlesPreprocessing, wg)
-	//
-	wg.Wait()
-	//
-	return descriptionPreprocessing, titlesPreprocessing, nil
-}
-
-func separateContent(content string) (*string, *string, *string, *string) {
-	var (
-		wg = new(sync.WaitGroup)
-		//
-		titlesSeparator      = getTextSeparator(content, "Titles")
-		bodiesSeparator      = getTextSeparator(content, "Bodies")
-		descriptionSeparator = getTextSeparator(content, "Description")
-		topicsSeparator      = getTextSeparator(content, "Topics")
-		//
-		titles, bodies, description, topics = "", "", "", ""
-	)
-	wg.Add(4)
-	//
-	go strippedWithTwoSeparator(&description, &descriptionSeparator, &topicsSeparator, content, wg)
-	go strippedWithTwoSeparator(&topics, &topicsSeparator, &titlesSeparator, content, wg)
-	go strippedWithTwoSeparator(&titles, &titlesSeparator, &bodiesSeparator, content, wg)
-	go strippedWithOneSeparator(&bodies, &bodiesSeparator, content, wg)
-	//
-	wg.Wait()
-	return &description, &topics, &titles, &bodies
-}
-
-func strippedWithTwoSeparator(output, firstSeparator, secondSeparator *string, content string, wg *sync.WaitGroup) {
-	defer wg.Done()
-	firstSlice := strings.Split(content, *firstSeparator)
-	secondSlice := strings.Split(
-		firstSlice[1],
-		*secondSeparator,
-	)
-	*output = secondSlice[0]
-}
-
-func strippedWithOneSeparator(bodies, bodiesSeparator *string, content string, wg *sync.WaitGroup) {
-	defer wg.Done()
-	slice := strings.Split(
-		content,
-		*bodiesSeparator,
-	)
-	*bodies = slice[1]
-}
-
-func readFile(file string) string {
-	absPath, err := filepath.Abs(fmt.Sprintf("../go-agregator/data/tests/%s", file))
+		writeContent = append(
+			writeContent,
+			strings.Join(
+				[]string{
+					*(*sliceDict)[i],
+					strconv.Itoa(i),
+				},
+				" *-* ",
+			),
+		)
+	}
+	path := getDirPath(fileDict)
+	output := []byte(strings.Join(writeContent, "\n"))
+	err := ioutil.WriteFile(path, output, 0644)
 	if err != nil {
-		applicationCrashed(err)
-		return file
+		panic(err)
 	}
-	content, _ := ReadBytes(absPath)
-	return content
 }
 
-func getTextSeparator(content, separator string) string {
+func writeDictionaryAndVectorizedCorpus(fileDict string, repos []string) {
+	path := getDirPath(fileDict)
+	bts, err := ioutil.ReadFile(path)
+	//
+	if err != nil {
+		panic(err)
+	}
+	//
 	var (
-		windowsSeparator = osTextTemplate(separator, "w")
-		linuxSeparator   = osTextTemplate(separator, "l")
-		//
-		windowsFlag = strings.Contains(content, windowsSeparator)
-		linuxFlag   = strings.Contains(content, linuxSeparator)
+		mx         = new(sync.Mutex)
+		wg         = new(sync.WaitGroup)
+		corpus     = make([]*text_preprocessing.VectorizedCorpusModel, 0)
+		dictionary = cmap.New()
 	)
-	if windowsFlag && linuxFlag {
-		applicationCrashed("Content contains both separators.")
-		return separator
-	}
-	if strings.Contains(content, windowsSeparator) {
-		return windowsSeparator
-	}
-	if strings.Contains(content, linuxSeparator) {
-		return linuxSeparator
-	}
-	applicationCrashed("Content not contains separators.")
-	return separator
-}
+	wg.Add(1)
+	go func(dictionary *cmap.ConcurrentMap, bts []byte, wg *sync.WaitGroup) {
+		defer wg.Done()
+		content := strings.Split(string(bts), "\n")
+		for i := 0; i < len(content); i++ {
+			word := strings.Split(content[i], " *-* ")
+			key := word[0]
+			value, err := strconv.ParseInt(word[1], 10, 64)
+			if err != nil {
+				panic(err)
+			}
+			dictionary.Set(key, value)
+		}
+		return
+	}(&dictionary, bts, wg)
+	for _, repo := range repos {
+		wg.Add(1)
+		go func(repo string, corpus *[]*text_preprocessing.VectorizedCorpusModel, wg *sync.WaitGroup, mx *sync.Mutex) {
+			defer wg.Done()
+			fileContent := getFileContent(repo, false)
+			c := make([]*text_preprocessing.VectorizedCorpusModel, 0)
+			sep := ""
+			if strings.Contains(*fileContent.Titles, "\r\n") {
+				sep = "\r\n"
+			}
+			if strings.Contains(*fileContent.Titles, "\n") {
+				sep = "\n"
+			}
+			repoName := strings.Split(repo, ".txt")[0]
+			titles := strings.Split(*fileContent.Titles, sep)
+			for i, title := range titles {
+				titlePreprocessor := text_preprocessing.NewTextPreprocessor(title).DO()
+				key := repoName + "_issue_" + strconv.Itoa(i)
+				c = append(c, &text_preprocessing.VectorizedCorpusModel{
+					Key:            key,
+					FrequencyWords: titlePreprocessor.LemmasFrequency,
+				})
+				fmt.Println("Repo: ", repo, ". issue: ", i)
+			}
+			fmt.Println("Repo: ", repo, ". copy...")
+			mx.Lock()
+			*corpus = append(*corpus, c...)
+			mx.Unlock()
+			fmt.Println("Repo: ", repo, ". finish.")
+			return
+		}(repo, &corpus, wg, mx)
 
-func osTextTemplate(separator, os string) string {
-	switch os {
-	case "w":
-		return fmt.Sprintf("\n**\n%s:\n", separator)
-	case "l":
-		return fmt.Sprintf("\r\n**\r\n%s:\r\n", separator)
-	default:
-		applicationCrashed("OS template isn't exist.")
-		return separator
 	}
+	wg.Wait()
+	//
+	model := text_preprocessing.VectorizedWithDictionary(
+		&dictionary,
+		corpus...,
+	)
+	fmt.Println(model)
+	//
+	//for item := range model.GetPresenceVectors().IterBuffered() {
+	//	val := item.Val.()
+	//}
 }
-
-func applicationCrashed(err interface{}) {
-	log.Fatal(runtimeinfo.Runtime(2), ", ERROR: ", err)
-}
-
-//func getDescription(description, descriptionSeparator, topicsSeparator *string, content string, wg *sync.WaitGroup) {
-//	defer wg.Done()
-//	str := strings.Split(
-//		strings.Split(content, *descriptionSeparator)[1],
-//		*topicsSeparator,
-//	)[0]
-//	description = &str
-//}
-//
-//func getTopics(topics, topicsSeparator, titlesSeparator *string, content string, wg *sync.WaitGroup) {
-//	defer wg.Done()
-//	str := strings.Split(
-//		strings.Split(content, *topicsSeparator)[1],
-//		*titlesSeparator,
-//	)[0]
-//	topics = &str
-//}
-//
-//func getTitles(titles, titlesSeparator, bodiesSeparator *string, content string, wg *sync.WaitGroup) {
-//	defer wg.Done()
-//	str := strings.Split(
-//		strings.Split(content, *titlesSeparator)[1],
-//		*bodiesSeparator,
-//	)[0]
-//	titles = &str
-//}

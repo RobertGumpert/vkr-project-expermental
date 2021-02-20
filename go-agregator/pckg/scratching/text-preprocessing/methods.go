@@ -22,8 +22,7 @@ func EuclideanDistance(vecA, vecB *[]float64) (D float64) {
 	return math.Sqrt(sum)
 }
 
-func MethodSetOperations2(crossingA, crossingB, divergenceA, divergenceB *concurrentMap.ConcurrentMap) (Kab, KnotAB float64) {
-
+func MethodSetOperations(crossingA, crossingB, divergenceA, divergenceB *concurrentMap.ConcurrentMap) (Kab, KnotAB float64) {
 	var (
 		//s          = float64(0)
 		ka, knota                              = float64(0), float64(0)
@@ -117,92 +116,7 @@ func MethodSetOperations2(crossingA, crossingB, divergenceA, divergenceB *concur
 			wb[0], wb[1],
 		),
 	)
-	//if ka != 0 && kb!= 0 {
-	//	if knota == 0 || knotb == 0 {
-	//		s = kab
-	//	} else {
-	//		s = kab / knotab
-	//	}
-	//} else {
-	//	return 0
-	//}
-	//
-	//
 	return kab, knotab
-}
-
-func MethodSetOperations(crossingA, crossingB, divergenceA, divergenceB *concurrentMap.ConcurrentMap) (AB, NotAB int64, Kab, Knotab float64) {
-	var (
-		kab, knotab = float64(0), float64(0)
-		lenA, lenB  = float64(crossingA.Count() + divergenceA.Count()), float64(crossingB.Count() + divergenceB.Count())
-		lenAB       = lenA + lenB
-		ab          = int64(crossingA.Count())
-		notAB       = int64(lenAB) - ab
-	)
-	//
-	kab = float64(crossingA.Count()) / lenAB
-	knotab = float64(notAB) / lenAB
-	//
-	return ab, notAB, kab, knotab
-}
-
-func ExperimentalMethod(vecA, vecB *concurrentMap.ConcurrentMap) (S, Wab, Vab, Vcab, Cd float64) {
-	ab, notAB, crossingA, crossingB, divergenceA, divergenceB := GetCrossing(vecA, vecB)
-	if ab == 0 {
-		return 0, -1, -1, -1, -1
-	}
-	//fmt.Print("\t\t\t\t[ ")
-	//for item := range crossingA.IterBuffered() {
-	//	b, _ := crossingB.Get(item.Key)
-	//	fmt.Print(fmt.Sprintf("%s : %d / [%d], ", item.Key, item.Val, b))
-	//}
-	//fmt.Print(" ]")
-	//fmt.Println()
-	var (
-		kab, knotab, s = float64(0), float64(0), float64(0)
-		lenA, lenB     = float64(vecA.Count()), float64(vecB.Count())
-		lenAB          = lenA + lenB
-		sumFrequency   = func(vec *concurrentMap.ConcurrentMap) float64 {
-			if vec.Count() == 0 {
-				return 0
-			}
-			sum := float64(0)
-			for item := range vec.IterBuffered() {
-				switch item.Val.(type) {
-				case int64:
-					sum += float64(item.Val.(int64))
-				case float64:
-					sum += item.Val.(float64)
-				}
-			}
-			return sum / float64(vec.Count())
-		}
-	)
-	//
-	kab = float64(ab) / lenAB
-	knotab = float64(notAB) / lenAB
-	s = 1 - ((knotab - kab) / 2)
-	//
-	wa := []float64{
-		sumFrequency(crossingA),
-		sumFrequency(divergenceA),
-	}
-	wb := []float64{
-		sumFrequency(crossingB),
-		sumFrequency(divergenceB),
-	}
-	//fmt.Println("Wa , ", wa)
-	//fmt.Println("Wb , ", wb)
-	a, b := Vectorized(vecA, vecB)
-	ca, cb := Vectorized(crossingA, crossingB)
-	//
-	wab := EuclideanDistance(&wa, &wb)
-	vab := EuclideanDistance(a, b)
-	vcab := EuclideanDistance(ca, cb)
-	//
-	cd := CosineDistance(vecA, vecB)
-	//
-	return s, wab, vab, vcab, cd
 }
 
 func GetCrossing(vecA, vecB *concurrentMap.ConcurrentMap) (AB, NotAB int64, CrossingA, CrossingB, DivergenceA, DivergenceB *concurrentMap.ConcurrentMap) {
@@ -226,84 +140,6 @@ func GetCrossing(vecA, vecB *concurrentMap.ConcurrentMap) (AB, NotAB int64, Cros
 	}
 	NotAB = (int64(vecA.Count()) + int64(vecB.Count())) - AB
 	return AB, NotAB, &crossingA, &crossingB, &divergenceA, &divergenceB
-}
-
-func Vectorized(vecA, vecB *concurrentMap.ConcurrentMap) (A, B *[]float64) {
-	var (
-		buffer   = concurrentMap.New()
-		vecAC    = make([]float64, 0)
-		vecBC    = make([]float64, 0)
-		addPanic = func() {
-			panic(
-				fmt.Sprintf(
-					"%s, PANIC : %s",
-					runtimeinfo.Runtime(1),
-					"Type not number or not 64 size.",
-				),
-			)
-		}
-	)
-	for item := range vecA.IterBuffered() {
-		//
-		// Switch type
-		//
-		switch item.Val.(type) {
-		case int64:
-			v := item.Val.(int64)
-			vecAC = append(vecAC, float64(v))
-		case float64:
-			vecAC = append(vecAC, item.Val.(float64))
-		default:
-			addPanic()
-		}
-		//
-		//
-		//
-		if val, exist := vecB.Get(item.Key); !exist {
-			vecBC = append(vecBC, float64(0))
-		} else {
-			//
-			// Switch type
-			//
-			switch val.(type) {
-			case int64:
-				v := val.(int64)
-				vecBC = append(vecBC, float64(v))
-			case float64:
-				vecBC = append(vecBC, val.(float64))
-			default:
-				addPanic()
-			}
-			//
-			//
-			//
-		}
-		buffer.Set(item.Key, struct{}{})
-	}
-	for item := range vecB.IterBuffered() {
-		if buffer.Has(item.Key) == false {
-			//
-			// Switch type
-			//
-			switch item.Val.(type) {
-			case int64:
-				v := item.Val.(int64)
-				vecBC = append(vecBC, float64(v))
-			case float64:
-				vecBC = append(vecBC, item.Val.(float64))
-			default:
-				addPanic()
-			}
-			//
-			//
-			//
-			vecAC = append(vecAC, float64(0))
-		}
-	}
-	if len(vecAC) != len(vecBC) {
-		panic("Vector lengths isn't equal.")
-	}
-	return &vecAC, &vecBC
 }
 
 func CosineDistance(vecA, vecB *concurrentMap.ConcurrentMap) float64 {
@@ -363,6 +199,7 @@ func GetLemma(word *string, lemmatizers ...*golem.Lemmatizer) (lemma *string) {
 	var lemmatizer *golem.Lemmatizer
 	if lemmatizers == nil || len(lemmatizers) == 0 {
 		lem, err := golem.New(en.New())
+
 		if err != nil {
 			fmt.Println(runtimeinfo.Runtime(1), err)
 			return word

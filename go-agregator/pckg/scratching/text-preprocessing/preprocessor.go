@@ -15,8 +15,9 @@ import (
 )
 
 type TextPreprocessor struct {
-	rwMutex *sync.RWMutex
-	wg      *sync.WaitGroup
+	rwMutex    *sync.RWMutex
+	wg         *sync.WaitGroup
+	OriginText *string `json:"-"`
 	//
 	ClearText *string   `json:"-"`
 	Words     *[]string `json:"words"`
@@ -46,15 +47,22 @@ type TextPreprocessor struct {
 }
 
 func NewTextPreprocessor(str string) *TextPreprocessor {
-	re, _ := regexp.Compile(`[?!/.,-]`)
-	str = re.ReplaceAllString(str, " ")
+	str = strings.ToLower(str)
+	//
+	regexAscii := regexp.MustCompile("[[:^ascii:]]")
+	str = regexAscii.ReplaceAllLiteralString(str, " ")
+	//
+	regexCodeFunctions := regexp.MustCompile(`(?i)[\w\d]+[.](?i)[\w\d]+[(](?i)[\w\d]{0,}[)]`)
+	str = regexCodeFunctions.ReplaceAllString(str, " ")
+	//
+	regexSymbols, _ := regexp.Compile(`[]\d%:$"';[&*=<>}{)(?!/.,\-]`)
+	str = regexSymbols.ReplaceAllString(str, " ")
+	//
 	var (
 		preprocessor = new(TextPreprocessor)
 		clearText    = stopwords.CleanString(str, "en", true)
 		words        = make([]string, 0)
 	)
-	//
-	clearText = strings.ToLower(clearText)
 	words = strings.Fields(clearText)
 	//
 	preprocessor.Words = &words
@@ -145,6 +153,15 @@ func (preprocessor *TextPreprocessor) do(from, to int64, waitGroupDone bool) {
 		return
 	}
 	for ; from < to; from++ {
+
+		//if len((*preprocessor.Words)[from]) == 1 {
+		//	(*preprocessor.Words)[from] = (*preprocessor.Words)[len(*preprocessor.Words)-1]
+		//	(*preprocessor.Words)[len(*preprocessor.Words)-1] = ""
+		//	*preprocessor.Words = (*preprocessor.Words)[:len(*preprocessor.Words)-1]
+		//	to--
+		//	continue
+		//}
+
 		var (
 			currentLemma = GetLemma(&((*preprocessor.Words)[from]), lemmatizer)
 			currentStem  = GetStem(&((*preprocessor.Words)[from]))
