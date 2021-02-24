@@ -1,0 +1,9 @@
+terminal *=* 0.219722
+macos *=* 0.150408
+emulator *=* 0.150408
+javascript *=* 0.081093
+hyper *=* 0.219722
+linux *=* 0.150408
+react *=* 0.150408
+css *=* 0.219722
+html *=* 0.219722

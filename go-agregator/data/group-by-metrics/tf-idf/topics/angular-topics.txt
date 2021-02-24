@@ -1,0 +1,7 @@
+pwa *=* 0.244136
+typescript *=* 0.244136
+performance *=* 0.167120
+web *=* 0.501359
+javascript *=* 0.090103
+framework *=* 0.090103
+angular *=* 0.244136

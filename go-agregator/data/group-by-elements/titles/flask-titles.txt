@@ -1,0 +1,3901 @@
+
+route function quit unexpectedly
+mod_wsgi (Apache) Troubleshooting tips needs one more
+Add before_first_request_context signal.
+Add support for default environ in test_client
+try_trigger_before_first_request_functions in test cases
+packaging docs outdated
+uWSGI / nginx documentation is incorrect
+fix docstring for _find_errorhandler
+fix doc string
+fixed import of werkzeug secure_filename
+Flask Documentation PDF is missing
+after_request excuted twice
+config.from_pyfile() avoid UnicodeDecodeError
+Clarify what app.config.from_object accepts
+Add X-Forwarded-Proto header to proxy setup example docs
+Add pip install --editable . to contributing docs
+test_client fails for url with "%2F"
+Replace 'I' with 'We'
+Move object_hook outside loads method so class can be extend and reused
+Call out that teardown functions must never raise
+importlib deprecated in 3.4
+imp module deprecated. 
+Mention that custom converters can be defined for url routes
+typo in Quickstart documentation
+Built in routes command
+get_json raise on empty request body
+url_for with multiple query parameters escape '&'
+json_encoder not invoked from flask.jsonify
+small inaccuracy in get_json documentation
+Fix pep8 with logging
+Change first argument in a Class methoc to 'self'
+Show custom flask cli commands for "no arg" help
+Make TaggedJSONSerializer extensible
+Flask won't start in the Python 3.4 debugger
+Readme cleanup
+htmlsafe_dumps doesn't handle lazy strings
+Explicit show the content-type of response
+Should we cache errorhandlers or not?
+stylechecking
+Some cleanup for errorhandling refactor
+request.json and a lot of other attributes don't use autodoc
+Added docs for the error handler rework
+errorhandler priority and chaining
+Bug in send_file with temp files
+Blueprint is ignored
+the master version of flask has not module.py, but 0.10.1 has it 
+Are there any interest in displaying current_user when logging exceptions?
+5 years, still not 1.0! what are you thinking about, pocoo?
+Allow custom jinja environments
+`request.json` deprecation discussion
+Flask reloader adds stdout buffering when used with supervisord
+Revert "Fix a few spelling mistakes in the docs"
+Fix a few spelling mistakes in the docs
+OperationalError: no such table: entries
+JSON support for test client and response object
+The server stops serving webpages after being deployed for more than a day
+Added OpenShift as a free hosting provider alternative
+Added note that @errorhandler(500) isn't triggered in debug mode
+url_for to another application during request?
+Knowing if the App started
+Error: entries table doesn't exist
+Creating a "collective"
+JSON support for the Flask test client
+Revert "Revert "Don't use threads in this test""
+Generic error handler for any exception
+Test_import_migration.py updated
+Replaced flask.ext with flask and flask.ext. with flask_
+fix bad autodoc signature when functions are decorated
+Add support for toplevel arrays
+Fix Possible Typo
+Add support for toplevel arrays
+Propose this file
+Oops, didn't mean to post this.
+flask.Request should have an is_static field for content served from the static folder
+Flask mailing list not accepting my messages
+Support for mixins on MethodViews
+url_for within different Flask instances
+Ignore handled exception when popping the context
+AppContext.pop() should use a different sentinel for the exception value.
+How to include pages dynamically in flask
+before_render_template signal
+Always run memory tests
+Flask doesn't support resume download to client (no HTTP byte-range support) in 'static' folder
+Cannot install Flask on Ubuntu Server 14.10
+form.hidden_tag() not XHTML 1.1-compliant
+log
+request.files is empty after POSTing a file
+Fix errorhandler HTTPException normalization
+Flask Request Signal - Workflow
+Add note to not use plain text passwords to views.rst
+Add line of code required to run examples for Other Testing Tricks section
+Flask-Mega Tutorial error
+link to sqlalchemy declarative has changed
+CPU usage increase when debug=True running by virtualenv
+Update quickstart.rst doc for awareness of Flask extensions
+documentation PDF link is dead
+flaskr tutorial doesn't match flaskr repo
+When debug mode is enabled, control-c takes forever to quit, and reloads are slow.
+Logging Application approaches 
+Update send_file() docs to clarify encoding requirement #1286
+Snippet “Sign in with Steam ID” has issues
+Update api.rst
+Update api.rst
+Add Bottle-like route sugar
+Slowloris DoS Vulnerability
+Slash in route affects sorting/matching order
+Update information about Python 3
+Small Typo fix
+Add JSONIFY_END_WITH_NEWLINE config variable
+Python 3.4 and PyCharm breakpoints when use_reloader=True
+Add absolute_import to Celery docs
+Unicode in Flask - Uploading Files
+Use RuntimeError instead of asserts
+Calling redirect() from Blueprint#before_app_request() 
+Confusing line in Uploading Files pattern documentation
+Sqlite3 doc page for 0.10.1 missing a function
+Make the _external keyword available in the test clients url_for function
+solution for running context dependent attributes
+hidden attribute
+Flask Doc Download Link Broken
+Some question about attribute cls.__unicode__ in flask/_compat.py
+Need more documentation for usage of instance_path
+404 on PDF version of documentation
+Minor typos 
+Flask fails to start with use_reloader=True when using absolute import
+Minor typos
+Minor typos fixed
+Minor typos fixed
+Minor typos fixed
+Flask.redirect() bug?
+Docs style fixes: ``FOO`` vs `FOO` (reloaded)
+Multiple Ports in URL when using redirect behind BrowserSync
+url_for extension for REST Apis
+explain_template_loading_attempts: docstring
+Close <p> tag in flaskr login.html
+Tweaked sqlite3 documentation
+Minor typos and spelling fixed
+New label 'good first bug'
+The 'download as PDF and zipped HTML' links on flask.pocoo.org are broken. 
+flask-docs.pdf lost
+Docs style fixes: ``FOO`` vs `FOO`
+Fix broken links on python3.rst in docs (#1228)
+Doc link broken
+teardown_{request,appcontext} not called on first request if it throws an exception when DEBUG is True
+Remove unused 'template' arg to _iter_loaders()
+Typo and cosmetic fixes
+Starting up a public server.
+Improved secret key generation example
+Set TEMPLATE_AUTO_RELOAD default value to None
+Some grammar and typo fixes
+Updating extension guidelines v2
+Correct the order of suggested syntax for extension imports
+Correct the order of suggested syntax for extension imports
+Fix typo: "lated later" >> "added later"
+Display Flask Server IP address
+Is there a Login Manager?
+Switch TEMPLATES_AUTO_RELOAD to False by default
+Add trim_namespace argument for app.config.get_namespace (with tests)
+itsdangerous.py - "ImportError: cannot import name _compare_digest"
+The way Flask handles `www` and subdomains is ambiguous
+One namespace for route handlers
+Handle a single unusual argument in jsonify
+Corrected api docs
+broken documentation links on Flask site (http://flask.pocoo.org/)
+Deprecate request.json property
+Read documentation in pdf does not work
+Remove deprecated old module, and start deprecating `request.json`.
+Improve jsonify() 'non pretty' compression
+Large Dictionaries Not Released From Memory
+How do I only enable cookies if the user logs in?
+MAX_CONTENT_LENGHT not being respected with JSON payload
+make runs superfluous tests when using a virtualenv
+Flask accessing and editing config data
+pdf documentation
+Add unittest for appcontext_tearing_down signal
+Link from Debug Mode to Application Errors
+wtforms get all errors as list
+PDF and HTML docs not available on homepage
+Minor typos in sqlite3.rst
+Minor typo in errorpages.rst
+Blueprint template not found
+Test failures with pypy2.4
+[Website] Documentation PDF and zipped HTML download links return 404
+Stop recommending Tornado as a WSGI server
+some grammar fixes in docs/appcontext
+Fix typo in changelog
+Update config.py
+Update quickstart.rst
+Deprecate and remove APIs
+fix typo in in README of examples (i.e., filename of test files)
+Modify docs for new testsuite
+Print line after server is started
+Ability to override json encoder and decoder arguments
+Should jsonify() throw an exception when provided a list?
+turn on autoescape for `flask.templating.render_template_string`
+Update tests section in README file
+docs/_themes/.git is in the tarball at PyPi
+python3 -mpdb myflaskapp.py fon ubuntu 14.04
+very minor spelling fixes
+Documentation on flask.pocoo.org is missing
+before_render_template signal
+Add support for blueprint-level cli commands
+Configure pytest's norecursedirs
+Add command line support for ext_migrate tool
+Update docs to reflect deprecated ext format
+Changed implementation of flash messages to use a dict instead of list
+Update README for clarity and to remove redundancy
+Added closing paragraph tags
+Flask Roadmap
+Method `render_template` does not use blueprint specified `template_folder`
+Add exception details to response
+Ability to disable Flasks internal logger
+Add skip to fix unnoticed bug with import migration tool
+Support for @blueprint.cli.command
+Documentation PDF 404's on flask site
+New Watchdog Reloader Is Not Detecting Changes
+improve grammar, make format consistent, and improve readability
+Reload takes > 60 seconds
+Problem running Flask with an ssl_context under Werkzeug 0.10.1
+Overloading of JSON Decoder causing cookies decoding problems
+Include wheels on the PyPI release
+Signals.rst: Grammar and readability fixes
+sessions not saved when streaming
+Import redirection makes it difficult to catch exceptions
+Remove bad security advice about send_file, fixes #1345
+flask.send_file gives bad security advice
+It's been almost 2 years since the last major update.. is there any realistic date for any new release?
+make test_request_preprocessing_early_return more thorough
+flask.ext Import Migration Tool #1135
+Use PEP440-compatible dev version
+Snippets - Decorators: Verify a Google authentication token
+It resolves problems with blueprints and url_prefix "/"
+Improve docs of signatures of before/after/teardown callback funcs
+Fixed `stream_with_context` decorator not working with generator functions that take in arguments
+request.url returns decoded version. How to get encoded one?
+Update api.rst, fixed spelling
+Typo on flask.g documentation section
+Error 404 for linked flask-docs.zip
+Fixed minor docstring typo for teardown_request()
+Fix #1330 Support capital letters in mimetype in is_json
+Method is_json does not support capital letters in mimetype
+Programatically enforce styleguide
+Strange behaviour in app.route decorator 'methods' parameter when using string
+AttributeError: 'function' object has no attribute 'name'
+Add datetime.date support to JSONEncoder
+Clarify contents of request properties.
+test_client removes query_string
+Extra slashes causes route error
+distribute_setup.py link for windows setup has gone bad 
+Make it easier to serve 304 (Not Modified) using a database file.
+Melvinflask
+Error With Quickstart Tutorial - Print url_for('profile'...) 
+grammar fixes
+flask.wrappers.Request.get_json fails to check for data
+ehh .. how to say
+Replace TextField with StringField in registration page example
+Flaskr tutorial Step 3 is missing content
+Added missing import.
+pylint errors on all example & template project
+Conditionally install default logging handlers
+persona example error 
+Uploadpattern fix
+Replace hard coded path
+URL generation rule explained for file uploads
+Update copyright year
+request.form issue
+Dev server fails to terminate, becomes orphan
+Happy New Year 2015
+testing documentation missing "TESTING" config
+Allow to know about Blueprints registeration state
+Links to PDF and HTML Zipped Docs return 404 error
+Update quickstart.rst
+Flask doc unittest error
+Fix grammar in testing doc.
+麻烦问下， 你的数据库怎么升级啊
+register user errorhandler in the right order
+Documentation
+Project Feedback Site
+fix typo
+Fixed and intuitivized exception handling
+Fixed #1288: app.add_url_rule() should look for OPTIONS methods in a case-insensitive manner
+bad content-length default
+app.add_url_rule() should look for OPTIONS methods in a case-insensitive manner
+Update copyright to 2015
+send_file fails when filename contains unicode symbols
+Use new container based Travis-CI
+`itsdangerous` dependency not marked
+response time problem
+raise FormDataRoutingRedirect
+errorhandler should expect exception classes instead of exception instances 
+Update mongokit pattern
+Doc inconsistency
+Command 'flask' not installed and can't run from module
+Documentation fixes (mostly in Tutorial)
+Update MethodViewType for supporting Mixin
+Include backend argument when instantiating Celery
+reloader crashing
+Fixed wording
+Time for a new release ?
+Route parameter types
+Fix: add closing dt tag in example
+added numpy requirement
+Report Security Issue
+flask_logo_python
+Ensure session_interface.open_session is called after URL matching
+Add signed int and float to docs
+修复了xxxbug
+Allow dependabot to check GitHub actions daily
+Bump pytest from 6.0.2 to 6.1.1
+Display image in template from binary stored in mongodb
+Updated outdated link in errorhandling documentation  
+Outdated external link in errorhandling documentation
+Parmetrizing tests
+Add python 3.9 to CI.
+test boom
+Enhancement Request: Response Class in Blueprint
+Ready flask app for beginners
+Raise an error if rule starts or ends with a space
+@app.route should either trim urls or throw an error when route ending with space is provided
+docs refer to decoder instead of encoder
+Check the static URL in advance
+Check the static URL in advance
+request.endpoint always None in SessionInterface.open_session
+flask run error
+Bump pytest from 6.0.2 to 6.1.0
+Bump greenlet from 0.4.16 to 0.4.17
+trying to add some more information :-)
+aesthetic: add a space after a comma
+why flask create a new thread with the same TID that already exists?
+grammar mistake fix
+Typo in Flask pallets fileuploads
+Update quickstart.rst
+我怎么同时使用send_static_file函数和jinjia2语法来获得后端传递的数据呢？
+how
+could self.session_interface.save_session be run before the after_request_funcs are executed?
+cannot set remote_user
+Breaking a ref cycle created by default in Flask()
+A Flask app holds a reference to itself
+GPU memory usage keeps increasing even hybridize with static_alloc when used in flask debug mode after mxnet 1.6.0post0.
+Merge pull request #1 from pallets/master
+Docs: Sentry is not open source any more
+DOC: Simplified loading of favicon
+Bump pytest from 6.0.1 to 6.0.2
+Use content-encoding from mimetypes check in `helpers.py:send_file`
+Bump tox from 3.19.0 to 3.20.0
+Discrepancy in logging output between IDLE and Terminal for Flask 0.12.x
+Error 302 on Redirect after Form Post
+updated doc for mod_wsgi
+Random error function mapping over existing endpoint function.
+update cache action to v2
+Update setup.py
+blueprint does not render template relative to the blueprint.
+make_response mimetype ignored
+Deprecation of itsdangerous.json
+fix typo in flask shell help
+Bump pre-commit from 2.6.0 to 2.7.1
+debug PR please ignore
+Fix pre-commit cache key in GitHub Actions
+fixed #3738 typo in src/flask/blueprints.py
+[Docs] Typo in documentation.
+provided possibility to configure digest method with different hashin…
+Formatting list routes if environment installed rich lib
+test_client() does not close a file opened by send_file()
+Bump sphinx from 3.2.0 to 3.2.1
+Disable required attributes overriding error output
+Increased hand-holding for Windows users
+Flask infer MIME type in javascript modules
+Update the signature of the teardown function
+Support option to disable color escapes in the log
+Discover app factory deterministically
+Add environment variable to disable loading entrypoint commands from flask.commands
+Include samesite and secure keys when removing session cookie
+Bump sphinx from 3.1.2 to 3.2.0
+templates not showing <h1> element nor any changes applied to layout.html
+Fix bad intersphinx link
+Bump tox from 3.18.1 to 3.19.0
+feature: make test_client API same as requests API
+Provide configurable digest_method for SecureCookieSessionInterface
+Error: read ECONNRESET
+Testing tutorial doc is not working
+Example for teardown_appcontext in the docs out of sync with actual codebase
+Bump pip-tools from 5.3.0 to 5.3.1
+flask
+Add command switch tabs for Bash, CMD and Powershell with sphinx-tabs
+Bump pytest from 6.0.0 to 6.0.1
+cleaner message when CLI can't load app
+Add CSS styling to Flask API docs hosted at palletsprojects.com, to aid visual navigation of the page.
+Common API Between Flask + Blueprint
+Common API Between Blueprints + Flask
+jinja2.exceptions.TemplateNotFound
+Bump tox from 3.18.0 to 3.18.1
+Bump pytest from 5.4.3 to 6.0.0
+swapping self.assert_equal for assert
+Fixes #1902
+Bump pip-tools from 5.2.1 to 5.3.0
+Can't set `FLASK_DEBUG` from `config.DEBUG` using the CLI interface
+examples for some blueprint uses in docs
+remove unnecessary docstrings from tests
+Add repl.it to list of deployment hosting options
+Add tip for set environment variable with Powershell in the Configuration documentation
+logout and factoring cookie problem
+imports now together
+Any reason to keep g as a property on RequestContext?
+Added multi-line imports to app.py file
+Add Qovery option to deploy Flask
+use Jinja's tojson filter
+Update for recent changes in Pallets libraries
+[pre-commit.ci] pre-commit autoupdate
+Bump pre-commit from 2.9.3 to 2.10.0
+Bump greenlet from 0.4.17 to 1.0.0
+Bump sphinx-tabs from 1.3.0 to 2.0.0
+Bump pytest from 6.2.1 to 6.2.2
+Bump sphinx from 3.4.1 to 3.4.3
+Bump packaging from 20.8 to 20.9
+Bump jinja2 from 2.11.2 to 2.11.3
+Bump tox from 3.20.1 to 3.21.3
+Debug mode auto-reloader causes Uncaught Exception
+Doc update: Clarify got_request_exception signal docs
+Views & Routing `methods` input throwing TypeError for tuples
+Flask silently overrides Jinja2 tojson filter
+Docs update: clarify json error handling
+Reload the flask dynamic blueprint by using the @app.route('/reload')
+Testing docs example for setting 'g' seems incorrect
+Improve some code comments
+Increase the point in the comment.
+Increase the point in the comment
+flask doesn't return http error 413 if file too large
+Falsk url redirect with Masking
+If using a .env file with Docker, the Flask CLI still tells you to install python-dotenv
+Flask's Celery docs are going to start failing with Celery 6 and get deprecation warnings with 5.x today
+Leading forward slashes are stripped from path variable
+"Request" object has no attribute "is_xhr"
+Update views.rst: fix the routes sample code
+Update the example in README
+Update documentation for easy quickstarts
+Requiring endpoints to have a __dict__
+The Issues about recv-Q
+Document parameter description error
+Silence pytest warnings for exception propagation test
+Bump packaging from 20.4 to 20.8
+Bump pytest from 6.1.2 to 6.2.1
+Bump pip-tools from 5.3.1 to 5.5.0
+Bump pre-commit from 2.8.2 to 2.9.3
+Bump sphinx from 3.2.1 to 3.4.1
+[pre-commit.ci] pre-commit autoupdate
+postman cant post mp4 file
+Flask session cookie secure flag is not getting set. 
+raising HTTPException does not cause got_request_exception signal to be emitted
+Add link to reference docs in README
+Flask master requires Werkzeug master
+fix explanation of wheel name
+How clear AWS S3 Bucket ClientError in Flask API server? 
+PUT route requires a body to work
+SESSION_COOKIE_SAMESITE not woking
+Update cli.rst, repeated word "that" in line 258
+before_request handler in Methodview class
+[pre-commit.ci] pre-commit autoupdate
+Flask,doesn't redirect page
+How to verify a flask web app in the google search console
+Explain Allowed_file() func in Uploading file on web via FLASK
+session.pop do not actually remove anything
+flask.abort() documentation broken
+Fix ci environment command syntax
+Update deprecated set-env ci command
+[pre-commit.ci] pre-commit autoupdate
+Web site / documentation: Should tell what Flask *is*
+Error during startup
+Error during startup
+Op2020
+flask run error
+move send_file and send_from_directory to Werkzeug
+update tests for new Werkzeug client
+Running a simple Flask app will not work because an older run is cached somehow.
+Separate docs page on debug mode
+adding an assertion to catch a mistake I made
+update requirements
+Bump sphinx-tabs from 1.1.13 to 1.3.0
+Bump pre-commit from 2.7.1 to 2.8.2
+Bump python-dotenv from 0.14.0 to 0.15.0
+Bump tox from 3.20.0 to 3.20.1
+Bump pytest from 6.1.1 to 6.1.2
+Whether flask dev server by default really works single process?
+Updating external_url_handler example to Python 3
+Error when trying to start flask app from command line
+JSONEncoder: Add test for objects with __html__ method
+Added link to deploying on Divio how-to guide
+Add separate and more detailed issue templates
+create hello world added file
+Flaskform import not working, no matter what I do.
+docs: mkstemp returns a file descriptor and a path
+Use list in methods instead of tuple
+Clarify it is talking about HTML tags
+Link SQL injection to python sqlite3 library doc
+cli.load_dotenv: when path provided and python-dotenv not found, extra message
+fix html in example 404/500 templates
+Can't get page over browsers
+[Minor changes] Update documentation by removing outdated information
+I think it's a deadly bug in the Flask module.
+werkzeug/test.py modifies headers passed to Client.post
+Small fixes and improvements
+Update documentation about python 3 support in Flask, resolves #1578
+improved documentation for config.from_object
+Tests with and without simplejson for every existing testenv
+Rewrite subclassing example with a better use-case.
+Remove old version added and changed tags #1704
+url_for now supports no request context and no SERVER_NAME case
+Revert "Adds simplejson as a testing target."
+Add ipython/bpython support to `flask shell`
+Fix Issue 1847 - Adding Current Path when Invoking Flask-Cli Run
+Add subclassing pattern/example
+Document Runtime Error when running outside of application context
+Coverage for test_static_path_deprecated and test_static_url_path
+Add last_modified arg for send_file
+Added link to deploying documentation
+Werkzeug mentions
+Remove old version added and changed tags #1704
+Adds simplejson as a testing target.
+Issue #836: Tweaking tutorial warning about plain text passwords and …
+Add issue template, resolves #1773
+Remove version info from Werkzeug in the docs
+Document flash message size limit
+Add clarification for login_required decorator
+Remove deprecation warnings for add_etags & mimetype guessing for send_file()
+Add version switch to flask cli
+Issue using Flask CLI with module layout recommended in Large Applications
+Add tests target that uses simplejson
+IPython Option for Flask Shell
+Middleware doesn't execute inside test_request_context()
+Mention the template name conflict issue in blueprint templates docs
+[CLI] Option to pass the FLASK_APP variable as an argument 
+Guard sys.exc_clear call for people using pypy3
+a few more python3-compatible print
+Update and rename README to README.md
+Fixed typo in filename.
+Setting error handler for unknown code fails
+ExtDeprecationWarning show file path with deprecated import
+Failing test: test_egg_installed_paths
+Bringing the copyright date up to 2016.
+Fixed link in changelog to documentation.
+static url is not correct with subdomain
+Show line which caused the DeprecationWarning
+Update help to >   set FLASK_APP=hello.py
+"[Errno 2] No such file or directory" on flask run with FLASK_DEBUG=1
+`flask --version` fails
+Convert readthedocs link for their .org -> .io migration for hosted projects
+Match the hello.py with the one on homepage
+Flask 0.11/httpbin: TypeError: <generator object MultiDict.lists at ...> is not JSON serializable
+Consider making StrictUndefined the default in Flask 1.0
+Added sentry to docs
+Improve application context popping
+Added plugin support to the cli
+Switch to CLI Light
+fix bug in example/flaskr/flaskr.py
+fix docstring
+Unify versionadded markers (0.11 vs 1.0)
+Reference to Flask 1.0 in Flask 0.10 docs
+Add special handling of ./ template strings
+Fast path for disabled template load explain.
+Resolve state issue for url_for with forced scheme
+turn 2 prints to py2/py3 compatible syntax
+Addressing Issue 1809
+Added X-Accel-Redirect support
+flask.Flask.register_blueprint is poorly documented
+itsdangerous -> derive_key() occasionally returns invalid key.
+stop/terminate flask outside request context
+Forward ported CLI tests from Flask-CLI and fixed a bug with the CLI's name.
+How to bind() when DEBUG = True
+'config object has no attribute from_json' error 
+'config object has not attribute from_json' error 
+Why `from . import views` can solve circle import in Flask?
+Fix "with" formatting in doc
+ImportError when dropping privileges before running Flask
+Does Response() work for anyone?
+Fix a grammar mistake in the docs
+#1782: Add flag to handle file-like objects
+Post on refresh
+update docs and refer to setuptools
+Slow json decoding for huge objects
+[RFC] template load performance, Blueprint.render_template
+test_monkeypached_sleep fails on CentOS 6.7.
+flaskr example seems to loose data on every launch
+'Flash' Silent Error: occurrs when trying to flash a string with too many characters.
+Install flask gives error
+database: persistent connetion
+Failed get_json
+g object doesn't work between blueprints
+Not possible to set a session cookie without a domain attribute when SERVER_NAME is set
+Automatic redirect with "/" breaks routes with different methods
+send_file() function tries to get the file from filesystem even if file-like object is passed
+minor rewording of get_json documentation for clarity
+Question: can flask create 'access.log', and 'error.log'
+pluralise "thing"
+app.route does not catch // when having <path:> in the directive
+The comment didn't make any sense
+Determine API for integrating custom shells with Flask such as IPython, etc?
+Update the list of Approved Extensions
+API versioning with blueprints causes colission
+Issue Template
+Flask docs need rebuilding
+Remove dotCloud host instructions
+Delete superfluous branches from the repo?
+Update `tox` installation instructions to point to PyPI
+Stream download chunked not working?
+Flask framework not support html5 video label on safari and iOS devices
+Fixed mistake in CONTRIBUTING.rst file, regarding pip install.
+When I run 'pip install Flask' in Ubuntu server I got these info
+OPTIONS default behavior not compatible with Angularjs
+External url scheme is kept accross multiple url_for
+multiple processes on windows
+Clarify the python versions that flask supports
+COC?
+Add encoding param in config.from_pyfile
+Update config.py
+Readme
+Injecting Flask vulnerability issue
+minor revision of documentation.
+why command flask not found
+Fix wrong indentation error and get rid of PEP8 warnings in helpers.py
+Error running minitwit example
+Remove with_statement in flask/ctx.py
+When DEBUG=True, OSError: [Errno 88] Socket operation on non-socket
+[support] I get None with request.form
+Mod wsgi docs
+About import OpenID
+visual studio code plugin>
+template loaders configuration don't support zipped applications
+Please update mod_wsgi documentation to use httpd 2.4 syntax
+Issue Regarding to instance path in testsuite directory
+0.10 maintenance
+Allow debugger to be controlled from application configuration
+Allow application configurations to control the debugger
+Dev server redirects to arbitrary url when path starts with double slash //
+0.3 maintenance
+Fixed a typo in the appfactories docs
+update flaskr example design
+Links to download documentation need updating
+add before_init param to View.as_view
+Catch-All URLs
+Exception when client closes stream before flask response
+Extend documentation about uwsgi/nginx deployment
+Skip tests if redbaron is not installed
+Add .cache dir to gitignore
+In case a test fails a .cache directory is created
+Looks like pytest is not the only minimal dependency
+Can't deploy flask in nginx using python 3 (in a subroot) 
+Documentation / Quickstart / Debugger - how to activate
+Render the code block in mongokit.rst
+demo doesn't show the active port
+Werkzeug 0.11 does not allow debug
+Allow to specify subdomain and/or url_scheme in app.test_request_cont…
+xss issue
+Flask extremely slow on SQL Server view queries versus pure table queries
+Review Flask-DropIn extension for listing and approval
+OSError: [Errno 9] Bad file descriptor for python3 + flask
+Fix typo.
+Documentation on setting up configuration file might cause friction to new users
+I can't to custome json decode error handler.
+Abh ocean
+[Document Bug] get_json(force=False, silent=False, cache=True)
+Unicode Error when running in debug mode
+Fix typo in app_ctx_globals_class doc in app.py
+add BiuBiuBiu~
+Fix a typo
+Fix typo in templating.rst
+Core signals template_rendered doesn't works
+New release and updated documentation please?
+OPTIONS requests sometimes match the wrong url_rule if there are multiple route handlers for different methods
+Added session regenerate/destroy methods
+allow using alternative json library
+Duplicate: Downloadable documentation files links (pdf and zippe files) are dead
+Add session methods to handle destruction and regeneration
+PendingDeprecationWarning on use of import imp
+Add info about working with VE and Python 3
+KWC_code
+url_for with alternating schemes
+Fixed small typo in comment
+travis: python 3.5 support
+support timedelta for SEND_FILE_MAX_AGE_DEFAULT config variable
+Update CHANGES
+Example code leaked when running test
+in pluggable views, why not passing url variable parameters to view object?
+Make sure we list HEAD as a valid method when GET exists
+Updated documentation for Setuptools
+url_for: 500 Internal Server Error
+No wheel published
+Added flake8 for checking Python syntax
+Updated documentation for Distribute installation
+Unknown error
+Enable distribution as a standalone, compiled executible with nuitka
+Fix name mismatch in apierrors page
+Make SEND_FILE_MAX_AGE_DEFAULT support datetime.timedelta
+route parameters
+Update docs on the website (at least the python 3 ones)
+Warn when using development server
+an context confuse when i using the celery 
+What is the release schedule for 1.0?
+support for rotating secret keys? 
+Documentation: Clarify instructions about changing row_factory for SQLite3
+ Logging Documentation, Patterns & Extending
+@app.after_request should be able to process a non-response into a response
+trailing slash redirect doesn't work for route('/')
+jsonify and return a list
+Fix for a word tense issue in the docs.
+Update Extension List
+Updated documentation for deploying with Lighttpd
+Wrong "Date" http header, breaks clientside caching for static files, lots of 304 responses
+control of Session hash_method, serialization_method, expiration behavior
+overriding JSONEncoder
+Endpoint decorators
+Favicon pattern
+A typo in the open_resource() doc string.
+Typos + favicon pattern
+One-Click-Getting-Started Script
+fix subdomain for static rule on registering module
+OpenID login for AOL broken in Flask website.
+docs updates to match new Werkzeug docs
+Context processor use is problematic.
+Trailing slash URL redirect does not include the query string.
+Added closing tags to template examles
+Global "messages" when using flash()
+UnicodeEncodeError when script is in a folder with non-ascii characters in the name
+Allow custom TestClient
+pypy 1.4 and Flask Sessions
+Passthrough exceptions in TESTING mode
+Fix issues like issue 111
+Minor spelling fixes
+Pointless example for Signal.connected_to
+Untitled
+Module-local errorhandler
+Make tuple to make_response handle response objects
+Typo in the security XSS section.
+Updated link for 'declarative' in sqlalchemy.rst
+Minor changes on docs
+Fixed indentation in session API docs
+Some minor doc fixes
+test_request_context should trigger before_request and after_request
+signals.rst
+Documentation bug fix
+Modules and Lazy Loading
+Website
+Thoughts about the fabric docs
+Proper initial environ for flask's test_app()
+Ticket 126
+Provide a correct initial environment based on app's config
+Fix failing unit tests when using flask under Jython
+small change to tutorial 'folders' page
+issue in test_request_context method of Flask class
+HTTP method decorators
+Another small packages documentation change
+handful of minor doc touchups
+support classes in addition to functions for views
+Powered By Flask
+minor doc fix
+Add domain to module
+Small documentation change
+A default response body
+Added Blueslug to website
+JSONP
+`static` path has a problem in the module which doesn't have a subdomain.
+getting raw POST data for whatever mimetype
+[doc] uploaded file validation example
+`url_for("static", ...)` with `subdomain` problem
+Fabric deploy script `docs/patterns/fabric.rst` does not work (for me)
+Typing error in docs/patterns/fabric.rst
+`pydoc flask` [or vars(flask)] fails
+send_file in flask 0.6 issues
+Change the static folder
+Wrong import in Errorhandling
+Implement jinja's ModuleLoader
+Inconsistency in docs/testing.rst
+Section 3.8 Sessions - bug in example of escaping session value
+Response object mismatch
+Automagic OPTIONS: incorrect Allow results for routes with multiple handlers
+Application directory
+Bug when server handles registered urls?
+Flask.signalhandler decorator
+typo in HTML history docs
+Improve template documentation
+Automatic URL variable insertion
+Disabling code execution
+Metaprogramming
+Documentation of server configuration and middleware inclusion
+2 little bugs in jqueryexample.py
+Module.add_url_route and App.add_url_route not consistent  
+Update Docs to mention MAX_CONTENT_LENGTH
+Webapp installed into lib of virtualenv cannot find templates
+Support conditional GET for static files
+The after_request handlers should be called in reverse order
+Static URL rule not being added on GAE with static_dir handler
+Sessions and SERVER_NAME
+If SERVER_NAME is set the cookie does not set itself correctly
+remove circular dependency between flask.wrappers and flask.helpers
+Flask broken on 2.5 without simplejson
+Better autoescaping default configuration
+Document that exceptions are swallowed in non-debug Mode
+Explain UTF-8 Encoding
+Link to Flask-SQLAlchemy and Flask-WTF in the docs
+Add support for Nginx "X-Accel-Redirect" header to send_file
+Document request.endpoint and request.view_args
+Documentation has to explain Flask constructor better
+support unicode filename at download attachement by send_file in helper lib
+Flask Streaming Jsonify
+Url conflict assert
+Readme changed to markdown, improved
+test
+Missing apostophe.
+Popping application context after every request
+Flask g persisting across requests in test suite
+Flask app installed as egg raises builtins.NotADirectoryError for templates
+add automatic pep8 test in travis
+Fix static route when using host_matching = True
+url_for('static', _external=True) gives bogus url with app.url_map.host_matching = True
+Update uwsgi/nginx deployment documentation
+Attempted to improve readability of code examples.
+PDF and zipped HTML doc links are broken in Flask homepage
+request.files blocks indefinitely on iOS Safari file upload
+Help needed: 404 error on every page dynamic page of the application 
+Errors if server runs from in virtualenv.
+Flask Truck Factor
+Backslash doesn't work with string URL Converter
+Flask function decorator run at defintion time and call time?
+Formatted readme
+Support zero-ceremony sub-app mounting (including Blueprints)
+Quickstart > File Uploads > incorrect import: secure_filename
+Broken links on website
+Request.form data dict... Could we modify the structure?
+flask blueprint 
+Start recommending Python 3
+error correction json array serialization 
+Returned 200 for illegal request url
+Jinja2 template not found on Large app how to wiki
+Improve function with_metaclass()
+Moved open_session call from RequestContext.push to wsgi_app
+use blueprint specified template folder
+Support argument-less factory functions in CLI
+Revert "make external_url_handler example py3 compliant"
+make external_url_handler example py3 compliant
+fix UnboundLocalError in handle_url_build_error
+Fixed gevent introduction to use libev instead of libevent
+gevent has been updated to use libev instead of livevent, docs needs to be updated
+Added missing app.run line in jqueryexample.py
+Missing "app.run" in source code of example "AJAX with jQuery"
+Application/request stack corruption if unhandled exception is raised in session interface
+Update docs at http://flask.pocoo.org/docs/0.10/patterns/fileuploads/
+TypeError: unbound method __init__() must be called with AssertionError instance as first argument (got FormDataRoutingRedirect instance instead)
+Flask + eventlet slow response time
+error in user_timeline
+Relative import doesn't work in debug mode
+Merge pull request #1 from mitsuhiko/master
+Better docs for app context and it's solutions
+fixed some punctuation, fixed a few errors, in service of readability
+added comma for readability in first sentence of WTForms
+Any plans for new versions? Maybe 1.0?
+sourcecode from "AJAX with jQuery" not working?
+cross domain
+turn on autoescape for flask.templating.render_template_string
+Update docs/quickstart.rst to be consistent with official website
+Does the 'docs/quickstart.rst:A Minimal Application' missed something?
+No more than 5XX Requests/Second possible
+TaggedJSONSerializer loads(dumps(..)) breaks on certain values
+Remove the deprecated Flask.modules property
+Add pop and setdefault to AppCtxGlobals
+where is SESSION_REFRESH_EACH_REQUEST?
+Blueprint url_prefix isn't additive with register_blueprint url_prefix
+flash(...) won't work!
+JSON Encoding in Python 3
+Question:  reload process too slow
+How to detect ssl(schema) protocol correctly with request.url_root?
+Don't pass version to tox explicitly
+Update advanced_foreword.rst
+Tutorial    Step 5: The View Functions
+Fix project name in CONTRIBUTING.rst
+blueprint 404 error handler not honored with url_prefix
+Feedback Links - 404 Error
+Update title of docstring in flask.cli
+Done
+Handling HTTP 405 on the blueprint level
+Remove mention of abandoned project Flask-Uploads from docs
+Any new release ?
+Remove the word `trivially` here
+Get “insert_id” for one to one relationship in Flask, SqlAlchemy
+Add kwarg to disable auto OPTIONS on add_url_rule
+If you aren't using classes for `view_func`s, you can't tell Flask not to serve OPTIONS
+Update celery.rst
+DRY globals definition
+Consider adding documentation about script-name-stripping middleware to CGI deployment documentation
+Deprecate flask.ext
+Show original autodoc signatures
+Code fix for issue #1481
+pkgutil.get_loader now throws errors on Python3.4
+Handle empty deque on errorhandler lookup.
+Implement config.from_envjson (with testing)
+Flask keep-alive
+Remove Blueprint.view_functions
+Change documentation entries
+Minor flask/json.py documentation change
+Add flask laptop decals sale link to the website
+Flask server stops responding to new HTTP connections
+Add a method to register multiple blueprints at once.
+Adding after_server_run
+Add self.options so options can be retrived from within the blueprint
+New Converters: bool, long etc.?
+GET params discarded by flask test client, when using full url
+Optional Jinja2
+Support other JSON media types in `Request.get_json`
+0.10 Documentation - Unit Testing - Error
+jsonify response mime type
+pocoo docs out of sync
+added a note to the api documentation about JSON_SORT_KEYS. Fixes #922
+Remove the extra "1"
+Add `get_namespace` method on `Config` object for convenient access of namespaced config options
+Add support for using jinja2's PackageLoader
+Added helper method redirect_url_for
+allow auto excaping of .jinja files
+Empty response when serving files with WSGI, if app.debug is True
+Update appcontext.rst
+Validated HTML
+flaskr Stored XSS [FIX]
+Fix #941 -- allow errorhandlers for HTTPException
+Allow developer to override X-Sendfile header when USE_X_SENDFILE is in use
+flaskr.py in Flaskr Tutorial, LINE 23
+Flaskr should mention Heroku does not support sqlite3
+Update fileuploads.rst
+Release as universal python wheel (2/3 compat)
+Use json method of requests.Response
+Use json method
+Default JSON encoder handles datetime.date objects.
+Added a favicon for the docs 
+Updated greenlet links, which were dead.
+Registering a handler for HTTPException has no effect
+fix @before_first_request rasing exception
+Default HTML errors don't tell their encoding and aren't HTML5
+Enable tuple responses with headers without status
+Can not register a 500 error handler for blueprint
+Fix typo in helpers.py
+Fixed incorrect grammar in Config.rst
+Include favicon in the documentation
+Overriding blueprint template does not take effect until restart
+Anyway to reload only one app in DispatcherMiddleware
+Update celery.rst
+fix a etags bug when sending a file stream with a name
+Added SESSION_COOKIE_PERMANENT configuration to control permanent session
+Load config from JSON file
+Read config from JSON file
+Number of opened sockets grow unlimited 
+Message Flashing's implementation is broken and should be removed anyway
+Update sqlite3.rst
+Documentation stylesheet unclear link differentiation
+Template filter: tojson and sort_keys
+Fix relative send_from_directory for package apps
+Python3 compatibility: test_client response not UTF-8
+List Flask-WebTest in the extensions registry
+Sessions on heroku
+TypeError in CSRF Token Checking Under Python 3
+0.3 maintenance
+Update celery.rst
+Convincing manager with large high traffic sites using Flask. Any tips?
+Print of several 'Running on' ...
+Address already in use at Threads
+JSONEncoder cast Decimal to string
+exception logging: issue #678
+Changed the wording of some sentences there were difficult to understand...
+Flask needs a way to announce new versions
+Unicode error when serving static file with unicode characters
+Update github location for Flask-Heroku
+Allow subdomains to work with no SERVER_NAME
+POST request from Dropzone.js failing in Flask
+How to generate a SecureCookie in latest version?
+The flask application always hang.
+accessing config settings from other files
+If an URL path element contains %2F (an escaped "/")  Flask.route considers it as an unescaped slash.
+fix typo(there-> their)
+g request context is not per request?
+URL Reversing in Quickstart Doc #779
+Routes for class-based views can't be overloaded when using View.as_view()
+Fix typo in docs for error_handler_spec
+fix typo.
+Added configuration from a dictionary
+Too many files open when instantiating the app thousands times
+Don't refer to flaskext in app.extensions docs
+Documentation fix: Makes the error names consistent
+Escaped 'text' keyword in column name.
+Added link to Flask Examples on Runnable.com
+cannot call methods decorated with setupmethod from before_first_request handlers
+Updated some typos
+Update url_for documentation for Flask.url_build_error_handlers
+Update appfactories.rst, make extension related section clearer
+Update appfactories.rst, remove SQLAlchemy related information
+app.test_request_context() is affected by except blocks that happen before it
+Config - Custom variables must be all uppercase
+fix issue #879 and add a test for it
+before_app_first_request strange behaviour
+quickstart: import `request` in HTTP methods example
+Fix a typo on blueprints module name.
+Add TEMPLATES_AUTO_RELOAD config key
+Minor improvements to documentation.
+fix typo (jsonfiy -> jsonify)
+tests fails in sample apps on python 3.3
+Fix typo
+Set up automatic cronjob for updating flask.pocoo.org from repositories
+docs: add Hasura as hosted deployment option
+Can't install flask on windows 10 
+TypeError when serving static files (304 NOT MODIFIED)
+Override env var when using python-dotenv 
+Flask app can't debug within jpype
+Add Support for FLASK_ENV
+Flask Multi-Server Development Hooks
+Fixed Typo
+`flask.g` not reset when using  `test_client()` inside app context
+set session.new attribute
+Docs: Update CLI for factory pattern
+session.new is never true
+teardown_request not executing on first request in debug/uwsgi (works without debug)
+app.run(debug=True) and @app.template_filter() Bug
+Updated cli.rst with a minimal mention of --host and --port options.
+Add conftest to flaskr
+Better appveyor config
+add appveyor configuration
+cli.rst: added flask run cli options help
+Fix sentry raven install docs
+remove tests and docs for python 2.6 and 3.3
+fix non-passing tests for logging on pytest >= 3.3.0
+Docs: Add missing backslash
+Docs: Fixed typo
+fix typo
+Some of tests fail on running pytest
+"Request.is_xhr deprecated" warning during jsonify()
+Fix docs, how to get db connection in pattern
+Document which servers support wsgi.input_terminated
+send_from_directory() and send_file() fails on Windows
+Treat errno.ENOTDIR like errno.EISDIR when silently absorbing IOErrors in config.from_pyfile (from_json, etc.)
+typos in docs/patterns/distribute page
+SyntaxError: Non-UTF-8 code starting with '\x90' in file flask.exe
+Documentation fix - quickstart "HTTP Methods" code example
+update pycharm instructions
+Rename GitHub templates to Markdown.
+ImportError: cannot import name BooleanFiled
+It works well
+Update docs/tutorial packaging.rst
+Docs: update built-in server description
+Update PyCharm instructions
+export FLASK_APP=run.py doesn't recompile .pyc files (BUG)
+0.12.2: two test failures
+Improved bad factory error handling
+Enable threads by default for the dev server
+Adding more examples
+Fix ValueError for some invalid Range requests
+Invalid range with send_file() and xsendfile causes ValueError
+Docs: update Twisted Web example
+Docs for change default logging format / Log would print twice after add a stream handler
+Missing import statement in "Uploading Files" doc section
+doc: add a pattern doc for Dramatiq
+Flask.create_url_adapter should use SCRIPT_NAME, not APPLICATION_NAME
+Don't create View instances for each request
+docs: testing: expose init_db function on module
+A strange error when a “/a/b/c” route render to a template
+Exception while opening session causes auto_pop not to be executed on the context
+Minor bug in examples/flaskr/README
+Minor fix in flaskr example README
+Unable to generate the PDF version of the documentation
+Rewrite tutorial and example
+Idea: `flask run`-like command for production
+No documentation for how to test CLI commands
+Improve README for flaskr example
+Fixed typo in docs
+Provide a "media" route
+Percent encoded forward slash is stil treated as a URL component delimiter
+add option to use None config for later evaluation
+Flask server not running on Arch Linux
+Remove IRC notifications from Travis CI
+WAV files cannot play in Safari
+Fix typo in cli.py
+Add CODE OF CONDUCT
+Improvements in the final sections of appfactories.rst
+doron-test - ignore please
+Flask uploaded files successfully and the database changed but can't find the uploaded file in in the server
+Support "immutable" Cache-Control extension
+Unable to execute Flask.
+Support for Config(None) initialization
+The FlaskClient.open(test_client) parameter could be explict
+Fix misleading documentation
+Fix typo in logging.rst
+Fixed grammar/typos
+Rewrite CLI errors and docs
+pickle and cPickle can't find class from import
+ "flask_wtf.Form" has been renamed to "FlaskForm" and will be removed in 1.0.
+RE: Errors and BeagleBone Black/Flask and Python
+Drop unsupported Python 2.6 and 3.3
+running flask with debug mode throws an error
+Allow users to customize the behavior of flask.abort
+AttributeError: 'module' object has no attribute 'app'
+TypeError: Decimal('1.600') is not JSON serializable
+stop travis irc notifications from forks
+Flask complete demo app
+Flask crashes on startup
+Adding elements to a dictionary global to an app
+Add a concept of application teardown
+Fix Travis CI argparse import error on Python 2.6
+Fix typo in comment
+flask thread is always running, can't stop
+blueprint in a blueprint
+Serial port access problem in DEBUG mode.
+Fix inconsistency in testing doc.
+[Feature proposal] Add instance folders to the template searchpath
+myissues
+[Tutorial] Clarify where to run "flask run" command
+Examples page
+Tutorial: Project Layout - clarify flask run
+AJAX with jQuery: Adding conjunction where for clarification
+Use https for external links wherever possible
+1.0 maintenance
+Documentation: Explicitly stating where to run `flask run` command for Tutorial
+Docs: Fix deferredcallbacks.rst
+Template not update
+Docs: replace MongoKit by MongoEngine on docs
+Fix #2961：ignore colon followed by slash when split app_import_path
+Cache return values to avoid repeated function calls.
+Flask doens't run when APP is specified with full path
+Deep copy of request in copy_current_request_context function?
+Tutorial coverage section needs update
+Bug in the Tutorial Testing - Resolved
+Fix #2943: Allow bytesio partial content
+saving session raises an exception from itsdangerous
+add 3 dot
+Pin versions to avoid major updates of dependencies
+Fix #2952: Pin itsdangerous to below v1
+New itsdangerous version invalidates cookie based sessions
+Serial port give access denied when running flask in debug
+Questions: why do we need if __name__ == '__main__'?
+Documentation "Testing Flask Applications" should show client teardown
+@app.errorhandler scope too wide
+Review Flask-MailboxValidator extension for listing
+the app start run error
+Query hive from flask
+Docs: add warning about custom commands with Click v7.x turning underscores to dashes
+Trouble with function send_file and range
+Allow positional arguments to @login_required decorator in tutorial
+Testing API with 1.0.2: <Response streamed [404 NOT FOUND]>
+Fixed typo in app.py
+Fix #2937: Ensure the consistency in load_dotenv's return type
+flask redirect failed
+load_dotenv returns true even if no file exists
+Fix #2935: Copy current session object in copy_current_request_context
+copy_current_request_context copies old session object
+Fix issue #2933: Make sure the attachment filename is text type.
+flask.send_file can't handle some attachment_filename with unicode characters
+unable to import module InUniKeeper
+Click==7.0 incompatibles with Flask 1.0.2
+Tutorial: Stop swallowing all OSErrors when creating the instance folder
+experimental readthedocs build
+Fix #2926 `Default port overrides requesting a system assigned port`
+'301' is not a recognized HTTP error code
+Default port overrides requesting a system assigned port
+Very repeatable timeout issue
+Broken link in deployment docs
+Timestamps fillup documentation shown by `pydoc3 flask`
+Add default returns for Request wrapper class properties
+Fix issue #2900: not use app_context context manager while accessing configuration
+Docs: fix some typos in config.rst
+Docs: fix some errors in errorhandling.rst
+Make script output into comments to not break syntax highlighting
+fix @click.command example by adding parens
+Reduce unnecessary function calls.
+Install CONTRIBUTING.rst with MANIFEST.in
+Update Sphinx conf for recent theme changes
+Flaskr tutorial: auth.py raise a type error: tuple indices must be integers not str
+fix issue: no theme named 'flask' found
+Double slashed urls are routed erroneously 
+[Tutorial] Pytest don't find flaskr package
+Remove MongoKit page from "Patterns for Flask" docs section
+Flask `test_client` could not find endpoints registred from namesapces
+Mocking functions contained in blueprints
+add badges to README
+when flask request code use multiprocessing, request maybe deadlock.
+Infinite load
+Pip inclusion of simplejson mysteriously breaks custom json encoder
+avoid creating a new app context when using json argument in test client
+EXPORT FLASK_APP dont load config in app
+Fix #2897 - Add `extra_files` option to `flask run` CLI
+Define reloader extra_files in `flask run` CLI 
+Spyder not showing output 
+To much logic in view url generation
+Chained exceptions should be logged properly
+Environment variables in .env file not refreshing after re-running application
+doc reqcontext fix teardown example
+request.get_json(force=True) not working as expected
+Broken RTD builds/links
+Improve the recommended way to use Celery
+No post information from firefox form
+Subdomains with dynamic domains
+ImportError: cannot import name '_overlapped'
+Proposal: Rename `endpoint` to `routename`
+app.logger can't work
+jinja2 compiled templates not working
+RuntimeError: can't start new thread, Exception happened during processing of request from
+Sorry for writing here, i'm, really ashamed :(
+Document clearly why the flask executable is recommended over app.run()
+https://flask.pocoo.org responds 400
+`flask.helpers.get_root_path` returns unexpected path
+Add prefix for all commands in documentation
+static css media print doesn't work
+Flask caching allowing unauthenticated users to see files that should be protected
+Add hyperlink of contributing-testsuite in CONTRIBUTING
+fix typo in request context docs
+when I used flask to get POST request, it ouccured "20" Exception
+Is it a viable option to use flask with Gunicorn GEVENT
+Added escape
+jinja2.exceptions.TemplateNotFound:
+update docs for new theme
+reword extension python version item
+Remove old things from docs
+from werkzeug.wsgi import DispatcherMiddleware
+it's a answer to deploy the flaskr demo project with uWSGI and nginx, if therer's a error: unable to load app 0 (mountpoint='') (callable not found or import error)
+how to deploy this demo project with uWSGI+nginx in local environment?
+how to deploy this demo project with uWSGI+nginx in local environment?
+get_cookie_name in SessionInterface for easier overriding in SecureCookieSessionInterface
+get_cookie_name in SessionInterface for easier overriding in SecureCookieSessionInterface
+Automatic 308 Redirection does not maintain schema 
+Flask+tensorflow Error: The Session graph is empty.  Add operations to the graph before calling run().
+send_file method is not sending an updated file
+flask does not serve dict as mimetype application/json
+Features Request: Remove Python 2 support and add Async
+request.form is empty
+Custom command for CLI does not raise import exceptions
+Add feature flask.cli.with_testrequestcontext,
+Flask generates loggers that may collide with package name hierarchy
+Flask.send_file incorrectly sends blank files
+Accidental occurrence of environ[“REQUEST_METHOD”] key error on my production server, with flask+uwsgi service mode
+outdated link to snippets
+Add FLASK_ENV_PATH specify dotenv to load file
+DOCs: escape import needed to follow quickstart tutorial.
+Pandas with flask spins multiple subprocesses 
+@app.after_request not running when send_directory 304's
+Filename altered after upload
+Documentation for older versions of Flask is missing
+Update testing.rst
+Flask marshall_with many bug after change to version 1.1
+register & un-register blueprints
+Update logging.rst
+Route Decorator redirects improperly
+Fix the contibution docs
+fix typo: base on -> based on
+Using getlist for files is never empty?
+ssl_context doesn't work after deploy to apache https
+json.dumps throws TypeError 
+Does flask plan to support asyncio?
+Add deploying on Render link
+add a note about named params for execute()
+Fix typo in pop documentation
+Mypy and ProxyFix
+Simple 'if' use a single statement as func `templates_auto_reload` does
+Add tip for startup of development server
+docs: Change max content length value to megabyte
+Python debugger can't find module error 
+test_client.set_cookie does not seem to work
+Running flask crashes Python on macOS 10.15
+fixed typo in logging docstring
+`flask run` in debug mode fails with `No module named C:\programs\Python37\Scripts\flask`
+Flash messages not showing when route is called by ajax
+Upload Image with Flask backend and SwaggerUI for API
+cli: optionally silence flask startup messages when using werkzeug
+Post No response  
+POST NO RESPONSE
+Fix github link generator for docs
+Version tag mismatch in link to example projects from docs
+Flask request.stream doesn't work as expected all times
+Provide secure default hash function for SecureCookieSessionInterface digest_method
+Fix typo in urlprocessors.rst
+Dynamic Subdomain Value Unfilled
+clean up outdated code
+clean up outdated code
+Cant Run a flask server with FLASK_ENV=development or production
+documentation - patterns - larger applications - add link to explain why "Python does not want modules in packages to be the startup file"
+RequestContext documentation
+Change Flask request context to bypass a bug at redirection when referrer is too long. 
+Add a minimal Flask application
+ Add version '3.7' and a comma in "Running the test" of contributing guide.
+`flask run` not using ENV variable set in code.
+copy_current_request_context creates new global app context
+Update outdated extension doc
+Flask documentation links to a page 'Extension Registry' which redirects to the generic Flask website
+DeprecationWarning: Using or importing the ABCs from 'collections' - Jinja2
+ Window system how to deploy flask
+Gunicorn does not support the window system, what can be used in the window system instead of the gunicorn deployment
+Warning on old documentation / SEO
+pass sys.argv to flask cli
+Documentation: Use Python 3.5+
+fixed example code in "uploading files" documentation
+pycharm  No module named flask.flask    flask 1.1.0 
+Custom response class (force_type static method) doesn't work
+If arguments are re-written before flask is loaded it sees the original arguments on windows python 2.7
+restore and deprecate json_available
+Custom Response force_type is now never called
+Comment out helpful tips in ISSUE_TEMPLATE so they're visible only when editing
+Allow accessing CLI command name from Flask CLI app factory
+Removing json_available reduces backward compatibility
+Multi-level error handling support broken in ver: 1.1.0
+Added table of contents to README.rst
+Move dotenv warning to stderr
+show warning for old logger config
+'cli' is not found in my library 
+Remove link to dotCloud on deployment options
+Add Zappa To Flask Deploy Guides
+Call out that teardown functions must never raise
+Remove extmigrate from Flask repo
+Remove ext migration tool from source, link to separate package
+Change to Pallets project
+Raise BadRequest if static file name is invalid
+helpers.py - Ensure file is closed if flask opens it
+static_file endpoint doesn't love null byte
+Run bdist_wheel as a part of release process
+update get-pip.py location
+Fixed typo
+Is there a way to design blueprints to incorporate DELETE?
+Want to change the default server address for flask application 
+Replace ';' to ','
+Fixed minor typo error
+Add two missing converters for flask in the docs
+what mean
+updated readme to markdown to increase readability
+Fix minor typo in security doc
+JSONEncoder and aware datetimes
+Update deprecated references
+Fixed stream_with_context not working when decorated function takes parameters
+I want to clear the session when I close the program. What shoud I do?
+pep8 fixes
+auto_find_instance_path() gives inconsistent results
+Use pytest.raises() instead of try/catch with assert 0
+make hostname configurable
+Fix for #1740
+Not able to set encoding in open_resource
+Add encoding type parameter to fix 'UnicodeDecodeError: cp949'
+Updated year 2015 to 2016
+thwart giving error 
+Documentation download links for PDF and zipped HTML return 404s on http://flask.pocoo.org/
+404 on Docs download url
+You may want to include this example base Docker image with uWSGI and Nginx in the docs
+Update MANIFEST.in with simpler template commands
+Registering blueprint couldn't catch hyphen in url_prefix
+jsonify does not accept strings
+make safe_join behave like os.path.join with *args
+Add IPython support to flask shell
+Add JSONIFY_MIMETYPE configuration variable
+Documentation PDF version is not available
+Duplicate key in jsonify
+Run Flask in Thread, user the main thread for own logic?
+0.3 maintenance
+DOC: Remove gendered language
+Purpose readme contribution
+Fix a typo
+Non developer readme contribution
+Flask will prevents media downloads while playing -- 
+Broken document links.
+nginx upstream check, but the access log is wrong.
+Fix typo
+Add missing return to g.setdefault
+Lack of documentation on how to serve Flask under a non-root path
+Documentation on Localtunnel link is invalid
+Wsgi failure
+terminate running port by application in case of exit process
+Allow specifying blueprint-local JSON encoder 
+Test Custom flask cli commands
+I want to know is there a way to share data between multiple request in one application at server side?
+TypeError: 'list' object is not callable
+Separate Config to its own package
+Reload is not active for all my running Flask instances in debug mode
+Remove old version added and changed tags
+Cleanup jsonify() function
+Fix PEP8 issues and enforce PEP8 via pytest-pep8 (i.e. also during CI)
+Is it needed to add a decorator like Flask.on_app_start ?
+TypeError: object.__new__(Markup) is not safe, use unicode.__new__() in specific cases
+Traceback returns KeyError: WERKZEUG
+Use indexation instead of slicing for getting the first element.
+Unicode with request.path & url_for('auth.index')
+Remove copyright year
+Built-in support for reverse proxying on a sub folder
+Flask.teardown_request always passes an exception on the first request
+Flask resumes upload on restart
+feedback.flask.pocoo.org 404 page
+get_send_file_max_age doesn't work in blueprint
+Make it easier to get a response body string in python3
+Some searches involving “flash” on the Flask website throws a 500 error
+Remove 'flask' from etags to obscure server technologies
+WERKZEUG_DEBUG_PIN
+400
+HTML checker complains about template
+Clarified the docstring in method Flask.preprocess_request.
+No output from hello world
+Using SSL with Flask and eventlet
+AttributeError: module 'http.client' has no attribute 'get'
+Flask isn't doctestable
+Werkzeug should not block propagated exceptions from Flask
+Refactored method preprocess_request in Flask.
+Download documentation as PDF link is broken
+Refactored method Flask.make_response to improve readability
+Happy New Year 2016
+When using an external debugger, exceptions are not properly propagated
+Update 2016 in LICENSE
+Happy New Year 2016
+Add support for serializing top-level arrays to JSON
+Removed extra blank line to fix ReST formatted documentation string in w...
+No single entry point for logging documentation.
+Update docs/quickstart.rst
+Option for jsonify handles dates by converting to isoformat
+Changed state of Flask-Bcrypt extension
+Remove triple-quotes from print statement in setup.py
+use sys.getfilesystemencoding() to join paths if needed
+Install docs: pip vs. easy_install consistency
+Add flask.raw_context().
+Problem with file uploading
+Problem with file uploading
+Fixed weird string quoting in setup.py
+Update docs/patterns/packages.rst
+Add hooks for to override url_for behavior.
+Remove an unused iteration variable.
+not clear how to set charset for static json
+fix blohg and pidsim-web urls in powered-by list.
+"Example code leaked" on all but Python 2.7
+Add app.add_template_filter(…, safe=True)
+Tests require simplejson on 2.5, have tox install it
+Recent Werkzeug required?
+No get_send_file_options on blueprints, test fail on master
+Added content length to xsendfile
+Debug example with run_simple and flask app.
+Update docs/patterns/mongokit.rst
+Add Flask-Shelve to the registry
+FR: A way to pass parameters to werkzeug's DebuggedApplication
+Correct and clarify error handling documentation.
+docfix: wrong converter name: unicode -> string  fixes #364
+Reword the docs for writing a flask extension
+Add new exceptions module, to implement JSONHttpException and JSONBadRequest.
+Improve foreword
+Review and tweak docs on pull request #384
+Specifying Python version metadata in setup
+Doc grammar fix from pycon sprints.
+sessions documentation (client side vs server side)
+Introduced a method to adjust static file cache-control headers based on filename
+Review flask-mongokit
+Remove dead poweredby links
+Fix issue 140
+pdf version of docs has strange characters
+docfix: "...to ensure beautiful and unique also unique..." -> "...to ensure beautiful and unique..."
+add heroku/deploy options to quickstart, and add clearer links in tutorial setup
+better docs on message flashing and error handling in quickstart
+Partial content support
+Allow entire blueprints to have lazy-loaded views despite using route decorators
+On JSON requests, the JSON response should have Content-Type: application/json
+Allow specifying request_class on a per-blueprint basis
+pip/virtualenv flaskext import error
+Add radio-exodus.de to the projects list
+request.mimetype always empty
+Fix the Github "watch" button for 4-digit watchers number.
+Fixed assumption made on session implementations
+Add Flask-fillin extension
+Test and fix for issue #414
+"silent" keyword argument only partially implemented by Config.from_envvar
+Blueprint example app
+Add jsonify_status_code function which allows the user to set status code on JSONified response
+Remove redundant words from quickstart.
+Preserve request context in the face of new requests
+render_template using a list of templates
+Update docs/errorhandling.rst
+flask does not run in bjoern server
+Update docs/patterns/wtforms.rst
+Favicon request pops request context in debugger
+Convert the Blueprint doc example into a runnable example.
+Blueprints Example Broken in Docs
+Better error/debugging page
+Run example application tests in Flask test runner.
+code errors at http://flask.pocoo.org/docs/testing/#testing
+Collab me!
+21st Century Install Instructions
+Add a "ignore_mimetype" parameter to request.json
+Flask-Debugtoolbar changed owners
+Flask-Debugtoolbar changed owners
+Document context processors' variable functions
+line continuation
+Hyphenate "class-based"
+Review Flask-Cake extension
+Added PATCH method to the list of HTTP method functions for MethodView
+send_from_directory() filename
+Flask documentation in ePub/Mobi format as well
+documentation: minor stylistic adjustments
+Gunicorn and debugging
+API change proposal : inconsistency for getting parameters in a request
+JSONP inside of jsonify with tests
+Add option for disabling "first request decorator" (setupmethod) decorator
+Set TRAP_BAD_REQUEST_ERRORS to True as the default when debugging is enabled
+Consider debug=True in test client.
+Cannot run flask on app engine
+Update docs/api.rst a bit to reflect code.
+jsonify should set the charset
+little documentation error
+Blueprints overwrite their templates_folder
+typo fix
+error in view.rst 
+Review Flask-PyMongo for approval
+Document Creole syntax for snippets comments
+Quickstart: Unique URLs / Redirection Behaviour
+Quickstart: Variable Rules Section
+Allow wsgi files to specify the application instance in FLASK_APP
+Multiple Blueprints mounted at same url_prefix (keyword argument to app#register_blueprint)
+teardown_request can't remove session's attribute
+Add nested blueprints
+HTML output is missing the last few lines.
+TypeError: 'ScriptInfo' object is not iterable
+import error when running flask via apache
+Add tip for dotenv
+keep-alive by default
+Backport #2359 fix for import warning when using reloader
+Fix the bug of cache function in `get_json` method.
+Option to change blueprints' templates precedence
+Set separate Session Interface for blueprint
+Add tips for 413 connection reset issue
+`flask run` provides no way to have a port configured by default
+blueprint_register with two different controller with subdomain but url_for use first problem
+Flask test_client retaining lock on files, preventing os.remove() on Windows
+Why flask do not have a cookie object as request object?
+Reloader different behavior Windows vs Linux 
+Documentation is wrong at https://www.palletsprojects.com/p/flask/
+CSRF session Token is missing(400 Bad Request)
+Use of multiprocessing in before_first_request causes first request to hang, subsequent requests succeed, only under uwsgi, not standalone
+Support for multipart/mixed Content-Type?
+Add documentation link in README
+get_json's silent option cache None and causes weird side-effect
+Docs: Add example for 'any' route converter
+error in init_db()
+Change PROPAGATE_EXCEPTIONS config default value to False
+remove old extension docs
+don't use Flask(__name__) in conftest
+Flask.test_client() methods should support files argument
+Broken link to flaskext_compat.py in all versions of the docs
+Url path params <int: matches only unsigned int
+Can not download Flask.pdf
+Refactor test codes to PEP8 recommendation
+Error: request.args.to_dict
+flask.pocoo.org points to jinja2 docs
+How to trigger a REST API based on a condition in Flask?
+rewrite quickstart Unique URLs section
+add test_cli_runner for testing app.cli commands
+Require opt-in for subdomain matching
+url_for fails to use route parameters for non-POST routes during POST requests
+Fix the README to reflect locate_app() in flask/cli.py
+Unique URLs and relative URLs
+Reloader drops datas after tables creation
+Fix docs for test_request_context
+prevent double slash /a//b when blueprint prefix ends with slash
+Add nl2br filter
+Docs are inconsistent on what test_request_context() returns
+Official Guide on how to structure Flask application
+Flask run gives misleading error message on actual import error
+update metadata
+Remove tojson filter
+bump dependency versions
+Can't capture custom validator Exception
+Add 'python3 -m venv' information to the mod_wsgi docs
+[update] license year
+Document "routes" command
+Issue with sending large-ish CSV files to Flask
+A setup function was called after the first request was handled
+Flask does not terminate on CTRL+C
+2613 avoid code repetition
+Dont repeat `len(mapping)` in flask/config.py
+No TLS listener with flask run
+document testing cli commands
+add note about syntax errors in custom scripts
+allow nightly to fail on travis
+2604 flask shell tab completion
+Added support for cookie SameSite attribute
+add HTTPS support for flask run command
+FLASK_APP factory export doesn't work when invoked with parentheses and quotations but works otherwise
+Flask shell: Give readline a completer that is aware of shell context
+Update cli help for FLASK_ENV
+Server Side Template Injection?
+Internal error when requesting route with url-part == defaults
+add models 
+Usage of deprecated function `Request.is_xhr` in flask.jsonify
+Unclear documentation on 'Request' object
+pdf link broken (flask 0.12)
+Fix for docs issue #2595
+Documentation typo in /patterns/fileuploads.rst
+add ssl_context option to `flask run`
+clean up FLASK_ENV docs
+reset standard os env after each test
+match run command behavior in app.run
+`app.run` does not match behavior of `flask run`
+Tests fail when FLASK_DEBUG is set
+Remove the imported app module from sys.modules on SyntaxError
+Document SameSite cookie and add session support
+Bump dependency versions
+Generic HTTPException error handler is not called due to logic error in _find_error_handler
+Only turn on the reloader on FLASK_ENV development independently of debug mode
+Remove python 2.6 and 3.3 everywhere.
+cleanup werkzeug import
+silence ENOTDIR when loading config file
+improve documentation for session attributes
+implement session.new for the default session
+How to set up the flask listen backlog？
+Use string concat in jsonify
+Body of 412 responses not sent
+Initialization error under Attest
+helpers.py docstring error
+docstring typo
+flask.views.MethodView returns the response body for HEAD
+List Flask-WeasyPrint in the extension registry.
+Updated docs URL for Flask-Admin
+Fix for lighttpd regex
+Small improvement to docs
+A problem when use `app.config.from_object()`
+404 error
+Fixing some wording in the design documentation.
+Showing how to use Flask in a virtualenv in CGI
+Unable to render a template without request context
+Get raw data from POST request
+Subdomains in blueprints don't work
+Endpoints can clash for views defined in modules
+Cannot route non-ascii URLs
+Reraising an HTTP exception from an error handler isn't the same as not trapping.
+USE_RELOADER does not seem to work nor is documented
+Added Windows documentation for mod_wsgi usage
+DEBUG reloader is too agressive
+Remove the unused `ScriptNameStripper.to_strip` in the FastCGI doc example
+How to get value of the nested dictionary using ImmutableMultiDict?
+Flask automatic stop working sometimes
+a doubtful bug fix
+I just write a extension for use url_for in javascript
+Website
+Patch 1
+Clarify Cache Documentation
+Fix typo in tutorial
+Changed tutorial to be more explicit
+Update entry in extension list about flask-testing
+Fixed codename
+CHANGES: July 1th should be July 1st
+Add `JSON_ASCII` option to remove unneeded decoding on client side
+one typo, one wrong word (please review)
+Website
+Mention Extensions in the Docs more
+Fixes #519 by adding return statement
+Fix documention for `after_this_request`
+Indentation error in ScriptNameStripper in Configuring Apache section
+is_resource_modified return False if etag match while last-modified < mtime
+cache_timeout should be always checked not Null
+flask in virtualenv: "No module named inspect"
+Added link to extensions in "Hook. Extend." section.
+unused argument in scripts/flaskext_compat.py
+Add flask/ext directory to sys.path when it isn't there already.
+Docs: Improvements in docs/deploying/CGI.rst
+flask-login does not work when using static_url_path
+Remove dead link to "Try Flask"
+Quickstart  login example has unclear comment.
+Minor refactoring
+Emended extensiondev.rst
+Login example broke the flow
+Travis
+Fix failing test: "AssertionError: 'application/javascript' != 'application/json'" in flask/testsuite/helpers.py", line 88
+FAIL: test_jsonify
+Review Flask-WhooshAlchemy
+Review Flask-WhooshAlchemy extension
+Can jsonify return array?
+Changed docstring according to docs.
+Context not available when combining decorators and generators
+Flask-Login source link incorrect
+Removed link to non existing page in "powered by" section
+Cleaned "powered by" section a little.
+Fixes issue 376.
+Allow blueprint-local routing for errorhandlers
+Fixes issue #495.
+safe_join with '..'
+flaskr, minitwit css style not rendering in firefox 11 
+Fixes issue #491
+Fixed typo in docs/quickstart
+fix for https://github.com/mitsuhiko/flask/issues/494
+Removed link to ep.io
+padded attribute on jsonify not functioning as expected
+Flask.inject_url_defaults() incorrectly splits Blueprint's name
+Rectified rampant 'roule'.
+Website
+host_matching is in Werkzeug since 0.7 but not in Flask
+Minor Doc Fix: highlight local weserver only HTTP/1.0
+few typos
+Add a note about coverage in README
+loader.is_package is a optional method
+Minor docs fix.
+Review Flask-Restless for approval.
+Revise updated foreword (rduplain).
+Fix spelling.
+Evaluate readthedocs.org for Flask.
+Add a FORCE_URL_SCHEME option
+:inherited-members: does not work for attributes
+Removed unneeded print statements form mongokit pattern doc
+return jsonify(d), 201 breaks the 'application/json' mimetype
+something missing in patterns/mongokit.rst
+Website
+adds test to check flashed messages based on external session
+add test to testsuite/helpers.py
+Add Flask-Restless to extensions
+Add test for flashed messages using sessions on external storage.
+Fix #220: Adds a default JSONEncoder implementation to Flask.json_encoder_class
+Website
+multiple Set-Cookie fold in one line HTTP Header
+The default static folder is being ignored if the number of params to the route are 3
+about jinja2 dynamic extends
+CORS requests hanging on Chrome
+Flask, mod_wsgi, and Apache: ImportError mysql 
+Sending POST requests with input data exceeding 10KB results in 400 Bad Request under WSGI
+Error accessing static components in subfolder
+Added .env support
+Add support for custom console-scripts
+GAE not displaying error messages for 0.12
+KeyError problem 
+Python - Headers not decoded properly
+CSS and JS TTFB take too long in flask 0.11.1 and 0.12
+flask run not work
+Merge pull request #1 from pallets/master
+AssertionError with webtest when returning 204
+Disable debug when FLASK_DEBUG=False
+Update docs that request is an object, not a class
+add travis badge to readme
+use SERVER_NAME to set host and port in app.run()
+Fix Request Reference
+Connection refused for flask redis session
+Use SOURCE_DATE_EPOCH for copyright year to make build reproducible
+Added python3.6 support for tests
+add missing quotes for dict key in views.rst
+Added python 3.6
+AttributeError: 'module' object has no attribute 'TCPServer'
+Allow default Errorhandler for HTTPException
+Unable to infer MIME-type because no filename is available.
+Website still lists 0.11 as the latest release even though 0.12 is release
+Remove extra HTML tag from fileupload docs
+？？？
+Flask 0.12 incompatible with Google App Engine?
+Fix fastcgi lighttpd example documentation.
+How to sovle the error:KeyError: 'socketio'`
+Added missing html tag in wtforms docs
+Inherit Werkzeug docs
+Document change in Request.form behaviour with Werkzeug 0.9
+prevent NoAppException when ImportError occurs within imported module
+Flask documentation inconsistent with implementation for form parsing
+Add larger app ex
+Add a largeapp example under flask/examples
+How to setup this website?
+Socketserver problem in Python 3.6
+Why doesn't flask reload when I change my code? It should automatically reload my app
+Update Flask-SQLAlchemy link
+debugging PIN is not being displayed, no request info displayed
+code icon show other
+Fix config.from_pyfile on Python 3
+Make flaskr.py command line friendlier
+cant set session timeout, tried many permutations and asked in irc and stack. to no avail.
+Style the flask command consistently
+Update README for minitwit
+config.from_pyfile crashes on Python 3 when source isn't encoded in default encoding
+Added missing testing config
+Remove wrong comma
+Feature/ascii
+Template File will not download file (window.open command in HTML) when run from flask
+`flask run` not processing SERVER_NAME for port binding
+ImportError: No module named minitwit
+Add url_for_self() function to reference current endpoint
+Doubt in flask session.py save_session method
+app.run(host, port) and SERVER_NAME should correspond to where flask is actually running
+Using absolute path in FLASK_APP can't run `flask db init` cli module error
+API exception pattern docs do not mention PROPAGATE_EXCEPTIONS
+Invalid Host header returns HTTP/500 insetad of HTTP/400
+Warn when cookie domain is set to an IP
+Happy new year 2016
+fix unclosed p tag
+Validate Flaskr HTML
+Authenticating with NTLM
+Header issue with many body request (put, post, etc)
+Problems with unicode
+add rails style model
+Fix typo: star => start
+@app.teardown_appcontext fires before request finishes.
+added blank line before def
+added whitespace before key
+use dict instead of if/else logic
+Add routes command to flask cli
+small refactoring of  is_json function.
+remove redundant parameter
+Ignore cache on request.get_json(cache=False) call
+Add link to AWS EB Flask tutorial
+Do not use cache when `Request.get_json(cache=False)` is called.
+large file uploads eating up memory
+Fix rST rendering of env var
+Multiple filters in a single qurery
+Application did not run with `flask run` with FLASK_DEBUG=1(But can run by using command`python -m flask run`) in Win10
+Error handler support for generic HttpException
+Added a link to instructions for PythonAnywhere
+switch to packaged sphinx theme
+Flask doesn't require blinker
+Adding documentation on best practices for Server-sent events and WebSockets
+Mention existence of register_error_handler in errorpages.rst
+FIX py.test import error
+Fix LogRecord class reference
+Update errorhandling.rst for readability
+Parameterizing test
+Remove busy-work.
+flask issue
+Update docs on larger applications WRT tutorial
+fix little grammar detail in flaskr/db.py
+amend and edit
+Fix grammatical error
+update description for database.rst become more understandable
+📚 Improve docs about ScriptInfo
+Flask reloader problems in development mode using Docker
+Solve the redirect problem 
+request.full_path shouldn't contain a trailing ? if there was none in the URL
+DispatcherMiddleware with different loggers per app in flask 1.0
+How to change url before route?
+add option timeout for redirect
+UnsupportedOperation: not writable utils.py, line 259, in echo  file.write(message)
+fix #2824 output more versions related flask
+[docs] Fix broken Sphinx cross-references; use :doc: tags where necessary
+Use of dotenv causes flask cli to fail.
+update README.rst / "docs/tutorial/index.rst"
+Remove check against deprecated property is_xhr
+Jsonify always returns datetime objects as GMT timezone
+An end-to-end workflow: Token based authorization using Flask and rest API.
+use ipython when `flask shell`
+Update docs to be more clear about from config instantiation
+@property for configuration objects?
+Examples wiki?
+Update Copyright Date to 2018
+Fix grammatical error: incorrect verb conjugation
+Refactor __init__.py imports
+:art: Use `itervalues` instead of `iteritems` when `key` is not necessary
+http://127.0.0.1:5000/post/0 not working 
+The file name called ‘frozenAccount’  may be shielded
+Add `status` kwarg into jsonify()
+Update mod_wsgi.rst
+:art: Use set literal instead of set method in file uploading example
+:fire: Remove code supposed to be removed at v1.0
+Flask 1.0: global exception handler handles not found now?
+Add Dreamhost deploy doc
+Typo in docs
+Logging example fails outside request context
+Update docs - add command for listing rules.
+request points to wrong object in debugger when threading is enabled
+Fix pep8 no blank line issue
+Remove unnecessary period in documentation
+Documentation for testing need to be updated
+Add `JSON_STRICT` config option
+First example in "Testing Flask Applications" doc fails
+Cannot fork Flask repository
+Bad import in flash_cache/jinja2ext.py
+Update cli tips for .flaskenv
+[Fixed 2823] Checking if .env is file before prompting to install dotenv
+add init-db call to flask tutorial
+Fixes issue #2824 flask --version
+flask --version should output werkzeug version
+Flask complains a .env file exists when not using python-dotenv, even though that .env is a directory
+Flask jsonify is not working. It removes keys from json response.
+Exceptions in before_request methods prevent later before_request methods from running
+Inconsistent behavior of `static_url_path`
+Traceback not flushed immediately 
+Render_Template failes after using multithreaded .pyd file
+Importing from PWD using `python -m` fails in development environment
+No upgrade notes for flask 1.x
+Tutorial fails with error
+UnicodeDecodeError when rendering template
+Allow flexible routing with SERVER_NAME config
+Flask start new thread - RuntimeError: Working outside of request context
+Add test for routes command when no routes registered
+Missing `Content-Disposition` leads to empty `requests.form`
+test_url_generation_with_parameter added
+fix typos in appcontext.rst
+Test added for _AppCtxGlobals __repr__ method
+Set uwsgi link to use :ref:
+Uwsgi link
+encode filenames as ascii instead of latin-1
+flask.redirect fails on audio file upload.
+Broken link on flask docs
+AttributeError: 'FileWrapper' due to click
+[0.12.2] Weird error when using custom response object
+set FLASK_APP via env for portability across shells
+International URLs Implementation
+Update cli.py
+Session cookie secure by default
+Update CHANGES.rst
+Python flask threads does not close
+Update gevent wsgi documentation
+Fix typos in CHANGES.rst
+Addition of Click breaks Flask apps in some deployments
+Blueprint view function name should not contain dots
+AttributeError: 'module' object has no attribute 'SSLContext'
+Log level being ignored and example in docs broken
+Added parameter to click.echo call
+[Docs] Make super() compatible for Python2
+Issues run flask tutorial
+Add Blueprint level cli registration-- #1357
+2778 processes inappropriate exceptions
+Adding documentation about precautions about custom error handlers fo…
+route app.run through the cli whenever possible
+Blueprint error handling with url_prefix and lang_code
+TypeErrorTypeError: set_cookie() got an unexpected keyword argument 'samesite'
+Registered error handler (using register_error_handler) processes inappropriate exceptions
+fix broken sys.argv list
+Rewrite deployment docs
+BUG in "send_file" and "send_from_directory"
+function flash() not working with redirect()
+Randomly Unresponsive After Strange Character Requests
+run linux command in flask app
+Port testsuite to py.test
+Adds 2 tests for Flask.run method
+Added full_path to the Request object documentation.
+typo: "weather" -> "whether"
+Fix warnings and code styling in the doc
+Don't mention Flask dev releases anymore
+Homepage: Wrong PDF and zipped HTML Link
+Document building protocol-relative URLs
+Add Click to Readme
+Add missing `of` to documentation.
+`pip install flask==dev` does not work.
+consider adding CC-BY license for documentation only
+Rewrite docs for context locals, request contexts, and app contexts
+"after_response"?
+Documention for "The Application Context" is confusing
+typos
+pdf&epub of docs has wrong version
+Flaskr example app hooked up with some Selenium tests running on Sauce Labs and Travis CI
+dev version; click subcommands not working as intended
+Add app config setting for defaulting _external to True in url_for
+Flask needs more opinions on config and deployment
+Add documentation about url_for's default scheme
+Thread in flask but 2 threads are created instead of one
+Fix copy paste mistake in docs/testing.rst
+Use PREFERRED_URL_SCHEME in external url_for if scheme is not defined.
+Can we make use of the Milestones features of GitHub to have at least an indication of how far we are from the next release?
+Wrong Flask.instance_path inside virtualenv
+Quoted all HTML attributes.
+Quoted all HTML attributes
+test
+Deprecate flask.ext and create migration tool to flask_*
+Quote all HTML attributes
+custom rendering view not possible anymore
+Update doclinks
+How to share endpoints between different apps in Flask
+Automatic route redirect changes domain to 127.0.0.1:port
+url_for _external does not use PREFERRED_URL_SCHEME
+Jinja template docs link is outdated
+Keep development out of master
+Flask ignore FLASK_STATIC_FOLDER setted outside of constructor.
+Add testing best practices and others to wiki
+CLI: "flask" command help doesn't list custom commands
+Provide examples extending the custom script in cli docs
+fixed typo -- missing "are" in docs/signals.rst
+Bad link
+Fix Doc
+from_json document fix
+Context processor decorator design
+Fix some typos
+Update index.html
+"Error handling request" with Gunicorn and gevent worker
+Race condition in get_flashed_messages()
+How to have flask.jsonify take Decimals?
+Update python3.rst
+Update index.rst with link to source of stable release
+Stop recommending Python 2.6
+adding application context setup funcs.
+Feedback website not working.
+adding application context setup funcs.
+Weird error with "Flask" in setup_requires.
+Fix typo in cli docs
+Links to Werkzeug  and Jinja in Document are wrong 
+appcontext_setting_up_funcs and signal
+Let's kill run
+Python 3 docs are quite outdated
+The example does not execute
+Update schema.rst
+Flask Badges 
+Update dbinit.rst
+Update dbcon.rst
+jsonify big numbers
+Issue with deferred callbacks pattern when an exception occurs in a @teardown_request decorated function
+Add runtime parameter functionality to url_for
+Issue with module path/name in imported classes when using from...import on flask.ext.* (Python 3)
+relative url_for with a blueprint mounted two times
+Update mod_wsgi.rst
+Update mod_wsgi.rst
+Update installation.rst
+Wrong link to Jinja2 website in docs webpage
+Fixed typo in _compat.py
+use flask.ext instead of flask_
+Testing render_template()
+Publish 0.10 documentation
+Flask eliminates error and stack trace when production mode.
+Support X-Sendfile-Temporary
+flask redirect not support itms-services
+Get rid of _tag->closure->_tag reference cycle
+app.cli.command
+Update mod_wsgi.rst
+terminal no longer echos input after pdb is aborted by reloader
+add `Table` to import in `sqlalchemy.rst` example
+docs: add import to SQLAlchemy example
+Python Flask Gevent stack - Simple “Hello World” app shows as inefficient when benchmarked
+incomplete formatted string expression
+cannot read static file whose path include Chinese chars under Windows OS
+documentation: stylistic adjustments
+unused code in app.logger ?
+support for HTTP/1.1 Transfer-Encoding: chunked
+Added proper </li> closing element.
+Correct order of arguments in example in docs
+Invalid name of converter in API docs
+Review Flask-Bcrypt for approval
+Flask HTML form arrays are mangled
+send_file uses 2x file's size in memory with conditional = True
+Review Flask-SeaSurf extension
+Class based view decorators
+More examples/documentation for pluggable view decorators
+flask_autoindex fails with flask 0.8.0 but works with 0.7.0
+FTBFS with python-werkzeug-0.6.2-1.el6.noarch
+Added a small project starting script
+Update documentation of url_for to indicate more clearly that substitution token values are required (maybe an example?)
+MethodViews for API example is missing parameter
+Review flask-lettuce extension
+session is saved before @after_request callbacks
+Endless redirect loop in flask 0.7.2
+Simple documentation cleanups
+Static files only work for blueprints registered with url_prefix
+Session information is not kept around in test_client after redirect
+Added option to generate secure URL with url_for()
+Fix issue #338
+flask memory consumption
+Additions to Working with Other Debuggers section 
+Config documentation "instance_root" -> "instance_path"
+In Flask.run, when the host/port argument is None, it will now use its default value.
+Just a little comment clarification
+Broken setup.py (SyntaxError:invalid syntax)
+TypeError in "Method Views for APIs"
+Updated docs - for Response class status_code => status
+Allow category filtering in get_flashed_messages to allow rending categories in separate html blocks
+Added Note to use PNG instead of ICO since support of ICO seems to "die"
+Typo fix
+Added PasswordField in docs/patterns/wtforms.rst
+Flask.template_test()
+static file would not send to browser correctly 
+fixed typo, quote "with" statement
+Better support for error_handler register without decorator
+Review Flask-Peewee for listing, then approval.
+Add to sys.path, not sys.path_info
+Move Some Context Preservation Logic into App
+Rewritten audit command in setup.py and some "touches" for docstrings
+Blueprint.app_url_value_preprocessor doesn't work correctly.
+SERVER_NAME set to 127.0.0.1:5000 in dev breaks flash method
+Fixed typo in docstring of dispatch_request method of flask.views.View
+create_global_jinja_loader has outdated docstring
+Flask-MongoKit to GitHub
+http request methods decorators for routing
+Review Flask-ZODB for approval
+Review Flask-Sijax for approval.
+Review Flask-Exceptional for approval.
+'Float' converter in route not working
+Add search to website for snippets and mailing list archives.
+Example @login_required decorator confusing
+use extended dict as app config
+Fix for d5cd4f8 which broke install on Windows 
+Switch to primitive types in the config
+Fix session loading in flask.testing.TestClient.session_transaction()
+Typo in documentation
+route decorators custom enpoints
+make Cookie Path configurable
+option to turn off Jinja2
+Improve configuration docs a bit
+typo
+Added closing tag
+Add flash_error and get_flashed_errors
+Fixed part of issue #290.
+make_release.py won't work for August dates
+Flask website license
+Fix typos
+Added decorators
+Added some very small changes
+Traceback logs not available for POST requests
+Add runserver.py filename to match earlier section of example
+Allow passing additional `send_file` options to `app.send_static_file`
+before_request functions not run before every request
+request.json is documented twice
+Blueprints and Extensions and SQLAlchemy
+Consistent quotes
+Setting multiple headers is not(?) supported in response
+AttributeError: type object 'EventsCodes' has no attribute 'IN_DELETE_SELF'
+Document the debug param for Flask.run, it is not part of **options given
+Intersphinx link fixes.
+Provide a built-in development server command-line interface.
+Minor documentation grammar / typo fixes
+Typo: developped -> developed
+Bugfixing docs/patterns/fileuploads.rst
+route / add_url_rule Documentation
+Typos in flask.app.Flask docstrings/comments
+Don't use deprecated flask.session in flask.ctx.
+Corrected decorators to remove duplicate teardown_request() and add after
+typo fix: flask -> flag
+fixed typo
+fixed typo
+Blueprint template filters.
+small error in tutorial
+Blueprints and URL processors
+Adding coverage generation to tox
+Update docstring for errorhandler()
+Development
+Fixes import statement in flaskr
+Capitalize occurrences of 'flask'
+Process responses generated by exceptions
+Cloning flask fails with Git config transfer.fsckobjects = true; repository broken?
+why loop redirect with redirect('{0}/{1}'.format(site, page_name), code=301)?
+grammar fix
+add_resource does not preserve api function docstring
+Correct grammar
+View.dispatch_request doesn't take args, raises error about that instead of not implemented error
+Fix safe_join test behavior on Windows
+The file/path provided (flaskr) does not appear to exist. 
+add 'caution' section to docs, workaround for zero-padded file modes
+Installation documentation for Windows: minor typo
+Updated Celery pattern
+flask CLOEXEC
+Add possible overriding of builtin cli cmds
+Address #2051: Fix flaskr import in flaskr/__init__.py
+flaskr project (in dev docs and on github) needs to use relative import in __init__.py for Python 3
+Many 'requests.post' generates internal ImportError
+Cannot run many 'requests.post' against 'app.py'
+Binary file corrupted between the server and the client
+Default environ
+Remove `-a/--app` from Quickstart documentation
+A: hello!Flask how to solve this problem
+MethodView requires settings "methods" attribute
+Assert should not be used outside of testing
+Question: Authenticating to a protected API call not working (GAE Flask connecting to ParseServer)
+Flask Extension that doesn't require user code changes
+fix unclosed HTML tags
+Fix unbound error
+Updated mod_wsgi.rst to point to new mod_wsgi repo
+do you have Extensions for VScode ?
+Feature packt book in docs
+Modified test_instance_config.py (test_main_module_paths) to reflect flask behavior
+Update minitwit.py
+failing test for safe_join in windows
+time.sleep() swallow FLASH_DEBUG message
+make use of range requests if available in werkzeug
+Support same-site cookies
+Zero-padded file modes in repository 
+Fix typo in MethodView doc
+Update app factory docs for Flask's CLI
+Removed unused import.
+removed a nonsensical line
+Add license_file to setup.cfg metadata
+How should logging in Flask look like?
+Fix typo in docs
+Address #1980
+Default flask.cli commands are not override-able
+Do not cause errors for unknown files for sendfile
+Fix fileuploads manual page redirect URL
+Add scheme to url_build error handler parameters
+request.args uncompatible with quote, which lead decode error
+fixed deprecated syntax in setup.cfg
+Fixed error in errorhandler doc string.
+Corrected after response for error handlers
+Permission to generate stubs for Flask in typeshed
+Broken pipe
+changing ip address to string for localhost
+Document not updated after the removal of argument -a and --app
+AttributeError: 'str' object has no attribute 'write' during unhandled exception logging
+Prevent setting `SERVER_NAME` and `SESSION_COOKIE_DOMAIN` to an IP address
+Don't passthrough_errors unless instructed.
+AttributeError: 'DispatchingApp' object has no attribute 'config'
+Correcting Custom Test Client class docs
+Fix error in send_file helper
+Clean up tutorial docs for installable app pattern with flaskr
+Fix small grammar error in Documentation (Of/Or)
+Better workflow for flaskr and other basic apps
+Proposal : splitting the config logic into a different package.
+Spelling
+gunicorn and flask to work together...
+Only passthrough_errors if PROPAGATE_EXCEPTIONS
+No response and No exception traceback when render_template failed and DEBUG=True
+dictsort filter fails on nested_dict typed list
+Disable logger propagation by default
+access app.config via dot
+ExtDeprecationWarning pymongo 
+Use the Celery result backend setting from the example
+Disable OS-level autocorrect in the interactive debugger
+Properly remove f.name usage in send_file
+Update testing.rst
+Setting items on `response.header` with bytestrings results in new headers in Python 3
+Update testing.rst
+JSON request/response mixin
+Session no longer being marked as "modified" in some situations
+examples/flaskr test error
+Fix line 31 for conformity with PEP-8
+"Larger Applications" docs don't play nicely with flask run
+flask run does not respect debug config in config files
+docs: sqlalchemy pattern document has an invalid import
+Set __qualname__ on class-based view function
+Use path of socket consistently accross document.
+Examples in uWSGI docs are not using the same socket.
+POST to Flask has size limit, and provokes "BrokenPipeError: [Errno 32] Broken pipe" whenever no request.data is called
+Update for python3
+%-encoded / gets included in wrong <path:...> parameter
+Reconfigure app when debug is set by run command
+JSONEncoder encodes aware datetime objects in non-UTC timezone incorrectly as being in GMT.
+document `Flask.register_blueprint` arguments
+Add docutils label for class-based views
+Add docutils label for templates page
+Discussion: from_envvar's behavior
+removes a duplicate word docstring for class Flask
+Add basic how-to on using envvars for config
+mention csp for javascript: uri xss
+document inherited attributes for Flask and Blueprint
+Remove error handler cache
+Include flask.json package in setup()
+Fixed several PEP8 errors
+Be smarter about adding ".cli" to reloader command
+JSON support for test client and Response
+python -m flask run raises RuntimeWarning
+doc: following web standards
+Wrong release version
+Only open session if request does not have open session
+Clarify documentation for json parsing
+Make session serializer extensible
+How to set connection read timeout and support flask run in multi-thread mode?
+show nice message when registering error handler for unknown code
+Adding Couchdb views from blueprint
+make debugging bad key errors easier
+deprecate app session methods in favor of session_interface
+use existing response.vary property to set vary header
+Use existing response.vary property to set vary header
+APPLICATION_ROOT defaults to '/'
+update development resources
+#2341: Accept default argument value when args lenght equal 1
+If FLASK_APP accept one argument and I do not send it, the default value is not correct, instead I get a ScriptInfo object.
+Reduce ci matrix
+investigate build stages on travis
+cleanup #2326
+flask mutable session (with flask-session RedisSessionInterface)
+Switch theme to Alabaster
+reduce the number of build targets in the travis matrix
+Docs sidebar missing space
+Fixed typo in docs
+PyCharm Run Configuration Guide
+Reduce test envs, add coverage reports, other test fixups
+Minor edits to tutorial for clarity.
+Document how to write a config.py that loads config from the environment
+How Can I Make Pagination In Flask??
+Docs theme not responsive
+Handle app factory with arguments in FLASK_APP
+More DRYing up the test suite
+Fix for Issue 2313 - refactoring gevent tests into class
+Cleanup test_blueprint.py to use test fixtures
+Don't overwrite Vary header when setting for cookie access
+Add test for Blueprint app-wide url processing
+Update click dependency info.
+Support `create_app` without script_info or with script_info as named argument
+Fix a small oversight in the testing docs
+Don't overwrite Vary header when setting for cookie access
+Adds provide_automatic_options to Class-based Views
+Added documentation for PowerShell environment variables
+Added support for generic HTTPException handlers on app and blueprints
+Organize the gevent tests into a single class
+Replace `modules_tmpdir` fixture with pytest's built-in `tmpdir` fixture
+Use the yield syntax in pytest's fixtures
+Fix refactoring error in static_folder docstring
+Add http headers security notes 
+Support for unregistering blueprints (or endpoints).
+For Issue #2286: Update unittest references
+DRYing up the test suite using pytest fixtures
+Updating contributing rst
+Added support for generic HTTPException handlers on app and blueprints
+Added tests for make_response and get_debug_flag to improve coverage of helpers.py
+Added uWSGI and example usage to stand-alone WSGI containers documentation
+Add coverage for Blueprint request process methods
+Moved WSGI Standalone first in deployment documentation
+Add coverage for Blueprint.add_app_template_global
+Add coverage for Blueprints.(app_)context_processor
+Auto-detect create_app() in find_best_app() #2265
+Added reference and link to Werkzeug debugger documentation
+Add coverage for Blueprint.app_errorhandler
+Auto-detect create_app() in find_best_app() #2265
+Debug mode 2261
+Investigate adding app and debug args back into the CLI
+log a clickable url to home page when listening 0.0.0.0, more beginne…
+can i preserve my json output ?
+Please tag a release
+Set "Vary: Cookie" header when session is accessed
+DRY up the test suite using pytest fixtures
+Rewrite the testing docs
+Review HTTP security
+safe_join on Windows uses posixpath
+Flask development server segmentation fault on Alpine Linux
+Refactor session cookie domain
+Document how to set env vars for PowerShell
+Cannot add headers to static files
+Clean up deferred callback doc
+Rewrite installation docs
+Improve quickstart's Routing section
+Removed unused import
+Fix import order to accommodate pocoo style
+server has 127 CLOSE_WAIT 
+request.input_stream inconsistency btw debug and normal mode
+Pins Werkzeug to 0.16.1 due to breaking change
+New version of Werkzeug is not compatible with Flask
+Got Vulnerability while feeding request.get_json() data to marshmallow directly .
+Python flask wont run
+Update on line 203
+Potential backward incompatibilities brought by the werkzeug v1.0.0 update
+Greedy version requirement for werkzeug breaking fresh installs
+Incorrect grammar
+A better expression for the intended meaning
+This is a typo.
+how make something like this
+Import error from scipy package: pfft 
+Project is abandoned?
+[Feature Request] Proxy Rewrite Support in url_for
+Add missing import for escape in doc
+Intersphinx error when building documentation
+In section Variable Rules and before, did not mentioned escape should be imported until we can see on URL Building
+Incorrect template name in error string
+Cannot set SameSite=None on session cookie
+TypeError: after_request() takes 0 positional arguments but 1 was given 
+Merge pull request #1 from pallets/master
+session unavailable, an issue of tutorial.
+SERVER_NAME still implicitly changes routing behavior
+Werkzeug base_response.py doesn't support Flasks response.set_cookie
+Flask celery broker(rabbitmq cluster) failover not working
+Remove comment about extensions being reviewed by the core team
+Merge pull request #1 from pallets/master
+static_folder and static_url_path can be different
+AttributeError: 'function' object has no attribute 'name' when blueprint is a function
+Fix app.run() when port is not specified and `SERVER_NAME` contains only host name
+app.run() doesn't work when port is not specified in `SERVER_NAME`
+Fix a bug that the static endpoint will unexpectedly catch all
+Flask run command breaking with werkzeug.wrappers
+flask.request cannot be patched by unittest.mock.patch in Python 3.8
+fix docstring and remove redundant parentheses
+Catch-all route doesn't work when static_folder ends in forwardslash
+unable to add headers to test_request_context 
+Feature request: Access jinja environment options for render_template
+Unexpected argument: PyCharm set_cookie samesite
+ClientDisconnected error when trying to look up request.data after an exception inside the Werkzeug debugger
+Flask crashes when running as a Windows Service (pywin32)
+ How to use Sqlalchemy in factories
+Suggestion: Improve traceback for routes that return None
+challenge load_dotenv and chdir assumption
+Files with \xfa (ú) in the filename don't end up in request.files
+confusing logging behavior in Blueprints when running test  
+“Last-Modified” header gone missing when receiving in the client end from the Python Flask Rest API for 304 HTTP Response
+simplify the way we get subdomain and url_prefix at blueprints
+Shorter forms for url_for("static", ...)
+Updated Issue Template
+unable to trigger flask view function using href inside a tag inside select
+send_file doesn't allow StringIO
+lazy load app on reload only
+flask reading .txt files line by line
+Document lazy loading and eager loading (fixes #3430)
+Only lazy load on reload
+eager loading is not documented
+Static file with UTF-8 characters can not be served from ubuntu 18.04 with UTF-8 system encoding.
+Grammatical error
+Update old pocoo links everywhere
+Fix: update a URL to the newest version
+Update `versionadded` for `Config.from_file`
+Request fail on parsing json body with accent character
+set cache-control: private when session is used
+Getting KeyError: 'REQUEST_METHOD' sometimes
+Update documentation to reflect change in Gunicorn 20
+Test failures with Python 3.8
+Issue 3358 fix
+Can't parse bson Object
+Can't parse bson object 
+Registered URL not found
+minor update to converter sample code
+Fix typo in documentation
+Add `async` support
+UnicodeDecodeError: 'utf8' codec can't decode byte 0xab in position 103: invalid start byte
+[BUG FIX] Test test_send_from_directory_bad_request fails in Python 3.8.
+In PyTest, response.location is None
+Make the documentation build reproducibly
+add send_from_filepath
+Change docs to use f-strings
+Add support for decorating MethodViews with @Blueprint.route()
+route decorator on MethodView classes
+Test test_send_from_directory_bad_request fails in Python 3.8
+Declare support for Python 3.8
+How to define a custom command (CLI) with an application factory
+Runtime generated blueprint code
+Support loading configuration from text files
+update readme.md
+Unable to extend FlaskClient with follow_redirects
+Update reqcontext.rst
+Change celery to app in documentation
+Flask after_request still execute
+[QUESTION] Does flask support other templating engine
+explain escape at top of quickstart
+no hize nada
+Cannot raise HTTPException()
+Browser doesn't show error message in tutorial
+Can not be connected on local area network on macOS 10.15 (Catalina)
+Support loading configuration from toml files
+flask db init error
+Doc fix
+Flask-7.0 uses with statement without import in helpers.py (Python2.5 incompatible)
+Missed the -w option in uWSGI deployment docs. 
+Blueprint template lookup not documented enough
+Issue #255: with statement in helpers.py and appengine compatibility fix.
+with_statement & appengine compatibility
+Add a link to pluggable views docs in the changelog.
+Typo fix in code samples for Pluggable Views doc.
+Support for Class Based Views
+Wrong Enctype Warnings
+Fix a link in the changelog.
+Make Tests for bluprints with dotted Names
+Pronoun gender fixes in documentation
+url_for still reference module
+editorial touch-ups to docs
+Documentation Updates for 0.7
+Reports of sessions not working when SERVER_NAME set with port
+Added HTTPBin to Apps List
+handle_exception doesn't catch everything.
+Deploying with Fabric fabfile bugfix
+jQuery Documentation Update
+Review JSON Security
+don't spread JSON FUD
+Split up Testsuite
+flask.__version__
+Minor documentation fix
+fixed minor typo
+As discussed with rduplain in IRC channel, uwsgi deployment documentation for nginx
+Tutorial Step 4 : teardown code sample is not well formated
+How to include custom Jinja extensions?
+added an argument to jsonify : status code
+Clarify in docs that the SERVER_NAME config can also take a port number.
+A fix for send_file with unicode filenames.
+Add Frozen-Flask to the extension registry
+website's twitter.py script requires optional keywords
+logging improperly extending directly from Logger class
+Prevent runtime error wrt json formdata
+Fixes Issue #227 where pop causes the session to be modified.
+pip install flask==dev resulting in svn warning
+the import order note was meant to be bold, not cursive
+don't save session if nothing to save
+Corrections to fabfile example
+get_flashed_messages() always forces session.should_save
+Static files in non-url_prefixed modules don't work.
+Application Dispatching > Combining Applications documentation is incorrect
+Docs should mention that url_for() skips query string args with value=None
+sys.excepthook error
+WTFForms: Error Handling for Forms in Templates
+Subclassing of Flask should be documented
+Custom default function for jsonify
+before_request versus HTTP exceptions
+Small fix in the docs for deploying behind a proxy
+Allow Header: appends an erroneous GET
+flask has no programmatically-accessible version number
+Add safe_join: returns the filename used by send_from_directory.
+Untitled
+Updating app.after_request decorator documentation.
+Module.after_app_request causes exception (0.6.1)
+template and static directory names are hard-coded
+Starting the application
+url_for does not list HOST:PORT on ".static" entries
+Testing, Request Contexts, Extensions and Documentation
+Can we simplify Config.from_pyfile?
+Issue 198 doc fix
+PackageName==dev is required
+Extensions docs modifications.
+Initial attempt at fixing task 174
+silent flag for config.from_pyfile
+Extension docs
+Wording issues on testing doc page
+DispatcherMiddleware and application creating documentation
+Config.from_envvar should be able to fail silent
+Extension Reviewing
+Fix crossref links in docs
+Typo fixes for the sprint start.
+Open the session after the request context is pushed on the stack
+Wording change to the documentation
+log exceptions using app.logger
+Update the readme
+Should link to Werkzeug’s docs prominently
+{{ url_for('static', filename='style.css') }} is not working in Python 2.7.1
+Please review Flask-FlatPages and Flask-Static
+Issue 178 - website fixes
+Issue 178
+Issue 178
+runserver.py was missing from directory listing
+Document Auth&Auth
+"Nothing is rendered"
+Discouraging Foreword in Documentation
+Documentation not properly cross referenced
+mod_wsgi Deployment Chapter is incomplete
+Flask Bugtracker is not obvious
+Tutorial should mention deployment with mod_wsgi or something else
+Example Application too Basic
+Error Handlers versus Werkzeug Exceptions
+after_request behavior regarding exceptions
+Documentation needs to explain Circular Dependencies Better
+Module is a bad name / Bad behavior
+Reverse Relative/Absolute Linking for url_for
+jsonify doesn't accept a list
+Use Werkzeug's JSONMixin class (moved from Flask) and update tests
+docs/quickstart.rst - Adding URL Building details and moving it
+Fix MethodView inheritance Error (#3138)
+Create CODE_OF_CONDUCT.md
+docs/quickstart.rst - Adding URL Building details and moving it
+Allow "rt" mode for open_resource
+fix RST line too long
+Allow mode='rt' on open_resource() helper
+Add link to official Discord chat server
+add test output and a run against Python RC
+enhance!
+Set up Azure Pipelines
+Fix dev-server warning message readability (#3168)
+Improve warning about dev server use in production
+FactoryBoy data not created using json POST request
+removed unused reference to url_join
+Unused url_join?
+How can I send a post Api from Flask server to Laravel server?
+open_resource() does not allow mode='rt'
+Update documentation on gunicorn deployment and app discovery
+flask.testing uses extraneous app_context for json client requests
+No auth keyword arg in the test client for Basic HTTP Auth 
+Improved CONTRIBUTING.rst
+raise exception instead of using abort()
+Fix teardown bug in FlaskClient
+update Jinja2 requirement to >=2.10.1 (re CVE-2019-10906)
+Bump Jinja2 requirements
+More explicit explanation: session testing
+cannot run my flask application in conda
+tox/pytest: support posargs, move to testpaths
+test_instance_config.py fails
+[Doc] Fix typo in code example for route defaults
+use redirect for uwsgi
+Unable to send POST request using Flask test client
+Add Dockerfile for flaskr example
+Incompatible with JSON
+Cannot visit demo web page
+Flask throwing AssertionError: View function mapping is overwriting an existing endpoint function: register
+I am not an expert, but I want to solve this error: AssertionError: View function mapping is overwriting an existing endpoint function: register
+Replaced deprecated sample code in proxy-setup docs
+RuntimeError: Attempted to use a closed Session. with flask
+Status code on flask.wrappers.Response is incorrect
+Deprecated code in proxy-setups document
+MethodView methods not inherited
+Update CONTRIBUTING.rst discord link + style info
+changed / import to ( )
+Flask + gevent: possible sockets leaks (in the CLOSE_WAIT state)
+static_url_path doesn't work if it ends with a slash
+App run with debug mode raise OSError
+Need help with getting the SID of the first connection
+can't run app with latest Werkzeug
+Cannot differentiate between a regular text input field and a non-uploaded file
+Fix some HTML injection paths in examples
+Fix grammar in docs
+Werkzeug 0.15 breaks logging in and out example in testing docs
+Import error in dev mode, not with wsgi virtualhost (virtualenv and vagrant)
+Use Werkzeug's JSON mixin
+fix 'static_url_path' defaulting for empty paths
+Response header filename dynamic value
+Basic example with Flask -routing does not work 
+Update README.rst for beginners
+遇到一些pipenv 安装问题
+hello can i use the cassandra nosql database in my flask application?
+Fix code snippet in config.rst for env vars Fixes #3117
+Docs/Config.rst - Configuring From Environment Variables has an invalid code snippet
+DeprecationWarning: python 3.8 will not work
+flask run command won't run python files with .wsgi extension (or any other than .py)
+flask process block twisted 
+doc: Improve description for valid view func return value
+fix an error in quickstart doc
+Allow dictionaries return values as JSON
+Testing with TestClient and a custom response_class calls constructor twice
+Added closing li tags
+config option for "flask run" (e.g. --dotenv/-e)
+Due of database access : "Truncated or oversized response headers received from daemon process..."
+Please adds init-db in readme
+Allow passing cert and key to `flask run` via env var / .flaskenv
+moving match_request to RequestContext.push to enable ModelConverter
+Fix typos in the documentation
+Fix formatting issue in quickstart guide
+Little improve on installation doc
+Using Flask as a back end system for reviews?
+The flask interface does not print request information,Return data directly
+The flask interface does not print request information,Return data directly
+helpers.py: Fix docs of url_for(..., _external=True)
+"flask run" should accept a command line option for FLASK_APP
+SOAP requests cause 500's in Flask code
+custom error handler not being called for HTTP error 412 
+Flask-Angular issue for Uploading file through api call
+Flask-Angular issue for Uploading file through api call
+Truncated or oversized response headers received from daemon process
+"Lift" Flask (et al.) on Tidelift
+URL Converters should have access to app context
+banner statements not directed to log when app starts
+Autoredirect
+not able to serve html file with all the css and js linked in flask
+Unable to remap dll to same address as parent on cygwin when running in debug mode
+Jsonify does not take allow_nan
+_compat.py: Use feature detection instead of version detection
+What can I do to translate flask documentation to Russian language?
+Warn about logging name change
+use app.name as app.logger name
+Make the changelog UTF-8 compatible
+Fixes #3277
+CHANGES.rst on master is not UTF-8 -- appares to be some windows encoding
+Fixes for PEP451 import loaders and pytest 5.x
+[tutorial] flaskr's pytest does not pass due to test_db.py#test_get_close_db fail.
+Add closing tags to example's nav bar
+flask requires `is_package` from import loaders, however this api is optional since PEP 451
+Fix typo
+send_file quotes ":/" in UTF-8 filename
+don't clear BadRequestKeyError args
+Blueprints with url_prefix responding in HTTP 308
+update project metadata
+use dashes for command names
+Flask object Issue: Assertation error on python 2.7.14 in Werkzeug 0.15.4
+Use a working example to generate secret_key
+always pass InternalServerError instance to 500 handler
+flask and escpos
+path converter is not matching 
+FlaskGroup does not work when nested in a click.group
+import urlparse breaks app.cli.command
+fix tests failing with server name warnings
+adds api error handling example to documentation
+flask.ext.mongoalchemy import MongoAlchemy is not changed to flask_mongoalchemy import MongoAlchemy
+Question: How to generate coverage report?
+File upload code fixed
+flask run is not compatible with werkzeug middlewares
+Refactored explain_template_loading_attempts method
+Refactoring explain_template_loading_attempts method in debughelpers.py
+Added :param to the _get_exc_class_and_code method docstring
+Should _get_exc_class_and_code method have param entry for the docstring?
+ImportError goes away after restart
+Can't access localhost using flask
+BadRequestKeyError no longer contains the missing key from self.form as of 1.0.3
+Added :param to the Blueprint concstructor docstring
+fix string concats left over by black
+apply reorder-python-imports pre-commit config
+move to src directory
+Clarify documentation about how url_for uses configuration values (#2759)
+Guard against missing request context in logging docs.
+"#3211: Don't require ssl module"
+Add pre-commit config for flake8
+Fix testing documentation to demonstrate using test client with teardown
+Comment on bare except usage in _compat.py
+Removed unused Class import.
+Move python properties to decorator syntax
+Do not register empty CLI groups from Blueprint
+Better error message when view return type is not supported
+#3225: document "del tb"
+Issue #3226: Remove unused werkzeug datastructure import
+Convert make_test_environ_builder into class (fixes #3207)
+Add pre-commit install-hooks to first-time setup
+Enable stylecheck tox run on Azure pipelines (fixes #3228)
+Fix style issues on master using Black
+Meta: run tox -e stylecheck on Azure Pipeline
+suspicious unexplained `except: raise`
+unused import: werkzeug.datastructures:Range
+suspicious/unexplained `del <local_variable>` in last line of function
+Blueprint CLIs should not register empty groups
+AttributeError: 'NoneType' object has no attribute 'append' in Flask helpers.py
+Multiprocess cause AttributeError in windows10
+Updated property object to decorator
+How to change the body of redirection responses since Flask 1.0.3?
+url_for produces relative links with nontrivial APPLICATION_ROOT
+Use @property as a decorator
+Document Blueprint parameters
+Identify the common API between Flask and Blueprint classes
+Better error message when view return type is not supported
+Add pre-commit to dev dependencies, document it and Black in CONTRIBUTING
+Don't require ssl module
+a problem with route
+Flask with dotenv change the current working directory if .env file is found
+FakeSignal should stub connect_via method
+Convert make_test_environ_builder into EnvironBuilder subclass
+don't push app context for test client json
+Add keyword argument support to app factory function signature
+azure pipelines ci on 1.0.x branch
+add Azure Pipelines to test coverage
+insert deliberate bug into flask.cli:main
+Changelog button on documentation does not work on Stable
+Remove unused url_join of blueprints.py - 1.0 maintenance
+Fix various small spelling errors.
+Adding closing list tags in code example within the Docs - 'templates.rst' file
+Allow selecting a different shell for the "flask shell" command
+Fix misplaced paren in docs
+Support dataclass in JSONEncoder (if available)
+Flask can't find the app name when the project is added to Atom
+Flask Session variable not available in threads
+Update __init__.py
+replace "otherwise" with "or" to complete the "either" statement in templates doc
+Make jinja_options a dict rather than ImmutaleDict
+"OSError: [Errno 8] Exec format error" when execute bit is set
+headers vanish inside app.before_request when trying to use them 
+Catch-all route does not work if url has another handler even if method is different
+Replace IRC with Discord in CONTRIBUTING file
+Simplify flask.cli.main
+Upload test results for Azure Pipelines
+Pre-commit: Black
+Remove ending slash from static_url_path
+logout and factoring cookie problem
+imports now together
+Any reason to keep g as a property on RequestContext?
+Added multi-line imports to app.py file
+Add Qovery option to deploy Flask
+use Jinja's tojson filter
+Update for recent changes in Pallets libraries
+[pre-commit.ci] pre-commit autoupdate
+Bump pre-commit from 2.9.3 to 2.10.0
+Bump greenlet from 0.4.17 to 1.0.0
+Bump sphinx-tabs from 1.3.0 to 2.0.0
+Bump pytest from 6.2.1 to 6.2.2
+Bump sphinx from 3.4.1 to 3.4.3
+Bump packaging from 20.8 to 20.9
+Bump jinja2 from 2.11.2 to 2.11.3
+Bump tox from 3.20.1 to 3.21.3
+Debug mode auto-reloader causes Uncaught Exception
+Doc update: Clarify got_request_exception signal docs
+Views & Routing `methods` input throwing TypeError for tuples
+Flask silently overrides Jinja2 tojson filter
+Docs update: clarify json error handling
+Reload the flask dynamic blueprint by using the @app.route('/reload')
+Testing docs example for setting 'g' seems incorrect
+Improve some code comments
+Increase the point in the comment.
+Increase the point in the comment
+flask doesn't return http error 413 if file too large
+Falsk url redirect with Masking
+If using a .env file with Docker, the Flask CLI still tells you to install python-dotenv
+Flask's Celery docs are going to start failing with Celery 6 and get deprecation warnings with 5.x today
+Leading forward slashes are stripped from path variable
+"Request" object has no attribute "is_xhr"
+Update views.rst: fix the routes sample code
+Update the example in README
+Update documentation for easy quickstarts
+Requiring endpoints to have a __dict__
+The Issues about recv-Q
+Document parameter description error
+Silence pytest warnings for exception propagation test
+Bump packaging from 20.4 to 20.8
+Bump pytest from 6.1.2 to 6.2.1
+Bump pip-tools from 5.3.1 to 5.5.0
+Bump pre-commit from 2.8.2 to 2.9.3
+Bump sphinx from 3.2.1 to 3.4.1
+[pre-commit.ci] pre-commit autoupdate
+postman cant post mp4 file
+Flask session cookie secure flag is not getting set. 
+raising HTTPException does not cause got_request_exception signal to be emitted
+Add link to reference docs in README
+Flask master requires Werkzeug master
+fix explanation of wheel name
+How clear AWS S3 Bucket ClientError in Flask API server? 
+PUT route requires a body to work
+SESSION_COOKIE_SAMESITE not woking
+Update cli.rst, repeated word "that" in line 258
+before_request handler in Methodview class
+[pre-commit.ci] pre-commit autoupdate
+Flask,doesn't redirect page
+How to verify a flask web app in the google search console
+Explain Allowed_file() func in Uploading file on web via FLASK
+session.pop do not actually remove anything
+flask.abort() documentation broken
+Fix ci environment command syntax
+Update deprecated set-env ci command
+[pre-commit.ci] pre-commit autoupdate
+Web site / documentation: Should tell what Flask *is*
+Error during startup
+Error during startup
+Op2020
+flask run error
+move send_file and send_from_directory to Werkzeug
+update tests for new Werkzeug client
+Running a simple Flask app will not work because an older run is cached somehow.
+Separate docs page on debug mode
+adding an assertion to catch a mistake I made
+update requirements
+Bump sphinx-tabs from 1.1.13 to 1.3.0
+Bump pre-commit from 2.7.1 to 2.8.2
+Bump python-dotenv from 0.14.0 to 0.15.0
+Bump tox from 3.20.0 to 3.20.1
+Bump pytest from 6.1.1 to 6.1.2
+Whether flask dev server by default really works single process?
+Updating external_url_handler example to Python 3
+Error when trying to start flask app from command line
+JSONEncoder: Add test for objects with __html__ method
+Added link to deploying on Divio how-to guide
+Add separate and more detailed issue templates
+create hello world added file
+Flaskform import not working, no matter what I do.
+docs: mkstemp returns a file descriptor and a path
+Use list in methods instead of tuple
+Clarify it is talking about HTML tags
+Link SQL injection to python sqlite3 library doc
+cli.load_dotenv: when path provided and python-dotenv not found, extra message
+fix html in example 404/500 templates
+Can't get page over browsers
+[Minor changes] Update documentation by removing outdated information
+I think it's a deadly bug in the Flask module.
+werkzeug/test.py modifies headers passed to Client.post
+Small fixes and improvements
+Implement RFC 7233
+FLASK_APP variable isn't behaving as specified.
+Yield don't work on Chrome
+from flask import current_app appears to have side effects
+Remove unused Redbaron dependency
+flask app bundle with py2exe issue (AttributeError: function 'PyObject_GetBuffer' not found)
+Added a missing module to import statement
+Logbook integration?
+isolate templates between blueprints
+failing tests
+Improve the layout example
+Document the rest arguments of abort function
+Not working on AWS Windows instance?
+May flask support live settings like django-constance
+May flask support live settings like django-constance
+Update allowed_file function in fileuploads.rst
+Flask Test Client fails to get on subdomains with explicit port 80
+Update minitwit & improve testing for examples
+Update minitwit & improve testing for examples
+Flask-paginate shows all results on same page
+close <li> tag in lines (16,18)
+adding in try around __import__ to catch invalid files/paths
+CLI fails during create database in Flaskr tutorial
+Documentation for Flask + mod_wsgi + pyvenv + Python 3 doesn't work
+Persona example - deprecated
+Added 127.0.0.0/8 to the session cookie 'localhost' exception.
+Address #1902: Converts example/flaskr to have a setup.py
+Address #1902: Converts example/flaskr to have a setup.py
+{{ }} has trouble with method calls and array indexes in single call
+clarify blueprint 404 error handling in docs
+Flask fails to reload upon Traceback
+Added a property is_body_json
+Check for empty request data prior to loading JSON, fix for #1933
+`flask run` allows no way to run server on a unix socket
+FLASK_APP should be set to [app].py, not just [app]
+Add the ability to combine MethodViews
+blueprint error handler not working??
+Helper method send_file not closing file handle.
+JSON Parsing on empty request content with RequestParser
+fix docs: name of url_value_preprocessor method
+dialogue box?
+Merge pull request #1 from mitsuhiko/master
+TypeError when trying to parse request with int data
+re-add passthrough_errors to cli runner
+Removed easy_install method from installation docs
+Unhelpful Error Message on FLASK_APP to Bad Path
+Converts example/flaskr to have a setup.py
+Next/Back Buttons in Documentation
+TaggedJSONSerializer encodes Python 2 strings as bytes
+HTTPMethodOverrideMiddleware docs example doesnt work with latest version
+'be' was omitted
+Update installation documentation for using 'pip' command
+Remove easy_install from installation docs
+Update documentation for upgrading Flask using 'pip' command
+wtforms: Add missing closing tags
+Document option to use simplejson
+Use pip in upgrade documentation instead of easy_install
+ Fix problems with examples and CLI #1902
+Fix #1911
+Revert "Addressing Issue 1809"
+Wrong import json library
+Enable template auto-reloading in app.run()
+fix pypy3-3.3 alpha usage
+TaggedJSONSerializer does not preserve int keys in dicts
+Jinja templates do not auto reload if Flask app debug enabled solely via app.run(debug=True)
+SessionInterface shouldn't hard code a fix for localhost when it comes to cookies
+Documentation with minor incorrection?!?
+Can't reload code on Python 3, Win 10, latest version of flask
+AttributeError: 'module' object has no attribute 'exc_clear'
+Import error with some examples
+Google App Engine ImportError: No module named msvcrt
+Demonstrate how to add multiple urls to the same function endpoint #981
+test_client post cannot handle JSON list
+Per blueprint jsoncoding #1710
+Missing import on Flask 0.11.1
+Added make target for test coverage, simplified contributing doc
+Blueprint static content only works when response.direct_passthrough is False
+Test Python 3.5
+Travis 3.3-devel job fails with error about urllib2 in Werkzeug
+Updating url in errorhandling.rst to a valid link
+Fix spelling
+Clarify wording in App Context documentation.
+Test side effect
+sessions documentation (client side vs server side) #434
+enumerates the states in which code is executed...
+Enhance code coverage for Blueprint.endpoint
+Improve test coverage of flask.json
+Add test for get_version (CLI)
+Expanding contribution documentation
+Enhance tests.test_cli.test_find_best_app
+Add test for find_default_import_path
+Link to contributing.rst from the main Flask docs
+test_main_module_paths fails on RHEL and Ubuntu when using Amazon EC2
+Use recwarn everywhere
+jsonify no longer causes Content-Length to be set on returned Response object
+Add negative test for json.jsonify
+Add a link to Extension Development
+Comment out old version added and changed tags. Fix #1704
+Using `setup.cfg` with fabric
+Clitest update
+cannot call app.run() from custom cli command
+Hi, I just translate readme.rst to Korean
+Remove now obsolete 'audit' command from Makefile
+make audit still available, whereas the corresponding setup command is gone
+"flask init-db" isn't working
+can't run flask demo direct with F5 (idle) after upgrade to flask1.0?
+Merge pull request #1 from pallets/master
+Remove test
+Traceback shown when running `flask` without any args or an app
+[Regression] Test client's response.status_code is always 500 when an exception is raised
+send_file: latin-1 encoding not compatible with gunicorn
+Add option to not overwrite debug flag in cli
+docs: installation: Fix "now you can continue" link
+Request files are left in memory
+url_for() breaks just before POSTing to a specific endpoint
+Proper Using Blueprint (prefixed with lang_code) URLs in Html
+send_file bug
+Flask in subpath doesn't work as expected
+run "flask init-db" first before executing "flask run"
+functions added by after_request execute in reversed order
+templates_auto_reload workaround
+templates_auto_reload not taken into account
+Fixed LaTeX errors on documentation PDF generation
+1.0 release codename
+Check whether there are registered routes
+`flask routes` crashes if there is no route available
+Broken links on pypi
+Inline variable
+Fix blueprint route for ""
+add missing port to localhost URL
+allow empty prefix and no lead slash in bp route
+Update quickstart.rst
+Issue loading images when threading is enabled
+Documentation search broken
+Flask 1.0 backwards incompatible root url_prefix
+Better exception handling when env vars are missing for flask CLI
+Adding Windows PowerShell specfic docs
+Only trap key errors by default in debug, not all BadRequest errors
+merge slashes between blueprint prefix and rule
+fix #2736 - remove explicit check for list as a return value in make_response
+make_response changes breaks custom response class
+flask.abort() behavioral change in debug mode
+Running pytest on flask 1.0 (ModuleNotFoundError: No module named 'flask.json.tag'; 'flask.json' is not a package)
+Fixed Debug default value in the docs
+support for " url_for('api.book', book_id='${bookId}') "
+Flask 1.0 backwards-incompat with double-slash/no-slash re. #2629
+Fix registering partials as view functions
+Added short note about Werkzeug redirect behaviour
+Wrong wheel for Flask 0.12.3 in PyPI
+error on file upload document
+New tuple requirement for response is restrictive
+[help] flask 1.0 app run in click 
+Use env var to disable loading dotenv
+Where are all the issues?
+Add a parameter to disable load dotenv using Flask CLI
+Add `python_requires` metadata for PyPI
+Add project_urls so that PyPI will show GitHub stats.
+Fix typo in docs
+Why can not load a sklearn model by the request for Flask
+Add LICENSE in README
+Port Issue
+E-commerce
+Flask website has broken links
+Support for more environment variables for Flask CLI
+Typo in fileuploads guide?
+Minor session serializer fixes.
+backport #2709 use theme provided by pallets-sphinx-themes
+use theme provided by pallets-sphinx-themes
+flask.flash() not working
+Add a message `Serving Flask app (module "app.py" will be lazily loaded)` to `flask run` related to #2706
+Different app discovery behavior on commands run and shell 
+os.stat(path) TypeError: stat() argument 1 must be encoded string without null bytes, not str 
+Cannot change default formatter
+Error: Failed to find application in module "flaskr".  Are you sure it contains a Flask application?  Maybe you wrapped it in a WSGI middleware or you are using a factory function.
+Ability to check if client connection is still open
+Flask Python Login w/LDAP Auth
+TypeError: is not JSON serializable
+add javascript ajax example
+Flask logging issue with gunicorn 
+use builtin total_seconds of timedelta object
+Tutorial: Use different names for top-level directory, subdirectory, and .py file rather than using "flaskr" for all three
+backport #2691 detect UTF encodings when loading json
+backport #2359 fix python -m import warning
+add Response.max_cookie_size config
+Backport #2691 detect JSON encoding
+detect UTF encodings when loading json
+MAX_CONTENT_LENGTH is not respected
+How to install this module in ironpython?
+PEP484 static typing support
+Suggest: support post json.dumps with unicode.
+document blueprint static folder without prefix
+rework context docs
+[New Feature] Flask init utility
+Merge pull request #1 from pallets/master
+I want to send a json from the front end and update it to the postgresql DB with that data.
+How to return also json and render_template in Flask?
+Hooks in session_interface
+Incorrect endpoint name in fileuploads doc
+AssertionError on app.test_client().session_transaction()
+rewrite tutorial docs and example
+Error: The file/path provided (server) does not appear to exist.  Please verify the path is correct. 
+nvm
+Link to PDF version of docs on website is broken
+[ImgBot] optimizes images
+url_for uses _request_ctx for its choice of default_methods, this seems wrong
+helpers.send_file doesn't close file
+Add additional information in the url_rule docs
+Flask Custom jinja2 extension caching template states after new request
+Mention Flask instead of Jinja in the issue template
+flask hang up during debug mode enabled
+parse cli command's args with the application context
+Missing module Markupsafe on "flask run"
+Command to set FLASK_APP variable in flask/examples/flasker README is not compatible with released version of Flask(0.12.2)
+Apps importing grequests crash when a restart/reload is attempted
+jsonify() silently strips timezone from datetime objects
+Float converter does not match number values lacking a decimal
+Update App Engine link
+The request method to another website in views function didn't run correctly
+The link for downloadable PDF documentation is not working
+Changes documentation screenshots for a more recent UI
+Cannot login with Google provider
+Feature request : Highlight 'user code' in traceback interpreter output
+Dynamically appending templates one after another
+Blueprint view function name should not contain dots
+Flask Python3 ?
+Changing SESSION_COOKIE_NAME invalidates session cookies earlier than permanent_session_lifetime
+Fix typos and formatting
+replace @pytest.yield_fixture by @pytest.fixture
+Add version warning to Flaskr tutorial
+While streaming back long responses, Flask loses encodings or alters the stream
+Casting the value received from the Web Server in the request object …
+corrected indentations for pypi description
+web: URL to PDF on home doesn't work
+Suggestion : decorated blueprints
+Add clean command to flask cli
+Adds support DEBUG variable from config.
+The example flaskr can't easily be run by a beginner in Flask framework
+Simplify logging
+Execute/debug flask CLI from IDE
+Idiomatic way to stop pylint complaining about flask route unused function names?
+Suggestion for jsonify
+Distribute documentation mis-formatted
+TCP port 5000 blocked by corporate firewalls
+make_test_environ_builder: use url_scheme from path if provided
+Tagging builds section in docs have misleading information
+Werid behaviour of BuildError
+Flask mangles traceback for Syntax Errors
+PDF version of docs unavailable
+give context about purpose of this section, #2421
+The reloader fails on SyntaxError when using a custom cli entry point
+Reloader fails to reload after SyntaxError when the app is in an __init__.py file
+Add more information to doc regarding PERMANENT_SESSION_LIFETIME config.
+Tutorial: step 3 (Installing as package) needs rationale
+Typeo in readme for flaskr example
+Fixed typo in documentation
+[0.11.x] Remove outdated text on flask.ext redirect package
+[0.12.x] Remove outdated text on flask.ext redirect package
+Add .env support
+404 error when using debug=True
+FLASK_APP doesn't require .py extension for local packages
+Flaskr example code RuntimeError
+support passing environ to test client
+TestClient: EnvironBuilder cannot be passed in
+Flask CLI doesn't support application context in argument callbacks
+Clarify docs and tests for exception handling in Flask.teardown_appcontext()
+Suggestions for Tutorial
+Integrate flask log messages to Gunicorn log files
+The exception of installing 
+Custom JSON encoder doesn't work for dictionary keys
+datetime json encoding is one sided: Fix for JSONDecoder is needed
+Remove unused import from test_basic.
+render_template_string() recompiles the template every time
+formatting of setup.cfg code snippet
+setup.cfg code snippet not formatted correctly
+clean up secret key docs
+fix variable substitution in error message
+Un-deprecate Request.json
+Remove old 0.7 upgrade script
+Remove deprecated flask.ext
+Remove deprecated code
+Remove deprecated code from app.py
+jsonify response converts datetime object into string with GMT regardless of objects tzinfo.
+Flask fails silently when it does not have permission to SSL cert/key files
+Bad interaction between flask.json.load() and werkzeug LimitedStream
+Flaskr fails being run from cli
+pdf link on home page is broken
+Flask app doesn't run when importing Python-Markdown module
+Add command to CLI to generate secure random strings
+Remove deprecated code
+Problem with partial video content: send_from_directory() + x-sendfile + mod_wsgi
+Don't require FLASK_APP to have .py extension
+FLASK_APP var is not being parsed correctly for paths, imports system and third party modules.
+removed bug in memory sqlite uri
+Maybe view function names should not be used as default endpoints
+Odd behavior with send_from_directory
+Import app from wsgi.py or app.py if FLASK_APP is not defined
+flask command should not require .py extension
+flask command should auto-detect module
+Add .env support, take 2
+Correctly JSON-encode datetimes aware of non-UTC timezones
+How to catch the whole request lifetime in Flask
+Flask re-raise exception that already been processed.
+JSONEncoder support for datetime.date and datetime.time serialization
+Documentation .mobi file not found
+Fixed a typo.
+PREFERRED_URL_SCHEME behavior question
+Ambiguity in Advanced Foreword
+Small grammar fixes and re-wording.
+Doc for add check upload file
+fix for Blueprint view with same name will be override
+Blueprint view with same name will be override
+flask-uploads
+Fixed a small typo with flask.g docstring
+Fixes #1051
+Allow the jinja2 environment class to be overridden.
+Fix a tiny spelling error: untilization -> utilization
+fix a small mistake in setup.rst
+fix syntax of wtf html example.
+fixed import for python 3
+Docs: cli.rst typos
+Docs: fixes
+Set DEBUG and TESTING config value to default to None, not False.
+cannot run example flaskr
+testsuite status, 0.10.; FAILED (failures=3, errors=2)
+unittest loader discover throwing "AssertionError: View function mapping is overwriting an existing endpoint function"
+static content mime-type always text/plain
+Cannot run `flask` from command line
+Why isn't there `Blueprint.after_last_app_request`?
+404 .mobi format of the Documentation
+Feature: override defaults from a config file
+Fixed typo.
+Fix a docstring type in cli.py.
+security hazard in app.route decorator ordering
+Documentation - link to Jinja website
+Website Badges
+Updating extension guidelines
+Add etag and last-modified helpers to improve cachability
+admin notification when rate limit is reached
+few mispelling errors
+Serving static files from root static folder rather than blueprint's static folder
+Fix typos in docstrings and comments in run.py
+Updating Jinja2 and Werkzeug URLs.
+Log template errors to stdout when debugging.
+Flask authentication
+Append `Vary: Cookies` header to response when session is accessed
+Calling post method in loop yields unexpected results
+Flask performance issue
+About flask docs translations
+Fix minor typo
+Change testsuite to be compatible with py.test and nose
+Odd error while running run-tests.py under coverage.py
+fix typo
+Clarified that the code is meant to be saved as a file called hello.py.
+Protect against python 3.4 pkgutil change
+Flash category constants
+Add flask-bouncer to extension registry
+Fix when release date is not today
+Adding jinja2 environment variables as a keyword arg in the flask constr...
+missed word.
+Python 3.4 changed `pkgutil.get_loader` behavior
+Tweaks to docs/patterns/viewdecorators.rst
+Ajax render selected complete EmbeddedDocument
+The Flask Mailinglist page is out of date
+Flask can't read multipart form boundaries from custom HTTP clients
+Set app.jinja_env.undefined to something better when debug = True
+Using encodings other than UTF-8 in Response
+Small punctuation change in unicode doc
+Add env RUN_FLASK_MEMORY_TESTS to travis.yml
+Allow using |tojson in double-quoted HTML attributes again
+Please document PyCharm support
+harmless comment fixes/typos
+send_file in combination with chrome on android
+SERVER_NAME configuration should not implicitly change routing behavior.
+Clarify the after_request argument
+Tutorial Typo: tutorial/views/#tutorial-views  -- add_entry() 
+Update send_file() docstring - file name required
+Added 'import os' statement
+Attempted implicit sequence conversion but the response object is in direct passthrough mode
+Pass keyword args from `test_client` method to client class constructor
+Fix broken tutorial code
+Review Flask-User extension for listing, and approval
+Typo in fastcgi docs
+Parent task (with debug=True) doesn't properly kill children
+Add edit_entry and delete_entry to flaskr
+Remove or downplay Tornado recommendation
+Add not_modified shortcut
+Teardown functions sometimes receive spurious exceptions from Gunicorn
+Can't customize url_for external links without causing 404 errors
+Add required import os for tutorial
+Cannot lazily load views in 0.10.1
+Update docs copyright date
+Add an "import os" to tutorial
+autoescape false doesn't work as expected
+Update windows installation and other notes
+"import os" statement missing from tutorial
+Update copyright year in license
+jsonify() ignores the sort order of an OrderedDict
+Test client unicode bug
+Explicitly pass the Celery instance name.
+Debug output only show error line in own scripts possible?
+update README to markdown
+babel can't extract text from template with "with" statement
+adding `_scheme` parameter to `url_for`
+The mailing list for Flask hosted on librelist is not accepting any questions.
+Update docs/patterns/deferredcallbacks.rst
+problem with example in deferred callbacks documentation
+Double '/' in URLs causes static content not to load?
+AppEngine environments: Flask ExtensionImporter class (flask.ext) is getting in the way when flask extensions import external modules 
+@app.teardown_request function doesn't called in debug mode [NOT-A-BUG]
+WSGI specification has finalized for Python 3
+"flaskext.mail" documentation
+The problem with _micro_ frameworks is a lack of structure
+Add template_global decorator
+Dont show tweets with the same text tweeted by different users
+SQLite doesn't recognize data type "string"
+Fixing my own pull request #647
+docs/extensiondev: Use `current_app` instead of `self.app`
+Add troubleshooting sphinx tip
+Cannot start Flask application in a thread other than main
+wiki: Large app how to, incompete and not runnable
+Fix a typo in the deferred-callbacks docs.
+Problem with non-escaped chars in URL.
+Added hint about print statements in CGI.
+Please improve CGI documentation slightly.
+Missing linebreaks on homepage
+user could customs non-OK entry body
+Change readme file to use the reStructuredText format
+Flaskr tests - 3 errors
+Design issue with flask.logger.create_logger().
+Use stevedore to load extensions
+Get HTTP_REFERER in flask
+Added Facebook group link.
+Flask not sending 304 Not Modified even if last_modified<=if_modified_since.
+Ended your paragraph tag.
+Replace obsolete website reference with successor
+correcting typo
+send_file breaks when flask app run as nobody
+session_transaction does not setup request
+Add config parser to blueprints
+Fix #623
+Use current_app in Flask_SQLite3 example
+Benchmarking fails with 3 requests
+Support Python 3 using 2to3 - passes tests with py25-27,py32,pypy
+correcting typo
+ Use sqlite3.Row factory in Flaskr (#588)
+missing ' in templating example
+missing text in url_for() app context RuntimeError message
+Review Flask-S3
+Local extensions fail to import
+Documentation on IIS deployment.
+Fix missing argument in find_module of flaskext_compat.py
+Issue #524 was not one and flaskext_compat does not work anymore
+jQuery example: submit on enter, focus field on load, ajax to callback function, " to '.
+FR: Make stream_template from the docs available in Flask
+UnicodeDecodeError when passing session to simplejson dumps
+Minor fix to views.py testsuite.
+Fix #611
+blueprint options from register_blueprint
+Minor typo in Tutorial, but possibly confusing
+[BUG]TypeError: 'JsonObject' object is not callable
+docs/deploying/wsgi-standalone: Add Twisted Web.
+Putting extension in flask.ext: the import loader in ext/__init__.py raises unnecessary error
+Update docs/quickstart.rst
+LazyView, why not include it in Flask?
+Regarding JSON inside <script> tag and HTML5 parser
+make_test_environ_builder was not working correctly with subdomains
+Fixed typo occours to occurs
+Misspelling in docs @ flask.Flask.handle_exception
+Getting raw POST data for whatever mimetype
+cannot run testsuite on Windows
+Use `env` for virtualenv in docs
+Fixes typo
+Add @template_test() decorator for creating custom jinja2 tests.  Fixes #332
+sdist from master creates "devdev" version.
+sdist from master creates "devdev" version.
+Update flask/templating.py
+Nestable blueprints
+Incorrect Pluggable Views documentation?
+fixed some typos
+Fixed small error in SQLAlchemy patterns documentation
+pyinstaller + flask
+sqlite dict cursors
+Python 3 port is available
+Session workaround in case cookie is disabled
+Multiple URL rules pointing to lambdas in the same scope do not work
+Handling of vendor trees and parameters in MIME Media Types
+fixed issue #524
+Implement support for X-HTTP-Method-Override in flask.views.MethodView.
+Corrected some minor errors in comments
+POST with accidental tuple is very difficult to debug
+Fix code example in pluggable views documentation
+fixed Issue #507
+Added _ to fix link to extensions in Hook. Extend.
+Fix the appcontext_tearing_down example in docs
+Import flask.appcontext_tearing_down at top-level
+Updated information about flask-admin
+Debugging mode is not propagate to mounted apps (DispatcherMiddleware)
+INFO don't get logged for custom logger handle
+Doc improvements for url_for()
+Warn or raise when overriding an endpoint
+Unexpected Hello word
+Add missing import on SQLAlchemy documentation page
+Deploying Flask on AWS linked in QuickStart?
+Fixed import (would lead into an import error)
+InstanceTestCase tests fail when run by a non-standard user
+Update docs on Approved Extensions
+Make the decorators attribute on View a tuple by default
+Fix typo.
+Minor test fixes
+Disable modules by default
+debug=True triggers SyntaxError: can't assign to operator
+Add a non-decorator version of the error handler register function
+Patch for tutorial (minor code error)
+Exception when trying to run Flask app via CGIHandler
+typo in quickstart.rst 
+Typo in documentation for FastCGI
+SSL Issue
+"no such table" with sqlite3
+installation.rst typo
+Adding Flask-Misaka to the extensions page
+Multiple request headers with same name
+make app.config callable
+Merge pull request #1 from mitsuhiko/master
+Merge pull request #1 from mitsuhiko/master
+Splitting flask.Flask logic into multiple "mixins"
+change the url_prefix attribute of the blueprint to the real used url_prefix
+Fix typo
+corrected documentation for Request get_json()
+Fixed when release date is not today, The fails have no args.
+Documentation MOBI for Download is outdated
+Fix typo in docstring
+Check error handlers for classes before HTTP status codes
+get_cookie_path: fix docstring
+Flask-0.10.1 test failures
+Tutorial stores passwords in plaintext
+jsonify a Decimal
+How to get the serialized version of the session cookie in 0.10?
+mod_wsgi docuementation
+URLSafeTimedSerializer may be vulnerable to a CRIME or BREACH style attack in some implemtations?
+Fixed tiny but distracting typo.
+Update blueprints.rst - Add Error Handlers
+Making redirecting safe / Deprecating redirects to 3rd party hosts
+itsdangerous dependency missing LICENSE file
+Add ability to configure app with a JSON file
+Reloader changes sys.path
+Incomplete mod_wsgi documentation
+url_for(*args, _external=True) doesn't add the port to the full url
+fixed quote problem in init_db code snippet
+Feature request. Regex in url rules
+Support mapping multiple subdomains to a single blueprint
+app.py: Link to correct EnvironBuilder docs
+Changed sort_json test to test str sorting
+In the Flaskr Exemple - Change '/ tmp / flaskr.db' to 'flaskr.db'
+Fix doc bug in patterns/sqlite3, clarify use of make_dicts
+Fix #815
+methods argument of Flask.route should be validated at import time
+Fix a typo
+Correct typo: FastCgiServer should be FastCgiExternalServer when using a standalone FCGI server (Gunicorn, etc.)
+flash(my_message) raised 'is not JSON serializable' when Flask 0.9 migrate to 0.10 
+Remove Werkzeug bug workaround from flask/app.py
+Running flask with unbuffered stdout exits upon reload
+add test case to reproduce the bug for #798
+Fix #782 -- /tmp/ in tutorial
+Fix #783 -- config in tutorial
+Update example for Apache FCGI config to use worker processes
+Run an applicaton with another server
+Instructions for configuring FastCGI under Apache are incorrect
+can not correctly handle the POST param with "_" underscore
+Acquire SSL client certificate from development server
+Given absolute URL, testclient discards query params
+cleared up confusion for from_envvar in docs
+api.rst: fix some spelling/typos
+Fix set cookie every request
+Can't find requet.form or requesrt.values items with post request for flask 0.10.1
+Compatibility problems between 0.9 - 0.10?
+route to view_func with same decorators
+Pluggable Method Views broken by fix for #570
+How to use the multi url_prefix with same Blueprint?
+Static files url_for bug with Windows-like file path.
+os.system in a own thread blocks the REST request if Response is a generator
+Fixed json.jsonify
+Adjust documentation on testing to reflect changes to ``flask.g``
+json.py use bson.json_util
+changed werkzeug.serving.run_simple to werkzeug.run_simple in app.run do...
+Missing `s` in a plural word
+No way create url with `url_for` to another host
+quickstart guide - wording changes for clarity
+flaskr tutorial suggestion: Omit or isolate the text about "from_envvar"
+Flaskr tutorial suggestion - Use DATABASE='flaskr' instead of DATABASE='/tmp/flaskr'
+test_appcontext_signals() fails with blinker installed
+test_json_key_sorting() fails with simplejson installed
+Doc suggestion: In QuickStart 10.1 define "Reversing" before using it
+repr(request) is broken if the query string or url contains non-ascii characters
+infinite processes with multiprocessing and app.run(debug=True)
+Fix typo
+Add Flask.config_class attribute
+Add a way to give feedback from the command line.
+url_for + redirect does not respect http vs https
+Flask 0.10.x and Werkzeug 0.9.x encoding issue
+url_to does not correctly url encode params
+[Future] Option to get decoded urls in log
+Collapse old changelog directives
+after_request func called too early for streaming responses
+Flaskr application problem
+Catch-all errorhandler does not catch BadRequestKeyError
+Flask error handler caching leads to inconsistent behavior
+Support create_app that doesn't take ScriptInfo as first argument
+Detect `create_app` when FLASK_APP doesn't specify app object
+Handle app factory in FLASK_APP
+"Cookie header" munge bad and good cookies together
+Py36 json support added
+Documentation: Term "development mode" is unclear
+Flask does not detect route collisions between blueprints and app
+Add routes command
+Clean up preprocess_request docs
+QueueHandler logging does not work behind uwsgi
+refactor make_response to be easier to follow
+Generating relative url with app context should not require SERVER_NAME
+Ensure error while opening session pops context
+Flask installation issue
+Continue #1936: Add the ability to combine MethodViews
+Class-based View should set provide_automatic_options attr in as_view
+circular import error with flask cli is misleading
+Continue #1489: Add kwarg to disable auto OPTIONS on add_url_rule 
+Fixes typo in app.py
+0.12 maintenance
+CLI silences ImportError
+file input request filepath.
+Remove empty XML tag.
+Take advantage of Py3.6 json support for bytes
+get mtime in utc
+Documentation on Larger Applications could reference Blueprints (0.12.1)
+update send_file cache control timeout=-1 no-cache
+Bind to IPv6 and IPv4 simultanously (Dual Stack operation)
+filename can be latin-1, not just ascii
+spelling fix
+Bug in url_for() function when you run a Flask application through CGI
+Import error while config the app
+Add example for virtualenv integration in cli docs
+Does Flask support regular expressions in its subdomain
+FLASK_DEBUG=1 causes ModuleNotFoundError: No module named 'flask' 
+Update out of date jsonify documentation
+Correct imports in file upload example
+Chunked uploads missing body data.
+Add blueprint and the app factory pattern into the flaskr example
+flask.pocoo.org not updated with latest release (0.12.1)
+Enable TRAP_BAD_REQUEST_ERRORS when in debug mode
+Debugging during bootstrapping
+Per blueprint errorhandlers.
+Fix send_file's attachment_filename to work with non-ascii filenames
+Handle BaseExceptions
+Flask treats SystemExit and other BaseExceptions as indicating success
+app.run(port='5000', debug=True) error
+Spruce-up the README to a Markdown version with logo
+Werkzeug 0.12.0 changed how abort works
+shorten output when ImportError due to app bug.
+EOFError during GET request due to broken session file.
+Support for dict-like arguments in request.args
+Flask blames FLASK_APP on all ImportErrors
+Issue #2212: documentation: virtualenv and python3
+Documentation: Installing and virtual environment under python3
+Fix static route when using host_matching = True
+Clarify APPLICATION_ROOT documentation
+Print a stacktrace on CLI error (closes #2208)
+Do not swallow exceptions if CLI fails to load
+Edit debug mode attention for new version Werkzeug
+Missing headers on CSV file
+Connection reset when posting data
+Python 3 syntax error in Quickstart docs
+[docstring] Documenting host SERVER_NAME config
+Fix broken link in the docs 
+docs: Fix typos/grammar
+Can't start in debug mode.
+Close <li> tag in lines (16,18) (#1951)
+Add instructions for running Flask with PyCharm
+Allow error handler to pass on decision to subsequent handlers
+Add tips for debug config with flask cli
+Windows Server - Gevent Deployment
+Issue with installing app debugger
+Don't rely on X-Requested-With for pretty print json response
+Inconsistent behaviour on request.get_json(cache=False) #2181 (solution)
+Updated documentation for being able to use init_db method
+testing.rst is missing flask import
+Suggestion: Support callables as parameter for url_for
+Input stream not automatically drained at teardown.
+Fix non-working  setup.cfg in tutorial docs with working copy from sa…
+Fix typo in docs/tutorial/templates.rst
+Connection Timed Out
+There is no way to add a link in flask.abort() function.
+Missing documentation about how URL/queries are quoted/unquoted
+Fixed typo in module header
+Inconsistent behaviour on request.get_json(cache=False)
+Migrate various docs links to https
+bdist_wheel replaces wheel
+Callback on `app.run`
+Possibly incorrect handling of from-data
+Running tests with nested objects in the data input
+Update 4.4.3 HTTP Methods Example
+Security Considerations Oversight
+py.test => pytest
+Increase a max header size, when using the GET request
+request.authorization.password missing characters
+Flask==1.1.x no longer calls force_type on user-defined types
+Problem sending post request from Angular frontend to Flask backend
+Documentation - Configuration Handling
+Add support for IPython shell when using `flask shell`
+upstream prematurely closed 
+RuntimeError: Working outside of application context.
+RuntimeError: Working outside of application context.
+Why is it so difficult for flask_apscheduler to get the flask context??
+Add support for gzip compression on json outputs
+Another missing import and instantiation
+Missing Flask module import and Flask app variable
+Officially support using pathlib.Path for static_folder.
+flask + Process pool
+File Upload with Angular towards a Flask (Python) Webservice
+When route does not exists, url_for in template doesn't raise error
+app.send_static_file(filename,data=123)
+Adding error message to an assert
+Clean up docs about error handling
+Blueprint's errorhandler has no effect.
+werkzeug.routing.BuildError: Could not build url for endpoint 'cap.mjpg' no. 2
+werkzeug.routing.BuildError: Could not build url for endpoint 'cap.mjpg'
+Clarify in the changelog that 1.1.2 is the last release to support py2.7 and py3.5
+Problem with "flask run" command
+Fix flake8 repo url in .pre-commit-config.yaml
+1.1.2: test suite is failing
+How to deal with multiple slashes in URL
+use ast to parse FLASK_APP
+deprecate passing script_info to factory
+Remove simplejson and deprecate encoding options
+flask.cli.NoAppException raised when .env/.flaskenv exists in parent directory and python-dotenv installed
+Stop change CWD to .env/.flaskenv location
+Different logging (handler) behavior when running app with pycharm debugger
+Flask webserver and TCP server run at the same time
+use pathlib internally
+Reloader does not work correctly with lazy loading
+Remove simplejson
+Drop Python 2
+Use ast.parse to validate FLASK_APP
+Deprecate passing `script_info` to app factory
+url  //  404
+Tensorflow and Flask reloader not playing nicely
+Missing slash in app route
+Problem itterating through arrays in Javascript
+Request | request.files access is too slow.
+Testing docs are out of date
+Grammar and clarity fix
+itty bitty typo
+how remove response header server 
+Clarify that static_folder must be a relative path
+Memory leak running Flask in debug mode
+how to solve Connection was closed cleanly . scrapy flask gevent Process 
+FLASK_APP does not work with bound methods
+Update deprecated for config.from_json
+docs: update "Deploying on Google App Engine"
+Confusion when silently chdir to the directory where an `.env` file was found (with `python-dotenv`)
+unexpected variable evaluation on url with encoded slashes
+Add async support for flask
+Code reload prevents server start 
+A problem about request.json
+docs: testing.rst function def missing colon
+Move HTML escaping example back to Variable Rules.
+Errorhandler not work for ValidationError from marshmallow
+Flask Quickstart on master branch; minimal example fails with NameError
+`@app.route('route')` not relative to root url
+app.route(
+Remove deprecated `license_file` option
+Flask dev server not working with Python 3.6 on Anaconda
+Creating realtime API with flask
+Fix property name in description
+Description contradicts code sample
+Flask test_client returns 405 error using flask_restful
+Expose JSONDecodeError in flask.json
+typo fix
+flask how to stop after run() called
+JSONEncoder uses _dump_date from werkzeug.http which doesn't format dates with years < 1000 correctly
+Make code more easy to read
+Add run part
+Can not compress response json uses jsonify
+Change in return part
+Static files sent as content type text/html when redirecting from app.before_request
+threads are not running in the background
+Remove outdated Pycharm instructions
+url_for behavior is different in production than under test
+app.teardown_request and app.errorhandler investigation
+Flask 0.12.4 pulls an incompatible version of Werkzeug (1.0.0)
+how to set flask session key value in multithreading
+Large JSON is truncated for over 1MB in Flask
+View returned none exception contains endpoint name
+Pin Werkzeug < 1.0 for 0.12
+Add .vscode to .gitignore
+Flask >=1.1.0: app.logger RecursionError: maximum recursion depth exceeded
+SESSION_REFRESH_EACH_REQUEST seems pointless in SecureCookieSessionInterface
+Flask 0.12.2 fresh install broken due to Werkzeug 1.0.0
+CLI checks for cryptography library
+Handle breaking changes of Werkzeug v1.0.0
+Incompatibility issues with werkzeug 1.0
+Disallow werkzeug>=1.0
+Forces specific version of Werkzeug to prevent breaking Flask
+Deploying doc mod_wsgi.rst is specific to Python 2.X
+Bump tox from 3.17.1 to 3.18.0
+remove lowest version test until next release
+Common API between Flask + Blueprint
+templates not showing changes in cloned repo 
+Update Discord invite links
+Prevent duplicate Content-Type header
+How to make a database for each html page in my web application? flask, python, html,sql
+Concurrent requests are taking more time then single request for python api code(using flask + waitres WSGI server)
+Bump tox from 3.17.0 to 3.17.1
+Bump tox from 3.16.1 to 3.17.0
+Flask using same styling on different flask projects
+make_response uses headers.update
+Fixing small html issues in flashing patterns docs
+Trying to store Dicts, or dictionaries, in session.
+fix typo
+Some small doc fixes
+Feature request
+Cherry-pick 7ba35c4 from master (support pathlib.Path for static_folder)
+Bump sphinx from 3.1.1 to 3.1.2
+Bump python-dotenv from 0.13.0 to 0.14.0
+Making the docs for blueprints more explicit about usecases with some examples.
+Added very small clarification to quickstart.rst
+API docs - changed flask.request description
+class route decorator error
+Bump pre-commit from 2.5.1 to 2.6.0
+revising/consolidating error docs
+Error Docs Revision/Consolidation
+Bump tox from 3.16.0 to 3.16.1
+Bump tox from 3.15.2 to 3.16.0
+Flask does not reload modified code when running under WSL
+Consolidated error docs
+Show change log entries on PyPi / Include change log entries in the long description
+Removed misleading DEBUG variable from examples
+So sorry! Can you explain it to me? There is no answer in other forums
+about flask document! The Part Of Request
+[docs] streaming contents: use app.response_class
+Simply control flow for existence checks
+Update app.py
+Simplify control flow existence checks
+send_file returns part of a file to a client when running with gevent worker on python 2.7.x
+"ValueError: signal only works in main thread" message when running scrapy in a flask app
+Flash is not working if used after session
+Use valid HTML in base template
+Bump sphinx from 3.1.0 to 3.1.1
+Python3 Flask route variable shows up as the variable name instead of value passed from postman
+Bump pre-commit from 2.5.0 to 2.5.1
+Bump pip-tools from 5.2.0 to 5.2.1
+Bump pre-commit from 2.4.0 to 2.5.0
+minor changes to tutorial conftest
+Bump sphinx from 3.0.4 to 3.1.0
+Bump tox from 3.15.1 to 3.15.2
+simplify and modernize some stuff for the tutorial project
+update code-block typo
+(docs): enabled syntax highlighting in logging.rst
+Bump greenlet from 0.4.15 to 0.4.16
+Appkit problem 
+Incorrect handling of filename* in Content-Disposition header causes a double quote to appear at the end of a non-ASCII file name
+Cannot patch flask.g in python 3.8+
+Bump pytest from 5.4.2 to 5.4.3
+Error on Flask run command
+Flask POST python script can´t run in Raspbian on startup
+security.rst: Add section on copy/paste security
+shlex.parse fails to parse quoted args inside a Flask application
+Flask app prints environment variable as object instead of string returned from os.getenv
+stream_with_context use large memory
+Returning Response and headers causes duplicate headers
+Bump pip-tools from 5.1.2 to 5.2.0
+TypeError: '<' not supported between instances of 'str' and 'NoneType'
+项目
+Bump sphinx from 3.0.3 to 3.0.4
+flask可以做为后端框架和基于vue的nuxtjs集成使用吗
+add function REGEXP
+use GitHub Actions for CI
+use pip-compile to pin dev requirements
+Add a function app.parse_route()
+Question: Get socket fileno() from flask.request
+Flask 1.1.x custom error handler fills up the console with tons of exceptions
+add readthedocs config
+App config(debug set to true but it still appears as false). Is this a bug?
+upgrade to Jquery3.5.1
+question about "quickstart"
+Discuss terminal copy/paste issues on security page
+is flask compatible to python3? 
+flaskenv is not read on windows
+Add cli_group_help parameter for Blueprint
+Blueprint cli commands cannot provide help for cli groups
+after_request executed if exception raised
+update /docs/testing.rst based on new tutorial tests
+add support to override commands
+don't show trace for --help without FLASK_APP
+Fix docs link for Flask-Uploads
+This error pops up every time I try to run flask
+Fix function name in example
+Fix issue arising when tojson or flask.json.dumps is applied on dict with key None
+Error when apply tojson or flask.json.dumps on dict with None as key
+FLASK_DEBUG=1 and/or FLASK_ENV=development causes flask.cli.NoAppException: Could not import
+When in DEBUG or Development getting flask.cli.NoAppException: Could not import ...
+Python 3.8.x - Error on flask import
+consolidate error handling docs
+Fixed a typo
+Difference in flask.g behaviour between Python 2.7 and Python 3.3
+Correct small typo in internal link
+Fix error message spelling (plural apostrophe)
+Fixed class-based views support
+Flask-MakeStatic listing and approval
+Fix typo
+Documentation for Flask.route() incorrect
+Debug mode crashes with python 3.3.1 on Windows 8
+Flask.run() uses SERVER_NAME config if available.
+blueprint.route methods argument typo throws unclear exception 
+Broken `g.var is defined` behaviour
+Location header key is unicode in case of relative redirects, breaks uwsgi
+Is there best solution for http client connection pool?
+Flask-doc Korean translation.
+teardown_appcontext missing exception when PRESERVE_CONTEXT_ON_EXCEPTION is set
+non-latin urls python 3
+It does not instantiate MethodView by per request
+FireLogger / FirePython integration?
+fixing issues found while debugging, fix error in 1 test
+Blueprints: Added register_blueprint() method
+Flask not working in Virtualenv setup (from S.O.)
+update urls on extensions registry page
+replace 1/0 by 1 // 0 to get rid of DeprecationWarning (and PEP8 issue)
+fix typos
+fix data types in after_request test
+2 small fixes for metaclass and import usage
+fix iterator in testsuite helpers
+fix minitwit/flaskr test errors, improve docs about file open mode
+Fixed typo in app.blueprints docstring
+Adds Flask-Classy to extensions registry
+Fix leak in leak detection code
+URLConf like Django -> urls.py
+Fix some literals
+some more work on py 3.3 port
+introduce six lib, used python-modernize + manual fix
+automated change using python-modernize: fix methodattrs
+automated change using python-modernize: replace execfile
+automated change using python-modernize: use 'as' in except
+document python 2.6 minimum requirement, remove stuff that refers to 2.5
+Random website fixes
+Move core Flask repositories to an organization
+CRUD
+Patch external_url_handler example.
+added flask-canvas extension
+Explicitly state that the jsonify method changes on request
+Added a missing comma
+Fixed documentation in 'Design Decisions in Flask'
+Flask on IIS
+Second mini-example on flask.pocoo.org might suggest the dev server is production ready
+Add Sentry to error logging documentation
+Syntax highlighting for PyPI long description
+Update flask online documentation
+Add restful route helpers.
+Request.data should be unicode
+Fixed url_for() incorrect external_url_handler example doc.
+Fixed documentation typo
+Add ability to app.route pluggable views
+HTML5 Video problem on iOS devices when using Flask development server
+Note about limitations of static files in blueprints
+Documentation page missing from Table of Contents
+Update README of example Flaskr
+Blueprint.after_request causes Flask to ignore @after_this_request
+Mention register_error_handler in errorhandler doc
+Review flask-mongo-sessions for approval
+Ajax example wrapped html attribute values in quotes
+Memory leakage: leaking threads
+Using dot will be cleaner.
+AJAX with jQuery documentation update
+Fixed a few typos in the quickstart doc
+Add import to jsonify example
+Allow UUID encoding in JSONEncoder
+MANIFEST.in updates
+JavaScript setRequestHeader of custom X-value not retrievable via Flask request.headers.get()
+Raise 400 JSONBadRequest instead of KeyError - Fixes #686
+Added signal for registration of blueprints
+Fixing werkzeug secure_filename example 
+Added more information about app factories.
+fix typo in quickstart guide
+Request to add a callback hook while registering blueprint.
+Semicolon in filename truncates following characters
+Update css.rst
+Review Flask-Funnel
+Flash messages signals
+Raise 400 JSONBadRequest instead of KeyError when accessing JSON request data
+Review Flask-Mobility
+Allow most iterables as return values.
+Tiny changes to docs
+Several issues with the mailing list (librelist), time to look for an alternative?
+fixes #677 - mistype in docs/quickstart
+url_for() problem with CGI and .htaccess
+Problem with sending form with enctype="multipart/form-data".
+Flask exception logging has a catch-22
+Minor typo in quickstart
+Database improperly closed in the test case within this tutorial
+Need instructions about pylint/pychecker setup
+Can't jsonify list object
+Curious about logo images in your web sites
+`redirect` calls are not caught by `handle_http_exception` while RequestRedirect is.
+Prefer attachment_filename for mime type guessing in send_file
+Session variable is not saved
+1.0 maintenance
+setuptools finds flask-mail instead of flask
+Fix typo in CHANGES.rst
+The data for app.url_map.converters is not passed to the blueprint
+Updated CLI documentation to mention the issue with underscores and click 7
+send_file doesn't urlencode ':/' in unicode attachment_filename
+Add link to Render deployment
+new installation of flask, can't get around the 404 Not Found error locally
+fix the typo
+Allow customizing url map class
+remove encoding from method override pattern
+clarify where to call flask run from in tutorial
+disable slow travis osx env
+use "-m virtualenv" in installation doc
+fix docs build
+clear KeyError in production for Werkzeug 0.15
+Add comment about using factory function in __init__.py
+Fail to run flask when flask test
+Fix DeprecationWarning: invlid escape sequence in make-release.py
+Add support for PathLike objects in static file helpers
+[Docs] Mention how to skip subsets of exceptions in errorpages.rst
+Flask auto reload does not refresh browser
+Fix syntax warning in docstring
+How to connect SQL sever/MSSQL database with flask are there any libraries available
+Fix DeprecationWarning on collections import in flask.sessions
+DeprecationWarning in flask.sessions
+Getter and setter right way for App Config
+[Docs] Improve tojson docs (additions, clarifications, & fixes)
+Exposed the reloader interval as a flask command line argument
+Corrected a typo in a docstring: "Help object" --> "Helper object"
+Add a tool to decode session cookie
+ Force endpoint name to string in Python 2
+View returning 204 takes very long (+65s) when using NGINX and any WSGI implementation
+Advice on Flask hooks
+Add Python 3.7 to CI.
+test_basic.test_trapping_of_bad_request_key_errors failed in Travis-CI
+my bad
+Fix typo in class name
+docs: Update virtualenv creation process for Fedora
+I need to manually refresh the web page when I use the “redirect” function
+Docstring changed for flask app route
+get data from mongodb please discuss it i attached screenshot
+Creating flask_wtf forms for a list of values  through a for loop generates the same inputs several times within each form
+yum install virtualenv instead of python-virtualenv on Fedora
+404 for all routes
+TypeError: __name__ must be set to a string object 
+request.path doesn't include request.script_root when running under a subdirectory
+Fix typos found while completing the Flask tutorial
+[Docs] Add simple analogy to app factories doc
+Execution time not stable
+View Args Contain url escape characters
+Flask==1.0.2 is not compatible with python-env
+paginate error:paginated page returned 404.
+static_host not requesting https
+Cross-Site Scripting when using templates
+cli shouldn't mess with sys.argv
+add classifiers
+Build error when using url_for(request.endpoint)
+Clarify prefixing of urls for blueprint endpoints
+Update README.rst
+Issues while using redis session
+Request multiple files - New update old syntax does not work
+Lighttpd configuration: deploy script link
+server banner seems works not as expected
+I cant run more than one test case in flask
+I can't get cookies in the decorator
+Use imperative tense for CLI help text
+Requests stop being processed when basic auth is expected but not provided
+Use imperative tense for CLI help text
+Unprintable characters found in log file
+it is not working using flask_apscheduler in flask withoud reload
+How can I achieve this structure?
+Default help messages for Flask CLI use inconsistent tenses (in English)
+Document 'flask run --host' and '--port'
+Stop raising FormDataRoutingRedirect
+cannot deepcopy flask request ?
+1.0 maintenance
+Online documentation correction (Standalone WSGI Containers)
+Running flask in a thread with Kivy causes no requests to be printed out
+Using logging's root logger before app.run() breaks Flask logging
+Update app.py
+[Docs] Add Single-Page Web Application pattern
+How to get a handle_request method for just handle one request
+Handle errors during create_url_adapter
+Update documentation for users to use flask-caching instead of Werkzeug cache
+Custom exception handler not working when an exception is thrown from streaming a generator
+Fixes for sentry docs
+Update sentry error handling documentation
+Flask doesn't auto-escape files not ending in html, htm, xml, xhtml
+Relationship error
+Documentation: Request object API documentation refers to "trusted_hosts" - not clear
+Do not handle RoutingExceptions with app error handlers
+Improper digest_method
+HTTPException handler catches non-error exceptions like RequestRedirect
+Don't pass unexpected exception types to error handlers
+Added one tip to use this pattern in Python3.
+Patterns Method Overrides
+Hot Reloader Causing Re-initialization Issues after Exception
+Importing module breaks Flask logging

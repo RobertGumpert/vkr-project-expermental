@@ -1,0 +1,99 @@
+
+MAIN: react.txt
+	react.txt -> react.txt : 1.00
+	react.txt -> angular.txt : 0.03
+	react.txt -> vue.txt : 0.12
+	react.txt -> gin.txt : 0.00
+	react.txt -> flask.txt : 0.00
+	react.txt -> okhttp.txt : 0.00
+	react.txt -> hyper.txt : 0.07
+	react.txt -> terminal.txt : 0.01
+	react.txt -> alacritty.txt : 0.00
+
+MAIN: angular.txt
+	angular.txt -> react.txt : 0.03
+	angular.txt -> angular.txt : 1.00
+	angular.txt -> vue.txt : 0.05
+	angular.txt -> gin.txt : 0.01
+	angular.txt -> flask.txt : 0.01
+	angular.txt -> okhttp.txt : 0.01
+	angular.txt -> hyper.txt : 0.01
+	angular.txt -> terminal.txt : 0.01
+	angular.txt -> alacritty.txt : 0.00
+
+MAIN: vue.txt
+	vue.txt -> react.txt : 0.12
+	vue.txt -> angular.txt : 0.05
+	vue.txt -> vue.txt : 1.00
+	vue.txt -> gin.txt : 0.01
+	vue.txt -> flask.txt : 0.01
+	vue.txt -> okhttp.txt : 0.00
+	vue.txt -> hyper.txt : 0.02
+	vue.txt -> terminal.txt : 0.01
+	vue.txt -> alacritty.txt : 0.00
+
+MAIN: gin.txt
+	gin.txt -> react.txt : 0.00
+	gin.txt -> angular.txt : 0.01
+	gin.txt -> vue.txt : 0.01
+	gin.txt -> gin.txt : 1.00
+	gin.txt -> flask.txt : 0.00
+	gin.txt -> okhttp.txt : 0.01
+	gin.txt -> hyper.txt : 0.00
+	gin.txt -> terminal.txt : 0.00
+	gin.txt -> alacritty.txt : 0.01
+
+MAIN: flask.txt
+	flask.txt -> react.txt : 0.00
+	flask.txt -> angular.txt : 0.01
+	flask.txt -> vue.txt : 0.01
+	flask.txt -> gin.txt : 0.00
+	flask.txt -> flask.txt : 1.00
+	flask.txt -> okhttp.txt : 0.00
+	flask.txt -> hyper.txt : 0.00
+	flask.txt -> terminal.txt : 0.01
+	flask.txt -> alacritty.txt : 0.00
+
+MAIN: okhttp.txt
+	okhttp.txt -> react.txt : 0.00
+	okhttp.txt -> angular.txt : 0.01
+	okhttp.txt -> vue.txt : 0.00
+	okhttp.txt -> gin.txt : 0.01
+	okhttp.txt -> flask.txt : 0.00
+	okhttp.txt -> okhttp.txt : 1.00
+	okhttp.txt -> hyper.txt : 0.00
+	okhttp.txt -> terminal.txt : 0.00
+	okhttp.txt -> alacritty.txt : 0.00
+
+MAIN: hyper.txt
+	hyper.txt -> react.txt : 0.07
+	hyper.txt -> angular.txt : 0.01
+	hyper.txt -> vue.txt : 0.02
+	hyper.txt -> gin.txt : 0.00
+	hyper.txt -> flask.txt : 0.00
+	hyper.txt -> okhttp.txt : 0.00
+	hyper.txt -> hyper.txt : 1.00
+	hyper.txt -> terminal.txt : 0.05
+	hyper.txt -> alacritty.txt : 0.02
+
+MAIN: terminal.txt
+	terminal.txt -> react.txt : 0.01
+	terminal.txt -> angular.txt : 0.01
+	terminal.txt -> vue.txt : 0.01
+	terminal.txt -> gin.txt : 0.00
+	terminal.txt -> flask.txt : 0.01
+	terminal.txt -> okhttp.txt : 0.00
+	terminal.txt -> hyper.txt : 0.05
+	terminal.txt -> terminal.txt : 1.00
+	terminal.txt -> alacritty.txt : 0.10
+
+MAIN: alacritty.txt
+	alacritty.txt -> react.txt : 0.00
+	alacritty.txt -> angular.txt : 0.00
+	alacritty.txt -> vue.txt : 0.00
+	alacritty.txt -> gin.txt : 0.01
+	alacritty.txt -> flask.txt : 0.00
+	alacritty.txt -> okhttp.txt : 0.00
+	alacritty.txt -> hyper.txt : 0.02
+	alacritty.txt -> terminal.txt : 0.10
+	alacritty.txt -> alacritty.txt : 1.00

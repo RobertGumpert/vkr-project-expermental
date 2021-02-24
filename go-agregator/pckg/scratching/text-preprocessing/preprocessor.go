@@ -154,13 +154,6 @@ func (preprocessor *TextPreprocessor) do(from, to int64, waitGroupDone bool) {
 	}
 	for ; from < to; from++ {
 
-		//if len((*preprocessor.Words)[from]) == 1 {
-		//	(*preprocessor.Words)[from] = (*preprocessor.Words)[len(*preprocessor.Words)-1]
-		//	(*preprocessor.Words)[len(*preprocessor.Words)-1] = ""
-		//	*preprocessor.Words = (*preprocessor.Words)[:len(*preprocessor.Words)-1]
-		//	to--
-		//	continue
-		//}
 
 		var (
 			currentLemma = GetLemma(&((*preprocessor.Words)[from]), lemmatizer)

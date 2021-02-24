@@ -1,0 +1,4599 @@
+avoid gui subprocess start alacritty window
+erase line command key binding work
+support graphic terminal
+start alacritty rust app
+bump smallvec
+text visible ssh
+vim line window
+add note sign notarization readme
+confirm installation process work rhel
+fix estimate dpr wayland
+macos wrong focus fullscreen
+report mouse button
+incorrect estimate dpr wayland
+feature request different cursor thickness base cursor shape
+segfault shutdown wayland
+dynamic title working macos
+macro support
+remove invalid dimension flag bash completion
+character render following character precede
+cursor scalene triangle graphical corruption
+font character display correctly version
+error create gl receive multiple error oserror eglinitialize oserror gl context creation
+segmentation fault startup
+fix segmentation fault shutdown wayland
+fix damage track wayland
+do clear run log tail command
+alacritty wayland title bar bug
+set dirty flag keypress
+alacritty nvtop
+miss wayland input redraw
+primary selection update
+cpu usage screen go blank popos ubuntu
+keybinding do reach application neovim
+key bind action eat keypress
+msi file unsigned
+option disable log file tmp
+macos launch alacritty alfred trigger create tmux window run command
+linux backspace working vim
+add macos arm build ci
+update macos icon big sur
+alacritty freeze primary display use multimonitor setup
+text color apply
+alacritty leaf cmd exe orphan closing
+macos allow open command file alacritty
+alacritty tmux segfaults exit
+blink set work exit nvim
+run bench test ci
+allow copy urls right click
+feat env add env var able wha
+rendering issue line drawing character ubuntu mono font
+upgrade url plugin stop working
+renderable cell transformation alacritty
+option use scancodes binding default
+alacritty fail compile openbsd
+fix dead alacritty talk link readme
+output color
+character display
+fail correctly estimate dpr xmonad
+change title bar color modify transparent option
+dynamic title alacritty switcher
+error get alacritty yml
+alacritty fail start color mode
+alacritty crash segmentation fault core dump
+command line option issue feature request
+start alacritty
+update shell completion
+command do work
+fix typo readme md
+opengl relate crash
+feature secure keyboard entry macos
+add minimum opengl version readme
+glsl run requirement mention readme md install md
+emojis render color
+tdrop fail launch alacritty
+possible make mouse right click behavior just like window powershell
+fix assertion arch
+corrupt text window
+assertion failure
+unclear set dimension position option
+screen corruption use neovim
+touch bar support
+cross compile macos app
+window alacritty powershell multiple tmux status bar
+bump version
+edit icon img src
+bump version
+sequence lose
+fix jump match reverse vi search
+jump match reverse vi mode search
+add oracle linux install doc
+bump version
+notarize macos binary
+htop vim binding work
+remove github pull request template
+fix inefficient search initialization
+make url style optional
+error alacritty
+visual bell working window
+character type inside neo vim
+mouse behave properly neovim
+cursor color contrast logic sensitive
+tmux vim color false equal term
+fix live reload break yaml start
+config reload do work config break launch
+seg fault launching sudo
+install update gentoo
+issue send meta character
+replace derive custom proc macro
+install error fail run custom build command sys
+install error error load share library
+bump glutin
+subpixel rendering transparent background cause artifact
+font way small second screen
+allow command visible text input revive
+change alacritty
+alacritty open
+remove reload feature
+draw miss glyph zerowidth character
+ssh color input like backspace work
+fix deprecation warn discover build
+stop working hibernation manjaro kde
+doc add dev ubuntu
+terminal definition alacritty despite present
+install custom terminfo late
+type character macos scandinavian keyboard layout numpad
+remove alacritty spec
+man add path linux example config file
+recalculate font size change
+configuration import behavior attempt load relative home
+problem font configuration
+fix copr
+wip support
+code sign macos app
+high cpu usage intensive output
+feature request stretch window content fit omit pad
+support search regex
+support search regex
+alacritty resize adjust pixel density window monitor
+mode selection
+expose api processor event loop
+font scale linux
+unable update fedora
+add apple silicon support
+xterm emulation dynamic title working
+fix dim index color
+use correct font symbol
+unable build alacritty ubuntu
+insert command work
+set offset create break line
+question expect behavior font offset
+subract key bind cause warn alacritty
+tab working
+configure use terminal emacs
+keybinding error launch config change
+shape cursor change runing nvim
+wrapper api binding
+clearhistory command working head
+afterimage alacritty macos
+add openconsole support window
+set kclr terminfo value
+click cursor support
+line font rendering properly alacritty
+cursor style unknown variant shape
+shift tab working window alacritty
+open vim print bunch random char select line open file
+add action clear scrollback buffer reset terminal
+fallback font linux use bitmap font default
+add desktop entry key
+alacritty crash startup gl context error
+mouse working wsl alacritty install window
+escape file path
+history command delete
+certain config option work
+fix dos cause excessive csi parameter value
+window screen working
+pointer event outside terminal window
+fedora fail run alacritty terminate early error
+backticks vim doesnt work
+error try install deb package blank line value field
+build error master branch
+remove redundant cli flag
+font suddenly bold upgrade big sur
+draw selection vi cursor hide
+fix ci upload asset tag matching
+macos mission animation slow switch alacritty
+bump version
+macos badge dock icon
+fix typo install md
+ability change copy paste binding
+attempt input korean character use uim freeze alacritty
+reset cursor blink inverval normal mode transition
+fix cargo lock
+fix changelog section
+configure forward delete word
+stick exit sigchld unblocked
+crash somelargenegativenumber
+ubuntu screen fail redraw subsequent key press
+change title work
+mouse support window micro editor
+thread panic fail read wayland
+strange behavior highlight zim
+alacritty work fedora
+fix build failure macos feature
+error dead code run clippy
+compilation failure macos feature pass
+feature selection keyboard
+randomly jump cursor middle screen
+alacritty terminal question
+update time
+compile alacritty
+add touchscreen support
+remove dependency
+bash prompt decoration
+alacritty open
+small unicode
+attribute allow expression
+input line
+transparency working pop os
+use dynamic storage zerowidth character
+remove duplicate dependency linux
+vi edit command line feature request
+fail compile alacritty cargo build release
+expand character home directory import path
+use powershell window
+add optional configuration import
+remove unneeded collect renderlines rect
+add optional import
+cursor nerer change lose focus
+check viewport size initial resize
+incorrect dpr launch second monitor
+xinerama do work bug alacritty
+window key long work modifier window
+right click copy till click selection
+fix issue self grid point line bound
+add poll new config watch config delete
+add support automatic
+differnent cursor thickness focus unfocused window
+easymotion like jump vi mode
+fullscreen mode access menu bar
+handling compositionevent
+license symlink
+fedora file conflict
+crash xrdp session
+add ref test diffs
+alacritty crash late linux kernel wayland gnome desktop
+follow xterm preserve foreground color reset
+update dependency
+fix incorrect feature check
+mess key midnight commander
+reescaling problem resize maximize window window
+instruction obtain alacritty linux
+possible set search bar cellforeground cellbackground contrary documentation
+support urgency hint
+send window focus result shift ignore
+make use glutin feature
+fix feature check cross build
+build failure openbsd
+spawn new alacritty process cwd macos
+alacritty launching
+granular pad configurability
+import configuration file working
+dynamic title default
+wont start wayland gnome
+opacity change
+color scheme break vim option set resize
+cargo build fail
+problem compile
+color look weird vim
+change background color
+feat request change remotely run instance
+use invert color select text
+building development nixos
+external binding make cursor
+type curly brace neovim run alacritty macos
+alacritty app failing start
+background transparency work
+rendering working linux mint
+fix handling unicode character message bar
+use persist clipboard content exit
+correct documentation saving install package gentoo
+correct documentation saving install package gentoo
+bump glutin
+help message print strangely window
+problem start git gui gitk program
+add additional build dependency
+centos install md update
+stop backslash
+alacritty import setting external file
+overlie screen app option
+little blue box
+option app open window close
+segmentation fault ubuntu wayland nvidia driver
+macos long able bind command period
+unable build macos
+scrollback cleanup
+make storage fully generic
+flicker dirty block
+type umlaut mac os
+disable scroll buffer grid
+error building macos following instruction
+displace diacritic
+replace runtime sizeof assertion static assert scrollback
+replace debug assert
+replace runtime sizeof assertion static assert
+font size rescale drag big monitor
+fix incorrect cell selection
+high cpu usage improper window display position
+update cargo toml debug value integer bool
+scrollback selection incorrect right window
+readme remove old comment nixos
+possible change character select
+unhandled cursorshape neovim cursor shape working machine
+arrow key do jump word
+enable clippy crate
+semantic selection behave unexpectedly wrap line scrollback
+fix clippy issue
+remove remain clippy lint annotation
+glutin upgrade
+fix scrollback access index bound
+tmux alacritty
+scrollback attempt access index bound
+quadruple click smart
+wip add block selection
+unicode character rendering
+allow use alternative font small font size
+make compilation binary phony target
+warn paste
+fix warning
+update manpage document cli option
+cargo build slow
+manually impl partialeq glyphkey
+fix selection start point lag cursor
+fail launch spotlight
+implement config option term color
+wrap mode
+control shift tmux
+add setting ignore click unfocused window
+use case user performance boost
+inconsistent window size hidpi screen incorrect font scale dpi switch
+error change shell config
+slow performance output line
+support terminfo default keybindings
+high dpi scale monitor dimension
+suppress extra character command
+trail colour scroll initially render area vim
+alacritty enter key key repeat
+add support window fix
+cargo clippy
+font scale wrongly different resolution monitor
+unable use float point font offset
+distribute remainder line
+optimize indexing raw buffer
+text color look pixelated osx display
+static display notification sigchld
+selection miss character
+incorrect font rendering
+picture terminal
+logo design proposal
+enable live dpi toggle
+reduce step
+split terminal
+keybinding long work
+title override config
+add paste key
+allow disable dpi scale
+disable mouse
+change font size binding
+paste text use work tmux run alacritty
+set given title support platform
+title flag work anymore
+type sign pipe doesn work properly
+crazy long vtebench time macbook
+kerning man file
+dpi change
+decoration free window resize glutin
+xcb abort
+selection cancel selection different application selection color change
+alacritty exit take long time
+properly working ubuntu
+reduce debug level release
+font size differ different screen
+remove check remainder op
+build failure
+bind key stop working
+drag file terminal escape path
+open quit immediately macos high sierra
+update glutin
+fix match link
+problem page
+fix error message typo
+publish github release travis
+mention copr repository readme md
+cursor app mouse mode set shift press
+deadlock holding key high repeat rate
+bump version
+fix default fullscreen bind doc
+root package cargo metadata
+add note openbsd default user datasize limit
+fix dynamic color escape response
+character insert neovim request escape code add
+alignment issue cli ncurses program
+launch login shell default linux
+vim response time window
+drag filename space lack quote
+tmux line seperating pane showing
+color drastically dark terminal app
+feature hint regex
+unable use field key bind
+be do minimize window
+update openbsd installation reflect build dependency
+bump dependency version
+build failure openbsd
+high ram usage
+use reqwest winpty
+feature power mode
+unset environment variable
+logo use window frame
+keyboard shortcut macos native fullscreen
+bump minimum support rust version
+fix ncurses backspace key
+add wayland primary selection clipboard support
+clipboard access vim anymore
+fix compiler warning late nightly
+script turn xrandr display hang alacritty
+gui app launch alacritty foreground
+key repeat sluggish
+add wayland primary selection support
+fix index bound selection
+support primary selection clipboard wayland
+config key binding doc
+hieroglyphic char small
+dynamic color code escape
+rpm package
+tmux status bar offset cursor position
+follow xparsecolor spec escape sequence
+rendering issue large amount text
+install headline link
+update install md
+unicode low half block character incorrect rendering
+active alacritty window opaque
+break rendering mc dialog introduce
+implement multiple dynamic color code escape sequence
+window constantly resize open direcoties neovim sway
+add request escape code
+wsl vscode integration alacritty
+alacritty icon jump mac dock
+line reappear wrong dimension
+macos window scale ghost text artifact
+alacritty crash immediately launch mac os high sierra
+crash restore window maximize original size
+tmux recognize alacritty
+index bound select yes
+font fallback option panic
+compile use stable rust macos package sctk
+alacritty stop rendering time usage
+skip bom read config file
+switch fullscreen
+alacrity do allow input type
+hover long line slow alacritty
+add gentoo install dependency
+add build instruction clear linux
+cursor navigation shell
+mouse click position accurate mouse move focus window
+message bar display ansi escape code
+crash use title option
+cursor movement generate output
+cursor selection
+icon break
+alacritty perform color correction
+bugfix rerender output
+alacritty redraw commit
+project description center
+visual bug
+artifact long character
+instruction add alacritty dock os
+add macro boilerplate combination error
+make vim flash
+update path fix
+wip add dockerfile fedora
+key bind mode need doc
+window text rendering artifact adjust dpi scale window setting
+change font break program
+text display properly
+block paste freeze alacritty
+update cargo lock
+fix url detection matching invalid urls
+urls recognize slash
+allow urls end trail slash
+disable bold font text
+fix old version os
+os app printing utf inside tmux
+selection highlight character
+update cargo toml build use cargo deb
+colorscheme background color wrong
+keyboard modifier order irrelevant
+work correctly
+wrong focus event
+mouse pointer reverse left right tmux
+fix character rendering
+render character progress cursor
+performance regression scrollback
+add support set cursor shape
+text cursor
+alacritty close event exit shell
+cava screen cut issue noticable alacritty
+unresolved import error building late
+redraw issue scroll line column time
+kitty par sacrifice thing like tab modern feature
+font offset working
+copy paste working
+allow usage scancodes config
+rename zsh alacritty
+paste path terminal drag drop file
+fail start shader error
+keybindings char send escape twice
+support drop file insert path
+allow mouse paste mouse mode shift
+remove target string message
+paste selection shift insert mouse mode
+archlinux input method iusse
+guide uninstall alacritty completely
+use unicode width function
+index scrollback
+allow change scrollback history size runtime
+force use nvidia graphic card
+ignore click unfocused window
+add granular right left
+tmux status line character appear line
+alacritty load user font macos
+blink rtv movement
+add instruction set default
+improve resize implementation
+fix completion install instruction fish macos
+scrollback rendering fix initial resize font metric
+hide window
+fix segfault nightly
+disable reload opacity
+keyboard bind open alacritty
+cursor beam underline revert block grab drag lose focus
+alacritty process continue run closing
+feature static prompt
+way disable mouse style replacement
+add option config
+consider allow alacritty use application component
+efficient resize implementation
+problem font libfontconfig update
+eglcreatewindowsurface fail
+pixel format match criterias
+feature pane
+pass parameter command specify result spawn
+support key binding
+segfault macos late master rust nightly
+font special character start ubuntu shortcut
+escape character insert subsequent keypress
+implement unicode behaviour
+fix bright character column
+character line bold
+allow override config option command line
+key repetition sway wayland
+use hack monospace font result uneven output
+titlebar option
+add font fallback example config template
+error compile macos
+screen mode
+dynamic title display title run app bspwm
+assertion fail
+enable history comparison
+specify working directory
+compilation error openbsd
+cursor auto select text toggle fullscreen macos
+reset grid run reset
+fix recording new scrollback
+fix bracket paste mode input contain end sequence
+reset allow scrollback
+change decoration config bool enum
+alacritty start tag version
+make possible prevent alacritty set dimension
+make possible specify window instance class command line option
+file macos
+scrollback memory optimization
+allow change scrollback history size runtime
+fix scrollback history size bug
+improve smart select include default
+config font offset font long work
+unnecessary parenthesis function argument cargo build
+unicode strikethrough weirdness
+weird font rendering issue
+color appear black
+update install md
+character composition render correctly
+fail start manjaro wayland
+build fail raspberry pi compile crossfont
+fix scroll region performance fix line
+change instruction regard fedora installation
+config file
+bump version
+print multiline log write
+increase font size csd decoration wayland
+plan release binary apple silicon
+render underline strikeout rect batch
+differentiate plain tab
+paste password
+add support config import
+vi mode backward search working
+fix stdout log message order
+log log file stdout
+fix config import log call
+panic winit startup window
+resize window title title bar
+cmatrix break alacritty
+fix vi mode terminal reset
+ricing alacritty help
+error cargo build noob need help
+issue bundle terminfo osx dmg
+working spanish layout macos big sur
+possible hybrid title
+create bigsur svg
+reduce number github action ci build
+open alacritty inside window terminal
+msi installer
+add alpine linux build prereqs
+terminal color go macos big sur upgrade
+performance window
+disable option window stick size
+bump version
+fix unused import warn
+background slightly transparent deactivate
+add option disable text reflow
+fail build alacritty fresh mint distribution
+fix zerowidth char column handling
+feature gate building feature
+macos icon present execute binary instead open app
+resize reflow issue
+load necessary gl function
+draw cursor rect renderer
+fix github release tag pattern
+macos big source code pro rendering issue
+bump development version
+bump version
+update vte
+open file neovim change cursor style form beam block
+slow mission control bigsur
+unicode sextant character render messily
+config way conditional different oses
+alacritty colorize file
+konsole like highlight new line
+fix wide character cut
+cursor vanish lot altases
+transparency kde plasma
+add control shift enter spawn new instance
+add dependency build source fedora
+building source fail fedora
+path expansion config import
+fix sr ht clippy job
+fix use free drop extra datum
+fix github action clippy job
+flicker text use halo text cursor python package
+optimize startup time
+border shade
+have firacode powerline symbol
+add ability select text search
+emojis renderring correctly
+fix config file format
+migrate travis ci github action
+support decset sequence
+error handler panic
+index bound change font size
+command flag break
+deprecate winpty backend
+resize tile mode extremely slow
+add editorconfig
+issue just want prompt
+consider set editorconfig
+alacritty crash paste firefox wayland
+assertion function createcompiler
+alacritty open solution
+wip new fast renderer
+neovim break resize window
+look cursor theme
+alacritty development
+opacity set just make terminal dark
+escape key binding work capslock remap escape
+fix visual bell get stick
+set environment variable
+fix crash large negative font offset
+unify term dimension call
+wayland csd color enhancement
+cursor reset default exit neovim
+miss benchmark number
+add cli flag override config option
+fix import type error handling
+support expansion config file
+install alacritty fresh catalina install egpu result menubar working
+long deselect select text
+line break clean previous line
+crash nvidia driver install
+add resetandclear action
+macos alacritty capture keybinds focus different desktop
+alacritty clear clipboard exit
+problem install alacritty close reply
+escape unicode character cause issue drawing
+font offset add offset space character just
+bump fedora copr repository version
+window alacritty window decoration set
+add cursor inspire plan terminal
+support set individual color underline be
+white triangle icon kde plasma
+update winit toolkit
+thread panic fail read wayland invalid argument os error
+add configuration file import
+instruction update late version distros
+installation macos
+colorterm set truecolor
+add power management config
+shift paste select copy text
+effect opacity maximize simplefullscreen window
+rpm package new version
+update correct location window configuration
+key binding ignore
+fast key repeat firacode nerd font make alacritty crash macos resize
+alacritty read config
+add log crossfont
+fix selection scroll message bar visible
+support opentype font svg table
+close message bar release button press
+use background color render timer
+crash try select message bar
+pretty alacritty yml collapse comment indent
+fix message bar color pick background
+window title length
+message bar text unreadable
+fix handling wrapline flag line
+machine crash display server run log
+blink cursor
+add vi available bind mode
+keybinding work shift
+do mode alacritty keybindings
+index bound crash vi tmux
+upstream terminfo change ncurses
+add support double underline
+character render italic vim
+macos menu bar access screen mode
+remove markdownish markup help output
+remove copyright notice file
+window alacritty do start
+crash paste primary selection app
+incorrect subpixel rendering bgr layout
+toggle color scheemes
+update spec file
+fix character swallow search
+write output log file
+use search string new search
+border transparent
+neovim gray background color
+command alacritty
+add bind cancel search
+disable search keybind
+exit search use default
+fix clippy issue
+add search field
+use tcgetpgrp pid spawnnewinstance
+crash release left mouse button selection pointer outside alacritty window wayland
+input launch gui window go stdin
+alacritty recognise custom
+determine active process spawnnewinstace use tcgetpgrp
+support pin alacritty gnome dock add favorite
+unable use accent wayland
+add installation instruction ubuntu base distribution
+add support colon separate sgr parameter
+allow control wayland decoration color separately terminal color config
+panic call
+add newlines vim
+linux binary file release
+keybinding specific search
+fullscreen window alacritty
+mouse event click scroll pass tmux
+background opacity work screen mode nvim
+break app bar font size tiny
+fix typo example config file
+fix negative window position
+fix typo
+fix travis release deployment
+thread panic load decode decodingerror
+fix scrollback live reload
+crash live reload history size
+fix alt screen bug
+reset reset alternate screen correctly
+window content disappear resize high sierra
+font change size monitor
+allow configuration file os
+arrow key work vim
+make behaviour window consistent unix
+add default key binding
+tmux set style bold attribute change color
+alacritty conpty mode break string encode unknown
+big performance hit use trucolor
+work window
+fix terminfo support extend capability
+crash parallel desktop
+break share library terminal emulation
+terminfo detail miss macos
+chocolatey window support method installation
+add initial installer
+spawn new instance use keybinding
+add dynamic title support window
+package rpm fedora
+render issue macos
+remove undefined assertion return value closepseudoconsole
+open window start time boot
+feature different pad
+text reflow
+mango emoji possibly incorrect display width
+fix pull request link
+check return early
+remove mislead comment
+rustfmt event input selection
+fix linger window child process exit unix
+add inherit configuration file support
+custom url launcher
+preview cycling alacritty instance wayland
+update fish completion installation
+allow highlight drag start border
+use window
+window neovim color problem
+alacritty die input shell exit
+bump version
+alacritty title set wayland title
+font look super weird
+alacritty display garbage update
+fix font space error
+feature underline link hover
+add binding default config
+display issue monitor macos update
+copy firefox paste alacritty work use wayland gdk backend
+remove deployment script clippy build
+fix dimension doc
+bump version
+window splitting
+advantage new wayland theming capability
+small update readme
+remove selection clear screen partially
+change pgdown scroll history
+true color window cygwin
+inaccurate claim
+cut new release
+window build panicks unwrap
+click https urls wrongly open file explorer window
+scroll url click
+direct binary launch spawn extra line
+disable incremental release build
+alacritty scroll work
+create cross platform pty crate
+window fail compile shader version support
+set window title wayland
+url click scrollback
+install deb ubuntu
+set colour shell window use conpty
+replace deprecate
+unable build alacritty conflict
+fix macos config decoration doc
+add option override colour select text
+support background image
+instance open keypress delay short
+simplify text shader
+scale ime position
+sway font
+remove unused coordinate rect shader
+terminal window taking available space
+set incorrectly high dpi display
+alacritty crash command error zsh
+fix regression url launcher config
+disable url launcher
+map alt use key bind
+input method select list position correct
+install make weird
+fix reload config
+smooth scroll
+program reset color intermittently
+open file urls
+disable copy selection
+modifier emacs
+add line number config error message
+follow zsh convention zsh completion
+input work wayland
+use instead deprecate uninitialized
+text flush
+compose key work
+support bold italic font
+italic doesn work window
+high cpu move window monitor xfce
+codesigning macos
+insanely long startup time high cpu load debian buster
+simplefullscreen macos do resize alacritty move screen
+panic gl function
+arrow key work interactive mercurial commit run wsl
+swap modifier key
+live reload font config
+font rendering issue
+alacritty use multiple terminal
+use fcitx input alacritty swaywm
+class set improperly
+drawing freeze debian stretch
+benchmark terminal emulator
+thread panic
+support alternatescroll escape
+error initialize shader
+change icon installation
+track report damage compatible compositor
+update euclid
+backslash bar working properly kakoune
+icon ranger correct
+runtime error panic call
+reset mouse cursor select
+keybindings ignore macos
+include wraplines
+macos send escape sequence
+fix wayland clipboard integration
+unable launch alacritty fullscreen startup mode wayland
+background colour appear dark configure
+feature infinite scroll
+term variable work wsl
+feature multiple colour scheme
+compton inactive dim fail alacritty
+remove keybindings affect
+update readme logo crisp
+font support zsh imperfect rendering
+fix multiple line color line
+output render time
+problem invalid boolean false expect string use default value
+opacity working
+fix line line render scroll
+fix mouse hover message bar
+hover mouse message bar result crash
+remove errno depedency
+modifier check url search
+display type showing
+alacritty fail exit need interaction exit
+unable launch virtual display assertion
+minor powerline font rendering issue
+random crash macos
+organize readme os list
+bright black default color visible
+remove color log output
+add escape binding multiple combine modifier
+odd behavior fish shell move text end column
+bump minimum support rust version
+installation conflict package
+screen flicker key stroke mac sierra
+fix line update criterion
+switch url detection
+underline start line render scroll
+window screen viewport simplefullscreen macos
+set font
+support font ligature use harfbuzz linux
+fix copypasta readme md format
+fontconfig load default config file
+change font size mouse wheel
+renderning error
+fix select trail tab
+add support alacritty macos
+env ignore
+event handle correctly presence
+macos accept file start app
+error problem invalid map expect use default value
+fix cursor flicker url hover
+mouse cursor flicker default hand shape hover url
+ignore unsupported csi sequence
+add ability create custom desktop entry
+keyboard input do work gnome wayland session
+text mouse cursor use shift select block text
+text mouse cursor use shift select block text
+load embed bitmaps disable fc
+change font
+powerline font render
+process pop invisible window
+do alacritty ignore embeddedbitmap fontconfig set
+press tab command make impossible delete letter fish shell
+clarify macos brew instruction extra file
+font do effect
+provide command keybindings
+normal color pick black background instead bright color
+chinese character occasionally issue neovim
+possible make alacritty default terminal
+add config support xrdb color
+improve quote shell parameter handling window
+black screen high resolution linux bspwm
+ignore entire rpm distro base linux community
+huge font recent update change alacritty yml
+tabspaces ignore config
+add option cursor set cursor thickness
+convert shell program cow string
+ipc error sway
+release file
+alacritty window decoration stop working change tty
+ability increase width width
+allow use fraction font size
+set shell command figure make args work
+transparency do work unless set
+alacritty fail interactive ultrawide display
+add support background blur
+fix various mouse mode vi mode interaction
+fix changelog section
+hintfull set respect
+frequent crash macos
+vim rendering mess
+url launcher work macos alternate launcher
+bump version
+launching application new alacritty window
+fix tabstops reset reset
+cell press left right key tmux
+new make various cursor dimension configurable
+look absurd
+bug primary background color overwrite symbol color
+feature backwards search vim mode
+remove reimplementations
+alacritty parse color config
+modifier stick spawnnewinstance
+remove orphan proxy folder
+wayland plasma wayland bar gap window unless move
+change alacritty yml file apply alacritty
+update font depedencies
+use test instead custom implementation
+set title right drawing instead do right away
+macos cursor do correctly begin line
+support official fedora install
+rename alt grid inactive grid
+rename alt grid inactive grid
+bump version
+add regex scrollback buffer search
+feature set title alacritty run
+togglevimode unknown mode vi keybindings
+rename term struct
+fix cursor position alt screen resize
+add changelog entry minimum rust version bump
+add freebsd ci
+error run resolution inside virtual box
+garbage left buffer resize window
+clear selection ansi clear line
+url launcher config wrong place
+bump version
+change window decoration
+bind delete button actual action
+font try render
+fix invisible selection
+focus alacritty window depress modifier remain action
+vi action effect
+unbind xyz
+error gui
+arrow key press act like press twice
+shell config issue cmd exe
+unexpected behavior alacritty open use hotkey
+add copyprimary action
+fix minor typo
+fix scroll selection outside vimode
+question achieve ui
+fix bind mode notmode matching logic
+fix default keybinding documentation
+upcoming release pick mouse support conpty
+break arrow key navigation neovim
+bump version
+tput command work change color
+option use integrate gpu
+underline cursor see underline text
+preserve request font style fontconfig backend
+alacritty make lot prompt resize use zsh
+clipboard working vim
+detect alert user unused yaml key
+spurious modifier detection launch
+different font size multiple display
+error display powerline font ubuntu
+fix changelog version
+opacity option apllied
+add default keybinding spawnnewinstance macos
+windowevent miss virtual keycode linux
+improve bitmap font rendering macos
+macos buttonless mode revert button simplefullscreen
+test bsd ci
+fix bsd build failure
+fix window deployment
+build failure openbsd
+alacritty do start error create gl context
+line configuration ignore
+inline do
+color support probably conpty
+revert daemon removal
+font size ignore default
+live config reload notice symlink replace
+slow startup
+merge section changelog
+panic font length
+writting column insert newline unlike
+set wayland
+crash cat
+rework url highlight
+update class doc
+alacritty produce misaligned output tmux use column
+url selection mode
+pad do effect start type
+url highlight issue
+add directwrite font rasterizer
+feature auto scroll highlight
+disable url highlight url launcher disable
+crash automatically switch graphic macos
+trigger url open
+error create gl eglinitialize fail
+fix prompt jump reflow
+lag use nano vim
+urls contain unescaped unicode recognize
+macos toggle buttonless
+delete line vim cause screen flash
+freeze prompt reflow
+add rustfmt style guide
+crash click highlight url
+alacritty terminfo compatible gnu dircolors
+cursor different dimension depend shape
+buttonless title bar block selection
+clipboard rework
+runtime conpty assertion panic
+color rendering issue
+scancode mac
+fix url parse character
+maximize window map
+font error
+optionally remove content scrollback buffer
+default color bash window make directory really hard read
+hardware accelleration claim bite oversell feature exist sdl write project make theclaim opengl hardware accelerate
+text cursor jump start terminal window conpty powershell
+fix url highlight crash
+crash resize url highlight
+remove deprecate
+fix urls get incorrectly extend line
+cell select mouse leaf screen selection
+wrong key bind decrease font size gnome
+text copy primary selection
+refresh problem release build
+remove inclusive range
+add scrolllineup scrolllinedown action scroll line line
+horizontal mouse scroll wheel
+ignore config point size font size change size instead
+taking size window
+render japanese tmux zsh
+wip basic text shape rendering use harfbuzz
+add change log entry wayland title fix
+update cargo lock
+completion leaf undeletable character
+resize call tiocswinsz pixel
+fix invalid ptr conpty
+update glutin version
+scroll page
+input chinese character tmux alacritty
+ignore click unfocused window window
+interpretation csi diverge terminal
+focus mouse highlight text
+replace window call window
+config introduce explicit selection color
+bug force maximize window
+icon showing properly openbox
+add keybinding layout keyboard
+render issue double tab
+configurable window position
+use proc spawnnewinstance freebsd
+crazy fast general slow start
+emoji color display normal
+add ability change selection color
+character break url launching
+os fullscreen
+panic screen unlock
+alacritty respect working directory command line arg
+remove appveyor badge readme
+extend key enum
+add url highlight
+fix mouse event ignore pad
+color scheme utility
+terminal limit value
+certain csi sequence behave like expect
+blur alacritty ico large icon task switcher linux
+select text start near edge screen
+remove redundant use
+url add angle bracket delimiter
+font margin
+issue try add new ppa
+directwrite font rendering look denty
+query directwrite rendering mode use
+handle switch wayland
+override default binding subset mode match
+double bind scrollpageup
+error problem invalid map expect use default value
+select trail tab
+run command alfred
+osx set antialias false
+fix mouse handling
+text tmux working master
+fail open input method locale
+fix netbsd build failure
+character tmux right pane show left left pane
+method name type current scope
+fix row occ set new reset
+link surround angle bracket correctly parse
+vim command recognize
+link space
+alacritty start disk
+closing alacritty recording result panic wayland
+fix saving ref test
+fix saving ref test
+change comment symbol desire alignment
+update shell completion
+diacritic letter display separately
+fix cursor color set escape sequence
+mouse cursor do hide type
+change cursor color insert
+char show use tmux start shell
+change mouse cursor hover message bar
+regression scroll performance
+add class shell completion
+use menlo fallback font macos
+clear window use git bash
+feature support blink text
+selection option respect window
+new window
+gnome tweak
+suggest install fish completion
+alacritty unresponsive switch virtual console sway
+fix clipboard hang mime set
+create concept color theme easy way rotate
+maximize long work
+hang break pipe
+fix row reset partially
+good font antialiasing use directwrite
+clipboard content lose closing
+set font
+hang paste clipboard
+smart copy
+need meta modifier key set
+window multiline rendering
+fix dependency arch install md
+fix unfullscreen fullscreen mode launch window
+escape control sequence pass tmux alacritty
+change font opensuse leap
+alacritty tmux half speed konsole tmux
+feature request zmodem rz sz support
+crash startup macos mojave
+window return window mode screen mode
+update install instruction void linux
+fix performance issue text reflow
+disable text reflow mode
+perform clear window
+lbracket match os
+vim color scheme set correctly use winpty
+freeze crash paste
+faux scroll work
+buggy character terminal win
+wayland clipboard intermittently break
+fix inconsitent cursor position scroll
+ability choose font
+alacritty flathub
+weird carat behavior scroll
+blank startup
+dump scrollback buffer new instance alacritty run pager
+text reflow slow large grid
+inconsistent locale run command line vs dock
+vim long honor color
+window working window
+bump appdata
+print second time
+ignore fullscreen maximize
+env deprecate
+font strange artifact blurry monitor upgrade
+deprecation warning start
+static default static lifetime fix
+fix ubuntu deployment
+feature support scroll lock functionality
+miss deb
+alacritty panic start locale use
+add block selection
+blank default
+feature request support function key support
+touchpad scroll fix merge
+feature request support mark scroll command
+rust dependency prerequisite section
+regression scroll alacritty laggy key press
+add rust list arch linux dependency
+touchpad scroll janky
+translucent background support
+miss build dependency arch linux
+remove unused macro
+mouse cursor permanent load cursor
+emacs scroll mouse click drag
+tmux mouse select window do support alacritty
+implement visual distinction active terminal inactive
+cursor flicker neovim
+double font width use bitmap font contain cjk wide character
+resolution do change switch monitor osx
+black screen switch virtual console
+code lack documentation
+ignore pad
+alacritty terminal emulation library like vte
+cursor color set background color vim
+make shader file path user configurable
+readme section long accurate
+panic imei application run
+inconsistent result use alt modifier key
+redraw issue maximize window ubuntu
+mouse wheel scroll work past column
+cursor do extend width wide character
+ghost character scroll text unicode
+specify color bold text
+readme add nixos instruction
+weird behavior number sign key mac os
+update macos dependency fix
+add support input method
+alacritty do send sequence
+implement option start thread
+doc add instruction mac app
+set mac app
+allow change window title bar color macos
+compile rustc
+funny bug neovim
+panic set cursor visibility fail
+key rebind assume qwerty
+pasteselection macos paste text clipboard
+key circumflex recognize
+mouse scroll tmux reverse
+rendering issue debian stretch
+build error compile font
+build error cargo build
+alacritty respond shutdown restart event macos
+osx app multiple window instance fail
+improve input latency
+canonicalize config watch path
+update late
+way disable config watcher
+remember close position size macos
+issue cfbundleidentifier macos
+meta key working macos
+hide working maos
+selection rectangle clear enter tmux
+resize tmux pane
+add support text rtl language
+support background foreground color escape code
+remove launcher set directory alacritty
+screen tear line
+implement use ansi attribute cancelbold
+add support xim
+implementation scrollback
+add support color change escape sequence
+add long option command flag
+fix typo rustdoc
+make alacritty available cargo install
+reduce instancedata footprint
+blink cursor
+read pty
+switch screen external monitor resolution problem
+performance regression
+document bind key command
+macos bundle locale path issue
+colour profile inversion toggle
+reduce instancedata footprint
+add solus instruction
+specific glyph render incorrectly recent update
+fail launch file
+character miss macos
+keystroke drop nohup
+update readme indicate scrollback wait contributor
+update readme regard
+share code implement terminal multiplexer
+terminal alternate mode toggle set
+add dim color support
+send modifier
+xembed support
+support input method
+support alternative input
+spawn alacritty window invisible
+alacritty yml match default alacritty yml repo
+add bright foreground color option
+script refactor
+make directory shader live clear
+wip make alacritty library
+selection update faux scroll
+working correctly
+wrong font width maximum advance value
+allow bind right opt ctrl
+compile bitflags
+scrollback buffer search
+update lockfile
+make mac app installation step idempotent
+regression issue use integrate gpu mac
+problem window
+expand key bind config documentation
+fix ioctl failing bite architecture
+bind subtract anymore
+fix index color set regression
+color regression
+revert behavior macos
+alacritty start macos
+alacritty segfaults start
+bitflags fail compile
+pathfinder integration
+tmux copy text loss
+fix sgr mouse report
+make scrollback support alternative screen buffer tmux history
+improve ability alacritty deal break config
+fix scroll outside range
+key binding ctrl
+error create gl eglcreatewindowsurface fail
+prevent sink low
+set strange invalid value alacritty
+column outside selection mouse right window
+fix tab
+large space character default config
+working macbook pro
+auto copy
+honour working dir linux
+add clippy check travis
+forward key support
+library load
+scroll behavior do match
+faux scroll break vim scroll event capture
+implement block selection
+segfault linux
+bump glutin
+block selection
+megabyte terminal
+fix zombie child
+break screen tmux emoji status bar
+enable mouse mode
+zombie process command execution
+background blur
+error create gl request attribute
+implement osc set clipboard
+resize really slow
+add configuration option faux scrollback
+finalize icon choice
+restore mouse cursor focus
+optimize fontconfig fallback
+handle dpi change event
+make visual bell flash color customizable
+vertical subpixel geometry long work
+honour working directory
+update dependency
+update winit glutin bitflags euclid
+remember window position macos
+font configuration
+fix macos fallback
+prevent decrease font size minimal value
+break config file cause alacritty launch
+add need pacman command
+dimension working
+improper font scale various dpi screen
+segfault nvidia driver nixos
+fix create new atlas
+switch language keyboard shortcut
+add option draw borderless window
+implement faux scroll
+memorize input source macos
+recent launcher removal alacritty app bundle break app macos
+application alacritty open macos
+macos launching multiple time focus win
+linux font configuration issue
+add void linux distrobutions package
+update readme md current state macos
+add custom underline beam box cursor
+hangul multi grapheme input break
+switch keyboard macos alacritty focus
+open urls mouse
+fix license link readme
+bump build fix build failure
+underline cursor disappear
+gdb input redirection do work
+working arch linux
+feature undercurl support
+add application link dmg
+quick question regard alacritty yml vs yml
+add vtebench benchmark ci
+multiple package link native library freetype native library link
+ubuntu installation fail package despite set
+extract manual installation instruction
+support login fp user default command
+accent bug international keyboard layout gif
+add information option
+highlight urls
+add option open urls click
+percent line start alacritty
+pipe visible text external program
+difference use alacritty terminfo
+support inline input input
+set do make background transparent
+backspace register twice
+macos correctly remap key combination produce diacritic
+make sure fail travis future
+fix failing test bench feature
+store grid cell renderer drop terminal lock rendering
+unexpected character delete use backspace pinyin input method
+make macos bundle compatible osx
+benchmark hit assertion
+slow draw initial window time spend fcfontmatch
+bump fontconfig dependency
+add note package install freebsd
+fix selection scroll
+force alacritty use srgb color profile
+update selection scroll
+fix rendering selection outside viewport
+switch press key shift
+underline cell connect use bitmap font
+seemingly unrelated log dump vim
+scrollpageup scrollpagedown action behave expect
+fix deserialization old decoration value
+miss icon kde break freedesktop specification
+implement cnl cpl escape code
+wip multiple window
+order input mess auto type
+request user attention bell receive macos
+map ctrl tab ctrl shift tab
+fix reset cursor terminfo escape
+dynamically initialize grid storage
+add wayland clipboard support
+wmclass null wayland
+hide window shutdown
+use os keyboard setting os keyboard schema
+unify configuration file structure
+window decoration absent config section set
+fix config error miss decoration field
+cargo deb install end fail compile
+use vte parser filter escape mode
+fail open input method
+update snapcraft yaml
+automatically support mouse event
+auto copy selection primary clipboard
+add fullscreen option config
+hollow cursor window start unfocused
+investigate use
+round window corner alias macos
+press holding key register fedora wayland
+different vim version alacritty iterm
+cursor hollow window start unfocused
+roboto mono
+color look
+inconsistent fonconfig fallback
+storage fix compability
+freebsd mouse wheel scroll unit tmux recived
+select large amount text make highlight disappear
+middle click work alacritty focus
+extremely high memory usage alacritty
+select shift click
+scroll select content time
+error compile ubuntu bite
+set upper limit scrollback history size
+huge memory consumption set history variable big number
+touch id sudo work macos
+add mention official arch linux package
+build alacritty macos sierra
+geometry terminal do match dimension configuration
+custom color define alacritty yml work
+investigate macos tab
+cpl escape sequence working
+add gperf travis build dependency
+add readme ubuntu need install xclip package
+fix cause regression linux window mouse click handling
+alacritty stop drawing different window select use compton
+kde transparent glitched background
+investigate store renderable cell renderer
+add changelog
+color schema add yml do change
+remove redundant copy select
+color change update
+create release
+resize window give bad performance
+copy url clipboard right click
+add note regard release tag
+place window secondary monitor
+high cpu usage cava
+subpixel antialiasing available linux
+correct various config option
+add note version update master
+remove changelog suffix
+release master update
+fix crate io publishing restriction
+bump version
+fix changelog
+press print alacrtitty
+remove snap package config
+build error ubuntu unreleased
+macos key
+different key
+request support multiple font configuration
+render wide character correctly avoid cut
+micro editor launch suitable screen
+bump version
+fix scroll selection expansion
+bump minimum support rust version
+autoscrolling trigger selection expansion
+install ubuntu
+cjk character left half
+document reject window op escape
+fix cellforeground cellbackground cursor color
+alacritty support resize window csi sequence
+strange title bar gnome
+bold font rendering macos
+bump version
+invert fix color cursor match cell bg
+fix viless search origin
+remove outdate section readme
+scroll screen copy content
+remove package installation instruction readme
+font clip certain font size
+country flag emojis display correctly
+nerd font icon showing window
+issue opacity vcxsrv
+key bind work tmux
+glyph align
+incorrect origin viless search
+document ui feature
+improve selection expansion changelog entry
+limit maximum length title
+cursor invert place foreground color
+alacritty rendering properly open file manager
+feature selection expansion
+improve doc relate open urls
+searchbackward key bind working vi mode
+add secondary da support
+drag drop paste file path work wayland
+resume window alacritty long move different location screen
+font space random
+paste ssh linux host window result double newlines
+gpu alacritty right
+link error build arm
+expand selection upcoming release
+background opacity rendering properly left corner terminal
+font correctly display
+possible attach custom text sequence key
+bump version
+bump version
+remap cap lock escape do work
+add resetandclear action edit
+alacritty set colorfgbg env variable
+extend selection unselects begin
+fix rustfmt build failure
+bump version
+question linux binary
+rename font crate crossfont
+fix crash search
+foreground background invert resize window inside vim
+late alacritty broke icon
+crash search narrow window
+fix selection update viless search
+searchforward vi mode search buffer
+add good visual feedback active vi mode
+remove ubuntu ppa installation instruction
+add different search label backward search
+bump version
+bump version
+fix doc multiple simultaneous keybindings
+space left
+fix pad change apply immediately
+vi mode
+support emoji modifier
+pad option live reload right away
+have command run bell spamming bell drammatically decrease performance
+add support frame schedule window
+load alternative config file
+fix cursor reflow
+alacritty zsh source zshrc
+cursor reflow insert whitespace
+crash shrink single column
+fix crash cursor resize
+terrible slow use docker desktop
+doesnt work properly mosh session
+wip copypasta support use xcb
+unhandled esc dispatch
+alacritty slow terminator
+enable link time optimization
+inop xubuntu
+otf font support
+automate benchmark run ci
+fix resize crash
+tab character output copy
+quit press
+add font
+good bound check
+conform xdg spec configuration
+update readme md
+crash window resize
+alacritty crash apt finish
+dead key combine character print twice
+allow alacritty run integrate graphic card macos
+hang try input diacritic macos
+update readme md
+alacritty place fish prompt viewport clear
+color weirdness exit vim macos
+alacritty consistently slow urxvt xquartz macos
+alacritty window rescale startup
+conform xdg spec
+add proper high dpi support
+alacritty fail exit cleanly shell exit
+use log instead println
+panic run doge command
+update readme md
+ability apply line
+nightly update
+minor graphical bug htop
+current line disappear window resize
+config file recognize
+delete key working
+correct default alacritty yml path readme
+crash macos binary file
+line height look weird macos
+change readme md reflect current compiler situation
+color mode issue
+type ubuntu uk keyboard
+panic set bitmap font
+panic run micro text editor
+add vulkan renderer
+macos chinese char
+set urgent bell
+sign freeze unknown key
+significantly slow st
+feature tile
+building window
+support flag
+survive cat
+character box
+feature scroll
+os config alacritty yml ignore
+support change cursor shape
+key work
+merge config environment variable
+feature add set hide titlebar
+drag title bar do report cursor position os
+build macos
+scale factor
+fix slew bound issue
+support fraktur ansi escape sequence
+panic linux
+problem window title bar
+implement decslrm declrmm
+fix issue international input
+feature use stable release channel
+question change code use zsh
+fix slew bound issue
+need way change cursor color
+make sure column
+alacritty display emoji
+clear new line resize
+key bind
+jump screen alacritty cause gpu hang
+add keybinding
+compose key do work
+rhel failure build
+shift mouse select work
+stop cursor move past right screen edge
+get unhandled
+macos terminal app color note
+tab align correctly
+mouse input past row
+miss key
+mouse movement support click hold
+add option config
+control space do work prevent input
+thread pty panic index
+crash drawing bound list relate issue
+crash printf
+add tip run xwayland
+make compile stable rust
+compile error arch linux
+glsl support support version es
+crash use command dimension parameter
+accept limit number protocol url launching
+fix window config
+open link use keyboard
+appveyor script pass test fail
+revert update window configuration
+config error window
+sync app bundle timestamp build
+add fontkit render backend
+artifact section window
+update window configuration file
+osx app bundle generate dmg timestamp alacritty app dir
+build fail winpty debian
+fix underflow type conversion
+update install md
+get stick drop mode drag certain element alacritty
+key repeat long press work wayland
+refactor code
+alacritty main gentoo repository
+explicitly detach console exit
+reenable dynamic title support window
+readme install md fix
+inconsistent install md instruction
+url recognition fail split
+stay switch desktops
+key binding window map
+alacritty do report desire window size
+new alacritty build error immediately osx
+middlemouse paste run tmux
+relax matching url modifier
+alacritty help exit
+add support jumplists
+change font size new metric valid
+title do update window
+add mouse integration window
+decrease font size cause division zero
+update window configuration file
+window alacritty working wsl
+work alacritty
+vim cursor change run bash exe window
+exit immediately run interactively
+tmux open window error open terminal
+add cargo workspace add winpty test ci
+alacritty consume memory window resize
+adjust font size window
+adjust font size change device pixel ratio
+add retro effect just cool
+input german keyboard
+window esc key delay
+migrate appveyor travis window build
+add support rendering cursor rusttype
+attach console parent process window
+rendering issue
+default font large
+crash cat file
+window text bite blurry
+send text startup run command shell
+history flow titlebar decoration set transparent
+right vertical box draw wrong
+alacritty crash minimize
+window terminal resize lead line duplication
+window work expect
+build package acquire late winpty
+allacritty config file
+window resize work expect
+mouse interaction appear working properly window
+colour support bash window
+add support new native conpty api window
+change config path code use cross platform library
+fetch github nuget
+fix rotation selection
+unable run wsl instead cmd window
+fix appveyor badge link
+appveyor badge point wrong repo
+support modifier click binding
+setup automate benchmark
+keybinding stop working change input source
+add fullscreen config keybinding feature fix
+input latency scale display macos
+color scheme
+macos significant energy usage
+support sgrs
+cargo install step fail ubuntu
+alt key trigger twice
+clear selection scroll horizontally
+invert selection faux scroll
+add statusline capability terminfo
+support defaultdepth
+excessive memory selection
+mac os mojave unexpected delete key behaviour
+compile alacritty window
+noticable delay initial window render compare urxvt
+dynamic window title set non functional
+long working update mojave
+fix invalid default config
+unknown variant paste
+new build crash default config
+macos dpi scale incorrect
+cursor long switch shape accord nvim setting
+fix erroneous result
+performance issue cat
+redraw stop mouse bring terminal
+add documentation release process
+broke wayland switch console
+add terminal escape binding combine modifier delete insert
+font size aspect ratio preserve accross different screen
+rendering issue minimize window
+command mode working expect
+slow startup wayland sway
+flag ignore bashrc
+icon embed build step winpty
+window close button freeze alacritty
+alacritty scroll warn
+explanation request
+wip preliminary effort add bsd ci
+fix osc clipboard param
+tmux do work
+fix parse file scheme
+remove unused packedvertex struct
+file urls working lead
+use cargo deb simple way
+document release process
+issue pr template
+character rendering wrong size
+maximize work macos
+highlight text ncdu ssh
+select current line use keyboard tmux
+glitch clear screen
+ram consumsion incresed
+bump copypasta
+title long appear fullscreen mode
+wake suspend terminal tiny font rendering
+copy long work tmux
+bump version
+upgrade copypasta use
+text rendering look wrong
+wrong position cursor oh zsh prezto
+chinese file display macos mojave
+control slash unconditional trigger alert sound macos
+bump version
+fix modifier get release xwayland
+color emojis freetype
+unable render text color
+renderer alacritty
+bump version
+connection break explicit kill server shutdown
+fix excessive allocation url parser
+dock icon big macos
+alacritty crash lock screen event
+bump version
+high small allocation compare old version
+publish deepin
+fix blank line line paste gtk app wayland
+panic start window
+alacritty open com apple quarantine dialog
+control opacity bash script
+remove test failing release mode
+alacritty start
+bump version
+bump glutin depedency
+open large resolution
+window performance initial stutter new input
+miss dependency clear linux install instruction
+performance problem yes color background
+affect window miss default keybindings
+question add native session feature tmux
+fix da report
+fix csi ps be delete line cursor
+delete line cursor csi ps be
+pane scroll output affect pane selection
+alacritty sluggish input delay
+terminal print prompt execute cat
+crash wayland fullscreen configure
+color bold text display bright window
+alacritty window randomly disappear
+sublime theme support
+terminal mode
+starship prompt line
+fix hide macos
+fix division zero minimize window
+fix mouse set mutually exclusive
+fix incorrect dpi startup
+content resize amethyst change window size
+flag generate default config file
+fix modifier inconsistency
+add escape read clipboard
+feature hide title bar maximize
+add ref test verify color clear behavior
+need advice suddenly alacritty stop display italics
+multiple allacritty instance crash window close
+set env variable fix
+arrow key suddnely stop working
+incorrect rendering launch offset set
+content stretch window resize
+tmux austostart
+mouse mode escape sequence csi csi
+fix url scheme highlight
+prompt skip lose window focus event late master
+mouse scroll nvim result
+terminal render resize focus
+add support openbsd
+generate right keycode xmodmap use
+strip path env variable
+fix cursor rendering
+screen unused
+bitmap glyph affect offset
+opensuse package available
+paste selection mouse mode
+allow toml configuration file
+numpadenter send newline macos
+double paste vim use mouse middle click linux
+fix typo readme
+link error macos
+build osx
+alacritty prevent automatic graphic switch
+improve capture urls wrap tui border
+wrongly open issue
+issue use fish tmux ssh vim
+fix selection test
+pywal work alacritty
+fix cursor showing column
+error create gl require attribute support
+fancy rendering strange character
+flag do work
+rework option
+recent build long associate terminal icon possible issue
+cursor disappear column vim
+selection spin dispear expect scroll tmux
+text shrink move alacritty monitor retina display
+use composite manager make background transparent
+alacritty tmux falsely detect prompt have faux scroll
+ubuntu installation fail package
+make certain font small
+switch background color color lose new line
+center grid inside window
+add freebsd support
+print config error warn startup
+screen scroll backspace press
+refactor selection
+weird scroll behavior
+error create gl context update late master
+try create window different srgb config fail solve
+selection move screen glitch
+prevent negative cell dimension
+tmux background color cause window completely opaque
+add fish shell completion
+enable srgb fix
+write macro serde fallback
+left right alt working
+add scrollback hotkeys
+select screen alacritty scroll
+fix crash selection leaf viewport
+fix selection scrollback
+bell do macos
+visual bell focus
+scrollback branch try allocate memory
+create macro config deserializers
+add support hold flag
+alacritty window fail close quit vim
+make normal scroll line configurable
+fix benchmark
+cargo test fail build
+scroll multiplier configurable
+selection scrollback
+add scrollback
+add deserializer
+able recover error
+add caret key
+scroll region regression
+scrollback branch working test
+faux scroll scrollback
+scrollback hotkeys
+able set scrollback history zero disable
+selection clear storage buffer wrap
+selection move outside visible region result crash
+scale issue
+mouse modifier propagate
+subprocess error propagate alacritty stderr
+config failure print new alacritty instance
+mouse input work
+fix sgr mouse report report middle right mouse report modifier
+apply config change fly
+work alacritty
+bump alacritty version commit
+multiple instance alacritty
+remove instance unwrap config
+color difference alacritty iterm
+alacritty overwrite previous output prompt
+add shell completion manpage
+function given root privilege gl context error
+fix typo
+fix head
+performance issue alacritty
+invistigate macos performance unicode
+switch script
+miss dependency ubuntu build instruction
+unable select text accurately factor
+bad mac installation yml
+panic unable spawn file specify os error src tty window conpty
+togglesimplefullscreen increase window height line time
+failure detect url contain unclosed single quote
+openbsd build error bump nix crate
+miss native menu item macos
+use cache metric value
+tmux alacritty get send key closing application
+encode character showing output
+add debug log miss config
+background color black use work mess arandr hidpi setting
+fix stack overflow printing shader error
+unbounded recursion printing error message
+fix underline position bitmap font
+fix oob error semantic selection
+pixel underline
+crash oob
+selection rotate ongoing
+tmux do copy selection
+dark title bar linux wayland working
+alacritty print switch window
+process specific key binding
+image ranger working alacritty wayland
+remove scroll feature
+bump minimum rust version
+default false
+semantic selection double click closing bracket work
+open vim buffer key binding
+fix cell select offscreen selection
+poor window initial rendering performance amd linux laptop
+unable delete character char sequence macos render font bug
+fix selection rotate outside scroll region
+replace nth
+fix reset cli parameter config reload
+support window font fallback
+fail high resolution
+modded alacritty ico highres non blurry
+update font crate edition
+remove window pty startup
+vim copy clipboard alacritty
+add config file prevent app launch
+expand line selection wrap line
+break alfred auto expansion snippet
+mouse position
+remove synthetic keyboard event handling
+unintended have input arrow key
+unable install pop os
+action quit close multiple instance
+force application symlink macos make build
+emoji render black white render color
+powershell start extra stuff prepend current directory
+winit event log config file
+command key stick
+happend launching alacritty configure
+bump vte
+stack overflow error initialize shader
+win crash start entry point
+incorrect mouse position
+fix crash invalid working directory
+comment default config scroll incorrect
+command key macos remain activate window change
+properly inform compositor opaque region
+properly inform compositor damage region
+font selection size command line
+fix font size reset move screen
+alacritty revert font change move monitor
+provide trigger mechanism user script
+alacritty organization
+fix copypasta compilation ios
+improve numpad enter support
+crash start window
+alacritty change size bitmap font restart
+bind key execute wrong window focus change
+bump version
+run alacritty conemu window
+overlap glyph
+bump version
+add separate deployment window release
+bump version
+accept url
+build release window stable
+support select opentype font feature
+alacritty do launch
+bump winit
+rework fontconfig fallback use fallback list compute
+fix keybinding deserialization
+mouse interaction bust unhandled csi action
+key binding break late master
+cargo install path alacritty fail
+question possible modifier map use alt key working vim
+remove winit key remapping
+fix incorrect config path help
+alacritty report wrong config file location window
+alacritty fail invert cursor color black cursor vim dark colorscheme
+alacritty shut run shell command alacritty yml
+tmux divider extend bite far alacritty
+nvim alacritty behave weirdly execute alacritty nvim
+debian buster install alacritty cargo
+fix selection incorrectly expand scroll history
+embed alacritty application
+selection select char catting file unicode
+neovim resize properly
+input lag colorscheme default
+add option respect cursor shape set shell
+significant input lag install ubuntu
+true working font bold regular
+tilde character danish macos keyboard
+message bar text compute base byte length
+fix ime position fullwidth char search
+remove unused linear type
+deprecate redundent cli
+log new pad cell size update
+input text talon end order
+keyboard shurtcuts work midnight commander
+fix cli argument config file
+dim color incorrectly compute light background
+paste clipboard instead primary selection
+option argument work color option
+vim change cursor style
+extend selection deselect original selection
+color working
+composite hangul character render properly
+nano work ssh
+do alacritty support multiple tab
+update cargo lockfile
+alacritty window stop drawing accept input simultaniously clear cause
+allow launching additional alacritty workspace mac os
+line wrap delete hide character
+combine quite work
+zerowidth character rendering column
+add changelog entry freetype version bump
+error compile ubuntu
+install md macos
+build instruction project
+build option
+change curosr style
+alacritty use pywal color startup
+strange font scale
+escape sequence code change background opacity
+work inside vm
+add config option use mouse cursor style instead
+shift arrow work vim
+alacritty open stdin stdout stderr append mode
+instantly crash segmentation fault
+alt work
+support dimension col line
+bind braceleft braceright vimode
+content pager appear screen
+miss application display high resolution
+support single line height terminal
+error attempt dispatch unknown opcode abort
+long load time second blank screen use super wide monitor
+alacritty lag change input source language
+unable resize split window vim use mouse
+instability alacritty display binary datum
+allow mouse selection search vi mode
+way configure key shortcut search result outside vi mode
+resetterminal action
+increase window change font size
+persist config file spawn new instance
+allow apply opacity background color
+make logo key convert character control character
+crash alacritty
+way replace logo ctrl key input linux
+braille rendering properly
+alacritty do pick part config file
+fix compilation default feature
+pty read entirely hold cli parameter
+signal winch signal consistently curse app
+spawn new instance do retain option
+powershell open launching alacritty
+dimension issue start startx
+fix multiline url highlight
+multiline urls highlight correctly
+unable paste search
+building late release ubuntu fail
+compilation error use cargo install debian buster
+mouse fail hide key press
+disable scale switch display
+support key bind action search mode
+inertial scroll support
+miss link url contain query parameter
+feature place text pasteboard use escape code
+command work mac osx
+add opensuse installation instruction
+unable watch config os error
+update example flag apparent
+clear command understand terminal type ssh session
+macos do delete
+insane terminal dimension
+mouse selection search working
+import config file home dir relative
+use instead
+start shell window
+opacity do make background completely opaque
+do work window cmd exe
+select line cursor key
+arrow key friend send text
+make option optional fallback default
+set min osx deployment target
+fix line metric
+use hpcon definition winapi
+copy paste
+rendering failing
+do work use alternative layout dvorak
+expand remove unnecessary comment
+paste trigger click select
+window alacritty vim weird behavior key
+update readme md information mageia
+send alt key actual key flush
+trigger appcursor appcursor mode arrow key wrong escape sequence
+scroll slow wayland
+antislash azerty keyboard
+copy path log event error
+urls incorrectly extend line
+use overlap window conpty apis
+update dependency
+launch urls
+work kde
+alacritty set correct term
+add installer window
+add install instruction scoop
+ignore result deregistering pty
+panic exit
+macos complain unidentified
+bring input menu
+crash open xef xbb vis
+window dimension change automatically set float
+use window
+problem building alacritty window target use gnu toolchain
+fix alacritty info color pair improve color support certain ncurses program
+fail compile unstable feature
+window disappear application switch
+bump version
+alacritty print scancodes instead macos
+window cut secondary monitor
+redraw resize tile wm xmonad
+utility update config file automatically
+insert character prompt allow temporary modification prompt
+incorrect font rendering mess space character
+fix rendering character
+fix recording ref test
+add contribute md file
+add flag tic command
+unknown error install terminfo
+title set icon start wayland client
+rfe notification command complete alacritty focus window
+consider remove
+default behaviour config file
+use tool lints clippy lint attribute
+need contribute file
+rust nll fix
+press keystroke
+travis remove sudo keyword
+macos doc add instruction enable font smooth
+alacritty tmux double bar glitchy line break flicker rendering
+render emojis default color
+nerd font display correctly window
+use alacritty term color display htop macos
+high cpu usage
+font character look incomplete rendering
+alacritty open twice
+child process avoid zombie process
+make window config location sensible
+launch login shell default macos
+support install use apt scoop
+alacritty slow dell monitor
+work mac osx sierra
+font pixel size inconsistent application
+work alacritty fedora gnome wayland
+do load config file alacritty yml
+support ttc font
+fail load source dependency
+crash wayland start tmux
+coloured output line refresh working gradle window
+do work vim
+color contrast
+undo sudo tic alacritty alacritty info
+macos paste output double glutin
+fail start new tmux session
+document alacritty require window
+normalize log message string
+dep crate io
+add commandline flag be
+alacritty reset colour prior shell usable
+ignore initial size window maximize start
+report window panic messagebox
+disown child process avoid zombie process
+macos use type
+change miss config log level info
+add support include directive config file
+window feature request
+url detection work local absolute path
+support background image
+mouse cursor render hidpi wayland output
+print currently use config file config deprecation message
+compatible git
+feature delay
+directory manually provide commit hash
+reenable macos automatic graphic switch
+rendering issue vim tmux
+update eventloop
+open urls tmux
+render italic font font ubuntu
+split cause unreasonable performance
+random colour issue
+certain character invisible window directwrite
+alacritty failing open
+alacritty apply window dimension dpi scale
+alacritty freeze user inactivity
+add ubuntu ppa
+gl function window remote desktop
+run cargo update
+attempt shader compilation support
+refactor config parse file
+fix message bar update pty size hide
+update cargo toml
+alacritty produce different font window size depend xorg wayland
+key qwerty miss default binding
+macos app manifest request nssystemadministrationusagedescription
+add appdata
+message bar mess pty
+advance shell argument support
+fix regression cause cursor left half wide character
+fix clipboard freeze alacritty
+disable text reflow alt screen mode
+recheck urls terminal content change event
+add appstream datum
+alacritty trigger boot mount systemd
+tmux control mode support
+alacritty url parser drop trail
+reflow resize duplicate prompt line
+enter click
+start virtualbox ubuntu guest guest addition install
+request focus window key press
+segfault driver update
+type fail parse xcompose file wayland
+contribute wiki page
+terminfo update window title
+lack font configuration text italic bold
+segfault start
+cursor disappear matching symbol vim
+add git commit sha output version
+enter command tmux pane cause scroll
+multiple package link native library freetype native library link
+update update md fedora dependency
+cargo deb yield str
+alacritty freeze paste clipboard
+remove clipboard load error log
+miss input use shortcut include alt key
+paste clipboard throw error
+url highlight need clear content change
+update install md fresh opensuse tumbleweed install
+crash launch update
+wrap line character column
+strange tmux plus powerline font behaviour
+work window
+window display be
+do cause effect
+fix spell mistake
+correct path license file work
+fail install git
+fix selection character
+enable travis cache
+fix mouse mode generate event cell change
+bad font rendering look like square
+open alacritty open
+add config option highlight urls mouseover
+fix character highlight halfway
+text disappear neovim
+fix saturate sub bug
+perform icon load unix non macos platform
+fix cursor disappear
+build error do cargo install git alacritty
+blink text working
+mouse button stop working hiding window macos
+display corrupt emacs insert text
+open specify path support applescript macos
+modify text selection
+fix message bar update pty size
+conda activate alacritty
+update wayland comment readme
+rtl text scramble
+panic wayland
+insert cursor disappear neovim
+print character change second time press
+redraw failure
+install alacritty git window miss exe
+mix font size
+bump version
+text inversed
+add cursor style option
+precompiled binary
+button title bar
+help set keyboard shortcut tmux
+fix bunch clippy warning reference
+complete implementation scrollback
+support hyperlink terminal escape
+error create gl pixel format match criterias
+powerline character overflow vertically
+jump word word use control arrow key work vim
+crash compile recent nightly
+fail compile thread panic
+font size halve connect second monitor
+quit vim alacritty require additional keystroke close terminal
+alacritty crash scroll unicode inside neovim
+support osc parameter
+macos app bundle launch multiple time create multiple instance app
+locale set macos
+add support libsixel
+bare minimum mac os standard feature
+error message require start
+wait display window initialization complete
+remove outdate task md
+unable compile macro eprintln scope
+multiple screen resolution issue
+alacritty crash use big font size
+wrong font width
+way map plus key
+upper long character miss pixel use small font size
+build fail macos error
+crash holding increase font size
+slow macos large dense grid
+apt install progress bar hide
+segmentation fault xifreedeviceinfo
+font fail display italics
+input portuguese keyboard macos
+use dead key shortcut key
+alacritty do panic compile macos
+add config option send send esc press
+graphical artifact window transparency
+output info version
+correct linefeed handling scroll region set
+scroll slow rxvt urxvt
+text render zsh
+mouse cursor do appear change
+font size value int cause crash
+link faq reference
+display odd
+remove launcher set directory alacritty
+fix typo
+mouse selection clear scroll
+fix typo readme md
+delay command start
+wip run lints build process
+use alacritty ios
+stack overflow
+unable start specify command
+tmux install
+alacritty blink resize
+alacritty cause min busy cursor desktop extreme performance issue
+fix warn mac cause
+add unicode shortcut support
+change mouse cursor terminal mode change
+run multiple terminal fill video memory
+icon linux desktop entry
+globbal toggle key
+strange glitch neovim mouse mode
+send text start support
+performance cat gnu screen wrong xterm
+unhandled csi
+update macos icon icon
+crash access row
+margin like xterm borderwidth
+add function modifier keybindings
+enforce window dimension configure column line
+input pass
+font overlap
+list valid action config error message
+fix solid background color opacity
+take keyboard focus startup
+fix render issue macos
+font rendering blurry letter
+use correct keyname decrease font size macos
+stack overflow increase font size maximum
+feature use stable release channel
+right click work
+thread panic xopenim
+incredibly slow compare urxvt
+mouse selection clear content change underneath
+mouse selection render reverse vim
+support use color gnome
+incomplete support run background process subshell
+rendering borked neovim master
+merge scrollback clipboard support single branch
+thread panic xopenim
+improper rendering emdash
+force exact modifier match mouse binding
+overlap handling mouse binding modifier
+bump master
+macos minimize action work decoration
+bump winit alpha
+update old ref test
+window msi installer possible build support window
+maximize open alacritty mispositioned invisible titlebar
+allow select unoccupied cell
+right click clear select text
+incorrect font window size startup macos
+fix macos opengl context resize ordering
+update winit
+improve performance benchmark documentation
+alacritty ignore activate configure option instead rely keyboard focus
+possible behavioral change
+replace deprecate error method
+document performance testing guideline
+remove escape support
+opentype bitmap font crash alacritty
+upgrade winit fix
+fix reload feature present
+remove legacy thing readme
+fix startup time wayland case
+tab support terminal
+alacritty display colour correctly run fish
+add window font fallback
+add text object
+copy work
+failure redraw screen rapid color cycling
+gnu readline shortcut tmux prefix bind
+fix screen reset clear cell flag
+add minimize action
+do hold terminal foreground
+remove unneeded call
+run vbindiff cause crash
+clean string handling window pty implementation
+fix window ci build failure
+crash clear look scrollback buffer
+default conpty instead winpty pr try
+index bound
+close respond close python run
+alacritty crash macos maximize decoration alacritty yml
+alacritty receive character use shortcut switch xfce desktop
+high wakeup count idle
+clipboard clear alacritty window close
+expand glyph individually instead rely selection
+ranger cursor reach end long filename rename prompt
+color config file working ubuntu
+fix cut width glyph column
+implement send device secondary tertiary da
+unicode rendering expect
+hiding alacritty forever
+color right direct
+send resize message event loop
+alacritty slow change scale xrandr
+replace function winapi
+alacritty ubuntu possible
+fix zero rotation error
+mirror escape terminator legacy support
+permission error desktop alacritty terminal app
+fix crash resize alacritty
+crash assertion
+config font setting respect
+send resize message event loop
+refactoring cleanups
+fix deadlock closing window use conpty
+visual bell persist past end animation
+window color emoji support
+fix minimize window
+improve error handling winpty
+transition font crate edition
+feature draw chart metric alacritty
+create application symlink inside dmg easy installation
+alacritty crash monitor left
+question use alacritty window
+fix deadlock closing window use conpty
+hidpi fail
+consider add application symlink alacritty dmg
+fix unicode width
+incorrect position fullscreen startup
+remove unnecessary newtype lifetime
+fix incorrect dpi wakeup
+fedora copr update
+ubuntu snap package crash start
+ubuntu install working clean
+terminal color persist switch tile float editor
+support plink putty ansi control char
+incorrect space new line handling
+weird resize lag launching alacritty tile mode
+fix color row reset performance
+fix pr issue template
+key wrong escape sequence send start
+add new issue pr template
+fix direct escape input window use alt
+fix deadlock issue conpty drop implementation
+fix bleed current line backspace
+ubuntu miss package
+alacritty provide option completely turn icon bounce
+select block work
+fix round issue
+fix incorrect cell foreground clear screen
+dirty term
+fix wrong default cursor icon
+sighup handling
+fix clippy warning
+update window config path readme md
+alacritty fuzzy screen lock
+shortcut working tmux
+zsh autocompletion malformed
+black border terminal area
+implement handling os escape code
+fix unused import
+match font family style fontconfig fallback
+window restore minimize macos
+spacemacs mode display messy code
+alacritty extremely slow sway nvidia
+mouse interaction working vim
+press ctrl ctrl backspace do
+allow click unfocused window pass macos
+zsh autocompletion ssh dodgy
+fix selection reset escape send
+fix message bar draw terminal content resize
+reset selection remove char selection
+message bar overlap terminal content
+alacritty darken background do change opacity
+cosmetic search non ascii prompt shift character
+tmux select text remain hilighted switch window cosmetic
+do redraw screen move mouse need
+synchronize update terminal client
+fix visual bell
+fix winpty freeze termination
+use window render
+draw dirty terminal event queue
+visual bell animation stall
+compile error
+window transparent startup break compositor fade animation
+background semi opaque visual bell animation
+bump winit version
+set persistent log cli do work
+alacritty pass default
+alacritty randomly close
+modifier state wrongly set switch window
+illegal instruction macos maximize decoration
+avoid unused import warn
+weird input window alt
+output long run task require user input display
+transparency alacritty
+make alacritty mode toggle keyboard
+possible alacritty window just keyboard active window course
+refactor mouse position handling
+fix xembed compilation error platform
+track visible urls continuously
+wayland crash resize window small
+alacritty close unless active
+unable resize window late nightly
+terminal window maximize content fully display
+hiding window os disappear window
+default conpty instead winpty
+wsl exe shutdown alacritty close window event fire
+fix case define
+gnome thumbnail app switcher break
+change restart
+enter unicode character corrupt display text
+remove terminfo deb metadata
+bump winit version
+revert disable depth stencil
+disable buffer
+short idle timeout
+print launch command failure
+allow arbitrary input
+alacritty crash macos catalina update
+key repeat sluggish
+set stencil buffer
+text refresh issue
+special alacritty do alt
+use proper path log format
+remove copypasta dependency
+add note unstable set
+allow adjust scroll sensitivity
+disable depth stencil buffer allocation
+make window decoration nice
+duplicate line window maximisation
+problem eof parse value
+do work nixos
+add dev travis dependency
+mouse forward map
+window decoration gnome wayland
+alacritty lack option like xterm embed urxvt
+extremely slow performance unicode
+support saving window title stack
+vim color work window linux
+add support alternate scroll escape
+display shade unicode character
+elevate usage solve
+issue pin dock icon osx
+line miss nvim
+implement semantic line selection drag
+implement user action font resize
+alacritty website
+support key neovim mac
+allow customize scroll sensitivity
+fix bright inverse color
+implement backwards
+invalid pixel use terminus font
+newly build release binary segfaults freebsd current
+add dependency setup
+make travis test alacritty nightly rust allow failure
+use cursor cell template handling csi escape sequence
+option hide title bar
+support different size fallback font
+terminal program bg color change apply line
+ranger bright color transfer correctly bg color
+refactored osx fallback include menlo
+able compile head clean install freebsd current
+add support beam underline cursor
+support multiple window
+add support font fallback
+hide cursor type
+zsh autosuggestions hide use dracula theme wiki
+change osx fallback symbol font style
+blank screen switch virtual console
+fix selection pad present
+callback handler support
+problem mouse selection alacritty tmux
+synchronize update terminal client
+test old stable
+unable build alacritty
+macos use font fallback
+preparatory change macos font fallback
+correct info readme md scrollback accord
+reflow resize
+fix font raster mono gray bitmaps
+implement report
+make alacritty compile freebsd
+unspecific error message
+set windowid window id
+make depend actual term
+start alacritty spotlight osx
+xcompose input detect
+problem load font
+shift mouse select working tmux
+fix ensure write byte pty
+ensure event loop thread cleanly exit shutdown
+add terminfo file declare truecolor support
+warn close
+add config file cli option
+user font macos font fallback refactoring
+fontsize hotkey
+freeze paste
+focusgained event fire alacritty
+build failure freebsd
+run master fail
+appear prompt end unexcepted input arch linux
+somewhat dry code font load
+intel gpu support
+add support run command key press
+support background image
+miss prompt character
+crash display cjk char
+use debug instead println
+spastic font space
+control boolean flag
+add default key binding
+add default key binding
+fix height calculation
+alacritty ignore line configuration
+performance issue macos
+update late glutin version
+issue display character
+remove incorrect close
+fix device status report
+implement faux scroll
+add support query device status
+config watcher crash space left device
+incremental release build break
+character skip alacritty force redraw quickly
+cursor position
+crash mouseover use
+fix cell layout add cell pad
+feature hide window
+build alacritty os rust stable
+alacritty fully render output
+optimize osx menlo
+cursor disappear go beggining line
+build failing macos
+treat white bright black gray
+regression setting space character wrong
+fix bug tab rendering
+freetype font metric fix config change
+vttest pass
+glsl intel integrate graphic shader compile fail
+position cursor text screw emacs
+change log level miss config
+deduplicated font face yaml anchor
+monaco font tmux vertical pane show dash continuous straight line
+window conflict window dimension
+window respect wm
+margin depend window geometry
+faied install deb ubuntu
+window decoration false option work window
+frcin alacritty window
+document relationship exe alacritty window
+alacritty open screen height
+extra pad terminal
+remove set config
+add keybinding action clear
+logfiles delete process kill
+update filetime
+clear clear tmux
+lower log level warning ansi
+error vim unhandled line
+add nixos install instruction readme md
+fix blurry font dynamic pad
+font rendering get blurry
+freeze font size
+fallback work arch
+alacritty stop respond shortly keyboard stroke mac os
+recent update break rendering mac os
+mix dpi monitor switch weirdness
+character double press tab autocomplete command
+add homebrew option macos installation
+resize cause text
+feature support true borderless option macos
+update dependency
+change path standard register emulator alternative
+deb building instruction install md
+add change log entry set
+truecolor alacritty window
+font configuration ignore
+high cpu load move window monitor
+crash cycle
+fix ci release
+alacritty update affect margin
+install deb package
+problem wayland
+recent build failure openbsd
+use jemallocator
+fix specify config file
+alacritty start window dimension column line
+add option dynamic pad
+bump version
+make center grid inside window optional
+correct config comment
+fix failing github release
+fix incorrect pad calculation
+get eat window
+regression pad break thing
+create installer window
+load color xresources
+set env variable window start
+disable dpi scale
+bump version number
+remove glutin size type
+add command line option foreground
+improve url detection
+character window
+add support window conpty api
+request osx privacy permission
+allow cursor overdraw outside glyph box
+readme update
+capitalization change changelog
+unknown character window title
+alacritty crash use virtual xrandr screen
+possibility italicize boldify regular typeface
+url detection pick trail
+unable load info plist exception egpuoverrides
+macos emoji app disable alacritty
+mouse cursor wayland default
+crash startup macos mojave
+alacritty crash window startup
+map control plus
+add automate docker build travis
+update readme link github release
+fix clippy issue
+fix window tag build
+properly working arch linux
+mac left right arrow left right arrow work
+mac os alacritty allow shortcut remap good touch tool
+option enable vertical synchronization
+fix default hollow cursor behavior conf
+instruction install freebsd
+open url key bind send urls external tool key bind
+way bright color text
+add change log entry
+mojave camera privacy
+problem invalid unit value expect map line column use default value
+fix deb build
+seemingly random font size change
+yml file window
+nerdfont tmux neovim icon macos
+key repeat lag
+add instruction enable right click menu console
+feature read config file program directory
+remove bind
+window size issue lcd turn
+scrollback use large amount ram byte character
+doc clarification resolve
+update help class option match man page
+automatically expand tab selection near tab border
+update help class option match man page resolve
+alacritty window resize vim sluggish
+alacritty take long time register
+font icon do appear
+paste tmux new line strip
+opacity set alacritty do work alacritty opaque
+clarification hex vs unicode escape sequence configuration
+use embed resource window icon
+crash late ubuntu
+alacritty showing correct mouse cursor
+render prompt symbol window use cygwin zsh
+add support report window size pixel character
+open neovim new window half window fill
+miss unsuitable terminal
+crash upgrade ubuntu libgl fail load driver
+update depedencies
+remove prebuilt linux binary
+action mimic copypaste action
+add man page deb generate
+press arrow read press twice
+yaml use config toml
+public member github organization
+glsl support
+break arrow key movement
+set term right
+fix code format
+character display window
+working copy neovim
+clear selection grid swap
+option work reverse
+document set instance base class help output
+wrap do work correctly
+window keybindings negative mode work
+special character cause autocompletion delete previous character
+backspace key turn space press
+add deprecation warn
+feature set background image
+update dependency
+weird behavior remote system
+make alacritty autocomplete file like cmder window
+window set disable ability window
+window set config option prevent window snap
+xorg clipboard content lag
+tmux powerline symbol
+htop click position incorrect
+disable font antialias config
+click sort htop
+add keybindings switch window decoration
+left char alacritty use close window
+match terminal color
+way specify fallback font linux
+wayland clipboard amnesia alacritty geany
+alacritty current path window title folder contain character
+panic buffer redrawrequested
+refactor separation
+title update enable
+alacritty do use gpu hybrid graphic mode
+use ctrl alacritty
+alacritty color issue xfce
+reflow wrap cursor correctly
+reflow delete history
+line rotation invalidate grid
+tmux weird character showing
+command execution fail whitespace
+emojis miss macos
+add feature build copy binary docker
+copypaste action
+log critical error stderr instead stdout
+spawn property fail awesomewm
+bind lbracket rbracket wayland
+fallback font set
+hidpi issue non hidpi display
+crosshair pointer select text macos
+fcitx work alacritty
+work emacs
+pad setting ignore
+terminal transparent dark
+use alacritty portable
+noto color emoji just show opaque overlie
+setab setaf definition produce incorrect output value
+regression huge cursor render
+input method compatiblility
+add keybinding open osx emoji symbol picker
+macos new terminal shell environment
+use frame callbacks instead vsync wayland
+update ubuntu ppa
+material theme bright black actually red
+vim issue alacritty portable window
+thread overflow stack fatal runtime stack overflow
+screen flicker version
+content alacritty window center
+escape window shell command line argument
+add automatic scroll selection
+accessibility add support text selection mode
+clear selection clear escape
+portable build window break
+update terminfo install md
+slow redraw big window
+use instead panic build
+support multiple tab linux distros
+add option run command bell
+override default binding notmodes intersect
+improve documentation macos install brew
+window cursor blink left
+feature request smooth cursor animation
+transparency issue font iosevka
+add miss doc
+underline open alacritty directly
+keymapping working
+unreadable font set size high value
+fr portable config mode
+swedish keyboard fish vi key binding
+vim color use background color instead normal black
+properly fit screen horizontally cell size
+cleanup window import
+os specific override font config
+pad color gradient
+togglefullscreen work time do shrink resolution go window mode
+unicode diacritic render character render correctly
+update dependency
+alacritty randomly crash macos
+remove copyright notice file
+remove copypasta dependency
+simplify internal dprchanged event
+backslash mac os layout
+emojis render black white
+fix class thickness serialization
+install chocolatey fail
+macos stack overflow
+ghost flash cursor use fzf vim
+let alacritty open terminal app stay open app quit
+refactor shell command launcher share impl
+alacritty yml recognize
+previous content properly resize
+default window background change master window
+click highlight link use fzf preview
+high workload ncurses program freeze sway
+fix font regression macos
+add changelog
+regression font rendering vs
+fix drop multiple file
+package break
+visual bell fail fully animate
+add feature gate winpty
+macos make text look weird
+remove winpty reference install md
+sigabrt occur macos catalina repeatedly
+bump version
+urls clickable tmux session
+fullscreen cause alacritty alternate screen window mode subsequent launch macos dockbar spotlight
+update dependency
+emojis black white alacritty
+crash run
+matter config file apply
+different font size
+emojis supersized
+docker stats redraw flash
+alacritty input break setxkbmap run bashrc
+remove depedency
+macos cmd key linux
+weird flash open alacritty
+window maximize window size correct
+startup mode maximize decoration cause fullscreen window
+vim scroll issue conpty
+crash provide extra large value
+freeze intel integrate graphic carbon monitor config
+title current directory key bind command
+sequential lag rendering compositor enable
+crash wayland unplug mouse
+add documentation patch release
+perform glclear
+alacritty use cpu idle state left day
+double movement arrow key
+fix build warning
+issue rendering nerd font
+prevent shell clobber macos
+set input set support platform
+error delete russian letter submit input
+bump version
+multiple file drag
+dim foreground color truecolored text
+clear ssh session linux server do clear screen
+remove unused deps upcomming deps
+update dependency
+font size change depend monitor
+app crash try bind number key
+acs character alignment issue gap char
+support cursor color
+bright foreground color configurable
+redraw randomly hang keypress
+make alacritty library order embed application
+various improvement rasterization
+add support backtick tilde key bind
+bind key tmux program command fail silently
+add property configuration
+crash macos high sierra
+crash attempt start
+add option disable dynamic title
+update glutin fix wayland issue
+crash cat
+build instruction add
+set urgent wm flag bell system
+update glutin bitflags dependency
+ranger event
+feature zoom reset
+open new window directory
+transparency affect background color
+yaml split
+reset do properly reset terminal
+vim use automatically
+black screen output os
+implement ansi csi rep repeat
+bracket paste filter end sequence
+rewrite eprintln introduce rust
+correct accuracy sentence readme
+create man page
+use wildcard dependency clippy start fix warning
+graphic glitches
+request change cursor window lose focus
+type russian chart
+update solus deps
+glyph cut need draw background single pass
+support web notation hex color
+keychords randomly working high load
+self type use determine
+strange issue fish shell neovim
+htop rendering miss text
+ubuntu unity input lag fullscreen
+mouse selection behavior
+font size vary base discrete vs embed graphic
+significant startup time
+set default
+text background black
+inherit configuration file
+change cursor pointer text
+assure newlines selection
+support bitmap font
+optional scrollbar
+unlimited scrollback
+sys need update
+alacritty read
+font fuck
+little english fixup
+remove invalid character default config file
+command hang alacritty
+update dependency
+random crash
+window position size
+quote sharp accent working
+restore winit deps
+refactor populate cursor cursor
+push winit dependency
+holding key working
+add gentoo instruction
+alacritty open tiny spec corner
+support color escape code
+fix reload color config
+access mapscii telnet black
+move alacritty retina display change font size
+key spanish keyboard recognise macosx
+alternative arrow key working neo layout
+alacritty close error font load fail
+slow start macos
+change color scheme fly
+switch input source use pinyin
+fix newline scroll region bug
+home end key work neovim
+difference rendering xterm alacritty screen corruption tmux vim
+build rhel
+unhandled cause
+break debian stretch
+transparency improvement
+opinion live font realoding
+rebased master
+line hieght issue
+support mode insert selection
+beam underline cursor working
+close alacritty app switcher macos
+karabiner terminal condition remap do include allacritty
+invoke command editor vim nano mangle paste text exist text
+alacritty stop working do start anymore
+strip blank line copy terminal
+feature text shadow
+fail build font error arch rustc
+update cargo lock
+bad cargo lock late master release
+feature request resize alacritty column line
+qrencode glitches
+blank line line paste wayland gtk application
+add color underline support
+bump development version
+unable font install
+double parenthesis render
+cursor behave accord setting
+default directory
+colps alacritty
+color define dialogrc render correctly
+bump version
+update vte
+fix debug mode crash search
+documentation add subsection start
+consecutive line render stutter
+feature request color matching appearance
+bump version
+fix deserialization untagged enums
+pass argument command
+window decoration set title bar remove
+fix movement match search
+alacritty crash startup
+build late llvm master
+remove window winpty backend
+ime composition preview window
+use configdeserialize config enums
+add support partially map untagged enums
+add default bind cancel search
+fix character get swallow ime input
+fix wayland crash fontconfig
+add line indicator
+decoration set mouse copy issue macos
+background opacity misbehave
+residue resize
+search outside do advance correctly
+panic gl function
+panic gl function
+fix image alt description
+xmodmap mapping work modifier
+keyboard shortcut do work
+update description
+fix miss glyph crash window
+unable use xdg base directory macos
+panic directwrite error seemingly relate attempt render miss glyph
+mac big sur appear long work
+cursor blink set
+cursor blink stop working upgrade fedora
+alacritty update available
+close search
+cursor style config support lowercase text
+working use neovim mode
+cursor blink stop enter vim tmux
+different pad different program
+windterm outperform alacritty
+config error cursor style blink set cursor style shape
+disable shadow transparent window macos
+performance regression shadow invalidation macos
+color alacritty
+remove terminfo dependency
+terminfo remote machine
+fix artifact macos transparent window
+unable launch alacritty
+fix embed
+remove terminfo dependency
+add search history support
+emoji rendering problem
+add separate mode search binding
+panic open alacritty
+reload config
+pad setting recognize ubuntu
+use input method character following arrow key lose
+opacity working version
+cursor style change unknown use default value
+fix crash clipboard properly release wayland
+mac ctrl work
+use alternate scroll escape
+fix drain pty holding exit
+increase file watcher delay bsd
+fix invalid esc escape sequence parse
+crash update
+text break restart certain char sequence
+fix cursor contrast static cursor color
+change cursor color select text tmux
+make keybinding work vim
+position right window
+phantom cursor embed terminal window
+italics manpages
+command work complex keyboard layout
+custom paste question
+cursor blink working
+fix bad entry editorconfig file
+fix cursor report mouse outside window
+mouse mode motion report button press pointer outside terminal
+avoid gui subprocess start alacritty window
+erase line command key binding work
+support graphic terminal
+start alacritty rust app
+bump smallvec
+text visible ssh
+vim line window
+add note sign notarization readme
+confirm installation process work rhel
+fix estimate dpr wayland
+macos wrong focus fullscreen
+report mouse button
+incorrect estimate dpr wayland
+feature request different cursor thickness base cursor shape
+segfault shutdown wayland
+dynamic title working macos
+macro support
+remove invalid dimension flag bash completion
+character render following character precede
+cursor scalene triangle graphical corruption
+font character display correctly version
+error create gl receive multiple error oserror eglinitialize oserror gl context creation
+segmentation fault startup
+fix segmentation fault shutdown wayland
+fix damage track wayland
+do clear run log tail command
+alacritty wayland title bar bug
+set dirty flag keypress
+alacritty nvtop
+miss wayland input redraw
+primary selection update
+cpu usage screen go blank popos ubuntu
+keybinding do reach application neovim
+key bind action eat keypress
+msi file unsigned
+option disable log file tmp
+macos launch alacritty alfred trigger create tmux window run command
+linux backspace working vim
+add macos arm build ci
+update macos icon big sur
+alacritty freeze primary display use multimonitor setup
+text color apply
+alacritty leaf cmd exe orphan closing
+macos allow open command file alacritty
+alacritty tmux segfaults exit
+blink set work exit nvim
+run bench test ci
+allow copy urls right click
+feat env add env var able wha
+rendering issue line drawing character ubuntu mono font
+upgrade url plugin stop working
+renderable cell transformation alacritty
+option use scancodes binding default
+alacritty fail compile openbsd
+fix dead alacritty talk link readme
+output color
+character display
+fail correctly estimate dpr xmonad
+change title bar color modify transparent option
+dynamic title alacritty switcher
+error get alacritty yml
+alacritty fail start color mode
+alacritty crash segmentation fault core dump
+command line option issue feature request
+start alacritty
+update shell completion
+command do work
+fix typo readme md
+opengl relate crash
+feature secure keyboard entry macos
+add minimum opengl version readme
+glsl run requirement mention readme md install md
+emojis render color
+tdrop fail launch alacritty
+possible make mouse right click behavior just like window powershell
+fix assertion arch
+corrupt text window
+assertion failure
+unclear set dimension position option
+screen corruption use neovim
+touch bar support
+cross compile macos app
+window alacritty powershell multiple tmux status bar
+bump version
+edit icon img src
+bump version
+sequence lose
+fix jump match reverse vi search
+jump match reverse vi mode search
+add oracle linux install doc
+bump version
+notarize macos binary
+htop vim binding work
+remove github pull request template
+fix inefficient search initialization
+make url style optional
+error alacritty
+visual bell working window
+character type inside neo vim
+macos titlebar use vibrancy update focus regain
+add wayland dark themed client decoration option
+debian need
+dynamically resize terminal
+offload parse gpu
+remove rust gpu
+alacritty crash closing laptop lid
+key repeat rate linux wayland sway interpret inversely
+add cargo lock subcrates gitignore
+support operate command query text parameter escape
+debian package dependency
+fix url detection unicode character
+improve touchpad scroll
+update dependency
+exit fish shell hang window input event
+mouse wheel scroll macos swallow click
+paste large text make terminal freeze
+rendering artifact column window
+window resize glitch hover screen
+config watcher thread wake
+change explicit script shebangs use environment
+ssh unusable escape character send
+leaf character screen
+clippy test stable
+bump version
+unable compile git master
+add support selection
+fix crash window
+crash startup implement
+remove appveyor ci build
+bump version
+inconsistent char output use alt key bind macos
+screen just black
+fix error
+smart selection select bracket
+link alacritty executable
+implement alt enter fullscreen window
+config file migrator
+increas font keybinding working
+character bitmap font display incorrectly
+mouse wheel working wsl curse
+clippy check stable
+display issue mutt alacritty possibly
+newline neovim make text glitch line number enable
+memory leak awesomewm window shape enable
+konsole fast alacritty tab open case
+resize wiggle content
+add solus install instruction readme md
+umlaut issue macos
+font size double dpi ratio
+fix spell config file
+terminal resize issue external monitor
+rework popup modal message bar
+fix cpu load move window monitor
+fix tab overwrite cell movement
+make configuration field optional
+macos performance vastly improve change key repeat value
+fix crash start alacritty drive
+wip fix crash macos bsd action
+add command scroll scrollback buffer bind key
+crash macos spawnnewinstance action
+fix macos ci deployment script
+fix minor issue config documentation
+bump version
+add tab window faq
+add tab window faq
+feature change background dependening focus
+best way tab window
+fix selection right middle mouse
+spawn new alacritty instance working directory macos use
+alacritty use config file
+display italic font
+loadlibrary fail error parameter incorrect
+set minimum macos version
+winpty link failure old version llvm
+ctrl do work powershell conpty
+window launch fail dll
+add action create new instance alacritty current working directory
+improve url detection
+scale issue
+fix mouse binding
+screen clear properly ctrl
+icon arch linux
+process mouse bind action early
+specific message macos permission
+mouse bind right use copy action
+change mouse mode cursor default cursor
+fix underline interruption cell
+underline space underline text
+change default window shell powershell
+key eat alt hold
+mouse protocol support
+url detection liberal
+alacritty start disk
+fix window config location documontation
+add mouse report support
+mocp drawing break
+font weight
+clearify comment
+update reqwest
+fix miss character
+font use
+opacity issue kubuntu
+weird space create table column command flag
+rebind terminate kill background command
+subpixel font render correctly
+remove default pad
+update copypasta
+inconsistent behavior switch alacritty display osx
+certain character display render correctly
+exact fit snap window resize
+confirmation rejection implementation analogic urxvt feature
+readme link alacritty yml
+make cursor thickness individually configurable
+use near cell color color pad
+alt write have instead jump word
+display block character nicely
+natural text edit working alacritty
+intermittently stop rendering
+subtract minus underline key binding question
+korean character display correctly
+background opacity working
+break pipe big datum type fast wtype crash alacritty wayland
+char render
+perform glclear
+fix crash write wide char column
+bump winit
+neovim display
+font size inconsistent display
+font ligature
+fix vi scrolltobottom motion
+do generate alacritty yaml file
+cursor height increase increase offset
+properly overwrite wide char
+insert soft hyphen compose key result dash insert
+consider option print default alacritty yml
+update alacritty yml add clarity url launcher comment
+fix oscs terminate byte unicode
+text get disorder cmus kanjis
+enable application keypad mode
+text ghost background terminal
+select background text wrong keep foreground color
+mouse button click see tmux
+select line currently show window
+macos italian keyboard tilde work
+background opacity failure
+font rendering issue
+render issue
+subprocess preserve parent process association
+focus return run dmenu
+allow command visible text input
+incorrect modifier startup
+use genuine linux pty wsl window
+pane window line rendering use font offset
+export color zstyle maintain consistency
+alacritty crash fatal io error resource temporarily unavailable server
+rescept embolden fontconfig set
+add example change colorscheme
+cursor change block beam insert mode
+font ligature work
+add require package avoid slow startup time
+support embolden hint font linux
+add function hide window macos
+sigint ctrl use ctrl copy
+crop output large monitor
+window freeze use vim
+treat backspace
+pass multiple command use flag
+yml file install brew cask
+support special unicode character
+subpixel anti alias macos
+closing window do exit bash process window
+place alacritty configuration file window
+emoji display right
+alacritty ssh working
+thread panic call
+read alacritty yml
+fade line appear maco
+multiline paste vim different file type
+configurable pad titlebar button use transparent
+wayland alacritty window blurry
+extend style guideline documentation
+font set compliment offset
+allow change inversed cursor fix color cursor
+add touchscreen support
+bitmap font render large
+mac os issue
+allow mouse bind value
+random gpu hang use alacritty
+clippy fix
+render color true color
+input arrow key vim tmux
+alacritty incorrectly display
+alacritty neovim character rendering issue window
+hide cursor modifier press
+glfinish right
+macos shortcut app switch focus desktop instead fullscreen window
+fix conpty check
+select individual character nvim
+bump version
+alacritty update input happen
+good error winpty
+fix hide cursor invert cell color
+rendering issue vifm
+fix selection copy window
+cursor colour incorrect display line dmesg
+fix cursor color
+color config long work
+request disk permission run applescript
+update glutin
+fix cursor dimension style issue
+display plug window part terminal invisible
+freeze start
+font config error startup time
+font change
+underline strikethrough bleed current line backspace
+scroll visible region history csi
+fix performance issue
+do resize change font size screen terminal application
+document cause freeze terminal cpu
+normally correspond ctrl key
+wsl conpty vim paste blank line
+fix cursor dimension font offset
+chinese character selection width
+alacritty occasionally fail redraw screen
+alacritty crash immediately start xmonad
+application write cursive render correctly
+config file symlink
+instance spawn keyboard shortcut maximize osx
+panic start window
+render cell foreground background color differently select
+alacritty open bettertouchtool working
+question bind vim command
+split alacritty main separate crate
+remove live shader reload feature
+change font macos
+macos kernel panic
+add proper fullscreen support
+fix duplicate resize event
+cursor change shape neovim inside
+tiocswinsz grid change
+graphic glitches working rust json file
+slow startup high cpu usage
+triple click select wrap line
+startup time slow noticeable white screen
+way unbind mousewheel event
+remove redundant closure import
+add support run command bel
+url launcher do work tmux session
+add pop os list support linux oss
+use https
+compilation error
+fix macos subprocess execution
+fix alacritty icon background
+document url launcher parameter option
+document egl driver dependency wayland
+document redistributable requirement
+document distro support precompiled binary
+background transparent
+add announcement blog readme
+application icon transparency window
+window character code working correctly
+text alacritty do reflow macos
+cpu configuration alacritty yml
+alacritty fail compile
+key binding stop working
+panic error config
+set maximum rust version
+maximum rust version
+window installer wrong path
+opacity working compton arch
+output delay second large tree output
+document alacritty release linux distro support
+prebuilt binary fail run debian buster
+terminal long adjust dpi base monitor currently
+remove duplicate changelog entry
+reset scroll region receive ri escape sequence
+alacritty showing instead special char
+alacritty crash fontconfig
+question do performance hit gpu intensive app
+bump version
+unable use fedora
+add new icon macos binary
+consistent treatment numeric type
+improve error miss shell file window
+title bar icon miss
+keybinding open app working
+decstr ri do reset scroll region
+build failure
+disable automatic graphic switch
+fix snap desktop
+opacity set apply
+fix build error bsd
+upgrade winapi
+bump dependency
+add note icon installation linux
+send notification url command complete successfully
+fallback font voodoo
+bitmap font rendering issue
+incorrect color rendering use tmux
+env color respect depend way ubuntu terminal open
+update readme md
+random crash macos
+runtime error launching embed rdm royalts
+alacritty lose keystroke random
+alacritty start xmonad
+true color work unexpected tmux update late ncurses
+extract winpty crate
+open window program run
+configuration file load unless explicitly provide cli
+fix parser stop unknown mode
+add custom merge strategy changelog md
+alacritty work lynx browser
+enable building system
+ansi sgrs unknown sgr incorrectly ignore
+shader crap
+add second nanosecond log output
+cache freetype face instead load new
+white title bar instead following gnome theme
+beam underline cursor width computation visible
+slow window rearrange closing alacritty
+printing character screen
+text jiggle resize macos
+fix computation scrollback
+add new cursor glass
+sluggish resize
+bump vte urlocator
+callback font working macos
+powershell start extra stuff prepend path
+delay start emacs
+vim stop working
+add selection expansion
+alacritty open shell external window
+revert fix backspace delete char ime
+font ignore laptop screen
+different font text
+backspace working tmux macos
+add modal keyboard motion mode
+follow urls use keyboard visible hint
+hotkey window feature like iterm
+alacritty think ctrl press fullscreen mode os
+ignore focus open screen
+explicitly state create config file
+config file window
+run manjaro
+update glutin
+update glutin dependency
+character randomly prefix command key
+block selection contain end line behave incorrectly
+bright color detection
+error launch alacritty
+configure alacritty work
+add support blink text
+window border useless linux fedora wayland
+thread panic fail xgetvisualinfo
+trigger unexpectly macos
+add note multiple binding key mod mode
+dwarffortress unreadable menu entry
+loose powerline font display
+font slightly wide
+alacritty yml ubuntu
+hide mouse cursor forever
+selection clear mode leave
+history file
+debian package
+error create gl context
+license deb file show proprietary
+hang connection loss
+alacritty unresponsive intel
+remove unsetting dirty flag key press
+fix selection expansion glyph
+arrow key freeze command execute
+start window invisible window
+alacritty love
+alacritty fish tmux send keycodes vsc
+fix font resize issue
+refactor font crate bite
+fix clear linux installation instruction
+update clear linux installation instruction
+add note multiple binding key mod mode
+render chinese character bold face
+fix handling opentype variable font
+strange character
+mirror osc query terminator
+slow file operation tmux session macos
+wrong mouse cursor size wayland
+fix backspace delete char ime open
+selection break internal retina display
+blurry character
+fallthrough key code
+remove tabspaces config option
+fix inconsistent test module name
+wayland window decoration long function
+bold font use normal font
+switch electron app character quit alacritty
+implement upscaling bitmap font crate backend
+resize vim split window wsl cause color terminal permanently break
+alacritty close unless visible sway
+macos undo work international keyboard
+open maximize window directly maximize
+macos character
+update virtualkeycode url alacritty yml
+resolve race dpi change resize event
+validate working directory configuration exist
+blank line line paste wayland gtk application vim
+simplify logo svg good compatibility
+rendering issue kakoune editor
+solarized different color alacritty xterm
+add support saving window title stack
+run vi change line cursor block cursor
+alacritty config issue default
+locale set macos
+live reload font family style alacritty config
+crash build
+live reload font size alacritty config
+add error possible event invalid config file
+issue wayland copy
+concatenate parameter title osc
+character insert prompt use inside tmux
+window wrong title bar color
+color current folder changable
+fix selection invert terminal background
+fix opacity inverse cell
+incompatible gnome shell clipboard indicator
+support startup notification protocol
+fix overflow wrong scroll region set
+crash esc pn invalid range
+use home variable alacritty yml shell program
+remove automatic config generation
+fix cell alpha set non bg
+remove automatic config generation
+add flag delay shell launch window initialization
+wrong key esc seq macos
+problem display unicode font character manjaro
+sgr escape sequence set background color terminal background color opaque
+macos hide window change active app
+font style
+paste ignore target
+remove binding action
+remove outdate comment
+initialize visible character
+alacritty freeze extremely long output newline
+make font bold font rendering
+question occur use screen
+nerd font showing icon
+pad colour
+fix binding incorrectly get replace
+edge display cut use window dell xps display zoom
+macos font fallback
+italic fail style contain space light
+add background image
+strange character produce key configure default
+astral plane character emoji enter window
+alacritty wayland paste issue
+key bind mode replacement consistency
+fix block selection detection
+support custom url matching
+env config do appear work
+bump minimum rust version
+width vertical block selection
+key repeat cancel previous release event
+fix implement feature
+add xembed support
+rework default binding
+openbsd unable library ldl
+update dedupe
+default config error
+alacritty start terminal crash open use application icon
+font rendering issue fractional size
+change default behavior
+wrong window size detect
+alacritty deb fail libraryopenerror libxcursor
+strange prompt color behavior solarized dark colorscheme
+pwsh close terminal instead stop run process
+fix wayland primary clipboard store stop selection outside
+patch make alacritty work coreboot gpu sway
+nerdtree mouse double click select text instead expand directory
+wayland clipboard panic
+start alacritty macos
+fix problem invalid float point
+copy mouse selection
+handle change modifier
+vim display distort cygwin arrow key work
+alacritty properly recognize default terminal
+expand selection tab
+fix legacy xparsecolor regression
+continuously track visible urls
+hide cursor modifier press
+alacritty quit
+color issue introduce commit
+support spawnnewinstance tmux
+linux framebuffer support
+macos deprecation warn
+fix url highlight showing require modifier
+generic super command mod key bind
+ubuntu eoan install fail
+alacritty render zoom gesture use os
+rerender mouse selection release
+rectangle selection
+drag double click selection select word
+add script apply tilix colorscheme file
+cursor wrong place run screen
+implement use
+fix typo alacritty desktop
+desktop file fix
+category mispelt alacritty desktop
+wrong color run tmux inside alacritty
+add snapcraft yaml
+spurrious awesome gl glitchout laptop
+use xxhash fast glyph cache
+bump winit fix macos dpr event change
+break htop layout
+performance issue unicode
+extract dpr base var method rebuild resize
+add glyph offset
+osx type freeze alacritty
+fix delete key bind
+right mouse click do work ncmpcpp
+good error handling event loop
+background extend terminal
+gray properly
+replace shell command option
+command option override shell instead run command
+alacritty freeze focus put mac sleep
+cat crash alacritty
+remap copy paste use shift control instead command
+slow start use fzf height
+fix ability pin app dock
+homebrew formula
+revert update cell cursor template add tab
+regression break htop display
+add dim color support
+flag appear work nvim
+background colour do line
+operator mono vim
+speed benefit tmux
+add option respect font hint
+font blurry macos
+abnormal font position align
+alacritty fail open neovim
+add installation note macos
+thread panic index range slice length
+variation selector handling cause incorrect character width program unicode character
+fix read output child process exit
+fix hang exit child process fail
+add capability set working directory command line argument
+wip add possibility debug feature build makefile
+use just instead make
+vertical alignment row different usual
+right work prevent alacritty closing
+display certain unicode character crash alacritty
+runtime configuration ipc
+alacritty do set windowid environment variable
+update readme md
+add action desktop file
+alacritty dpi screen change
+alacritty stop respond open osx emoji panel
+fix tabulation rendering
+fix bound access glyph buffer
+alacritty crash rendering combine character
+fix associate desktop file run process linux desktop oses
+add app pack tool tweak polish
+run tig alacritty invoke zalgo
+ability disable linux
+alacritty window render focus
+macos keymap assume qwerty
+handle csi command clear save line
+possible direction font fallback
+alacritty associate icon
+del key working ssh
+enable shift insert paste
+wide char support
+require nightly rustup stable install
+implement osc command set icon
+fix mention showkey sequence key
+unable use pageup pagedown unbind default yml miss documentation
+change font size key shortcut
+hasklig font render incorrectly
+implement terminal escape code
+update cell cursor template add tab
+font fallback support linux
+wip font fallback
+change cursor color config use text cursor
+glyph display properly
+arrow key working neo keyboard layout
+hide mouse cursor mac os
+add hide cursor type option
+building file
+building trait item implement
+mouse scroll stop working
+select copy newline character
+selection mode holding button move mouse
+address visualbell feedback
+lazily reset complete method
+numpad pgup pgdn home end
+use error handling
+possible similar black screen
+home end key print raw escape sequence use shell
+config file alacritty yml
+control have exit alacritty
+different mouse cursor
+disable selection
+update glutin proper handle dead key
+config file remark mislead
+use cell template resize grid
+visual bell produce weird color short duration
+window resize vim cause weird render quit vim
+add build crate verbose debug banner
+unable compile
+switch font pathfinder
+allacritty hang dead key press emoji keyboard open macos
+implement workaround mesa issue
+add term config entry
+reversal reverse video cursor
+fix issue htop rendering incorrectly
+flash terminal bell
+issue use terminus font
+handle osc set index color value
+report property error config file
+error build aur
+capture shortcut macos
+error glsl
+panic startup
+arch build error
+redraw change retina
+build fail gentoo
+fix zsh tab complete
+add action allow exit
+miss default key os
+configurable window dimension
+scroll resize
+progress report mplayer
+resize use precision pixel precision
+fix bug restore cursor
+need bound check cursor
+add visual bell support
+remove stray line
+aur package date
+alacritty compile stable rust
+fix bug introduce patch
+print xonsh prompt break
+add way produce escape sequence symbolically
+decouple input process term
+add terminal window pad support
+fix rendering underline span multiple word
+implement cursor position
+send mouse wheel command support
+add color solarized light
+glutin report wrong keyboardinput modifier key
+update serde
+specify default dimension alacritty yml
+build failure
+semantic smart selection
+freebsd linux
+rendering random square glyph ubuntu
+fix config file
+lack stdout information program run
+maximize button alacritty do work macosx
+homebrew package
+byobu shortcut stop working
+report line column ideally property config file error message
+allow relative path shell configuration option
+publish crate io
+optimize glyph cache access
+add cli option
+implement xkbcommon stuff wayland
+build current master experimental feature error
+paste use primary copy buffer
+add args alacritty config
+build macos application bundle
+add cursor type
+implement set freedesktop org ewhm net property
+std process command
+update cargo lock new libc
+key work
+inner border like
+miss doc debug info
+cli option
+use clap cli parser
+job run background terminal exit
+alacritty slow xterm use cpu
+need install package arch
+mention talk rust meetup readme md
+dynamically generate ref test
+bind key arbitrary command
+key binding follow keyboard layout osx
+add alpha option set background transparency
+ubuntu alacritty desktop open unstyled separate icon launcher
+test use trust cross build
+remove unnecessary feature definition
+duplicate dracula color scheme alacritty wiki
+yaml reference work config file
+change green implementation use macro
+focus terminal turn invisible chunkwm open application
+flag set window position screen
+update dependency
+panic capacity
+install snap
+app crash open image reopen config apply
+support drop window similar guake iterm
+add centos miss dependency
+add info default configuration macos
+compile time weird linkage
+fail build incremental compilation turn
+upgrade dependency
+korean input cause panic
+install instruction cargo git
+window decoration openbox update
+git pretty format white color display grey
+do work
+pass right middle click application
+dual width character break rendering
+alacritty hang loop consume memory font offset low
+create twitter handle update change
+key key japanese macos keyboard do output
+input japanese character
+do render character
+fix fallback macos
+tmux nvim install
+press global hotkey password cause appear alacritty
+set decoration false crash gnome linux
+workaround paste fix
+script convert konsole colorscheme alacritty color scheme
+rework cursor configuration
+paste selection clipboard vim work
+provide binary build
+image display work
+capslock remap ctrl press twice register
+set lang env var use languagecode countrycode
+unicode character display anymore merge
+mac alt modifier break
+flicker neovim completion
+error create gl request attribute support
+background transparency go away enter vim
+support dead key altgr macos
+create separate cursor field config
+add config unfocused window cursor change
+add proper underline strikethrough support
+resize terminal transparent
+terminal text go wrong
+building head macos fail euclid
+fix typo ansi doc
+recognise uk mac keyboard
+alacritty do report bels
+default shell macos use login
+different version zsh report package app run binary
+move alacritty retina display
+protocol error panic wayland
+update lockfile
+improve rust toolchain selection
+center working space inside window
+type russian character
+ansi parser vte crate
+hold repeat key modifier work right
+weird rendering ncurses base app like kakoune text editor
+strange background opacity behavior linux nvidia
+exit eof
+extend sgr normal mouse support fix
+ncurse line strangely inconsolata font
+do send esc symbol repeat press
+start specify fira mona font family
+large negative horizontal offset cause problem
+feature simple fullscreen
+binary brew nvim install
+support config control width ambiguous width character
+compile osx yield error framework appkit
+bind clear
+macos open command potentially thing launching right
+cache freetype metric
+wide space font run
+monaco font display correctly
+problem display font
+input character dead key
+trouble input chinese character macos
+main thread panic
+segfault dead key
+build fail arch linux
+xopenim error fcitx relate
+implement term struct
+create new window startup exist
+reset cursor
+update dependency
+update lockfile
+wayland use seat interface version
+good character cell width freetype
+bump version
+continue font ligature
+use config color theme wayland decoration
+ssh raspberry pi unknown terminal
+term variable
+macos command key state update
+thread panic mod
+keybinding issue macos
+run clippy old support version
+macos gatekeeper
+fix crash select column
+index bound panic highlight
+update glutin
+use hotkey fullscreen lead crash bspwm
+clear output ssh session
+display chinese character window ltsc
+add manpage terminfo completion macos app bundle
+document escape sequence support
+feature configurable application icon
+remove right click deselection
+render bold font properly
+add option pick backends
+bump copypasta
+alacritty window misplace curious placement late gnome
+text scramble prompt
+wip simplify url matching
+alacritty stop listen keypress event fashion time
+compile process exit
+possible feature request jump prompt
+fix live config reload window title
+confirm exit prompt
+capitalize desktop filename
+ignore config file
+change default colorscheme tomorrow night
+macos troubleshoot fyi
+fix selection invisible start end
+alacritty session register ttys osx catalina
+split renderer seprate crate
+transparency vim
+remove gui dependency
+fix cache variable font face
+remove option configuration file
+alacritty replace command
+macos mod key sticky spawnnewinstance
+feature multiple font family support
+error try depend
+don allow set hollowblock hide cursor config
+unknown terminal type
+configurable url format
+powershell start instead user directory
+animate cursor
+fix dcs parse crash
+rework default bright color
+window permanently hide press macos
+color vim
+add gnu guix installation development info readme install
+zsh issue visual mode
+update terminfo dependency
+fix tab linewrap
+alacritty yml macos do effect
+debug config
+option fail
+paste multiple line nano
+decouple bit
+remove xrrggbb color notation
+fix crash weston startup
+character treat like character
+revert cache font pixelsize
+emoji render huge
+add config option restrict use certain oscs
+add miss angle bracket email
+fix message bar hiding fix color config
+add note notation
+remove unnecessary macos focus check
+interpret integer color configuration
+alacritty version crash startup assertion fail
+add kinetic scroll
+fix change scroll px info
+trackpad scroll event ignore scroll really slow px event
+key interpret tmux command
+powershell args array process
+certain glyph big
+bash trigger prompt paste
+explicitly state default term value config
+fix config reload update incorrect grid
+simplefullscreen fall fullscreen linux
+fix rotation ongoing selection
+fix block selection include column
+don allow set hollowblock hide cursor config
+add miss cursor style documentation
+maximise window hotkey normally crash
+secure keyboard entry macos
+round pixelsize quering
+link overflow line lose tail window
+ssh session respond error open alacritty weird thing
+fix discard freetype load flag
+unicode support tmux
+neovim do render width
+add smart text highlight mouse
+add mod
+middle mouse button paste pasteselection mac osx yosemite
+escape sequence
+remove unnecessry feature definition
+macos do recognize keyboard layout key combo like
+add toggle subpixel rendering
+thread panic expect send event loop
+implement cursor position
+add glyph offset option user configuration
+support screen
+do work fish shell
+add arch linux package install instruction
+alacritty work virtualbox
+fade option
+start use instead printing stdout
+slow rendering tmux mode linux
+incorrect font rendering
+set option meta
+copy paste shortcut work gnome
+unicode support
+warn compile rustc
+make run freebsd
+add desktop install instruction macos
+cursor blink
+add app pack tool
+hidpi correct render offset
+make run freebsd
+add test line wrap
+blink issue window flash white startup
+proposal line wrap private
+miss package arch linux
+support invert cursor use color
+designate graphic character set
+fix bug event loop stick read
+weechat rendering improperly
+support invert cursor use color
+version build
+increase decrease font size run
+alacrity fancy icon
+add support set title osc
+cause hang
+support disable line escape sequence
+directive buggy
+stable rust
+os fullscreen text cut screen
+update readme md
+make stroke rendering configurable
+update readme md
+backend nixos
+allow argument shell option
+vim del key act weird
+cat block input
+debug work segfault
+ubuntu child finish error
+fix panic cat
+clear mode implement
+respect unicode character character cell
+dead key make terminal freeze macos
+window separator line char print tmux
+modal keyboard control
+make stroke toggleable
+scroll cause prompt deletable
+apt properly debian
+break cat
+unnecessary pad terminal window
+cat crash alacritty second
+update readme md
+add git tag
+login fail
+error create backend available
+crash macos parent window close
+building osx
+option run terminal
+support change cursor color invert
+option mouse type
+fix yml error uncommenting solarized block config
+ctrl alt cmd space freeze alacritty osx
+update dependency
+do compile osx
+daemon mode
+alacritty pass vttest
+add suggestion report bug
+add suggestive fallback message unavailable font
+link dpi lv
+print glutin event pass
+performance issue linux mesa
+update glutin
+pipe speed
+allow transparent background color
+set flag env var
+zsh tab completion do print
+appreciation potentially unrelated bug
+hang exit zsh
+sync support
+unknown terminal type
+character width wrong character
+wrap cursor cause crash
+end selection update active
+offset parity break upgrade
+fix movement search match
+use normally syntax highlight disable use screen vim launch error
+add config option disable vsync
+fullscreen startup mode work ubuntu lts
+fix goto match end search
+add support search vi mode
+tmux update screen row
+remove alacritty yml mention font crate error
+font size inconsistency display
+add readline binding search
+fix clipboard working kde wayland
+fix crash configure font miss
+decoration stay
+possible reference environment variable yaml configuration
+alert user specify font
+inconsistent behaviour
+ncurses character
+set default freetype property
+add basic readline binding search
+support interaction search vi mode
+bump urlocator
+hard require fontconfig
+install instruction readme mac incorrect
+backspace work ssh
+implement cursor blink
+theme ruin window resize ncurses aplications
+copy paste
+key repetition hold
+scroll window alacritty affect alacritty scroll time receive wheel event
+alacritty icon concept macos big sur
+weird copy behavior closing terminal
+fail screen session
+character center placeholder
+preserve wrapline flag alt screen switch
+fix save cursor handling
+alacritty class flag actually change instance class
+fix compilation target
+fix compilation target
+add feature select random color startup
+build error font package
+import config file color scheme file
+alacritty start popos
+different configuration value font size wayland
+incorrect selection fallback behavior
+fix cursor reflow
+problem load user font terminus ttf macos catalina
+problem invalid unit value expect string use default value
+select font load
+add miss changelog entry
+alacritty do weird thing ssh
+alacritty start plasma wayland nvidia driver
+weird font rendering macos
+term set alacritty
+terminal capability require cause view edit issue
+dim foreground color truecolor text
+icon gnome shell panel display incorrectly
+document support escape sequence
+ibus working alacritty
+fix reflow wrap cursor line
+search terminal scrollback
+character small
+send syn paste break bracket paste
+miss character vim
+appear create gl context fail
+featreq use openconsole exe alacritty exe exist instead conhost exe
+xterm argument compatibility fvwmconsole
+unexpected behaviour tmux alacritty
+feature request visual feedback copy
+parameter remove support alacritty nvim
+fix scroll escape pull line history
+nostd port
+keyboard type lead feedback create alacritty window fix switch ttys session
+character overlap
+alacritty open macos big sur
+fix live expansion
+font thickness differ macos app
+run rustfmt sr ht
+device pixel ratio problem
+uncommenting pad give error
+control modifier key make combination undetectable
+implement dynamic copy suggest
+do work alacritty
+high load idle freebsd
+spawnnewinstance spawn new instance
+escape sequence buffer working
+ui line rendering issue ncurses
+run build binary
+unclean drawing font small point size
+open window rdp
+prompt cursor issue
+add support audio bell
+set colorterm variable advertise support
+set colorterm environment variable
+key working properly
+key working properly
+shader live reload multiple time feature config live reload work fine
+remove debug release profile
+fix fish completion deb installer
+stabilize configuration format
+occasional rendering glitch
+fix mesa rendering outside window border wayland
+render area resize mesa wayland
+fix substraction underflow il sequence
+thread pty panic attempt subtract
+add dependency building void linux
+weird bad archive header attempt install build deb ubuntu
+add automatic scroll selection
+possible select text mouse tmux horizontal split
+upgrade winit toolkit
+incosistent dpr
+update readme
+use instead
+scroll visible area grow window
+crash long escape sequence
+upstream zsh completion
+zsh completion file correct install cargo deb install
+grow window height prompt
+font size extra extra extra large
+implement save
+wayland session prevent alacritty spawn session
+fix warning
+ubuntu miss dependency
+font visible program specific theme
+update deps cargo order fix crash release
+update deps cargo order fix crash release
+load user font
+bump version number
+standalone terminfo definition
+influx shell flash constantly
+create standalone terminfo definition
+reset visible area ri receive
+mention terminfo update require change tabspaces
+macos mojave dark mode
+bring aka truecolor support date
+support macos mojave dark mode
+handle ri ansi control correctly
+tabstop documentation lack terminfo mention
+remove support scrollback section faq scrollback branch
+support clear buffer
+enable lto
+enable lto scrollback
+fix profile release debug key type
+error cargo toml unable parse
+replace debug debug true
+font config effect
+compile fail ubuntu
+merge master scrollback
+background macos transparent resize
+replace runtime debug assertion static assert scrollback
+fix trail color leave vim resize
+fix couple clippy finding run subcrate test travis
+macos act meta insert special character
+small interval responsivness
+proper support hinding macos
+switch rustup clippy component
+allow specify modifier mouse binding
+support modifier mouse binding
+chunkwm tile alacritty false
+add hide escape sequence
+ignore error logger write output
+unable parse cargo toml
+alacritty crash printing error stderr available
+arrow key repeat hold
+invert escape sequence incorrect
+hide escape sequence
+click paste tmux
+optional dim foreground color
+add logo svg
+switch deprecate
+remove redundant dependency deb build
+add support dim foreground color
+function deprecate rustc
+unable parse cargo toml profile release debug
+build install instruction readme
+issue rbenv
+fix desktop file
+ubuntu miss asset cargo dep install
+documentation request enable scrollback
+linker cc ubuntu lts use
+set xwmhints inputhint fix input focus wlroots compositor
+install cargo fail ubuntu
+update readme md
+building git fail ubuntu lts
+miss zsh file aur package
+vim cursor block cover half wide character
+fix selection line
+flicker prompt string window resize tile wm
+terminal response python pdb
+symbol render incorrectly

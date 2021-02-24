@@ -167,7 +167,7 @@ func vectorizedCorpus(dictionaryCorpusSlice *[]*string, dictionaryCorpusMap *con
 		wg.Add(1)
 		go func(dictionaryCorpusSlice *[]*string, dictionaryCorpusMap *concurrentMap.ConcurrentMap, wg *sync.WaitGroup) {
 			defer wg.Done()
-			slice := make([]*string, dictionaryCorpusMap.Count())
+			slice := make([]*string, dictionaryCorpusMap.Count()+1)
 			for item := range dictionaryCorpusMap.IterBuffered() {
 				word := item.Key
 				index := item.Val.(int64)
@@ -185,7 +185,7 @@ func vectorizedCorpus(dictionaryCorpusSlice *[]*string, dictionaryCorpusMap *con
 			wg *sync.WaitGroup, mx *sync.Mutex) {
 			defer wg.Done()
 			var (
-				l               = dictionaryCorpusMap.Count()
+				l               = dictionaryCorpusMap.Count() + 1
 				vectorFrequency = make([]float64, l)
 				vectorPresence  = make([]float64, l)
 			)

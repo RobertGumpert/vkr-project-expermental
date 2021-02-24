@@ -1,0 +1,10 @@
+vue *=* 0.219722
+progressive *=* 0.219722
+web *=* 0.081093
+incrementally *=* 0.219722
+javascript *=* 0.150408
+building *=* 0.109861
+framework *=* 0.081093
+ui *=* 0.219722
+js *=* 0.219722
+adoptable *=* 0.219722

@@ -1,0 +1,4 @@
+vue *=* 0.549306
+frontend *=* 0.376019
+javascript *=* 0.202733
+framework *=* 0.202733

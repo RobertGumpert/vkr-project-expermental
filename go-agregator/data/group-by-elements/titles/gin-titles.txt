@@ -1,0 +1,2601 @@
+
+update assert param(expect, actual) position
+when release next version?
+Use camel case instead of ALL_CAPS
+chore: remove duplicate code
+unify test data
+update error(err) to err
+improve wrap to add params in native context
+Does Gin support try_files capabilities like nginx?
+add comment for context
+Slash in optional paramters
+remove hardcode instead of http status value
+failed to parse form to custom struct
+import gin  error 
+merge tree code from httprouter
+add an edge case from httprouter pr
+use strings.Split instead of strings.IndexByte
+example: fix typo for grpc
+example: fix typo for grpc
+gin/blob/master/examples/grpc/gin does not compile
+vendor: remove vendor package from example folder
+add grpc example
+utils:  use strings.Split instead of strings.IndexByte
+gin.Context has no field or method FormValue
+support h2c with prior knowledge
+Can I use Client Cert for Auth in Gin?
+Question: How can I jump to middleware ErrorHandler when I catch Error 404 
+Question: Versioning formats: path and query string parameter
+add go version prerequisite and debug warning
+Should I declare variables in package level but outside of http handler?
+c.ShouldBin(&loginVals) problem in auth_jwt.go
+Add mutex for protect Context.Keys map
+get matched route from context
+Docker's --add-host is ignored
+Non-semver release tags don't work with vgo
+binding: support map for map form
+Issue with binding gorm.Model and pointer fields as a whole
+gin overrides status code and Content-Type
+Run Api's on port 8080 with https
+Support map as query string or post form parameters
+does Gin has Internationalization support(i18n)?
+Upgrade golang version?
+bind to string in post body
+Can not deploy to GAE because of "unsafe" imported
+How is concurrency in gin
+How to access the Request.Body after ShouldBind*() returns an error ?
+Question: How to write request log and error log in a separate manner.
+how to write a valid binding?
+How to get row binary data
+Gin can not get none-English form field correctly
+How to return custom error with Gin
+Add and fix the explanation of `HandleContext`
+Don't log requests
+Keep the logic of handling errors in render
+go1.10.2 can't build with gin.
+Handle ResponseWriters that don't implement CloseNotifier
+Context.Stream breaks on google app engine
+Question: How to bind unknown object fields inside an array?
+ShouldBind sets a default value to *time.Time, cant use with gorm package
+how do i get response body in after router middleware?
+How can I get map[string]string filed on PostForm?
+Runtime Error BindJson
+minor typo in routergroup.go
+doc: update readme for adding binding about skip validate
+add json ASCII string render
+Sending a multipart.File to another micro-service
+Mixed using gin route and http package http not work
+WriteHeaderNow on Abort
+Problem with two packages
+can i custom request in body?
+Fix typo in panic() message (extra single quote)
+Some confusion under high concurrency.
+fix bug, return err when failed binding bool
+drop dependence on golang.org/x/net/context.Context
+move golang.org/x/net/context.Context interface
+Hello,Ginner,I wanne know if gin router can handle a http.Handler ,official middleware
+Disable warning for debug mode
+Lets encrypt and https support?
+provide sendfile method with zerocopy on gin ? 
+Do you have a plan to change "golang.org/x" to "github.com/golang"
+support struct pointer
+Fix #216: Enable to call binding multiple times in some formats
+In r.NoRoute, using c.Redirect() would panic.
+Why does the /json folder method not add a Unmarshal
+How to bin string data from Json to uint64
+Can't retrieve special characters from a request
+Add support of pointers in form binding
+how to use Goroutine in Gin
+how about add pointer support in binding Form Params?
+Add Jsonp Support to Context
+memory comsuption for upload file
+Recovery middleware leaks sensitive cookies, tokens, and headers into logs
+Creating an Engine instance with the Logger and Recovery middleware already attached
+how to get a graceful shutdown of an server.
+Add example to build single binary with templates
+unify assert.Equal usage
+unify assert.Equal usage
+Add Contents for README because it too long
+change README for app-engine example because of goapp deprecation  
+How to re-write Context and use HandleContext function?
+Install gin on a mac is failling with ./logger.go:61:67: undefined: isatty.IsCygwinTerminal
+Change HTML link tags to use HTML5 syntax.
+Missing the right colon
+Added some comments to avoid having golint warnings
+Yaml binding
+Change HTML input tags to use HTML5 syntax.
+FIX r.LoadHTMLGlob("/path/to/templates")
+Added support for SameSite cookie flag
+support ArrayMap for post form
+A new method for parsing form data array type fields
+support bind uri param
+Could column pointer after binding Form be <nil> ?
+Implement io.ReaderFrom on responseWriter
+feat(server): Implements RunFd method
+gin json  can not  send to client, why ?
+Make Group return IRouter
+Use Writer in Context.Status
+any prometheus exporter template for gin http framwork availble?
+Gin is more and more bloated now
+Why can't I start this way? How to solve this problem?
+There is no function to truncate the tree in a engine.
+docs: add photoprism to gin's user list
+Pass MaxMultipartMemory when FormFile is called
+Add example to set and get cookies
+Update hello.go
+UInt8 array is converted to string in returned JSON (unexpectedly)
+vendor: upgrade some dependency package version
+Static middleware returns wrong content type for `.js` files.
+How to use multiple domains?
+refactor(Makefile): allow overriding default go program
+fix(Makefile): golint to new URL
+ShouldBind File ?
+How do I force logs to have color when writing files?
+Server-sent events get buffered by nginx
+add chinese docs
+Cannot set cookies in goroutine
+Fail to POST when omitting slash at the end with asterisk path parameter
+replace deprecated HeaderMap with Header()
+Context.JSON() leaves Content-Type as "text/plain" IF an error happened in BindJSON()
+fix wrong word
+func (*Context) FormFile returns null in debian 9 (formerly: "File Upload behind nginx proxy fails")
+Question around log formatting
+fix: data race warning
+bugfix: Delete put(c) HandleContext
+Send data/message with Redirect
+gin binding param error
+Can I use gin with Prisma?
+ci: use matrix for adding env
+chore: fix debug test error
+remove allow fail flag from travis
+feat: add go version judge when print debug warning log
+fix: fmt output log to os.Stderr
+Make logger use a yellow background and a darkgray text for legibility
+attempt to support go module
+ci: fast finish when build failed
+ShouldBind JSON doesn't seem to work (using axios)
+Unecessary external dependencies are being downloaded.
+removed use of sync.pool from HandleContext and added test coverage
+Sensitive information leak in recovery middleware
+feat:add func BeforeHandle to Engine
+chore: fix typo and add a little anotation
+chore: recover go master build, partial revert #1514
+feat: replace debug log with fmt package.
+Fix LoadHTML* tests
+GIN shutting down unexpectedly, no error logged
+test vgo usage
+ Connection reset by peer when use endless
+Let's user define how he wants to log his routes (eg. JSON, key value, or something else)
+initial go.mod module definition
+format log from gin gonic
+HTTP status code is illegible
+Go Modules
+chore: add some annotations
+chore: add a version file includes gin version
+Gin post form binding will throw error if post int 0
+not print color log when go version is 1.10/1.11
+use encode replace json marshal increase json encoder speed
+How to fix request url without using redirect method
+chore: add some annotations
+[Feature Request] Add ability to provide headers for static IRoutes
+312312
+simplify slice expressions: s[:] => s
+remove debug print statements from test code
+add new capability to limit accepted connections
+gopkg.in is error
+Nil Pointer Stoping Entire Server
+suggestion: add "RegisterShutdownHook(func())" to gin application
+Updated content-type parsing to respect wildcards.
+How to use auto-tls example?
+chore: add release badge for readme
+readme: remove console image and add fold button
+How to ignore binding validation for specific struct filed in bind phase?
+Update: examples/graceful-shutdown/server.go
+tree: improve panic information when a catch-all wildcard conflict occurs
+Unable to get encoded URL when using NoRoute
+adding support for go-playground/validator.v9 
+Add NewRelic middleware example.
+Blurred Lined
+chore: update issue_implate
+How can I bind from form-data with array objects ?
+document and common question archived
+document: add docs dir and middleware document
+chore: update vendor version
+Need to handle files with dynamic names from root
+Response header prints application/json but client finally gets text/plain
+Update allowed origins on the fly for public API
+c.BindQuery how can bind array query?
+Question about middleware
+Add golang 1.11.x testing
+BindQuery does not work for binding:required fields
+Go gin variable in handler is not passing to template
+Gin master build failed
+fix go master branch(1.11+) error about Query and Form
+Update README.md
+How can I define template in separate HandlerFunc
+How to use go-bindata with Gin?
+Not getting port in Context.Request.Host after updating package 
+docs: add fnproject to gin's user list
+add internal package which includes json package
+format readme code import
+chore: remove else instead of return/continue
+support chunked encoding
+fix compile error for -tags=jsoniter
+Is there Automated tools, can generate api directory structure, code changes automatically compile and restart
+render: update msgpack usage
+chore: add missing copyright and update if/else
+not use protobuf on context but use it on render
+Undefined contexts: BindingBody, JsonpJSON, AsciiJSON and Reader
+Update readme about the version of gin
+doc(readme): fix users link
+Fix typo in README
+chore: upgrade dependency library version
+Fix typo in readme
+How can I get gin*context on Custom Validators
+gopkg import failing
+Set default time format in form binding
+Add support of time pointer fields in form binding
+Add BindXML AND ShouldBindXML #1484
+how xml reader ?
+add issue/pr template explain
+chore: use http.Status* instead of hard code
+ add link for every referenced pull request
+Remove: Double negative
+Add support for Protobuf format response and unit test
+docs: add changelog for v1.3.0, update authors and version const
+Add support for Protobuf format response and test
+pleaseGive branch `master` a sematic version tag
+Add support for Protobuf format response
+improve render code coverage
+improve utils code coverage
+use c.BindJSON can cause PANIC
+type *gin.Context has no field or method FormFile
+chore: add return or remove else for reduce indent
+small enhance for cleanPath
+Whether there are plans to support regular routing？
+chore: add test case for source/function of recovery.go
+optimize: add cacheQuery for Request.URL.Query();
+version for go mod 
+Custom validator documentation is incorrect
+Attempt to fix #1462
+change to test_helpers.go causes flag parsing to fail for cmd line app
+chore: update top bar header
+flush operation will overwrite the origin status code
+interface implement type check
+Middleware return func(c *gin.Context)  cCp := c.Copy() 
+When to release a new version with http2 push support?
+Can I add some process before validator? 
+Check/Save http.Response before sending it back ?
+cannot install
+gin-gonic Middleware Unable to set Header
+gin.Context Done() function does not work as expected
+README document Chinese translation
+add context param query cache
+gin.Context should use sync.Map
+Question: How can I run multi servers on same project ?
+add RelativePath
+Slashes in parameter
+I need change default binding and render
+strust field json ignore?
+Please support Transfer-Encoding: chunked
+cannot find package "..../gin-gonic/gin"
+add routes function to http context (#649)
+How to add custom validator in 1.2
+c *gin.Context get parameter
+return json if jsonp has not callback
+repository does not work
+Passing a custom struct to a view
+Question: What structure folder in gin with big scale project ? 
+Can we have a new Gin Gonic version, e.g. 1.3?
+Add tests for context.Stream
+Literal colons in URLs
+Simplify context error
+using socket.io in gin
+How can I change timezone when render time 
+Why does gin.Context make no effort to implement context.Context?
+Need example on how to generate dynamic sites in golang.
+upload file to RESTful API with POST method?
+Middleware not work with group and POST
+How can I make the param bind like this ?
+Param url problem.How can I use one routine to handle /user/:name/:id/delete where name or id may be absent
+hello,here  i have a question,/:mark/:index conflicts to /:mark/:query because wildcast
+gin render.writeHeaders doesn't  support MIMEHeader format
+chore(testing): case sensitive for query string
+fix test - auto choose port number
+fix mapping inner structs with correct tag
+Why gin.Context.Cookie has to do url.QueryUnescape?
+fix StaticFS() get "index out of range" if file not found (#1678)
+why  donot support  fcgi method to serve?
+Reverse Proxy issues
+Template reloading when using custom SetHTMLTemplate load function
+Guide for properly implementing HSTS
+Add comment to LogFormatterParams struct's fields
+Regarding the copyright in file headers
+Improvements and more begginer-friendly README
+Website is outdated in the repository description
+chore: attemp to fix #1700
+Plural is "Paths", not "Pathes"
+Removed old vendor.json and updated deps in go.mod
+use pre defined Router
+PostForm seems to be unset
+socket.io Upgrade "Headers were already written."
+Question: gin.LogFormatterParams.Latency and TimeStamp?
+`godep save` fails
+Fix #1693: file.Filename should not be trusted
+faster than gin
+Cannot acquire directory lock
+LoadHTMLGlob
+ci: exit 1 when build fail
+Add BindUri
+file.Filename should not be trusted. There should be a sanitize function, or give a warning in docs.
+ShouldBindQuery should be case insensitive
+feat: ShouldBindWith support for reading saved body bytes
+context: inherits context cancelation and deadline from http.Request context for Go>=1.7
+Develop
+map failed on image data?
+Installation ERROR ，use `go get ` install
+Gin server not accessible from other computers in the same network
+Pass form data to c *gin.Context Postform for testing
+ClientIP() using X-Forwarded-For and X-Real-Ip should be opt-in
+ctx.XML how to handle <![CDATA[%s]]> tag
+fix bug
+"wildcard route conflicts with existing children"
+route url error
+Keep getting 403 errors on the basic examlple
+Panic runtime error: index out of range in context.go:108
+Add LoggerWithFormatter method
+chore: remove wercker yml file
+how to integrate new json decoder and new validator to GIN?
+Any plan to support HTTP/2 or IETF QUIC?
+Got "ambiguous import: found github.com/ugorji/go/codec in multiple modules" after upgraded to latest (1.3.1)
+BindQuery not support time pointer, when non specified form fieldName
+ci: break when test fail
+How to break test when go test FAIL?
+chore: fix test fail
+tmp test: Fix ci
+doc: remove README_ZH.md
+Update README_ZH.md
+Gin sets up the logger
+add a gin scaffolds tool in readme.md
+Router: Route StaticFS() not found to Router's NoRoute()
+Router: routing StaticFS() not found to use Router's NoRoute
+add picfit to gin user list
+refactoring
+update README_ZH.md
+add krakend to gin user list
+update README_ZH.md
+travisCI fail but not found
+update README_ZH.md error: 修改连接错误，修正一些报引用错误
+Add support of NGINX Unit
+WriteJSON check response write error
+Question: regarding use of gin.IRouter
+Request body disappear if we access it on middleware
+Make sure the debug log contains line breaks
+Support DisallowUnknownFields in JSON
+ci: fix master error
+Is there a way to get paramter from url case-insensitive
+Asking for a way to bind a struct ignoring binding tage
+New feature for gin.Context, Get request body and rebuild in case of EOF
+Multiple slashes in path is not working
+add cleanPath and use it on request path
+`make vet` error on go master branch
+Fix typo
+recovery: fix issue about syscall import on google app engine
+Not able to deploy on Google App Engine
+handle nil body for JSON binding
+cookie SameSite support
+无法找到gin框架
+error in /usr/local/Cellar/go/1.10.3/libexec/src/encoding/json/decode.go:171
+Is it possible to save currentUser to varible
+GET and POST together, the same handler.
+Http Status Code 405 Not Supported Properly
+Remove go1.6/go1.7 support
+Redirect Not Working
+undefined: validator.Config
+can't bind the default value with shouldbind method.
+Compatible way to enhance context.Param(), supportted from  GET POST COOKIE Route/Var
+Fix typos
+Fix typos
+Change the `doctype` to be lowercase to be consistent with the rest o…
+Remove type attribute from HTML script tag to be consistent with the …
+Can't recover panic: nil pointer dereference
+Improve cookie tests code coverage
+Custom JSON binding or middleware ?
+Use captcha with gin
+Support for optional trailing slash
+fix some markdown headline formats
+Fixed markdown formatting
+Need use go func() when call handle func
+gin is vendored as two copies
+panic if err is nil on c.Error
+Fix readme rendering
+Fix README markdown for h4s
+Some times gin.Context's Writer.Size get -1 when request end
+context.Bind not support pointer type like `*string, *int` when request body is form
+Help with multiple ranges
+Fix time.Time binding
+readme bug fix
+Restapi with mgo ang go gin-gonic
+readme bug fix
+Fix minor type in context.go
+When will test_helper.go(CreateTestContext) be merged into master?
+Fix title and badge rendering
+Corrected markdown in README
+Where should I set gin.DefaultWriter?
+Update README.md
+Not escaping JSON when rendering responses
+form post, bind to pointer in struct failed
+[URGENT, PLEASE HELP]c.AbortWithStatus or c.AbortWithError failed to respond a HEAD request
+how about validate struct with a config file?
+Fix: markdown about icon error in `README.md`
+Update ReadMe to reflect develop branch changes
+Use gin with NewRelic
+Fix README markup
+Fix broken headings in Markdown files
+Quotes
+Update README.md
+Update README.md
+Update README.md
+LoggerWithWriter cant write to file
+404 error when refresh angular 2 routes
+ERROR:html/template: ".../index.html" is undefined
+when I used c.Bind, then redirect from a POST,  the result is 404, somebody help me
+can gin support the way to write response headder after c.Next()?
+ERROR:html/template: ".../index.html" is undefined
+Static file not work
+Add spacing around headers
+upgrade protobuf version
+[README] Fixing title and badges
+v1.2
+Fixing README badge formatting and header
+Fix README markdown
+Updating IsDebugging docs to remove redundant words.
+How to call function in templates
+Cannot update
+Changing the Render interface to accept a *http.Request
+Update README.md
+feat: support Let's Encrypt tls.
+Fix Markdown syntax on README.md
+Fixing the layout of badges
+add custom Delims support
+Fix header in README.md markdown
+Unescape HTML in template
+feat: add GetRawData func.
+feat(context): add cast helpers to c.Keys
+feat(context): add idiomatic binding functions for clear err managment
+how to fetch binary post data?
+How to stop a middleware and get response immediately?
+Closed streams should probably result in errors, not recovered panics.
+Fix broken build status & other tags
+Update badges
+Fix README
+Fix the formatting so that the README renders correctly
+Formatting for readme was off
+Binding for URL Params
+url.String() missing host
+make CreateTestContext export
+BindWith and ctx.Json problems
+CreateTestContext should be exported
+Correct README.md syntax problems
+Context Bind methods are aborting with status code, which is preventing header updates in after request middleware
+feat: Support get value from request header.
+add GetHeader() to easily get header in Request
+fix readme format
+MustGet sometimes panics even though Set was called in middleware
+docs: add graceful-shutdown example for go 1.8
+feat: support cygwin for log writer.
+fix: gofmt error.
+Can use like this?
+Binding required doesn't work why?
+How to read request header
+log.Println() does not print timestamp
+latest version couldn't be built
+how to set header after write to response
+Cache busting assets
+Added Sourcegraph badge
+Added Sourcegraph badge
+Added Sourcegraph badge
+typo
+Reverse proxy not working
+binding issue with multipart form
+fix: buffer should reset when test logger output
+docs(readme): fix multiple file example
+docs(readme): fix single file example
+I have some doubts about "gin/examples/graceful-shutdown/graceful-shutdown/server.go"
+upgrade validator version to v9
+More details on bindJSON() documentation
+right-justified benchmarks data
+chore(vendor): update jsonite rev, #1010
+refactor(render): upgrade json package.
+jsoniter change now causing panic on BindJSON()
+add warning using http2 example
+why use github.com/json-iterator/go
+When the client to upload files, middleware can't work normally.
+use space not tab
+does gin have filters ?  like JavaWeb filters
+[GIN-debug] redirecting request 307
+update json-iterator revison to fix TestRenderIndentedJSON failed
+Encrypt for Auth
+add favicon example
+add http2 example
+show query string in logger.
+fix(render): remove repeated static check.
+resolve #368 add option to UseNumber() in gin.Context.BindJSON()
+does gin supports methods of struct(receiver) like beego ?
+parse request body to map
+docs(readme): add binding html checkbox example, close #129
+Add SecureJSON doc
+chore(vendor): update jsonite rev, close #991
+Panic after merging pull request with jsoniter
+feat: change json lib to jsoniter
+docs(readme): fix code link
+Change logger output, log GET query string completely
+feat: add SecureJSON func to prevent json hijacking
+Logo Guidelines?
+Use single line
+use comma ok and use single line
+Separate type define
+Why have not use the official context(x/net/context)?
+update func comment
+Improve serveError code coverage
+fix(comment): remove todo
+add test case of mode
+update comment method
+update readme
+separate type define
+improved swap
+fix(tests): TestDebugPrintLoadTemplate use assert.Regep instead of assert.Equal
+[example] add error check.
+Add error handling to upload-file/single example
+add doc.go
+fix cleanPath spell
+one reqeust, one goroutine?
+Error : github.com\gin-gonic\gin\logger.go:61: undefined: isatty.IsCygwinTerminal
+Gin doesn't work with channels
+fix: update autotls example.
+update document format.
+Improve debug code coverage
+Made funMaps for the templates configurable and hot-reloadable
+custom middleware logging the request body
+how to get gin？
+REST: Version in Content-Type
+Non-gin Middleware
+Routes Hierarchy
+"<" in attribute name
+how can I limit the number of current requests?
+Please release the latest version
+gin and gorilla/websocket
+First pass at removing panics in Context.JSON and Context.Render
+add Makefile for example
+fmt code style
+Debug output formatted incorrectly in Windows
+delete else keyword
+Add Makefile to check the following thing
+fix go code format
+delete else keyword
+Improve errors code coverage
+fix markdown render style
+unify license
+Unify license
+Add license for some files
+lint code for import
+String for binding form too simple
+What is the best way for read the design-time URI at run-time?
+refactor: update protobuf version
+handleHTTPRequest should use EscapedPath?
+What is the best way to simulate httputil.DumpResponse?
+Fix bug for markdown render
+How to Pass db to router functions
+Unable to retrieve form values in JSON
+Add method to return main handler
+Add method to return main handler
+Method to get main handler is desired
+Add tests for cast helpers to c.Keys
+How to disable the "Found." link on HTTP redirect
+Add authorization middleware based on Casbin.
+Gitignore IntelliJ IDEA files.
+AppEngine/Context Usage
+Add an authorization middleware based on Casbin
+Add content negotiation tests code coverage
+Incompatibility issue with "gopkg.in/robfig/cron.v2" package
+Nesting path failure
+BindQuery to custom type
+Upload file I want to get the content, hash the file, it is currently private and cannot be obtained
+Per route middleware cannot abort
+Is it possible to bind query inside Middleware by passing struct type?
+Avoid overwriting the written status code
+Security vulnerability identified with all current releases of gin CVE-2020-28483
+Mod: move render unittests to render_test package
+-u doesn't work
+Why is fiber faster that gin or beego ?
+chore: Deleted spaces
+engine holds original http server to use all http server functions
+Remove the tedious named return value
+ANNOYING Bind JSON
+decodeJSON is now checking buffer data after JSON payload
+chore: remove duplicate test 'assert.Equal'
+gin.Content.ShouldBindJSON not recognized the 'false' bool value?
+CustomRecovery not declared by package gin
+easy realization to gin.H{} &  gin.H{}？？？
+The multipart form data resolve issue
+How to use different middleware for different routes
+Calling c.FormFile Special files cause service exceptions with no error messages
+graceful shutdown run function
+basic auth: fix timing oracle
+customizable client ip extractor
+Calling c.FormFile makes cpu soar high 
+Map as query parameter suuport Bind
+chore: Upgrade dependency version
+Q: Is there something like auto output detection?
+custom recovery is not published yet with tag
+Revert "Adding ppc64le architecture support on travis-ci (#2538)"
+why use context.param and context.Param at the same time?
+fix compile error from #2572
+added context-value support
+Why convert blank string "" to "0", Why not return error？ 
+how to use go-resty with gin correctly
+ci: add github action workflows
+test: fixed the TestUnixSocket test on windows
+How to serve a grpc-web from a route, e.g. behind "/grpc"
+Proper way to template XML?
+Missing `+` character when binding form request
+Benchmarks - BenchmarkHttpRouter_GithubAll
+treat http.ErrAbortHandler as broken pipe too
+The get request cannot get the value containing the percent sign
+Can I use a router like this？
+The Project is stopped?
+Got 400 Bad Request with javascript axios
+g.LoadHTMLGlob("template/*") doesn't work
+fix error gin support min Go version
+question: Please tell me the meaning of 255.
+Move from Travis CI To GitHub Actions
+Depends on a non-existent version of yaml.v2
+request with wrong content-type causes stack overflow
+Static file serving returns 404 error code when using r.Static
+How to get the matched url pattern from gin.context?
+ imports golang.org/x/sys/cpu: C source files not allowed when not using cgo or SWIG: cpu_gccgo_x86.c
+The length of context.QueryArray().
+Request body closed in copied context
+Add fuzzer
+What's the version strategy?
+some loop don't need to transfer to bytes slice and some use the zero…
+Can't set headers after AbortWithError
+Bind PostData: struct's default  value int  0
+Error: refused to get unsafe header "location" 
+[testing] panic at line containing ShouldBindWith
+"gin mode unknown" error: show available mode
+EOF in BindJSON
+Delete methed cannot get data from body
+[Bug] c.FullPath returns incorrect output!
+Slow response to concurrent requests
+Bug: write status code after sending initial bytes
+There is something wrong with the parameter calibration of GIN
+make it clear that the context will be reset after the request ends, …
+bug: weird behavior of validation rule defination
+Context resetting should be placed before context recycling 
+Context resetting should be placed before context recycling
+when post a image use goroutine ,Context.Copy is failed.
+How can gin get the array parameters of GET requests?
+How to deal the whitespace in query string?
+todo: fix cmd/vet error
+Fixes to the graceful shutdown example
+Fix typos in context.go
+Automatic HEAD handling
+Will there a new release in the next days? 
+global api response handling
+Will gin support multipart/mixed for uploading file?
+AsciiJSON is incorrect w.r.t RFC4627
+binding:required_without_all  not work
+bindQuery and bindJSON all validate required, that can not work well for the same model.
+should bind not work
+Website not opening
+gin-gonic.com website is down
+ci: romove go1.11 for gin1.7
+Problem & Solution
+Adding ppc64le architecture support on travis-ci
+Root static resource router not supported
+upgrade go-validator to v10.4.1
+how to binding param and json 
+Undefined validation function 'required_if' on field 'Field'
+how to use form-data and raw data together
+change module name
+xml: unsupported type: map[string]interface {}
+How to get response data after request
+Installing Dependencies with dep ensure Fails with Error: No versions of github.com/go-playground/validator met constraints
+Independent middlewares in one router
+Add GetUint and GetUint64 method on gin.context
+Context was responded from `CreateTestContext` do not have engine
+Binding uuid.UUID using ShouldBind
+Hwo to prevent cache of static file
+problems with downloading gin
+static file not found
+Customizable jsoniter config
+[question] How to write a large file to response body with low memory usage
+Request body print does not work on custom logger.
+Conflict when map path parameter and static url in same resource
+redirecting url not setting truly
+Preserve Special Characters in Form Data
+Global middlewares are not always executed
+Prevent panic in Context.GetQuery() when there is no Request
+(Question) how can i get value of context JSON from previous handler chain?
+Change authPair datastruct from list to map in the BasicAuth func
+panic JSON Render
+[Bug] BindQuery will trim substring after character semicolon`;`
+Question - How to call another handle in gin handler?
+ How to add a unified response header after the processing function
+logger color for windows console(#2383)
+Add 405 allow header. solves #2397
+20018
+Cannot log like gin does, beautifully (
+Question - Multipart upload stream
+Go 1.14
+reuse http.request.body
+[suggestion] support grpc metadata
+405 Method Not Allowed is missing the Allow header.
+Redirect and Render a Template with New Variables
+DebugPrintRouteFunc() unit test
+javascript fetch AbortController and cancellation
+Rename some variables
+Handling error like Java's Lombok @BadRequest @InternalError before compiling.
+remove a unused type SecureJSONPrefix
+remove a unused type SecureJSONPrefix
+Add a redirect sample for POST method
+add miss copyright
+Remove some functions that have the same effect as the bytes package
+Remove two functions
+Does each request on server has different session?
+Bind function's request param question
+hi windows console also need color 
+the same port with nginx, not panic
+ Broken link repo typo fix
+Can the URL path be manipulated?
+Fix the issue of returning validation error instead of json.SyntaxError for a required file upload form field
+chore(performance): improve countParams
+Add IContext
+get json.SyntaxError instead of validation error if required file upload is not present inside the form
+chore: rename getQueryCache/getFormCache to initQueryCache/initFormCache
+Request.Body.Read get body data lost
+How to get raw request headers
+Gin response 404 with latest version (1.6.3) on Haproxy
+chore: update tree
+bug: /api/:code/download/  --重定向--> /api/:code/download/  
+Where can i learn gin
+Sync route tree to httprouter latest code
+Context.JSONP() function does not do what it says it should?
+fix(tree): reassign fullpath when register new node which the same current node
+chore: improve render string performance
+Better initial articulation in README
+route
+uncomment the code in README
+fix bug that tag `form:",default=1"` are not effective in some cases
+Is there any way to preserve order of json objects in response?
+fix bug that tag `form:",default=1"` are not effective in some cases
+Fix typo
+chore: update godoc address
+chore: update some code style
+docs: update benchmark result v1.6.3
+chore: update the result of CR
+Release v1.6.3 version
+Cannot convert time parameter with ‘form‘ or ‘json’ tag at the same time
+chore(performance): Change *sync.RWMutex to sync.RWMutex
+Performance issue in PR (#1391)
+add a method to set the indentJsonIndentString used in Context.Indent…
+add a method to set the indentJsonIndentString used in Context.Indent…
+Indent
+There is bug that form:",default=1", in some cases are not effective, fixed in PR #2361
+fix bug that tag `form:",default=1"` are not effective in some cases
+Any built-in way for converting form to struct in Gin
+Change Timezone of Gin Application
+gin geoip middleware 
+Update gin_integration_test.go
+How to Resume an Interrupted Download With gin?
+modify: nil instead of []string{}
+modify: nil instead of []string{}
+feat: add ability to override the debugPrint statement
+panic recovered: http2: stream closed
+Weird error message returned by ShouldBind when image file is optional and not set in the form
+Validation issue
+old /x/sys package in go-isatty produces error while compiling
+update:getFormCache function
+update:getFormCache function
+/:name:reset  The endpoint with :reset, can't work
+BindQuery to custom type
+Upload file I want to get the content, hash the file, it is currently private and cannot be obtained
+Per route middleware cannot abort
+Is it possible to bind query inside Middleware by passing struct type?
+Avoid overwriting the written status code
+Security vulnerability identified with all current releases of gin CVE-2020-28483
+Mod: move render unittests to render_test package
+-u doesn't work
+Why is fiber faster that gin or beego ?
+chore: Deleted spaces
+engine holds original http server to use all http server functions
+Remove the tedious named return value
+ANNOYING Bind JSON
+decodeJSON is now checking buffer data after JSON payload
+chore: remove duplicate test 'assert.Equal'
+gin.Content.ShouldBindJSON not recognized the 'false' bool value?
+CustomRecovery not declared by package gin
+easy realization to gin.H{} &  gin.H{}？？？
+The multipart form data resolve issue
+How to use different middleware for different routes
+Calling c.FormFile Special files cause service exceptions with no error messages
+graceful shutdown run function
+basic auth: fix timing oracle
+customizable client ip extractor
+Calling c.FormFile makes cpu soar high 
+Map as query parameter suuport Bind
+chore: Upgrade dependency version
+Q: Is there something like auto output detection?
+custom recovery is not published yet with tag
+Revert "Adding ppc64le architecture support on travis-ci (#2538)"
+why use context.param and context.Param at the same time?
+fix compile error from #2572
+added context-value support
+Why convert blank string "" to "0", Why not return error？ 
+how to use go-resty with gin correctly
+ci: add github action workflows
+test: fixed the TestUnixSocket test on windows
+How to serve a grpc-web from a route, e.g. behind "/grpc"
+Proper way to template XML?
+Missing `+` character when binding form request
+Benchmarks - BenchmarkHttpRouter_GithubAll
+treat http.ErrAbortHandler as broken pipe too
+The get request cannot get the value containing the percent sign
+Can I use a router like this？
+The Project is stopped?
+Got 400 Bad Request with javascript axios
+g.LoadHTMLGlob("template/*") doesn't work
+fix error gin support min Go version
+question: Please tell me the meaning of 255.
+Move from Travis CI To GitHub Actions
+Depends on a non-existent version of yaml.v2
+request with wrong content-type causes stack overflow
+Static file serving returns 404 error code when using r.Static
+How to get the matched url pattern from gin.context?
+ imports golang.org/x/sys/cpu: C source files not allowed when not using cgo or SWIG: cpu_gccgo_x86.c
+The length of context.QueryArray().
+Request body closed in copied context
+Add fuzzer
+What's the version strategy?
+some loop don't need to transfer to bytes slice and some use the zero…
+Can't set headers after AbortWithError
+Bind PostData: struct's default  value int  0
+Error: refused to get unsafe header "location" 
+[testing] panic at line containing ShouldBindWith
+"gin mode unknown" error: show available mode
+EOF in BindJSON
+Delete methed cannot get data from body
+[Bug] c.FullPath returns incorrect output!
+Slow response to concurrent requests
+Bug: write status code after sending initial bytes
+There is something wrong with the parameter calibration of GIN
+make it clear that the context will be reset after the request ends, …
+bug: weird behavior of validation rule defination
+Context resetting should be placed before context recycling 
+Context resetting should be placed before context recycling
+when post a image use goroutine ,Context.Copy is failed.
+How can gin get the array parameters of GET requests?
+How to deal the whitespace in query string?
+todo: fix cmd/vet error
+Fixes to the graceful shutdown example
+Fix typos in context.go
+Automatic HEAD handling
+Will there a new release in the next days? 
+global api response handling
+Will gin support multipart/mixed for uploading file?
+AsciiJSON is incorrect w.r.t RFC4627
+binding:required_without_all  not work
+bindQuery and bindJSON all validate required, that can not work well for the same model.
+should bind not work
+Website not opening
+gin-gonic.com website is down
+ci: romove go1.11 for gin1.7
+Problem & Solution
+Adding ppc64le architecture support on travis-ci
+Root static resource router not supported
+upgrade go-validator to v10.4.1
+how to binding param and json 
+Undefined validation function 'required_if' on field 'Field'
+how to use form-data and raw data together
+change module name
+update: CHANGELOG.md add log for version 1.6.2
+Add new method LoadHTMLFilesRecursively for recursively load template files in a folder
+add `isValidPORTEnvVar` function to judge the  PORT  whether is valid
+Basic auth with htpasswd 
+judge the environment variable PORT whether is valid
+judge the environment variable PORT  whether is valid
+fix typo in the PR template and CONTRIBUTING files
+Add CustomRecovery builtin middleware 
+update:SetMode function
+ why `Engine.trees` is a slice instead of a map？
+Create go.yml
+discuss: ginS still require?
+Gin context.Set() and .Get() issue
+Handle invalid Accept header values properly
+The endpoint with :
+Validator panics with datetime field
+feat: form binding support encoding.TextUnmarshaler
+update set cookie example
+How is close  response headers  "Transfer-Encoding: chunked "?
+Validator path should be GitHub version?
+How to bind to a struct with json and header struct tags both ?
+SetCookie broken again
+Update version.go
+Add set samesite in cookie.
+fix missing initial sync.RWMutex
+Allow gin.Engine To Shutdown
+Should I overwrite gin.DefaultWriter to change gin log writer
+Support binding for slice/array obj [Rewrite]
+got panic with RWMutex on 1.6.0 version 
+Which HTTP headers are supported in Gin?
+breaking change to v1.6.0 is inappropriate
+doc: add pr link
+Revert "fix accept incoming network connections"
+Revert "fix accept incoming network connections"
+bump to v1.6.1 version
+Revert "fix accept incoming network connections"
+Update version.go
+New behavior of r.Run binds to localhost, not 0.0.0.0, issues in Docker
+recover middleware brokenPipe
+docs: Add 1.6 changelogs
+conflicts with existing children in path
+Improved the graceful shutdown and restart section and removed dead code
+Timeout: It spend 31m45s, I don't know why since all time consuming is done.
+How to support root level wildcard parameters in path?
+code comment of Engine.UnescapePathValues
+invalid content type header (received Content-Type: text/plain; charset=utf-8 instead of application/json)
+Error httpd/handler/app_page.go:7:2: module github.com/gin-gonic/gin@latest found (v1.5.0), but does not contain package github.com/gin-gonic/gin
+RedirectFixedPath redirecting trailing slashes
+Request and Writer Getters in Context
+Unix Socket Handling
+Cancel request by client will cause panic
+Getting handlerFunc s of a pointer receiver using reflect
+Add mitigation for log injection
+create a goroutine within router func will report wrote more than declared Content-Length
+(*Context).Render: panic(err)
+Release v1.6 version
+httptest.NewRecorder() isnt registering hits in coverage report
+Using writer function in go GIN to send response to endpoint from yaml file
+copy #2237 Add mitigation for log injection
+static
+chore(golang): add 1.14 version
+ci support go1.14
+Add more elegant json format logs.
+test
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Tcgin
+Add elegant json-formatted log middleware. Implements contextual tracing of logs.
+Add elegant json-formatted log middleware. Implements contextual tracing of logs.
+Add elegant json-formatted log middleware. Implements contextual tracing of logs.
+Add elegant json-formatted log middleware. Implements contextual tracing of logs.
+use github actions instead of travisci
+Shouldn't ShouldBindJson return an error when the request body doesn't match the structure?
+[Question] How to return XML data whose root node is <xml>
+Add elegant json-formatted log middleware. Implements contextual tracing of logs.
+Added zerolog support to output a more elegant json log format.
+docs(badge): add todo badge
+Mutliple slashes in the url,like ////a////b will match /a/b
+why this is empty?
+Add mitigation for log injection
+Add TODOs Badge to README
+Binding Problem on request with semicolon(;) as delimiter
+wip: update readme
+Getting parameters that are a named array
+X-Forwarded-For header should be processed last-to-first to prevent IP spoofing
+chore: upgrade depend version
+how can i get query param from the url?
+tree: range over nodes values
+Use json marshall in context json to fix breaking new line issue. Fixes #2209
+sometimes static assets return 404 http status; after systemctl restart of the service, they get back to 200 http status
+gin.BasicAuth susceptible to Timing Oracle Attack
+Google Cloud Function,  "Function panic: handlers are already registered for path"
+Commit to master has no associated tag
+binding validations cause weird text to be generated
+RunTLS does not work
+not all tests run locally (master)
+Installation having problem Sync.Pool
+Added tests for colorForMethod() and colorForStatus()
+ListenAndServeTLS vanished
+gin crashes when binding JSON array of objects because of forced validation
+Updated "Multipart Form" section in Readme.md
+Clone MongoDB session and pass it along the route
+Restored support of multipart/form-data
+Restored support of multipart/form-data
+add querystring parameter example to readme
+Capturing URL fragments when URL contains :
+ClientIP() fix for single item in X-Forwarded-For.
+RouterGroup.Static returning 404 for index.html
+Using static with root handler
+gin and pongo2 template engine example
+Patch for #298
+Overflows int
+What's in a name
+Graceful Restarts?
+the Recovery() middleware is not catching errors from custom Middlewares
+undefined: sync.Pool
+Using http.Handler?
+New rendering pipeline
+gin.Context.JSON with a struct as reply always give 500 error
+Middlewares will always be executed even if there is response/return in previous middleware
+Append queue
+Why not use master branch
+Middleware c.next() ignored?
+Expose group absolutePath 
+New feature! HTTP streaming
+ undefined: sync.Pool
+HTML templates do not work with contrib/cache
+Context.JSON does not work with a list of UDT objects
+More Examples
+add support to disabe keepalive
+the Catch-All form should not include the "/" before param
+How to easy handle file upload with gin?
+Context setter function could not deal with int64 but only float64
+Attaching handlers that occur before hitting the muxer
+Teeny tiny typo fix!
+Question: Handling errors
+Merge develop to master
+Master
+Fix TestBindingPOSTForm failing by adding Content-Type to request header...
+request for example of database middleware
+Fix typo/grammar in function comment
+Is there a way I can use index.html under public dir?
+Can I disable gin's stdout?
+Stable release
+How about a better Recovery()
+benchmark using apache bench got [GIN] WARNING. Headers were already written!
+Question: Why gin does not support service injection?
+appengine example not working with latest SDK
+Unable to parse JSON from a GET request using Bind
+support running with socket
+use pongo2 context render html
+Fix render variable in 'pluggable_renderer' example
+Unicode urls
+add support for embedded struct to Bind
+how to forward all log to a file?
+Fixing bug with static pathing
+required binding erratic behavior
+Documentation grammar fix: Middleware, not Middlewares.
+REST routing, optional params
+How do I serve an svg as an image?
+Zero Allocation Router
+Context.Engine  应该为 Context.engine
+New input/query API
+Unit Test effort
+Setting logging to release mode in example
+don't set Content-Type if exists
+gin/context.go: Minor change in Abort comment
+如何连接MYSQL？
+Templates overwriting each other
+Can it be that JSON Binding is completely broken?
+issue #238 proposed fix
+Headers are always written => gives a warning on hijacked connections
+Sending field specific errors
+Javascript encodeURIComponent does not match endpoint
+Include NoMethod method to Gin to allow middleware handling of 405 errors
+undefined: sync.Pool
+v0.6
+Using net/http constants instead of numeric values
+Add customizable Realm for Basic authentication
+colorful logger on windows
+Does Gin support regexp in route?
+Template FuncMap
+SSL Support
+Add a Gitter chat badge to README.md
+Context doesn't have an interface.
+Add validating sub structures
+Is `application/x-www-form-urlencoded` supported at the moment?
+when use the sessions, memory  leak
+Update README.md
+Remove reference to Martini from recovery.go
+Documentation for using layout files with templates?
+wrong spell
+Added support for unsigned integers in binding parameters of form posts....
+Dumping req.Body when Binding fails
+Remove net/http optional import from README
+Any plan  to support other template, like pango?
+Question:  How bind JSON array
+How to compress the template in gin
+Disable short 30X redirect message
+How to pass JSON to a Redirect POST
+router bug?
+Removed additional Iota
+Added HandleContext to re-enter soft-rewritten Requests.
+Panic on init at gin.init() on invalid GIN_MODE 
+Make CreateTestContext public without importing net/http/httptest
+Is this project dead?
+Program freezes on release mode
+middleware by Use in a group not working on basepaths
+Syncing with gin-gonic/develop
+Fix context keys get set
+Context.Get() does not need to test whether Keys is nil or not
+"concurrent map read and map write" in getting context
+How to convert  parameter type posted by client ?
+How to customize the time format when response json data
+Pr/html5 pushstate
+How to forward request route to another route?
+Gin versioning needs update
+Add PureJSON renderer
+Special HTML chars encoded in JSON respones?
+Use X-Forwarded-For before X-Real-Ip
+Group middleware cannot be effect for the invaid request method
+bug:c.BindJSON(&req)   
+c.Bind not retrieving json from c.Request.Body
+Revert PR 581
+could you tell me for Internationalization Translation with gonic ?
+Proxy route to another backend
+Required binding tags on bool fields do not work as expected
+should change package context import directory when go 1.7
+Rendering templates, how to make async render 
+Adding named route beside parametrized
+How to set headers in middleware after HandlerFunc.
+Regex match pattern routes
+Is there a way to match hosts like you can in Gorilla?
+HTMLRender interface: Instance method needs to return an error type
+国际化支持方案
+Add support for c.HTML with asset file from go-bindata
+Integration with socket.io
+Adding a SaveUploadedFile method to context?
+[Question] support for FastCGI protocol 
+Question mark eaten from URL if no query parameters specified
+Static 404
+Any plan on v2?
+Add intellij idea gitignore
+version tags
+r.Run() on TCP4 / IPV4 only
+How to rotate  for access log ? 
+Question: Status codes in error handling
+ Gin routing on appengine
+gin.Context.Param() giving wrong values
+Custom BindWith error managing
+allow to custom the error handle
+test failed
+Binding JSON having fields with empty string generates validation error
+How to download an xlsx file using gin
+Session timeout
+can't find package "github.com/manucorporat/stats" in the example "realtime-advanced"
+how to pass a function to html tempalte using c.HTML
+how can I use golang.org/x/net/context in func xxx(c *gin.Context)?
+how can i use c.Query to get the array param
+How to perform task after returning response?
+support https ?
+[Question] Serve multiple html files with variables
+Retrieve handler RouteInfo
+Use Authboss with Gin
+How to serve same content from HTTP and HTTPS with same router?
+How to redirect "sitename.com/any/path" to "www.sitename.com/any/path"?
+Is it possible to have optional parameters?
+Implement io.ReaderFrom on responseWriter
+Redirect all HTTP to it's HTTPS equivalent
+Custom validator function
+Slashes in parameter
+"/" (slash) as REST param does not work
+"/" (slash) as REST param does not work
+Implement io.ReaderFrom on responseWriter
+Remove an obsolete func in README
+Fixed Content-Type problem when `BindWith()` fails. Resolves #633.
+Replace uses of default/global log with package local instance.
+Don't zero out default log package flags.
+Content-Type is forced to text/plain when context.Bind() fails
+Add multiple json
+Fix incorrect error implmentation
+gin.Error does not implement the error interface
+ [WARNING] Headers were already written. Wanted to override status code 400 with 201
+c.String but as HTML
+fix default log format
+Is it possible to stop a router from running?
+Write status code in external writer too
+[question] how do I access the fragment section of the request url?
+better display for log message
+add Engine.ResetRoutes() for clean existed routes
+[question] how should I handle https request and http one. 
+Update README.md
+Why gin bind method doesn't support underscore mapping?
+start new project from Gin build error
+chore: fix invalid link
+unable to add/remove middleware on the fly
+Add GitHub explore topic
+Clean the Request Path early
+Remove sudo setting from travis.yml
+c.Stream does not work with httptest.ResponseRecorder
+Doc: fix gin example notice syntax
+404 with url like this:  http://localhost:4200//api/auth/login
+Fix Readme (Japanese text hiragana -> kanji)
+cloud.google.com/go@v0.26.0: unrecognized
+handle Body return EOF
+handle Body return EOF
+Dynamic routes
+chore(readme.md): fix invalid link
+is it possible to handel /index /index.html for one route?
+fix #1804 which is caused by calling middleware twice.
+Default engine producing two log lines with StaticFS for 404
+Propagate request context behaviour to gin context methods implementing stdlib context.Context interface.
+IsTerm flag should not be affected by DisableConsoleColor method.
+Removing duplicate test
+travisci: use go module when go11+
+CORS Issue with Basic Auth
+Ignore specified from default router logging?
+add support arrays on mapping
+spell check 
+Fix URL to starter template in the docs
+add support time.Duration on mapping
+chore: update readme
+chore: update go mod package
+chore: use internal/json
+Drone switch from gin to go-chi in 1.0 version.
+Update examples link in README after split examples PR is merged
+chore: add examples repo link to README
+warning about "Logger and Recovery middleware"
+remove docs dir
+fix #1784: correct error comparison on tests
+gin test fail on go master branch
+ram usage increasing after every request
+gin middleware repo remove go1.6/go1.7 support
+qps setting and graceful shutdown 
+chore: add go1.12 support
+make context.Keys available as LogFormatterParams
+Split examples
+utils joinPaths() may be not right
+Split examples to alone repo
+Proposal: split examples to alone repo
+chore: fix Make script when failed
+ context add RelativePath
+I want to do like bellow nginx conf with gin, so how to do? thanks somebody can help me.
+Change color methods in using defaultLogger function to public
+Throwing panic with recovery continues calling middlewares
+Generate a template and modify the result before sending it 
+[improvement] logger formatter is not reusable
+Unable to generate code coverage reports
+Proposal: fix call Stream() on copy of *Context (#1763)
+Make silent debug info on tests
+fix many redirects (#1760)
+Panic if using copied context for streaming
+HTTPS chacha20_poly1305 support
+fix travis freeze on concurrent test
+Out of range if redirect more than 45 times
+request middleware get relativePath 
+соре на мусорку
+pull response time from gin
+wildcard conflicts
+`PostForm` & `DefaultPostForm` functions do not recognize application/x-www-form-urlencoded data in `DELETE` HTTP method
+How To Use Gin Middleware With Custom HTTP HandlerFunc
+request 307 case request method change
+Add response size to LogFormatterParams
+chore: attempt to fix some gomod issue
+Unable to use auth middleware in group
+refactor(form_mapping.go): mapping ptr, struct and map
+Gin QPS test is low and cpu low
+Fix not to pass formatted string to Fprintf's format specifier parameter
+Something after 1.3.0 breaking string formatting of query params in Default Logger
+fix Context.Next() - recheck len of handlers every iteration
+Redirect to StaticFIle endpoint panics at first attempt
+Its tedious to restart the server, for every small change
+NoRoute writes "404 page not found" first
+Large File Upload Mystery 
+add notify accept signal
+fix errcheck warnings
+no ParseMultipartForm error return in formBinding
+GO111MODULE run error
+Revert "context: inherits context cancelation and deadline from http.Request context for Go>=1.7 (#1690)"
+AbortWithError should be renamed AbortWithStatusError
+Using gin.Context together with context.Context 
+allow ignoring field on form mapping
+Can we have a new release?
+[bug] panic: context: internal error: missing cancel error
+Could gin use a more advanced router ?
+Add context.HandlerNames()
+fix password error
+How to use zipkin to trace?
+Fix case of GitHub
+add sync.Pool to manager JSON,XML,YAML,ProtoBuf... Render object.
+Add a function to force color in console output
+add sync.Pool to manager JSON,XML,YAML,ProtoBuf,MsgPack Rende…
+fix render writeHeaders method to make it the same as http.Header.Set
+Regarding gin-cors.Middleware.func1 as c.HandlerName()
+change default 404 text
+shared hosting "Host" header field
+real life SSL and http2 issues with gin in production
+run on port 443 with https?
+http2 hijack interface error
+Binding failed on int required field when value is 0 
+Binding tag: add 'skipped' on top of 'required'
+[question] How to handle 401 error and 500 error I couldn't expected?
+slow json response
+#567, #583 Added a link in a summary about multitemplate render
+New tag?
+[questions] how to use contrib/static with HTTP auth
+Trying to get IP of client ?? Gin is not mesing with Request i assume ?
+Feature Request: add get response body method
+Log to file not working
+Adding Msgpack render for Context, along with the tests.
+HTML code inside of template
+Improve BindJSON by avoiding panic when request.Body is nil
+Document how to disable the request log
+why below code always return {}
+http connections stuck in close_wait state
+AbortWithStatus doesn't work
+Gin crash when using `c.Bind()` when no body is sent
+text/plain mime type when using c.JSON
+Middleware for Oauth
+commit 4c4444b16033c7b000492f57119901cba9870b5c bricks contrib/cors
+Default writers must be io.Writers
+update readme: add YAML example.
+Add project lists using gin framework.
+Write header immediately in AbortWithStatus()
+Make context.Status() as private function
+context.AbortWithStatus() fails to write response header
+[question] Is it possible to retrieve the raw string from the route?
+[question] is that possible to use subtemplate in Gin?
+Token based user authentication?
+Rename to conform with test files naming (closes #580)
+test_helpers.go should be named helpers_test.go
+Dont change log flags
+Rename test_helpers.go so it does not import httptest for users
+added a support of a "block" template feature from go1.6. fixed #567
+[Cleanup] Typo in context.go
+Fix typos and improve wording
+path segment conflicts with existing wildcard
+The example in readme invalid now
+[question] is it possible to rewrite the body in a middleware?
+avoid 'multiple response.WriteHeader calls' error
+Implement QueryArray and PostFormArray methods
+How to get all routes registered at runtime?
+Can you support internal redirect by RedirectTrailingSlashInternal, not 301 by RedirectTrailingSlash
+Unable to use go 1.6 "block" template feature
+binding form data into *string
+Added protobuf support for negotiation
+Defer doesnt work in the gin handler .
+How to add <?xml> for xml result
+Add upload file example
+Add manners package.
+Iris is faster
+Support automatic OPTIONS response generation
+Added gin.LoggerDisk which logs to screen and a file
+Fix typo on gin_test.go
+fix typo in godoc for func (*Context) HandlerName
+Mpuncel/fix godoc handlername
+Update README.md
+c.HTML can't find template files in Two level directory  
+Is it possible to cache a route?
+Bind form-data request with nested structures
+Typo in gin_test.go ?
+Test handlers and end to end tests
+how to process image upload
+Update form_mapping#mapForm to support reflect.Ptr
+Retry middleware
+Slack Channel
+does the `json:"-"` tag work when using c.JSON()?
+Added note for net/http import and fixed numbering in readme
+Add integration test using httptest
+Binding POST request for "field[]" and "field"
+Adding support for regular expressions based routing?
+Add 1.5 and 1.6 test.
+Any plan to use http/2?
+Fix README mistake
+gopkg.in versioning
+fix: example format.
+How to set options in Session/cookies
+Key "github.com/gin-gonic/contrib/sessions" does not exist
+go get gives undefined: sync.Pool
+grouping routes and middleware not working
+Use self-signed SSL certificate locally
+Develop
+Server's FQDN
+is master branch stable?
+Add RunFd
+Made Context.RequestHeader(string) public access.
+go-socket.io
+reconsider a new roadmap?
+Session handling
+Redirect should also accept 201 Created status code
+add import path to .travis.yml
+router.StaticFile() not work
+ App engine example fails to build. Bad import "syscall" in colorable_windows.go from GOPATH
+How to set cookie?
+c.Bind & c.BindJSON 
+gin build failed
+Working with BindJSON and error return
+Bool binding required Bug
+go get package with errors
+{range} or {for} doenst work in template
+Bind JSON and Query?
+The url.RawPath used when engine.UseRawPath is set to true.
+Running slowly
+Added support for MessagePack binding and rendering
+Added MessagePack binding and rendering support
+Add go 1.8.x testing on travis
+How to log everything into a file?
+Download and install error
+The url.RawPath used when engine.UseRawPath is set to true.
+Abort with status and json body
+Support time.Time on form binding
+chore(errorHandler):new abortWithStatus method with Json body
+Can't get SockJS to work with Gin?
+Some routes just redirects to home page
+Fixed typos in Context
+Can't redirect when using Bind
+Should PostForm work for a DELETE request as well?
+gopkg usage
+Update changelog
+gin gzip is failed. maybe should fix it
+how to auto reload template file for debug ?  SetHTMLTemplate mode
+Update gin version
+proposal: add redirect to a specific handler
+When fatal error occur the app shutdown
+context.go:498: cannot use sse.Event literal (type sse.Event) as type render.Render
+Fix #607 doc link
+Streaming POST request instead of using temp file
+Add upload file example.
+update get client ip func
+400 (Bad Request) gets automatically send when c.BindJSON(&struct) gets error
+Fix #198
+Add comment for the logic behind func.
+Add convenience method to check if websockets required
+how can I change the htmltemplate Tags
+RawPath and Unescape URL parameters
+How remove route ? online!!!
+Support upload single or multiple files.
+How to upload array of files with params
+add RenderWith
+Improve document for #742
+Context.Copy does not copy Context.Errors
+Support disable console color
+disable color output
+How to bind nested json
+nothing.
+misbehavior when using * in router
+How to call function in templates
+Possible to make NewContext in helpers_test importable?
+gopkg.in context.go call github? (render & binding)
+Response Content-Type Header not set when using c.JSON (while doc says it should)
+[WIP] Testing all packages and generate all coverage report.
+How to use SetFuncMap?
+Fixes colour for IntelliJ console
+Write the status to the public writer
+Why Govendor and not Glide
+Fix #731
+Fix #723
+Support google appengine for IsTerminal func.
+fix #752 ignore appengine os.
+IsTerminal not available on Google App Engine
+v1.1
+Hook for Response Middleware?
+Is there Any default basic auth
+Get matched route in context
+Why can not use vue,js?
+fix the issue:if the router path is /user/:name/*action, you will get…
+Provide guideline on how to write good middleware
+Logger: skip ANSI color commands if output is not a tty
+Failed install gin
+how to bind query string?
+Honor normal gin write contract for context.JSON()
+How do I change and publish html to response to the browsers request? 
+Safe way to change hostname in redirect?
+Confusing Cruft Surrounding Validation
+BindJSON validation failed for a required integer field that has zero value
+What is the best practices of writing web services using gin-gonic
+why gin can't render js files?
+Added go 1.7 version to travis.yml
+Changed imports to gopkg instead of github in README
+Contributor test tidyup
+Do you have a plan to update package info of Godeps.json
+after  post  how to redirect URL ?
+How to get multiple values from select
+remove coveralls services.
+corrected a typo in README
+corrected a typo in readme
+Group returns IRouter
+Move golang.org/x/net/context.Context interface implementation check to tests
+Low-priority request: Handle App Engine "RemoteAddr" address correctly in `context.ClientIP`?
+"Parameters in path" doesn't handle "/" or "+" correctly.
+App Engine + "Parameters in Path"
+Made it possible to use custom functions in HTML templates via template.FuncMap
+How to retrieve multiple files continuously
+Data Race into context when you don't call `func (c *Context) Copy() *Context`
+Support time location on form binding
+Start an HTTP/2 server with gin without providing ssl certificates
+One query is logged twice
+Does LoadHTMLFiles supports FileSystem ?
+type *gin.Engine has no field or method SetFuncMap
+Support negotiation wildcards, fix #391
+Using bytes.Buffer rather than + for string concat
+Point StaticFS to location
+How to  recursive template files
+combine var and use tmp var
+Testing guide wanted
+Map as query parameter
+travis: add 1.9.x instead 1.9 to go version
+Fixed README.md typo
+fix typo
+c.Query can not get right value sometime
+Empty string check
+Moved const 'defaultMemory' to attrib. Engine.MaxMultipartMemory instead.
+Run with custom TLSConfig
+Change validation status code
+doc(recovery): add RecoveryWithWriter doc
+Fix colored logger on windows
+/user/:name/*action  error action
+32 << 10 != 32 Mb
+Unable to use Number validator
+correct spelling mistake
+How to use BindJson with custom headers?
+chore(vendor): update jsoniter rev, #1086
+write: broken pipe  in func (r Data) Render
+doc(context): add cookie doc
+fix gins Undefined
+Client hangs due to unexpected character parsing JSON (wrong type: string instead of int)
+fix: can't find go 1.9.x version.
+[PROJECT] Future steps
+refactor: using requestHeader internal func.
+add 1.9 version.
+Use standard library for retrieving header
+Update readme for adding tag example of binding time field
+GetHeader is case-sensitive where Header.Get isn't
+Use BindJSON multiple times fails
+not use dot when import package
+reduce go cyclo
+Improve the golint warning.
+doc(readme): update writing logs section wording.
+Update readme for showing output log to file
+not display color when set disableColor
+gin for video streaming
+FAIL test TestDebugPrintLoadTemplate
+how to set gin access log to file
+feat: Add support for custom validation tags
+fix 200 to http.Status
+Issue on BindJSON method
+Routing matches are not strong enough，hope to strengthen
+fix(test): only check Location header
+fix(travis): remove using the development version of Go
+Automatic Time pars
+feat(routes): Catch-All form should not include the slash before param
+align log format
+merge args if it have same type
+ut: TestRouterNotFound error
+update comment
+doc(readme): add additional middleware doc.
+Logging in go
+refactor(test): unify assert.Equal usage
+AbortWithStatusJSON and JSON returns wrong response headers
+Bind should support default values
+fix composite literal uses unkeyed fields warnings, #1050
+render.Delims composite literal uses unkeyed fields
+doc(context):  more clearer bind doc when input is not valid
+How do you solve vue.js HTML5 History Mode?
+ShouldBind counterparts for Bind methods
+How can I extend the Context?
+How to insert html code into templates 
+Work with Static File,route '*filepath' conflicts
+Adds a new StringHTML Render method
+doc(context): add status func comment.
+Required Issue in binding
+Crash in http server end point handling
+gin support debug mode ?
+update template example
+Auto-detect time format in form binding
+remove invalid return
+feat(Benchmark): update benchmark data
+Postman not return JSON data in form-data
+chore(vendor): update jsoniter package.
+not use tmp var
+use return not use else for reducing indent
+dos(upload): fix alignment
+feat(context): add BindQuery func
+use return not use else
+style(msgpack): remove redundant comments
+refactor(json): Restore gin support for app engine
+c.SaveUploadedFile undefined
+docs(readme): add reference to validator.v8 docs, close #738
+Restore gin support for app engine (disable jsonite through tags)
+feat(context): add SaveUploadedFile func.
+SetFuncMap not effected
+Fix context.Copy() race condition
+Fix context.Copy() race condition
+Update json.go
+Assets conflict with Link when it contains parameters
+Context.GetRawData() is Dirty After context.ShouldBind
+fix: print headers without Authorization header on broken pipe
+Could ShouldBindQuery() recieve parameter of type map？
+implement ".Unwrap() error" on Error type (#2525)
+implement ".Unwrap() error" on Error type
+Can gin support HTTP/3?
+How to set value gin context not http request
+When i set the request header to 『Accept: application/xml』，I can not get "Set-Cookie" from the response header?
+When i set the request header to 『Accept: application/xml』，I can not get "Set-Cookie" from the response header?
+Add some missing dots on README
+Return HandlerChain from Routes()
+fix #2505: make Recovery respect gin.DisableConsoleColor
+Gin's Context implementation of context.Context
+How can i write xml declaration when i return the http response with xml?
+Custom validations are not working
+I have a question: why put method trees in engine ,not in routergroup
+update content-disposition header to MIME-style
+Fix form binding with json custom type that underling form is string(#2510)
+FormPost will binding failed of custom type in some case with json.Unmarshal
+Just want to know different between  gin.Context.writermem and  gin.Context.Writer
+reduce allocs and improve the render `WriteString`
+Opt render
+How to disable automatic escape "&" when response json
+Recovery middleware does not obey gin.DisableConsoleColor()
+cannot find package protoreflect
+Fix ShouldBindBodyWith method
+c.ShouldBindBodyWith should not consume a request body
+Can gin handle gRPC
+use IndexByte replace Split to improve performance
+Route handlers are not asynchronous 
+Fix spelling
+Too many handlers error
+[question] How to execute code with context regardless of path?
+runtime: goroutine stack exceeds 1000000000-byte limit
+docs:close the body of the response
+is it possible to add extra keys to response body  in a middleware
+Method initQueryCache is only called once
+friendly error handling
+Parameters in path API example in README doesnt work for POST 
+Fix typo
+Can gin have a group without a prefix?
+Add GetUint and GetUint64 method on gin.context
+Why gin add to request path to static files path when have request params?
+gzip compression (gzip, deflate) for SSE
+Allow bind with a map[string]string
+please mock gin.Context like gomock to enable test handler independently
+support c.Error(nil) #2480
+#2480 c.Error(nil)
+[pr] Profile Context.Error(err error)*Error, better performance when err is nil
+post FormData time is error.   invalid character '-' after top-level value
+Goroutine leak when requests are canceled by client
+make middlewares work before auto redirection
+Fix Allow header according to RFC 7231
+建议为Context增加GetUint,GetUint64,GetUint32,GetUint16,GetUint8方法
+X-Forwarded-For handling is unsafe
+X-Forwarded-For handling is unsafe
+using router.HandleContext(c) to redirect and change response status code
+When will there be a release featuring Custom Recovery behaviour?
+Reroute incoming request based on their path
+Can not combine validators to make check for positive int work
+Fix for issue #2460
+Fix for issue #2454
+c.FormFile() doesn't support extension like csv,mp4,zip and many more
+The route map is wrong, which is a bit odd
+http requset json bind []string,i want [] but nil
+ci support Go 1.15
+Responses 400 Bad Request using PUT\DELETE methods
+Wrong line number printed out for recovered panic
+Copy gin.Context would panic
+Binding with Omitempty and min or gte does not honour '0' case
+307 Temporary Redirect - CORS header ‘Access-Control-Allow-Origin’ missing
+[doc] Readme  #goroutines-inside-a-middleware not clear 
+delete const MINEXML2
+ Is the log thread safe 
+Is that possible to change validator error language?
+golang.org/x/text v0.3.2 dependency security vulnerability 
+Fix spelling
+binding: avoid 2038 problem on 32-bit architectures
+README: Change badge to pkg.go.dev
+Docs: Update README.md Custom Validator sample code
+Cannot use primitive.ObjectId as a type with the form binding
+How do you return an object/model?
+Gin not work with debug
+LoadHTMLGlob("templates/**/*") example in documentation doesn't work
+Add a method Finish(),which can stop the current handler immediately.
+How to stop a handler process?
+Add support for FCGI via net/http/fcgi
+[question] How to reverse proxy a web and the static url in it
+[Question] Render msgpack?
+Versions 1.6+ appears to fail on windows but not on other OS
+ undefined: http.SameSite
+Asynchronization in handle
+How to bind a domain name and serve only on domain not on ip?
+handler executed twice
+Gin gonic
+There is no method to get uint64 from context
+[Suggest] About data binding
+v1.6.3 binding.Validator.Engine().(*validator.Validate)  return is not ok
+LoadHTMLGlob should ignore invalid files
+Add SetCookie and GetCookie method for Context
+Need example or documentation on how to use a custom render
+wrong color of logger method
+How to output an array of ids instead of an array of objects in JSON
+fix build
+tests: make path assertions aware of vendoring
+Context.ClientIP(): only return the host's ip address
+Convert pascal case to camel case or snake case when converting to JSON
+How to bind slice
+there are errors on example "query + post form"
+example "Multipart/Urlencoded Form" has some error.
+Engine.Run() reads env: PORT
+'go get github.com/gin-gonic/gin' is not terminating
+Handle POST and GET at same path
+router two parameters
+Print Request Body empty
+gin/render/text/WriteString - parameter interface issue
+binding issue with multipart form
+multiple c.Query in GET
+DELETE request and body data
+I need a public api like  `combineHandlers`. 
+too many arguments in call to validator.New
+New release with validator.v8?
+Cannot get null array json
+Support HTTP content negotiation wildcards
+Serve Static Website Through Gin
+In the readme, there may be a mistake in sample codes.
+wildcard route error
+binding POST
+Context.ClientIP(): only return the host's ip address
+500 errors when making HEAD requests
+Gin recognizes some URL characters but not others (http://localhost:3459/What%3F.html but not http://localhost:3459/What?.html)
+Socket status with the context
+Listen to CloseNotifier in stream handler.
+Add option to skip logging specified endpoints
+Some open web applications to study?
+Router Group No Slash Not Redirecting
+middleware ordering
+if gin handler return error
+Correct the query parameter name
+add protobuf binding for gin
+Experimental Gin Logo!
+Appending gin.H
+Change old benchmark to Git Flavored Markdown Table
+Error (undefined: StructValidator) when running go get
+Performance of for loop and printing it's result in template
+Redirect with cookie not working
+add option to UseNumber() in gin.Context.BindJSON()
+Routring With Host(Domain)
+There is no document ？
+how to dynamic validate the params? 
+Having trouble getting the form data in a POST request
+RedirectTrailingSlash has no effect unless RedirectFixedPath is set
+Fix #252 typo (middlewares -> middleware)
+binding post form-data
+Wildcard route conflicts with static files
+Fix IsAborted() method
+Use only the ip part of request RemoteAddr
+Reverse route generation
+Listening on port 0
+panic in validator
+Cant delete Date header
+Rename gin.RoutesInterface to gin.RouterGroupInterface, and gin.routesInterface to gin.RoutesInterface
+Refresh page
+Expose gin.Context handlers field
+How to generate a log every day
+Can't register routes "" and "/" in RouterGroup of RouterGroup
+Exporting routesInterface
+[Question] How to get multidomain/subdomain (virtualhost) routing?
+[question] help for multiple port or multiple instance for http services 
+install failed on latest version
+Faster JSON Serialization
+Adding SPDY to RunTLS
+Abort vs panic
+Adding support for returning with application/vnd.api+json content-type
+context.Bind never returns an error
+Help with nested template
+Could middleware pass value to router methods?
+update Context.ClientIP() to use standard github.com/sebest/xff/ package
+New! Collection pipeline pattern
+How to render XML attributes?
+Suggest: using https://github.com/unrolled/render for rendering
+after last "git pull" the go test failed.
+How to use session.
+Performance issue
+sse.Event does not implement render.Render (missing Render method)
+Performance degradation
+httprouter missing in Godeps ?
+is DisableBindValidation() or binding.Validator used?
+gin file structure problem
+add integration tests for Run() and RunUnix()
+Exporting CreateTestContext
+Export createTestContext as a test helper
+Updated README.md to show how to use templates with same name in different directories.
+Supports template files with same name in different folders
+Using setHTMLTemplate in each handler?
+Fixing compile bug
+Fix RunTLS
+Fix RunTLS
+parse map params failed!!!
+Suggestion: Continuous Fuzzing
+Bump github.com/mattn/go-isatty library to support Risc-V
+Add a gracefull method to set error Context#GraceError.
+Need a gracefull way to set Error instead of c.Error？
+To everyone who's new here
+binding: support []byte
+Adjust Render.Redirect test case
+Remove unused code
+Why does context.Status() writes through writermem?
+Added specific installation instructions for Mac
+Middleware Use behavior undocumented and unintuitive
+can't parse unix timestamp
+When to add the SoupdBindHeader and BindHeader to the new tag
+Fixed JSONP format (added semicolon)
+git ignore .idea for GoLand
+conflicts with existing wildcard
+Simplify code
+Occassionally  Context.JSON Cost 15 Minute
+Can not bind using POST (time)
+context.ShouldBindHeader undefined
+Support http.Server customization
+the file handle doesn't be closed
+make post request with out http library
+LoggerWithFormatter and gin.Context
+Cannot bind optional / nullable file *multipart.FileHeader to struct with 
+Is there any solution to render html like this?(params is a piece of html)
+How can render a templete with a templete file and some html piece into it
+路由前缀一致导致的冲突问题
+restfull api
+Dynamic Field Binding / Validation based using tags
+restful uri conflicts with existing wildcard
+Improve the problem described in #1978
+c.Request.FormFile is ridiculously slow sometimes
+what is the code block({}) use?
+How to get the route path in context
+Middleware doesn't apply to Redirect
+gin.Conext.Bind not working properly for application/json POST request body
+which version tag supports go 1.9
+Encountered a strange phenomenon: when I accessed api  in vscode debugger,  no response will be received , but It will  receive  while go build
+Support negative Content-Length in DataFromReader
+binding: support unix time
+binding:extended time.Time type, support Unix time
+Wrong Content-Type leads to stack overflow
+Change msgpack codec from ugorji to vmihailenco
+please upgrade gopkg.in/go-playground/validator.v8
+ write: broken pipe
+Proposal: Wrap Request.Body in a function so it can be reused by Gin, middlewares and app code
+ShouldBindBodyWith doesn't detect when Body is nil
+Gin Project Scaffolding CLI is highly neeeded
+Typo
+Refactor redirect request in gin.go
+upgrade github.com/ugorji/go/codec
+Refactor cleanPath switch cases
+Redirect url cann't get session
+Update CHANGELOG.md
+Errors in startup and operation of the latest version
+How do I limit the number of connections?
+fix README.md code bug and Change map to gin.H
+why not move the temp file rather than copy the same file when upload a large file?
+fix README.md example code bug
+`go get gin` error. It context.go file has too many error?
+gin-gonic does not listen
+How to upload folder
+support bind http header param #1956
+support bind http header param
+something wrong with Context.FullPath()
+Which companies use gin-gonic/gin in production?
+PureJSON still escapes output
+how to handle error in router handlerFunc?
+taking too long to send response with burst requests while testing
+binding:"required" failed
+binding: add support of multipart multi files (#1878)
+some code not exist
+achieve #1898 #1866
+How to open the callback function after startup?
+Gin Parameters of the receiving form cache issue
+fix HandleContext  
+fix ignore walking on form mapping (#1942)
+request cause panic with v1.4.0 @ form_mapping.go:63 ~ form_mapping.go:89  ,  be careful
+timeout middleware
+Modify status
+Gin1.5 bytes.Buffer to strings.Builder
+modify context.Status()
+Add user case: brigade
+Gin routing is unable to handle HEAD request with data
+Error in json binding
+Set the cookie attribute “SameSite = None”
+Drop Support for go1.8 and go1.9
+when lots of io requset  running，the other requests will wait
+Attempt to fix #1927
+Get Request Status 200 OK but no data sent
+current panic make cpu skyrocket to 96%+,maybe this is bug.
+Unexpected behaviour with ShouldBindJSON with default value
+It seems there's cache when use c.PostForm
+ logger_test: color
+Unexcepted behaviour if file field present
+logger color: string literals
+use sse v0.1.0
+use context instead of x/net/context
+Fix documentation typo
+关于上传文件的一个小问题请教下
+gin.H return json => my bigint guid loss of Accuracy
+gin.H return json => my bigint guid loss of Accuracy
+Goroutine within gin handler.
+How go-bindata supports the template ?
+how define root  root ?
+Cannot unmarshal into struct with c.BindJson()
+why cannot get value  from Header? , c.GetHeader may be  has a BUG 
+write json and parse json 
+https://gopkg.in/gin-gonic/gin.v1
+Get request, unable to get multidimensional array parameters
+every request not call  gin.HandlerFunc method
+Recovery middleware logs 500 but returns previously set http code to the client.
+May I create a mock context?
+BindQuery not support custom type
+support realtime?
+Serve easily dynamic files with `DataFromReader` context method
+ runtime error: invalid memory address or nil pointer dereference
+How to support same url pattern with different HTTP methods ?
+segment conflicts with existing wildcard
+how to set http 500 default response ?
+golang template for gin framework!
+How-To: FormFile in Bind Object?
+RedirectFixedPath doesn't work on linux
+Add new method LoadHTMLFilesRecursively for recursively load template files in a folder
+get request body
+Whether Gin can provide `Auto return`
+Trailers API
+Using test context in handlerfunc test
+How can i customize url
+Example of using c.SSEvent?
+Significant Slowdown in context.String() function
+route "/stream/:roomid" in "examples/realtime-chat" got wrong code while post message with non-ascii character?
+doc(graceful-shutdown): failure to ListenAndServe should be a reason to exit
+How to call the back-end function at html-template?
+How to set the router MaxMultipartMemory 
+c.Redirect() not working inside if err != nil ....
+Server Shutdown:context deadline exceeded
+Adjust log format to cater for ipv6 values
+How can i get all request from header and body?
+reflect: slice index out of range
+Proposal of a new implementation method of LoadHTMLGlob
+how to make gin support custom json libs? 
+fix(binding): Expose validator engine used by the default Validator
+Update validator to version 9
+Unable to get handlername when handler is a decorator
+Updated the Model binding and validation section
+Add Pusher() function for support http2 server push
+Expose HandlerFunc in RouteInfos
+Fix intercepting headers in middlewares
+add gin panic time log
+Wait until goroutine finishes and then response the data
+feat(context): formating json response
+IP Addresses misalign log lines
+can Gin work with other application protocols especially those designed for Internet of Things
+unrecognized import path "gopkg.in/go-playground/validator.v8" in go get
+update for supporting file binding
+Binding issue with multipart form and files uplaod
+[Q] Has gin a feature for url parameters?
+Extend context.File to allow for the content-dispositon attachments via a new method context.Attachment
+Fix panic stack trace being printed during recovery of broken pipe (#1089)
+I have a good idea.
+Golang / Gin Form Field Validation with ShouldBindWith
+chore(travis): add 1.10 version
+when use context.Param() to get optional params from url,  it will always return a slash
+Closed
+Get Body From Context
+Added flag to context.Stream indicates if client disconnected in middle of stream
+Suggestion - Stream should return bool if was disconnected 
+Make "" mode being the same as debug mode
+Add CodeTriage badge to gin-gonic/gin
+Add Request() method to Context
+No error logged if parsing large file in multipart/form-data fails
+c.Bind with int 0 cause error?
+is ClientIP() implementation spoof proof?
+MarshalJSON not being called
+Is there way to download file with prompting name ?
+how to use custom writer for debugprint
+Merge pull request #1 from gin-gonic/master
+Document is poor and unclear about template
+New Release Tag
+add prefix from X-Forwarded-Prefix in redirectTrailingSlash
+use c.Request.Body needs Close?
+undefined: render.Delims
+catch-all route end with backslash is legal or illegal?
+c.ShouldBindJSON undefined (type *gin.Context has no field or method ShouldBindJSON)
+why Request.URL, Host & Scheme are empty?
+a golang template for gin framework
+Minor typo in README.md example code
+Issue with HandleContext and sync pool
+Fix README.md example code
+Fix README.md example code
+load handler files from subdirectory
+Is there a way to create authentication system like Rails's `has_secure_password`?
+Is there any way to reload the HTML templates while server is running ?
+Middleware must be added before endpoints
+gin support socket so_reuseport mode?
+How to cache static files?
+Gin-way dependency injection
+docs(path): improve comments
+tree: remove duplicate assignment
+app.Use() middleware does not respect ctx.Next()
+add yaml negotitation
+[feature] [suggest] suggest new feature: cli command scaffold.
+go get error
+Renew README to fit the modification of SetCookie method
+fix accept incoming network connections
+chore: upgrade go-isatty and json-iterator/go
+SetCookie broken
+Add err != nil badge count in README
+path: sync code with httprouter
+RedirectTrailingSlash not working if there are more than one child route
+Update readme on custom validation fields
+context.JSON adds a new line to end of JSON response
+Not currently possible to install gin because of upstream dependency break
+C.copy() does not work.
+Use zero-copy approach to convert types between string and byte slice
+strange behavior serving static files
+add middleware to serving static files
+c.ShouldBind()  maybe will stack overflow
+Fix spelling
+Remove contents of the Authorization header while dumping requests for broken pipe failure
+cache static files (js and css files)
+How to control behavior for missing URL params? (1.3.0 - 1.4.0 change)
+Remove broken link from README.
+How to reset queryCache?
+Update docs on Context.Done(), Context.Deadline() and Context.Err()
+conflicts with existing wildcard 
+Support binding for slice/array obj
+requirement: periodically profile cpu and memory
+Catch-all route has multiple catch-all in another way
+How to write context in the handle goroutine safely when the request was timeout
+Update validator to v10
+upgrade go-validator to v10 for README
+Update to currently output
+Param with path
+Fix "Custom Validators" example
+can't parse "+" when binding models 
+using gin.DefaultWriter = io.MultiWriter(f, os.Stdout) can't write to log file
+make Context.Value method concurrent safe
+make Context.Value method concurrent safe
+make Context.Value method concurrent safe
+make Context.Value method concurrent safe
+Reuse bytes when cleaning the URL paths
+Binding array of objects from post form
+tree: remove one else statement
+can i use v10 in gin? and how to?
+Add .idea to .gitignore
+Why was backward compatibility broken without a major version upgrade?
+tree: sync httprouter update
+tree: sync httprouter update
+tree: sync httprouter update
+time_format tag not work with ShouldBindJSON?
+binding:fix empty value error
+Log Color
+examples about validator.v9 Translations & Custom Errors
+Fixed a bug in the calculation of the maximum number of parameters
+Add project to README
+Does gin support custom request method groups?
+tree: sync part httprouter codes and reduce if/else
+CI: use github actions
+Getting new gin version is failing
+Undefined validation function 'exists' on field
+chore(performance): Improve performance for adding RemoveExtraSlash flag
+[Break-Backward] use encode replace json marshal increase json encoder speed not in release notes
+Negotiate need support more format
+tree: use for range
+use http method constant
+file
+docs(benchmarks): for gin v1.5
+Question on routes grouping
+Is there a error when importing "github.com/go-playground/validator/v10"
+Stop useless panicking in context and render
+upgrade go-validator to v10
+drop support govendor
+Drop support go1.10
+gin render/json.go:58 panic cause cpu90%+,maybe this is a bug.
+ShouldBindBody, when used as as described in the README, throws a compile error.
+Can't get nested validation working regardless of `dive` usage
+X-HTTP-Method-Override
+Templating language reference?
+ShouldBind  when first letter is lower case 
+func (*Context) FullPath in documentation but not released yet
+Add support for multimaps in query strings
+change module name
+No example for file upload with MIME as content type
+Account creation on ACMEv1 is disabled. Please upgrade your ACME client to a version that supports ACMEv2
+gin mode unknown: debug
+Does Bind still not support the []* multipart.fileheader type
+default value binding failed
+JSON Binding when incorrect type is passed in
+Please upgrade go-validator to v10
+fix comment in `mode.go`
+Slow release cadence
+feat: use ShouldBindWith  after ShouldBindBodyWith
+why context.JSONP() can not define callback parameter's name?
+How to bind part of request body with validate struct?
+How can i use http2 with Let's Encrypt?
+Changed wording for clarity in README.md
+[FIX] allow empty headers on DataFromReader
+Flush any written headers on Hijack
+which Option can disable auto redirect /a/index.html to /a/
+Close files opened in static file handler
+Bug: Static file handler does not close files
+DisallowUnknownFields undefined 
+how to disable gin log
+[FIX] c.Request.FormFile maybe file, need close
+After gin middleware c.Next, if an exception is thrown, the following code can't get the error code.
+FileFromFS
+DataFromReader with nil extraHeaders crashes
+Update gin.go
+ready to release v1.5.0
+What is the purpose of WriteHeaderNow?
+panic: fatal error: concurrent map writes
+Update README.md
+I am using dep ensure to install GIN but failed.
+file close?
+format errUnknownType
+Handling dynamic paths / routes
+Question of gin.engine.trees
+Avoid parsing query strings every time ctx.Query() is called
+need to update readme and examples because validator has upgraded to v9
+How to jsoniter LowerCaseWithUnderscores()
+binding: add ShouldBindQuery2 and BindQuery2
+Add: gin.StyleLogger, and the method functions and unit test codes of it.
+Add RecoveryWithWriterAndCallback
+Update go.sum file
+Fix 'errcheck' linter warnings
+Question with render.Render And effective JSON.
+When will  call the v1.5 tag?
+Remove unused Name() method from Binding interface
+multiple modules
+Recovery middleware does not add error to context
+Context.JSON response wrong Content-Type and unknown keyword Content-Regulation
+Relocate binding body tests
+Add details in the issue template
+redirecting to the docker container
+[noob] how not to escape nested JSON
+Does BindUri works with POST/PATCH/PUT methods?
+I can't set cookies on the IE browser.
+Fix spelling.
+Change Writter to Writer.
+40 times faster than what?
+can i use gopkg.in/go-playground/validator.v9?
+Function ClientIP() may lead to potential risks
+add JSON.render error test case
+How to expose pprof handler with gin?
+add JSON.render error test case
+Support multiple HTML globs
+add TestDisableBindValidation
+add TestDisableBindValidation
+Fix Graceful restart or stop example in README
+Updated Readme.md: file.Close() for template read
+Updated Readme.md for serving multiple services
+POST request consuming only some part of the body
+POST request not consuming all of body
+case insensitivity
+use url.URL.Query instead of parsing query
+conflicts with existing wildcard
+Update README.md
+Is this some kind of bug? i experience this and trying to fix this but no solution
+Example using go-asset-builder will be hard to test as presented.
+close connection immediately
+Any example for dynamic/wildcard subdomains?
+chore: remove env var for go master branch
+Add cast helper to c.Keys for complex128 type
+It is recommended that you add an interface to shut down the server 
+Adjust Render.Redirect test case
+Make countParams more readable
+refactor(context.go): GetPostFormMap
+Build / go.mod error for github.com/ugorji/go/codec
+panic not recovery
+Broken Pipe error
+Wildcard parameter incorrectly decodes URIs recursively
+context add RWMutex for key set and get Goroutine safe
+context add RWMutex for key set and get Goroutine safe
+How to bind int slice in form request
+Context.Set(key, value) map not goroutine safe
+Terminal Output Values
+chore: add examples submodule
+Add websocket example
+New release?
+chore: support go1.13
+binding: add BindPlain function
+Segment download error 
+optimize  concurrent rw for context
+Is there a wildcard routing similar to JAVA?
+url query params to map
+set&get cookie not work
+Add a bind method for GRPC
+time binding tag time_format is not suitable for json
+fix broken context.Context implementation
+feat(binding): add DisallowUnknownFields() in gin.Context.BindJSON()
+How to troubleshoot crashes
+How to access the context from a template function?
+Add Header bind methods to README
+How to carry data when redirecting
+support run HTTP server with specific net.Listener
+fullPath not matched with request url
+Calling bind multiple times
+Fixes a minor typo, changes 'Listen and server on 0.0.0.0:8080' to 'List...
+Update README.md
+Update context.go
+Fixing typo in Form parameters example
+Gin router functionality is so poor ( i am fan of gin but i have to say , so sorry guys.) , it is meant for creating rest apis , but no native support for CORS handling.
+Please provide support for global route.
+Update README.md
+MVC skeleton/examples for Gin
+Fixd newline problem with debugPrint() in Run* functions
+Logger support for file:linenumber (log.Lshortfile style) in development mode
+panic: wildcard route conflicts with existing children
+v0.5 release candidate
+expvar support
+Fix named parameter handle bugs
+Are you still  in development?
+Specify utf-8 as content type charset on renderers
+Is there a way support dynamically to bind http path to handle function ?
+Responding with HTTP 204
+Can not direct output html piece to browser . 
+Static "panic: a Handle is already registered for this path"
+Am I doing something wrong with the template?
+[Go Get] Undefined sync.Pool in gin.go:44
+How would I set a certain endpoint to proxy to a different server?
+How to write router like /:account/:project ?
+open index.tmpl: no such file or directory
+New useful middleware
+response.WriteHeader on hijacked connection
+Fix unexported field detection
+How to return generic system error for run time errors?
+New release
+Still Maintained?
+Add unsigned int support in binding - Feature.
+use einhorn to monitor and zero-downtime restart
+Fixed issue allowing to spoof ClientIP()
+JSON Merge Patch - RFC7386 Support
+Setting headers in middleware chain
+Adding helper functions to router group for LINK and UNLINK.
+RunTLS() Modification Feature
+JSON formatting - Feature
+Router returning incorrect HTTP codes
+HTMLRender and htmlDebugRender not working
+minor typo fix in homepage
+500 error in post handler not working
+Custom Error Responses for Binding
+Can gin handle binding a time.Time JSON field?
+binding example doesn't work as written
+basic_auth example doesn't work as written
+Updated to use SetHTMLTemplate()
+Suggestion: integrate with pongo2 
+Feature request: when rendering inexistent file, show missing file error
+Ask: How to get and set Cookie from gin.Context?
+Engine.Run* methods should return an error
+No way to change POST max size
+Binding validate panic due to unexported field
+Oauth2 plugin
+Suggestion: rename the project
+Refresh/restart script
+static middleware not work
+Fix function name in comment
+Update SetMode Default Statement
+Automatically generate RESTful API documentation with Swagger
+Access to Router options
+Gin does not support Context for cancellation
+how to handle context return value?
+Is there some function to handle session?
+SockJS integration
+Json not work
+support request: how to deny access gracefully
+AuthRequired
+call of reflect.Value.Elem on struct Value
+LoadHTMLTemplates not work!
+Add attribution from httprouter
+Typo in the repository description
+fix typo in comment
+Fix HTML form binding example typo
+Issue with custom CORS header middleware in grouped routes related to #29
+fixed debugPrint
+Gin Equivalent Martini Map
+undefined: sync.Pool
+panic: conflict with wildcard route
+render.Render does not use the passed template reference? 
+Can't load HTML templates under gin_mode/debugCode
+[GIN] WARNING. Headers were already written! 
+Validate should ignore unexported struct fields.
+question: Ace
+Can't figure out how the html templating works.
+Bind a checkbox group
+how to blacklist/whitelist fields?
+Redirect middleware
+Feature: Custom Headers
+*gin.Context.JSON turning empty array into null
+socket.io compatibility
+skip unexported fields for bindings
+Get default
+Added support multipart/form-data #109
+Fix for #119. gin.LoadHTML* incorrectly works in debug mode.
+why don't working LoadHTMLTemplates function in debug mode 
+Sessions
+"multiple-value c.Get() in single-value context"
+Allow content-type to be changed when using c.JSON()
+post data bind Structure of combine slices ，Binding framework resolution not correct data structure
+How to check abnormal disconnection when huge file is uploading to the GIN server. 
+Support YAML for binding and rendering
+Pulling templates out of go.rice
+Fixed typo. join -> john
+go get faild
+After app shutdown port is not released
+Enhance template module
+image upload via api
+Catching panics
+engine.Routes() -- Custom function names (need for swagger package)
+c.JSON returns HTTP 500 - no stack trace
+Added exits check tests for binding
+Add NYTimes/gizmo to benchmarks
+Setting Header URL with Redirect doesn't work.
+Loving The framework so far. Never mind! :)
+Fix travis
+fix godoc comment
+Add support for fasthttp or fasthttprouter
+Merge pull request #1 from gin-gonic/develop
+Error restoring dep of go-colorable with godep v35
+BindJSON not work 
+Fix indent of routes debug prints
+go get not work
+How to add funcsmap to template?
+Bind validation bug with int zero value
+Is this project still actively maintained?
+How to get the actual TCP port number when listening on port 0
+Context exported fields are not documented
+Need example show us how to generate rss output.
+http2 support
+middleware proxy
+Capture origin of error
+Simplify the BasicAuth implementation
+unable to disable stripping trailing slash in url
+Add document about graceful restart or stop
+add custom template engine
+What is the best way to handle dynamic subdomains?
+undefinitely -> indefinitely
+is there any way to get  hot reload!
+Someone still maintain?
+Issue in Go get of Gin
+Broken JSON Response... Unknown  Encoded Response
+how to ouput binary data in gin?
+Change in the repository name
+How to implement timeout middleware in gin?
+Clarify context.Abort docs
+How about change "golang.org/x/net/context" to "github.com/golang/net/context"
+How to return plain text with content type "application/json; charset=utf-8"?
+Context.NegociateFormat() ignores quality values
+Issue accessing array post values
+fix query param name
+Load template file from sub directory
+Question: Custom context type
+return a JSON data,is always more than a blank line
+Websocket advanced example
+Add a Readme for different plugins/middleware written for Gin 
+Is router path case-sensitive? why? 
+Add c.PostFormExists(key)
+App-engine example doesnt work.
+Support buffer pools and error handling for templates
+How to store data between handlers in a chain?
+Router panic
+Wrong copy/paste TODO
+wrong copy/paste TODO
+Binding and Context.JSON 
+PUT does not work. Always 404
+Supports custom template functions
+Transform Request/Response / Mappings
+Question on middleware handlers / groups / ordering
+How to log the response body?
+How to compress the response with gin?
+Redirect from POST ends in 404, even if the endpoint exists
+Bind() default values
+Reload changed template files without restart?
+Rawjson for the ability to write out a Buffer of raw JSON bytes when you have it
+Redirect on 404?
+BindJSON returns EOF
+Parse Non standard POST form
+server blocks and can not get any http response
+Dependency Injection in Gin
+Write Status only
+proposal: add explanations for different modes
+SecureJSON method to prevent json hijacking
+Using Delims with template
+fixed typo
+Custom Binding Error Message
+How to Debug Hex encoding problem?
+Can I out html file without template preprocessing?
+It possible to use c.Bind(&struct) with sql.NullString?
+c.Abort() not working for me
+Add File and line location to RouteInfo.
+POST request and json body
+Add  Engine.RunCustom method
+Exit status from docker stop
+is it better for IRouter
+Pass var to route handler
+Projects which uses Gin
+gin-gonic/gin/gin.go:56: cannot use engine.handle404 (type func(http.ResponseWriter, *http.Request)) as type http.Handler in assignment
+router: handling file not found in StaticFS() to use Router's NoRoute
+minor typo in README.md
+install gin by  go get fail
+Gin and GraphQL.
+When I use router.Group ,there was a redirect response
+Fix some golint warnings in gin.go
+测试1
+how can i do this required bind ? 
+Please repeal commit 26c3f42095b8a1378617eb4756fbf8282cb1ae89
+BindJson sometimes very slow
+Fix golint warnings in utils.go
+check parameter in path
+How to create router, that will match any request?
+Minor grammatical correction in README
+Sub-groups of routes
+Doc: Fix typo in documentation of Bind
+Please release the latest version
+Remove redundant if err != nil check
+Why I get 404 by curl -I
+[HELP WANTED] How to use serverpush with Gin?
+README: Small update to clarify on Goroutines
+Issues/Improvements found after working with gin for a while
+[HELP WANTED] How to route multi URL in same prefix with single handler
+use interface{} in map
+How to unit test properly 
+How to use ShouldBind, ShouldBindJSON, ShouldBindQuery in v1.2
+Cannot Parse time with time_format set from JSON
+fix AbortWithStatus(),delete c.Writer.WriteHeaderNow()
+binding time.Time Errror
+BindQuery not support pointer
+cannot use sse.Event literal
+Update README.md
+can I set up bindJSON as a standalone validation middleware?
+is there a way to add a per route middleware AFTER the initial call ?
+use lower if the struct is private
+Linting and optimizing struct memory signature.
+fix(build): remove unused target.
+404 errors not handled by NoRoute when using StaticFS
+Running common function/route before all defined routes.
+Data race WARNING
+HTTP2/Push 
+fail to run in alpine docker with error "no such file or directory"
+update assert param(expect, actual) position
+add deprecated test case
+No releases after v1.2
+simple code and increase coverage
+Add test cases for RunTLS and each mode
+Can params be validated?
+Binding validations does not work when request body is Array of objects
+307 is better than 301
+Question about middleware
+Add some test cases and run test cases on binding/render dir
+fix vet error.
+add package for govendor
+format some codes style
+Interpret a // in URL as a /
+Binding both GET and POST data at the same time
+Use another router (such as gorilla mux) with Gin
+instance_id
+undefined: binding.Query
+RedirectTrailingSlash not working behind forward proxy.
+docker cors not working
+Is there a way to define NoRoute for group of routes?
+Added simple testing documentation and examples
+Fix up syntax error in README
+remove duplicate codes in render_test.go file
+ship godep
+binding:"required" doesn't work for custom types
+Export the errorMsgs type
+fix cleanPath spell (#969)
+fix markdown render
+Why does this route work for one endpoint but not another?
+feat(binding): Add support for struct level validations
+not use aliase when import package
+ use the Get/Set function of Header
+Update comment to reflect correct constant.
+Best way to use subdomains?
+Update the comment of Version
+Why use a lot of panic ()?
+go get github.com/gin-gonic/gin
+support default value for form
+Will Gin allow hacky solution to using http.HandlerFunc
+Gin can't use MaxBytesReader to limit request data size directly
+gin sends empty array
+Set socket to recieve writes
+RunUnix should set socket permission to 0777 (global read/write)
+not support this ?
+List the handlers on startup
+List the handlers before startup
+Gin support graceful code reload for debug ?
+chore: Switch from govendor to dep
+gin string validation
+Run gin server with custom TLSConfig
+Exclude middleware from some routes.
+There is no way to remove the route?
+gin.Context is not a interface, how to extend it?
+ gin is blocked when using same browser
+Print warning log when user create one engine using gin.Default in debug mode
+Wrong status code returned when using httptest.NewRecorder
+feat: add multiple service example.
+WIP test: remove msgpack and protobuf (DON'T REVIEW/MERGE)
+feat: improve get post data.
+Bugfix for the FullPath feature
+chore: improve GetQueryMap performance.
+Wrong matched route path in the context
+How to parse json without check binding condition?
+the redirection problem
+Pr, Add Or middleware for gin.Context
+Fix typo
+Drop go1.8/go1.9 support
+Drop govendor support
+govendor  修改成gomod  之后， go mod 报github.com/ugorji/go版本不对
+Some code improvements
+error description of release v1.4.0
+Correct way to validate forms (json binding)
+How to custom http error handling
+context.Abort + context.JSON and context.AbortWithStatusJSON mismatch
+conflict wildcard with difference endpoint name
+Unable to use middlewares with latest Gin?
+feat(gin,run): add expose out http.Server can use Server config
+MaxMultipartMemory not working
+hi，I want  use http.server config ,like ReadTimeout, disableKeepAlives
+Binding isn't throwing an error
+DefaultQuery of type int, float or bool
+use gin v1.4.0 build error ambiguous import
+FileBinding not works on validator.v9
+how counting up a variable in range from 1 to n，isn't start 0
+During the running of the program, Engine.trees was tampered with, causing some api 404
+Now you can parse the inline lowercase start structure
+Incorrect multipart form validation
+Use DefaultWriter and DefaultErrorWriter for debug messages
+Debug mode documentation incorrect
+How do I know that the browser is disconnecting this connection?
+Url param does not support top-level path binding
+gin/json package not found,when i use golang1.12.5 version.
+add dev version
+Update README.md about go version
+I'm new.How to write test in jin?
+Context Copy Problem getting data.
+gin release process
+add Forward support
+add support http forward
+update vendor: ugorji/go
+how to binding for multi files upload
+Provide a way to set custom DEBUG logger
+* fit context to standard context
+gin.Context.Keys
+how to set timeout in Reverse proxy 
+how to wrap function to gin(c *gin.Context)
+How can I get user/password from url with gin
+how to transform gin.Context.Keys  use Reverse Proxy 
+handFunc in another file, report undefined
+convert http.Request to gin.context
+Fix a typo syscanll.SIGTERM -> syscall.SIGTERM
+how to use middleware to change requestpath
+How to use middleware to convert parameter values
+Add `LoadHTMLGlobAppend` and `LoadHTMLFilesAppend` to `gin.Engine` 
+write tcp 127.0.0.1:7070->127.0.0.1:34514: write: connection reset by peer
+How do you think bilibili-common a China company leaked code copy from gin?
+How to upload file directory
+Fix spelling.
+Similar URL strange bug
+Force SSL on Heroku
+Facing issues when passing an array of json objects in the post request
+If the graceful closing of the port being listened to, does not make the code I am executing uninterrupted?
+Modular deps for binding and render
+There is no way to protect from csrf attack in gin-goind
+BindJson error should write application/json header
+how to return validate field in json, not struct field
+Add build tag nomsgpack
+v1.4.0 + #1631 (remove go1.6/go1,7 support)
+Cannot find package "github.com/golang/protobuf/proto"...
+v1.4.0
+Context.handlers should be reset in HandleContext
+Huge dependency
+chore(readme): rollback readme
+Binding multipart.FileHeader but not working
+Please rollback README before new documents are ready
+Remove go1.6, go1.7, go1.8 support
+binding: move tests of mapping to separate test file
+Fix context.Params race condition on Copy()
+Like r.NoRoute, is there a r.NoSupportedMethod?
+Vendor dependency cells-v1.4.1 having AGPL 3.0 licenses
+What happened to all the documentation?
+GIN_MODE set in .env file does not take effect
+Remove contents of the Authorization header while dumping requests
+response a json,how could i make the cases "lowercase"?
+Need extensive documentation
+how could i add a  gin.Contenxt.method() when i new a gin.Engine
+Official Website is not redirected to https
+Any searches on https://gin-gonic.com/search lead to search results that produce 404 not found
+Truncate Latency precision in long running request
+refactor(form_mapping.go): mapping multipart request
+Different packages  and same struct name function  routing error
+Question: How to change log format with panic?
+Hold matched route full path in the Context
+proposal: add isWebsocket and isIPv6 config to LogFormatterParams
+Bind JSON and URI 
+Styling breaks when request takes long
+chore: update ginS

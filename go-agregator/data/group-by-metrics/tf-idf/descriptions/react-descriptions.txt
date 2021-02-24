@@ -1,0 +1,8 @@
+user *=* 0.274653
+declarative *=* 0.274653
+flexible *=* 0.274653
+javascript *=* 0.188010
+building *=* 0.137327
+interface *=* 0.274653
+efficient *=* 0.274653
+library *=* 0.274653

@@ -1,0 +1,1186 @@
+sorry maybe naive question answer question
+like post json datum vuejs ssr vuejs app operation body post request maybe body parser inject responsible component maybe datum function achive documentation
+thanx lutz
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+think good change function parsehtml parsesfc avoid misunderstand
+reproduction link
+https jsfiddle net have cdj
+step reproduce
+jsfiddle click ldquo array rdquo label ldquo myarray fill rdquo show
+click ldquo map rdquo label appear
+click ldquo array rdquo label appear
+step label ldquo mymap fill rdquo appear click button ldquo map rdquo
+actually happen
+label ldquo mymap fill rdquo appear
+didn rsquo try expect set collection act
+problem do feature solve
+vue warn avoid use non primitive value key use string number value instead
+symbol primitive value suitable key
+do propose api look like
+npm install ndash global vue cli
+warning symbol
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+allow use key code ex
+problem do feature solve
+vue warn avoid use non primitive value key use string number value instead
+symbol primitive value suitable key
+do propose api look like
+warning symbol
+kind change do pr introduce check
+code style update
+build relate change
+doc update
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+problem do feature solve
+custom event multiple child component component listen like
+eventhandler way identity emit event
+use event arg
+compile code look like
+null maybe replace
+do propose api look like
+know access javascript method nice use template
+good way solve say
+kind change do pr introduce
+do pr introduce break change
+make sure time send ldquo createfinish rdquo signal reasonable use asynchronous rendering promise timer
+reproduction link
+https jsfiddle net ethandm va wje
+step reproduce
+enter number input field keydown fire keydwn method set untouched false green background remove input field ldquo touch rdquo
+press number enter input field instead number add second press
+class bind remove input field problem acting expect don rsquo think rsquo issue keydown set ldquo untouched false rdquo addition class bind left model lazy set model work expect model work use case
+actually happen
+class bind set number add field do vue gt
+reproduction work expect class bind model lazy https jsfiddle net ethandm osgf
+edit assume rsquo relate release note
+gt change implementation vue nexttick fix bug relate change involve use macro task instead micro task defer dom update inside dom event handler attach mean vue update trigger state change inside handler defer use macro task lead change behavior deal native dom event
+gt detail regard micro macro task blog post
+gt new implementation source code nexttick
+rsquo be sure rsquo bug expect behavior change need solution thank
+use vue cli create
+chrome browser mac safari browser display normal
+ios safari browser rsquo open display blank
+reproduction link
+https jsfiddle net zausd
+step reproduce
+rsquo be use late version vue js support short hand code event rsquo be try use click instead click inside razor cshtml file doesn rsquo work rsquo be develop app backend asp net core
+expect result working
+actually happen
+encode click ldquo submittest rdquo
+visual studio say ldquo lsquo click rsquo do exist current context resolve symbol lsquo click rsquo rdquo
+problem do feature solve
+firefox csp
+ldquo content security policy rdquo ldquo script src lsquo self rsquo lsquo unsafe eval rsquo https api coinmarketcap com https deal com object src lsquo self rsquo rdquo
+mdash mdash mdash mdash mdash mdash mdash mdash mdash mdash mdash mdash mdash
+add cryptocurrency price tracker bitcoin ethereum review version disable critical issue discover
+version do pass review following issue
+use amp unsafe eval amp allow manifest json amp csp cause major security issue
+custom csp allow remote script injection allow
+fix submit thank
+csp unsafe eval
+do propose api look like
+problem do feature solve
+currently way trigger event inside rsquo bind function resort inspect execute directly
+look example project usage rsquo right scope target need event
+stackoverflow discussion
+do propose api look like
+choose component think lot boiler plate propagate attribute field inside component
+look vee validate handle communication use object errorsbag pass vnode context directive
+bootstrap vue use mechanism mention early
+reproduction link
+https sinaimg cn large tkftcgy fly eo ognj be gle jpg
+step reproduce
+ios referenceerror rsquo variable sockjs
+actually happen
+problem do feature solve
+write code like
+code redundant isn rsquo fun write
+do propose api look like
+use es object literal shorthand inspiration component instead write like
+lsquo use strict rsquo
+const sockjs require lsquo sockjs client dist sockjs rsquo
+let retry
+let sock null
+function socket url handler
+sock new sockjs url error rsquo variable sockjs
+sock onopen function onopen
+result visit
+js file download response blank exist file size
+code wrong
+problem do feature solve
+vue store
+do propose api look like
+reproduction link
+https jsbin com lujehap edit html js output
+step reproduce
+run test repro link
+test fail similar error message
+actually happen
+happen apparently use promise internally mocha doesn rsquo support catching unhandled promise error
+workaround isn rsquo great
+let know error doesn rsquo log correct error
+wrap content test
+ensure mocha know
+problem mocha think unexpected handle error inside promise doesn rsquo look like promise function
+rsquo be really sure suggest do
+problem do feature solve
+currently use
+load appropriate translation component
+generate chunk prefetched application start
+like load translation current language
+information filter file prefetched
+do propose api look like
+don rsquo know available information
+probably api look like
+reproduction link
+https jsfiddle net wl mdz
+step reproduce
+open page display message ldquo foo long null rdquo
+modern ff chrome edge message do foo remain null user actually input
+do input event placeholder set second textarea
+input event foo remain null
+actually happen
+fire input event textarea placeholder
+similar issue angular https github com angular angular js issue
+reproduction link
+https jsfiddle net denego ragxepy
+step reproduce
+button click handler show new lsquo rsquo character
+button click handler show new lsquo rsquo character
+click button new lsquo rsquo appear okay
+click toggle hide button button okay
+click button new lsquo rsquo appear okay
+click toggle hide button button okay
+click button new lsquo rsquo lsquo rsquo appear mean click handler visible hide element call okay
+handler hide button call click button
+actually happen
+handler button button call
+reproduction link
+https jsfiddle net wl mdz
+step reproduce
+include fiddle
+input type lsquo number rsquo clear value accept sting format different locale model number return string
+actually happen
+input value clear model number return ldquo rdquo ldquo rdquo partially type number
+issue start topic forum https forum vuejs org extra directive number input suggest open issue original post
+rsquo have limitation require boilerplate case return partially input number like problem
+app difference input invalid partial
+bind attribute type
+falsy value lead check place attribute use
+nd have issue solve compute property rsquo hard implement nest one array value
+come use separate field casted value
+want implement custom directive like handle differently compiler way automatically use property define object implement custom directive
+good way work
+implement custom directive convenient
+add vue
+mdash ndash
+post rsquo have try implement custom component rsquo include fiddle issue
+rsquo have add different type input fiddle check behaviour check different locale
+kind change do pr introduce check
+do pr introduce break change check
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+restrictive type accept array object make illegal assign actually type bug require
+pull request bump compiler version affect development
+bump version find method name problem directive test
+cc ktsn
+reproduction link
+https vuejs org guide transition html css transition
+step reproduce
+facing issue css transition animation use vue rsquo have notice css transition property apply correctly issue present example official vue js documentation
+example css animation property apply transition
+https vuejs org guide transition html css transition
+gt translatex opacity animation apply
+https vuejs org guide transition html transition single element component
+gt opacity animation apply
+transition animation apply element describe opacity translatex
+actually happen
+transition animation apply
+reproduction link
+https new issue vuejs org
+step reproduce
+table table
+actually happen
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+ktsn problem time separately fix problem identify https github com vuejs vue pull pr notice herringtondarkholme open question type solution problem separate overload involve type prop type rsquo be expert typescript know good solution figure rsquo have open duplicate ish pr different approach case prefer
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+previously user do include option component option member intersection type pass option miss
+add default type parameter avoid allow property option
+do add test need check compilation error confirm
+reproduction link
+https github com vuejs vue blob dev github contribute md meta issue
+step reproduce
+open fresh terminal type
+test pass confuse development process contribution file say ldquo make sure pass rdquo ldquo pull request guideline rdquo expect pass fresh pull
+actually happen
+doubt forget fix code tool didn rsquo pick pr accept rsquo probably get environment rsquo be run ubuntu wm use fish shell maybe consider test case way
+problem do feature solve
+people ask validation https validator org
+vue js directive invalid create small library valid datum attribute
+https github com dmitry lavrik vue valid
+https www npmjs com package vue valid
+want link previous discussion rsquo close
+work vue js replace tag name ans attribute
+sample https jsfiddle net oe ezzh
+maybe thought integrate ldquo vue js rdquo level ldquo beforecreate rdquo hook
+do propose api look like
+new vuew cvalid
+el lsquo directivesvalid rsquo
+new vue
+el lsquo directivesvalid rsquo
+people ask validation https validator org
+vue js directive invalid create small library valid datum attribute
+https github com dmitry lavrik vue valid
+https www npmjs com package vue valid
+want link previous discussion rsquo close
+work vue js replace tag name ans attribute
+sample https jsfiddle net oe ezzh
+maybe thought integrate ldquo vue js rdquo level ldquo beforecreate rdquo hook
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+just like output range datum instead write error message rsquo example work
+https gist github com gzzhanghao fac fccf bc
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+information check https www typescriptlang org doc handbook declaration file don html number string boolean object
+step reproduce
+proper contain properly key add transition effect change route quickly couple time
+router transition properly
+actually happen
+vue crash error
+crash dump https gist github com fyiuramron abc df have have note change fix behaviour inspect internal vue code try process element present group router render fail comment element hasn rsquo get require method property getboundingclientrect getattribute style display getcomputedstyle enable
+note wasn rsquo able consistently reproduce outside current application rsquo be bind legal contract share part think case description clear don rsquo hesitate ask additional detail need
+ip http vue webpack
+reproduction link
+https jsfiddle net wl mdz
+step reproduce
+bus bus
+actually happen
+im haveing wrapper component bind list vuex getter
+grid review component loop bind result
+slot scope bind work getlabel getvalue undefined instance method class
+sure reason bind normaly paren child intance give correct value way example err function miss
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+hello evan thank create vue
+let start explain use case fee map attr datum list object contain datum fee student pay balance payment mode compute property let say lsquo updateoptions rsquo return list object id text suitable populate select payment mode user do updateoptions call user action program choose select option set fee map structure fee map
+hit function update option select see change watch select trigger change fee map vue console lot struggle try settimeout loop magically start working presume ms delay have datum sync afraid settimeout right way use nexttick didnt work suggest good solution
+prop statuspid statusid amp amp amp amp amp amp rsquo lsquo statuspid statusid id id webpack
+vue nginx iframe
+tab remove dom
+document getelementsbytagname rsquo lsquo length
+error timeout ms exceed createerror xmlhttprequest handletimeout
+reproduction link
+http localhost
+step reproduce
+webpack npm run dev http localhost http
+webpack ip http localhost http
+actually happen
+rsquo will start saying love vue great job run headache use custom bind function component method wonder performance impact actually make function question
+simple bind fast native
+function bind fn ctx
+function boundfn
+var argument length
+fn apply ctx argument
+fn ctx
+simply use native method allow override value useful mock component instance testing
+disregard native bind allow override explicit bind use operator explicit bind falsely believe
+kind change do pr introduce
+code style update
+do pr introduce break change
+add flow type annotation
+add api
+problem do feature solve
+vue js js
+do propose api look like
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+reproduction link
+https github com pistos vue unknown custom element bug
+step reproduce
+readme duplicate step convenience
+browse http localhost
+click ldquo example tab rdquo page
+observe lack second tabset page
+observe console error
+open app vue editor
+remove line mark comment save file
+refresh example page browser
+observe presence expect tabset page
+line app vue
+refresh browser
+observe disappearance tabset
+js console error warning component correctly define import name reference
+rendering component miss
+actually happen
+js console error
+component child absent
+repro step readme clue workaround usage child component twice page different parent component
+reproduction link
+https jsfiddle net
+step reproduce
+switch home foo route
+open window task manager memory consumption crome tab increase decrease
+allocate datum ldquo item rdquo memory leave route release memory return use allocation ram memory
+actually happen
+memory consumption increase
+develop application use electron application variable ldquo item rdquo populate record time open route jsfiddle exemple moment mb increase memory imagine vue bind leave route memory release return route increase mb memory
+ps set variable datum declare ldquo item rdquo directly create do occur need variable reactive
+add new dist file enable direct import esm enable browser
+reproduction link
+https codesandbox io vpomxl
+step reproduce
+click lsquo click rsquo button audio play
+play modern browser support audio
+actually happen
+pc browser play mobile browser ios safari ios wechat webview android chrome play
+vue function use like click callback audio play function tick play browser
+howerver vue use dom action click callback audio play function tick just use fine actually firstly use priority lead audio play mobile browser mention
+build cm vue cli seo
+reproduction link
+https codepen io anon pen vrxxgy
+step reproduce
+run codepen provide
+check console output listener listener listener get resolve talker get notifed resolution
+listener use settimeout callback resolver
+listener use bus callback resolver
+listener use bus callback resolver wrap promise
+case listener listener comment listener listener
+case listener listener listener comment listener
+case talker notify listener resolution
+case talker notify listener resolution independently asynchronously listener resolution
+actually happen
+case talker notify listener resolution
+case talker notify listener resolution simultaneously synchronously listener resolution listener resolution delay listener time
+ldquo normal rdquo combination
+listener listener listener resolve asynchronously listener
+listener listener resolve kinda surprise listener resolve case
+listener listener listener
+reproduction link
+https codepen io anon pen xzewwx editor
+step reproduce
+just open link
+generate markup
+actually happen
+generate markup
+fail work fine
+https codepen io anon pen pdvozy editor
+try make minimal case dependency https codepen io anon pen pormvb editor couldn rsquo work maybe helpful maybe
+original issue https github com vuetifyjs vuetify issue
+rsquo be suspect bug cause following commit https github com vuejs vue commit have
+component fail https github com vuetifyjs vuetify blob master src component vbadge vbadge js
+comment following method fix rendering https github com vuetifyjs vuetify blob master src component vgrid vcontent js
+reproduction link
+https jsfiddle net wl mdz
+step reproduce
+click second alernatively multi time
+change select japanese click second alernatively multi time
+change select english
+router view render second remain second
+actually happen
+alive remain initail include bind datum rsquo value
+want alive dynamic change include property rsquo bind datum prop datum tranfer component properly
+adjust test helper function weex add test case recycle list
+bind class name
+bind inline style
+use stateless sub component
+use stateful sub component
+test case couldn rsquo pass add comment
+datum function
+problem wanna create dynamic type variable pj type type set value advice
+reproduction link
+https jsfiddle net tochoromero tup
+step reproduce
+fight memory leak week big project page complex nest navigation use vuex ton mixins fair say app complex
+start notice performance degrade usage sure wasn rsquo do stupid like store reference vuex store dispose listener start long week hunt memory leak
+long process wasn rsquo find solid report specific plugin use cause leak plugin https github com astaroverov medium query wasn rsquo able reproduce clean project just stop use unfortunately plugin account small percentage leak hunt continue
+have modal https bootstrap vue js org level app component cause leak move modal app component route fine wasn rsquo able reproduce clean project point tire just remove modal call week
+fix leak fine new leak appear fortunately able use git pinpoint commit cause leak leak happen use dropdown bootstrap vue look source code fine decide open issue instead
+thankfully time able create minimalistic reproduction example
+https jsfiddle net tochoromero tup
+use link forth page check memory usage instance vuecomponent garbage collect
+use chrome dev tool navigate new route vuecomponents create remove
+navigate page compare snapshot vuecomponents create delete
+finally click link lot vuecomponents create delete memory usage creep
+hope guy idea go track memory leak time consume
+vuecomponent instance previous page garbage collect
+actually happen
+unused vuecomponent instance keep memory
+happen time recompute component prop value order use really useful future vue feature add
+transform prop
+case component internally refer compute
+reproduction link
+https github com vuejs vue blob dev backer md
+step reproduce
+open page
+backer image
+actually happen
+possible image
+happen repository github
+https github com vuejs vue blob dev backer md
+kind change do pr introduce check
+code style update
+build relate change
+typescript compiler complain
+do pr introduce break change check
+right test pass phantomjs support destructuring syntax rsquo be taking look replace good
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+reproduction link
+https jsfiddle net ahled
+step reproduce
+check console log
+expect vue compile template error
+actually happen
+invalid remove
+reproduction link
+https jsfiddle net wl mdz
+step reproduce
+click print link
+want print ldquo print rdquo
+actually happen
+need click second time change content
+reproduction link
+https jsfiddle net elijahww oct pa
+step reproduce
+have difficulty app get ldquo compute rdquo notice array alter deeply array modify get notice change datum push do detect do detect hellip unless
+play different way tell vue look lsquo compute rsquo do condition solve scenario don rsquo understand work rsquo straight forward
+basically iterate array compute function touch getter satisfy dep track logic notice example array start element loop zero element array work
+remove line change detection long work know do rest loop maybe yank runtime
+like api add compute dep tracker example add new element array like
+straight forward way determine change deep array trigger compute
+actually happen
+deal deep array object clear change detection place
+reproduction link
+https gitee com osby learn js blob master vue example vue component html
+step reproduce
+just need run page
+global component backup local component cover refer definition global component
+actually happen
+work exchange definition global amp local order local component effectively
+problem do feature solve
+build page just want test page dev
+do propose api look like
+want test page dev
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+doc say
+gt property start proxied vue instance conflict vue internal property api method access vm datum property
+little bite hide development good warn raise developer datum property proxied vue instance
+problem do feature solve
+right root element template know design wrap lot time big deal live problem bootstrap require specific hierarchy deal table require specific hierarchy wrap div option
+do propose api look like
+couple thing figure mainly element property provide custom element attach think thing
+child stick
+provide custom attribute indicate element attach
+reproduction link
+https jsfiddle net deepone dy
+step reproduce
+make instance object implicitely lsquo undefined rsquo property prototype
+const someobj function
+someobj prototype someprop undefined
+const myobj new someobj
+lsquo someprop rsquo myobj true
+object hasownproperty myobj lsquo someprop rsquo false
+use object instace datum prop value vue
+datum function
+value myobj
+try assign someprop value make reactive
+set value lsquo someprop rsquo lsquo somevalue rsquo
+property value set
+myobj someprop lsquo somevalue rsquo
+property expect reactive
+actually happen
+property reactive
+check src core observer index js function lsquo set rsquo look like
+key target amp amp hellip
+truthy property declare lsquo undefined rsquo object prototype set explicitely object
+definereactive reach
+describe object structure prototype prop undefined just arbitrary swagger io js generator actually create object model order represent miss possible property use miss object property datum bind vue object extend set miss property value explicitely undefined oder string
+reproduction link
+https gitee com osby learn js blob master vue example vue live html
+http jsfiddle net bxfga
+step reproduce
+click button destroy click button change
+hope calling destroy remove dom event object prevent invalid ajax request
+actually happen
+console output information uncaught
+asynchronous validation event form
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+fix window vue ssr server bundle json module rsquo server rendering
+reproduction link
+https github com vdustr vue issue
+step reproduce
+rdquo text
+install dependency
+npm install
+serve hot reload localhost
+npm run dev
+compile successfully
+actually happen
+get error
+ldquo text
+value conflict model element expand value bind internally
+ldquo model https vuejs org guide component html customize component model
+downgrade vue vue template compiler exactly reproduction compile successfully
+production vue js work fine gt codepen
+reproduction link
+https jsbin com fihinimuxe edit html js console output
+step reproduce
+element bind exist method
+actually happen
+warn mean ignore actually break vue affect dom
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+https github com vuejs vue blob dev src platform web runtime component transition js
+block contain return statement block unnecessary
+reproduction link
+https codepen io anon pen kyyxkb editor
+step reproduce
+open browser devtools
+launch reproduction different max variable
+note memory usage growth quadratically max variable number compute property imply dependency program proportional max variable
+expect linear proportional growth memory consumption growth max variable
+actually happen
+observable compute value subscriber total number subscription growth quadratically
+rsquo quite hard write code really affect user bug feel like flaw reactive design
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+use helper method seal object pass vue
+turn silent error nice verbose error example mistake vue template function change pr currently prevent working correctly
+reproduction link
+https github com aeolusheath vue router project
+step reproduce
+declare css test vue
+use style app vue
+index page page didn rsquo load test vue text color black red
+expect broswer load component rsquo css style tag
+actually happen
+sorry actually don rsquo know problem
+admins page contain component lsquo admin vue rsquo do contain component lsquo user vue rsquo
+let admin vue css user vue style tag
+recently just update web app upgrade broswer load css style tag component component load current page
+sry be clear problem vue webpack
+rsquo normal action
+project create vue cli
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+problem do feature solve
+jquery dom
+lsquo store state socket pricearray rsquo function val
+val foreach item index gt
+set datum index item
+lsquo table rsquo bootstraptable
+column column
+datum datum
+do propose api look like
+angular scope apply
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+reproduction link
+https github com yoyo vue bug report
+step reproduce
+delete following code work fine do problem
+https github com yoyo vue bug report page blob cf have have order id vue
+report error
+actually happen
+vue warn property method ldquo statictrees rdquo define instance reference render make sure property reactive datum option class base component initialize property https vuejs org guide reactivity html declare reactive property
+reproduction link
+https vuejs org example
+step reproduce
+create settimeout error errorcaptured throw new error
+errorcaptured promise
+actually happen
+problem do feature solve
+vue display visibility
+do propose api look like
+vue directive
+reproduction link
+https jsfiddle net elijahww gojaz cx
+step reproduce
+currently way execute expression use case simple translation
+myglobali service lsquo foo bar hello rsquo
+nice syntax tell interpolator evaluate like directive example ensure execute bind function update verbose need single quote double quote look pretty messy template
+execute specialize interpolation
+actually happen
+execute update
+problem do feature solve
+recently try namespace event poorly admittedly use dot emit event course event name invalid use event listener dot use indicate modifier
+nice method print warn console use invalid event name
+do propose api look like
+api change need
+reproduction link
+http jsfiddle net clbe
+step reproduce
+property start identifier valid invalid define datum compute method option think option rsquo behavior consistent
+actually happen
+rsquo valid define xxx property compute method option fall define xxx datum option
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+have warn ldquo uncaught rdquo fail valid test add assertion warning excessive test proper way
+question pose https github com vuejs vue issue issuecomment relevant currently name correspondingly
+hello possible add dynamic variable style
+mean like
+reproduction link
+https codesandbox io ql nvkv
+step reproduce
+vue vue set scope arrtibute style tag
+import want modify rsquo style
+hope modify style scope attribute
+maybe add attribute selector start css selector sentence solve problem
+actually happen
+vue add attribute selector end css selector sentence work
+reproduction link
+https jsfiddle net chrisvfritz wl mdz
+step reproduce
+multi component want implement interface previous version implement way
+code throw exception
+actually happen
+error occur
+reproduction link
+https jsfiddle net fabiobuono qn pfmd
+step reproduce
+just run code short straightforward input require
+code tag show
+actually happen
+template doesn rsquo work multiple tag
+problem do feature solve
+component ignore waste effective
+do propose api look like
+reproduction link
+https codesandbox io dynamic slot level sjsog
+step reproduce
+page click create button button textboxes change text textboxes click hello button
+textboxes enter new value
+actually happen
+textboxes lose enter new value turn initial value continue change textbox value textbox value return previous enter value
+rsquo just simple example explain problem rsquo be try create programmatically component exist component framework
+try set slot vnode key value didn rsquo solve set slot default wrong way
+trust type
+trust type spec introductory article new experimental dom api implement wicg working chrome implementation
+api create new object available global object browser like web apis impl closure compiler
+certain condition control http header analogous content security policy behavior api enable enforcement change signature dom api function property setter accept specific object type reject string colloquially dom api strongly type
+example trust type element innerhtml property setter accept trustedhtml object
+trust type object stringify inner value api shape deliberate choice enable exist web application library gradually migrate string trust type break functionality example make possible write following
+code work regardless trust type enforcement enable
+read dom unaffected element innerhtml getter return string rsquo practical reason ndash web application read dom write write expose application dom xss risk type setter allow secure web application minimal code change
+integrate trust type vue
+integration fairly simple place break use vue trust type place sure rsquo call couldn rsquo trigger rsquo mark code comment hope clarify pr doesn rsquo introduce break change code apply trustedtypes api available global object
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+pr add support trust type client beneficial use server dom server check value trust create markup dangerous attribute make application render thing server client similar pr react
+like try change really simple application instruction setup vue locally play trust type vue cli use webpack development provide feature like hot reload currently break pr fire wait review
+reproduction link
+https jsfiddle net zhoulu hp ab cug
+step reproduce
+open link browser https jsfiddle net zhoulu hp ab cug
+refresh page twice page show alert dialog input event trigger code normal chrome browser
+input event trigger
+actually happen
+input event trigger inexplicably
+reproduction link
+https jsfiddle net zhoulu hp ab cug
+step reproduce
+run code
+refresh page twice page show alert dialog
+input event trigger code normal chrome
+result chrome
+reproduction link
+https codesandbox io vue template fom
+step reproduce
+reproduction contain filter component method
+template contain working example filter
+correctly return
+template contain working example method
+correctly return
+template contain break example combine method filter
+expect return
+actual return following warn throw
+calling filter method argument return output filter
+actually happen
+pipe treat bitwise operator
+problem do feature solve
+don rsquo want add mixin route page don rsquo want add global mixin affect component party
+let rsquo single code okay
+do propose api look like
+keepalive id purge component purge cache component rsquo instance exist
+problem do feature solve
+allow resolution promise inside template
+do propose api look like
+reproduction link
+https github com tobyzerner vue cli nbsp bug
+environment info
+step reproduce
+clone repo
+template contain spin contain character spin red background small red box page
+actually happen
+template ignore convert normal space mean spin element display
+replicate bug plain vue jsfiddle project use vue loader vue cli think vue cli culprit vue template compiler vue
+reproduction link
+https jsfiddle net uqogr have
+step reproduce
+load datum
+show load encrypt text
+actually happen
+do update template componets block show load
+make async template completely freeze do update accord property set async function finish async function template refresh
+expect behavior show load encrypt text
+behavior do update template componets block show load
+reproduction link
+https codesandbox io vue template klp fontsize
+step reproduce
+create dynamic component normal component
+bind object lot property
+inspect dom like
+bind property properly component create attribute don rsquo want attribute component element prop
+actually happen
+bind directive create attribute prop object binded component
+disable behavior
+minimal reproduction
+step reproduce
+load app click button heap snapshot
+load unload app multiple time click button
+end load stat heap snapshot
+search memory snapshot viewer
+rsquo have personally test chrome
+vue retain size increase
+actually happen
+vue retain size increase
+background rsquo be use vue turbolinks project backend serve html vue template inlined mean create destroy vue instance navigate page
+problem do feature solve
+provide ability compile component webcomponents cross framework future trend
+hope component ecosystem share end framework webcomponents
+do propose api look like
+reproduction link
+https codepen io dreamcarter pen ajoepd editor
+step reproduce
+add array datum like
+datum arr
+bind arr template arr
+change arr index arr
+actually happen
+arr responsive
+opinion regard arr plain object make arr responsive
+src core observer index js
+protoaugment value arraymethods
+copyaugment value arraymethods arraykeys
+make change
+protoaugment value arraymethods
+copyaugment value arraymethods arraykeys
+time regard arr arr ldquo rdquo don rsquo need observearray constructor observer make initial item arr responsive arr doesn rsquo exist initially responsive rsquo new property arr
+kind change do pr introduce check
+code style update
+build relate change
+fix miss noopener
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+kind change do pr introduce check
+code style update
+build relate change
+fix miss noopener
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+kind change do pr introduce check
+code style update
+build relate change
+fix miss noopener
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+automate pull request
+reproduction link
+https github com shenron vuejs memory leak
+step reproduce
+try look memory toggle functional component
+standard component detach element visible
+actually happen
+time new detach element
+rsquo be sorry rsquo reproduce jsfiddle https jsfiddle net shenron cq create fresh new vuejs project vue cli https github com shenron vuejs memory leak
+reproduction link
+https github com rustyx testapp vue mocha
+step reproduce
+manually select feature
+enable unit testing mocha chai
+unit test run warning error
+actually happen
+webpack step following print screen
+unit test run successfully
+cause fact rsquo impossible set vue common js version notice print unconditionally create scope
+notice print node env
+problem do feature solve
+order avoid jump issue contenteditable need option disable updatedomprops vue think blot vue contenteditable
+do propose api look like
+elm disabledomprops amp amp elm disabledomprops return
+elm dataset lsquo disabledomprops rsquo lsquo rsquo return
+disable updatedomprops
+review code test case
+https codepen io muthu pen nzwkwz
+problem do feature solve
+order avoid jump issue contenteditable need option disable updatedomprops vue think blot vue contenteditable
+review code test case
+https codepen io muthu pen nzwkwz
+reproduction link
+https jsfiddle net weiwei be ugk
+step reproduce
+actually happen
+problem do feature solve
+need close special drop user active drop parent second need close event component
+do propose api look like
+automate pull request
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+val null undefined boolean ignore working normally
+val nan result error ndash new array nan rsquo invalid array length
+think nan ignore
+reproduction link
+https codesandbox io vue template tj
+step reproduce
+step reproduction page
+normally listen event dispatch router link use emit click router link
+actually happen
+rsquo dispatch custom event click router link
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+problem do feature solve
+subject pretty sum property match variable type value ldquo value rdquo option ldquo option rdquo look bite excessive
+feature strictly cosmetic help write expressive code
+do propose api look like
+automatically pass prop prop component prop prop define undefined pass instead additionally warn print console
+problem do feature solve
+do propose api look like
+reproduction link
+https jsfiddle net webblin wrl
+step reproduce
+click button lsquo add rsquo lsquo remove rsquo transition smooth
+show example
+https jsfiddle net webblin wrl
+transition group work fine component
+actually happen
+nest transition group component inside do work expect
+delete file run npm run watch require bootstrap app js show error ldquo rsquo resolve bootstrap rdquo rsquo be delete bootstrap folder rsquo be use laravel vue
+kind change do pr introduce check
+code style update
+build relate change
+do pr introduce break change check
+yes impact migration path exist application
+pr fulfill requirement
+rsquo submit branch previous version branch branch
+resolve specific issue rsquo reference pr rsquo title ldquo xxx rdquo issue number
+test pass https github com vuejs vue blob dev github contribute md development setup
+new update test include
+add new feature pr rsquo description include
+convince reason add feature avoid waste time rsquo best open suggestion issue wait approval working
+adobe cep environment break implementation break event block logic issue specifically affect host application run macos cep version workaround os agnostic maintain identical behavior platform detail issue
+reproduction link
+https jsfiddle net atdq
+step reproduce
+open link jsfiddle open console click toggle
+log destroy hook count similar hook
+actually happen
+destroy hook count keep increment retain hook destroy component
+note didnt check happen destroy hook define component
+problem do feature solve
+vue angular
+do propose api look like
+https github com akryum vue virtual scroller vue
+reproduction link
+https jsfiddle net keegan openbay nhvemx aware jsfiddle do typescript compiler error
+step reproduce
+use typescript gt beta currently stable
+correctly type method
+use non string property component option
+normal behavior property correctly type instance
+actually happen
+error arise
+datum property component type
+datum property type
+datum property type
+question advantage use operator wrap rendering process source rendering process
+isn rsquo javascript recommend operator
+reproduction link
+https codesandbox io embed vue template pnsx
+step reproduce
+click ldquo toggle load rdquo button
+child element datum attribute apply green
+actually happen
+child element miss datum attribute
+look like div element reuse loader child slot content
+reproduction link
+https codesandbox io vue
+step reproduce
+number variable ldquo gridgap rdquo
+return gridgap
+variable undefined mehtods
+add gridgap
+variable rsquo use
+actually happen
+variable ldquo gridgap rdquo value undefined
+reproduction link
+https codesandbox io vue slot bug ulx
+step reproduce
+create component name slot template
+render component pass element component name slot use syntax
+access slot rsquo vnode inside component rsquo hook
+property contain slot rsquo root element access vnode hook
+actually happen
+element component pass name slot render property available value set
+rsquo be bind slot inside component rsquo hook replace old slot syntax syntax error throw element available vnode
+reproduction link
+https codesandbox io vue template tnq
+step reproduce
+parent component
+child component
+vue mixin
+change status know use directive render
+want use vue mixin method inject conditional render component
+actually happen
+inject render component
+rsquo be try custom property option do rsquo want component
+problem do feature solve
+parent parent datum method
+do propose api look like
+problem do feature solve
+like ethereum address add ethereum field package json file allow consumer project know cannonical address send fund example rsquo be building application allow developer automatically donate eth npm dependency ethereum address package json file https sustainus io
+do propose api look like
+simply add ethereum address property package json file
+reproduction link
+https jsfiddle net rkwglzso
+step reproduce
+create component contain field model
+update datum object
+force refresh
+rsquo be new vuejs today believe new row display datum bind
+actually happen
+new row display datum bind
+reproduction link
+https codesandbox io embed vue template tftf
+step reproduce
+outer component classname
+child component element classname inside element different classname
+create scope style rule inside child component pseudoclass descendant class
+component pseudoclass postfixed
+actually happen
+child scope classname pseudoclass postfixed ldquo datum rdquo attribute
+parent component style classname use
+reproduction link
+https jsfiddle net just ben bf gk
+step reproduce
+create component lsquo input rsquo native element
+model component datum show
+note input isn rsquo pre populate value change do change value bind model
+model work usual update value change display value initially component
+actually happen
+initial value show input component change do update value bind
+problem do feature solve
+space text tag keep space
+https github com vuejs vue tree dev package vue template compiler option
+space don rsquo want
+code standard build tool webpack kill space tag need real space use like
+way great experience react vue compress html
+use sfc vue loader haven rsquo provide option space tag keep space
+hope vue loader provide option remove space
+do propose api look like
+reproduction link
+https codepen io xayer pen wvwjjqr
+step reproduce
+check console log
+slot call ldquo prepend rdquo work dynamic datum present

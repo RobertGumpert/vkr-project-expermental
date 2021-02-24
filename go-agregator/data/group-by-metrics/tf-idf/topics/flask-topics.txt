@@ -1,0 +1,9 @@
+pallet *=* 0.244136
+web *=* 0.167120
+framework *=* 0.090103
+wsgi *=* 0.244136
+python *=* 0.244136
+flask *=* 0.244136
+werkzeug *=* 0.244136
+hacktoberfest *=* 0.244136
+jinja *=* 0.244136

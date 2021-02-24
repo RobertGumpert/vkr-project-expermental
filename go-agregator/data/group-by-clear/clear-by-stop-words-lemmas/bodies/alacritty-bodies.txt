@@ -1,0 +1,973 @@
+os linux
+linux bsd gnome shell
+notice start gui subprocess alacritty process detach shell window appear alacritty window
+specifically happen apt version vscode start alacritty note do happen use snap version way avoid behavior apology alacritty bug want check terminal behavior vte base terminal gnome terminal don rsquo exhibit behavior
+see bcompare command do detach understand window count alacritty window
+do change command have do work
+delete key binding ctrl work delete ctrl binding do work
+bug do wrong
+os macos
+patch add support graphic terminal graphic send sixel image iterm inline image protocol
+new feature
+ability render graphic grid
+support sixel image
+support iterm inline image protocol
+implementation detail
+try explain important part implementation code comment description brief summary
+rsquo be fluent english possible explanation confuse hard understand let know
+track graphic rsquo position
+comment request add overhead instance order avoid performance regression
+approach implement track line scroll compute line base absolute history grid similar line call graphic line code
+position graphic line compute use field instance field update line grid scroll
+method provide way track graphic position add field limitation section unresolved question describe current issue
+add graphic grid
+graphic add need opengl function update datum gpu avoid use opengl pty reader thread new graphic add queue instance function take item complete process add graphic
+instance modify need mutable reference possible receive reduce duration lock rendering process divide phase describe
+graphic dimension limit xterm limit low current hardware limit just avoid bad application try crash terminal
+grid region new graphic fill cell non break space add left graphic just mark indicate grid content graphic necessary situation text graphic example execute script
+cursor second line add content tenth line mark alacritty think line scroll line mark alacritty detect correctly content tenth line scroll line
+use non break space transparent character return
+store graphic
+image datum upload gpu graphic add attachment instance attachment store key graphic line value instance type define display
+tree possible graphic visible current display quickly
+type value map generic main reason use generic type parameter avoid use opengl type crate new type parameter add change file add new type parameter function type definition test set
+remove graphic
+graphic remove graphic line scroll limit
+remove graphic value move queue instance main thread take texture identifier pass necessary avoid use opengl function pty reader thread
+sixel parser
+sixel parser base sixel graphic extension chapter dec manual
+support complete pixel aspect ratio parameter accord manual sixel image specify expect specific shape pixel device terminal check parameter effect assume ratio didn rsquo sixel generator emit different ratio avoid extra complexity parser assume image build
+new terminal mode
+enable new graphic insert cursor position scroll grid
+disable new graphic insert left limit height window
+enable sixel parser color palette
+disable sixel image share color palette
+initially didn rsquo plan support mode specific xterm testing application use sixel mpv use reuse palette video frame mpv base libsixel guess feature use application
+mode enable default
+function convert hl color rgb direct port implementation function xterm verify function emit result combination value color component combination left test reduce noise code
+test parser sixel image generate different application file directory expect rgba value command produce file
+byte dcs
+sixel image use byte dcs support dcs crate recognize guess continuation byte utf sequence significant bit valid input user
+xterm limitation don rsquo expect application depend
+exception use start sixel datum replace want image generate
+sed rsquo ep rsquo alacritty terminal test sixel testimage ppmtosixel sixel
+interest test write long sixel add terminal emulator
+primary device attribute
+concern add response primary device attribute raise https github com alacritty alacritty issue issuecomment
+gt alacritty currently report vt do support sixel graphic parameter rsquo have add support vt
+do investigation issue accord https invisible island net xterm ctlseqs ctlseqs html function use csi order final character vt terminal
+https lcarchive org digital vt
+gt dec vt video terminal design basis vt vt additional block mode function datum enter user block typically cell like spreadsheet datum send standard terminal like vt operate send key stroke time press
+application parse output primary device attribute command expect compatibility vt maybe rsquo be miss look safe report response
+iterm inline image protocol
+patch include support iterm inline image protocol drawing image iterm protocol allow store file download folder command ignore
+protocol define
+osc file argument base encode file content
+following argument accept
+resize graphic add grid
+accept unit iterm
+character cell
+percent window rsquo width height
+set ignore original aspect ratio
+use protocol simple example render file line grid
+add protocol fix issue sixel
+datum stream small use versatile format like png jpeg
+support truecolor
+user don rsquo convert sixel pretty slow exist file
+provide way indicate dimension grid cell user don rsquo need extra computation image specific area
+feature request basic good image protocol proposal
+support iterm separate commit discard feature reject
+rendering phase
+process handle graphic grid divide phase
+prepare phase execute mutable reference
+take add remove graphic update field opengl function execute phase
+output phase list graphic command contain necessary datum
+update texture gpu add remove graphic
+render graphic visible current display
+draw phase take graphic command update gpu
+phase execute lock release
+info phase module documentation
+multiple texture shader program
+graphic texture gpu render use new shader program reduce number call implementation send texture single
+value use detect gpu texture unit
+use maximum expect value
+hardware unit rsquo be sure safe possible use
+opengl extension
+opengl extension use resize texure hardware do extension implementation use fallback fully compatible opengl
+simple benchmark machine see version opengl extension time fast vs
+try avoid use opengl extension use framebuffer object multiple issue able solve test multiple machine old require extension
+add dependency
+following crate add dependency
+use compute field offset initialize vertex attribute
+currently alacritty compute manually offset fiels example assume specific layout crate provide robust way obtain offset doesn rsquo add runtime dependency
+lazy static
+include project direct dependency patch use cache query opengl extension
+iterm inline image protocol require support multiple image format crate remove have have ea have reintroduce able parse image format
+crate add explicit feature set reduce extra dependency
+unresolved question
+draft fully functional issue need resolve implement solution need decide fix
+add image display scale
+user change font size use action graphic grid scale proportionally cell height
+https user image githubusercontent com dfdae eb mp
+new graphic add display scale size compute base scale font
+https user image githubusercontent com bb eb bfc cdab fb mp
+way fix issue store default font dimension default font dimension store user execute alacritty load font size configuration
+possible solution add parameter function font dimension copy field use add graphic grid
+acceptable solution
+move line
+move line affect graphic
+test feature xterm mlterm
+mlterm work expect graphic split move line
+https user image githubusercontent com ef eb have mp
+xterm slightly break image scroll margin move window redraw position different expect application want compatible xterm rely feature
+documentation do specify control function interact graphic
+update graphic line text reflow
+text reflow add remove line grid line graphic graphic position different
+behaviour consequence use graphic line compute position graphic think way fix issue
+time line add remove recompute position attach graphic line
+use completely different approach graphic grid
+patch add type remove constraint allow complex solution cell level track graphic grid code time performance impact close zero
+haven rsquo think lot option acceptable add field specially best solution
+datum file
+instance new field store graphic add attribute avoid update file
+implementation ignore content field
+test use graphic don rsquo think rsquo worth update file
+think update regenerate update implementation
+write status bar rust run alacritty
+basically spawn alacritty alacritty argument following code
+rsquo have see crate https github com alacritty alacritty issue
+wonder equivalent allow self contain binary
+https rustsec org advisory rustsec html
+example percentage ldquo root rdquo user visible rsquo be sshing localhost right focus window
+os archlinux
+version eb
+linux bsd wayland sway
+open vim open second split window wait second line shift
+cursor rest line uneven
+record video make clear
+don rsquo error open vim basic powershell
+os window build
+just figure rsquo have readme possible help user understand stance issue feel free close rsquo have add
+follow build instruction confirm work rhel like pr update doc say build process hold true rhel
+wayland regardless underlie scale factor output scale factor receive event correctly calculate window size use dpr
+ideally know dpr window rsquo open avoid estimation guess game doesn rsquo possible current interface provide window system
+os macos
+version alacritty eb
+bug do occur time hard reproduce rsquo happen
+alacritty screen mode focus app space try alacritty lt cmd gt lt tab gt click dock icon do resolve alacritty desktop instead alacritty window instance desktop
+happen app left macos status bar alacritty
+thank help
+rsquo have try map mouse button amp vim happen click double click heppened
+os linux kernel systemd
+version alacritty eb repro head master da
+wayland compositor sway mutter kwin
+wayland compositor sway mutter gnome kwin kde alacritty estimate dpr incorrectly end log output note monitor hidpi scale factor sway config actual dpr relevant window size appear
+mutter kwin issue manifest user visible way
+mutter alacritty start big window do resize correct size start correct size
+kwin alacritty start big window split second resize correct size jar
+note sway resize window tile issue noticeable sway
+recompile alacritty user visible effect describe away curiously user visible effect away config option unset estimate dpr incorrect log
+output compositor
+difference end mutter stay big window
+like beam cursor bite thick make hollow cursor thick set hollow cursor look fine line cursor way way set different thickness cursor shape fix problem
+os archlinux
+version alacritty dev df use zenixls rsquo ligature branch
+linux bsd picom qtile
+os archlinux sway
+title say time alacritty rsquo shutdown crash
+possibly report instead choose report instead case rsquo do wrong feeling rsquo closing wayland connection join thread
+reproducible machine rsquo be happy help debug test patch
+window title set do change do current directory do update run program change window title default macos terminal
+see do really help information come issue relevant
+use switch do help
+use option
+set title config file try config file
+do work
+place set check
+interest sure tell
+os macos big sur
+version alacritty eb
+doesn rsquo option create macro alacritty
+put ldquo build bat rdquo terminal
+know minor thing think useful
+pass update completion file zsh bash fish
+commit ed have dcedfe bf patch
+complete work update completion script remove flag
+long exist
+os macos
+text contain zero width character umlaut character render following character precede expect
+reproduce write test file content lsquo rsquo combine glyph lsquo rsquo follow lsquo rsquo
+actually display dot
+happen zero width character circumflex grave accent acute accent
+cursor oddly stretch triangle point downwards expect cursor draw rectangle line depend mode
+os arch linux
+version alacritty eb
+linux bsd wayland gnome
+graphic intel
+sure helpful useful context
+font character don rsquo display correctly version
+os macos big sur
+version eb
+macos terminal
+alacritty config alacritty yml zip
+upgrade guess nvidia package open terminal anymore happen long time restart help restart
+linux bsd
+font terminal size
+keyboard binding
+segmentation fault occur startup
+os fedora
+stdout stdout
+doesn rsquo information
+wayland event loop delay rendering event loop
+callback execution rsquo necessary track global damage globally
+just single loop execution
+switch macos terminal speed useless rsquo clear run log
+os macos
+os arch linux
+version update
+linux bsd gnome wayland
+get issue title bar rsquo disable config
+expect screenshot terminal
+test work fine rsquo be sure rsquo wayland
+issue alacritty titlebar app look fine
+gnome screenshot capture alacritty rsquo titlebar window screenshot helpful
+alacritty doesn rsquo create log variable file doesn rsquo exist
+fix keypress input feedback delay run wayland
+set dirty flag force draw old
+buffer commit buffer holding new glyph
+os manjaro linux
+version alacritty eb
+linux bsd bspwm
+font terminal size
+keyboard binding
+open seemingly upper limit alacritty terminal doesn rsquo appear set alacritty use gpu nvidia
+just update use wayland experience issue alacritty miss redraw request input receive correctly display isn rsquo update input receive cause display lag type example exactly keystroke
+os linux
+version alacritty eb
+linux bsd gnome wayland manjaro
+rsquo be use primary selection lot rsquo have recently install alacritty new reason select text paste use middle mouse click select text terminal primary selection buffer isn rsquo update mean middle mouse click paste content select don rsquo know rsquo issue alacritty doesn rsquo happen application like firefox weird behavior change current app alt tab change virtual desktop able select paste
+rsquo be see high cpu usage alacritty laptop idle screen go blank fan run hour idle ssh rsquo happen
+rsquo pretty consistent let know need
+os linux popos
+linux bsd gnome
+font terminal size col line
+keyboard binding add event output incident
+os window
+rsquo be run wsl ubuntu neovim inside bind control slash neovim comment line work just fine terminal alacritty doesn rsquo pass neovim
+try following didn rsquo help
+test try work screen toggle
+way disable keybindings alacritty really don rsquo need
+os linux pop os
+linux bsd gnome desktop environment
+use launch switch application focus vs code instead enter terminal respectively like just ignore eat key press
+os window
+currently look like installer isn rsquo sign browser really reluctant download note publisher unknown
+window throw warn install
+don rsquo know known issue do search previous issue resolve reason unaware sign building process
+go github action yml file do research use wix rsquo be just paste rsquo help https stackoverflow com question wix installer msi publisher unknown
+thank project
+able option disable create logfiles use systemd invoke alacritty log store journal rsquo huge deal just nice turn thank
+os linux
+extra picom
+rsquo be use alacritty specific apple script alfred https github com alacritty alacritty issue issuecomment alacritty launch tmux new instance alacritty spawn connect prexisting tmux session window instance just duplicate apple script doesn rsquo anticipate behavior doesn rsquo work usecase
+don rsquo write applescript look resource keycodes try edit applescript tell event send key code space control prefix key combo send key code lsquo rsquo create new tmux tab couldn rsquo figure
+basically adapt apple script
+alacritty open
+send key code control space prefix key combo
+send key code create new tmux tab
+run command send alfred
+really appreciate help thank
+rsquo be new alacritty do configure rsquo be try fix problem rsquo will customize currently rsquo be facing problem couldn rsquo way fix
+rsquo be vim rsquo delete char use backspace edit mode delete nano
+vimrc rest dotfiles https git gnous eu jumperx dotfiles
+os opensuse tumbleweed linux
+version alacritty
+linux bsd awesome window manager
+create use jdsimcoe rsquo figma link https www figma com file ci keod oblslwjmsive alacritty icon macos big sur duplicate perform following step
+export download zip file click icon press lsquo export icon rsquo right corner
+pr doesn rsquo introduce extra file clutter think make happy
+basically alacritty window freeze main display work fine respect secondary display rsquo attach laptop really sure debug attach log
+alacritty log
+os linux arch
+version alacritty eb
+linux awesomewm
+use awesome wm ubuntu
+config file working text white suposed different color
+os linux ubuntu
+version alacritty dev
+linux bsd awesome wm
+ps sorry english terrible quite fluent
+os window
+version alacritty eb
+whats problem
+wierd bug shell alacritty reason close alacritty doesn rsquo kill cmd process just hang worst consume like cpu stack like hungry guy perfomance machine go zero manually kill task manager
+scary bug btw see cmds eat cpu think malware crawl pc hellip
+closing alacritty
+powershell work fine shell process successfully kill end
+right macos doesn rsquo let select alacritty register file type
+os macos
+os arch linux gnome desktop default setting wayland
+issue come
+terminal start work just fine ctrl have tmux terminal window close rsquo segfault appear visible parent terminal maybe just ldquo cosmetic rdquo segfault
+repro issue master gdb rsquo stacktrace segfault
+let know command rsquo have like output
+add blink config file
+open nvim
+close nvim
+cursor blink
+work set
+os macos
+version alacritty eb
+crash stderr stdout
+font terminal size
+keyboard binding
+look package alacritty debian notice bench test didn rsquo compile order avoid pr add ci fix issue discover do
+add support copy urls right mouse click suggest
+configure new url option right click copy
+default false
+changelog entry
+doesn rsquo address suggestion enhancement issue like set action arbitrary set modifier work quite fairly unobtrusive
+terminal thing run
+pr add provision env var use need program macos
+go need order stream line window id identification use rec
+case sort thing add like vscode
+os arch linux gnome desktop default setting wayland
+version alacritty eb
+rsquo have notived rendering issue start kakoune text editor like display little ldquo clippy rdquo ascii art rsquo look like gnome terminal ubuntu mono font correct
+rsquo look like alacritty totally correct sure font
+rsquo look like configure ubuntu mono font alacritty clearly incorrect config
+line drawing character scatter place character verbatim rsquo have like try paste text file like
+notably try font like rendering doesn rsquo issue specific ubuntu mono
+bug report following information help speed process
+bug expect happen
+os linux
+version alacritty cbf
+linux bsd
+crash stderr stdout
+font terminal size
+keyboard binding default config
+refactors large chunk alacritty terminal api expose
+datum necessary rendering uniformly
+long transform cell rendering gui
+instead just report content terminal emulation
+perspective transformation renderable cell inside
+alacritty crate
+possible override binding use scancodes rsquo really annoy rebind layout
+os arch linux
+version alacritty eb
+bug report following information help speed process
+bug expect happen
+os openbsd
+version dev
+linux bsd compositor dwm
+use output doesn rsquo color terminal
+use enter tmux color color tmux
+know thank help
+os macos big sur
+tmux version
+try multiple font like jetbrainsmono nerd font fira code terminal app render character correctly alacritty render
+os macos
+version alacritty eb
+font terminal size alacritty vv output
+create log file ldquo var folder ccxd gv qgnpf gn alacritty log rdquo
+debug alacritty use fallback locale utf
+info alacritty welcome alacritty
+info alacritty configuration file load
+ldquo user danielfalbo config alacritty alacritty yml rdquo
+debug alacritty estimate dpr
+debug alacritty estimate window size
+debug alacritty estimate cell size
+info alacritty device pixel ratio
+info alacritty initialize glyph cache hellip
+info alacritty hellip finish initialize glyph cache
+info alacritty cell size
+info alacritty pad
+info alacritty width height
+info alacritty pty dimension line column
+info alacritty initialisation complete
+debug alacritty terminal unknown device status query
+debug alacritty terminal new num col num line
+info alacritty pad
+info alacritty width height
+info alacritty goodbye
+delete log file ldquo var folder ccxd gv qgnpf gn alacritty log rdquo
+border displyed arch linux gnome decoration set ldquo rdquo
+os arch linux
+version output
+alacritty dev ed
+gt yay grep mutter
+start fresh install xmonad ubuntu lts require dependency device pixel ratio incorrectly estimate result extremely large terminal render solid block color
+os linux ubuntu
+version alacritty
+linux bsd xmonad
+rsquo log xmonad
+rsquo machine use default ubuntu environment
+appearance enhancement
+figure show iterm set titlebar color transparent rsquo have like immersive titlebar rsquo kinda like transparent option alacritty iterm transparent titlebar take space button overlap text like alacritty display title text think rsquo good transparent option work way color customization titlebar add create pseudo immersive experience
+default setting alacritty https github com alacritty alacritty blob master alacritty yml file comment didn rsquo cover shortcut like ndash gt start line work common emacs mode shortcut like do work default
+bug report following information help speed process
+bug expect happen
+os macos
+version alacritty eb
+linux bsd wayland compositor wm
+crash stderr stdout
+font terminal size
+keyboard binding
+way different process different title cmd tab switcher enable rsquo have useful able alacritty app rsquo be switch press cmd tab right simply lsquo alacritty rsquo mission control dynamic title
+os macos
+version output
+rsquo be have error ldquo libegl warn dri fail authenticate rdquo rsquo be try alacritty yml recognice file doesn rsquo follow field describe
+ubuntu virtualbox guest addition install know fix error
+follow following guide enable bite color machine bite color appear working program alacritty fail start
+guide https linuxreviews org howto enable bite color linux
+os arch linux
+version alacritty eb
+linux bsd amp
+nvidia driver
+alacritty crash segmentation fault core dump
+os linux arch linux
+arch kernel version arch
+gpu radeon rx xt
+graphic driver mesa radeonsi amdgpu
+version alacritty eb
+compositor wayland
+wm sway
+core dump
+sure bug
+do override color scheme rdquo config file
+true ndash option import yml
+like level config item modify command line nice
+os linux
+version alacritty eb
+linux bsd arcolinux
+error invalid cli config option ldquo color gruvbox rdquo
+try start alacritty following message
+os window rdp
+flag remove https github com alacritty alacritty commit have ade
+bug report following information help speed process
+bug expect happen
+https github com alacritty alacritty wiki keyboard mapping
+key comma mod command command
+program ldquo open rdquo args ldquo config alacritty alacritty yml rdquo
+do work happen key bind work know command invoke cuz change open subl give error use subl args
+os macos
+version alacritty eb
+crash stderr stdout
+font terminal size
+keyboard binding
+just crash try start alacritty terminal get following output
+don rsquo think alacritty bug tbh cause time browser crash alacritty give log
+reboot realize collect information program hellip
+maybe help root cause
+os linux
+version alacritty
+linux bsd compositor use
+crash stderr stdout
+font terminal size
+input password sensitive datum terminal keylogger steal glance input alacritty app macos terminal app iterm app support secure keyboard entry keylogger steal password
+password steal use keycastr keystroke visualizer enable secure keyboard entry terminal app iterm app leftmost application menu keycastr input alacritty app input show
+terminal app tmux protect password don rsquo enable secure keyboard entry think hard implement feature party application just want feature manually toggle secure keyboard entry like iterm
+usually use alacritty app use terminal app input password inconvenient
+know nssecuretextfield realize don rsquo know detail thing
+otehr hint password form web page protect password legitimate browser
+title note requirement isn rsquo mention alas clone repo install dependency amp building min alacritty win rsquo run raspberry pi ldquo glsl support rdquo
+mention md file future potential user aware attempt build use
+os linux raspberry os bite
+linux bsd lxde
+emojis render color
+left pane alacritty right pane kitty
+emoji file
+os opensuse tumbleweed
+version alacritty
+linux xmonad compositor picom
+alacritty config
+run problem
+tdrop fail launch alacritty successfully upgrade alacritty
+os archlinux
+version alacritty eb
+linux kwin kde plasma
+tdrop ldquo glorify wm independent dropdown creator rdquo https github com noctuid tdrop
+think consistent behavior make switch different console smooth difficulty make right click work powershell frequently use copy paste workflow
+behavior powershell like
+text select right click copys select text clear selection
+text select right click paste clipboard terminal
+currently bind copy paste right click rsquo have idea combine behavior
+inconsistency long line display multiple line screen select line copy alacritty get multiple line depend display powershell copy consistent actual output
+rsquo be sure difference elimilated write proper config file maybe modify source code nessecery
+close use actual size usize fix
+rsquo hard text look like rsquo screenshot
+following alacritty yml
+rsquo have try ldquo courier new rdquo font similar result
+rsquo rsquo suppose look like
+os window
+version alacritty eb
+quick easy reproduction run vttest start test cursor movement failure suspect issue armv bite simply rsquo reproduce similar
+os linux
+version alacritty dev
+wm sway wayland
+iafter cli argument remove rsquo unclear set option argument scarce example really helpful set dimension try variant
+work rsquo be uncertain rsquo wrong format dimension position functionality break way
+os linux
+screen corruption use neovim wsl tmux term initially set xterm color
+os window
+version alacritty eb
+crash stderr stdout
+font terminal size
+info alacritty welcome alacritty
+info alacritty configuration file load ldquo user hovna appdata roam alacritty alacritty yml rdquo
+debug alacritty estimate dpr
+debug alacritty estimate window size
+debug alacritty estimate cell size
+info alacritty device pixel ratio
+info alacritty initialize glyph cache hellip
+info alacritty hellip finish initialize glyph cache
+info alacritty cell size
+info alacritty pad
+info alacritty width height
+info alacritty pty dimension line column
+info alacritty initialisation complete
+debug alacritty terminal term resize dimension unchanged
+info alacritty pad
+info alacritty width height
+keyboard binding
+currently alacritty doesn rsquo macbook touch bar mean rsquo access function key unless press fn key ideal
+extension macos specific allow user define custom touch bar button trigger action
+definitely high priority issue
+rsquo be add cross compilation arm combine universal binary lipo
+add installation target release workflow change app run natively intel be mac
+try open tmux run remote ubuntu ssh powershell
+window terminal work fine
+alacritty tmux session showing corrupt linefeeds multiple status line
+thank amp regard
+currently alacritty icon visible readme view page main readme ex https github com alacritty alacritty tree master alacritty https crate io crate alacritty change allow image load
+just upgrade alacritty new message appear log time start new alacritty
+xlib sequence lose gt reply type
+xlib sequence lose gt reply type
+xlib sequence lose gt reply type
+os linux debian sid
+version alacritty aa
+linux bsd
+create log file ldquo tmp alacritty log rdquo
+info alacritty welcome alacritty
+info alacritty configuration file load
+ldquo home gueux config alacritty alacritty yml rdquo
+xlib sequence lose gt reply type
+xlib sequence lose gt reply type
+xlib sequence lose gt reply type
+info alacritty device pixel ratio
+info alacritty initialize glyph cache hellip
+info alacritty hellip finish initialize glyph cache
+info alacritty cell size
+info alacritty pad
+info alacritty width height
+info alacritty pty dimension line column
+info alacritty initialisation complete
+info alacritty pad
+info alacritty width height
+info alacritty pad
+info alacritty width height
+try jump match reverse search vi mode vi
+cursor get stick match able jump
+regression introduce dfae have have have have
+successfully build alacritty source oracle linux machine following rhel instruction
+look rsquo be apple apologist publicly vocally oppose apple rsquo rigid stance control platform time encourage people time money effort open system limitation face impose avoid apple google matter personal life professional scenario require develop operate apple ecosystem
+project ideologically oppose apple rsquo ecosystem maintainer ldquo rdquo support https github com alacritty alacritty issue issuecomment https github com alacritty alacritty issue issuecomment https github com alacritty alacritty issue issuecomment don rsquo think rsquo fair list macos support platform
+disappoint maintainer interest support macos little feel like deny opportunity use nice terminal emulator largely personal reason rsquo be just interest accurately capture reality reality attempt run alacritty macos prompt software trash integrity verify platform release provide project do function apple rsquo ecosystem
+channel available project receive free developer program membership do day total sit apply tax id fee waiver application path exist support macos pay apple cent maintainer indicate interest taking doesn rsquo feel like macos user ldquo mistake purchase macos device rdquo facing limitation apple rsquo platform catch amidst ideological dispute maintainer project apple
+like support macos entail sign notarize release binary
+come install alacritty macos consistent terminal emulator various platform readme say support macos really like avoid conclusion ldquo use different terminal emulator macos alacritty rsquo maintainer don rsquo like apple consider usage hardware run macos mistake rdquo
+rsquo be will lend time help resolve effort require setup non profit apply tax id submit fee waiver application truly barrier
+expect behavior navigate vim binding htop press alt modifier
+actual behavior htop do honor alt modifier press recognize key press
+check alt modifier recognize terminal show different output press compare press alt key result example
+test different system clean vm see problem case test device kitty termite work expect
+os arch linux
+version alacritty cbf
+linux picom bspwm
+alacrity ndash print event output try use htop vim binding
+press alt try use binding
+template provide benefit just cause
+additional work single pr open make easy
+just remind people pr create put
+description contributor remove
+creation renderable search iterator do lot work
+absolutely search active moment resolve
+problem early return make sure search active
+go trouble create iterator
+enable configuration url style
+simply disable entirely specify color underline hellip
+link easy identify extra decoration
+know terminal recognise
+decoration superfluous distract
+mention consumption resource
+os archlinux
+desktop kde
+simply run
+have try run window terminal alacritty start hit backspace bash prompt run do result audible visual bell
+log output test use simply
+have try set explorer launch yes have try change color config read
+guess reason alacritty simply doesn bell try known issue couldn
+os window
+use vim neovim type ctrl switch alternate buffer do work alacritty instead type ctrl do work terminal emulator test terminal app kitty
+os macos
+font terminal size
+keyboard binding
+os window
+version dev have
+set mouse support neovim image init vim mouse support work fine use window terminal cmd alacritty neovim doesn rsquo recognize mouse select portion text cursor doesn rsquo change position neovim doesn rsquo enter visual mode
+color specify cursor hover text lsquo reverse rsquo style cursor switch inverse color underneath understanding inform kchibisov cause feature intend cursor blend text similar color functionality kick situation likely shouldn rsquo
+alacritty yml
+alacritty yml txt
+rsquo have way reproduce run config program doesn rsquo change background color use mouse select cursor turn black despite similar color highlight text
+alternatively approach work reason
+type text
+vim run command
+hover keyword highlight lime green cursor turn black character underneath green image accurate rsquo stop window unfocusing taking screenshot
+current behavior
+case cursor change color hover text reverse style color text similar cursor cursor orange turn black text green teal instance
+behavior effect make cursor hard case hover matching delimiter vim lsquo matchparen rsquo doesn rsquo affect color scheme one use lsquo reverse rsquo style bright color
+expect behavior
+cursor change color background similar color cursor white light gray ideally behavior happen vim rsquo lsquo matchparen rsquo highlight character highlight rsquo likely different issue
+manjaro arch linux
+alacritty cbf
+xorg server
+let know need information happy oblige
+want vim color tmux like normal terminal
+thing look term variable
+ldquo sh
+plain zsh alacritty
+echo term
+xterm color
+echo term
+xterm color
+showing different color
+os macos
+version alacritty
+shell zsh
+tmux tmux
+vim include patch
+tmux conf
+current behavior just load default configuration
+file configuration file couldn rsquo load path
+set value result live config reload
+feature work break yaml
+deserialized warning
+configuration file specify deserialization
+fail path preserve default configuration
+file make possible live reload fix issue
+use break configuration file launch alacritty fix error remove error alacritty instead live reload completely disable config file error
+rsquo necessary live reload config file miss invalid permission configuration file read problem live config reload enable
+rsquo be certain behave different previously think regression introduce cli config override
+os gentoo linux
+version compile support fresh install configuration
+term alacritty
+ncurses interface don rsquo redraw program resize pin issue cause draw ncurses fine
+ncurses program appear work
+ncurses program don rsquo work
+do help
+recompile sys libs ncurses unicode thread gpm cxx tinfo support
+example mocp redraw expand window do work
+shrink window
+problem ranger refresh do
+https user image githubusercontent com eb da png
+https user image githubusercontent com ca eb cd png
+work fine urxvt
+https user image githubusercontent com eb have dcf aad png
+https user image githubusercontent com eb ceed png
+menuconfig look shrinked
+https user image githubusercontent com eb ff fb fb png
+hello segmentation fault launch alacritty
+error launch sudo user
+os linux arch
+version alacritty cbf
+linux bsd wayland gnome
+os gnu linux arch
+shell zsh
+wm sway
+issue press alt vim binding don rsquo work
+different machine xterm bind work machine set current machine set enter machine result
+cause issue help great
+replace exist derive serde
+derive goal new proc macro allow
+error friendly deserialization alacritty configuration
+file have manage lot boilerplate code inside
+configuration module
+derive macro struct deserialization
+take struct implement replace
+field successfully deserialized crate
+use printing error deserialization take
+default value struct instead value remove
+necessity create new type just implement
+additionally struct deserialization check value
+make sure explicitly specify text literal
+allow option
+derive macro responsible deserializing
+enums enums unit variant support
+automatically implement deserializer enums accept
+form capitalization
+custom derive prevent use serde rsquo attribute
+field attribute reimplemented
+flatten attribute
+currently limit struct
+additionally attribute
+allow easily define uniform deprecation message field
+just create issue case run googling wasn rsquo help personally
+os linux
+linux bsd kde plasma
+do get following error
+google result telling make sure install reinstall libfontconfig amp libfontconfig dev do dice
+problem find return exit code
+fix install apt file
+finally provide path install command like
+hope help experience
+hey folk rsquo be get error try install
+os ubuntu kubuntu linux
+linux bsd kde plasma
+regular install
+try set install
+rsquo aware issue close let know rsquo specific
+os arch linux
+version alacritty cbf
+kde kwin
+use subpixel rendering transparent window rendering use opaque background color instead transparent background color result ugly artifact background don rsquo match background color
+following screenshots take completely transparent background black background color alternatively black white background scale dimension gimp
+effect especially pronounce text closely match background color example screenshot take white background opacity kde rsquo blur option
+start alacritty second screen font size small do happen main screen screen resolution work great alacritty
+weird hellip window main screen hellip suddenly change normal reverse thing happen bring alacritty window secondary screen hellip resize small font
+use arch linux kde plasma khronkite
+alacritty cbf
+adapt original pr avoid merge conflict
+add basic parallelization use rayon suggest chris document code sure test pass
+terminal run zsh alacritty working properly showing application working fine
+rsquo have change use replace working
+os manjaro gnome
+version cbf
+bug report following information help speed process bug expect happen instead
+os linux
+linux xmonad
+crash stderr stdout
+font terminal size oserror ldquo eglinitialize fail rdquo oserror rdquo glx extension rdquo
+live shader reload generally unused unmaintained
+use debug purpose refer relative path
+feature remove sake simplicity
+prevent miss glyph symbol zerowidth character
+obscure normal glyph
+os linux
+version alacritty cbf
+linux bsd wm picom
+basically use ssh connect server do connect crash press backspace give space color work rsquo black white run say just close sure ssh problem alacritty problem work correctly urxvt issue don rsquo people complain
+image library change rgba rgba
+hope little helpful
+background opacity strange behaviour doesnt make background transperent make background dark
+os linux manjaro
+version alacritty cbf
+linux bsd kde
+os ubuntu
+need lxcb shape lxcb xfixes available pkgs rsquo do know
+add ldquo libxcb composite dev rdquo requirement building alacritty ubuntu
+pkg provide lxcb require installation sort error
+bug report following information help speed process bug expect happen instead
+os macos big sur just update minute ago
+version alacritty cbf
+right big sur update alacritty rsquo terminfo work macos open alacritty
+line output artifact like double letter miss color stuff usually terminal define alacritty return normal program like warn message
+do return error show normal output rsquo be sure report zsh rsquo github tmux mac forum decide ask
+fix rpmbuild fedora gt use upstream ncurses terminfo add alacritty instead compile tic prevent file conflict
+add run time dependency freetype fontconfig libxcb fix issue directory remain package removal
+arguably copr rpmspec remove fedora package alacritty don rsquo really reason carry copr rpmspec package break wayland rsquo decide
+alt produce pipe instead begin line
+alt produce dollar sign instead end word
+maybe rsquo case keybindings rsquo be dumb aware rsquo figure alacritty yml work fine terminal environment
+os macos
+alacritty cbf
+alacritty officially package fedora long
+necessary provide official repository
+refer man page
+bug report following information help speed process bug expect happen instead
+os macos big sur
+version alacritty cbf
+info alacritty welcome alacritty
+info alacritty configuration file load
+info alacritty ldquo user moritzschaub config alacritty alacritty yml rdquo
+debug alacritty estimate dpr
+debug alacritty estimate window size
+debug alacritty estimate cell size
+info alacritty device pixel ratio
+info alacritty initialize glyph cache hellip
+info alacritty hellip finish initialize glyph cache
+info alacritty cell size
+info alacritty pad
+info alacritty width height
+info alacritty pty dimension line column
+info alacritty initialisation complete
+debug alacritty terminal new num col num line
+info alacritty pad
+info alacritty width height
+info alacritty goodbye
+press ctrl act enter way disable behavior
+terminal emulator work fine test iterm default mac os terminal
+bite annoy ctrl keybinding nerd tree vim
+notice hold ctrl long kinda work
+alacritty provide ctrl ctrl ctrl change font size fly
+program terminal dimension account don rsquo new terminal size account change font size way
+run notice use do lead alacritty recalculate normally
+behavior bug design
+os linux picom
+version alacritty cbf
+new ability import configuration file great solve lot problem unfortunately do entirely work describe repo configuration file
+ldquo toml
+import absolute path start path relative
+user rsquo home directory start
+path alacritty yml
+exo open ndash working directory ldquo pwd rdquo ndash launch terminalemulator
+error alacritty config unable import config ldquo config alacritty theme yml rdquo unable locate config file
+error alacritty unable canonicalize config path ldquo config alacritty theme yml rdquo file directory os error
+os linux picom
+version alacritty cbf
+hello rsquo be linux
+assume font configuration isn rsquo quite work problem start change time
+change font get black screen decide change monospace
+gain ability output neofetch
+suppose change font
+believe issue cause alacritty terminfo file add ncurses base conflict exist file copr pschyska alacritty package file previously ncurses term
+remove terminfo file reference rpm spec file
+currently alacritty late master doesn rsquo compile apple silicon ticket attempt collect issue solution track ticket
+os macos aarch
+version master
+issue resolve
+building sure build rsquo arm application switch intel toolchains make run build command fail work vanilla iterm
+upgrade unreleased new version winit track ticket patch make work locally
+fix build error coming late version break change
+apply patch detail build late crate match locally end look like
+fix build apple silicon
+arm app problem run build command anymore
+verify apply have fa
+integrate automatic download amp distribution mechanism like https github com autopkg autopkg rsquo helpful able verify app rsquo code signature ensure hasn rsquo tamper apple dev code signature isn rsquo necessary purpose just look check
+os macos
+linux bsd
+im use command produce intensive output progress like
+cpu usage process inside tmux urxvt gnome terminal cold display tmux session
+os linux nixos
+linux bsd gnome
+os linux
+linux bsd picom bspwm
+currently able pad option leaf unsightly border side terminal
+rsquo be propose add option stretch terminal content fit alacritty window
+pad small comparison window size distortion shouldn rsquo issue regular size
+make sure document user facing change
+support new escape sequence add document
+rsquo version track release make sure
+version bump accord semver necessary
+draft prs welcome unless request prs
+review require optional ci step successful
+left draft stage
+make sure document user facing change
+support new escape sequence add document
+rsquo version track release make sure
+version bump accord semver necessary
+draft prs welcome unless request prs
+review require optional ci step successful
+left draft stage
+os arch linux
+linux bsd kwin kde
+effectively move alacritty monitor monitor vice versa place alacritty rsquo window monitor specific location alacritty continually try resize go ldquo small rdquo ldquo large rdquo ldquo small rdquo cpu usage increase happen furthermore leave alacritty perpetually resize like create memory leak just wait time alacritty use ram probably make use ram machine wait long second alacritty allocate be ram state alacritty probably perpetually resize monitor
+add new action non vi mode
+extend selection line
+extend selection line
+select line selection cursor selection
+select line selection cursor selection
+main problem pr solve copy example code git push
+yes currently vi mode easy use mouse want avoid
+idea default shortcut
+want ctrl alt ctrl alt shift didn rsquo work unfortunately
+expose crate
+alacritty src event processor
+reason use terminal impliment event loop want develop gui alacritty develop event loop simillar processor really necessery just want window id graphic context alacritty work way interact terminal pty module
+maybe rsquo be approach wrong way
+create alacritty terminal pty want integrate gui do thing
+view main alacritty impliments high level event loop isn rsquo useable alacritty terminal
+use alacritty macos linux able share config exception font size macos use roughly equivalent arch monitor share kvm switch
+understand alacritty reference fontconfig rsquo text rendering linux ignore dpi scale parameter testing able effect scale attempt change dpi pixelsize parameter custom fontconfig lsquo font conf have effect try restart alacritty fully exit restart window manager
+ideally rsquo have like tweak fontconfig potentially alacritty render point pixel roughly macos
+os arch linux
+version alacritty cbf
+attach alacritty yml font conf file font conf file try different value
+alacritty font scale linux issue zip
+os fedora linux
+version alacritty
+linux bsd gnome
+package architecture version repository size
+alacritty fc copr copr fedorainfracloud org pschyska alacritty be
+transaction summary
+upgrade package
+total download size be
+download package
+alacritty fc rpm mb
+run transaction check
+transaction check succeed
+run transaction test
+download package save cache successful transaction
+remove cache package execute lsquo dnf clean package rsquo
+error transaction test error
+file usr share terminfo alacritty install alacritty fc conflict file package ncurses base fc noarch
+update alacritty compatible late version
+winit parallel pull glutin
+https github com rust window glutin pull
+course dependency change win rsquo rsquo be
+include case want build
+be meantime
+make sure document user facing change
+support new escape sequence add document
+rsquo version track release make sure
+version bump accord semver necessary
+draft prs welcome unless request prs
+review require optional ci step successful
+left draft stage
+use term xterm explicitly set unable change window title use standard escape code feature important rsquo be new alacritty rsquo be sure tweak need work feature actually break late release don rsquo see obvious open issue
+os linux ubuntu
+linux bsd gnome
+window pty
+like list color change bite lead
+index color transform dim color correctly
+prevent happen future dim color
+range perform offset
+dim color
+work long dim color add correct
+use powerlevel zsh theme prompt style select use special symbol alacritty doesn rsquo display correct one try konsole vte do display correct symbol screenshots
+alacritty show ldquo dot rdquo block
+konsole show color block
+rsquo be currently use nerd font
+try build alacritty go good need compile say ldquo building frasl alacritty bin rdquo doesn rsquo past way install alacritty ubuntu
+os linux
+version unable version alacritty isn rsquo install
+linux bsd wm
+crash sure mean
+font terminal size rsquo install alacritty
+keyboard binding rsquo install alacritty
+right click insert command dosn rsquo work
+right click alacritty menu showing
+os manjaro bite
+version alacritty cbf
+set font offset value create break line
+set glyph offset do solve issue
+os linux bsd macos window
+version alacritty cbf
+linux bsd awesome
+rsquo have play cava visualizer alacritty use color box drawing character combine font offset gt bar draw noncontiguous behavior do occur terminal like urxvt rsquo have detail issue cava repo wonder intend behavior maybe override specific character
+os linux
+version cbf
+linux bsd picom
+os linux ubuntu
+version install
+linux bsd kde plasma
+error alacritty config problem config unknown variant expect
+ignore bind
+following entry key binding alacritty config
+warn log go away delete key bind deprecate
+os linux
+linux bsd picom wm
+map ctrl shift tab terminal program rsquo be use kitty work alacritty don rsquo
+read escape character keyboard mapping wiki page wasn rsquo clear hexadecimal unicode character want believe rsquo assume known user lack knowledge
+create keybinding send control run press follong code following forward detele
+ldquo yml
+key semicolon mod control char ldquo

@@ -1,0 +1,5 @@
+platform *=* 0.439445
+opengl *=* 0.439445
+terminal *=* 0.219722
+emulator *=* 0.439445
+cross *=* 0.439445

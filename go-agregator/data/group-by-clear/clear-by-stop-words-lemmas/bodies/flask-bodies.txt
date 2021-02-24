@@ -1,0 +1,143 @@
+python wrapper code flask route function flask route function quit unexpectedly wrapper normal python script go condition flask route function quit automatically
+http flask pocoo org doc deploy mod wsgi
+run issue following guide configure current working flask app apache easy discover cause following tip given
+problem application run access file
+wsgi application path use absolute path name app work fine use relative path simple python serving method work wsgi
+essentially clone do
+intention registration static route register instead right request feature mention issue
+possibility pass make possible modify reason rsquo pass desire actually reasonable beforefirstrequest context
+nice accept default environ dictionary stop do hack like
+pass way args test py
+rsquo be currently testing feature knitori ae have ca ac ed require registration static url method register method use knitori bc ed ee ba have ab bd
+work pretty normal application fail test realize register function actually call test client fix locally add right return statement
+rsquo be wonder rationale calling register function just case rsquo actually require
+realize doesn rsquo work request static url return requestcontext create static route register probably need like like maybe call inside
+rsquo be sorry turn completely different issue
+gt http flask pocoo org doc pattern distribute
+distribute go way norwegian blue dead link http python distribute org distribute setup py clean
+flask documentation use uwsgi nginx incorrect uwsgi doc say http uwsgi doc readthedocs org en late nginx html host multiple app process aka manage script path info ldquo ancient uwsgi version use support call uwsgi modifier approach really ugly hack rdquo documentation update talk option instead
+drop maybe clear
+doc string incomplete
+minor inconsistency doc
+flask documentation pdf miss
+read documentation download pdf zip html
+link http flask pocoo org doc flask doc pdf http flask pocoo org doc flask doc zip
+use plugin flask restful
+app py annotation
+def process response self response
+ctx request ctx stack
+bp ctx request blueprint
+funcs ctx request function
+bp bp self request funcs
+funcs chain funcs reverse self request funcs bp
+self request funcs
+funcs chain funcs reverse self request funcs
+handler funcs loop excuted twice
+response handler response
+self session interface null session ctx session
+self savesession ctx session response
+return response
+local variable lc properly configure python
+use ascii default encode fine flask work properly
+configuration file come non ascii caractere
+unicodedecodeerror exception raise soon read
+try decode byte stream
+encode file use force use binary mode
+expect behavior accept set flask application object
+middleware provide werkzeug use header
+return accurate value request secure request scheme
+add header flask win rsquo properly detect
+serve https fail generate proper external link
+cause certain extension flask oauthlib function improperly
+add header example setup reduce issue encounter
+developer following guide
+credit tend information need blog post david cramer
+rsquo be working parameterize url
+send token contain ldquo rdquo url encode form ldquo rdquo test client run app work fine
+rsquo be use flask minimal test example look like following
+consistent usage readme
+want able extend session serializer class duplicate code object hook tag function
+add detail explanation request context app
+context interact
+replace use importlib type moduletype
+close gh
+sure make test need monkeypatch stdlib test run rsquo be sure
+module deprected use place create module
+easy replace guess
+discover rsquo be run project change warn error fail reach lib rsquo be try warn coming
+rsquo will try send pr fix
+idea far long add short sentence right listing build converter long way make clear think stumble excellent explanation doesn rsquo really indicate learn custom converter
+ldquo ommited rdquo ldquo omit rdquo
+don rsquo want spam builtin command namespace django lot builtin command work pretty command implement start use flask collegues do
+show endpoint register app route order rule endpoint method
+wip do write test do try
+like feedback work detail
+do know desire behavior send request like
+gt content type application json
+gt content length
+access raise lsquo decode rsquo error
+imho good just return
+working flask dev
+cat template html
+url lsquo url rsquo key lsquo val rsquo key lsquo val rsquo
+flask import flask render template
+app flask
+app route lsquo url rsquo
+def url pass
+print render template rsquo html rsquo
+url key val amp key val
+flask import flask
+flask import jsonify
+flask json import jsonencoder
+class myencoder jsonencoder
+def default self obj
+hasattr obj lsquo json rsquo
+iterable iter obj
+return list iterable
+return jsonencoder default self obj
+class myclass object
+key lsquo rsquo
+value lsquo rsquo
+def json self
+return lsquo key rsquo self key lsquo value rsquo self value
+app flask
+app json encoder myencoder
+app route lsquo rsquo
+def hello world
+return jsonify myclass
+lsquo main rsquo
+app run debug true
+session json serializer register type lsquo md rsquo multidict
+import flask
+app run
+pdb test py
+gt import flask
+pdb cont
+traceback recent
+file ldquo usr lib python importlib util py rdquo line spec
+spec module spec
+attributeerror lsquo module rsquo object attribute lsquo spec rsquo
+handling exception exception occur
+traceback recent
+file ldquo usr lib python pkgutil py rdquo line loader
+file ldquo usr lib python importlib util py rdquo line spec
+raise valueerror lsquo spec set rsquo format
+valueerror main spec set
+exception direct cause following exception
+traceback recent
+file ldquo usr lib python pdb py rdquo line main
+file ldquo usr lib python pdb py rdquo line runscript
+file ldquo usr lib python bdb py rdquo line run
+exec cmd globals local
+file ldquo rdquo line
+file ldquo home tkcook scratch python test py rdquo line
+import flask
+file ldquo usr lib python dist package flask app py rdquo line init
+file ldquo usr lib python dist package flask app py rdquo line auto instance path
+prefix package path package self import
+file ldquo usr lib python dist package flask helper py rdquo line package
+file ldquo usr lib python pkgutil py rdquo line loader
+return loader fullname
+file ldquo usr lib python pkgutil py rdquo line loader
+raise importerror msg format fullname type ex ex ex
+importerror error find loader lsquo main rsquo

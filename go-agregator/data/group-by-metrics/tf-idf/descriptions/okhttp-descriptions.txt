@@ -1,0 +1,7 @@
+android *=* 0.313889
+client *=* 0.313889
+meticulous *=* 0.313889
+http *=* 0.214868
+jvm *=* 0.313889
+graalvm *=* 0.313889
+square *=* 0.313889

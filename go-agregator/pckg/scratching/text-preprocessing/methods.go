@@ -228,6 +228,7 @@ func LemmingProcessor(words, result *[]string, calcFrequency bool) (frequency *m
 	}
 	for i := 0; i < len(*words); i++ {
 		(*result)[i] = lem.Lemma((*words)[i])
+
 		if calcFrequency {
 			if _, isExist := (*frequency)[(*result)[i]]; isExist {
 				(*frequency)[(*result)[i]]++
