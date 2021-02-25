@@ -35,7 +35,7 @@ var (
 )
 
 func main() {
-	scanner := bufio.NewScanner(os.Stdin)
+
 	runtime.GOMAXPROCS(runtime.NumCPU())
 	e := en.New()
 	lemmatizer, _ := golem.New(e)
@@ -125,6 +125,7 @@ func main() {
 	//cosineDistance(repositoriesFiles, "descriptions", "result")
 
 	fmt.Println("Final...")
+	scanner := bufio.NewScanner(os.Stdin)
 	for scanner.Scan() {
 		fmt.Println(scanner.Text())
 		if scanner.Text() == "end" {
