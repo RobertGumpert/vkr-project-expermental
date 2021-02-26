@@ -29,6 +29,15 @@ func NewGET(url string, headers map[string]string) (*http.Response, error){
 	return req("GET", client, url, headers, nil)
 }
 
+func POST(client *http.Client, url string, headers map[string]string, body interface{}) (*http.Response, error) {
+	return req("POST", client, url, headers, body)
+}
+
+func NewPOST(url string, headers map[string]string, body interface{}) (*http.Response, error){
+	client := new(http.Client)
+	return req("POST", client, url, headers, body)
+}
+
 func req(met string, client *http.Client, url string, headers map[string]string, body interface{}) (*http.Response, error) {
 	var (
 		req              *http.Request
