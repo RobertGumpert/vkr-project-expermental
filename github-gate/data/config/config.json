@@ -1,0 +1,7 @@
+{
+  "port": "54000",
+  "count_task" : 1000000,
+  "github_collectors_addresses": [
+    "http://127.0.0.1:54100"
+  ]
+}

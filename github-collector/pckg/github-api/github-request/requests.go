@@ -10,6 +10,22 @@ import (
 	"time"
 )
 
+type LevelAPI uint64
+
+const (
+	CORE                LevelAPI = 0
+	SEARCH              LevelAPI = 1
+	maxCoreRequests     uint64   = 5000
+	maxSearchRequests   uint64   = 30
+	limitNumberAttempts int      = 5
+	authURL                      = "https://api.github.com/user"
+	rateLimitURL                 = "https://api.github.com/rate_limit"
+)
+
+//
+//----------------------------------------------------------------------------------------------------------------------
+//
+
 type Response struct {
 	TaskKey  string
 	URL      string
@@ -24,23 +40,24 @@ type Request struct {
 	numberSpentAttempts int
 }
 
+//
+//----------------------------------------------------------------------------------------------------------------------
+//
+
 func (c *GithubClient) request(request Request, api LevelAPI) (response *http.Response, repeat bool, reset int64, err error) {
-	repeat = false
-	reset = int64(0)
 	if request.URL == "" {
-		return nil, repeat, reset, errors.New("URL is empty. ")
+		return nil, false, int64(0), errors.New("URL is empty. ")
 	}
 	response, err = requests.GET(c.client, request.URL, c.addAuthHeader(request.Header))
 	if err != nil {
-		return nil, repeat, reset, err
+		return nil, false, int64(0), err
 	}
-	time.Sleep(2 * time.Second)
 	runtimeinfo.LogInfo("Request on {", request.URL, "} with status code {", response.StatusCode, "}")
 	if response.StatusCode != 200 {
 		if response.StatusCode == 422 || response.StatusCode == 403 {
 			rate, err := c.getRateLimit()
 			if err != nil {
-				return nil, repeat, reset, err
+				return nil, false, int64(0), err
 			}
 			switch api {
 			case CORE:
@@ -48,13 +65,13 @@ func (c *GithubClient) request(request Request, api LevelAPI) (response *http.Re
 			case SEARCH:
 				reset = rate.Resources.Search.Reset
 			}
-			repeat = true
-			return nil, repeat, reset, nil
+			return nil, true, reset, nil
 		} else {
-			return nil, repeat, reset, errors.New("Status code: " + request.URL + " = " + strconv.Itoa(response.StatusCode))
+			return nil, false, int64(0), errors.New("Status code: " + request.URL + " = " + strconv.Itoa(response.StatusCode))
 		}
 	}
-	return response, repeat, reset, nil
+	time.Sleep(2 * time.Second)
+	return response, false, int64(0), nil
 }
 
 func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) {
@@ -71,10 +88,7 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 		if numberSpentAttempts == limitNumberAttempts {
 			err := errors.New("Number of attempts limit reached. ")
 			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-			responseChannel <- &Response{
-				Response: nil,
-				Err:      err,
-			}
+			responseChannel <- newResponse(request.TaskKey, request.URL, nil, err)
 			c.channelTasks <- true
 			c.executeTask = 0
 			return
@@ -82,10 +96,7 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 		response, limitReached, resetTimeStamp, err = c.request(request, api)
 		if err != nil {
 			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-			responseChannel <- &Response{
-				Response: nil,
-				Err:      err,
-			}
+			responseChannel <- newResponse(request.TaskKey, request.URL, nil, err)
 			c.channelTasks <- true
 			c.executeTask = 0
 			return
@@ -100,10 +111,7 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 			break
 		}
 	}
-	responseChannel <- &Response{
-		Response: response,
-		Err:      nil,
-	}
+	responseChannel <- newResponse(request.TaskKey, request.URL, response, nil)
 	c.channelTasks <- true
 	c.executeTask = 0
 	runtimeinfo.LogInfo("TASK FINISH............................................................................")
@@ -120,7 +128,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, respo
 		buffer              = cmap.New()
 	)
 	//
-	var write = func(res *Response) {
+	var writeResponseToMap = func(res *Response) {
 		if writeDefer == true {
 			deferResponses[res.URL] = res
 		}
@@ -134,14 +142,13 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, respo
 	for _, request := range requests {
 		buffer.Set(request.URL, request)
 	}
+	//
 	for {
 		if numberSpentAttempts == limitNumberAttempts {
 			for item := range buffer.IterBuffered() {
-				write(&Response{
-					URL:      item.Val.(Request).URL,
-					Response: nil,
-					Err:      errors.New("Number of attempts limit reached. "),
-				})
+				err := errors.New("Number of attempts limit reached. ")
+				runtimeinfo.LogError("url: {", item.Val.(Request).URL, "} err: {", err, "} ")
+				writeResponseToMap(newResponse(item.Val.(Request).TaskKey, item.Val.(Request).URL, nil, err))
 			}
 			break
 		}
@@ -151,11 +158,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, respo
 				response, limitReached, resetTimeStamp, err := c.request(request, api)
 				if err != nil {
 					runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-					write(&Response{
-						URL:      request.URL,
-						Response: nil,
-						Err:      err,
-					})
+					writeResponseToMap(newResponse(request.TaskKey, request.URL, nil, err))
 					continue
 				}
 				if limitReached {
@@ -169,11 +172,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, respo
 					continue
 				}
 				if response != nil {
-					write(&Response{
-						URL:      request.URL,
-						Response: response,
-						Err:      nil,
-					})
+					writeResponseToMap(newResponse(request.TaskKey, request.URL, response, nil))
 				}
 			}
 		} else {
@@ -188,4 +187,13 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, respo
 	c.channelTasks <- true
 	c.executeTask = 0
 	runtimeinfo.LogInfo("TASK FINISH............................................................................")
+}
+
+func newResponse(taskKey, url string, response *http.Response, err error) *Response {
+	return &Response{
+		TaskKey:  taskKey,
+		URL:      url,
+		Response: response,
+		Err:      err,
+	}
 }

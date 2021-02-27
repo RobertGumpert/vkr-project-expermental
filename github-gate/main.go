@@ -1,9 +1,15 @@
 package main
 
-import(
-	"github.com/gin-gonic/gin"
+var(
+	CONFIG *config
+	SERVER *server
+	APP *appService
 )
 
-func main() {
 
+func main() {
+	CONFIG = NewConfig().Read()
+	APP = NewAppService(CONFIG)
+	SERVER = NewServer(CONFIG, APP)
+	SERVER.RunServer()
 }

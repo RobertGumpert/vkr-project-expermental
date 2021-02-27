@@ -1,17 +1,42 @@
 package main
 
-type JSONExecutionTaskStatus struct {
+type UpdateTaskStateExecutionStatus struct {
 	TaskKey       string `json:"task_key"`
-	TaskCompleted bool   `json:"execution_status"`
+	TaskCompleted bool   `json:"task_completed"`
 }
 
-type JSONRepository struct {
-	URL    string   `json:"url"`
-	Topics []string `json:"topics"`
-	About  string   `json:"about"`
+//
+//--------------TASK GET REPOSITORIES BY URLS---------------------------------------------------------------------------
+//
+
+type UpdateTaskStateRepository struct {
+	URL         string   `json:"url"`
+	Topics      []string `json:"topics"`
+	Description string   `json:"description"`
+	//
+	Err error `json:"err"`
 }
 
-type JSONSendReposByURLS struct {
-	ExecutionTaskStatus JSONExecutionTaskStatus `json:"execution_task_status"`
-	Repositories        []JSONRepository        `json:"repositories"`
+type UpdateTaskStateReposByURLS struct {
+	ExecutionTaskStatus UpdateTaskStateExecutionStatus `json:"execution_task_status"`
+	Repositories        []UpdateTaskStateRepository    `json:"repositories"`
+}
+
+//
+//--------------TASK GET REPOSITORY ISSUE-------------------------------------------------------------------------------
+//
+
+type UpdateTaskStateIssue struct {
+	Number int    `json:"number"`
+	URL    string `json:"url"`
+	Title  string `json:"title"`
+	State  bool   `json:"state"`
+	Body   string `json:"body"`
+	//
+	Err error `json:"err"`
+}
+
+type UpdateTaskStateRepositoryIssues struct {
+	ExecutionTaskStatus UpdateTaskStateExecutionStatus `json:"execution_task_status"`
+	Issues              []UpdateTaskStateIssue         `json:"issues"`
 }

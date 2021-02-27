@@ -6,26 +6,47 @@ import (
 	"strings"
 )
 
-type LevelAPI uint64
-
-const (
-	CORE                LevelAPI = 0
-	SEARCH              LevelAPI = 1
-	maxCoreRequests     uint64   = 5000
-	maxSearchRequests   uint64   = 30
-	limitNumberAttempts int      = 5
-	authURL                      = "https://api.github.com/user"
-	rateLimitURL                 = "https://api.github.com/rate_limit"
-)
-
-//
-//----------------------------------------------------------------------------------------------------------------------
-//
-
+// Сигнализирует о том, что необходимо запустить задачу (Task),
+// не дожидаясь итератора задач (c *GithubClient) nextTask().
 type NoWait bool
-type Event func()
-type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (Event, NoWait)
-type TaskGroupRequests func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (Event, NoWait)
+
+// Функция, которая запускает задачу (Task),
+// в теле которой, выполняется запуск уже настроенной задачи.
+type RunTask func()
+
+// Функция, которая настраивает задачу
+// выполнения одного запроса к GitHub.
+// Возвращает функцию запуска задачи - RunTask,
+// которую необходимо запускать если значение NoWait = true.
+//
+// Аргументами TaskOneRequest являются параметры запроса:
+// 	* request Request 		  		 - содержит URL и HEADER запроса.
+// 	* api LevelAPI 					 - уровень API GitHub (Core, Search).
+// 	* signalChannel chan bool 		 - канал для передачи сообщения,
+// 									   о том что Rate Limit достигнут
+// 									   и не следует ждать завершения задачи,
+// 									   так как она завершится позже и результат будет
+// 									   записан в responseChannel chan *Response.
+// 	* responseChannel chan *Response - канал передачи ответа от API GitHub.
+type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (RunTask, NoWait, int)
+
+// Функция, которая настраивает задачу
+// выполнения группы запросов к GitHub.
+// Возвращает функцию запуска задачи - RunTask,
+// которую необходимо запускать если значение NoWait = true.
+//
+// Аргументами TaskGroupRequests являются параметры запроса:
+// 	* request Request 		  		                  - содержит URL и HEADER запроса.
+// 	* api LevelAPI 					                  - уровень API GitHub (Core, Search).
+// 	* responsesChannel chan map[string]*Response 	  - канал передачи ответов от API GitHub,
+// 														передаются ответы на уже выполненые запросы,
+// 														без достижения Rate Limit.
+// 	* deferResponsesChannel chan map[string]*Response - канал передачи ответов от API GitHub,
+//														передаются ответы на уже выполненые запросы,
+//														до момента достижения Rate Limit,
+//														а отсальные ответы будут переданы позже,
+// 									   					соответсвенно не следует ждать завершения задачи.
+type TaskGroupRequests func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (RunTask, NoWait, int)
 
 type GithubClient struct {
 	client              *http.Client
@@ -37,8 +58,8 @@ type GithubClient struct {
 	executeTask  int
 	channelTasks chan bool
 	//
-	tasksToOneRequest    []Event
-	tasksToGroupRequests []Event
+	tasksToOneRequest    []RunTask
+	tasksToGroupRequests []RunTask
 }
 
 func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
@@ -50,8 +71,8 @@ func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
 	c.executeTask = 0
 	c.channelTasks = make(chan bool, maxCountTasks)
 	//
-	c.tasksToGroupRequests = make([]Event, 0)
-	c.tasksToOneRequest = make([]Event, 0)
+	c.tasksToGroupRequests = make([]RunTask, 0)
+	c.tasksToOneRequest = make([]RunTask, 0)
 	//
 	if token != "" {
 		token = strings.Join([]string{
@@ -88,46 +109,100 @@ func (c *GithubClient) nextTask() {
 	}
 }
 
-func (c *GithubClient) AddOneRequest() (TaskOneRequest, error) {
-	if len(c.tasksToOneRequest) == c.maxCountTasks {
-		return nil, errors.New("Limit on the number of tasks has been reached. ")
-	}
+func (c *GithubClient) GetState() error {
 	all := len(c.tasksToOneRequest) + len(c.tasksToGroupRequests)
 	if all == c.maxCountTasks {
-		return nil, errors.New("Limit on the number of tasks has been reached. ")
+		return errors.New("Limit on the number of tasks has been reached. ")
 	}
-	return func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (Event, NoWait) {
-		var task = func() {
+	return nil
+}
+
+// Для создания новой задачи на выполнение одного запроса
+// к GitHub, необходимо сначала проверить состояние очереди:
+// 	* если она переполнена возвращается ошибка.
+// 	* если место в очереди есть, возвращай функцию
+// 	  настройки запроса к GitHub (TaskOneRequest).
+//
+// Аргументами TaskOneRequest являются параметры запроса:
+// 	* request Request 		  		 - содержит URL и HEADER запроса.
+// 	* api LevelAPI 					 - уровень API GitHub (Core, Search).
+// 	* signalChannel chan bool 		 - канал для передачи сообщения,
+// 									   о том что Rate Limit достигнут
+// 									   и не следует ждать завершения задачи,
+// 									   так как она завершится позже и результат будет
+// 									   записан в responseChannel chan *Response.
+// 	* responseChannel chan *Response - канал передачи ответа от API GitHub.
+//
+//
+func (c *GithubClient) AddOneRequest(reserved bool) (TaskOneRequest, error) {
+	if !reserved {
+		if len(c.tasksToOneRequest) == c.maxCountTasks {
+			return nil, errors.New("Limit on the number of tasks has been reached. ")
+		}
+		all := len(c.tasksToOneRequest) + len(c.tasksToGroupRequests)
+		if all == c.maxCountTasks {
+			return nil, errors.New("Limit on the number of tasks has been reached. ")
+		}
+	}
+	return func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (RunTask, NoWait, int) {
+		var runTask = func() {
 			c.taskOneRequest(request, api, signalChannel, responseChannel)
 		}
 		if c.executeTask == 0 {
-			return task, true
+			return runTask, true, 0
 		}
 		if len(c.tasksToOneRequest) != 0 || c.executeTask == 1 {
-			c.tasksToOneRequest = append(c.tasksToOneRequest, task)
+			c.tasksToOneRequest = append(c.tasksToOneRequest, runTask)
 		}
-		return task, false
+		return runTask, false, len(c.tasksToOneRequest) - 1
 	}, nil
 }
 
-func (c *GithubClient) AddGroupRequests() (TaskGroupRequests, error) {
-	if len(c.tasksToGroupRequests) == c.maxCountTasks {
-		return nil, errors.New("Limit on the number of tasks has been reached. ")
+func (c *GithubClient) DropReservedOneRequestTask(index int) {
+	c.tasksToOneRequest = append(c.tasksToOneRequest[:index], c.tasksToOneRequest[index+1:]...)
+}
+
+// Для создания новой задачи на выполнение группы запросов
+// к GitHub, необходимо сначала проверить состояние очереди:
+// 	* если она переполнена возвращается ошибка.
+// 	* если место в очереди есть, возвращай функцию
+// 	  настройки запроса к GitHub (TaskGroupRequests).
+//
+// Аргументами TaskGroupRequests являются параметры запроса:
+// 	* request Request 		  		                  - содержит URL и HEADER запроса.
+// 	* api LevelAPI 					                  - уровень API GitHub (Core, Search).
+// 	* responsesChannel chan map[string]*Response 	  - канал передачи ответов от API GitHub,
+// 														передаются ответы на уже выполненые запросы,
+// 														без достижения Rate Limit.
+// 	* deferResponsesChannel chan map[string]*Response - канал передачи ответов от API GitHub,
+//														передаются ответы на уже выполненые запросы,
+//														до момента достижения Rate Limit,
+//														а отсальные ответы будут переданы позже,
+// 									   					соответсвенно не следует ждать завершения задачи.
+func (c *GithubClient) AddGroupRequests(reserved bool) (TaskGroupRequests, error) {
+	if !reserved {
+		if len(c.tasksToGroupRequests) == c.maxCountTasks {
+			return nil, errors.New("Limit on the number of tasks has been reached. ")
+		}
+		all := len(c.tasksToOneRequest) + len(c.tasksToGroupRequests)
+		if all == c.maxCountTasks {
+			return nil, errors.New("Limit on the number of tasks has been reached. ")
+		}
 	}
-	all := len(c.tasksToOneRequest) + len(c.tasksToGroupRequests)
-	if all == c.maxCountTasks {
-		return nil, errors.New("Limit on the number of tasks has been reached. ")
-	}
-	return func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (Event, NoWait) {
-		var task = func() {
+	return func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (RunTask, NoWait, int) {
+		var runTask = func() {
 			c.taskGroupRequests(requests, api, responsesChannel, deferResponsesChannel)
 		}
 		if c.executeTask == 0 {
-			return task, true
+			return runTask, true, 0
 		}
 		if len(c.tasksToGroupRequests) != 0 || c.executeTask == 1 {
-			c.tasksToGroupRequests = append(c.tasksToGroupRequests, task)
+			c.tasksToGroupRequests = append(c.tasksToGroupRequests, runTask)
 		}
-		return task, false
+		return runTask, false, len(c.tasksToGroupRequests) - 1
 	}, nil
+}
+
+func (c *GithubClient) DropReservedGroupRequestTask(index int) {
+	c.tasksToGroupRequests = append(c.tasksToGroupRequests[:index], c.tasksToGroupRequests[index+1:]...)
 }
