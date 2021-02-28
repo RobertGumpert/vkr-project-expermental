@@ -28,7 +28,7 @@ type RunTask func()
 // 									   так как она завершится позже и результат будет
 // 									   записан в responseChannel chan *Response.
 // 	* responseChannel chan *Response - канал передачи ответа от API GitHub.
-type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (RunTask, NoWait, int)
+type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int)
 
 // Функция, которая настраивает задачу
 // выполнения группы запросов к GitHub.
@@ -46,7 +46,7 @@ type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool,
 //														до момента достижения Rate Limit,
 //														а отсальные ответы будут переданы позже,
 // 									   					соответсвенно не следует ждать завершения задачи.
-type TaskGroupRequests func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (RunTask, NoWait, int)
+type TaskGroupRequests func(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int)
 
 type GithubClient struct {
 	client              *http.Client
@@ -55,8 +55,8 @@ type GithubClient struct {
 	WaitRateLimitsReset bool
 	maxCountTasks       int
 	//
-	executeTask  int
-	channelTasks chan bool
+	countNowExecuteTask         int
+	tasksCompetedMessageChannel chan bool
 	//
 	tasksToOneRequest    []RunTask
 	tasksToGroupRequests []RunTask
@@ -67,13 +67,10 @@ func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
 	c.client = new(http.Client)
 	c.WaitRateLimitsReset = false
 	c.maxCountTasks = maxCountTasks
-	//
-	c.executeTask = 0
-	c.channelTasks = make(chan bool, maxCountTasks)
-	//
+	c.countNowExecuteTask = 0
+	c.tasksCompetedMessageChannel = make(chan bool, maxCountTasks)
 	c.tasksToGroupRequests = make([]RunTask, 0)
 	c.tasksToOneRequest = make([]RunTask, 0)
-	//
 	if token != "" {
 		token = strings.Join([]string{
 			"token",
@@ -93,7 +90,7 @@ func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
 }
 
 func (c *GithubClient) nextTask() {
-	for range c.channelTasks {
+	for range c.tasksCompetedMessageChannel {
 		if len(c.tasksToOneRequest) != 0 {
 			task := c.tasksToOneRequest[0]
 			task()
@@ -109,12 +106,12 @@ func (c *GithubClient) nextTask() {
 	}
 }
 
-func (c *GithubClient) GetState() error {
+func (c *GithubClient) GetState() (error, int) {
 	all := len(c.tasksToOneRequest) + len(c.tasksToGroupRequests)
 	if all == c.maxCountTasks {
-		return errors.New("Limit on the number of tasks has been reached. ")
+		return errors.New("Limit on the number of tasks has been reached. "), all
 	}
-	return nil
+	return nil, all
 }
 
 // Для создания новой задачи на выполнение одного запроса
@@ -144,14 +141,14 @@ func (c *GithubClient) AddOneRequest(reserved bool) (TaskOneRequest, error) {
 			return nil, errors.New("Limit on the number of tasks has been reached. ")
 		}
 	}
-	return func(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) (RunTask, NoWait, int) {
+	return func(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int) {
 		var runTask = func() {
-			c.taskOneRequest(request, api, signalChannel, responseChannel)
+			c.taskOneRequest(request, api, signalChannel, taskStateChannel)
 		}
-		if c.executeTask == 0 {
+		if c.countNowExecuteTask == 0 {
 			return runTask, true, 0
 		}
-		if len(c.tasksToOneRequest) != 0 || c.executeTask == 1 {
+		if len(c.tasksToOneRequest) != 0 || c.countNowExecuteTask == 1 {
 			c.tasksToOneRequest = append(c.tasksToOneRequest, runTask)
 		}
 		return runTask, false, len(c.tasksToOneRequest) - 1
@@ -189,14 +186,14 @@ func (c *GithubClient) AddGroupRequests(reserved bool) (TaskGroupRequests, error
 			return nil, errors.New("Limit on the number of tasks has been reached. ")
 		}
 	}
-	return func(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) (RunTask, NoWait, int) {
+	return func(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int) {
 		var runTask = func() {
-			c.taskGroupRequests(requests, api, responsesChannel, deferResponsesChannel)
+			c.taskGroupRequests(requests, api, taskStateChannel, deferTaskStateChannel)
 		}
-		if c.executeTask == 0 {
+		if c.countNowExecuteTask == 0 {
 			return runTask, true, 0
 		}
-		if len(c.tasksToGroupRequests) != 0 || c.executeTask == 1 {
+		if len(c.tasksToGroupRequests) != 0 || c.countNowExecuteTask == 1 {
 			c.tasksToGroupRequests = append(c.tasksToGroupRequests, runTask)
 		}
 		return runTask, false, len(c.tasksToGroupRequests) - 1

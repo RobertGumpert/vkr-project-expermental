@@ -14,7 +14,7 @@ import (
 )
 
 type sendResponse func() error
-type configuratorResponse func(responses map[string]*githubRequest.Response, taskCompleted bool) sendResponse
+type configuratorResponse func(responses *githubRequest.TaskState, taskCompleted bool) sendResponse
 
 type appService struct {
 	config            *config
@@ -39,10 +39,9 @@ func NewAppService(config *config) *appService {
 
 func (a *appService) GetReposByURLS(taskKey string, urls []string) error {
 	var (
-		githubRequests = make([]githubRequest.Request, 0)
-		responsesChannel,
-		deferResponsesChannel = make(chan map[string]*githubRequest.Response),
-			make(chan map[string]*githubRequest.Response)
+		githubRequests        = make([]githubRequest.Request, 0)
+		taskStateChannel      = make(chan *githubRequest.TaskState)
+		deferTaskStateChannel = make(chan *githubRequest.TaskState)
 	)
 	for _, request := range urls {
 		githubRequests = append(githubRequests, githubRequest.Request{
@@ -57,18 +56,18 @@ func (a *appService) GetReposByURLS(taskKey string, urls []string) error {
 	if err != nil {
 		return err
 	}
-	runTask, noWait, _ := taskGroup(githubRequests, githubRequest.CORE, responsesChannel, deferResponsesChannel)
+	runTask, noWait, _ := taskGroup(githubRequests, githubRequest.CORE, taskStateChannel, deferTaskStateChannel)
 	if noWait {
-		go func(responsesChannel, deferResponsesChannel chan map[string]*githubRequest.Response, runTask githubRequest.RunTask) {
+		go func(responsesChannel, deferResponsesChannel chan *githubRequest.TaskState, runTask githubRequest.RunTask) {
 			go runTask()
-			a.waitTaskGroupRequests(responsesChannel, deferResponsesChannel, a.configuratorResponseGroupRequests)
+			a.waitTaskGroupRequests(responsesChannel, deferResponsesChannel, a.configuratorResponseRepositoriesByURL)
 			return
-		}(responsesChannel, deferResponsesChannel, runTask)
+		}(taskStateChannel, deferTaskStateChannel, runTask)
 	} else {
-		go func(responsesChannel, deferResponsesChannel chan map[string]*githubRequest.Response) {
-			a.waitTaskGroupRequests(responsesChannel, deferResponsesChannel, a.configuratorResponseGroupRequests)
+		go func(responsesChannel, deferResponsesChannel chan *githubRequest.TaskState) {
+			a.waitTaskGroupRequests(responsesChannel, deferResponsesChannel, a.configuratorResponseRepositoriesByURL)
 			return
-		}(responsesChannel, deferResponsesChannel)
+		}(taskStateChannel, deferTaskStateChannel)
 	}
 	return nil
 }
@@ -76,7 +75,7 @@ func (a *appService) GetReposByURLS(taskKey string, urls []string) error {
 func (a *appService) GetRepositoryIssues(taskKey string, url string) error {
 	var (
 		signalChannel         = make(chan bool)
-		getCountIssuesChannel = make(chan *githubRequest.Response)
+		getCountIssuesChannel = make(chan *githubRequest.TaskState)
 	)
 	taskGetCountIssues, err := a.GITHUBClient.AddOneRequest(false)
 	if err != nil {
@@ -91,8 +90,12 @@ func (a *appService) GetRepositoryIssues(taskKey string, url string) error {
 		URL:     url + "/issues?state=all",
 		Header:  nil,
 	}, githubRequest.CORE, signalChannel, getCountIssuesChannel)
+	go func(signalChannel chan bool) {
+		<-signalChannel
+		return
+	}(signalChannel)
 	if noWait {
-		go func(taskKey, url string, getCountIssuesChannel chan *githubRequest.Response, reservedTaskForIteratePages githubRequest.TaskGroupRequests) {
+		go func(taskKey, url string, getCountIssuesChannel chan *githubRequest.TaskState, reservedTaskForIteratePages githubRequest.TaskGroupRequests) {
 			go runTaskGetCountIssues()
 			a.iteratePagesIssues(
 				taskKey,
@@ -103,7 +106,7 @@ func (a *appService) GetRepositoryIssues(taskKey string, url string) error {
 			return
 		}(taskKey, url, getCountIssuesChannel, reservedTask)
 	} else {
-		go func(taskKey, url string, getCountIssuesChannel chan *githubRequest.Response, reservedTaskForIteratePages githubRequest.TaskGroupRequests) {
+		go func(taskKey, url string, getCountIssuesChannel chan *githubRequest.TaskState, reservedTaskForIteratePages githubRequest.TaskGroupRequests) {
 			a.iteratePagesIssues(
 				taskKey,
 				url,
@@ -122,15 +125,15 @@ func (a *appService) GetRepositoryIssues(taskKey string, url string) error {
 // итерирующуюся по всем страницам содержащим ISSUE.
 //
 //
-func (a *appService) iteratePagesIssues(taskKey, url string, countIssuesChannel chan *githubRequest.Response, reservedTask githubRequest.TaskGroupRequests) {
+func (a *appService) iteratePagesIssues(taskKey, url string, countIssuesChannel chan *githubRequest.TaskState, reservedTask githubRequest.TaskGroupRequests) {
 	response := <-countIssuesChannel
-	defer response.Response.Body.Close()
+	defer response.Responses[0].Response.Body.Close()
 	var (
-		responsesPagesChannel      = make(chan map[string]*githubRequest.Response)
-		deferResponsesPagesChannel = make(chan map[string]*githubRequest.Response)
+		responsesPagesChannel      = make(chan *githubRequest.TaskState)
+		deferResponsesPagesChannel = make(chan *githubRequest.TaskState)
 	)
 	viewModel := new(ViewModelIssuesList)
-	err := json.NewDecoder(response.Response.Body).Decode(viewModel)
+	err := json.NewDecoder(response.Responses[0].Response.Body).Decode(viewModel)
 	if err != nil {
 		runtimeinfo.LogError("non unmarshal list issues [", err, "]")
 		var sendResponse = func() error {
@@ -165,20 +168,20 @@ func (a *appService) iteratePagesIssues(taskKey, url string, countIssuesChannel 
 		deferResponsesPagesChannel,
 	)
 	if noWait {
-		go func(responsesPagesChannel, deferResponsesPagesChannel chan map[string]*githubRequest.Response, runTask githubRequest.RunTask) {
+		go func(responsesPagesChannel, deferResponsesPagesChannel chan *githubRequest.TaskState, runTask githubRequest.RunTask) {
 			go runTask()
 			a.waitTaskGroupRequests(responsesPagesChannel, deferResponsesPagesChannel, a.configuratorResponseRepositoryIssues)
 			return
 		}(responsesPagesChannel, deferResponsesPagesChannel, runTask)
 	} else {
-		go func(responsesPagesChannel, deferResponsesPagesChannel chan map[string]*githubRequest.Response) {
+		go func(responsesPagesChannel, deferResponsesPagesChannel chan *githubRequest.TaskState) {
 			a.waitTaskGroupRequests(responsesPagesChannel, deferResponsesPagesChannel, a.configuratorResponseRepositoryIssues)
 			return
 		}(responsesPagesChannel, deferResponsesPagesChannel)
 	}
 }
 
-func (a *appService) sendResponseTaskGroupRequests(responses map[string]*githubRequest.Response, getResponse configuratorResponse, taskCompleted bool) {
+func (a *appService) sendResponseTaskGroupRequests(responses *githubRequest.TaskState, getResponse configuratorResponse, taskCompleted bool) {
 	doResponse := getResponse(responses, taskCompleted)
 	if err := doResponse(); err != nil {
 		a.repeatedResponses = append(a.repeatedResponses, doResponse)
@@ -196,23 +199,34 @@ func (a *appService) sendResponseTaskGroupRequests(responses map[string]*githubR
 // Если RateLimit не был достигнут, то из канала responsesChannel
 // получает все выполненные запросы и отправляет их сервису github-gate.
 //
-func (a *appService) waitTaskGroupRequests(responsesChannel, deferResponsesChannel chan map[string]*githubRequest.Response, configuratorResponse configuratorResponse) {
+func (a *appService) waitTaskGroupRequests(taskStateChannel, deferTaskStateChannel chan *githubRequest.TaskState, configuratorResponse configuratorResponse) {
 	select {
-	case responses := <-deferResponsesChannel:
+	case responses := <-deferTaskStateChannel:
 		a.sendResponseTaskGroupRequests(responses, configuratorResponse, false)
-		go func(deferResponsesChannel chan map[string]*githubRequest.Response) {
-			responses := <-deferResponsesChannel
-			a.sendResponseTaskGroupRequests(responses, configuratorResponse, true)
+		go func(deferResponsesChannel chan *githubRequest.TaskState) {
+			count := 0
+			runtimeinfo.LogInfo("Start")
+			for {
+				taskState, _ := <-deferResponsesChannel
+				count++
+				taskCompeted := taskState.ExecutionStatus
+				runtimeinfo.LogInfo(count, taskCompeted)
+				a.sendResponseTaskGroupRequests(taskState, configuratorResponse, taskCompeted)
+				if taskCompeted {
+					break
+				}
+			}
+			runtimeinfo.LogInfo("Finish")
 			return
-		}(deferResponsesChannel)
-	case responses := <-responsesChannel:
+		}(deferTaskStateChannel)
+	case responses := <-taskStateChannel:
 		a.sendResponseTaskGroupRequests(responses, configuratorResponse, true)
 	}
 }
 
-func (a *appService) configuratorResponseGroupRequests(responses map[string]*githubRequest.Response, taskCompleted bool) sendResponse {
+func (a *appService) configuratorResponseRepositoriesByURL(taskState *githubRequest.TaskState, taskCompleted bool) sendResponse {
 	var (
-		updateTask = UpdateTaskStateReposByURLS{
+		dispatchedStateTask = UpdateTaskStateReposByURLS{
 			ExecutionTaskStatus: UpdateTaskStateExecutionStatus{
 				TaskCompleted: taskCompleted,
 			},
@@ -220,40 +234,40 @@ func (a *appService) configuratorResponseGroupRequests(responses map[string]*git
 		}
 		taskKey string
 	)
-	for _, response := range responses {
+	for _, response := range taskState.Responses {
 		if taskKey == "" {
 			taskKey = response.TaskKey
 		}
-		viewModelRepository := new(ViewModelRepository)
-		updateTaskRepository := new(UpdateTaskStateRepository)
-		err := json.NewDecoder(response.Response.Body).Decode(viewModelRepository)
+		viewModel := new(ViewModelRepository)
+		repository := new(UpdateTaskStateRepository)
+		err := json.NewDecoder(response.Response.Body).Decode(viewModel)
 		if err != nil {
-			updateTaskRepository.URL = response.URL
-			updateTaskRepository.Err = err
+			repository.URL = response.URL
+			repository.Err = err
 		}
 		if response.Err != nil {
-			updateTaskRepository.Err = response.Err
+			repository.Err = response.Err
 		}
-		updateTaskRepository.URL = viewModelRepository.URL
-		updateTaskRepository.Topics = viewModelRepository.Topics
-		updateTaskRepository.Description = viewModelRepository.Description
-		updateTask.Repositories = append(updateTask.Repositories, *updateTaskRepository)
+		repository.URL = viewModel.URL
+		repository.Topics = viewModel.Topics
+		repository.Description = viewModel.Description
+		dispatchedStateTask.Repositories = append(dispatchedStateTask.Repositories, *repository)
 		if err := response.Response.Body.Close(); err != nil {
 			runtimeinfo.LogError("[", response.URL, "]", err)
 		}
 	}
-	updateTask.ExecutionTaskStatus.TaskKey = taskKey
+	dispatchedStateTask.ExecutionTaskStatus.TaskKey = taskKey
 	return func() error {
 		return a.doResponseToGithubGate(
-			&updateTask,
+			&dispatchedStateTask,
 			a.config.GithubGateEndpoints.SendResultTaskReposByUlr,
 		)
 	}
 }
 
-func (a *appService) configuratorResponseRepositoryIssues(responses map[string]*githubRequest.Response, taskCompleted bool) sendResponse {
+func (a *appService) configuratorResponseRepositoryIssues(taskState *githubRequest.TaskState, taskCompleted bool) sendResponse {
 	var (
-		updateTask = UpdateTaskStateRepositoryIssues{
+		dispatchedStateTask = UpdateTaskStateRepositoryIssues{
 			ExecutionTaskStatus: UpdateTaskStateExecutionStatus{
 				TaskCompleted: taskCompleted,
 			},
@@ -261,18 +275,26 @@ func (a *appService) configuratorResponseRepositoryIssues(responses map[string]*
 		}
 		taskKey string
 	)
-	for _, response := range responses {
+	for key, response := range taskState.Responses {
+		if response == nil {
+			runtimeinfo.LogError("response equals nil :[", key, "];")
+			continue
+		}
+		if response.Response == nil {
+			runtimeinfo.LogError("response body equals nil :[", key, "];")
+			continue
+		}
 		if taskKey == "" {
 			taskKey = response.TaskKey
 		}
-		viewModelIssueList := new(ViewModelIssuesList)
-		err := json.NewDecoder(response.Response.Body).Decode(viewModelIssueList)
+		listViewModel := new(ViewModelIssuesList)
+		err := json.NewDecoder(response.Response.Body).Decode(listViewModel)
 		if err != nil {
 			runtimeinfo.LogError("non unmarshal list issues [", err, "]")
 			continue
 		}
-		for _, issue := range []ViewModelIssue(*viewModelIssueList) {
-			updateTask.Issues = append(updateTask.Issues, UpdateTaskStateIssue{
+		for _, issue := range []ViewModelIssue(*listViewModel) {
+			dispatchedStateTask.Issues = append(dispatchedStateTask.Issues, UpdateTaskStateIssue{
 				Number: issue.Number,
 				URL:    issue.URL,
 				Title:  issue.Title,
@@ -285,11 +307,11 @@ func (a *appService) configuratorResponseRepositoryIssues(responses map[string]*
 			runtimeinfo.LogError("[", response.URL, "]", err)
 		}
 	}
-	updateTask.ExecutionTaskStatus.TaskKey = taskKey
+	dispatchedStateTask.ExecutionTaskStatus.TaskKey = taskKey
 	return func() error {
 		return a.doResponseToGithubGate(
-			updateTask,
-			a.config.GithubGateEndpoints.SendResultTaskReposByUlr,
+			dispatchedStateTask,
+			a.config.GithubGateEndpoints.SendResultTaskIssueRepo,
 		)
 	}
 }

@@ -17,6 +17,10 @@ type UpdateTaskExecutionTaskStatus struct {
 	TaskCompleted bool   `json:"task_completed"`
 }
 
+//
+//
+//
+
 type UpdateTaskRepository struct {
 	URL         string   `json:"url"`
 	Topics      []string `json:"topics"`
@@ -28,4 +32,23 @@ type UpdateTaskRepository struct {
 type UpdateTaskReposByURLS struct {
 	ExecutionTaskStatus UpdateTaskExecutionTaskStatus `json:"execution_task_status"`
 	Repositories        []UpdateTaskRepository        `json:"repositories"`
+}
+
+//
+//
+//
+
+type UpdateTaskIssue struct {
+	Number int    `json:"number"`
+	URL    string `json:"url"`
+	Title  string `json:"title"`
+	State  string `json:"state"`
+	Body   string `json:"body"`
+	//
+	Err error `json:"err"`
+}
+
+type UpdateTaskRepositoryIssues struct {
+	ExecutionTaskStatus UpdateTaskExecutionTaskStatus `json:"execution_task_status"`
+	Issues              []UpdateTaskIssue             `json:"issues"`
 }

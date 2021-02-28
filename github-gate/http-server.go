@@ -35,22 +35,22 @@ func NewServer(config *config, app *appService) *server {
 				{
 					repos := result.Group("/repos")
 					{
-						repos.POST("/by/url", s.updateStateTaskReposByURL)
+						repos.POST("/by/url", s.updateStateTaskRepositoriesByURL)
 					}
 					issues := result.Group("/issue")
 					{
-						issues.POST("/by/url", s.updateStateTaskIssueByRepo)
+						issues.POST("/by/repo", s.updateStateTaskRepositoryIssues)
 					}
 				}
 				create := task.Group("/create")
 				{
 					repos := create.Group("/repos")
 					{
-						repos.POST("/by/url", s.createTaskReposByURL)
+						repos.POST("/by/url", s.createTaskRepositoriesByURL)
 					}
 					issues := create.Group("/issue")
 					{
-						issues.POST("/by/url", s.createTaskIssueByRepo)
+						issues.POST("/by/repos", s.createTaskRepositoriesIssues)
 					}
 				}
 			}
@@ -93,51 +93,78 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 //----------------------------------------------HANDLERS (Task's create)------------------------------------------------
 //
 
-func (s *server) createTaskReposByURL(ctx *gin.Context) {
+func (s *server) createTaskRepositoriesByURL(ctx *gin.Context) {
 	task := new(CreateTaskRepoByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := s.appService.CreateTaskReposByURL(task)
+	err := s.appService.CreateTaskRepositoriesByURL(task)
 	if err != nil {
-		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		runtimeinfo.LogError("request on create task to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	runtimeinfo.LogInfo("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] status : OK")
+	runtimeinfo.LogInfo("request on create task to ENDPOINT [", ctx.Request.URL, "] status : OK")
 	ctx.AbortWithStatus(http.StatusOK)
 	return
 }
 
-func (s *server) createTaskIssueByRepo(ctx *gin.Context) {
-
+func (s *server) createTaskRepositoriesIssues(ctx *gin.Context) {
+	task := new(CreateTaskRepoByURLS)
+	if err := ctx.BindJSON(task); err != nil {
+		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := s.appService.CreateTaskGetRepositoriesIssues(task.Repositories)
+	if err != nil {
+		runtimeinfo.LogError("request on create task to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	runtimeinfo.LogInfo("request on create task to ENDPOINT [", ctx.Request.URL, "] status : OK")
+	ctx.AbortWithStatus(http.StatusOK)
+	return
 }
-
 
 //
 //----------------------------------------------HANDLERS (Task's update)------------------------------------------------
 //
 
-func (s *server) updateStateTaskReposByURL(ctx *gin.Context) {
+func (s *server) updateStateTaskRepositoriesByURL(ctx *gin.Context) {
 	state := new(UpdateTaskReposByURLS)
 	if err := ctx.BindJSON(state); err != nil {
-		runtimeinfo.LogError("request on update task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := s.appService.UpdateStateTaskReposByURL(state)
+	err := s.appService.UpdateStateTaskRepositoriesByURL(state)
 	if err != nil {
-		runtimeinfo.LogError("request on update task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	runtimeinfo.LogInfo("request on update task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] status : OK")
+	runtimeinfo.LogInfo("github-collector received [", http.StatusOK, "] response to the request to endpoint  [", ctx.Request.URL, "] ")
 	ctx.AbortWithStatus(http.StatusOK)
 	return
 }
 
-func (s *server) updateStateTaskIssueByRepo(ctx *gin.Context) {
-
+func (s *server) updateStateTaskRepositoryIssues(ctx *gin.Context) {
+	state := new(UpdateTaskRepositoryIssues)
+	if err := ctx.BindJSON(state); err != nil {
+		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := s.appService.UpdateStateTaskRepositoryIssues(state)
+	if err != nil {
+		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	runtimeinfo.LogInfo("github-collector received [", http.StatusOK, "] response to the request to endpoint  [", ctx.Request.URL, "] ")
+	ctx.AbortWithStatus(http.StatusOK)
+	return
 }

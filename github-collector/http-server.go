@@ -1,6 +1,7 @@
 package main
 
 import (
+	"github-collector/pckg/runtimeinfo"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"log"
@@ -26,7 +27,8 @@ func NewServer(config *config, app *appService) *server {
 	s.appService = app
 	//
 	s.engine.GET("/get/state", s.getState)
-	s.engine.POST("/get/repos/by/url", s.getReposByURL)
+	s.engine.POST("/get/repos/by/url", s.getRepositoriesByURL)
+	s.engine.POST("/get/repos/issues", s.getRepositoryIssue)
 	//
 	return s
 }
@@ -63,7 +65,25 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 //
 
 func (s *server) getState(ctx *gin.Context) {
-	if err := s.appService.GITHUBClient.GetState(); err != nil {
+	if err, all := s.appService.GITHUBClient.GetState(); err != nil {
+		runtimeinfo.LogInfo("count all task : [", all, "];")
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	} else {
+		runtimeinfo.LogInfo("count all task : [", all, "];")
+		ctx.AbortWithStatus(http.StatusOK)
+		return
+	}
+}
+
+func (s *server) getRepositoriesByURL(ctx *gin.Context) {
+	data := new(CreateTaskReposByURL)
+	if err := ctx.BindJSON(data); err != nil {
+		ctx.AbortWithStatus(http.StatusBadRequest)
+		return
+	}
+	err := s.appService.GetReposByURLS(data.TaskKey, data.URLS)
+	if err != nil {
 		// 423
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
@@ -74,13 +94,13 @@ func (s *server) getState(ctx *gin.Context) {
 	}
 }
 
-func (s *server) getReposByURL(ctx *gin.Context) {
-	data := new(CreateTaskReposByURL)
+func (s *server) getRepositoryIssue(ctx *gin.Context) {
+	data := new(CreateTaskRepositoryIssues)
 	if err := ctx.BindJSON(data); err != nil {
 		ctx.AbortWithStatus(http.StatusBadRequest)
 		return
 	}
-	err := s.appService.GetReposByURLS(data.TaskKey, data.URLS)
+	err := s.appService.GetRepositoryIssues(data.TaskKey, data.URL)
 	if err != nil {
 		// 423
 		ctx.AbortWithStatus(http.StatusLocked)

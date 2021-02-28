@@ -14,16 +14,23 @@ import (
 type taskType uint
 
 const (
-	TypeTaskGetReposByURL taskType = 0
+	TypeTaskGetRepositoriesByURL taskType = 0
+	TypeTaskGetRepositoryIssue   taskType = 1
 )
 
 type task struct {
-	taskType        taskType
-	ExecutionStatus bool
-	About           string
-	TaskKey         string
-	Collector       string
-	Results         interface{}
+	taskType         taskType
+	TaskKey          string
+	ExecutionStatus  bool
+	About            string
+	CollectorAddress string
+	Results          interface{}
+	//
+	DeferSendTask     bool
+	TaskSend          bool
+	SendBody          interface{}
+	CollectorEndpoint string
+	//
 }
 
 type appService struct {
@@ -67,7 +74,7 @@ func (a *appService) GetFreeCollector() int {
 	return -1
 }
 
-func (a *appService) CreateTaskReposByURL(createTaskModel *CreateTaskRepoByURLS) error {
+func (a *appService) CreateTaskRepositoriesByURL(createTaskModel *CreateTaskRepoByURLS) error {
 	collector := a.GetFreeCollector()
 	if collector == -1 {
 		err := errors.New("Non free GitHub collectors. ")
@@ -76,24 +83,24 @@ func (a *appService) CreateTaskReposByURL(createTaskModel *CreateTaskRepoByURLS)
 	}
 	repositories := make([]*ViewModelRepository, 0)
 	task := &task{
-		taskType:        TypeTaskGetReposByURL,
-		ExecutionStatus: false,
-		About:           strings.Join(createTaskModel.Repositories, ", "),
-		TaskKey:         fmt.Sprintf("key [%d]", a.tasks.Count()+1),
-		Collector:       a.config.GithubCollectorsAddresses[collector],
-		Results:         &repositories,
+		taskType:         TypeTaskGetRepositoriesByURL,
+		ExecutionStatus:  false,
+		About:            strings.Join(createTaskModel.Repositories, ", "),
+		TaskKey:          fmt.Sprintf("key [%d]", a.tasks.Count()+1),
+		CollectorAddress: a.config.GithubCollectorsAddresses[collector],
+		Results:          &repositories,
 	}
 	a.tasks.Set(task.TaskKey, task)
-	url := fmt.Sprintf("%s%s", task.Collector, "/get/repos/by/url")
+	url := fmt.Sprintf("%s%s", task.CollectorAddress, "/get/repos/by/url")
 	response, err := requests.POST(a.client, url, nil, &SendTaskReposByURL{
 		TaskKey: task.TaskKey,
 		URLS:    createTaskModel.Repositories,
 	})
 	if err != nil {
-		runtimeinfo.LogError("[", url, "] error: ", err)
+		runtimeinfo.LogError("request on create task [", url, "] error: ", err)
 		return err
 	}
-	status := "[" + url + "] status: " + strconv.Itoa(response.StatusCode)
+	status := "request on create task [" + url + "] status: " + strconv.Itoa(response.StatusCode)
 	if response.StatusCode == http.StatusOK {
 		runtimeinfo.LogInfo(status)
 	} else {
@@ -104,7 +111,43 @@ func (a *appService) CreateTaskReposByURL(createTaskModel *CreateTaskRepoByURLS)
 	return nil
 }
 
-func (a *appService) UpdateStateTaskReposByURL(updateTaskState *UpdateTaskReposByURLS) error {
+func (a *appService) CreateTaskGetRepositoriesIssues(urls []string) error {
+	for _, url := range urls {
+		taskKey := fmt.Sprintf("defer key [%d]", a.tasks.Count()+1)
+		collectorEndpoint := "/get/repos/issues"
+		sendBody := &SendTaskRepositoryIssues{
+			TaskKey: taskKey,
+			URL:     url,
+		}
+		task := &task{
+			taskType:          TypeTaskGetRepositoryIssue,
+			ExecutionStatus:   false,
+			TaskSend:          false,
+			DeferSendTask:     true,
+			About:             "issues for repository [" + url + "]",
+			TaskKey:           taskKey,
+			SendBody:          sendBody,
+			CollectorEndpoint: collectorEndpoint,
+			Results:           0,
+		}
+		indexCollector := a.GetFreeCollector()
+		if indexCollector != -1 {
+			urlCollector := fmt.Sprintf("%s%s", a.config.GithubCollectorsAddresses[indexCollector], collectorEndpoint)
+			response, err := requests.POST(a.client, urlCollector, nil, task.SendBody)
+			if err == nil && response.StatusCode == http.StatusOK {
+				task.TaskSend = true
+				task.CollectorAddress = a.config.GithubCollectorsAddresses[indexCollector]
+				runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+			}
+		} else {
+			runtimeinfo.LogInfo("defer task by key :[", task.TaskKey, "];")
+		}
+		a.tasks.Set(task.TaskKey, task)
+	}
+	return nil
+}
+
+func (a *appService) UpdateStateTaskRepositoriesByURL(updateTaskState *UpdateTaskReposByURLS) error {
 	key := updateTaskState.ExecutionTaskStatus.TaskKey
 	if value, exist := a.tasks.Get(key); !exist {
 		err := errors.New("task with key [" + key + "] isn't exist ")
@@ -112,66 +155,126 @@ func (a *appService) UpdateStateTaskReposByURL(updateTaskState *UpdateTaskReposB
 		return err
 	} else {
 		task := value.(*task)
+		task.ExecutionStatus = updateTaskState.ExecutionTaskStatus.TaskCompleted
 		if task.ExecutionStatus {
 			a.tasksChannel <- task.TaskKey
 		}
-		for _, repo := range updateTaskState.Repositories {
-			repositoryViewModel := &ViewModelRepository{
-				URL:         repo.URL,
-				Topics:      repo.Topics,
-				Description: repo.Description,
-			}
-			str := fmt.Sprintf(
-				"URL : %s\n\t\tTOPICS : [%s]\n\t\tABOUT : [%s]\n\t\tERR : [%s]",
-				repositoryViewModel.URL,
-				strings.Join(repositoryViewModel.Topics, ", "),
-				repositoryViewModel.Description,
-				repo.Err,
-			)
-			fmt.Println(str)
+		runtimeinfo.LogInfo("task with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Repositories), "]")
+		//for _, repo := range updateTaskState.Repositories {
+		//	repositoryViewModel := &ViewModelRepository{
+		//		URL:         repo.URL,
+		//		Topics:      repo.Topics,
+		//		Description: repo.Description,
+		//	}
+		//	str := fmt.Sprintf(
+		//		"URL : %s\n\t\tTOPICS : [%s]\n\t\tABOUT : [%s]\n\t\tERR : [%s]",
+		//		repositoryViewModel.URL,
+		//		strings.Join(repositoryViewModel.Topics, ", "),
+		//		repositoryViewModel.Description,
+		//		repo.Err,
+		//	)
+		//	fmt.Println(str)
+		//}
+	}
+	return nil
+}
+
+func (a *appService) UpdateStateTaskRepositoryIssues(updateTaskState *UpdateTaskRepositoryIssues) error {
+	key := updateTaskState.ExecutionTaskStatus.TaskKey
+	if value, exist := a.tasks.Get(key); !exist {
+		err := errors.New("task with key [" + key + "] isn't exist ")
+		runtimeinfo.LogError(err)
+		return err
+	} else {
+		task := value.(*task)
+		task.ExecutionStatus = updateTaskState.ExecutionTaskStatus.TaskCompleted
+		results := task.Results.(int)
+		results = results + len(updateTaskState.Issues)
+		task.Results = results
+		if task.ExecutionStatus {
+			a.tasksChannel <- task.TaskKey
 		}
+		runtimeinfo.LogInfo("task with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Issues), "]")
+		//for _, repo := range updateTaskState.Repositories {
+		//	repositoryViewModel := &ViewModelRepository{
+		//		URL:         repo.URL,
+		//		Topics:      repo.Topics,
+		//		Description: repo.Description,
+		//	}
+		//	str := fmt.Sprintf(
+		//		"URL : %s\n\t\tTOPICS : [%s]\n\t\tABOUT : [%s]\n\t\tERR : [%s]",
+		//		repositoryViewModel.URL,
+		//		strings.Join(repositoryViewModel.Topics, ", "),
+		//		repositoryViewModel.Description,
+		//		repo.Err,
+		//	)
+		//	fmt.Println(str)
+		//}
 	}
 	return nil
 }
 
 func (a *appService) scanTasks() {
 	for taskKey := range a.tasksChannel {
-		if taskItem, exist := a.tasks.Get(taskKey); !exist {
+		taskItem, exist := a.tasks.Get(taskKey)
+		if !exist {
 			runtimeinfo.LogInfo("task isn't exist by key [", taskKey, "];")
 			continue
-		} else {
-			task := taskItem.(*task)
-			switch task.taskType {
-			case TypeTaskGetReposByURL:
-				runtimeinfo.LogInfo("TASK COMPLETED [", taskKey, "]")
-				a.tasks.Pop(taskKey)
-				break
+		}
+		task := taskItem.(*task)
+		switch task.taskType {
+		case TypeTaskGetRepositoriesByURL:
+			runtimeinfo.LogInfo("TASK COMPLETED [", taskKey, "]")
+			a.tasks.Pop(taskKey)
+			break
+		case TypeTaskGetRepositoryIssue:
+			runtimeinfo.LogInfo("TASK COMPLETED [", taskKey, "] with count issues: [", task.Results, "]")
+			a.tasks.Pop(taskKey)
+			break
+		}
+		a.runDeferTasks(task.CollectorAddress)
+	}
+}
+
+func (a *appService) runDeferTasks(collectorAddress string) {
+	runtimeinfo.LogInfo("ATTEMPTING TO START DEFER TASKS. START.")
+	var send = func(collectorAddress string, task *task) error {
+		urlCollector := fmt.Sprintf("%s%s", collectorAddress, task.CollectorEndpoint)
+		response, err := requests.POST(a.client, urlCollector, nil, task.SendBody)
+		if err == nil && response.StatusCode == http.StatusOK {
+			task.TaskSend = true
+			task.CollectorAddress = collectorAddress
+		}
+		if err != nil {
+			return err
+		}
+		if response.StatusCode != http.StatusOK {
+			return errors.New("collector send status :[" + strconv.Itoa(response.StatusCode) + "]")
+		}
+		return nil
+	}
+	for taskItem := range a.tasks.IterBuffered() {
+		task := taskItem.Val.(*task)
+		if task.DeferSendTask && task.ExecutionStatus {
+			a.tasks.Pop(task.TaskKey)
+			continue
+		}
+		if task.DeferSendTask && !task.TaskSend {
+			if err := send(collectorAddress, task); err == nil {
+				runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+			} else {
+				runtimeinfo.LogError("error in run defer task by key :[", task.TaskKey, "]; on free collector.")
+				indexCollector := a.GetFreeCollector()
+				if indexCollector != -1 {
+					err := send(a.config.GithubCollectorsAddresses[indexCollector], task)
+					if err == nil {
+						task.TaskSend = true
+						task.CollectorAddress = a.config.GithubCollectorsAddresses[indexCollector]
+						runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+					}
+				}
 			}
 		}
 	}
-
-	//for {
-	//	runtime.Gosched()
-	//	for item := range a.tasks.IterBuffered() {
-	//		task := item.Val.(*task)
-	//		if task.ExecutionStatus == true {
-	//			switch task.taskType {
-	//			case TypeTaskGetReposByURL:
-	//				current := task.Results.(*[]*ViewModelRepository)
-	//				for i := 0; i < len(*current); i++ {
-	//					str := fmt.Sprintf(
-	//						"URL : %s\n\t\tTOPICS : [%s]\n\t\tABOUT : [%s]",
-	//						(*current)[i].URL,
-	//						strings.Join((*current)[i].Topics, ", "),
-	//						(*current)[i].About,
-	//					)
-	//					fmt.Println(str)
-	//				}
-	//				runtimeinfo.LogInfo("TASK COMPLETED [", item.Key, "]")
-	//				a.tasks.Pop(item.Key)
-	//				break
-	//			}
-	//		}
-	//	}
-	//}
+	runtimeinfo.LogInfo("ATTEMPTING TO START DEFER TASKS. FINISH.")
 }

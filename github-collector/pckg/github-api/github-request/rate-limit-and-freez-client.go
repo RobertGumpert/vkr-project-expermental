@@ -36,11 +36,13 @@ func (c *GithubClient) getRateLimit() (*resourcesRateLimitsJSON, error) {
 	if response.StatusCode != 200 {
 		return nil, errors.New("Status code not 200. ")
 	}
+	if err := response.Body.Close(); err != nil {
+		runtimeinfo.LogError(err)
+	}
 	return rate, nil
 }
 
 func (c *GithubClient) freezeClient(reset int64) {
-	c.WaitRateLimitsReset = true
 	timeNow := time.Now()
 	timeReset := time.Unix(reset, int64(0))
 	var when time.Duration
@@ -51,6 +53,5 @@ func (c *GithubClient) freezeClient(reset int64) {
 	}
 	runtimeinfo.LogInfo("CLIENT FREEZE ON ", when, "...")
 	time.Sleep(when)
-	c.WaitRateLimitsReset = false
 	runtimeinfo.LogInfo("CLIENT UNFREEZE.")
 }

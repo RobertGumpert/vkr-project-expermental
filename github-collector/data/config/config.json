@@ -1,7 +1,7 @@
 {
   "port": "54100",
   "github_token": "",
-  "count_tasks": 5,
+  "count_tasks": 2,
   "github_gate_address": "http://127.0.0.1:54000",
   "github_gate_endpoints": {
     "send_result_task_repos_by_ulr": "/api/collector/task/result/repos/by/url",

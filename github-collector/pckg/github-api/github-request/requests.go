@@ -26,6 +26,12 @@ const (
 //----------------------------------------------------------------------------------------------------------------------
 //
 
+type TaskState struct {
+	TaskKey         string
+	ExecutionStatus bool
+	Responses       []*Response
+}
+
 type Response struct {
 	TaskKey  string
 	URL      string
@@ -74,35 +80,43 @@ func (c *GithubClient) request(request Request, api LevelAPI) (response *http.Re
 	return response, false, int64(0), nil
 }
 
-func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChannel chan bool, responseChannel chan *Response) {
-	c.executeTask = 1
+func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) {
+	c.countNowExecuteTask = 1
 	runtimeinfo.LogInfo("TASK START............................................................................")
 	var (
-		response            *http.Response
-		limitReached        bool
-		err                 error
-		numberSpentAttempts int
-		resetTimeStamp      int64
+		response             *http.Response
+		limitReached         bool
+		err                  error
+		numberSpentAttempts  int
+		resetTimeStamp       int64
+		writeToSignalChannel = false
+		completeTask = func(err error) {
+			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
+			taskStateChannel <- &TaskState{
+				TaskKey:         request.TaskKey,
+				ExecutionStatus: false,
+				Responses:       []*Response{newResponse(request.TaskKey, request.URL, nil, err)},
+			}
+			c.tasksCompetedMessageChannel <- true
+			c.countNowExecuteTask = 0
+		}
 	)
 	for {
 		if numberSpentAttempts == limitNumberAttempts {
 			err := errors.New("Number of attempts limit reached. ")
-			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-			responseChannel <- newResponse(request.TaskKey, request.URL, nil, err)
-			c.channelTasks <- true
-			c.executeTask = 0
+			completeTask(err)
 			return
 		}
 		response, limitReached, resetTimeStamp, err = c.request(request, api)
 		if err != nil {
-			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-			responseChannel <- newResponse(request.TaskKey, request.URL, nil, err)
-			c.channelTasks <- true
-			c.executeTask = 0
+			completeTask(err)
 			return
 		}
 		if limitReached {
-			signalChannel <- true
+			if !writeToSignalChannel {
+				signalChannel <- true
+			}
+			writeToSignalChannel = true
 			c.freezeClient(resetTimeStamp)
 			runtimeinfo.LogInfo("Repeat request on {", request.URL, "} ")
 			numberSpentAttempts++
@@ -111,81 +125,85 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 			break
 		}
 	}
-	responseChannel <- newResponse(request.TaskKey, request.URL, response, nil)
-	c.channelTasks <- true
-	c.executeTask = 0
+	taskStateChannel <- &TaskState{
+		TaskKey:         request.TaskKey,
+		ExecutionStatus: true,
+		Responses:       []*Response{newResponse(request.TaskKey, request.URL, response, nil)},
+	}
+	c.tasksCompetedMessageChannel <- true
+	c.countNowExecuteTask = 0
+	close(signalChannel)
+	close(taskStateChannel)
 	runtimeinfo.LogInfo("TASK FINISH............................................................................")
 }
 
-func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, responsesChannel, deferResponsesChannel chan map[string]*Response) {
-	c.executeTask = 1
+
+func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) {
+	c.countNowExecuteTask = 1
 	runtimeinfo.LogInfo("TASK START............................................................................")
 	var (
-		responses           = make(map[string]*Response)
-		deferResponses      = make(map[string]*Response)
-		writeDefer          = false
-		numberSpentAttempts = 0
-		buffer              = cmap.New()
+		taskState             = new(TaskState)
+		writeResponsesToDefer = false
+		buffer                = cmap.New()
+		writeResponse = func(response *Response) {
+			if taskState.TaskKey == "" {
+				taskState.TaskKey = requests[0].TaskKey
+			}
+			if taskState.Responses == nil {
+				taskState.Responses = make([]*Response, 0)
+			}
+			if response.Response == nil {
+				response.Err = errors.New("Response is nil. ")
+			}
+			taskState.Responses = append(taskState.Responses, response)
+			return
+		}
 	)
-	//
-	var writeResponseToMap = func(res *Response) {
-		if writeDefer == true {
-			deferResponses[res.URL] = res
-		}
-		if writeDefer == false {
-			responses[res.URL] = res
-		}
-		buffer.Remove(res.URL)
-		return
-	}
-	//
 	for _, request := range requests {
 		buffer.Set(request.URL, request)
 	}
-	//
 	for {
-		if numberSpentAttempts == limitNumberAttempts {
-			for item := range buffer.IterBuffered() {
-				err := errors.New("Number of attempts limit reached. ")
-				runtimeinfo.LogError("url: {", item.Val.(Request).URL, "} err: {", err, "} ")
-				writeResponseToMap(newResponse(item.Val.(Request).TaskKey, item.Val.(Request).URL, nil, err))
-			}
-			break
-		}
 		if buffer.Count() != 0 {
 			for item := range buffer.IterBuffered() {
 				request := item.Val.(Request)
-				response, limitReached, resetTimeStamp, err := c.request(request, api)
-				if err != nil {
-					runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-					writeResponseToMap(newResponse(request.TaskKey, request.URL, nil, err))
-					continue
+				httpResponse, limitReached, rateLimitResetTimestamp, err := c.request(request, api)
+				if limitReached && !writeResponsesToDefer {
+					writeResponsesToDefer = true
 				}
-				if limitReached {
-					numberSpentAttempts++
-					writeDefer = true
-					if numberSpentAttempts == 1 {
-						deferResponsesChannel <- responses
-					}
+				writeResponse(
+					newResponse(
+						request.TaskKey,
+						request.URL,
+						httpResponse,
+						err,
+					),
+				)
+				if limitReached == false {
+					buffer.Remove(request.URL)
+				}
+				if limitReached && writeResponsesToDefer {
+					taskState.ExecutionStatus = false
+					deferTaskStateChannel <- taskState
+					taskState = new(TaskState)
 					runtimeinfo.LogInfo("Repeat requests...")
-					c.freezeClient(resetTimeStamp)
-					continue
-				}
-				if response != nil {
-					writeResponseToMap(newResponse(request.TaskKey, request.URL, response, nil))
+					c.freezeClient(rateLimitResetTimestamp)
 				}
 			}
 		} else {
 			break
 		}
 	}
-	if writeDefer {
-		deferResponsesChannel <- deferResponses
+	if writeResponsesToDefer {
+		taskState.ExecutionStatus = true
+		deferTaskStateChannel <- taskState
 	} else {
-		responsesChannel <- responses
+		taskState.ExecutionStatus = true
+		taskStateChannel <- taskState
 	}
-	c.channelTasks <- true
-	c.executeTask = 0
+	c.tasksCompetedMessageChannel <- true
+	c.countNowExecuteTask = 0
+	close(deferTaskStateChannel)
+	close(taskStateChannel)
 	runtimeinfo.LogInfo("TASK FINISH............................................................................")
 }
 
