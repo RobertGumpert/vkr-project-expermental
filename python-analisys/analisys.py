@@ -1,10 +1,17 @@
 import csv
 from sklearn.cluster import MeanShift
 import numpy as np
+import pandas as pd
 import pickle
 
 MODELS_DIR = "C:/VKR/vkr-project-expermental/python-analisys/models/"
 LEARNING_VECTORS = "C:/VKR/vkr-project-expermental/go-agregator/data/tests/learning-vectors.csv"
+
+
+def read():
+    df = pd.read_csv(LEARNING_VECTORS)
+    df = df.drop(df.columns[0], axis=1)
+    return df
 
 
 def read_vectors(path):
@@ -13,20 +20,23 @@ def read_vectors(path):
         data = list(reader)
         print(len(data))
         output = [[]]
+        np_arr = np.zeros()
         for i, row in enumerate(data):
-            sum = 0
+            summary_of_row_elements = 0
             row_output = []
             del row[0]
             for j, item in enumerate(row):
                 if item == "":
                     continue
                 output_item = int(row[j])
-                sum += output_item
+                summary_of_row_elements += output_item
                 row_output.append(output_item)
-            if sum != 0:
+            if summary_of_row_elements != 0:
                 output.append(row_output)
             else:
                 continue
+            np_row = np.append(row_output)
+
         del output[0]
         print(len(output))
         return output
@@ -47,3 +57,5 @@ def download_mean_shift_model(filename):
     path = MODELS_DIR + filename
     clustering = pickle.load(open(path, 'rb'))
     return clustering
+
+

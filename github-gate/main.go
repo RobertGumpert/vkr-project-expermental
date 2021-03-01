@@ -1,15 +1,20 @@
 package main
 
+import (
+	"github-gate/app/config"
+	"github-gate/app/serivce"
+)
+
 var(
-	CONFIG *config
+	CONFIG *config.Config
 	SERVER *server
-	APP *appService
+	APP *serivce.AppService
 )
 
 
 func main() {
-	CONFIG = NewConfig().Read()
-	APP = NewAppService(CONFIG)
+	CONFIG = config.NewConfig().Read()
+	APP = serivce.NewAppService(CONFIG)
 	SERVER = NewServer(CONFIG, APP)
 	SERVER.RunServer()
 }

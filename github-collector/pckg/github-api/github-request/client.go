@@ -7,7 +7,7 @@ import (
 )
 
 // Сигнализирует о том, что необходимо запустить задачу (Task),
-// не дожидаясь итератора задач (c *GithubClient) nextTask().
+// не дожидаясь итератора задач (c *GithubClient) scanTask().
 type NoWait bool
 
 // Функция, которая запускает задачу (Task),
@@ -85,11 +85,11 @@ func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
 	} else {
 		c.isAuth = false
 	}
-	go c.nextTask()
+	go c.scanTask()
 	return c, nil
 }
 
-func (c *GithubClient) nextTask() {
+func (c *GithubClient) scanTask() {
 	for range c.tasksCompetedMessageChannel {
 		if len(c.tasksToOneRequest) != 0 {
 			task := c.tasksToOneRequest[0]

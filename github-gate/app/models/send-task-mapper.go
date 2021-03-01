@@ -1,4 +1,4 @@
-package main
+package models
 
 type SendTaskReposByURL struct {
 	TaskKey string   `json:"task_key"`

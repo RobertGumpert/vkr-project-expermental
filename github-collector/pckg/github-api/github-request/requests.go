@@ -183,10 +183,19 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, taskS
 				}
 				if limitReached && writeResponsesToDefer {
 					taskState.ExecutionStatus = false
-					deferTaskStateChannel <- taskState
+					if taskState.Responses != nil || len(taskState.Responses) != 0 {
+						deferTaskStateChannel <- taskState
+					}
 					taskState = new(TaskState)
 					runtimeinfo.LogInfo("Repeat requests...")
 					c.freezeClient(rateLimitResetTimestamp)
+					continue
+				}
+				if len(taskState.Responses) > 5 {
+					writeResponsesToDefer = true
+					taskState.ExecutionStatus = false
+					deferTaskStateChannel <- taskState
+					taskState = new(TaskState)
 				}
 			}
 		} else {

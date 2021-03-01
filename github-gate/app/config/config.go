@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"encoding/json"
@@ -7,17 +7,17 @@ import (
 	"path/filepath"
 )
 
-type config struct {
+type Config struct {
 	Port                      string   `json:"port"`
 	CountTask                 int64    `json:"count_task"`
 	GithubCollectorsAddresses []string `json:"github_collectors_addresses"`
 }
 
-func NewConfig() *config {
-	return &config{}
+func NewConfig() *Config {
+	return &Config{}
 }
 
-func (c *config) Read() *config {
+func (c *Config) Read() *Config {
 	absPath, err := filepath.Abs("../github-gate/data/config/config.json")
 	if err != nil {
 		runtimeinfo.LogFatal(err)
