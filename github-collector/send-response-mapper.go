@@ -30,7 +30,7 @@ type UpdateTaskStateIssue struct {
 	Number int    `json:"number"`
 	URL    string `json:"url"`
 	Title  string `json:"title"`
-	State  string   `json:"state"`
+	State  string `json:"state"`
 	Body   string `json:"body"`
 	//
 	Err error `json:"err"`

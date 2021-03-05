@@ -1,5 +1,12 @@
 {
   "port": "54000",
+  "postgres" : {
+    "username": "postgres",
+    "password": "toster123",
+    "port": "5432",
+    "db_name": "vkr-db",
+    "ssl": "disable"
+  },
   "count_task" : 1000000,
   "github_collectors_addresses": [
     "http://127.0.0.1:54100"

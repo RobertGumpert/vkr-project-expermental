@@ -2,7 +2,8 @@ package main
 
 import (
 	"github-gate/app/config"
-	"github-gate/app/models"
+	"github-gate/app/models/createTaskModel"
+	"github-gate/app/models/updateTaskModel"
 	"github-gate/app/serivce"
 	"github-gate/pckg/runtimeinfo"
 	"github.com/gin-contrib/cors"
@@ -50,6 +51,7 @@ func NewServer(config *config.Config, app *serivce.AppService) *server {
 					repos := create.Group("/repos")
 					{
 						repos.POST("/by/url", s.createTaskRepositoriesByURL)
+						repos.POST("/issues", s.createTaskRepositoriesAndIssues)
 					}
 					issues := create.Group("/issue")
 					{
@@ -97,13 +99,13 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 //
 
 func (s *server) createTaskRepositoriesByURL(ctx *gin.Context) {
-	task := new(models.CreateTaskRepoByURLS)
+	task := new(createTaskModel.RepositoriesByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := s.appService.CreateTaskRepositoriesByURL(task.Repositories, false)
+	err := s.appService.CreateTaskRepositoriesByURL(task.Repositories, false, nil)
 	if err != nil {
 		runtimeinfo.LogError("request on create task to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -115,13 +117,41 @@ func (s *server) createTaskRepositoriesByURL(ctx *gin.Context) {
 }
 
 func (s *server) createTaskRepositoriesIssues(ctx *gin.Context) {
-	task := new(models.CreateTaskRepoByURLS)
+	task := new(createTaskModel.RepositoriesByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := s.appService.CreateTaskGetRepositoriesIssues(task.Repositories, true)
+	err, nonSendTask, _ := s.appService.CreateTaskGetRepositoriesIssues(task.Repositories, true, false)
+	if err != nil {
+		runtimeinfo.LogError("request on create task to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	if nonSendTask != nil {
+		ctx.AbortWithStatusJSON(
+			http.StatusOK,
+			struct {
+				NonSend []string `json:"non_send"`
+			}{
+				NonSend: nonSendTask,
+			},
+		)
+	}
+	runtimeinfo.LogInfo("request on create task to ENDPOINT [", ctx.Request.URL, "] status : OK")
+	ctx.AbortWithStatus(http.StatusOK)
+	return
+}
+
+func (s *server) createTaskRepositoriesAndIssues(ctx *gin.Context) {
+	task := new(createTaskModel.RepositoriesByURLS)
+	if err := ctx.BindJSON(task); err != nil {
+		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := s.appService.CreateTaskGetRepositoriesAndIssues(task.Repositories)
 	if err != nil {
 		runtimeinfo.LogError("request on create task to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -137,7 +167,7 @@ func (s *server) createTaskRepositoriesIssues(ctx *gin.Context) {
 //
 
 func (s *server) updateStateTaskRepositoriesByURL(ctx *gin.Context) {
-	state := new(models.UpdateTaskReposByURLS)
+	state := new(updateTaskModel.RepositoriesByURLS)
 	if err := ctx.BindJSON(state); err != nil {
 		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -155,7 +185,7 @@ func (s *server) updateStateTaskRepositoriesByURL(ctx *gin.Context) {
 }
 
 func (s *server) updateStateTaskRepositoryIssues(ctx *gin.Context) {
-	state := new(models.UpdateTaskRepositoryIssues)
+	state := new(updateTaskModel.RepositoryIssues)
 	if err := ctx.BindJSON(state); err != nil {
 		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)

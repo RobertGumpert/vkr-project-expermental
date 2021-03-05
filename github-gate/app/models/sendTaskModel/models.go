@@ -1,11 +1,11 @@
-package models
+package sendTaskModel
 
-type SendTaskReposByURL struct {
+type RepositoriesByURLS struct {
 	TaskKey string   `json:"task_key"`
 	URLS    []string `json:"urls"`
 }
 
-type SendTaskRepositoryIssues struct {
+type RepositoryIssues struct {
 	TaskKey string `json:"task_key"`
 	URL     string `json:"url"`
 }

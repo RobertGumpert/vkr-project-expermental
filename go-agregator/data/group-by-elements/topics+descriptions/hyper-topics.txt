@@ -1,0 +1,2 @@
+A terminal built on web technologies
+css html hyper javascript linux macos react terminal terminal-emulators

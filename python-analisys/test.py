@@ -32,6 +32,7 @@ def read_file(file_name):
         return lines_to_string, lines
 
 
+
 files_dict['react'] = read_file('react')
 files_dict['vue'] = read_file('vue')
 files_dict['angular'] = read_file('angular')
@@ -96,10 +97,75 @@ def get_vectors(vectorizer):
     return simple_vect_x
 
 
-x = get_vectors(count_vectorizer)
-print(type(x))
-clustering = AgglomerativeClustering().fit(x.todense())
-print(clustering.labels_)
+# x = get_vectors(count_vectorizer)
+# print(type(x))
+# clustering = AgglomerativeClustering().fit(x.todense())
+# print(clustering.labels_)
 
 # clustering = MeanShift().fit(x.toarray())
 # print(clustering.labels_)
+
+
+tfidf_vectorizer = TfidfVectorizer()
+count_vectorizer = CountVectorizer(stop_words='english')
+
+
+def calculate_distance_pair_titles(vectorizer, threshold, bigger_slice, smaller_slice):
+    result = "\n"
+    for i, i_title in enumerate(bigger_slice):
+        for y, y_title in enumerate(smaller_slice):
+            print("--------->", i , " : ", y)
+            try:
+                x = vectorizer.fit_transform([i_title, y_title])
+            except ValueError:
+                continue
+            x_arr = x.toarray()
+            if len(x_arr[0]) < 3 or len(x_arr[1]) < 3:
+                continue
+            count_nulls_main = 0
+            count_nulls_second = 0
+            for x_i in range(len(x_arr[0])):
+                if x_arr[0][x_i] == 0:
+                    count_nulls_main += 1
+                if x_arr[1][x_i] == 0:
+                    count_nulls_second += 1
+            percent_crossing_main = (1 - (count_nulls_main / len(x_arr[0]))) * 100
+            percent_crossing_second = (1 - (count_nulls_second / len(x_arr[1]))) * 100
+            if percent_crossing_main < threshold or percent_crossing_second < threshold:
+                continue
+            distance = cosine_similarity(x_arr)[0][1] * 100
+            result += "\t\t\t\tTitle: [" + i_title + "]\n\t\t\t\tTitle: [" + y_title + "]\n\t\t\t\tDistance: [" + str(
+                distance) + "]\n\n"
+    return result
+
+
+def titles_distance(vectorizer, threshold, files_dict):
+    result = ""
+    for key_main_file, value_main_file in files_dict.items():
+        print(key_main_file)
+        file_title = "\n\n\nMain: " + key_main_file + "-----------------------------\n"
+        distances_result = ""
+        for key_second_file, value_second_file in files_dict.items():
+            if key_main_file == key_second_file:
+                continue
+            print("-->", key_second_file)
+            file_title += "\t\tSecond: " + key_second_file + "\n"
+            slice_main = value_main_file[1]
+            slice_second = value_second_file[1]
+            bigger_slice = None
+            smaller_slice = None
+            if len(slice_main) >= len(slice_second):
+                bigger_slice = slice_main
+                smaller_slice = slice_second
+            if len(slice_second) >= len(slice_main):
+                bigger_slice = slice_second
+                smaller_slice = slice_main
+            distances_result += calculate_distance_pair_titles(vectorizer, threshold, bigger_slice, smaller_slice)
+        pair_repositories_result = file_title + distances_result
+        result += pair_repositories_result
+    return result
+
+
+print('Start caculate...')
+result = titles_distance(count_vectorizer, 70, files_dict)
+print('Finish caculate...')

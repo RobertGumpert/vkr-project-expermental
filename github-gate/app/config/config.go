@@ -7,8 +7,16 @@ import (
 	"path/filepath"
 )
 
+
 type Config struct {
 	Port                      string   `json:"port"`
+	Postgres struct {
+		Username string `json:"username"`
+		Password string `json:"password"`
+		Port     string `json:"port"`
+		DbName   string `json:"db_name"`
+		Ssl      string `json:"ssl"`
+	} `json:"postgres"`
 	CountTask                 int64    `json:"count_task"`
 	GithubCollectorsAddresses []string `json:"github_collectors_addresses"`
 }

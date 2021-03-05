@@ -3,18 +3,26 @@ package serivce
 import (
 	"errors"
 	"fmt"
-	"github-gate/app/models"
+	"github-gate/app/models/dataModel"
+	"github-gate/app/models/sendTaskModel"
 	"github-gate/pckg/requests"
 	"github-gate/pckg/runtimeinfo"
 	"net/http"
 	"strings"
 )
 
-func (a *AppService) CreateTaskRepositoriesByURL(urls []string, deferTask bool) error {
+func (a *AppService) CreateTaskRepositoriesByURL(urls []string, deferTask bool, relatedTasks []string, typeTask ...taskType) error {
+	if err := a.possibleAddTasks(1); err != nil {
+		return err
+	}
+	taskTypeSelected := TypeTaskGetRepositoriesByURL
+	if len(typeTask) != 0 {
+		taskTypeSelected = typeTask[0]
+	}
 	var (
 		taskKey           = ""
 		collectorEndpoint = "/get/repos/by/url"
-		sendBody          = &models.SendTaskReposByURL{
+		sendBody          = &sendTaskModel.RepositoriesByURLS{
 			TaskKey: taskKey,
 			URLS:    urls,
 		}
@@ -25,9 +33,9 @@ func (a *AppService) CreateTaskRepositoriesByURL(urls []string, deferTask bool) 
 		taskKey = fmt.Sprintf("key [%d]", a.tasks.Count()+1)
 	}
 	sendBody.TaskKey = taskKey
-	repositories := make([]*models.ViewModelRepository, 0)
+	repositories := make([]*dataModel.Repository, 0)
 	task := &task{
-		taskType:        TypeTaskGetRepositoriesByURL,
+		taskType:        taskTypeSelected,
 		TaskKey:         taskKey,
 		ExecutionStatus: false,
 		About: strings.Join(
@@ -39,23 +47,31 @@ func (a *AppService) CreateTaskRepositoriesByURL(urls []string, deferTask bool) 
 		CollectorAddress:  "",
 		Results:           repositories,
 		DeferSendTask:     deferTask,
+		SignalTaskSend:    false,
+		RelatedTasks:      relatedTasks,
 		TaskSend:          false,
 		SendBody:          sendBody,
 		CollectorEndpoint: collectorEndpoint,
 	}
 	if deferTask {
-		a.sendDeferTask(task)
-		return nil
+		return a.sendDeferTask(task)
 	}
 	return a.sendNonDeferTask(task)
 }
 
-func (a *AppService) CreateTaskGetRepositoriesIssues(urls []string, deferTask bool) error {
-	for _, url := range urls {
+func (a *AppService) CreateTaskGetRepositoriesIssues(urls []string, deferTask, signalTaskSend bool) (error, []string, []string) {
+	var relatedTasks []string
+	if err := a.possibleAddTasks(len(urls)); err != nil {
+		return err, nil, nil
+	}
+	if signalTaskSend {
+		relatedTasks = make([]string, 0)
+	}
+	for index, url := range urls {
 		var (
 			taskKey           = ""
 			collectorEndpoint = "/get/repos/issues"
-			sendBody          = &models.SendTaskRepositoryIssues{
+			sendBody          = &sendTaskModel.RepositoryIssues{
 				TaskKey: taskKey,
 				URL:     url,
 			}
@@ -64,6 +80,9 @@ func (a *AppService) CreateTaskGetRepositoriesIssues(urls []string, deferTask bo
 			taskKey = fmt.Sprintf("defer task key [%d]", a.tasks.Count()+1)
 		} else {
 			taskKey = fmt.Sprintf("key [%d]", a.tasks.Count()+1)
+		}
+		if signalTaskSend {
+			taskKey = fmt.Sprintf("signal task key [%d]", a.tasks.Count()+1)
 		}
 		sendBody.TaskKey = taskKey
 		task := &task{
@@ -79,37 +98,74 @@ func (a *AppService) CreateTaskGetRepositoriesIssues(urls []string, deferTask bo
 			CollectorAddress:  "",
 			Results:           0,
 			DeferSendTask:     deferTask,
+			SignalTaskSend:    signalTaskSend,
+			RelatedTasks:      nil,
 			TaskSend:          false,
 			SendBody:          sendBody,
 			CollectorEndpoint: collectorEndpoint,
 		}
-		if deferTask {
-			a.sendDeferTask(task)
-			return nil
-		} else {
-			return a.sendNonDeferTask(task)
+		if signalTaskSend {
+			task.DeferSendTask = true
+			a.tasks.Set(task.TaskKey, task)
+			relatedTasks = append(relatedTasks, task.TaskKey)
+			continue
 		}
+		if deferTask {
+			err := a.sendDeferTask(task)
+			if err != nil {
+				return nil, urls[index:], nil
+			}
+			continue
+		} else {
+			err := a.sendNonDeferTask(task)
+			if err != nil {
+				return nil, urls[index:], nil
+			}
+			continue
+		}
+	}
+	return nil, nil, relatedTasks
+}
+
+func (a *AppService) CreateTaskGetRepositoriesAndIssues(urls []string) error {
+	_, _, relatedTasks := a.CreateTaskGetRepositoriesIssues(
+		urls,
+		true,
+		true,
+	)
+	err := a.CreateTaskRepositoriesByURL(urls, true, relatedTasks, TypeTaskGetRepositoriesAndIssues)
+	if err != nil {
+		for _, task := range relatedTasks {
+			a.tasks.Pop(task)
+		}
+		return err
+	}
+	return err
+}
+
+func (a *AppService) possibleAddTasks(count int) error {
+	if a.tasks.Count()+count > int(a.config.CountTask) {
+		return errors.New("No place in the queue. ")
 	}
 	return nil
 }
 
-func (a *AppService) CreateTaskGetRepositoriesAndIssues(urls []string, deferTask bool) error {
-	err := a.CreateTaskRepositoriesByURL(urls, deferTask)
-	return err
-}
-
-func (a *AppService) sendDeferTask(task *task) {
+func (a *AppService) sendDeferTask(task *task) error {
+	if err := a.possibleAddTasks(1); err != nil {
+		return err
+	}
 	a.tasks.Set(task.TaskKey, task)
 	response, err := a.sendTask(task)
 	if err != nil {
 		runtimeinfo.LogInfo("non send defer task by key :[", task.TaskKey, "];")
-		return
+		return nil
 	}
 	if response.StatusCode != http.StatusOK {
 		runtimeinfo.LogInfo("non send defer task by key :[", task.TaskKey, "];")
-		return
+		return nil
 	}
 	runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+	return nil
 }
 
 func (a *AppService) sendNonDeferTask(task *task) error {
@@ -119,14 +175,11 @@ func (a *AppService) sendNonDeferTask(task *task) error {
 	response, err := a.sendTask(task)
 	if err != nil {
 		return err
-	} else {
-		a.tasks.Set(task.TaskKey, task)
 	}
 	if response.StatusCode != http.StatusOK {
 		return errors.New("send task on collector finish with non 200 status")
-	} else {
-		a.tasks.Set(task.TaskKey, task)
 	}
+	a.tasks.Set(task.TaskKey, task)
 	return nil
 }
 

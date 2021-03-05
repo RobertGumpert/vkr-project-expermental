@@ -16,7 +16,7 @@ type taskType uint
 const (
 	TypeTaskGetRepositoriesByURL     taskType = 0
 	TypeTaskGetRepositoryIssue       taskType = 1
-	TypeTaskGetRepositoriesAndIssues taskType = 1
+	TypeTaskGetRepositoriesAndIssues taskType = 2
 )
 
 type task struct {
@@ -28,6 +28,8 @@ type task struct {
 	Results          interface{}
 	//
 	DeferSendTask     bool
+	SignalTaskSend    bool
+	RelatedTasks      []string
 	TaskSend          bool
 	SendBody          interface{}
 	CollectorEndpoint string
@@ -79,21 +81,32 @@ func (a *AppService) scanTasks() {
 	for taskKey := range a.tasksChannel {
 		taskItem, exist := a.tasks.Get(taskKey)
 		if !exist {
-			runtimeinfo.LogInfo("task isn't exist by key [", taskKey, "];")
+			runtimeinfo.LogInfo("SCAN TASKS: task isn't exist by key [", taskKey, "];")
 			continue
 		}
-		task := taskItem.(*task)
-		switch task.taskType {
+		currentTask := taskItem.(*task)
+		switch currentTask.taskType {
 		case TypeTaskGetRepositoriesByURL:
-			runtimeinfo.LogInfo("TASK COMPLETED [", taskKey, "]")
+			runtimeinfo.LogInfo("SCAN TASKS: TASK COMPLETED [", taskKey, "]")
 			a.tasks.Pop(taskKey)
 			break
 		case TypeTaskGetRepositoryIssue:
-			runtimeinfo.LogInfo("TASK COMPLETED [", taskKey, "] with count issues: [", task.Results, "]")
+			runtimeinfo.LogInfo("SCAN TASKS: TASK COMPLETED [", taskKey, "] with count issues: [", currentTask.Results, "]")
+			a.tasks.Pop(taskKey)
+			break
+		case TypeTaskGetRepositoriesAndIssues:
+			runtimeinfo.LogInfo("SCAN TASKS: TASK COMPLETED [", taskKey, "]")
+			for _, relatedTaskKey := range currentTask.RelatedTasks {
+				if relatedTaskValue, exist := a.tasks.Get(relatedTaskKey); exist {
+					runtimeinfo.LogInfo("SCAN TASKS: update state defer task [", relatedTaskKey, "] by signal from task [",taskKey,"]")
+					relatedTask := relatedTaskValue.(*task)
+					relatedTask.SignalTaskSend = false
+				}
+			}
 			a.tasks.Pop(taskKey)
 			break
 		}
-		a.runDeferTasks(task.CollectorAddress)
+		a.runDeferTasks(currentTask.CollectorAddress)
 	}
 }
 
@@ -116,22 +129,22 @@ func (a *AppService) runDeferTasks(collectorAddress string) {
 	}
 	for taskItem := range a.tasks.IterBuffered() {
 		task := taskItem.Val.(*task)
-		if task.DeferSendTask && task.ExecutionStatus {
+		if task.DeferSendTask && task.TaskSend && task.ExecutionStatus {
 			a.tasks.Pop(task.TaskKey)
 			continue
 		}
-		if task.DeferSendTask && !task.TaskSend {
+		if task.DeferSendTask && !task.TaskSend && !task.SignalTaskSend {
 			if err := send(collectorAddress, task); err == nil {
-				runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+				runtimeinfo.LogInfo("RUN DEFER TASK: run task [", task.TaskKey, "] on the vacated.")
 			} else {
-				runtimeinfo.LogError("error in run defer task by key :[", task.TaskKey, "]; on free collector.")
+				runtimeinfo.LogError("RUN DEFER TASK: run defer task [", task.TaskKey, "] on the vacated ended error.")
 				indexCollector := a.GetFreeCollector()
 				if indexCollector != -1 {
 					err := send(a.config.GithubCollectorsAddresses[indexCollector], task)
 					if err == nil {
 						task.TaskSend = true
 						task.CollectorAddress = a.config.GithubCollectorsAddresses[indexCollector]
-						runtimeinfo.LogInfo("run defer task by key :[", task.TaskKey, "]; on free collector.")
+						runtimeinfo.LogInfo("RUN DEFER TASK: run defer task [", task.TaskKey, "] on free collector.")
 					}
 				}
 			}

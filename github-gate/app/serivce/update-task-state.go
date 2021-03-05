@@ -2,11 +2,11 @@ package serivce
 
 import (
 	"errors"
-	"github-gate/app/models"
+	"github-gate/app/models/updateTaskModel"
 	"github-gate/pckg/runtimeinfo"
 )
 
-func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *models.UpdateTaskReposByURLS) error {
+func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *updateTaskModel.RepositoriesByURLS) error {
 	key := updateTaskState.ExecutionTaskStatus.TaskKey
 	if value, exist := a.tasks.Get(key); !exist {
 		err := errors.New("task with key [" + key + "] isn't exist ")
@@ -18,7 +18,7 @@ func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *models.Up
 		if task.ExecutionStatus {
 			a.tasksChannel <- task.TaskKey
 		}
-		runtimeinfo.LogInfo("task with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Repositories), "]")
+		runtimeinfo.LogInfo("UPDATE TASK with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Repositories), "]")
 		//for _, repo := range updateTaskState.Repositories {
 		//	repositoryViewModel := &ViewModelRepository{
 		//		URL:         repo.URL,
@@ -38,7 +38,7 @@ func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *models.Up
 	return nil
 }
 
-func (a *AppService) UpdateStateTaskRepositoryIssues(updateTaskState *models.UpdateTaskRepositoryIssues) error {
+func (a *AppService) UpdateStateTaskRepositoryIssues(updateTaskState *updateTaskModel.RepositoryIssues) error {
 	key := updateTaskState.ExecutionTaskStatus.TaskKey
 	if value, exist := a.tasks.Get(key); !exist {
 		err := errors.New("task with key [" + key + "] isn't exist ")
@@ -53,7 +53,7 @@ func (a *AppService) UpdateStateTaskRepositoryIssues(updateTaskState *models.Upd
 		if task.ExecutionStatus {
 			a.tasksChannel <- task.TaskKey
 		}
-		runtimeinfo.LogInfo("task with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Issues), "]")
+		runtimeinfo.LogInfo("UPDATE TASK with key :[", task.TaskKey, "] is competed ;[", task.ExecutionStatus, "] count elements [", len(updateTaskState.Issues), "]")
 		//for _, repo := range updateTaskState.Repositories {
 		//	repositoryViewModel := &ViewModelRepository{
 		//		URL:         repo.URL,

@@ -1,0 +1,2 @@
+A declarative, efficient, and flexible JavaScript library for building user interfaces.
+declarative frontend javascript library react ui
