@@ -1,0 +1,2 @@
+Learn some Swift
+awesome awesome-list swift swift-education

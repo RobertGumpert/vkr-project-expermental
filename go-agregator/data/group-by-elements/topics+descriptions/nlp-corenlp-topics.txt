@@ -1,0 +1,2 @@
+Stanford CoreNLP: A Java suite of core NLP tools.
+named-entity-recognition natural-language-processing nlp nlp-parsing stanford-nlp

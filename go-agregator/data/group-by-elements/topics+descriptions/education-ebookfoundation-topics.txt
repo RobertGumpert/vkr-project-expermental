@@ -1,0 +1,2 @@
+:books: Freely available programming books
+books education hacktoberfest list resource

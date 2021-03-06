@@ -1,8 +1,11 @@
 from flask import Flask
-import analisys
+from readfiles.repository import read_combined_blocks_about_and_topics
+from analysis.repositories.model import Model
 
-
-
+# repositories = read_combined_blocks_about_and_topics()
+model = Model()
+corpus = model.download_corpus_from_hash()
+model.select_train_texts_from_corpus(corpus)
 #
 # -----------------------------------------------------------------------------------------------------------------------
 #

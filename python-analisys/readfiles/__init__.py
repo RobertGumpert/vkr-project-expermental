@@ -1,0 +1,1 @@
+DATA_DIR = 'C:/VKR/vkr-project-expermental/go-agregator/data/'

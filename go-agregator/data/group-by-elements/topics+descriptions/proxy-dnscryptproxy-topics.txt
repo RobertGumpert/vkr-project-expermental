@@ -1,0 +1,2 @@
+dnscrypt-proxy 2 - A flexible DNS proxy, with support for encrypted DNS protocols
+dns dns-over-https dnscrypt dnscrypt-proxy dnscrypt-proxy2 doh proxy

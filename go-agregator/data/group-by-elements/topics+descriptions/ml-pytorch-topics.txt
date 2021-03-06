@@ -1,0 +1,2 @@
+Tensors and Dynamic neural networks in Python with strong GPU acceleration
+autograd deep-learning gpu machine-learning neural-network numpy python tensor

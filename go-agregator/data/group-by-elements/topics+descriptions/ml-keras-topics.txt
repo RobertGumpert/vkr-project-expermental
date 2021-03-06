@@ -1,0 +1,2 @@
+Deep Learning for humans
+data-science deep-learning machine-learning neural-networks python tensorflow

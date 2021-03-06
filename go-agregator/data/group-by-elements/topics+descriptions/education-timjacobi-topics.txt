@@ -1,0 +1,2 @@
+A list of helpful material to develop using Angular
+angular angular2-components angular2-demo angular2-typescript ngrx

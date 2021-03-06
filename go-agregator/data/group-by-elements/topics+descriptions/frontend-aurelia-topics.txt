@@ -1,0 +1,2 @@
+The Aurelia 1 framework entry point, bringing together all the required sub-modules of Aurelia.
+aurelia-framework cross-platform framework html javascript mobile single-page-applications spa typescript web

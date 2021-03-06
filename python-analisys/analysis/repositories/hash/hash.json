@@ -1,0 +1,482 @@
+[
+  {
+    "name": "education-ebookfoundation",
+    "url": "",
+    "repository_id": 0,
+    "about": ":books: Freely available programming books\n",
+    "topics": "books education hacktoberfest list resource",
+    "combined": ":books: freely available programming books\nbooks education hacktoberfest list resource",
+    "clear_about": "",
+    "clear_combined": "books  freely available programming books books education hacktoberfest list resource"
+  },
+  {
+    "name": "education-education",
+    "url": "",
+    "repository_id": 1,
+    "about": "e-education solutions(Agora Reference Design)\n",
+    "topics": "agora education electron-app rtc video",
+    "combined": "e-education solutions(agora reference design)\nagora education electron-app rtc video",
+    "clear_about": "",
+    "clear_combined": "e education solutions agora reference design  agora education electron app rtc video"
+  },
+  {
+    "name": "education-nodejs",
+    "url": "",
+    "repository_id": 2,
+    "about": "A place to discover and contribute to education initiatives in Node.js\n",
+    "topics": "node nodejs",
+    "combined": "a place to discover and contribute to education initiatives in node.js\nnode nodejs",
+    "clear_about": "",
+    "clear_combined": "a place to discover and contribute to education initiatives in node js node nodejs"
+  },
+  {
+    "name": "education-ossu",
+    "url": "",
+    "repository_id": 3,
+    "about": ":mortar_board: Path to a free self-taught education in Computer Science!\n",
+    "topics": "awesome-list computer-science courses curriculum",
+    "combined": ":mortar_board: path to a free self-taught education in computer science!\nawesome-list computer-science courses curriculum",
+    "clear_about": "",
+    "clear_combined": "mortar board  path to a free self taught education in computer science  awesome list computer science courses curriculum"
+  },
+  {
+    "name": "education-swift",
+    "url": "",
+    "repository_id": 4,
+    "about": "Learn some Swift\n",
+    "topics": "awesome awesome-list swift swift-education",
+    "combined": "learn some swift\nawesome awesome-list swift swift-education",
+    "clear_about": "",
+    "clear_combined": "learn some swift awesome awesome list swift swift education"
+  },
+  {
+    "name": "education-timjacobi",
+    "url": "",
+    "repository_id": 5,
+    "about": "A list of helpful material to develop using Angular\n",
+    "topics": "angular angular2-components angular2-demo angular2-typescript ngrx",
+    "combined": "a list of helpful material to develop using angular\nangular angular2-components angular2-demo angular2-typescript ngrx",
+    "clear_about": "",
+    "clear_combined": "a list of helpful material to develop using angular angular angular  components angular  demo angular  typescript ngrx"
+  },
+  {
+    "name": "frontend-angular",
+    "url": "",
+    "repository_id": 6,
+    "about": "One framework. Mobile & desktop.\n",
+    "topics": "angular javascript pwa typescript web web-framework web-performance\n",
+    "combined": "one framework. mobile & desktop.\nangular javascript pwa typescript web web-framework web-performance\n",
+    "clear_about": "",
+    "clear_combined": "one framework  mobile   desktop  angular javascript pwa typescript web web framework web performance"
+  },
+  {
+    "name": "frontend-aurelia",
+    "url": "",
+    "repository_id": 7,
+    "about": "The Aurelia 1 framework entry point, bringing together all the required sub-modules of Aurelia.\n",
+    "topics": "aurelia-framework cross-platform framework html javascript mobile single-page-applications spa typescript web",
+    "combined": "the aurelia 1 framework entry point, bringing together all the required sub-modules of aurelia.\naurelia-framework cross-platform framework html javascript mobile single-page-applications spa typescript web",
+    "clear_about": "",
+    "clear_combined": "the aurelia   framework entry point  bringing together all the required sub modules of aurelia  aurelia framework cross platform framework html javascript mobile single page applications spa typescript web"
+  },
+  {
+    "name": "frontend-emberjs",
+    "url": "",
+    "repository_id": 8,
+    "about": "Ember.js - A JavaScript framework for creating ambitious web applications\n",
+    "topics": "ember hacktoberfest javascript javascript-framework",
+    "combined": "ember.js - a javascript framework for creating ambitious web applications\nember hacktoberfest javascript javascript-framework",
+    "clear_about": "",
+    "clear_combined": "ember js   a javascript framework for creating ambitious web applications ember hacktoberfest javascript javascript framework"
+  },
+  {
+    "name": "frontend-react",
+    "url": "",
+    "repository_id": 9,
+    "about": "A declarative, efficient, and flexible JavaScript library for building user interfaces.\n",
+    "topics": "declarative frontend javascript library react ui\n",
+    "combined": "a declarative, efficient, and flexible javascript library for building user interfaces.\ndeclarative frontend javascript library react ui\n",
+    "clear_about": "",
+    "clear_combined": "a declarative  efficient  and flexible javascript library for building user interfaces  declarative frontend javascript library react ui"
+  },
+  {
+    "name": "frontend-svelte",
+    "url": "",
+    "repository_id": 10,
+    "about": "Cybernetically enhanced web apps\n",
+    "topics": "compiler template ui",
+    "combined": "cybernetically enhanced web apps\ncompiler template ui",
+    "clear_about": "",
+    "clear_combined": "cybernetically enhanced web apps compiler template ui"
+  },
+  {
+    "name": "frontend-vue",
+    "url": "",
+    "repository_id": 11,
+    "about": "\u0440\u045f\u2013\u2013 Vue.js is a progressive, incrementally-adoptable JavaScript framework for building UI on the web.\n",
+    "topics": "framework frontend javascript vue\n",
+    "combined": "\u0440\u045f\u2013\u2013 vue.js is a progressive, incrementally-adoptable javascript framework for building ui on the web.\nframework frontend javascript vue\n",
+    "clear_about": "",
+    "clear_combined": "vue js is a progressive  incrementally adoptable javascript framework for building ui on the web  framework frontend javascript vue"
+  },
+  {
+    "name": "httpclient-axios",
+    "url": "",
+    "repository_id": 12,
+    "about": "Promise based HTTP client for the browser and node.js\n",
+    "topics": "http-client javascript nodejs promise",
+    "combined": "promise based http client for the browser and node.js\nhttp-client javascript nodejs promise",
+    "clear_about": "",
+    "clear_combined": "promise based http client for the browser and node js http client javascript nodejs promise"
+  },
+  {
+    "name": "httpclient-flask",
+    "url": "",
+    "repository_id": 13,
+    "about": "The Python micro framework for building web applications.\n",
+    "topics": "flask hacktoberfest jinja pallets python web-framework werkzeug wsgi\n",
+    "combined": "the python micro framework for building web applications.\nflask hacktoberfest jinja pallets python web-framework werkzeug wsgi\n",
+    "clear_about": "",
+    "clear_combined": "the python micro framework for building web applications  flask hacktoberfest jinja pallets python web framework werkzeug wsgi"
+  },
+  {
+    "name": "httpclient-gin",
+    "url": "",
+    "repository_id": 14,
+    "about": "in is a HTTP web framework written in Go (Golang). It features a Martini-like API with much better performance -- up to 40 times faster. If you need smashing performance, get yourself some Gin.\n",
+    "topics": "framework gin go middleware performance router server\n",
+    "combined": "in is a http web framework written in go (golang). it features a martini-like api with much better performance -- up to 40 times faster. if you need smashing performance, get yourself some gin.\nframework gin go middleware performance router server\n",
+    "clear_about": "",
+    "clear_combined": "in is a http web framework written in go  golang   it features a martini like api with much better performance    up to    times faster  if you need smashing performance  get yourself some gin  framework gin go middleware performance router server"
+  },
+  {
+    "name": "httpclient-okhttp",
+    "url": "",
+    "repository_id": 15,
+    "about": "Square\u0432\u0402\u2122s meticulous HTTP client for the JVM, Android, and GraalVM.\n",
+    "topics": "android graalvm java kotlin\n",
+    "combined": "square\u0432\u0452\u2122s meticulous http client for the jvm, android, and graalvm.\nandroid graalvm java kotlin\n",
+    "clear_about": "",
+    "clear_combined": "square s meticulous http client for the jvm  android  and graalvm  android graalvm java kotlin"
+  },
+  {
+    "name": "httpclient-requests",
+    "url": "",
+    "repository_id": 16,
+    "about": "A simple, yet elegant HTTP library\n",
+    "topics": "client cookies forhumans http humans python python-requests requests",
+    "combined": "a simple, yet elegant http library\nclient cookies forhumans http humans python python-requests requests",
+    "clear_about": "",
+    "clear_combined": "a simple  yet elegant http library client cookies forhumans http humans python python requests requests"
+  },
+  {
+    "name": "httpclient-rubyhttp",
+    "url": "",
+    "repository_id": 17,
+    "about": "HTTP (The Gem! a.k.a. http.rb) - a fast Ruby HTTP client with a chainable API, streaming support, and timeouts\n",
+    "topics": "client http http-client ruby",
+    "combined": "http (the gem! a.k.a. http.rb) - a fast ruby http client with a chainable api, streaming support, and timeouts\nclient http http-client ruby",
+    "clear_about": "",
+    "clear_combined": "http  the gem  a k a  http rb    a fast ruby http client with a chainable api  streaming support  and timeouts client http http client ruby"
+  },
+  {
+    "name": "ml-faceswap",
+    "url": "",
+    "repository_id": 18,
+    "about": "Deepfakes Software For All\n",
+    "topics": "deep-face-swap deep-learning deep-neural-networks deepface deepfakes deeplearning face-swap faceswap fakeapp machine-learning myfakeapp neural-nets neural-networks openfaceswap",
+    "combined": "deepfakes software for all\ndeep-face-swap deep-learning deep-neural-networks deepface deepfakes deeplearning face-swap faceswap fakeapp machine-learning myfakeapp neural-nets neural-networks openfaceswap",
+    "clear_about": "",
+    "clear_combined": "deepfakes software for all deep face swap deep learning deep neural networks deepface deepfakes deeplearning face swap faceswap fakeapp machine learning myfakeapp neural nets neural networks openfaceswap"
+  },
+  {
+    "name": "ml-keras",
+    "url": "",
+    "repository_id": 19,
+    "about": "Deep Learning for humans\n",
+    "topics": "data-science deep-learning machine-learning neural-networks python tensorflow",
+    "combined": "deep learning for humans\ndata-science deep-learning machine-learning neural-networks python tensorflow",
+    "clear_about": "",
+    "clear_combined": "deep learning for humans data science deep learning machine learning neural networks python tensorflow"
+  },
+  {
+    "name": "ml-pandas",
+    "url": "",
+    "repository_id": 20,
+    "about": "Flexible and powerful data analysis / manipulation library for Python, providing labeled data structures similar to R data.frame objects, statistical functions, and much more\n",
+    "topics": "alignment data-analysis flexible pandas python",
+    "combined": "flexible and powerful data analysis / manipulation library for python, providing labeled data structures similar to r data.frame objects, statistical functions, and much more\nalignment data-analysis flexible pandas python",
+    "clear_about": "",
+    "clear_combined": "flexible and powerful data analysis   manipulation library for python  providing labeled data structures similar to r data frame objects  statistical functions  and much more alignment data analysis flexible pandas python"
+  },
+  {
+    "name": "ml-pytorch",
+    "url": "",
+    "repository_id": 21,
+    "about": "Tensors and Dynamic neural networks in Python with strong GPU acceleration\n",
+    "topics": "autograd deep-learning gpu machine-learning neural-network numpy python tensor",
+    "combined": "tensors and dynamic neural networks in python with strong gpu acceleration\nautograd deep-learning gpu machine-learning neural-network numpy python tensor",
+    "clear_about": "",
+    "clear_combined": "tensors and dynamic neural networks in python with strong gpu acceleration autograd deep learning gpu machine learning neural network numpy python tensor"
+  },
+  {
+    "name": "ml-sklearn",
+    "url": "",
+    "repository_id": 22,
+    "about": "scikit-learn: machine learning in Python\n",
+    "topics": "data-analysis data-science machine-learning python statistics",
+    "combined": "scikit-learn: machine learning in python\ndata-analysis data-science machine-learning python statistics",
+    "clear_about": "",
+    "clear_combined": "scikit learn  machine learning in python data analysis data science machine learning python statistics"
+  },
+  {
+    "name": "ml-tensorflow",
+    "url": "",
+    "repository_id": 23,
+    "about": "An Open Source Machine Learning Framework for Everyone\n",
+    "topics": "deep-learning deep-neural-networks distributed machine-learning ml neural-network python tensorflow",
+    "combined": "an open source machine learning framework for everyone\ndeep-learning deep-neural-networks distributed machine-learning ml neural-network python tensorflow",
+    "clear_about": "",
+    "clear_combined": "an open source machine learning framework for everyone deep learning deep neural networks distributed machine learning ml neural network python tensorflow"
+  },
+  {
+    "name": "nlp-awesomenlp",
+    "url": "",
+    "repository_id": 24,
+    "about": "A curated list of resources dedicated to Natural Language Processing (NLP)\n",
+    "topics": "awesome awesome-list deep-learning language machine-learning natural-language-processing nlp text-mining",
+    "combined": "a curated list of resources dedicated to natural language processing (nlp)\nawesome awesome-list deep-learning language machine-learning natural-language-processing nlp text-mining",
+    "clear_about": "",
+    "clear_combined": "a curated list of resources dedicated to natural language processing  nlp  awesome awesome list deep learning language machine learning natural language processing nlp text mining"
+  },
+  {
+    "name": "nlp-corenlp",
+    "url": "",
+    "repository_id": 25,
+    "about": "Stanford CoreNLP: A Java suite of core NLP tools.\n",
+    "topics": "named-entity-recognition natural-language-processing nlp nlp-parsing stanford-nlp",
+    "combined": "stanford corenlp: a java suite of core nlp tools.\nnamed-entity-recognition natural-language-processing nlp nlp-parsing stanford-nlp",
+    "clear_about": "",
+    "clear_combined": "stanford corenlp  a java suite of core nlp tools  named entity recognition natural language processing nlp nlp parsing stanford nlp"
+  },
+  {
+    "name": "nlp-meta",
+    "url": "",
+    "repository_id": 26,
+    "about": "A Modern C++ Data Sciences Toolkit\n",
+    "topics": "c-plus-plus graph-algorithms inverted-index language-modeling nlp nlp-parsing pos-tag search-engine text-analysis text-analytics text-classification word-embeddings",
+    "combined": "a modern c++ data sciences toolkit\nc-plus-plus graph-algorithms inverted-index language-modeling nlp nlp-parsing pos-tag search-engine text-analysis text-analytics text-classification word-embeddings",
+    "clear_about": "",
+    "clear_combined": "a modern c++ data sciences toolkit c plus plus graph algorithms inverted index language modeling nlp nlp parsing pos tag search engine text analysis text analytics text classification word embeddings"
+  },
+  {
+    "name": "nlp-nlp.js",
+    "url": "",
+    "repository_id": 27,
+    "about": "An NLP library for building bots, with entity extraction, sentiment analysis, automatic language identify, and so more\n",
+    "topics": "bot bots chatbot classifier conversational-ai entity-extraction hacktoberfest javascript natural-language-processing nlp nlu nodejs sentiment-analysis",
+    "combined": "an nlp library for building bots, with entity extraction, sentiment analysis, automatic language identify, and so more\nbot bots chatbot classifier conversational-ai entity-extraction hacktoberfest javascript natural-language-processing nlp nlu nodejs sentiment-analysis",
+    "clear_about": "",
+    "clear_combined": "an nlp library for building bots  with entity extraction  sentiment analysis  automatic language identify  and so more bot bots chatbot classifier conversational ai entity extraction hacktoberfest javascript natural language processing nlp nlu nodejs sentiment analysis"
+  },
+  {
+    "name": "nlp-nlpprogress",
+    "url": "",
+    "repository_id": 28,
+    "about": "Repository to track the progress in Natural Language Processing (NLP), including the datasets and the current state-of-the-art for the most common NLP tasks\n",
+    "topics": "dialogue machine-learning machine-translation named-entity-recognition natural-language-processing nlp-tasks",
+    "combined": "repository to track the progress in natural language processing (nlp), including the datasets and the current state-of-the-art for the most common nlp tasks\ndialogue machine-learning machine-translation named-entity-recognition natural-language-processing nlp-tasks",
+    "clear_about": "",
+    "clear_combined": "repository to track the progress in natural language processing  nlp   including the datasets and the current state of the art for the most common nlp tasks dialogue machine learning machine translation named entity recognition natural language processing nlp tasks"
+  },
+  {
+    "name": "nlp-pynlpl",
+    "url": "",
+    "repository_id": 29,
+    "about": "PyNLPl, pronounced as 'pineapple', is a Python library for Natural Language Processing. It contains various modules useful for common, and less common, NLP tasks. PyNLPl can be used for basic tasks such as the extraction of n-grams and frequency lists, and to build simple language model. There are also more complex data types and algorithms. Moreover, there are parsers for file formats common in NLP (e.g. FoLiA/Giza/Moses/ARPA/Timbl/CQL). There are also clients to interface with various NLP specific servers. PyNLPl most notably features a very extensive library for working with FoLiA XML (Format for Linguistic Annotation).\n",
+    "topics": "computational-linguistics evaluation-metrics folia language-modelling library linguistics machine-learning natural-language-processing nlp nlp-library python search-algorithms text-processing",
+    "combined": "pynlpl, pronounced as 'pineapple', is a python library for natural language processing. it contains various modules useful for common, and less common, nlp tasks. pynlpl can be used for basic tasks such as the extraction of n-grams and frequency lists, and to build simple language model. there are also more complex data types and algorithms. moreover, there are parsers for file formats common in nlp (e.g. folia/giza/moses/arpa/timbl/cql). there are also clients to interface with various nlp specific servers. pynlpl most notably features a very extensive library for working with folia xml (format for linguistic annotation).\ncomputational-linguistics evaluation-metrics folia language-modelling library linguistics machine-learning natural-language-processing nlp nlp-library python search-algorithms text-processing",
+    "clear_about": "",
+    "clear_combined": "pynlpl  pronounced as  pineapple   is a python library for natural language processing  it contains various modules useful for common  and less common  nlp tasks  pynlpl can be used for basic tasks such as the extraction of n grams and frequency lists  and to build simple language model  there are also more complex data types and algorithms  moreover  there are parsers for file formats common in nlp  e g  folia giza moses arpa timbl cql   there are also clients to interface with various nlp specific servers  pynlpl most notably features a very extensive library for working with folia xml  format for linguistic annotation   computational linguistics evaluation metrics folia language modelling library linguistics machine learning natural language processing nlp nlp library python search algorithms text processing"
+  },
+  {
+    "name": "proxy-dnscryptproxy",
+    "url": "",
+    "repository_id": 30,
+    "about": "dnscrypt-proxy 2 - A flexible DNS proxy, with support for encrypted DNS protocols\n",
+    "topics": "dns dns-over-https dnscrypt dnscrypt-proxy dnscrypt-proxy2 doh proxy",
+    "combined": "dnscrypt-proxy 2 - a flexible dns proxy, with support for encrypted dns protocols\ndns dns-over-https dnscrypt dnscrypt-proxy dnscrypt-proxy2 doh proxy",
+    "clear_about": "",
+    "clear_combined": "dnscrypt proxy     a flexible dns proxy  with support for encrypted dns protocols dns dns over https dnscrypt dnscrypt proxy dnscrypt proxy  doh proxy"
+  },
+  {
+    "name": "proxy-istio",
+    "url": "",
+    "repository_id": 31,
+    "about": "The Istio proxy components\n",
+    "topics": "discovery lyft-envoy monitoring proxy sideca",
+    "combined": "the istio proxy components\ndiscovery lyft-envoy monitoring proxy sideca",
+    "clear_about": "",
+    "clear_combined": "the istio proxy components discovery lyft envoy monitoring proxy sideca"
+  },
+  {
+    "name": "proxy-nginxproxy",
+    "url": "",
+    "repository_id": 32,
+    "about": "Automated nginx proxy for Docker containers using docker-gen\n",
+    "topics": "docker docker-gen letsencrypt nginx",
+    "combined": "automated nginx proxy for docker containers using docker-gen\ndocker docker-gen letsencrypt nginx",
+    "clear_about": "",
+    "clear_combined": "automated nginx proxy for docker containers using docker gen docker docker gen letsencrypt nginx"
+  },
+  {
+    "name": "proxy-proxybroker",
+    "url": "",
+    "repository_id": 33,
+    "about": "Proxy [Finder | Checker | Server]. HTTP(S) & SOCKS :performing_arts:\n",
+    "topics": "anonymity anonymous crawler http-proxy privacy proxies proxy proxy-checker proxy-list proxy-server proxypool socks",
+    "combined": "proxy [finder | checker | server]. http(s) & socks :performing_arts:\nanonymity anonymous crawler http-proxy privacy proxies proxy proxy-checker proxy-list proxy-server proxypool socks",
+    "clear_about": "",
+    "clear_combined": "proxy  finder | checker | server   http s    socks  performing arts  anonymity anonymous crawler http proxy privacy proxies proxy proxy checker proxy list proxy server proxypool socks"
+  },
+  {
+    "name": "proxy-proxypool",
+    "url": "",
+    "repository_id": 34,
+    "about": "An Efficient ProxyPool with Getter, Tester and Server\n",
+    "topics": "flask http proxy proxypool redis webspider",
+    "combined": "an efficient proxypool with getter, tester and server\nflask http proxy proxypool redis webspider",
+    "clear_about": "",
+    "clear_combined": "an efficient proxypool with getter  tester and server flask http proxy proxypool redis webspider"
+  },
+  {
+    "name": "proxy-traefik",
+    "url": "",
+    "repository_id": 35,
+    "about": "The Cloud Native Application Proxy\n",
+    "topics": "consul docker etcd go golang kubernetes letsencrypt load-balancer marathon mesos microservice reverse-proxy zookeeper",
+    "combined": "the cloud native application proxy\nconsul docker etcd go golang kubernetes letsencrypt load-balancer marathon mesos microservice reverse-proxy zookeeper",
+    "clear_about": "",
+    "clear_combined": "the cloud native application proxy consul docker etcd go golang kubernetes letsencrypt load balancer marathon mesos microservice reverse proxy zookeeper"
+  },
+  {
+    "name": "terminal-alacritty",
+    "url": "",
+    "repository_id": 36,
+    "about": "A cross-platform, OpenGL terminal emulator.\n",
+    "topics": "bsd gpu linux macos opengl rust terminal terminal-emulators vte windows\n",
+    "combined": "a cross-platform, opengl terminal emulator.\nbsd gpu linux macos opengl rust terminal terminal-emulators vte windows\n",
+    "clear_about": "",
+    "clear_combined": "a cross platform  opengl terminal emulator  bsd gpu linux macos opengl rust terminal terminal emulators vte windows"
+  },
+  {
+    "name": "terminal-httpie",
+    "url": "",
+    "repository_id": 37,
+    "about": "As easy as /aitch-tee-tee-pie/ \u0440\u045f\u0490\u00a7 Modern, user-friendly command-line HTTP client for the API era. JSON support, colors, sessions, downloads, plugins & more.\n",
+    "topics": "api api-client api-testing cli client curl debugging developer-tools development devops http http-client httpie json python rest rest-api terminal usability web",
+    "combined": "as easy as /aitch-tee-tee-pie/ \u0440\u045f\u0491\u00a7 modern, user-friendly command-line http client for the api era. json support, colors, sessions, downloads, plugins & more.\napi api-client api-testing cli client curl debugging developer-tools development devops http http-client httpie json python rest rest-api terminal usability web",
+    "clear_about": "",
+    "clear_combined": "as easy as  aitch tee tee pie    modern  user friendly command line http client for the api era  json support  colors  sessions  downloads  plugins   more  api api client api testing cli client curl debugging developer tools development devops http http client httpie json python rest rest api terminal usability web"
+  },
+  {
+    "name": "terminal-hyper",
+    "url": "",
+    "repository_id": 38,
+    "about": "A terminal built on web technologies\n",
+    "topics": "css html hyper javascript linux macos react terminal terminal-emulators\n",
+    "combined": "a terminal built on web technologies\ncss html hyper javascript linux macos react terminal terminal-emulators\n",
+    "clear_about": "",
+    "clear_combined": "a terminal built on web technologies css html hyper javascript linux macos react terminal terminal emulators"
+  },
+  {
+    "name": "terminal-macos",
+    "url": "",
+    "repository_id": 39,
+    "about": "Color schemes for default macOS Terminal.app\n",
+    "topics": "color-schemes macos terminal terminal-themes",
+    "combined": "color schemes for default macos terminal.app\ncolor-schemes macos terminal terminal-themes",
+    "clear_about": "",
+    "clear_combined": "color schemes for default macos terminal app color schemes macos terminal terminal themes"
+  },
+  {
+    "name": "terminal-terminal",
+    "url": "",
+    "repository_id": 40,
+    "about": "The new Windows Terminal and the original Windows console host, all in the same place!\n",
+    "topics": "cmd command-line console terminal windows-console windows-terminal wsl\n",
+    "combined": "the new windows terminal and the original windows console host, all in the same place!\ncmd command-line console terminal windows-console windows-terminal wsl\n",
+    "clear_about": "",
+    "clear_combined": "the new windows terminal and the original windows console host  all in the same place  cmd command line console terminal windows console windows terminal wsl"
+  },
+  {
+    "name": "terminal-terminalizer",
+    "url": "",
+    "repository_id": 41,
+    "about": "\u0440\u045f\u00a6\u201e Record your terminal and generate animated gif images or share a web player\n",
+    "topics": "client cookies forhumans http humans python python-requests requests",
+    "combined": "\u0440\u045f\u00a6\u201e record your terminal and generate animated gif images or share a web player\nclient cookies forhumans http humans python python-requests requests",
+    "clear_about": "",
+    "clear_combined": "record your terminal and generate animated gif images or share a web player client cookies forhumans http humans python python requests requests"
+  },
+  {
+    "name": "vpn-hwdsl2",
+    "url": "",
+    "repository_id": 42,
+    "about": "Scripts to build your own IPsec VPN server, with IPsec/L2TP, Cisco IPsec and IKEv2\n",
+    "topics": "cisco-ipsec encryption ikev2 ipsec l2tp libreswan network security vpn vpn-client vpn-server",
+    "combined": "scripts to build your own ipsec vpn server, with ipsec/l2tp, cisco ipsec and ikev2\ncisco-ipsec encryption ikev2 ipsec l2tp libreswan network security vpn vpn-client vpn-server",
+    "clear_about": "",
+    "clear_combined": "scripts to build your own ipsec vpn server  with ipsec l tp  cisco ipsec and ikev  cisco ipsec encryption ikev  ipsec l tp libreswan network security vpn vpn client vpn server"
+  },
+  {
+    "name": "vpn-openvpn",
+    "url": "",
+    "repository_id": 43,
+    "about": "OpenVPN  is  an open source VPN daemon\n",
+    "topics": "security vpn",
+    "combined": "openvpn  is  an open source vpn daemon\nsecurity vpn",
+    "clear_about": "",
+    "clear_combined": "openvpn  is  an open source vpn daemon security vpn"
+  },
+  {
+    "name": "vpn-pritunl",
+    "url": "",
+    "repository_id": 44,
+    "about": "Enterprise VPN server\n",
+    "topics": "pritunl vpn vpn-server",
+    "combined": "enterprise vpn server\npritunl vpn vpn-server",
+    "clear_about": "",
+    "clear_combined": "enterprise vpn server pritunl vpn vpn server"
+  },
+  {
+    "name": "vpn-softethervpn",
+    "url": "",
+    "repository_id": 45,
+    "about": "Cross-platform multi-protocol VPN software. Pull requests are welcome. The stable version is available at\n",
+    "topics": "etherip ike ipsec l2tp l2tpv3 openvpn softether-vpn softethervpn ssl-vpn sstp tls vpn vpn-protocols vpn-server vpn-tunnel wfh wireguard work-from-home",
+    "combined": "cross-platform multi-protocol vpn software. pull requests are welcome. the stable version is available at\netherip ike ipsec l2tp l2tpv3 openvpn softether-vpn softethervpn ssl-vpn sstp tls vpn vpn-protocols vpn-server vpn-tunnel wfh wireguard work-from-home",
+    "clear_about": "",
+    "clear_combined": "cross platform multi protocol vpn software  pull requests are welcome  the stable version is available at etherip ike ipsec l tp l tpv  openvpn softether vpn softethervpn ssl vpn sstp tls vpn vpn protocols vpn server vpn tunnel wfh wireguard work from home"
+  },
+  {
+    "name": "vpn-strongswan",
+    "url": "",
+    "repository_id": 46,
+    "about": "strongSwan - IPsec-based VPN\n",
+    "topics": "ikev2 ipsec strongswan vpn vpn-client vpn-server",
+    "combined": "strongswan - ipsec-based vpn\nikev2 ipsec strongswan vpn vpn-client vpn-server",
+    "clear_about": "",
+    "clear_combined": "strongswan   ipsec based vpn ikev  ipsec strongswan vpn vpn client vpn server"
+  },
+  {
+    "name": "vpn-tinyfecvpn",
+    "url": "",
+    "repository_id": 47,
+    "about": "A VPN Designed for Lossy Links, with Build-in Forward Error Correction(FEC) Support. Improves your Network Quality on a High-latency Lossy Link.\n",
+    "topics": "fec proxy reed-solomon vpn",
+    "combined": "a vpn designed for lossy links, with build-in forward error correction(fec) support. improves your network quality on a high-latency lossy link.\nfec proxy reed-solomon vpn",
+    "clear_about": "",
+    "clear_combined": "a vpn designed for lossy links  with build in forward error correction fec  support  improves your network quality on a high latency lossy link  fec proxy reed solomon vpn"
+  }
+]

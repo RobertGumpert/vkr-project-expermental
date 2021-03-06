@@ -1,0 +1,2 @@
+A simple, yet elegant HTTP library
+client cookies forhumans http humans python python-requests requests
