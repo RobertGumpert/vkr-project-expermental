@@ -55,53 +55,32 @@ def create_corpus(files):
     for repository, data in files.items():
         # text = data[1][1]
         text = data[0]
-        text = text.replace('\n', ' ').strip()
+        text = text.replace('\n', ' ').strip().lower()
         corpus.append(text)
         repository_index[index] = repository
         index += 1
     return corpus, repository_index
 
 
-def get_clusters(corpus):
-    vectorizer = CountVectorizer(stop_words='english', min_df=2)
-    bag_of_words_count = vectorizer.fit_transform(corpus)
-    tfidf_transformer = TfidfTransformer(use_idf=True).fit(bag_of_words_count)
-    vectors = tfidf_transformer.transform(bag_of_words_count)
-    clusterizator = AffinityPropagation().fit(vectors.toarray())
-    count = len(clusterizator.cluster_centers_)
-    clusters = []
-    print('Count clusters: ', count)
-    for cluster in range(count):
-        clusters.append('cluster_' + str(cluster))
-    return clusters, vectorizer, vectors, clusterizator
-
-
-def get_lsa(clusters, corpus, vectors, vectorizer):
-    svd = TruncatedSVD(n_components=len(clusters))
-    lsa = svd.fit_transform(vectors)
-    df = pd.DataFrame(lsa, columns=clusters)
-    df['repository'] = corpus
-    # print(df)
-    dictionary = vectorizer.get_feature_names()
-    print(len(vectorizer.vocabulary_))
-    print(len(dictionary))
-    encoding = pd.DataFrame(svd.components_, index=clusters, columns=dictionary).T
-    pd.options.display.max_rows = len(dictionary)
-    # print(encoding.sort_values(clusters[2], ascending=False))
-    return lsa, df, encoding
-
-
-def calc_distances(vectors, repository_index, c):
-    for index, vector in enumerate(vectors):
-        main_repository = repository_index[index]
+def distances(x, index_to_file, c):
+    for index, vector in enumerate(x):
+        main_repository = index_to_file[index]
         result = dict()
-        print('MAIN: ', main_repository)
-        for i, v in enumerate(vectors):
-            second_repository = repository_index[i]
-            vec_main = vectors[index]
-            vec_second = vectors[i]
+        print('MAIN (simple): ', main_repository)
+
+        for i, v in enumerate(x):
+            indeces = []
+            vec_main = x[index]
+            vec_second = x[i]
+            for wi, word in enumerate(vec_main):
+                if vec_main[wi] > 0 and vec_second[wi] > 0:
+                    indeces.append(count_vectorizer.get_feature_names()[wi])
+            second_repository = index_to_file[i]
             distance = cosine_similarity([vec_main, vec_second])[0][1] * 100
-            result[second_repository] = distance
+            if distance > 40:
+                result[second_repository] = distance
+                # print('\t\t', indeces)
+            # result[second_repository] = distance
         sorted_dict = dict()
         sorted_keys = sorted(result, key=result.get)
         for w in sorted_keys:
@@ -111,17 +90,63 @@ def calc_distances(vectors, repository_index, c):
             if len(sorted_dict) - i <= c:
                 print("\t\t-> ", w, " = ", sorted_dict[w])
             i += 1
-    return
 
 
-def print_clusters(clustering, repository_index):
-    for index, cl in enumerate(clustering.labels_):
-        print('\t\t', repository_index[index], ' = ', cl)
-
+stop_words = text.ENGLISH_STOP_WORDS.union(
+    ['javascript', 'python', 'java', 'kotlin', 'android', 'hacktoberfest', 'js', 'nodejs',
+     'windows', 'macos', 'react', 'angular', 'vue', 'linux'])
 
 read_files(files_dict, "-topics.txt")
 corpus, repository_index = create_corpus(files_dict)
-clusters, vectorizer, vectors, clusterizator = get_clusters(corpus)
-print_clusters(clusterizator, repository_index)
-lsa, df, encoding = get_lsa(clusters, corpus, vectors, vectorizer)
-calc_distances(lsa, repository_index, len(corpus))
+count_vectorizer = CountVectorizer(stop_words=stop_words, min_df=2, max_features=len(corpus))
+
+bag_of_words_count = count_vectorizer.fit_transform(corpus)
+tfidf_transformer = TfidfTransformer(use_idf=True).fit(bag_of_words_count)
+bag_of_word_tfidf = tfidf_transformer.transform(bag_of_words_count)
+pprint.pprint(dict(zip(count_vectorizer.get_feature_names(), tfidf_transformer.idf_)))
+
+c = len(corpus)
+distances(bag_of_words_count.toarray(), repository_index, c)
+
+
+def indexing_repositories():
+    for wi, word in enumerate(count_vectorizer.get_feature_names()):
+        print('WORD: ', word)
+        indeces = dict()
+        vectors = []
+        index = 0
+        for i, vector in enumerate(bag_of_word_tfidf.toarray()):
+            if vector[wi] > 0:
+                vectors.append(vector)
+                indeces[index] = repository_index[i]
+                index += 1
+        for i, main in enumerate(vectors):
+            print('\t\tMAIN: ', indeces[i], ', WORD: ', word)
+            result = dict()
+            sort = dict()
+            for j, second in enumerate(vectors):
+                distance = cosine_similarity([main, second])[0][1] * 100
+                if distance > 40:
+                    result[distance] = indeces[j] + ' = ' + str(distance)
+            for key in sorted(result.keys()):
+                sort[key] = result[key]
+            for k, v in sort.items():
+                print('\t\t\t\t -> ', v)
+
+
+# indexing_repositories()
+
+#
+# topics = []
+# for i in range(len(count_vectorizer.get_feature_names()) - 1):
+#     topics.append('topic_' + str(i))
+# svd = TruncatedSVD(n_components=len(topics))
+# lsa = svd.fit_transform(bag_of_word_tfidf)
+# df = pd.DataFrame(lsa, columns=topics)
+# df['repository'] = corpus
+# # display(df)
+# #
+# dictionary = count_vectorizer.get_feature_names()
+# encoding = pd.DataFrame(svd.components_, index=topics, columns=dictionary).T
+# pd.options.display.max_rows = len(dictionary)
+# # display(encoding)

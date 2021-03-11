@@ -7,24 +7,26 @@ from sklearn.cluster import AffinityPropagation
 from sklearn.decomposition import TruncatedSVD
 from sklearn.feature_extraction.text import CountVectorizer, TfidfTransformer
 
+from cleartext.basic import do_clear
 from data.viewModels.repository import RepositoryViewModel
 
 
 class Model:
-    vectorizer: CountVectorizer
-    tf_idf: TfidfTransformer
-    clustering: AffinityPropagation
+    vectorizer: CountVectorizer = None
+    tf_idf: TfidfTransformer = None
+    clustering: AffinityPropagation = None
 
     def __save_corpus_hash(self, corpus: List[RepositoryViewModel]):
         path = pathlib.Path(__file__).parent.absolute()
-        path = str(path) + '/hash/hash.json'
+        path = str(path) + '/hash/hash_repositories.json'
         with open(path, 'w') as outfile:
             json.dump([ob.__dict__ for ob in corpus], outfile)
 
-    def __save_vocabulary(self):
+    def __save_vectorizer(self):
         path = pathlib.Path(__file__).parent.absolute()
-        path = str(path) + '/hash/vocabulary.pkl'
-        pickle.dump(self.vectorizer.vocabulary_, open(path, "wb"))
+        pickle.dump(self.vectorizer.vocabulary_, open(str(path) + '/hash/vocabulary.pkl', "wb"))
+        pickle.dump(self.vectorizer, open(str(path) + '/hash/vectorizer.pkl', "wb"))
+        pickle.dump(self.tf_idf, open(str(path) + '/hash/tf_idf.pkl', "wb"))
 
     def __save_clustering(self):
         path = pathlib.Path(__file__).parent.absolute()
@@ -33,17 +35,13 @@ class Model:
 
     def download_models(self):
         path = pathlib.Path(__file__).parent.absolute()
-        self.vectorizer = CountVectorizer(
-            stop_words='english',
-            min_df=2,
-            vocabulary=pickle.load(open(str(path) + '/hash/vocabulary.pkl', "rb"))
-        )
-        self.tf_idf = TfidfTransformer(use_idf=True)
+        self.vectorizer = pickle.load(open(str(path) + '/hash/vectorizer.pkl', 'rb'))
+        self.tf_idf = pickle.load(open(str(path) + '/hash/tf_idf.pkl', 'rb'))
         self.clustering = pickle.load(open(str(path) + '/hash/clustering.pkl', 'rb'))
 
     def download_corpus_from_hash(self) -> List[Tuple[str, str]]:
         path = pathlib.Path(__file__).parent.absolute()
-        path = str(path) + '/hash/hash.json'
+        path = str(path) + '/hash/hash_repositories.json'
         corpus: List[Tuple[str, str]] = []
         with open(path, 'r') as outfile:
             data = json.load(outfile)
@@ -96,45 +94,16 @@ class Model:
         svd = TruncatedSVD(n_components=len(clusters))
         lsa = svd.fit_transform(vectors)
         #
-        self.__save_vocabulary()
+        self.__save_vectorizer()
         self.__save_clustering()
         return
 
-    # def create_clusters(self, corpus: List[Tuple[str, str]]):
-    #     text_list = []
-    #     clusters = []
-    #     for text_tuple in corpus:
-    #         text_list.append(text_tuple[1])
-    #     self.vectorizer = CountVectorizer(stop_words='english', min_df=2)
-    #     self.__save_vocabulary()
-    #     bag_of_words = self.vectorizer.fit_transform(text_list)
-    #     self.tf_idf = TfidfTransformer(use_idf=True).fit(bag_of_words)
-    #     vectors = self.tf_idf.transform(bag_of_words)
-    #     clustering = AffinityPropagation().fit(vectors.toarray())
-    #     count = len(clustering.cluster_centers_)
-    #     for cluster in range(count):
-    #         clusters.append('cluster_' + str(cluster))
-    #     svd = TruncatedSVD(n_components=len(clusters))
-    #     lsa = svd.fit_transform(vectors)
-
-    # def select_train_texts_from_corpus(self, corpus: List[Tuple[str, str]]) -> (
-    #         List[Tuple[str, str]], List[Tuple[str, str]]):
-    #     train_corpus: List[Tuple[str, str]] = []
-    #     test_corpus: List[Tuple[str, str]] = []
-    #     for text_tuple in corpus:
-    #         vectorizer = CountVectorizer(stop_words='english')
-    #         try:
-    #             vector = vectorizer.fit_transform([text_tuple[1]])
-    #         except ValueError:
-    #             test_corpus.append(text_tuple)
-    #             continue
-    #         max_freq = np.max(vector.toarray())
-    #         if max_freq < 2:
-    #             test_corpus.append(text_tuple)
-    #         else:
-    #             train_corpus.append(text_tuple)
-    #     if len(test_corpus) < (len(corpus) / 5):
-    #         for text_tuple in test_corpus:
-    #             train_corpus.append(text_tuple)
-    #         test_corpus = []
-    #     return train_corpus, test_corpus
+    def predict(self, texts: List[str]) -> int:
+        text_inline = ' '.join(texts).lower()
+        text_inline = text_inline.replace('\n', ' ')
+        text_inline = do_clear(text_inline)
+        bag_of_words = self.vectorizer.transform([text_inline])
+        print(bag_of_words.toarray())
+        vector = self.tf_idf.transform(bag_of_words)
+        cluster = self.clustering.predict(vector.toarray())[0]
+        return cluster
