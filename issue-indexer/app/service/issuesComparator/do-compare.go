@@ -15,9 +15,8 @@ func (comparator *IssuesComparator) compareIssuesInPairs(main, second []dataMode
 			if err != nil {
 				continue
 			}
-			runtimeinfo.LogInfo("HAS SIMILAR ISSUES: main [", main[i].RepositoryID, "], second [", second[j].RepositoryID, "]")
 			comparator.channelSendCompareResult <- nearestIssues
-			runtimeinfo.LogInfo("SEND SIMILAR ISSUES: main [", main[i].RepositoryID, "], second [", second[j].RepositoryID, "]")
+			// runtimeinfo.LogInfo("SEND SIMILAR ISSUES: main [", main[i].RepositoryID, "], second [", second[j].RepositoryID, "]")
 		}
 	}
 	runtime.GC()

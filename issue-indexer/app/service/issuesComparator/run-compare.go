@@ -11,7 +11,7 @@ func (comparator *IssuesComparator) runCompareIssuesInPairs(main, second []dataM
 		channelFinishCompare = make(chan bool)
 	)
 	go func() {
-		runtimeinfo.LogInfo("COMPARING START FOR : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
+		runtimeinfo.LogInfo("START COMPARE ISSUES IN PAIRS FOR : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
 		wg := new(sync.WaitGroup)
 		sliceLen := len(main) / comparator.MaxCountThreads
 		if sliceLen <= 1 {
@@ -20,6 +20,7 @@ func (comparator *IssuesComparator) runCompareIssuesInPairs(main, second []dataM
 			to := sliceLen - 1
 			from := 0
 			for {
+				runtimeinfo.LogInfo("size:[", len(main), "] from:[", from, "], to:[", to, "]")
 				if (from + to) >= len(main) {
 					wg.Add(1)
 					piece := main[from : len(main)-1]
@@ -34,9 +35,9 @@ func (comparator *IssuesComparator) runCompareIssuesInPairs(main, second []dataM
 			}
 			wg.Wait()
 		}
-		runtimeinfo.LogInfo("COMPARING FINISHED FOR : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
+		runtimeinfo.LogInfo("FINISH COMPARE ISSUES IN PAIRS FOR : : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
 		channelFinishCompare <- true
-		runtimeinfo.LogInfo("SEND SIGNAL FINISH FOR : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
+		runtimeinfo.LogInfo("SEND SIGNAL FOR COMPARE ISSUES IN PAIRS FOR : : main [", main[0].RepositoryID, "], second [", second[0].RepositoryID, "]")
 
 	}()
 	return channelFinishCompare

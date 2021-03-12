@@ -2,7 +2,6 @@ package issuesComparator
 
 import (
 	"issue-indexer/app/models/dataModel"
-	"issue-indexer/pckg/runtimeinfo"
 )
 
 type IssuesInPairComparator func(i, j int, main, second []dataModel.Issue) (dataModel.NearestIssues, error)
@@ -40,7 +39,6 @@ func (comparator *IssuesComparator) AddCompareIssuesInPairs(main, second []dataM
 
 func (comparator *IssuesComparator) scanResultCompareChannel() {
 	for compareResult := range comparator.channelSendCompareResult {
-		runtimeinfo.LogInfo("GETTING RESULT...")
 		comparator.gettingResult(compareResult)
 	}
 }

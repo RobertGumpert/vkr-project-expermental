@@ -52,7 +52,7 @@ func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, main, second []d
 	nearestIssues = dataModel.NearestIssues{
 		RepositoryID:   main[i].RepositoryID,
 		IssueID:        main[i].ID,
-		NearestIssueID: second[i].ID,
+		NearestIssueID: second[j].ID,
 		CosineDistance: cosineDistance,
 		Intersections:  intersectionWords,
 	}
