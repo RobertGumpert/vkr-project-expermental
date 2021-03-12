@@ -7,7 +7,7 @@ import (
 )
 
 var(
-	corpus = []string{
+	testCorpus = []string{
 		// Vue
 		"Vue js is a progressive incrementally adoptable JavaScript framework for building UI on the web framework frontend javascript vue",
 		// React
@@ -20,14 +20,14 @@ var(
 )
 
 func TestFlowFullDictionary(t *testing.T) {
-	dictionary, vectorsOfWords, count := FullDictionary(corpus, textPreprocessing.ParallelMode)
+	dictionary, vectorsOfWords, count := FullDictionary(testCorpus, textPreprocessing.ParallelMode)
 	runtimeinfo.LogInfo(count)
 	runtimeinfo.LogInfo(vectorsOfWords)
 	for item := range dictionary.IterBuffered() {
 		runtimeinfo.LogInfo("[",item.Key, "] = [", item.Val, "]")
 	}
 	//
-	dictionary, vectorsOfWords, count = FullDictionary(corpus, textPreprocessing.LinearMode)
+	dictionary, vectorsOfWords, count = FullDictionary(testCorpus, textPreprocessing.LinearMode)
 	runtimeinfo.LogInfo(count)
 	runtimeinfo.LogInfo(vectorsOfWords)
 	for item := range dictionary.IterBuffered() {
@@ -35,18 +35,3 @@ func TestFlowFullDictionary(t *testing.T) {
 	}
 }
 
-func TestFlowIDFDictionary(t *testing.T) {
-	dictionary, vectorsOfWords, count := IDFDictionary(corpus, 2, textPreprocessing.ParallelMode)
-	runtimeinfo.LogInfo(count)
-	runtimeinfo.LogInfo(vectorsOfWords)
-	for item := range dictionary.IterBuffered() {
-		runtimeinfo.LogInfo("[",item.Key, "] = [", item.Val, "]")
-	}
-	//
-	dictionary, vectorsOfWords, count = IDFDictionary(corpus, 2, textPreprocessing.LinearMode)
-	runtimeinfo.LogInfo(count)
-	runtimeinfo.LogInfo(vectorsOfWords)
-	for item := range dictionary.IterBuffered() {
-		runtimeinfo.LogInfo("[",item.Key, "] = [", item.Val, "]")
-	}
-}

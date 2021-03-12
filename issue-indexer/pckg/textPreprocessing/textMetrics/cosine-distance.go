@@ -7,6 +7,11 @@ import (
 	"sync"
 )
 
+
+func CosineDistanceOnPairVectors(bagOfWords [][]float64) (float64, error) {
+	return calculateCosineDistanceInPair(bagOfWords[0], bagOfWords[1])
+}
+
 func CosineDistance(bagOfWords [][]float64, mode textPreprocessing.ThreadMode) [][]float64 {
 	if mode == textPreprocessing.ParallelMode {
 		return parallelCalculateCosineDistance(bagOfWords)

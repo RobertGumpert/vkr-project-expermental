@@ -15,6 +15,7 @@ func (s *SQLRepository) HasEntities() error {
 	entities := []interface{}{
 		&dataModel.Repository{},
 		&dataModel.Issue{},
+		&dataModel.NearestIssues{},
 	}
 	for _, entity := range entities {
 		if exist := db.Migrator().HasTable(entity); !exist {
@@ -34,6 +35,7 @@ func (s *SQLRepository) CreateEntities() error {
 	if err := db.Migrator().CreateTable(
 		&dataModel.Repository{},
 		&dataModel.Issue{},
+		&dataModel.NearestIssues{},
 	); err != nil {
 		db.Rollback()
 		return err
@@ -51,6 +53,7 @@ func (s *SQLRepository) Migration() error {
 	if err := db.AutoMigrate(
 		&dataModel.Repository{},
 		&dataModel.Issue{},
+		&dataModel.NearestIssues{},
 	); err != nil {
 		db.Rollback()
 		return err
