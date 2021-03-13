@@ -3,7 +3,6 @@ package textDictionary
 import (
 	concurrentMap "github.com/streamrail/concurrent-map"
 	"issue-indexer/pckg/textPreprocessing"
-	"strings"
 	"sync"
 )
 
@@ -63,32 +62,28 @@ func addWordsToIDFDictionary(dictionary concurrentMap.ConcurrentMap, text string
 	var (
 		buffer = concurrentMap.New()
 	)
-	words := transformTextToSlice(text)
+	words := TextTransformToFeaturesSlice(text)
 	if len(words) == 0 {
 		return
 	}
 	for word := 0; word < len(words); word++ {
-		clearWord := strings.TrimSpace(words[word])
-		if clearWord == "" {
-			continue
-		}
 		vectorsOfWords[positionInVectorsOfWords] = append(
 			vectorsOfWords[positionInVectorsOfWords],
-			clearWord,
+			words[word],
 		)
-		existInBuffer := buffer.Has(clearWord)
-		itemInDictionary, existInDictionary := dictionary.Get(clearWord)
+		existInBuffer := buffer.Has(words[word])
+		itemInDictionary, existInDictionary := dictionary.Get(words[word])
 		if !existInBuffer {
-			buffer.Set(clearWord, struct{}{})
+			buffer.Set(words[word], struct{}{})
 		}
 		if existInDictionary && !existInBuffer {
 			freq := itemInDictionary.(int64) + 1
-			dictionary.Upsert(clearWord, freq, func(exist bool, valueInMap interface{}, newValue interface{}) interface{} {
+			dictionary.Upsert(words[word], freq, func(exist bool, valueInMap interface{}, newValue interface{}) interface{} {
 				return newValue
 			})
 		}
 		if !existInDictionary {
-			dictionary.Set(clearWord, int64(1))
+			dictionary.Set(words[word], int64(1))
 		}
 	}
 }

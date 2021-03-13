@@ -8,9 +8,9 @@ import (
 )
 
 var(
-	corpus = []string{
+	testCorpus = []string{
 		// Vue
-		"Vue js is a progressive incrementally adoptable JavaScript framework for building UI on the web framework frontend javascript vue",
+		"Vue js is a progressive incrementally adoptable JavaScript framework for building UI on the web\r\nframework frontend javascript vue\n",
 		// React
 		"A declarative efficient and flexible JavaScript library for building user interfaces declarative frontend javascript library react ui",
 		//Hyper
@@ -21,7 +21,7 @@ var(
 )
 
 func TestFullDictionaryFrequencyVectorizedFlow(t *testing.T) {
-	dictionary, vectorsOfWords, countFeatures := textDictionary.FullDictionary(corpus, textPreprocessing.LinearMode)
+	dictionary, vectorsOfWords, countFeatures := textDictionary.FullDictionary(testCorpus, textPreprocessing.LinearMode)
 	//
 	runtimeinfo.LogInfo(countFeatures)
 	bagOfWords := FrequencyVectorized(vectorsOfWords, dictionary, textPreprocessing.LinearMode)
@@ -37,7 +37,7 @@ func TestFullDictionaryFrequencyVectorizedFlow(t *testing.T) {
 }
 
 func TestIDFDictionaryFrequencyVectorizedFlow(t *testing.T) {
-	dictionary, vectorsOfWords, countFeatures := textDictionary.IDFDictionary(corpus, 2, textPreprocessing.LinearMode)
+	dictionary, vectorsOfWords, countFeatures := textDictionary.IDFDictionary(testCorpus, 2, textPreprocessing.LinearMode)
 	//
 	runtimeinfo.LogInfo(countFeatures)
 	bagOfWords := FrequencyVectorized(vectorsOfWords, dictionary, textPreprocessing.LinearMode)

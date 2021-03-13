@@ -6,6 +6,9 @@ import (
 	"sync"
 )
 
+func GetFrequencyMap(text []string) concurrentMap.ConcurrentMap {
+	return getFrequenciesWordsInText(text)
+}
 
 func FrequencyVectorized(corpus [][]string, dictionary concurrentMap.ConcurrentMap, mode textPreprocessing.ThreadMode) [][]float64 {
 	if mode == textPreprocessing.ParallelMode {

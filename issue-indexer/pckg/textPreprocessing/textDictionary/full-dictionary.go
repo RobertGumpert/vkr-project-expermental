@@ -8,7 +8,7 @@ import (
 	"sync"
 )
 
-func transformTextToSlice(text string) []string {
+func TextTransformToFeaturesSlice(text string) []string {
 	text = strings.ToLower(text)
 	if strings.Contains(text, "\n") {
 		text = strings.ReplaceAll(text, "\n", " ")
@@ -17,7 +17,18 @@ func transformTextToSlice(text string) []string {
 		text = strings.ReplaceAll(text, "\r", " ")
 	}
 	text = stopwords.CleanString(text, "en", true)
-	words := strings.Split(text, " ")
+	allWords := strings.Split(text, " ")
+	words := make([]string, 0)
+	for i, word := range allWords {
+		word = strings.TrimSpace(word)
+		if word == "" {
+			continue
+		}
+		words = append(
+			words,
+			allWords[i],
+		)
+	}
 	return words
 }
 
@@ -74,23 +85,19 @@ func parallelCreateFullDictionary(corpus []string) (concurrentMap.ConcurrentMap,
 }
 
 func addWordsToFullDictionary(dictionary concurrentMap.ConcurrentMap, text string, positionInVectorsOfWords int, vectorsOfWords [][]string) {
-	words := transformTextToSlice(text)
+	words := TextTransformToFeaturesSlice(text)
 	if len(words) == 0 {
 		return
 	}
 	for word := 0; word < len(words); word++ {
-		clearWord := strings.TrimSpace(words[word])
-		if clearWord == "" {
-			continue
-		}
 		vectorsOfWords[positionInVectorsOfWords] = append(
 			vectorsOfWords[positionInVectorsOfWords],
-			clearWord,
+			words[word],
 		)
-		if exist := dictionary.Has(clearWord); exist {
+		if exist := dictionary.Has(words[word]); exist {
 			continue
 		} else {
-			dictionary.Set(clearWord, struct{}{})
+			dictionary.Set(words[word], struct{}{})
 		}
 	}
 }
@@ -103,5 +110,3 @@ func dictionaryTransform(dictionary concurrentMap.ConcurrentMap) {
 		})
 	}
 }
-
-

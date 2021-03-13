@@ -18,14 +18,16 @@ type Repository struct {
 
 type Issue struct {
 	gorm.Model
-	RepositoryID  uint
-	Number        int             `gorm:"not null;"`
-	URL           string          `gorm:"not null;"`
-	Title         string          `gorm:"not null;"`
-	State         string          `gorm:"not null;"`
-	Body          string          `gorm:"not null;"`
-	NearestIssues []NearestIssues `gorm:"foreignKey:IssueID"`
-	TurnIn        []NearestIssues `gorm:"foreignKey:NearestIssueID"`
+	RepositoryID       uint
+	Number             int             `gorm:"not null;"`
+	URL                string          `gorm:"not null;"`
+	Title              string          `gorm:"not null;"`
+	State              string          `gorm:"not null;"`
+	Body               string          `gorm:"not null;"`
+	TitleDictionary    pq.StringArray  `gorm:"not null; type:text[];"`
+	TitleFrequencyJSON []byte          `gorm:"not null;"`
+	NearestIssues      []NearestIssues `gorm:"foreignKey:IssueID"`
+	TurnIn             []NearestIssues `gorm:"foreignKey:NearestIssueID"`
 }
 
 type NearestIssues struct {
@@ -36,4 +38,3 @@ type NearestIssues struct {
 	CosineDistance float64        `gorm:"not null;"`
 	Intersections  pq.StringArray `gorm:"not null; type:text[];"`
 }
-

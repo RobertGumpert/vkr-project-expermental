@@ -1,7 +1,9 @@
 package issuesComparator
 
 import (
+	"encoding/json"
 	"errors"
+	concurrentMap "github.com/streamrail/concurrent-map"
 	"issue-indexer/app/models/dataModel"
 	"issue-indexer/pckg/textPreprocessing"
 	"issue-indexer/pckg/textPreprocessing/textDictionary"
@@ -55,6 +57,47 @@ func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, main, second []d
 		NearestIssueID: second[j].ID,
 		CosineDistance: cosineDistance,
 		Intersections:  intersectionWords,
+	}
+	return nearestIssues, nil
+}
+
+func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, main, second []dataModel.Issue) (dataModel.NearestIssues, error) {
+	var (
+		objA dataModel.TitleFrequencyJSON
+		objB dataModel.TitleFrequencyJSON
+		nearestIssues dataModel.NearestIssues
+		convertToConcurrent = func(m map[string]float64) concurrentMap.ConcurrentMap{
+			dictionary := concurrentMap.New()
+			for key, val := range m {
+				dictionary.Set(key, val)
+			}
+			return dictionary
+		}
+	)
+	if err := json.Unmarshal(main[i].TitleFrequencyJSON, &objA); err != nil {
+		return nearestIssues, err
+	}
+	if err := json.Unmarshal(second[j].TitleFrequencyJSON, &objB); err != nil {
+		return nearestIssues, err
+	}
+	dictA := convertToConcurrent(objA.Dictionary)
+	dictB := convertToConcurrent(objB.Dictionary)
+	bagOfWords, _, intersections := textVectorized.VectorizedPairDictionaries(dictA, dictB)
+	completenessMatrix := textMetrics.CompletenessText(bagOfWords, textPreprocessing.LinearMode)
+	if completenessMatrix[0] < comparator.MinimumTextCompletenessThreshold ||
+		completenessMatrix[1] < comparator.MinimumTextCompletenessThreshold {
+		return nearestIssues, errors.New("Text(s) isn't completeness on dictionary. ")
+	}
+	cosineDistance, err := textMetrics.CosineDistanceOnPairVectors(bagOfWords)
+	if err != nil {
+		return nearestIssues, err
+	}
+	nearestIssues = dataModel.NearestIssues{
+		RepositoryID:   main[i].RepositoryID,
+		IssueID:        main[i].ID,
+		NearestIssueID: second[j].ID,
+		CosineDistance: cosineDistance,
+		Intersections:  intersections,
 	}
 	return nearestIssues, nil
 }

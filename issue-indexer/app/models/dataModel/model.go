@@ -5,6 +5,10 @@ import (
 	"gorm.io/gorm"
 )
 
+type TitleFrequencyJSON struct {
+	Dictionary map[string]float64 `json:"dictionary"`
+}
+
 type Repository struct {
 	gorm.Model
 	URL              string          `gorm:"not null;"`
@@ -18,14 +22,16 @@ type Repository struct {
 
 type Issue struct {
 	gorm.Model
-	RepositoryID  uint
-	Number        int             `gorm:"not null;"`
-	URL           string          `gorm:"not null;"`
-	Title         string          `gorm:"not null;"`
-	State         string          `gorm:"not null;"`
-	Body          string          `gorm:"not null;"`
-	NearestIssues []NearestIssues `gorm:"foreignKey:IssueID"`
-	TurnIn        []NearestIssues `gorm:"foreignKey:NearestIssueID"`
+	RepositoryID       uint
+	Number             int             `gorm:"not null;"`
+	URL                string          `gorm:"not null;"`
+	Title              string          `gorm:"not null;"`
+	State              string          `gorm:"not null;"`
+	Body               string          `gorm:"not null;"`
+	TitleDictionary    pq.StringArray  `gorm:"not null; type:text[];"`
+	TitleFrequencyJSON []byte          `gorm:"not null;"`
+	NearestIssues      []NearestIssues `gorm:"foreignKey:IssueID"`
+	TurnIn             []NearestIssues `gorm:"foreignKey:NearestIssueID"`
 }
 
 type NearestIssues struct {
