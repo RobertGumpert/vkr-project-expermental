@@ -8,6 +8,9 @@ import (
 )
 
 type Config struct {
+	//
+	// DB
+	//
 	Port     string `json:"port"`
 	Postgres struct {
 		Username string `json:"username"`
@@ -16,8 +19,23 @@ type Config struct {
 		DbName   string `json:"db_name"`
 		Ssl      string `json:"ssl"`
 	} `json:"postgres"`
-	CountTask                 int64    `json:"count_task"`
-	GithubCollectorsAddresses []string `json:"github_collectors_addresses"`
+	//
+	// SETTINGS TASK-SERVICE
+	//
+	MaxCountRunnableTasks int `json:"max_count_runnable_tasks"`
+	//
+	// SETTINGS COMPARATOR
+	//
+	MaxChannelBufferSize             int `json:"max_channel_buffer_size"`
+	MaxCountThreads                  int `json:"max_count_threads"`
+	MinimumTextCompletenessThreshold float64 `json:"minimum_text_completeness_threshold"`
+	//
+	// GITHUB-GATE
+	//
+	GithubGateAddress   string `json:"github_gate_address"`
+	GithubGateEndpoints struct {
+		SendResultTaskCompareIssuesInPairs string `json:"send_result_task_compare_issues_in_pairs"`
+	} `json:"github_gate_endpoints"`
 }
 
 func NewConfig() *Config {

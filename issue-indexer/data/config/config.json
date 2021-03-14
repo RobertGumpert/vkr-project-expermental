@@ -7,8 +7,12 @@
     "db_name": "vkr-db",
     "ssl": "disable"
   },
-  "count_task" : 1000000,
-  "github_collectors_addresses": [
-    "http://127.0.0.1:54100"
-  ]
+  "max_count_runnable_tasks" : 100,
+  "max_channel_buffer_size": 1000000,
+  "max_count_threads": 100,
+  "minimum_text_completeness_threshold" : 70.0,
+  "github_gate_address": "http://127.0.0.1:54000",
+  "github_gate_endpoints": {
+    "send_result_task_compare_issues_in_pairs": "/api/collector/task/result/repos/by/url"
+  }
 }

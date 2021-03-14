@@ -7,21 +7,28 @@ import (
 	"io/ioutil"
 	"issue-indexer/app/models/dataModel"
 	"issue-indexer/pckg/runtimeinfo"
+	"issue-indexer/pckg/task"
 	"issue-indexer/pckg/textPreprocessing/textDictionary"
 	"issue-indexer/pckg/textPreprocessing/textVectorized"
 	"log"
-	"runtime"
 	"strings"
 	"testing"
 )
 
-func customGettingResultFunction(resultCompare interface{}) {
+var channelResult = make(chan task.ITask)
+
+func customGettingResultFunction(taskState task.ITask) {
+	if taskState.GetExecutionStatus() {
+		channelResult <- taskState
+		return
+	}
+	result := taskState.GetResult().(dataModel.NearestIssues)
 	runtimeinfo.LogInfo("RESULT RECEIVED:",
 		" cosine :[",
-		resultCompare.(dataModel.NearestIssues).CosineDistance,
+		result.CosineDistance,
 		"]",
-		"main issue: [", resultCompare.(dataModel.NearestIssues).IssueID, "],",
-		" second issue: [", resultCompare.(dataModel.NearestIssues).NearestIssueID, "]",
+		"main issue: [", result.IssueID, "],",
+		" second issue: [", result.NearestIssueID, "]",
 	)
 }
 
@@ -63,26 +70,26 @@ func readTitlesFromFiles() map[string][]dataModel.Issue {
 	return files
 }
 
-func TestPairRepositoryFlow(t *testing.T) {
-	runtime.GOMAXPROCS(runtime.NumCPU())
-	files := readTitlesFromFiles()
-	comparator := NewComparator(
-		1000,
-		100,
-		70,
-		customGettingResultFunction,
-	)
-	resultChannel := comparator.AddCompareIssuesInPairs(
-		files["react"],
-		files["vue"],
-		comparator.CompareOnlyTitles,
-	)
-	for result := range resultChannel {
-		log.Println("RESULT: ", result)
-		break
-	}
-	log.Println("OK!")
-}
+//func TestPairRepositoryFlow(t *testing.T) {
+//	runtime.GOMAXPROCS(runtime.NumCPU())
+//	files := readTitlesFromFiles()
+//	comparator := NewComparator(
+//		1000,
+//		100,
+//		70,
+//		customGettingResultFunction,
+//	)
+//	resultChannel := comparator.AddCompareIssuesInPairs(
+//		files["react"],
+//		files["vue"],
+//		comparator.CompareOnlyTitles,
+//	)
+//	for result := range resultChannel {
+//		log.Println("RESULT: ", result)
+//		break
+//	}
+//	log.Println("OK!")
+//}
 
 func createFakeFrequencyJSON(str string) ([]byte, error) {
 	slice := textDictionary.TextTransformToFeaturesSlice(str)
@@ -98,7 +105,7 @@ func createFakeFrequencyJSON(str string) ([]byte, error) {
 func createFakeRepositories() ([]dataModel.Issue, []dataModel.Issue) {
 	titleA := "Feature Request: Feature Request Warnings for missing Aria properties in debug mode"
 	// missing Aria properties in debug mode
-	titleB := "Feature Request: "
+	titleB := "Feature Request: missing Aria properties in debug mode"
 	//
 	btsA, err := createFakeFrequencyJSON(titleA)
 	btsB, err := createFakeFrequencyJSON(titleB)
@@ -133,28 +140,50 @@ func TestFakeRepositoriesFlow(t *testing.T) {
 	main, second := createFakeRepositories()
 	comparator := NewComparator(
 		1000,
-		100,
+		3,
 		70,
 		customGettingResultFunction,
 	)
-	resultChannel := comparator.AddCompareIssuesInPairs(
+	//
+	taskA := &task.Task{
+		Type:            task.Type(0),
+		Key:             "CompareOnlyTitles",
+		ExecutionStatus: false,
+		RunnableStatus:  false,
+		Result:          nil,
+		DeferStatus:     false,
+	}
+	comparator.AddCompareIssuesInPairs(
 		main,
 		second,
+		taskA,
 		comparator.CompareOnlyTitles,
 	)
-	for result := range resultChannel {
-		log.Println("RESULT: ", result)
-		break
+	for result := range channelResult {
+		if result.GetExecutionStatus() {
+			runtimeinfo.LogInfo("FINISH TASK: ", result.GetKey())
+			break
+		}
 	}
-	log.Println("OK!")
 	//
-	resultChannel = comparator.AddCompareIssuesInPairs(
+	taskB := &task.Task{
+		Type:            task.Type(0),
+		Key:             "CompareOnlyTitlesWithDictionaries",
+		ExecutionStatus: false,
+		RunnableStatus:  false,
+		Result:          nil,
+		DeferStatus:     false,
+	}
+	comparator.AddCompareIssuesInPairs(
 		main,
 		second,
+		taskB,
 		comparator.CompareOnlyTitlesWithDictionaries,
 	)
-	for result := range resultChannel {
-		log.Println("RESULT: ", result)
-		break
+	for result := range channelResult {
+		if result.GetExecutionStatus() {
+			runtimeinfo.LogInfo("FINISH TASK: ", result.GetKey())
+			break
+		}
 	}
 }

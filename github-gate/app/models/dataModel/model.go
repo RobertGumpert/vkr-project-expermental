@@ -12,8 +12,8 @@ type Repository struct {
 	Owner            string          `gorm:"not null;"`
 	Topics           pq.StringArray  `gorm:"not null; type:text[];"`
 	Description      string          `gorm:"not null;"`
-	AllIssues        []Issue         `gorm:"foreignKey:RepositoryID"`
-	IssuesTurnInPair []NearestIssues `gorm:"foreignKey:RepositoryID"`
+	AllIssues        []Issue         `gorm:"foreignKey:RepositoryID; constraint:OnDelete:CASCADE;"`
+	IssuesTurnInPair []NearestIssues `gorm:"foreignKey:RepositoryID; constraint:OnDelete:CASCADE;"`
 }
 
 type Issue struct {
@@ -26,8 +26,8 @@ type Issue struct {
 	Body               string          `gorm:"not null;"`
 	TitleDictionary    pq.StringArray  `gorm:"not null; type:text[];"`
 	TitleFrequencyJSON []byte          `gorm:"not null;"`
-	NearestIssues      []NearestIssues `gorm:"foreignKey:IssueID"`
-	TurnIn             []NearestIssues `gorm:"foreignKey:NearestIssueID"`
+	NearestIssues      []NearestIssues `gorm:"foreignKey:IssueID; constraint:OnDelete:CASCADE;"`
+	TurnIn             []NearestIssues `gorm:"foreignKey:NearestIssueID; constraint:OnDelete:CASCADE;"`
 }
 
 type NearestIssues struct {

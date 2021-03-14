@@ -11,13 +11,13 @@ import (
 	"issue-indexer/pckg/textPreprocessing/textVectorized"
 )
 
-func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, main, second []dataModel.Issue) (dataModel.NearestIssues, error) {
+func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, comparable, compareWith []dataModel.Issue) (dataModel.NearestIssues, error) {
 	var (
 		corpus = make([]string, 2)
 		nearestIssues dataModel.NearestIssues
 	)
-	corpus[0] = main[i].Title
-	corpus[1] = second[j].Title
+	corpus[0] = comparable[i].Title
+	corpus[1] = compareWith[j].Title
 	dictionary, vectorsOfWords, countFeatures := textDictionary.FullDictionary(
 		corpus,
 		textPreprocessing.LinearMode,
@@ -52,16 +52,16 @@ func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, main, second []d
 		}
 	}
 	nearestIssues = dataModel.NearestIssues{
-		RepositoryID:   main[i].RepositoryID,
-		IssueID:        main[i].ID,
-		NearestIssueID: second[j].ID,
+		RepositoryID:   comparable[i].RepositoryID,
+		IssueID:        comparable[i].ID,
+		NearestIssueID: compareWith[j].ID,
 		CosineDistance: cosineDistance,
 		Intersections:  intersectionWords,
 	}
 	return nearestIssues, nil
 }
 
-func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, main, second []dataModel.Issue) (dataModel.NearestIssues, error) {
+func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, comparable, compareWith []dataModel.Issue) (dataModel.NearestIssues, error) {
 	var (
 		objA dataModel.TitleFrequencyJSON
 		objB dataModel.TitleFrequencyJSON
@@ -74,10 +74,10 @@ func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, 
 			return dictionary
 		}
 	)
-	if err := json.Unmarshal(main[i].TitleFrequencyJSON, &objA); err != nil {
+	if err := json.Unmarshal(comparable[i].TitleFrequencyJSON, &objA); err != nil {
 		return nearestIssues, err
 	}
-	if err := json.Unmarshal(second[j].TitleFrequencyJSON, &objB); err != nil {
+	if err := json.Unmarshal(compareWith[j].TitleFrequencyJSON, &objB); err != nil {
 		return nearestIssues, err
 	}
 	dictA := convertToConcurrent(objA.Dictionary)
@@ -93,9 +93,9 @@ func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, 
 		return nearestIssues, err
 	}
 	nearestIssues = dataModel.NearestIssues{
-		RepositoryID:   main[i].RepositoryID,
-		IssueID:        main[i].ID,
-		NearestIssueID: second[j].ID,
+		RepositoryID:   comparable[i].RepositoryID,
+		IssueID:        comparable[i].ID,
+		NearestIssueID: compareWith[j].ID,
 		CosineDistance: cosineDistance,
 		Intersections:  intersections,
 	}

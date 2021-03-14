@@ -6,20 +6,32 @@ import (
 	"testing"
 )
 
+var storageProvider *ApplicationStorageProvider
 func connect() IRepositoriesStorage {
+	storageProvider = SQLCreateConnection(
+		TypeStoragePostgres,
+		DSNPostgres,
+		nil,
+		"postgres",
+		"toster123",
+		"vkr-db",
+		"5432",
+		"disable",
+	)
 	sqlRepository := NewSQLRepository(
-		SQLCreateConnection(
-			TypeStoragePostgres,
-			DSNPostgres,
-			nil,
-			"postgres",
-			"toster123",
-			"vkr-db",
-			"5432",
-			"disable",
-		),
+		storageProvider,
 	)
 	return sqlRepository
+}
+
+func TestTruncate(t *testing.T) {
+	_ = connect()
+	storageProvider.SqlDB.Exec("TRUNCATE TABLE repositories CASCADE")
+	storageProvider.SqlDB.Exec("TRUNCATE TABLE issues CASCADE")
+}
+
+func TestMigration(t *testing.T) {
+	_ = connect()
 }
 
 func TestAddFlow(t *testing.T) {
@@ -61,33 +73,57 @@ func TestAddFlow(t *testing.T) {
 		t.Fatal()
 	}
 	//
-	err = db.AddIssues([]*dataModel.Issue{
+	issues1 := []*dataModel.Issue{
 		{
-			RepositoryID: repository.ID,
-			Number:       1,
-			URL:          "a",
-			Title:        "a",
-			State:        "a",
-			Body:         "a",
+			RepositoryID:       repository.ID,
+			Number:             1,
+			URL:                "a",
+			Title:              "a",
+			State:              "a",
+			Body:               "a",
+			TitleDictionary:    []string{"a"},
+			TitleFrequencyJSON: []byte{23},
 		},
-	})
+	}
+	err = db.AddIssues(issues1)
 	if err != nil {
 		runtimeinfo.LogError(err)
 		t.Fatal()
 	}
 	//
-	issues := make([]*dataModel.Issue, 0)
+	issues2 := make([]*dataModel.Issue, 0)
 	for index, repo := range repositories {
-		issues = append(issues, &dataModel.Issue{
-			RepositoryID: repo.ID,
-			Number:       index,
-			URL:          repo.URL,
-			Title:        repo.URL,
-			State:        repo.URL,
-			Body:         repo.URL,
+		issues2 = append(issues2, &dataModel.Issue{
+			RepositoryID:       repo.ID,
+			Number:             index,
+			URL:                repo.URL,
+			Title:              repo.URL,
+			State:              repo.URL,
+			Body:               repo.URL,
+			TitleDictionary:    []string{"b"},
+			TitleFrequencyJSON: []byte{33},
 		})
 	}
-	err = db.AddIssues(issues)
+	err = db.AddIssues(issues2)
+	if err != nil {
+		runtimeinfo.LogError(err)
+		t.Fatal()
+	}
+	//
+	list, err := db.ListIssuesRepository(repository.ID)
+	if err != nil {
+		runtimeinfo.LogError(err)
+		t.Fatal()
+	}
+	runtimeinfo.LogInfo(list)
+	//
+	err = db.AddNearestIssues(dataModel.NearestIssues{
+		RepositoryID:   repository.ID,
+		IssueID:        issues1[0].ID,
+		NearestIssueID: issues2[0].ID,
+		CosineDistance: 75.9,
+		Intersections:  []string{"b"},
+	})
 	if err != nil {
 		runtimeinfo.LogError(err)
 		t.Fatal()

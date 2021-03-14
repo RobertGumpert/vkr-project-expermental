@@ -8,5 +8,7 @@ require (
 	github.com/gin-gonic/gin v1.6.3
 	github.com/lib/pq v1.10.0
 	github.com/streamrail/concurrent-map v0.0.0-20160823150647-8bf1e9bacbf6
+	gorm.io/driver/mysql v1.0.5
+	gorm.io/driver/postgres v1.0.8
 	gorm.io/gorm v1.21.3
 )
