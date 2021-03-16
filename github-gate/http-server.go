@@ -2,8 +2,7 @@ package main
 
 import (
 	"github-gate/app/config"
-	"github-gate/app/models/createTaskModel"
-	"github-gate/app/models/updateTaskModel"
+	"github-gate/app/models/interapplicationModels/githubCollectorModels"
 	"github-gate/app/serivce"
 	"github-gate/pckg/runtimeinfo"
 	"github.com/gin-contrib/cors"
@@ -99,7 +98,7 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 //
 
 func (s *server) createTaskRepositoriesByURL(ctx *gin.Context) {
-	task := new(createTaskModel.RepositoriesByURLS)
+	task := new(githubCollectorModels.CreateTaskRepositoriesByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -117,7 +116,7 @@ func (s *server) createTaskRepositoriesByURL(ctx *gin.Context) {
 }
 
 func (s *server) createTaskRepositoriesIssues(ctx *gin.Context) {
-	task := new(createTaskModel.RepositoriesByURLS)
+	task := new(githubCollectorModels.CreateTaskRepositoriesByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -145,7 +144,7 @@ func (s *server) createTaskRepositoriesIssues(ctx *gin.Context) {
 }
 
 func (s *server) createTaskRepositoriesAndIssues(ctx *gin.Context) {
-	task := new(createTaskModel.RepositoriesByURLS)
+	task := new(githubCollectorModels.CreateTaskRepositoriesByURLS)
 	if err := ctx.BindJSON(task); err != nil {
 		runtimeinfo.LogError("request on create task [", ctx.Request.Header.Get("X-FORWARDED-FOR"), "] to ENDPOINT [", ctx.Request.URL, "] exit error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -167,7 +166,7 @@ func (s *server) createTaskRepositoriesAndIssues(ctx *gin.Context) {
 //
 
 func (s *server) updateStateTaskRepositoriesByURL(ctx *gin.Context) {
-	state := new(updateTaskModel.RepositoriesByURLS)
+	state := new(githubCollectorModels.UpdateTaskRepositoriesByURLS)
 	if err := ctx.BindJSON(state); err != nil {
 		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -185,7 +184,7 @@ func (s *server) updateStateTaskRepositoriesByURL(ctx *gin.Context) {
 }
 
 func (s *server) updateStateTaskRepositoryIssues(ctx *gin.Context) {
-	state := new(updateTaskModel.RepositoryIssues)
+	state := new(githubCollectorModels.UpdateTaskRepositoryIssues)
 	if err := ctx.BindJSON(state); err != nil {
 		runtimeinfo.LogInfo("github-collector received [", http.StatusLocked, "] response to the request to endpoint  [", ctx.Request.URL, "] with error: ", err)
 		ctx.AbortWithStatus(http.StatusLocked)

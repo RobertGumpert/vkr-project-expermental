@@ -2,11 +2,11 @@ package serivce
 
 import (
 	"errors"
-	"github-gate/app/models/updateTaskModel"
+	"github-gate/app/models/interapplicationModels/githubCollectorModels"
 	"github-gate/pckg/runtimeinfo"
 )
 
-func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *updateTaskModel.RepositoriesByURLS) error {
+func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *githubCollectorModels.UpdateTaskRepositoriesByURLS) error {
 	key := updateTaskState.ExecutionTaskStatus.TaskKey
 	if value, exist := a.tasks.Get(key); !exist {
 		err := errors.New("task with key [" + key + "] isn't exist ")
@@ -38,7 +38,7 @@ func (a *AppService) UpdateStateTaskRepositoriesByURL(updateTaskState *updateTas
 	return nil
 }
 
-func (a *AppService) UpdateStateTaskRepositoryIssues(updateTaskState *updateTaskModel.RepositoryIssues) error {
+func (a *AppService) UpdateStateTaskRepositoryIssues(updateTaskState *githubCollectorModels.UpdateTaskRepositoryIssues) error {
 	key := updateTaskState.ExecutionTaskStatus.TaskKey
 	if value, exist := a.tasks.Get(key); !exist {
 		err := errors.New("task with key [" + key + "] isn't exist ")

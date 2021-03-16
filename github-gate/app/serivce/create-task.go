@@ -4,7 +4,7 @@ import (
 	"errors"
 	"fmt"
 	"github-gate/app/models/dataModel"
-	"github-gate/app/models/sendTaskModel"
+	"github-gate/app/models/interapplicationModels/githubCollectorModels"
 	"github-gate/pckg/requests"
 	"github-gate/pckg/runtimeinfo"
 	"net/http"
@@ -22,7 +22,7 @@ func (a *AppService) CreateTaskRepositoriesByURL(urls []string, deferTask bool, 
 	var (
 		taskKey           = ""
 		collectorEndpoint = "/get/repos/by/url"
-		sendBody          = &sendTaskModel.RepositoriesByURLS{
+		sendBody          = &githubCollectorModels.SendTaskRepositoriesByURLS{
 			TaskKey: taskKey,
 			URLS:    urls,
 		}
@@ -71,7 +71,7 @@ func (a *AppService) CreateTaskGetRepositoriesIssues(urls []string, deferTask, s
 		var (
 			taskKey           = ""
 			collectorEndpoint = "/get/repos/issues"
-			sendBody          = &sendTaskModel.RepositoryIssues{
+			sendBody          = &githubCollectorModels.SendTaskRepositoryIssues{
 				TaskKey: taskKey,
 				URL:     url,
 			}

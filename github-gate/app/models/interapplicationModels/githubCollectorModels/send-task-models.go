@@ -1,11 +1,11 @@
-package sendTaskModel
+package githubCollectorModels
 
-type RepositoriesByURLS struct {
+type SendTaskRepositoriesByURLS struct {
 	TaskKey string   `json:"task_key"`
 	URLS    []string `json:"urls"`
 }
 
-type RepositoryIssues struct {
+type SendTaskRepositoryIssues struct {
 	TaskKey string `json:"task_key"`
 	URL     string `json:"url"`
 }

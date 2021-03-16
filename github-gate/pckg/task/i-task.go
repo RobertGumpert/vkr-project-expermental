@@ -1,8 +1,5 @@
 package task
 
-
-
-
 type ITask interface {
 	SetType(Type)
 	SetKey(string)

@@ -1,4 +1,4 @@
-package updateTaskModel
+package githubCollectorModels
 
 //
 //----------------------------------------------------------------------------------------------------------------------
@@ -13,7 +13,7 @@ type ExecutionTaskStatus struct {
 //----------------------------------------------------------------------------------------------------------------------
 //
 
-type Repository struct {
+type UpdateTaskRepository struct {
 	URL         string   `json:"url"`
 	Topics      []string `json:"topics"`
 	Description string   `json:"description"`
@@ -21,9 +21,9 @@ type Repository struct {
 	Err error `json:"err"`
 }
 
-type RepositoriesByURLS struct {
-	ExecutionTaskStatus ExecutionTaskStatus `json:"execution_task_status"`
-	Repositories        []Repository        `json:"repositories"`
+type UpdateTaskRepositoriesByURLS struct {
+	ExecutionTaskStatus ExecutionTaskStatus    `json:"execution_task_status"`
+	Repositories        []UpdateTaskRepository `json:"repositories"`
 }
 
 //
@@ -31,7 +31,7 @@ type RepositoriesByURLS struct {
 //
 
 
-type Issue struct {
+type UpdateTaskIssue struct {
 	Number int    `json:"number"`
 	URL    string `json:"url"`
 	Title  string `json:"title"`
@@ -41,7 +41,7 @@ type Issue struct {
 	Err error `json:"err"`
 }
 
-type RepositoryIssues struct {
+type UpdateTaskRepositoryIssues struct {
 	ExecutionTaskStatus ExecutionTaskStatus `json:"execution_task_status"`
-	Issues              []Issue             `json:"issues"`
+	Issues              []UpdateTaskIssue   `json:"issues"`
 }

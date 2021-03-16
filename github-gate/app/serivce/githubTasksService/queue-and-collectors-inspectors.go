@@ -7,31 +7,50 @@ import (
 )
 
 func (service *GithubTasksService) queueIsBusy(countNewTasks int) bool {
-	if service.tasksForCollectors.Count()+countNewTasks > int(service.config.CountTask) {
+	if len(service.tasksForCollectors)+countNewTasks > int(service.config.CountTask) {
 		return false
 	}
 	return true
 }
 
-func (service *GithubTasksService) getFreeCollectors() []string {
+func (service *GithubTasksService) collectorIsFree(collectorUrl string) bool {
+	getStateUrl := collectorUrl + "/get/state"
+	response, err := requests.GET(
+		service.client,
+		getStateUrl,
+		nil,
+	)
+	if err != nil {
+		return false
+	}
+	if response.StatusCode != http.StatusOK {
+		return false
+	}
+	return true
+}
+
+func (service *GithubTasksService) getFreeCollectors(onlyFirst bool) []string {
 	var freeCollectorsAddresses = make([]string, 0)
-	for _, url := range service.config.GithubCollectorsAddresses {
-		getStateUrl := url + "/get/state"
+	for _, collectorUrl := range service.config.GithubCollectorsAddresses {
+		getStateUrl := collectorUrl + "/get/state"
 		response, err := requests.GET(
 			service.client,
 			getStateUrl,
 			nil,
 		)
 		if err != nil {
-			runtimeinfo.LogError("REQUEST TO COLLECTOR: ", url, ", COMPLETED WITH ERROR: ", err)
+			runtimeinfo.LogError("REQUEST TO COLLECTOR: ", collectorUrl, ", COMPLETED WITH ERROR: ", err)
 			continue
 		}
 		if response.StatusCode == http.StatusOK {
-			runtimeinfo.LogInfo("FOUND FREE COLLECTOR: ", url)
+			runtimeinfo.LogInfo("FOUND FREE COLLECTOR: ", collectorUrl)
 			freeCollectorsAddresses = append(
 				freeCollectorsAddresses,
-				url,
+				collectorUrl,
 			)
+			if onlyFirst {
+				return freeCollectorsAddresses
+			}
 		}
 	}
 	if len(freeCollectorsAddresses) == 0 {

@@ -3,9 +3,9 @@ package githubTasksService
 import "github-gate/pckg/task"
 
 const (
-	TaskTypeRepositoriesDescriptionsByURL          task.Type = 0
-	TaskTypeRepositoryIssues                       task.Type = 1
-	TaskTypeRepositoriesDescriptionsAndTheirIssues task.Type = 2
+	taskTypeRepositoriesDescriptionsByURL          task.Type = 0
+	taskTypeRepositoryIssues                       task.Type = 1
+	taskTypeRepositoriesDescriptionsAndTheirIssues task.Type = 2
 )
 
 type TaskForCollector struct {
@@ -19,7 +19,7 @@ type TaskForCollector struct {
 	taskDetails *TaskDetails
 }
 
-func NewTaskForCollector(taskType task.Type, key string, executionStatus bool, deferStatus bool, runnableStatus bool, result interface{}, taskDetails *TaskDetails) *TaskForCollector {
+func newTaskForCollector(taskType task.Type, key string, executionStatus bool, deferStatus bool, runnableStatus bool, result interface{}, taskDetails *TaskDetails) *TaskForCollector {
 	return &TaskForCollector{
 		taskType:        taskType,
 		key:             key,
