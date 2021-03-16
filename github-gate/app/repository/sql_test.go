@@ -6,18 +6,18 @@ import (
 	"testing"
 )
 
-var storageProvider *ApplicationStorageProvider
+var storageProvider = SQLCreateConnection(
+	TypeStoragePostgres,
+	DSNPostgres,
+	nil,
+	"postgres",
+	"toster123",
+	"vkr-db",
+	"5432",
+	"disable",
+)
+
 func connect() IRepositoriesStorage {
-	storageProvider = SQLCreateConnection(
-		TypeStoragePostgres,
-		DSNPostgres,
-		nil,
-		"postgres",
-		"toster123",
-		"vkr-db",
-		"5432",
-		"disable",
-	)
 	sqlRepository := NewSQLRepository(
 		storageProvider,
 	)
@@ -31,6 +31,9 @@ func TestTruncate(t *testing.T) {
 }
 
 func TestMigration(t *testing.T) {
+	storageProvider.SqlDB.Exec("drop table repositories cascade")
+	storageProvider.SqlDB.Exec("drop table issues cascade")
+	storageProvider.SqlDB.Exec("drop table nearest_issues cascade")
 	_ = connect()
 }
 

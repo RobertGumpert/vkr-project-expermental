@@ -26,8 +26,7 @@ type Config struct {
 	//
 	// SETTINGS COMPARATOR
 	//
-	MaxChannelBufferSize             int `json:"max_channel_buffer_size"`
-	MaxCountThreads                  int `json:"max_count_threads"`
+	MaxCountThreads                  int     `json:"max_count_threads"`
 	MinimumTextCompletenessThreshold float64 `json:"minimum_text_completeness_threshold"`
 	//
 	// GITHUB-GATE

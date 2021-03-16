@@ -13,7 +13,7 @@ import (
 
 func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, comparable, compareWith []dataModel.Issue) (dataModel.NearestIssues, error) {
 	var (
-		corpus = make([]string, 2)
+		corpus        = make([]string, 2)
 		nearestIssues dataModel.NearestIssues
 	)
 	corpus[0] = comparable[i].Title
@@ -52,21 +52,22 @@ func (comparator *IssuesComparator) CompareOnlyTitles(i, j int, comparable, comp
 		}
 	}
 	nearestIssues = dataModel.NearestIssues{
-		RepositoryID:   comparable[i].RepositoryID,
-		IssueID:        comparable[i].ID,
-		NearestIssueID: compareWith[j].ID,
-		CosineDistance: cosineDistance,
-		Intersections:  intersectionWords,
+		RepositoryID:             comparable[i].RepositoryID,
+		IssueID:                  comparable[i].ID,
+		NearestIssueID:           compareWith[j].ID,
+		RepositoryIDNearestIssue: compareWith[j].RepositoryID,
+		CosineDistance:           cosineDistance,
+		Intersections:            intersectionWords,
 	}
 	return nearestIssues, nil
 }
 
 func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, comparable, compareWith []dataModel.Issue) (dataModel.NearestIssues, error) {
 	var (
-		objA dataModel.TitleFrequencyJSON
-		objB dataModel.TitleFrequencyJSON
-		nearestIssues dataModel.NearestIssues
-		convertToConcurrent = func(m map[string]float64) concurrentMap.ConcurrentMap{
+		objA                dataModel.TitleFrequencyJSON
+		objB                dataModel.TitleFrequencyJSON
+		nearestIssues       dataModel.NearestIssues
+		convertToConcurrent = func(m map[string]float64) concurrentMap.ConcurrentMap {
 			dictionary := concurrentMap.New()
 			for key, val := range m {
 				dictionary.Set(key, val)
@@ -93,11 +94,12 @@ func (comparator *IssuesComparator) CompareOnlyTitlesWithDictionaries(i, j int, 
 		return nearestIssues, err
 	}
 	nearestIssues = dataModel.NearestIssues{
-		RepositoryID:   comparable[i].RepositoryID,
-		IssueID:        comparable[i].ID,
-		NearestIssueID: compareWith[j].ID,
-		CosineDistance: cosineDistance,
-		Intersections:  intersections,
+		RepositoryID:             comparable[i].RepositoryID,
+		IssueID:                  comparable[i].ID,
+		NearestIssueID:           compareWith[j].ID,
+		RepositoryIDNearestIssue: compareWith[j].RepositoryID,
+		CosineDistance:           cosineDistance,
+		Intersections:            intersections,
 	}
 	return nearestIssues, nil
 }

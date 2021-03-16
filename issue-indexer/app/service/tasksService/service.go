@@ -35,7 +35,6 @@ func NewTasksService(config *config.Config, db repository.IRepositoriesStorage) 
 	service.db = db
 	service.MaxCountRunnableTasks = config.MaxCountRunnableTasks
 	service.comparator = issuesComparator.NewComparator(
-		config.MaxChannelBufferSize,
 		config.MaxCountThreads,
 		config.MinimumTextCompletenessThreshold,
 		service.GettingResultFromComparator,
@@ -44,6 +43,8 @@ func NewTasksService(config *config.Config, db repository.IRepositoriesStorage) 
 }
 
 func (service *TasksService) CreateTaskCompareIssuesInPairs(createTaskModel *createTaskModel.CreateTaskCompareIssuesInPairs) error {
+	service.mx.Lock()
+	defer service.mx.Unlock()
 	taskState := &Task{
 		Type:                        TypeTaskCompareIssuesInPairs,
 		Key:                         createTaskModel.TaskKey,

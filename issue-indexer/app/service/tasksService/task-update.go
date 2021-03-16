@@ -16,14 +16,16 @@ func (service *TasksService) updateTaskCompareIssuesInPairs(taskState *Task) (bo
 	if err == nil {
 		compareReport := taskState.sendResultToGate.(*updateTaskModel.UpdateTaskCompareIssuesInPairs)
 		compareReport.CountNearestIssues++
+		nearestIssues := updateTaskModel.UpdateNearestIssues{
+			DbID:             result.ID,
+			CompareIssue:     result.IssueID,
+			NearestWithIssue: result.NearestIssueID,
+		}
 		compareReport.NearestIssues = append(
 			compareReport.NearestIssues,
-			updateTaskModel.UpdateNearestIssues{
-				DbID:             result.ID,
-				CompareIssue:     result.IssueID,
-				NearestWithIssue: result.NearestIssueID,
-			},
+			nearestIssues,
 		)
+		runtimeinfo.LogInfo("NEAREST ISSUES: key: ", taskState.Key, ", pair:[", result.IssueID, ":", result.NearestIssueID, "]")
 	}
 	if err != nil {
 		runtimeinfo.LogError("NON WRITE TASK STATE: key: ", taskState.GetKey(), ", error: ", err)

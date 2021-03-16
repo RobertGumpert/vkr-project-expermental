@@ -6,11 +6,10 @@ import (
 )
 
 
-type IssuesInPairComparator func(i, j int, main, second []dataModel.Issue) (dataModel.NearestIssues, error)
-type GettingResult func(compareResult task.ITask)
+type ComparatorIssuesInPair func(i, j int, comparable, comparableWith []dataModel.Issue) (dataModel.NearestIssues, error)
+type GettingResult func(iTask task.ITask)
 
 type IssuesComparator struct {
-	MaxChannelBufferSize             int
 	MaxCountThreads                  int
 	MinimumTextCompletenessThreshold float64
 	//
@@ -18,24 +17,23 @@ type IssuesComparator struct {
 	channelSendResultCompare chan task.ITask
 }
 
-func NewComparator(maxChannelBufferSize, maxCountThreads int, minimumCompletenessThreshold float64, gettingResult GettingResult) *IssuesComparator {
+func NewComparator(maxCountThreads int, minimumCompletenessThreshold float64, gettingResult GettingResult) *IssuesComparator {
 	indexer := &IssuesComparator{
-		MaxChannelBufferSize:             maxChannelBufferSize,
 		MaxCountThreads:                  maxCountThreads,
 		MinimumTextCompletenessThreshold: minimumCompletenessThreshold,
 		//
 		gettingResult:            gettingResult,
-		channelSendResultCompare: make(chan task.ITask, maxChannelBufferSize),
+		channelSendResultCompare: make(chan task.ITask),
 	}
 	go indexer.scanResultCompareChannel()
 	return indexer
 }
 
-func (comparator *IssuesComparator) AddCompareIssuesInPairs(comparable, comparableWith []dataModel.Issue, task task.ITask, issueComparator IssuesInPairComparator) {
+func (comparator *IssuesComparator) AddCompareIssuesInPairs(comparable, comparableWith []dataModel.Issue, iTask task.ITask, issueComparator ComparatorIssuesInPair) {
 	go comparator.runCompareIssuesInPairs(
 		comparable,
 		comparableWith,
-		task,
+		iTask,
 		issueComparator,
 	)
 	return

@@ -1,5 +1,5 @@
 {
-  "port": "54000",
+  "port": "44000",
   "postgres" : {
     "username": "postgres",
     "password": "toster123",
@@ -8,7 +8,6 @@
     "ssl": "disable"
   },
   "max_count_runnable_tasks" : 100,
-  "max_channel_buffer_size": 1000000,
   "max_count_threads": 100,
   "minimum_text_completeness_threshold" : 70.0,
   "github_gate_address": "http://127.0.0.1:54000",

@@ -7,8 +7,6 @@ import (
 )
 
 func (service *TasksService) queueIsFree() bool {
-	service.mx.Lock()
-	defer service.mx.Unlock()
 	if service.countNowRunnableTasks < service.MaxCountRunnableTasks {
 		return true
 	} else {

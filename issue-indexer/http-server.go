@@ -4,19 +4,22 @@ import (
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"issue-indexer/app/config"
+	"issue-indexer/app/service/tasksService"
 	"issue-indexer/pckg/runtimeinfo"
 	"strings"
 )
 
 type server struct {
-	config    *config.Config
-	engine    *gin.Engine
-	RunServer func()
+	taskService *tasksService.TasksService
+	config      *config.Config
+	engine      *gin.Engine
+	RunServer   func()
 }
 
-func NewServer(config *config.Config) *server {
+func NewServer(config *config.Config, taskService *tasksService.TasksService) *server {
 	s := &server{
-		config: config,
+		taskService: taskService,
+		config:      config,
 	}
 	//
 	engine, run := s.createServerEngine(s.config.Port)

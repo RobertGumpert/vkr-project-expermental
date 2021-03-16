@@ -47,7 +47,7 @@ func createFakeFrequencyJSON(str string) ([]byte, error) {
 
 func createFakeData(db repository.IRepositoriesStorage) []*dataModel.Repository {
 	titleA := "Feature Request: Warnings for missing Aria properties in debug mode"
-	titleB := "Feature Request: Warnings for missing Aria properties in debug mode"
+	titleB := "Feature Request: properties in debug mode"
 	btsA, err := createFakeFrequencyJSON(titleA)
 	btsB, err := createFakeFrequencyJSON(titleB)
 	if err != nil {
@@ -69,20 +69,20 @@ func createFakeData(db repository.IRepositoriesStorage) []*dataModel.Repository 
 			Topics:      []string{"b", "b", "b"},
 			Description: "b",
 		},
-		//{
-		//	URL:         "c",
-		//	Name:        "c",
-		//	Owner:       "c",
-		//	Topics:      []string{"c", "c", "c"},
-		//	Description: "c",
-		//},
+		{
+			URL:         "c",
+			Name:        "c",
+			Owner:       "c",
+			Topics:      []string{"c", "c", "c"},
+			Description: "c",
+		},
 	}
 	err = db.AddRepositories(repositories)
 	if err != nil {
 		runtimeinfo.LogError(err)
 		log.Fatal()
 	}
-	for i := 0; i < 15; i++ {
+	for i := 0; i < 3; i++ {
 		err = db.AddIssues([]*dataModel.Issue{
 			{
 				RepositoryID:       repositories[0].ID,
@@ -98,13 +98,13 @@ func createFakeData(db repository.IRepositoriesStorage) []*dataModel.Repository 
 				TitleDictionary:    []string{"b"},
 				TitleFrequencyJSON: btsB,
 			},
-			//{
-			//	RepositoryID:       repositories[2].ID,
-			//	Number:             i,
-			//	Title:              titleA,
-			//	TitleDictionary:    []string{"c"},
-			//	TitleFrequencyJSON: btsA,
-			//},
+			{
+				RepositoryID:       repositories[2].ID,
+				Number:             i,
+				Title:              titleA,
+				TitleDictionary:    []string{"c"},
+				TitleFrequencyJSON: btsA,
+			},
 		})
 		if err != nil {
 			runtimeinfo.LogError(err)
@@ -125,10 +125,9 @@ func TestAddFlow(t *testing.T) {
 	db := connect()
 	repositories := createFakeData(db)
 	c := &config.Config{
-		MaxCountRunnableTasks:            1,
-		MaxChannelBufferSize:             10000,
+		MaxCountRunnableTasks:            2,
 		MaxCountThreads:                  5,
-		MinimumTextCompletenessThreshold: 70.0,
+		MinimumTextCompletenessThreshold: 50.0,
 	}
 	service := NewTasksService(c, db)
 	for i := 0; i < len(repositories); i++ {
@@ -139,7 +138,7 @@ func TestAddFlow(t *testing.T) {
 			}
 			ids = append(ids, repositories[j].ID)
 		}
-		go func() {
+		go func(i int, service *TasksService, repositories []*dataModel.Repository, ids []uint) {
 			err := service.CreateTaskCompareIssuesInPairs(&createTaskModel.CreateTaskCompareIssuesInPairs{
 				TaskKey:                   repositories[i].Name,
 				ComparableRepositoryID:    repositories[i].ID,
@@ -148,8 +147,7 @@ func TestAddFlow(t *testing.T) {
 			if err != nil {
 				t.Fatal(err)
 			}
-		}()
-
+		}(i, service, repositories, ids)
 	}
 	time.Sleep(1 * time.Hour)
 }
