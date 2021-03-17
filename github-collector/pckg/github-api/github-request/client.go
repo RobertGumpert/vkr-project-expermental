@@ -21,14 +21,14 @@ type RunTask func()
 //
 // Аргументами TaskOneRequest являются параметры запроса:
 // 	* request Request 		  		 - содержит URL и HEADER запроса.
-// 	* api LevelAPI 					 - уровень API GitHub (Core, Search).
+// 	* api GitHubLevelAPI 					 - уровень API GitHub (Core, Search).
 // 	* signalChannel chan bool 		 - канал для передачи сообщения,
 // 									   о том что Rate Limit достигнут
 // 									   и не следует ждать завершения задачи,
 // 									   так как она завершится позже и результат будет
 // 									   записан в responseChannel chan *Response.
 // 	* responseChannel chan *Response - канал передачи ответа от API GitHub.
-type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int)
+type TaskOneRequest func(request Request, api GitHubLevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int)
 
 // Функция, которая настраивает задачу
 // выполнения группы запросов к GitHub.
@@ -37,7 +37,7 @@ type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool,
 //
 // Аргументами TaskGroupRequests являются параметры запроса:
 // 	* request Request 		  		                  - содержит URL и HEADER запроса.
-// 	* api LevelAPI 					                  - уровень API GitHub (Core, Search).
+// 	* api GitHubLevelAPI 					                  - уровень API GitHub (Core, Search).
 // 	* responsesChannel chan map[string]*Response 	  - канал передачи ответов от API GitHub,
 // 														передаются ответы на уже выполненые запросы,
 // 														без достижения Rate Limit.
@@ -46,7 +46,7 @@ type TaskOneRequest func(request Request, api LevelAPI, signalChannel chan bool,
 //														до момента достижения Rate Limit,
 //														а отсальные ответы будут переданы позже,
 // 									   					соответсвенно не следует ждать завершения задачи.
-type TaskGroupRequests func(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int)
+type TaskGroupRequests func(requests []Request, api GitHubLevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int)
 
 type GithubClient struct {
 	client              *http.Client
@@ -122,7 +122,7 @@ func (c *GithubClient) GetState() (error, int) {
 //
 // Аргументами TaskOneRequest являются параметры запроса:
 // 	* request Request 		  		 - содержит URL и HEADER запроса.
-// 	* api LevelAPI 					 - уровень API GitHub (Core, Search).
+// 	* api GitHubLevelAPI 					 - уровень API GitHub (Core, Search).
 // 	* signalChannel chan bool 		 - канал для передачи сообщения,
 // 									   о том что Rate Limit достигнут
 // 									   и не следует ждать завершения задачи,
@@ -141,7 +141,7 @@ func (c *GithubClient) AddOneRequest(reserved bool) (TaskOneRequest, error) {
 			return nil, errors.New("Limit on the number of tasks has been reached. ")
 		}
 	}
-	return func(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int) {
+	return func(request Request, api GitHubLevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) (RunTask, NoWait, int) {
 		var runTask = func() {
 			c.taskOneRequest(request, api, signalChannel, taskStateChannel)
 		}
@@ -167,7 +167,7 @@ func (c *GithubClient) DropReservedOneRequestTask(index int) {
 //
 // Аргументами TaskGroupRequests являются параметры запроса:
 // 	* request Request 		  		                  - содержит URL и HEADER запроса.
-// 	* api LevelAPI 					                  - уровень API GitHub (Core, Search).
+// 	* api GitHubLevelAPI 					                  - уровень API GitHub (Core, Search).
 // 	* responsesChannel chan map[string]*Response 	  - канал передачи ответов от API GitHub,
 // 														передаются ответы на уже выполненые запросы,
 // 														без достижения Rate Limit.
@@ -186,7 +186,7 @@ func (c *GithubClient) AddGroupRequests(reserved bool) (TaskGroupRequests, error
 			return nil, errors.New("Limit on the number of tasks has been reached. ")
 		}
 	}
-	return func(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int) {
+	return func(requests []Request, api GitHubLevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) (RunTask, NoWait, int) {
 		var runTask = func() {
 			c.taskGroupRequests(requests, api, taskStateChannel, deferTaskStateChannel)
 		}

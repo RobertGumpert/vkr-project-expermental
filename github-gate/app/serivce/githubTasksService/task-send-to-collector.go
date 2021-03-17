@@ -6,10 +6,14 @@ import (
 	"github-gate/pckg/requests"
 	"github-gate/pckg/runtimeinfo"
 	"net/http"
+	"strings"
 )
 
 func (service *GithubTasksService) sendTaskToCollector(taskForCollector *TaskForCollector) error {
 	var err error = nil
+	if strings.TrimSpace(taskForCollector.details.GetCollectorEndpoint()) == "" {
+		return errors.New("NON SET COLLECTOR FOR TASK ["+taskForCollector.GetKey()+"]. ")
+	}
 	collectorForTaskIsFree := service.collectorIsFree(
 		taskForCollector.details.GetCollectorAddress(),
 	)
@@ -27,6 +31,7 @@ func (service *GithubTasksService) repeatSendTaskToOtherCollectors(taskForCollec
 	if freeCollectors == nil {
 		err = errors.New("ALL COLLECTORS IS BUSY. ")
 	} else {
+
 		service.setNewCollectorForTask(taskForCollector, freeCollectors[0])
 		err = service.requestToCollector(taskForCollector)
 	}
@@ -86,7 +91,7 @@ func (service *GithubTasksService) sendToCollectorsDependTasks(triggerTask *Task
 			err = errors.New("TRIGGER TASK [" + triggerTask.GetKey() + "] WASN'T COMPLETED.")
 		} else {
 			for i := 0; i < len(dependTasks); i++ {
-				taskForCollector := service.tasksForCollectorsQueue[i]
+				taskForCollector := dependTasks[i]
 				if taskForCollector.details.IsDependent() == true {
 					if taskForCollector.GetExecutionStatus() == false {
 						err := service.pipelineSendTaskToCollector(taskForCollector)

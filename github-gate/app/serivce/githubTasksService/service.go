@@ -55,6 +55,7 @@ func (service *GithubTasksService) CreateTaskRepositoriesDescriptions(taskFromTa
 					runtimeinfo.LogError("SEND NEW TASK TO COLLECTOR WAS COMPLETED WITH ERROR: ", err)
 				}
 			}
+			runtimeinfo.LogInfo("ADD NEW TASK [", taskForCollector.GetKey(), "]")
 		}
 	)
 	return queueIsBusy, sendTaskToGithubCollector
@@ -89,6 +90,12 @@ func (service *GithubTasksService) CreateTaskRepositoriesAndTheirIssues(taskFrom
 				service.tasksForCollectorsQueue,
 				dependent...,
 			)
+			var dependsKey string
+			for i := 0; i < len(dependent); i++ {
+				dependsKey += dependent[i].GetKey() + ", "
+			}
+			runtimeinfo.LogInfo("ADD NEW TRIGGER TASK [", trigger.GetKey(), "]")
+			runtimeinfo.LogInfo("ADD NEW DEPENDENT TASKS [", dependsKey, "]")
 			if !isDefer {
 				err := service.pipelineSendTaskToCollector(trigger)
 				if err != nil {
@@ -108,28 +115,36 @@ func (service *GithubTasksService) scanCompletedTasksChannel() {
 			break
 		case taskTypeRepositoriesDescriptionsAndTheirIssues:
 			if taskForCollector.details.IsTrigger() {
-				err := service.sendToCollectorsDependTasks(taskForCollector)
-				if err != nil {
-					runtimeinfo.LogError("TASK [", taskForCollector.GetKey(), "] WAS COMPLETED WITH ERROR: ", err)
+				if existDependentTasks, _ := taskForCollector.details.HasDependentTasks(); !existDependentTasks {
+					runtimeinfo.LogError("COMPLETED TRIGGER TASK [", taskForCollector.GetKey(), "] DOESN'T HAVE DEPENDENT TASKS.")
 					break
 				}
+				err := service.sendToCollectorsDependTasks(taskForCollector)
+				if err != nil {
+					runtimeinfo.LogError("COMPLETED TRIGGER TASK [", taskForCollector.GetKey(), "] WAS COMPLETED WITH ERROR: ", err)
+					break
+				}
+				runtimeinfo.LogInfo("COMPLETED TRIGGER TASK [", taskForCollector.GetKey(), "] RUN DEPENDENT TASKS.")
 			}
 			if taskForCollector.details.IsDependent() {
 				trigger := taskForCollector.details.GetTriggerTask()
 				if trigger == nil {
+					runtimeinfo.LogError("COMPLETED DEPEND TASK [", taskForCollector.GetKey(), "] DOESN'T HAVE TRIGGER.")
 					break
 				}
 				isTrigger, dependTasks := trigger.details.HasDependentTasks()
 				if isTrigger == false || len(dependTasks) == 0 {
+					runtimeinfo.LogError("TRIGGER WITH A COMPLETED, DEPENDENT TASK [", taskForCollector.GetKey(), "] DOESN'T HAVE DEPENDENT TASKS.")
 					break
 				}
 				countCompletedTasks := trigger.details.CountCompletedDependentTasks()
-				runtimeinfo.LogInfo("DEPEND TASK [", taskForCollector.GetKey(), "] RUN BY TRIGGER TASK [", trigger.GetKey(), "] WAS COMPLETED.")
+				runtimeinfo.LogInfo("COMPLETED DEPEND DEPEND TASK [", taskForCollector.GetKey(), "] RUN BY TRIGGER TASK [", trigger.GetKey(), "] WAS COMPLETED.")
 				if countCompletedTasks == len(dependTasks) {
 					runtimeinfo.LogInfo("TRIGGER TASK [", trigger.GetKey(), "] WAS COMPLETED.")
 				}
 				break
 			}
 		}
+		service.sendToCollectorsDeferTasks()
 	}
 }

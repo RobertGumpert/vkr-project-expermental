@@ -10,8 +10,8 @@ import (
 const (
 	gitHubApiAddress = "https://api.github.com"
 	//
-	collectorEndpointRepositoriesByURL = "/get/repos/by/url"
-	collectorEndpointRepositoryIssues  = "/get/repos/issues"
+	collectorEndpointRepositoriesByURL = "get/repos/by/url"
+	collectorEndpointRepositoryIssues  = "get/repos/issues"
 )
 
 // INPUT:
@@ -38,7 +38,7 @@ func (service *GithubTasksService) createTaskRepositoriesDescriptionByURL(taskFr
 	)
 	taskForCollector.details.SetSendToCollectorJsonBody(
 		&githubCollectorModels.SendTaskRepositoriesByURLS{
-			TaskKey: taskForCollector.key,
+			TaskKey: &taskForCollector.key,
 			URLS:    repositoriesUrls,
 		},
 	)
@@ -79,7 +79,7 @@ func (service *GithubTasksService) createTasksListRepositoriesIssues(taskFromTas
 		)
 		taskForCollector.details.SetSendToCollectorJsonBody(
 			&githubCollectorModels.SendTaskRepositoryIssues{
-				TaskKey: taskForCollector.GetKey(),
+				TaskKey: &taskForCollector.key,
 				URL:     repositoriesUrls[url],
 			},
 		)
@@ -141,11 +141,13 @@ func (service *GithubTasksService) linkTriggerWithDependentTasks(trigger *TaskFo
 		triggerTaskTypes...,
 	)
 	for i := 0; i < len(dependent); i++ {
-		dependent[i].SetType(taskTypeRepositoriesDescriptionsAndTheirIssues)
-		dependent[i].details.SetTriggerTask(trigger)
-		dependent[i].details.SetDependentStatus(true)
-		dependent[i].details.SetTriggeredStatus(false)
-		dependent[i].SetDeferStatus(true)
+		dependentTask := dependent[i]
+		dependentTask.details.SetNumber(dependentTask.details.GetNumber() + 1 + i)
+		dependentTask.SetType(taskTypeRepositoriesDescriptionsAndTheirIssues)
+		dependentTask.details.SetTriggerTask(trigger)
+		dependentTask.details.SetDependentStatus(true)
+		dependentTask.details.SetTriggeredStatus(false)
+		dependentTask.SetDeferStatus(true)
 		service.createAndSetNewKeyForTask(
 			dependent[i],
 			task.DependType,

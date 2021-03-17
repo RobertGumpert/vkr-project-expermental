@@ -30,12 +30,11 @@ func Runtime(skip int) (info string) {
 		//
 		split = split[0 : len(split)-1]
 		split = append(split, functionSplit[0])
-		pckg = strings.Join(split, "/")
+		pckg = split[len(split)-1]
 	} else {
 		if strings.Contains(function, ".") {
 			functionSplit := strings.Split(function, ".")
 			function = functionSplit[len(functionSplit)-1]
-			pckg = functionSplit[0]
 		}
 	}
 	return fmt.Sprintf("LINE=[%s]; FUNC=[%s]; PACKAGE=[%s]; FILE=[%s]", strconv.Itoa(lineInt), function, pckg, f)
@@ -50,7 +49,7 @@ func LogInfo(info ...interface{}) {
 }
 
 func LogFatal(err ...interface{}) {
-	str := fmt.Sprintf("%s%s%s%s", Runtime(2), ", FATAL: ",err,"; ")
+	str := fmt.Sprintf("%s%s%s%s", Runtime(2), ", FATAL: ", err, "; ")
 	log.Println(str)
 	panic(str)
 }

@@ -9,10 +9,10 @@ func (service *GithubTasksService) findAndSetCollectorForNewTask(taskForCollecto
 		nonFreeCollectors       = false
 		freeCollectorsAddresses = service.getFreeCollectors(true)
 	)
+	taskForCollector.details.SetCollectorEndpoint(collectorEndpoint)
 	if freeCollectorsAddresses != nil {
 		freeCollectorAddress := freeCollectorsAddresses[0]
 		taskForCollector.details.SetCollectorAddress(freeCollectorAddress)
-		taskForCollector.details.SetCollectorEndpoint(collectorEndpoint)
 		taskForCollector.details.SetCollectorURL(
 			fmt.Sprintf(
 				"%s/%s",

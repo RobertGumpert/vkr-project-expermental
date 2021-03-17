@@ -31,7 +31,43 @@ func (service *GithubTasksService) updateTaskRepositoriesDescriptionByURL(update
 	//
 	//}
 	if executionStatus {
+		taskForCollector.SetExecutionStatus(true)
 		service.completedTasksChannel <- taskForCollector
+	} else {
+		taskForCollector.SetExecutionStatus(false)
+	}
+	return nil
+}
+
+
+func (service *GithubTasksService) updateTaskRepositoryIssues(updateStateTask *githubCollectorModels.UpdateTaskRepositoryIssues) error {
+	var (
+		taskForCollector *TaskForCollector
+		taskKey          = updateStateTask.ExecutionTaskStatus.TaskKey
+		executionStatus  = updateStateTask.ExecutionTaskStatus.TaskCompleted
+		listIssues       = updateStateTask.Issues
+	)
+	if strings.TrimSpace(taskKey) == "" {
+		return errors.New("GETTING FROM GITHUB-COLLECTOR TASK WITH EMPTY KEY. ")
+	}
+	for i := 0; i < len(service.tasksForCollectorsQueue); i++ {
+		if service.tasksForCollectorsQueue[i].GetKey() == taskKey {
+			taskForCollector = service.tasksForCollectorsQueue[i]
+			break
+		}
+	}
+	if taskForCollector == nil {
+		return errors.New("GETTING FROM GITHUB-COLLECTOR TASK WITH KEY [" + taskKey + "] ISN'T EXIST. ")
+	}
+	runtimeinfo.LogInfo("GETTING UPDATE (status: ", executionStatus, ") FOR TASK [", taskKey, "] WITH LIST ELEMENTS SIZE OF [", len(listIssues), "]")
+	//for i := 0; i < len(updateStateTask.Repositories); i++ {
+	//
+	//}
+	if executionStatus {
+		taskForCollector.SetExecutionStatus(true)
+		service.completedTasksChannel <- taskForCollector
+	} else {
+		taskForCollector.SetExecutionStatus(false)
 	}
 	return nil
 }

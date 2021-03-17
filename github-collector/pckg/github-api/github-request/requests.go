@@ -10,16 +10,16 @@ import (
 	"time"
 )
 
-type LevelAPI uint64
+type GitHubLevelAPI uint64
 
 const (
-	CORE                LevelAPI = 0
-	SEARCH              LevelAPI = 1
-	maxCoreRequests     uint64   = 5000
-	maxSearchRequests   uint64   = 30
-	limitNumberAttempts int      = 5
-	authURL                      = "https://api.github.com/user"
-	rateLimitURL                 = "https://api.github.com/rate_limit"
+	CORE                GitHubLevelAPI = 0
+	SEARCH              GitHubLevelAPI = 1
+	maxCoreRequests     uint64         = 5000
+	maxSearchRequests   uint64         = 30
+	limitNumberAttempts int            = 5
+	authURL                            = "https://api.github.com/user"
+	rateLimitURL                       = "https://api.github.com/rate_limit"
 )
 
 //
@@ -50,7 +50,7 @@ type Request struct {
 //----------------------------------------------------------------------------------------------------------------------
 //
 
-func (c *GithubClient) request(request Request, api LevelAPI) (response *http.Response, repeat bool, reset int64, err error) {
+func (c *GithubClient) request(request Request, api GitHubLevelAPI) (response *http.Response, repeat bool, reset int64, err error) {
 	if request.URL == "" {
 		return nil, false, int64(0), errors.New("URL is empty. ")
 	}
@@ -80,9 +80,9 @@ func (c *GithubClient) request(request Request, api LevelAPI) (response *http.Re
 	return response, false, int64(0), nil
 }
 
-func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) {
+func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) {
 	c.countNowExecuteTask = 1
-	runtimeinfo.LogInfo("TASK START............................................................................")
+	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
 	var (
 		response             *http.Response
 		limitReached         bool
@@ -90,7 +90,7 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 		numberSpentAttempts  int
 		resetTimeStamp       int64
 		writeToSignalChannel = false
-		completeTask = func(err error) {
+		completeTask         = func(err error) {
 			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
 			taskStateChannel <- &TaskState{
 				TaskKey:         request.TaskKey,
@@ -134,18 +134,17 @@ func (c *GithubClient) taskOneRequest(request Request, api LevelAPI, signalChann
 	c.countNowExecuteTask = 0
 	close(signalChannel)
 	close(taskStateChannel)
-	runtimeinfo.LogInfo("TASK FINISH............................................................................")
+	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
 }
 
-
-func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) {
+func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI, taskStateChannel, deferTaskStateChannel chan *TaskState) {
 	c.countNowExecuteTask = 1
-	runtimeinfo.LogInfo("TASK START............................................................................")
+	runtimeinfo.LogInfo("TASK START [",requests[0].TaskKey,"]............................................................................")
 	var (
 		taskState             = new(TaskState)
 		writeResponsesToDefer = false
 		buffer                = cmap.New()
-		writeResponse = func(response *Response) {
+		writeResponse         = func(response *Response) {
 			if taskState.TaskKey == "" {
 				taskState.TaskKey = requests[0].TaskKey
 			}
@@ -213,7 +212,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api LevelAPI, taskS
 	c.countNowExecuteTask = 0
 	close(deferTaskStateChannel)
 	close(taskStateChannel)
-	runtimeinfo.LogInfo("TASK FINISH............................................................................")
+	runtimeinfo.LogInfo("TASK FINISH [",requests[0].TaskKey,"]............................................................................")
 }
 
 func newResponse(taskKey, url string, response *http.Response, err error) *Response {
