@@ -7,7 +7,7 @@
     "db_name": "vkr-db",
     "ssl": "disable"
   },
-  "count_task" : 1000000,
+  "count_tasks_for_send_to_collectors" : 1000000,
   "github_collectors_addresses": [
     "http://127.0.0.1:54100"
   ]

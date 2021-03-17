@@ -6,30 +6,33 @@ import (
 
 func (service *GithubTasksService) findAndSetCollectorForNewTask(taskForCollector *TaskForCollector, collectorEndpoint string) bool {
 	var (
-		isSetCollector          = false
+		nonFreeCollectors       = false
 		freeCollectorsAddresses = service.getFreeCollectors(true)
 	)
 	if freeCollectorsAddresses != nil {
 		freeCollectorAddress := freeCollectorsAddresses[0]
-		taskForCollector.taskDetails.SetCollectorAddress(freeCollectorAddress)
-		taskForCollector.taskDetails.SetCollectorEndpoint(collectorEndpoint)
-		taskForCollector.taskDetails.SetCollectorURL(
+		taskForCollector.details.SetCollectorAddress(freeCollectorAddress)
+		taskForCollector.details.SetCollectorEndpoint(collectorEndpoint)
+		taskForCollector.details.SetCollectorURL(
 			fmt.Sprintf(
 				"%s/%s",
-				freeCollectorAddress,
-				collectorEndpoint,
+				taskForCollector.details.GetCollectorAddress(),
+				taskForCollector.details.GetCollectorEndpoint(),
 			),
 		)
-		isSetCollector = true
+	} else {
+		nonFreeCollectors = true
 	}
-	return isSetCollector
+	return nonFreeCollectors
 }
 
 func (service *GithubTasksService) setNewCollectorForTask(taskForCollector *TaskForCollector, newCollectorAddress string) {
-	taskForCollector.taskDetails.collectorAddress = newCollectorAddress
-	taskForCollector.taskDetails.collectorURL = fmt.Sprintf(
-		"%s/%s",
-		newCollectorAddress,
-		taskForCollector.taskDetails.collectorEndpoint,
+	taskForCollector.details.SetCollectorAddress(newCollectorAddress)
+	taskForCollector.details.SetCollectorURL(
+		fmt.Sprintf(
+			"%s/%s",
+			taskForCollector.details.GetCollectorAddress(),
+			taskForCollector.details.GetCollectorEndpoint(),
+		),
 	)
 }

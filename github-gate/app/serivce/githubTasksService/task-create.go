@@ -2,7 +2,7 @@ package githubTasksService
 
 import (
 	"github-gate/app/models/interapplicationModels/githubCollectorModels"
-	"github-gate/pckg/task/generateTaskKey"
+	"github-gate/pckg/task"
 	concurrentMap "github.com/streamrail/concurrent-map"
 	"strings"
 )
@@ -19,44 +19,30 @@ const (
 // 			or
 // 			-> [<user>/<name>, ..., n]
 //
-func (service *GithubTasksService) newCollectorTaskRepositoriesDescriptionByURL(repositoriesUrls []string) (*TaskForCollector, bool) {
+func (service *GithubTasksService) createTaskRepositoriesDescriptionByURL(taskFromTaskService task.ITask, repositoriesUrls []string) (*TaskForCollector, bool) {
 	for url := 0; url < len(repositoriesUrls); url++ {
 		if !strings.Contains(repositoriesUrls[url], gitHubApiAddress) {
-			repositoriesUrls[url] = strings.Join([]string{gitHubApiAddress, "repos", repositoriesUrls[url]}, "/")
+			repositoriesUrls[url] = strings.Join(
+				[]string{
+					gitHubApiAddress,
+					"repos",
+					repositoriesUrls[url]},
+				"/",
+			)
 		}
 	}
-	var (
-		taskNumber        = len(service.tasksForCollectors) + 1
-		nonFreeCollectors = false
-		taskForCollector  = newTaskForCollector(
-			taskTypeRepositoriesDescriptionsByURL,
-			"",
-			false,
-			false,
-			false,
-			nil,
-			new(TaskDetails),
-		)
-	)
-	taskForCollector.taskDetails.SetNumber(taskNumber)
-	nonFreeCollectors = service.findAndSetCollectorForNewTask(
-		taskForCollector,
+	taskForCollector, isDeferTask := service.createTask(
+		taskFromTaskService,
+		taskTypeRepositoriesDescriptionsByURL,
 		collectorEndpointRepositoriesByURL,
 	)
-	if nonFreeCollectors {
-		service.setKeyForCollectorTask(taskForCollector, true, generateTaskKey.DeferBehavior)
-		taskForCollector.SetDeferStatus(true)
-		taskForCollector.SetRunnableStatus(false)
-	} else {
-		service.setKeyForCollectorTask(taskForCollector, true, generateTaskKey.RunnableBehavior)
-		taskForCollector.SetDeferStatus(false)
-		taskForCollector.SetRunnableStatus(false)
-	}
-	taskForCollector.taskDetails.sendToCollectorJsonBody = &githubCollectorModels.SendTaskRepositoriesByURLS{
-		TaskKey: taskForCollector.key,
-		URLS:    repositoriesUrls,
-	}
-	return taskForCollector, nonFreeCollectors
+	taskForCollector.details.SetSendToCollectorJsonBody(
+		&githubCollectorModels.SendTaskRepositoriesByURLS{
+			TaskKey: taskForCollector.key,
+			URLS:    repositoriesUrls,
+		},
+	)
+	return taskForCollector, isDeferTask
 }
 
 // INPUT:
@@ -64,18 +50,49 @@ func (service *GithubTasksService) newCollectorTaskRepositoriesDescriptionByURL(
 // 			or
 // 			-> [<user>/<name>, ..., n]
 //
-func (service *GithubTasksService) newListCollectorTasksRepositoriesIssues(repositoriesUrls []string) ([]*TaskForCollector, concurrentMap.ConcurrentMap) {
+func (service *GithubTasksService) createTasksListRepositoriesIssues(taskFromTaskService task.ITask, repositoriesUrls []string) ([]*TaskForCollector, concurrentMap.ConcurrentMap) {
 	var (
-		deferTasks = concurrentMap.New()
-		tasks      = make([]*TaskForCollector, 0)
+		deferTasks         = concurrentMap.New()
+		tasksForCollectors = make([]*TaskForCollector, 0)
 	)
 	for url := 0; url < len(repositoriesUrls); url++ {
-		var taskNumber = len(service.tasksForCollectors) + 1
 		if !strings.Contains(repositoriesUrls[url], gitHubApiAddress) {
-			repositoriesUrls[url] = strings.Join([]string{gitHubApiAddress, "repos", repositoriesUrls[url]}, "/")
+			repositoriesUrls[url] = strings.Join(
+				[]string{
+					gitHubApiAddress,
+					"repos",
+					repositoriesUrls[url]},
+				"/",
+			)
 		}
-		taskForCollector := newTaskForCollector(
+		taskForCollector, isDeferTask := service.createTask(
+			taskFromTaskService,
 			taskTypeRepositoryIssues,
+			collectorEndpointRepositoryIssues,
+		)
+		if isDeferTask {
+			deferTasks.Set(taskForCollector.GetKey(), taskForCollector)
+		}
+		tasksForCollectors = append(
+			tasksForCollectors,
+			taskForCollector,
+		)
+		taskForCollector.details.SetSendToCollectorJsonBody(
+			&githubCollectorModels.SendTaskRepositoryIssues{
+				TaskKey: taskForCollector.GetKey(),
+				URL:     repositoriesUrls[url],
+			},
+		)
+	}
+	return tasksForCollectors, deferTasks
+}
+
+func (service *GithubTasksService) createTask(taskFromTaskService task.ITask, taskType task.Type, collectorEndpoint string) (*TaskForCollector, bool) {
+	var (
+		isDeferTask      = false
+		taskNumber       = len(service.tasksForCollectorsQueue) + 1
+		taskForCollector = newTaskForCollector(
+			taskType,
 			"",
 			false,
 			false,
@@ -83,72 +100,79 @@ func (service *GithubTasksService) newListCollectorTasksRepositoriesIssues(repos
 			nil,
 			new(TaskDetails),
 		)
-		taskForCollector.taskDetails.SetNumber(taskNumber)
-		nonFreeCollectors := service.findAndSetCollectorForNewTask(
+	)
+	taskForCollector.details.SetTaskFromTaskService(taskFromTaskService)
+	taskForCollector.details.SetNumber(taskNumber)
+	nonFreeCollectors := service.findAndSetCollectorForNewTask(
+		taskForCollector,
+		collectorEndpoint,
+	)
+	if nonFreeCollectors {
+		service.createAndSetNewKeyForTask(
 			taskForCollector,
-			collectorEndpointRepositoryIssues,
+			task.DeferType,
 		)
-		if nonFreeCollectors {
-			service.setKeyForCollectorTask(taskForCollector, true, generateTaskKey.DeferBehavior)
-			taskForCollector.SetDeferStatus(true)
-			taskForCollector.SetRunnableStatus(false)
-			deferTasks.Set(taskForCollector.key, taskForCollector)
-		} else {
-			service.setKeyForCollectorTask(taskForCollector, true, generateTaskKey.RunnableBehavior)
-			taskForCollector.SetDeferStatus(false)
-			taskForCollector.SetRunnableStatus(false)
-		}
-		tasks = append(
-			tasks,
+		taskForCollector.SetDeferStatus(true)
+		isDeferTask = true
+	} else {
+		service.createAndSetNewKeyForTask(
 			taskForCollector,
+			task.RunnableType,
 		)
 	}
-	return tasks, deferTasks
+	return taskForCollector, isDeferTask
 }
 
-func (service *GithubTasksService) linkDependentCollectorTasks(initializer *TaskForCollector, dependent []*TaskForCollector) {
-	initializerBehaviors := []generateTaskKey.ExecutionBehavior{generateTaskKey.TriggeredBehavior}
-	if initializer.GetDeferStatus() {
-		initializerBehaviors = append(
-			initializerBehaviors,
-			generateTaskKey.DeferBehavior,
+func (service *GithubTasksService) linkTriggerWithDependentTasks(trigger *TaskForCollector, dependent []*TaskForCollector) {
+	triggerTaskTypes := []task.Type{task.TriggerType}
+	if trigger.GetDeferStatus() {
+		triggerTaskTypes = append(
+			triggerTaskTypes,
+			task.DeferType,
 		)
 	} else {
-		initializerBehaviors = append(
-			initializerBehaviors,
-			generateTaskKey.RunnableBehavior,
+		triggerTaskTypes = append(
+			triggerTaskTypes,
+			task.RunnableType,
 		)
 	}
-	service.setKeyForCollectorTask(
-		initializer,
-		true,
-		initializerBehaviors...,
+	service.createAndSetNewKeyForTask(
+		trigger,
+		triggerTaskTypes...,
 	)
 	for i := 0; i < len(dependent); i++ {
-		dependent[i].taskDetails.signalTriggeredDependentTask = true
-		dependent[i].deferStatus = true
-		service.setKeyForCollectorTask(
+		dependent[i].SetType(taskTypeRepositoriesDescriptionsAndTheirIssues)
+		dependent[i].details.SetTriggerTask(trigger)
+		dependent[i].details.SetDependentStatus(true)
+		dependent[i].details.SetTriggeredStatus(false)
+		dependent[i].SetDeferStatus(true)
+		service.createAndSetNewKeyForTask(
 			dependent[i],
-			true,
-			generateTaskKey.DependBehavior,
-			generateTaskKey.DeferBehavior,
+			task.DependType,
+			task.DeferType,
 		)
 	}
-	initializer.taskDetails.dependentTasksRunAfterCompletion = dependent
+	trigger.SetType(taskTypeRepositoriesDescriptionsAndTheirIssues)
+	trigger.details.SetDependentStatus(false)
+	trigger.details.SetTriggeredStatus(true)
+	trigger.details.SetDependentTasks(dependent)
 	return
 }
 
-func (service *GithubTasksService) setKeyForCollectorTask(taskForCollector *TaskForCollector, newKey bool, behavior ...generateTaskKey.ExecutionBehavior) {
-	if newKey || strings.TrimSpace(taskForCollector.key) == "" {
-		taskForCollector.key = generateTaskKey.GenerateUniqueKey(
-			taskForCollector.taskDetails.number,
-			behavior...,
-		)
-	} else {
-		taskForCollector.key = generateTaskKey.AddExecutionBehavior(
-			taskForCollector.GetKey(),
-			behavior...,
-		)
-	}
+func (service *GithubTasksService) createAndSetNewKeyForTask(taskForCollector *TaskForCollector, taskTypes ...task.Type) {
+	taskForCollector.SetKey(
+		task.GenerateUniqueKey(
+			taskForCollector.details.GetNumber(),
+			taskTypes...,
+		),
+	)
 	return
+}
+
+func (service *GithubTasksService) swapRunnableAndDeferStatusInKey(taskForCollector *TaskForCollector) {
+	taskForCollector.SetKey(
+		task.SwapRunnableAndDefer(
+			taskForCollector.GetKey(),
+		),
+	)
 }

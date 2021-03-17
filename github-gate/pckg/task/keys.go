@@ -1,33 +1,31 @@
-package generateTaskKey
+package task
 
 import (
 	"fmt"
 	"strings"
 )
 
-type ExecutionBehavior int
-
 const (
-	RunnableBehavior  ExecutionBehavior = 0
-	DeferBehavior     ExecutionBehavior = 1
-	TriggeredBehavior ExecutionBehavior = 2
-	DependBehavior    ExecutionBehavior = 3
+	RunnableType Type = 0
+	DeferType    Type = 1
+	TriggerType  Type = 2
+	DependType   Type = 3
 )
 
-func GenerateUniqueKey(number int, behaviors ...ExecutionBehavior) string {
+func GenerateUniqueKey(number int, behaviors ...Type) string {
 	var key = fmt.Sprintf("key[%d]", number)
 	for _, behavior := range behaviors {
 		switch behavior {
-		case RunnableBehavior:
+		case RunnableType:
 			key = fmt.Sprintf("%s-%s", key, "run")
 			break
-		case DeferBehavior:
+		case DeferType:
 			key = fmt.Sprintf("%s-%s", key, "defer")
 			break
-		case TriggeredBehavior:
+		case TriggerType:
 			key = fmt.Sprintf("%s-%s", key, "trigger")
 			break
-		case DependBehavior:
+		case DependType:
 			key = fmt.Sprintf("%s-%s", key, "depend")
 			break
 		}
@@ -35,19 +33,19 @@ func GenerateUniqueKey(number int, behaviors ...ExecutionBehavior) string {
 	return key
 }
 
-func AddExecutionBehavior(key string, behaviors ...ExecutionBehavior) string {
+func AddExecutionBehavior(key string, behaviors ...Type) string {
 	for _, behavior := range behaviors {
 		switch behavior {
-		case RunnableBehavior:
+		case RunnableType:
 			key = fmt.Sprintf("%s-%s", key, "run")
 			break
-		case DeferBehavior:
+		case DeferType:
 			key = fmt.Sprintf("%s-%s", key, "defer")
 			break
-		case TriggeredBehavior:
+		case TriggerType:
 			key = fmt.Sprintf("%s-%s", key, "trigger")
 			break
-		case DependBehavior:
+		case DependType:
 			key = fmt.Sprintf("%s-%s", key, "depend")
 			break
 		}
@@ -55,7 +53,7 @@ func AddExecutionBehavior(key string, behaviors ...ExecutionBehavior) string {
 	return key
 }
 
-func ChangeRunnableAndDefer(key string) string {
+func SwapRunnableAndDefer(key string) string {
 	if strings.Contains(key, "defer") {
 		key = strings.ReplaceAll(key, "defer", "run")
 	}

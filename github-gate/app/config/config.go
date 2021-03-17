@@ -7,9 +7,8 @@ import (
 	"path/filepath"
 )
 
-
 type Config struct {
-	Port                      string   `json:"port"`
+	Port     string `json:"port"`
 	Postgres struct {
 		Username string `json:"username"`
 		Password string `json:"password"`
@@ -17,8 +16,8 @@ type Config struct {
 		DbName   string `json:"db_name"`
 		Ssl      string `json:"ssl"`
 	} `json:"postgres"`
-	CountTask                 int64    `json:"count_task"`
-	GithubCollectorsAddresses []string `json:"github_collectors_addresses"`
+	SizeQueueTasksForGithubCollectors int64    `json:"size_queue_tasks_for_github_collectors"`
+	GithubCollectorsAddresses         []string `json:"github_collectors_addresses"`
 }
 
 func NewConfig() *Config {

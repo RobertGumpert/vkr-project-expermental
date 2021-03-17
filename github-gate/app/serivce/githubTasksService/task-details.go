@@ -1,10 +1,16 @@
 package githubTasksService
 
+import "github-gate/pckg/task"
+
 type TaskDetails struct {
-	number int
+	taskFromTaskService task.ITask
+	number              int
 	//
-	signalTriggeredDependentTask     bool
-	dependentTasksRunAfterCompletion []*TaskForCollector
+	dependentStatus bool
+	triggerTask     *TaskForCollector
+	//
+	triggeredStatus bool
+	dependentTasks  []*TaskForCollector
 	//
 	sendToCollectorJsonBody interface{}
 	collectorAddress        string
@@ -17,12 +23,54 @@ type TaskDetails struct {
 //
 //
 
+func (t *TaskDetails) GetTaskFromTaskService() task.ITask {
+	return t.taskFromTaskService
+}
+
+func (t *TaskDetails) SetTaskFromTaskService(taskFromTaskService task.ITask) {
+	t.taskFromTaskService = taskFromTaskService
+}
+
+//
+//
+//
+
+func (t *TaskDetails) GetTriggerTask() *TaskForCollector {
+	return t.triggerTask
+}
+
+func (t *TaskDetails) SetTriggerTask(triggerTask *TaskForCollector) {
+	t.triggerTask = triggerTask
+}
+
+func (t *TaskDetails) CountCompletedDependentTasks() int {
+	var count int
+	for i := 0; i < len(t.dependentTasks); i++ {
+		if t.dependentTasks[i].GetExecutionStatus() {
+			count++
+		}
+	}
+	return count
+}
+
+//
+//
+//
+
+func (t *TaskDetails) SetTriggeredStatus(flag bool) {
+	t.triggeredStatus = flag
+}
+
+func (t *TaskDetails) IsTrigger() bool {
+	return t.triggeredStatus
+}
+
 func (t *TaskDetails) SetDependentStatus(flag bool) {
-	t.signalTriggeredDependentTask = flag
+	t.dependentStatus = flag
 }
 
 func (t *TaskDetails) IsDependent() bool {
-	return t.signalTriggeredDependentTask
+	return t.dependentStatus
 }
 
 //
@@ -30,17 +78,17 @@ func (t *TaskDetails) IsDependent() bool {
 //
 
 func (t *TaskDetails) SetDependentTasks(depend []*TaskForCollector) {
-	t.dependentTasksRunAfterCompletion = depend
+	t.dependentTasks = depend
 }
 
 func (t *TaskDetails) HasDependentTasks() (bool, []*TaskForCollector) {
 	var isExistDependentTasks bool
-	if t.dependentTasksRunAfterCompletion == nil || len(t.dependentTasksRunAfterCompletion) == 0 {
+	if t.dependentTasks == nil || len(t.dependentTasks) == 0 {
 		isExistDependentTasks = false
 	} else {
 		isExistDependentTasks = true
 	}
-	return isExistDependentTasks, t.dependentTasksRunAfterCompletion
+	return isExistDependentTasks, t.dependentTasks
 }
 
 //

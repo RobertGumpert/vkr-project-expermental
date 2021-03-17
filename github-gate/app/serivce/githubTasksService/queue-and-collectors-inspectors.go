@@ -6,14 +6,16 @@ import (
 	"net/http"
 )
 
-func (service *GithubTasksService) queueIsBusy(countNewTasks int) bool {
-	if len(service.tasksForCollectors)+countNewTasks > int(service.config.CountTask) {
-		return false
+func (service *GithubTasksService) queueHasFreeSpace(countNewTasks int) bool {
+	var queueFreeSpace = true
+	if len(service.tasksForCollectorsQueue)+countNewTasks > int(service.config.SizeQueueTasksForGithubCollectors) {
+		queueFreeSpace = false
 	}
-	return true
+	return queueFreeSpace
 }
 
 func (service *GithubTasksService) collectorIsFree(collectorUrl string) bool {
+	var collectorFree = true
 	getStateUrl := collectorUrl + "/get/state"
 	response, err := requests.GET(
 		service.client,
@@ -21,12 +23,13 @@ func (service *GithubTasksService) collectorIsFree(collectorUrl string) bool {
 		nil,
 	)
 	if err != nil {
-		return false
+		collectorFree = false
+	} else {
+		if response.StatusCode != http.StatusOK {
+			collectorFree = false
+		}
 	}
-	if response.StatusCode != http.StatusOK {
-		return false
-	}
-	return true
+	return collectorFree
 }
 
 func (service *GithubTasksService) getFreeCollectors(onlyFirst bool) []string {

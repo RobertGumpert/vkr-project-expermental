@@ -16,10 +16,10 @@ type TaskForCollector struct {
 	runnableStatus  bool
 	result          interface{}
 	//
-	taskDetails *TaskDetails
+	details *TaskDetails
 }
 
-func newTaskForCollector(taskType task.Type, key string, executionStatus bool, deferStatus bool, runnableStatus bool, result interface{}, taskDetails *TaskDetails) *TaskForCollector {
+func newTaskForCollector(taskType task.Type, key string, executionStatus bool, deferStatus bool, runnableStatus bool, result interface{}, details *TaskDetails) *TaskForCollector {
 	return &TaskForCollector{
 		taskType:        taskType,
 		key:             key,
@@ -27,7 +27,7 @@ func newTaskForCollector(taskType task.Type, key string, executionStatus bool, d
 		deferStatus:     deferStatus,
 		runnableStatus:  runnableStatus,
 		result:          result,
-		taskDetails:     taskDetails,
+		details:         details,
 	}
 }
 
@@ -84,5 +84,5 @@ func (t *TaskForCollector) GetResult() interface{} {
 }
 
 func (t *TaskForCollector) GetCustomFields() interface{} {
-	return t.taskDetails
+	return t.details
 }

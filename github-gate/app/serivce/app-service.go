@@ -49,7 +49,7 @@ func NewAppService(config *config.Config) *AppService {
 		config:       config,
 		client:       new(http.Client),
 		tasks:        &tasks,
-		tasksChannel: make(chan string, config.CountTask),
+		tasksChannel: make(chan string, config.SizeQueueTasksForGithubCollectors),
 	}
 	go a.scanTasks()
 	return a

@@ -144,7 +144,7 @@ func (a *AppService) CreateTaskGetRepositoriesAndIssues(urls []string) error {
 }
 
 func (a *AppService) possibleAddTasks(count int) error {
-	if a.tasks.Count()+count > int(a.config.CountTask) {
+	if a.tasks.Count()+count > int(a.config.SizeQueueTasksForGithubCollectors) {
 		return errors.New("No place in the queue. ")
 	}
 	return nil
@@ -169,7 +169,7 @@ func (a *AppService) sendDeferTask(task *task) error {
 }
 
 func (a *AppService) sendNonDeferTask(task *task) error {
-	if a.tasks.Count() > int(a.config.CountTask/2) {
+	if a.tasks.Count() > int(a.config.SizeQueueTasksForGithubCollectors/2) {
 		return errors.New("No place in the queue. ")
 	}
 	response, err := a.sendTask(task)
