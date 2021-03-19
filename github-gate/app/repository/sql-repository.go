@@ -73,21 +73,29 @@ func (s *SQLRepository) CloseConnection() error {
 	return nil
 }
 
-func (s *SQLRepository) AddRepository(repository *dataModel.Repository) error {
+func (s *SQLRepository) GetRepositoryByName(name string) (dataModel.Repository, error) {
+	var repository dataModel.Repository
+	if err := s.storage.SqlDB.Where("name = ?", name).First(&repository).Error; err != nil {
+		return repository, err
+	}
+	return repository, nil
+}
+
+func (s *SQLRepository) AddRepository(repository dataModel.Repository) error {
 	tx := s.storage.SqlDB.Begin()
 	defer func() {
 		if r := recover(); r != nil {
 			tx.Rollback()
 		}
 	}()
-	if err := tx.Create(repository).Error; err != nil {
+	if err := tx.Create(&repository).Error; err != nil {
 		tx.Rollback()
 		return err
 	}
 	return tx.Commit().Error
 }
 
-func (s *SQLRepository) AddRepositories(repositories []*dataModel.Repository) error {
+func (s *SQLRepository) AddRepositories(repositories []dataModel.Repository) error {
 	tx := s.storage.SqlDB.Begin()
 	defer func() {
 		if r := recover(); r != nil {
@@ -101,7 +109,7 @@ func (s *SQLRepository) AddRepositories(repositories []*dataModel.Repository) er
 	return tx.Commit().Error
 }
 
-func (s *SQLRepository) AddIssues(issues []*dataModel.Issue) error {
+func (s *SQLRepository) AddIssues(issues []dataModel.Issue) error {
 	tx := s.storage.SqlDB.Begin()
 	defer func() {
 		if r := recover(); r != nil {

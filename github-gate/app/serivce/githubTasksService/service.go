@@ -2,6 +2,8 @@ package githubTasksService
 
 import (
 	"github-gate/app/config"
+	"github-gate/app/models/dataModel"
+	"github-gate/app/repository"
 	"github-gate/pckg/runtimeinfo"
 	"github-gate/pckg/task"
 	"net/http"
@@ -11,16 +13,18 @@ type QueueIsBusy func() bool
 type SendTaskToGithubCollector func()
 
 type GithubTasksService struct {
+	db                      repository.IRepository
 	config                  *config.Config
 	client                  *http.Client
 	tasksForCollectorsQueue []*TaskForCollector
 	completedTasksChannel   chan *TaskForCollector
 }
 
-func NewGithubTasksService(config *config.Config, client *http.Client) *GithubTasksService {
+func NewGithubTasksService(config *config.Config, client *http.Client, db repository.IRepository) *GithubTasksService {
 	tasksForCollectorsQueue := make([]*TaskForCollector, 0)
 	tasksForCollectorsChannel := make(chan *TaskForCollector, config.SizeQueueTasksForGithubCollectors)
 	service := &GithubTasksService{
+		db:                      db,
 		config:                  config,
 		client:                  client,
 		tasksForCollectorsQueue: tasksForCollectorsQueue,
@@ -45,6 +49,7 @@ func (service *GithubTasksService) CreateTaskRepositoriesDescriptions(taskFromTa
 				taskFromTaskService,
 				repositoriesUrls,
 			)
+			taskForCollector.SetResult(make([]dataModel.Repository, 0))
 			service.tasksForCollectorsQueue = append(
 				service.tasksForCollectorsQueue,
 				taskForCollector,
@@ -81,6 +86,7 @@ func (service *GithubTasksService) CreateTaskRepositoriesAndTheirIssues(taskFrom
 				taskFromTaskService,
 				repositoriesUrls,
 			)
+			trigger.SetResult(make([]dataModel.Repository, 0))
 			service.linkTriggerWithDependentTasks(trigger, dependent)
 			service.tasksForCollectorsQueue = append(
 				service.tasksForCollectorsQueue,

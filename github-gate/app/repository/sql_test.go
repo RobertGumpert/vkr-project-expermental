@@ -17,7 +17,7 @@ var storageProvider = SQLCreateConnection(
 	"disable",
 )
 
-func connect() IRepositoriesStorage {
+func connect() IRepository {
 	sqlRepository := NewSQLRepository(
 		storageProvider,
 	)

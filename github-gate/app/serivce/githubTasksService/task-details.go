@@ -6,6 +6,8 @@ type TaskDetails struct {
 	taskFromTaskService task.ITask
 	number              int
 	//
+	entityID uint
+	//
 	dependentStatus bool
 	triggerTask     *TaskForCollector
 	//
@@ -18,7 +20,6 @@ type TaskDetails struct {
 	collectorURL            string
 }
 
-
 //
 //
 //
@@ -29,6 +30,18 @@ func (t *TaskDetails) GetTaskFromTaskService() task.ITask {
 
 func (t *TaskDetails) SetTaskFromTaskService(taskFromTaskService task.ITask) {
 	t.taskFromTaskService = taskFromTaskService
+}
+
+//
+//
+//
+
+func (t *TaskDetails) GetEntityID() uint {
+	return t.entityID
+}
+
+func (t *TaskDetails) SetEntityID(entityID uint) {
+	t.entityID = entityID
 }
 
 //

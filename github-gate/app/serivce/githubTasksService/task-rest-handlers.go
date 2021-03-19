@@ -14,7 +14,7 @@ func (service *GithubTasksService) RestUpdateRepositoriesDescriptionByURL(contex
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := service.updateTaskRepositoriesDescriptionByURL(state)
+	err, _ := service.updateTaskRepositoriesDescriptionByURL(state)
 	if err != nil {
 		runtimeinfo.LogError("(RESP. TO: ->GITHUB-COLLECTOR) TASK [", state.ExecutionTaskStatus.TaskKey, "] SEND RESPONSE: 423")
 		context.AbortWithStatus(http.StatusLocked)
@@ -31,7 +31,7 @@ func (service *GithubTasksService) RestUpdateRepositoryIssues(context *gin.Conte
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := service.updateTaskRepositoryIssues(state)
+	err, _ := service.updateTaskRepositoryIssues(state)
 	if err != nil {
 		runtimeinfo.LogError("(RESP. TO: ->GITHUB-COLLECTOR) TASK [", state.ExecutionTaskStatus.TaskKey, "] SEND RESPONSE: 423")
 		context.AbortWithStatus(http.StatusLocked)

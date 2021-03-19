@@ -5,6 +5,10 @@ import (
 	"gorm.io/gorm"
 )
 
+type TitleFrequencyJSON struct {
+	Dictionary map[string]float64 `json:"dictionary"`
+}
+
 type Repository struct {
 	gorm.Model
 	URL         string         `gorm:"not null;"`

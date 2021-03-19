@@ -9,11 +9,12 @@ type IStorage interface {
 	CloseConnection() error
 }
 
-type IRepositoriesStorage interface {
+type IRepository interface {
 	IStorage
-	AddRepository(repository *dataModel.Repository) error
-	AddRepositories(repositories []*dataModel.Repository) error
-	AddIssues(issues []*dataModel.Issue) error
+	GetRepositoryByName(name string) (dataModel.Repository, error)
+	AddRepository(repository dataModel.Repository) error
+	AddRepositories(repositories []dataModel.Repository) error
+	AddIssues(issues []dataModel.Issue) error
 	ListIssuesRepository(id uint) ([]dataModel.Issue, error)
 	AddNearestIssues(nearestIssues dataModel.NearestIssues) error
 }

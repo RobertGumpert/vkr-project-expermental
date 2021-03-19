@@ -2,10 +2,42 @@ package githubTasksService
 
 import (
 	"github-gate/app/config"
+	"github-gate/app/repository"
 	"github.com/gin-gonic/gin"
 	"net/http"
 	"testing"
 )
+
+var storageProvider = repository.SQLCreateConnection(
+	repository.TypeStoragePostgres,
+	repository.DSNPostgres,
+	nil,
+	"postgres",
+	"toster123",
+	"vkr-db",
+	"5432",
+	"disable",
+)
+
+func connect() repository.IRepository {
+	sqlRepository := repository.NewSQLRepository(
+		storageProvider,
+	)
+	return sqlRepository
+}
+
+func TestTruncate(t *testing.T) {
+	_ = connect()
+	storageProvider.SqlDB.Exec("TRUNCATE TABLE repositories CASCADE")
+	storageProvider.SqlDB.Exec("TRUNCATE TABLE issues CASCADE")
+}
+
+func TestMigration(t *testing.T) {
+	storageProvider.SqlDB.Exec("drop table repositories cascade")
+	storageProvider.SqlDB.Exec("drop table issues cascade")
+	storageProvider.SqlDB.Exec("drop table nearest_issues cascade")
+	_ = connect()
+}
 
 func createFakeHttpServer(service *GithubTasksService) *gin.Engine {
 	router := gin.Default()
@@ -20,9 +52,11 @@ func createFakeHttpServer(service *GithubTasksService) *gin.Engine {
 }
 
 func createFakeTaskService(c *config.Config) *GithubTasksService {
+	db := connect()
 	service := NewGithubTasksService(
 		c,
 		new(http.Client),
+		db,
 	)
 	return service
 }
