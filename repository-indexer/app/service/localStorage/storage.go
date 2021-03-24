@@ -44,7 +44,7 @@ func Destructor(storage *Storage) error {
 	return nil
 }
 
-func (storage *Storage) Write(providerKey string, id, data interface{}) error {
+func (storage *Storage) WriteNew(providerKey string, id, data interface{}) error {
 	var (
 		provider *fileProvider
 	)
@@ -53,20 +53,50 @@ func (storage *Storage) Write(providerKey string, id, data interface{}) error {
 	} else {
 		provider = inter.(*fileProvider)
 	}
-	return provider.write(
+	return provider.WriteNew(
 		id,
 		data,
 	)
 }
 
-func (storage *Storage) Read(providerKey string, id interface{}) (interface{}, error) {
+func (storage *Storage) Read(providerKey string, id interface{}) (interface{}, interface{}, error) {
 	var (
 		provider *fileProvider
 	)
 	if inter, exist := storage.fileStorage.Get(providerKey); !exist {
-		return nil, errors.New("FILE PROVIDER ISN'T EXIST. ")
+		return nil, nil, errors.New("FILE PROVIDER ISN'T EXIST. ")
 	} else {
 		provider = inter.(*fileProvider)
 	}
-	return provider.read(id)
+	return provider.Read(id)
+}
+
+func (storage *Storage) Update(providerKey string, id, data interface{}) error {
+	var (
+		provider *fileProvider
+	)
+	if inter, exist := storage.fileStorage.Get(providerKey); !exist {
+		return errors.New("FILE PROVIDER ISN'T EXIST. ")
+	} else {
+		provider = inter.(*fileProvider)
+	}
+	return provider.Update(
+		id,
+		data,
+	)
+}
+
+func (storage *Storage) Rewrite(providerKey string, id, data []interface{}) error {
+	var (
+		provider *fileProvider
+	)
+	if inter, exist := storage.fileStorage.Get(providerKey); !exist {
+		return errors.New("FILE PROVIDER ISN'T EXIST. ")
+	} else {
+		provider = inter.(*fileProvider)
+	}
+	return provider.Rewrite(
+		id,
+		data,
+	)
 }

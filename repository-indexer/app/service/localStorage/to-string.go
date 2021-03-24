@@ -7,11 +7,11 @@ import (
 	"strings"
 )
 
-func fromStringToString(data string) (interface{}, error) {
+func FromStringToString(data string) (interface{}, error) {
 	return data, nil
 }
 
-func fromStringToFloat64Vector(data string) (interface{}, error) {
+func FromStringToFloat64Vector(data string) (interface{}, error) {
 	var (
 		split  = strings.Split(data, ",")
 		vector = make([]float64, 0)
@@ -31,9 +31,9 @@ func ToStringString(data interface{}) (string, FromStringToType, error) {
 		convert, ok = data.(string)
 	)
 	if !ok {
-		return convert, fromStringToString, errors.New("DOESN'T CONVERT 'STRING' TO STRING")
+		return convert, FromStringToString, errors.New("DOESN'T CONVERT 'STRING' TO STRING")
 	}
-	return convert, fromStringToString, nil
+	return convert, FromStringToString, nil
 }
 
 func ToStringFloat64Vector(data interface{}) (string, FromStringToType, error) {
@@ -43,7 +43,7 @@ func ToStringFloat64Vector(data interface{}) (string, FromStringToType, error) {
 		vector, ok = data.([]float64)
 	)
 	if !ok {
-		return convert, fromStringToFloat64Vector, errors.New("DOESN'T CONVERT 'FLOAT64 VECTOR' TO STRING")
+		return convert, FromStringToFloat64Vector, errors.New("DOESN'T CONVERT 'FLOAT64 VECTOR' TO STRING")
 	}
 	for i := 0; i < len(vector); i++ {
 		elements = append(
@@ -52,5 +52,5 @@ func ToStringFloat64Vector(data interface{}) (string, FromStringToType, error) {
 		)
 	}
 	convert = strings.Join(elements, ",")
-	return convert, fromStringToFloat64Vector, nil
+	return convert, FromStringToFloat64Vector, nil
 }
