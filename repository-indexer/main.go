@@ -3,6 +3,8 @@ package main
 import (
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
+	"os"
+
 	"repository-indexer/app/config"
 )
 
@@ -34,4 +36,12 @@ func main() {
 	}()
 	SERVER = NewServer(CONFIG)
 	SERVER.RunServer()
+}
+
+
+func createLocalKeyValueStorage() {
+	directory, err := os.Getwd()
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
 }
