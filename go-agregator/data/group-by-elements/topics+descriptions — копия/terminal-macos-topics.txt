@@ -1,0 +1,2 @@
+Color schemes for default macOS Terminal.app
+color-schemes macos terminal terminal-themes

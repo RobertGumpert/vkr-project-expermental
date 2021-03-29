@@ -4,7 +4,7 @@ go 1.15
 
 require (
 	github.com/RobertGumpert/gosimstor v1.0.2
-	github.com/RobertGumpert/vkr-pckg v0.0.0-20210322135413-2ff4909dd1be
+	github.com/RobertGumpert/vkr-pckg v1.0.5
 	github.com/aaaton/golem/v4 v4.0.1
 	github.com/aaaton/golem/v4/dicts/en v1.0.1
 	github.com/gin-contrib/cors v1.3.1
@@ -31,4 +31,5 @@ require (
 	gopkg.in/check.v1 v1.0.0-20201130134442-10cb98267c6c // indirect
 	gopkg.in/yaml.v2 v2.4.0 // indirect
 	gopkg.in/yaml.v3 v3.0.0-20210107192922-496545a6307b // indirect
+	gorm.io/gorm v1.21.4
 )

@@ -1,0 +1,2 @@
+A Modern C++ Data Sciences Toolkit
+c-plus-plus graph-algorithms inverted-index language-modeling nlp nlp-parsing pos-tag search-engine text-analysis text-analytics text-classification word-embeddings

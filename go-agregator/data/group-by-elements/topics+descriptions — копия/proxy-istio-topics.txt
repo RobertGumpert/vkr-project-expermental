@@ -1,0 +1,2 @@
+The Istio proxy components
+discovery lyft-envoy monitoring proxy sideca

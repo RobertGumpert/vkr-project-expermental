@@ -1,0 +1,2 @@
+:mortar_board: Path to a free self-taught education in Computer Science!
+awesome-list computer-science courses curriculum

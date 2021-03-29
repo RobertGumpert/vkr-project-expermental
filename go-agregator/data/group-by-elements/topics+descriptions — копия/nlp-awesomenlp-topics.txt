@@ -1,0 +1,2 @@
+A curated list of resources dedicated to Natural Language Processing (NLP)
+awesome awesome-list deep-learning language machine-learning natural-language-processing nlp text-mining

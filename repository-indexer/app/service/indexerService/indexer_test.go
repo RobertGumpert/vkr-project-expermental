@@ -1,4 +1,4 @@
-package repositoryIndexerService
+package indexerService
 
 import (
 	"fmt"
@@ -27,7 +27,7 @@ func createDataModels() []dataModel.RepositoryModel {
 	if err != nil {
 		runtimeinfo.LogFatal(err)
 	}
-	for _, fileInfo := range files {
+	for i, fileInfo := range files {
 		if fileInfo.Name() == "results.txt" {
 			continue
 		}
@@ -48,11 +48,13 @@ func createDataModels() []dataModel.RepositoryModel {
 		textClearing.ClearSymbols(&split[1])
 		split[1] = strings.Join(*textClearing.GetLemmas(&split[1], false, lemmatizer), " ")
 		//
-		models = append(models, dataModel.RepositoryModel{
-			Name:        strings.Split(fileInfo.Name(), ".")[0],
+		model := dataModel.RepositoryModel{
 			Description: split[0],
 			Topics:      strings.Split(split[1], " "),
-		})
+		}
+		model.ID = uint(i)
+		models = append(models, model)
+
 	}
 	return models
 }
@@ -73,9 +75,9 @@ func TestIndexingFlow(t *testing.T) {
 	log.Println("FINISH PRINT DICTIONARY.")
 	log.Println("START PRINT NEAREST...")
 	for _, repository := range result.GetNearestRepositories() {
-		log.Println("MAIN: ", repository.GetRepositoryName())
+		log.Println("MAIN: ", repository.GetRepositoryID())
 		type kv struct {
-			Key   string
+			Key   uint
 			Value float64
 		}
 		var ss []kv
@@ -89,13 +91,46 @@ func TestIndexingFlow(t *testing.T) {
 			if kv.Value < 0.4 {
 				continue
 			}
-			log.Println(fmt.Sprintf("\t\t\t%s = %f", kv.Key, kv.Value))
+			log.Println(fmt.Sprintf("\t\t\t%d = %f", kv.Key, kv.Value))
 		}
-		//for nearest, distance := range repository.GetNearestRepositories() {
-		//	if distance > 0.0 {
-		//		log.Println("\t\t\t", nearest, " = ", distance)
-		//	}
-		//}
+	}
+	log.Println("FINISH PRINT NEAREST.")
+}
+
+func TestIndexingIDFFlow(t *testing.T) {
+	models := createDataModels()
+	result, err := IndexingIDF(models, 3)
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
+	log.Println("START PRINT DICTIONARY...")
+	count := 0
+	for item := range result.GetDictionary().IterBuffered() {
+		log.Println(item.Key)
+		count++
+	}
+	runtimeinfo.LogInfo("COUNT = ", count, ", LEN = ", len(models))
+	log.Println("FINISH PRINT DICTIONARY.")
+	log.Println("START PRINT NEAREST...")
+	for _, repository := range result.GetNearestRepositories() {
+		log.Println("MAIN: ", repository.GetRepositoryID())
+		type kv struct {
+			Key   uint
+			Value float64
+		}
+		var ss []kv
+		for k, v := range repository.GetNearestRepositories() {
+			ss = append(ss, kv{k, v})
+		}
+		sort.Slice(ss, func(i, j int) bool {
+			return ss[i].Value > ss[j].Value
+		})
+		for _, kv := range ss {
+			if kv.Value < 0.4 {
+				continue
+			}
+			log.Println(fmt.Sprintf("\t\t\t%d = %f", kv.Key, kv.Value))
+		}
 	}
 	log.Println("FINISH PRINT NEAREST.")
 }

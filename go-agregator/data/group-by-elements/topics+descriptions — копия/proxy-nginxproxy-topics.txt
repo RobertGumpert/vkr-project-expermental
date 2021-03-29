@@ -1,0 +1,2 @@
+Automated nginx proxy for Docker containers using docker-gen
+docker docker-gen letsencrypt nginx

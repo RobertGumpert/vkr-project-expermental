@@ -3,6 +3,14 @@ github.com/RobertGumpert/gosimstor v1.0.2 h1:vlawAbCyFzdI7KuwN/01fpf/oxLqd88r9aC
 github.com/RobertGumpert/gosimstor v1.0.2/go.mod h1:J/WoeRqHq1+JABaptqBpmA202EVTrODSPCUpm1PPaHs=
 github.com/RobertGumpert/vkr-pckg v0.0.0-20210322135413-2ff4909dd1be h1:Gea6Qj3vE617lApNtd/6OUppyxgq1vVSooDRPxARBb0=
 github.com/RobertGumpert/vkr-pckg v0.0.0-20210322135413-2ff4909dd1be/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.2 h1:sw9lxx4wcC8tD0JELHLyaT3+9GvNQLkb7ZIXRL9ZdnQ=
+github.com/RobertGumpert/vkr-pckg v1.0.2/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.3 h1:3icERVGtXx3Clh0NI5iRlghRVtxabYpYptGVhLFy1NU=
+github.com/RobertGumpert/vkr-pckg v1.0.3/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.4 h1:1nzLNaMvdIpEql1lWwX0RPOVSmiZJJqiiZTkTQXExdM=
+github.com/RobertGumpert/vkr-pckg v1.0.4/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.5 h1:lS+3ri0/uiBkZK57dhAwU8Gt+Mk23rp2BRtOiQkQozE=
+github.com/RobertGumpert/vkr-pckg v1.0.5/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/aaaton/golem/v4 v4.0.0/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=
 github.com/aaaton/golem/v4 v4.0.1 h1:jvnnTmzdfZC8cUGIo6obIcnmB3stTaf5Uw64OMx3C84=
 github.com/aaaton/golem/v4 v4.0.1/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=

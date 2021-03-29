@@ -1,0 +1,2 @@
+The Python micro framework for building web applications.
+flask hacktoberfest jinja pallets python web-framework werkzeug wsgi
