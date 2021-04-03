@@ -2,7 +2,7 @@ package config
 
 import (
 	"encoding/json"
-	"github-gate/pckg/runtimeinfo"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"io/ioutil"
 	"path/filepath"
 )

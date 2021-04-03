@@ -2,16 +2,14 @@ package main
 
 import (
 	"github-gate/app/config"
-	"github-gate/app/repository"
-	"github-gate/app/serivce"
-	"github-gate/pckg/runtimeinfo"
+	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 )
 
 var (
 	POSTGRES *repository.SQLRepository
 	CONFIG   *config.Config
 	SERVER   *server
-	APP      *serivce.AppService
 )
 
 func main() {
@@ -33,7 +31,6 @@ func main() {
 			runtimeinfo.LogFatal(err)
 		}
 	}()
-	APP = serivce.NewAppService(CONFIG)
-	SERVER = NewServer(CONFIG, APP)
+	SERVER = NewServer(CONFIG)
 	SERVER.RunServer()
 }
