@@ -72,8 +72,24 @@ func TestTaskFlow(t *testing.T) {
 			Repositories []string `json:"repositories"`
 		}
 	)
-	c := createFakeConfig()
-	service, server := createFakeTaskService(c)
+	var (
+		c                     = createFakeConfig()
+		service, server       = createFakeTaskService(c)
+		getRepositoriesModels = func(urls ...string) []dataModel.RepositoryModel {
+			var (
+				models = make([]dataModel.RepositoryModel, 0)
+			)
+			for _, url := range urls {
+				name, owner := service.getRepositoryNameFromURL(url)
+				models = append(models, dataModel.RepositoryModel{
+					Name:  name,
+					Owner: owner,
+				})
+			}
+			return models
+		}
+	)
+
 	server.POST("/repositories", func(context *gin.Context) {
 		state := new(repositories)
 		if err := context.BindJSON(state); err != nil {
@@ -88,7 +104,10 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
 		)()
-		err := service.CreateTaskDescriptionRepositories(task, state.Repositories)
+		err := service.CreateTaskDescriptionRepositories(
+			task,
+			getRepositoriesModels(state.Repositories...)...,
+		)
 		if err != nil {
 			runtimeinfo.LogError(err)
 			context.AbortWithStatus(http.StatusLocked)
@@ -117,7 +136,35 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.IssueModel, 0),
 			repo.ID, nil, nil,
 		)()
-		err = service.CreateTaskRepositoryIssues(task, state.Repositories[0])
+		err = service.CreateTaskRepositoryIssues(
+			task,
+			getRepositoriesModels(state.Repositories[0])[0],
+		)
+		if err != nil {
+			runtimeinfo.LogError(err)
+			context.AbortWithStatus(http.StatusLocked)
+			return
+		}
+		context.AbortWithStatus(http.StatusOK)
+	})
+	server.POST("/repositories/and/issues", func(context *gin.Context) {
+		state := new(repositories)
+		if err := context.BindJSON(state); err != nil {
+			runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) JSON UNMARSHAL COMPLETED WITH ERROR: ", err)
+			context.AbortWithStatus(http.StatusLocked)
+			return
+		}
+		task, _ := service.taskSteward.CreateTask(
+			itask.Type(0),
+			"/repositories/and/issues",
+			make([]dataModel.RepositoryModel, len(state.Repositories)),
+			make([]dataModel.RepositoryModel, 0),
+			nil, nil, nil,
+		)()
+		err := service.CreateTaskRepositoriesDescriptionAndIssues(
+			task,
+			getRepositoriesModels(state.Repositories...)...,
+		)
 		if err != nil {
 			runtimeinfo.LogError(err)
 			context.AbortWithStatus(http.StatusLocked)

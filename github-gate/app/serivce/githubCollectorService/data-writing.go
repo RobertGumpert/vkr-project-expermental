@@ -85,7 +85,7 @@ func (service *CollectorService) writeIssuesToDB(issues []issueDescription, repo
 				URL:                issue.URL,
 				Title:              issue.Title,
 				State:              issue.State,
-				Body:               issue.Body,
+				//Body:               issue.Body,
 				TitleDictionary:    dictionary,
 				TitleFrequencyJSON: frequencyJsonBytes,
 			},

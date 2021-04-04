@@ -86,4 +86,5 @@ var (
 	ErrorNoFreeCollector    = errors.New("No Free Collector. ")
 	ErrorCollectorIsBusy    = errors.New("Collector Is Busy. ")
 	ErrorNotFullSendContext = errors.New("Not Full Send Context. ")
+	ErrorTaskIsNilPointer   = errors.New("Task is nil pointer. ")
 )

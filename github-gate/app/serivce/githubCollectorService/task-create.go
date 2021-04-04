@@ -94,16 +94,17 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 	); err != nil {
 		return nil, err
 	}
+	taskKey = strings.Join([]string{"(trigger)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoriesDescription,
 		taskKey,
-		url,
+		[]string{url},
 	); err != nil {
 		return nil, err
 	}
 	return service.taskSteward.CreateTask(
 		RepositoriesDescriptionAndIssues,
-		strings.Join([]string{"(trigger)", taskKey}, " "),
+		taskKey,
 		sendTaskContext,
 		dataModel.RepositoryModel{},
 		gateServiceTask,
@@ -112,7 +113,7 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 	)()
 }
 
-func (service *CollectorService) createDependentRepositoryIssues(triggerTask itask.ITask, url string) (constructor itask.TaskConstructor, err error) {
+func (service *CollectorService) createDependentRepositoryIssues(triggerTask itask.ITask, url string) (constructor itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
@@ -125,6 +126,7 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 	); err != nil {
 		return nil, err
 	}
+	taskKey = strings.Join([]string{"(dependent)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoryIssues,
 		taskKey,
@@ -134,70 +136,42 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 	}
 	return service.taskSteward.CreateTask(
 		RepositoriesDescriptionAndIssues,
-		strings.Join([]string{"(dependent)", taskKey}, " "),
+		taskKey,
 		sendTaskContext,
 		make([]dataModel.IssueModel, 0),
 		triggerTask,
 		service.eventRunTask,
 		service.eventUpdateDependentRepositoryIssues,
-	), nil
+	)()
 }
 
-func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gateServiceTask itask.ITask, urls []string) (constructor itask.TaskConstructor, err error) {
+func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gateServiceTask itask.ITask, urls ...string) (triggers []itask.ITask, err error) {
 	var (
-		countTasks               = int64(len(urls)) * 2
+		countTasks = int64(len(urls)) * 2
 	)
 	if havePlaceInQueue := service.taskSteward.CanAddTask(countTasks); !havePlaceInQueue {
 		return nil, gotasker.ErrorQueueIsFilled
 	}
+	triggers = make([]itask.ITask, 0)
 	for _, url := range urls {
-		triggerTask, err := service.createTriggerDescriptionRepository(gateServiceTask, url)
+		trigger, err := service.createTriggerDescriptionRepository(gateServiceTask, url)
 		if err != nil {
 			return nil, err
 		}
-		dependentConstructor, err := service.createDependentRepositoryIssues(gateServiceTask, url)
+		dependent, err := service.createDependentRepositoryIssues(trigger, url)
 		if err != nil {
 			return nil, err
 		}
-		triggerTask, err := service.taskSteward.ModifyTaskAsTrigger(
-			triggerConstructor,
-			dependentConstructor,
+		trigger, err = service.taskSteward.ModifyTaskAsTrigger(
+			trigger,
+			dependent,
 		)
+		triggers = append(triggers, trigger)
 		if err != nil {
 			return nil, err
 		}
-		triggerTask.SetType(RepositoriesDescriptionAndIssues)
-		_, dependentTasks := triggerTask.IsTrigger()
-		dependentTasks[0].GetState().SetCustomFields(dataModel.RepositoryModel{})
-		dependentTasks[0].SetType(RepositoriesDescriptionAndIssues)
 	}
-
-	var (
-		taskKey         string
-		sendTaskContext *contextTaskSend
-	)
-	if taskKey, err = service.createKeyForTask(
-		RepositoryIssues,
-		gateServiceTask,
-	); err != nil {
-		return nil, err
-	}
-	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoryIssues,
-		taskKey,
-		url,
-	); err != nil {
-		return nil, err
-	}
-	return service.taskSteward.CreateTask(
-		RepositoryIssues,
-		taskKey,
-		sendTaskContext,
-		nil,
-		gateServiceTask,
-		service.eventRunTask,
-		service.eventUpdateTaskRepositoryIssues,
-	), nil
+	return triggers, nil
 }
 
 func (service *CollectorService) createKeyForTask(taskType itask.Type, gateServiceTask itask.ITask, uniqueKey string) (taskKey string, err error) {
