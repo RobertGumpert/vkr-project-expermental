@@ -1,24 +1,21 @@
 package main
 
 import (
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"issue-indexer/app/config"
-	"issue-indexer/app/service/tasksService"
-	"issue-indexer/pckg/runtimeinfo"
 	"strings"
 )
 
 type server struct {
-	taskService *tasksService.TasksService
 	config      *config.Config
 	engine      *gin.Engine
 	RunServer   func()
 }
 
-func NewServer(config *config.Config, taskService *tasksService.TasksService) *server {
+func NewServer(config *config.Config) *server {
 	s := &server{
-		taskService: taskService,
 		config:      config,
 	}
 	//

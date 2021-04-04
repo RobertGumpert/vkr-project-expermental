@@ -2,8 +2,8 @@ package config
 
 import (
 	"encoding/json"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"io/ioutil"
-	"issue-indexer/pckg/runtimeinfo"
 	"path/filepath"
 )
 

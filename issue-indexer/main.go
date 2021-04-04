@@ -1,17 +1,15 @@
 package main
 
 import (
+	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"issue-indexer/app/config"
-	"issue-indexer/app/repository"
-	"issue-indexer/app/service/tasksService"
-	"issue-indexer/pckg/runtimeinfo"
 )
 
 var (
 	POSTGRES    *repository.SQLRepository
 	SERVER      *server
 	CONFIG      *config.Config
-	TASKSERVICE *tasksService.TasksService
 )
 
 func main() {
@@ -33,7 +31,6 @@ func main() {
 			runtimeinfo.LogFatal(err)
 		}
 	}()
-	TASKSERVICE = tasksService.NewTasksService(CONFIG, POSTGRES)
-	SERVER = NewServer(CONFIG, TASKSERVICE)
+	SERVER = NewServer(CONFIG)
 	SERVER.RunServer()
 }
