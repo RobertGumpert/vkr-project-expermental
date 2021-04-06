@@ -131,13 +131,13 @@ func Test(t *testing.T) {
 		db,
 	)
 	conditionComparision := comparison.ConditionIntersections{CrossingThreshold: 90.0}
-	for i := 0; i < 1; i++ {
+	for i := 0; i < countRepositories; i++ {
 		repoID := uint(i) + 1
 		conditionSampling := sampling.ConditionIssuesFromGroupRepository{
 			RepositoryID:      repoID,
 			GroupRepositories: make([]uint, 0),
 		}
-		for j := 1; j < 2; j++ {
+		for j := 0; j < countRepositories; j++ {
 			comRepoID := uint(j) + 1
 			if comRepoID == repoID {
 				continue

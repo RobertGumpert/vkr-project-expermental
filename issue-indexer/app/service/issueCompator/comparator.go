@@ -43,36 +43,37 @@ func (comparator *Comparator) DOCompare(rules *CompareRules, result *CompareResu
 	return nil
 }
 
-func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules *CompareRules, result *CompareResult, intersections map[uint]*intersectionsForPairRepositories, wg *sync.WaitGroup) {
+func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules *CompareRules, result *CompareResult, intersections map[uint]countIntersectionForIssues, wg *sync.WaitGroup) {
 	for i := from; i < to; i++ {
 		for j := 0; j < len(whatToCompareWith); j++ {
 			a := whatToCompare[i]
 			b := whatToCompareWith[j]
-			nearest, err := rules.ruleForComparisonIssues(
+			nearest, isNearest := rules.ruleForComparisonIssues(
 				a,
 				b,
 				rules,
 			)
-			if err != nil {
-				continue
-			}
-			err = comparator.db.AddNearestIssues(nearest)
-			if err != nil {
-				result.nearestCompletedWithError = append(
-					result.nearestCompletedWithError,
-					nearest,
-				)
+			if isNearest == nil {
+				err := comparator.db.AddNearestIssues(nearest)
+				if err != nil {
+					result.nearestCompletedWithError = append(
+						result.nearestCompletedWithError,
+						nearest,
+					)
+				}
 			}
 			comparator.mx.Lock()
-			intersection, exist := intersections[b.RepositoryID]
-			if !exist {
-				intersection = &intersectionsForPairRepositories{}
+			intersection, repositoryIsExist := intersections[b.RepositoryID]
+			if !repositoryIsExist {
+				intersection = make(map[uint]int64)
 				intersections[b.RepositoryID] = intersection
 			}
-			if err == nil {
-				intersection.CountIntersections++
+			if _, issueIsExist := intersection[b.ID]; !issueIsExist {
+				intersection[b.ID] = 0
 			}
-			intersection.CountIssuesComparableRepository++
+			if isNearest == nil {
+				intersection[b.ID] = intersection[b.ID] + 1
+			}
 			comparator.mx.Unlock()
 		}
 	}
@@ -93,7 +94,7 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 		intersectionModels    = make([]dataModel.NumberIssueIntersectionsModel, 0)
 		repositoryID          = rules.GetRepositoryID()
 		countIssuesRepository = int64(len(repositoryIssues))
-		intersections         = make(map[uint]*intersectionsForPairRepositories)
+		intersections         = make(map[uint]countIntersectionForIssues)
 		wg                    = new(sync.WaitGroup)
 	)
 	comparableIssues, doNotCompare, err = rules.GetRuleForSamplingComparableIssues()(rules)
@@ -154,18 +155,19 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 		wg.Wait()
 	}
 	for comparableRepositoryID, intersection := range intersections {
-		sum := countIssuesRepository + intersection.CountIssuesComparableRepository
-		if intersection.CountIntersections == 0 {
-			continue
+		allCountIntersections := int64(0)
+		for _, issueIntersections := range intersection {
+			allCountIntersections += issueIntersections
 		}
-		numberIntersections := float64(sum / intersection.CountIntersections)
+		maxCountIntersections := countIssuesRepository * int64(len(intersection))
+		coefficient := float64(allCountIntersections) / float64(maxCountIntersections)
 		intersectionModels = append(
 			intersectionModels,
 			dataModel.NumberIssueIntersectionsModel{
 				Model:                  gorm.Model{},
 				RepositoryID:           repositoryID,
 				ComparableRepositoryID: comparableRepositoryID,
-				NumberIntersections:    numberIntersections,
+				NumberIntersections:    coefficient,
 			},
 		)
 	}
