@@ -1,2 +1,0 @@
-A cross-platform, OpenGL terminal emulator.
-bsd gpu linux macos opengl rust terminal terminal-emulators vte windows

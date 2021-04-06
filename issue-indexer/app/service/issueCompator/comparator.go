@@ -4,51 +4,35 @@ import (
 	"errors"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
+	"gorm.io/gorm"
 	"runtime"
 	"sync"
 )
 
 type Comparator struct {
 	db repository.IRepository
+	mx *sync.Mutex
 }
 
-func (comparator *Comparator) CreateCompareResult(
-	maxCountThreads int64,
-	ruleForSamplingComparableIssues RuleForSamplingComparableIssues,
-	ruleForComparisonIssues RuleForComparisonIssues,
-	returnResult ReturnResult,
-	ruleForNonComparableIssues RuleForNonComparableIssues,
-	comparisonSettings interface{},
-	samplingSettings interface{}) compareRules {
-	return compareRules{
-		maxCountThreads:                 maxCountThreads,
-		ruleForSamplingComparableIssues: ruleForSamplingComparableIssues,
-		ruleForComparisonIssues:         ruleForComparisonIssues,
-		returnResult:                    returnResult,
-		ruleForNonComparableIssues:      ruleForNonComparableIssues,
-		comparisonSettings:              comparisonSettings,
-		samplingSettings:                samplingSettings,
+func NewComparator(db repository.IRepository) *Comparator {
+	return &Comparator{
+		db: db,
+		mx: new(sync.Mutex),
 	}
 }
 
-func (comparator *Comparator) NewOneWithAll(repositoryID uint, countThreads int, identifier interface{}, rules compareRules) (result CompareResult, err error) {
-	if repositoryID == 0 {
-		return result, errors.New("RepositoryID is 0. ")
+func (comparator *Comparator) DOCompare(rules *CompareRules, result *CompareResult) (err error) {
+	if rules.GetRepositoryID() == 0 {
+		return errors.New("RepositoryID is 0. ")
 	}
-	whatToCompare, err := comparator.db.GetIssueRepository(repositoryID)
+	whatToCompare, err := comparator.db.GetIssueRepository(rules.GetRepositoryID())
 	if err != nil {
-		return result, err
+		return err
 	}
 	if len(whatToCompare) == 0 {
-		return result, errors.New("Size of slice repository issues is 0. ")
+		return errors.New("Size of slice repository issues is 0. ")
 	}
-	result = CompareResult{
-		identifier:                identifier,
-		nearestCompletedWithError: make([]dataModel.NearestIssuesModel, 0),
-		doNotCompare:              make([]dataModel.IssueModel, 0),
-		err:                       nil,
-	}
-	go func(comparator *Comparator, rules compareRules, result CompareResult, whatToCompare []dataModel.IssueModel) {
+	go func(comparator *Comparator, rules *CompareRules, result *CompareResult, whatToCompare []dataModel.IssueModel) {
 		comparator.doCompareIntoMultipleStreams(
 			rules,
 			result,
@@ -56,10 +40,10 @@ func (comparator *Comparator) NewOneWithAll(repositoryID uint, countThreads int,
 		)
 		return
 	}(comparator, rules, result, whatToCompare)
-	return result, nil
+	return nil
 }
 
-func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules compareRules, result CompareResult, wg *sync.WaitGroup) {
+func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules *CompareRules, result *CompareResult, intersections map[uint]*intersectionsForPairRepositories, wg *sync.WaitGroup) {
 	for i := from; i < to; i++ {
 		for j := 0; j < len(whatToCompareWith); j++ {
 			a := whatToCompare[i]
@@ -67,20 +51,29 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 			nearest, err := rules.ruleForComparisonIssues(
 				a,
 				b,
-				rules.GetComparisonSettings(),
+				rules,
 			)
 			if err != nil {
 				continue
 			}
 			err = comparator.db.AddNearestIssues(nearest)
 			if err != nil {
-				continue
-			} else {
 				result.nearestCompletedWithError = append(
 					result.nearestCompletedWithError,
 					nearest,
 				)
 			}
+			comparator.mx.Lock()
+			intersection, exist := intersections[b.RepositoryID]
+			if !exist {
+				intersection = &intersectionsForPairRepositories{}
+				intersections[b.RepositoryID] = intersection
+			}
+			if err == nil {
+				intersection.CountIntersections++
+			}
+			intersection.CountIssuesComparableRepository++
+			comparator.mx.Unlock()
 		}
 	}
 	runtime.GC()
@@ -90,63 +83,95 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 	return
 }
 
-func (comparator *Comparator) doCompareIntoMultipleStreams(rules compareRules, result CompareResult, whatToCompare []dataModel.IssueModel) {
+func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, result *CompareResult, repositoryIssues []dataModel.IssueModel) {
 	var (
-		whatToCompareWith, doNotCompare   []dataModel.IssueModel
+		comparableIssues, doNotCompare    []dataModel.IssueModel
 		err                               error
 		lengthOfPartComparableIssuesSlice int64
-		wg                                = new(sync.WaitGroup)
 		from, to                          int64
+		//
+		intersectionModels    = make([]dataModel.NumberIssueIntersectionsModel, 0)
+		repositoryID          = rules.GetRepositoryID()
+		countIssuesRepository = int64(len(repositoryIssues))
+		intersections         = make(map[uint]*intersectionsForPairRepositories)
+		wg                    = new(sync.WaitGroup)
 	)
-	whatToCompareWith, doNotCompare, err = rules.GetRuleForSamplingComparableIssues()(rules.GetSamplingSettings())
+	comparableIssues, doNotCompare, err = rules.GetRuleForSamplingComparableIssues()(rules)
 	if err != nil {
+		result.err = err
+		rules.GetReturnResult()(result)
 		return
 	}
-	if len(whatToCompareWith) == 0 {
+	if len(comparableIssues) == 0 {
+		result.err = errors.New("LIST WHAT TO COMPARE IS EMPTY. ")
+		rules.GetReturnResult()(result)
 		return
 	}
 	result.doNotCompare = doNotCompare
-	lengthOfPartComparableIssuesSlice = int64(len(whatToCompareWith)) / rules.GetMaxCountThreads()
+	lengthOfPartComparableIssuesSlice = int64(len(comparableIssues)) / rules.GetMaxCountThreads()
 	if lengthOfPartComparableIssuesSlice <= 1 {
 		comparator.iterating(
-			whatToCompare,
-			whatToCompareWith,
+			repositoryIssues,
+			comparableIssues,
 			int64(0),
-			int64(len(whatToCompare)),
+			int64(len(repositoryIssues)),
 			rules,
 			result,
+			intersections,
 			nil,
 		)
 	} else {
 		to = lengthOfPartComparableIssuesSlice
 		for {
-			if to >= int64(len(whatToCompare)) {
+			if to >= int64(len(repositoryIssues)) {
 				wg.Add(1)
 				go comparator.iterating(
-					whatToCompare,
-					whatToCompareWith,
+					repositoryIssues,
+					comparableIssues,
 					from,
-					int64(len(whatToCompare)),
+					int64(len(repositoryIssues)),
 					rules,
 					result,
+					intersections,
 					wg,
 				)
 				break
 			}
 			wg.Add(1)
 			go comparator.iterating(
-				whatToCompare,
-				whatToCompareWith,
+				repositoryIssues,
+				comparableIssues,
 				from,
 				to,
 				rules,
 				result,
+				intersections,
 				wg,
 			)
 			from = to + 1
 			to = from + lengthOfPartComparableIssuesSlice
 		}
 		wg.Wait()
+	}
+	for comparableRepositoryID, intersection := range intersections {
+		sum := countIssuesRepository + intersection.CountIssuesComparableRepository
+		if intersection.CountIntersections == 0 {
+			continue
+		}
+		numberIntersections := float64(sum / intersection.CountIntersections)
+		intersectionModels = append(
+			intersectionModels,
+			dataModel.NumberIssueIntersectionsModel{
+				Model:                  gorm.Model{},
+				RepositoryID:           repositoryID,
+				ComparableRepositoryID: comparableRepositoryID,
+				NumberIntersections:    numberIntersections,
+			},
+		)
+	}
+	err = comparator.db.AddNumbersIntersections(intersectionModels)
+	if err != nil {
+		result.err = err
 	}
 	rules.GetReturnResult()(result)
 	return

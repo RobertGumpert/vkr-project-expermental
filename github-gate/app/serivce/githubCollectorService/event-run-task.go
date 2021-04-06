@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-func (service *CollectorService) eventRunTask(task itask.ITask) (err error) {
+func (service *CollectorService) eventRunTask(task itask.ITask) (doAsTaskDefer, deleteTask bool) {
 	var (
 		listFreeCollectors   []string
 		freeCollectorAddress string
@@ -18,16 +18,16 @@ func (service *CollectorService) eventRunTask(task itask.ITask) (err error) {
 	if sendContext.JSONBody == nil {
 		runtimeinfo.LogError(ErrorNotFullSendContext)
 		task.GetState().SetError(ErrorNotFullSendContext)
-		return ErrorNotFullSendContext
+		return true, false
 	}
 	if sendContext.CollectorEndpoint == "" {
 		runtimeinfo.LogError(ErrorNotFullSendContext)
 		task.GetState().SetError(ErrorNotFullSendContext)
-		return ErrorNotFullSendContext
+		return true, false
 	}
 	listFreeCollectors = service.getFreeCollectors(true)
 	if len(listFreeCollectors) == 0 {
-		return ErrorNoFreeCollector
+		return true, false
 	} else {
 		freeCollectorAddress = listFreeCollectors[0]
 	}
@@ -42,11 +42,11 @@ func (service *CollectorService) eventRunTask(task itask.ITask) (err error) {
 	response, err := requests.POST(service.client, sendContext.CollectorURL, nil, sendContext.JSONBody)
 	if err != nil {
 		runtimeinfo.LogError(err)
-		return ErrorCollectorIsBusy
+		return true, false
 	}
 	if response.StatusCode != http.StatusOK {
 		runtimeinfo.LogError(ErrorCollectorIsBusy)
-		return ErrorCollectorIsBusy
+		return true, false
 	}
-	return nil
+	return false, false
 }

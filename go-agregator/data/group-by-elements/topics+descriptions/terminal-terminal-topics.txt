@@ -1,2 +1,0 @@
-The new Windows Terminal and the original Windows console host, all in the same place!
-cmd command-line console terminal windows-console windows-terminal wsl
