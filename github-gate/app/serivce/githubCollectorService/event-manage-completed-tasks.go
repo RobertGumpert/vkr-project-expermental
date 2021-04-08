@@ -4,17 +4,17 @@ import (
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
-	"strconv"
 )
 
-func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (deleteTasks, saveTasks map[string]struct{}) {
-	deleteTasks, saveTasks = make(map[string]struct{}), make(map[string]struct{})
+func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
+	deleteTasks = make(map[string]struct{})
 	switch task.GetType() {
 	case RepositoriesDescription:
 		taskGateService := task.GetState().GetCustomFields().(itask.ITask)
 		repositories := taskGateService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 		runtimeinfo.LogInfo("TASK COMPLETED [", task.GetKey(), "] LEN. [", len(repositories), "]")
 		deleteTasks[task.GetKey()] = struct{}{}
+		taskGateService.GetState().GetCustomFields().(chan itask.ITask) <- taskGateService
 		break
 	case RepositoryIssues:
 		taskGateService := task.GetState().GetCustomFields().(itask.ITask)
@@ -22,6 +22,7 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 		issues := taskGateService.GetState().GetUpdateContext().([]dataModel.IssueModel)
 		runtimeinfo.LogInfo("TASK COMPLETED [", task.GetKey(), "] LEN. [", len(issues), "] FOR REPO [", repositoryID, "]")
 		deleteTasks[task.GetKey()] = struct{}{}
+		taskGateService.GetState().GetCustomFields().(chan itask.ITask) <- taskGateService
 		break
 	case RepositoriesDescriptionAndIssues:
 		var (
@@ -29,10 +30,10 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 			isDependent, trigger = task.IsDependent()
 		)
 		if isDependent {
-			isCompleted, dependentTasksCompletedFlags, err := service.taskSteward.TriggerIsCompleted(trigger)
+			isCompleted, dependentTasks, err := service.taskManager.TriggerIsCompleted(trigger)
 			if err != nil {
-				runtimeinfo.LogError("TASK COMPLETED [", task.GetKey(), "] WITH ERROR: ", err)
-				return nil, nil
+				runtimeinfo.LogError("TASK COMPLETED WITH ERROR: {", err, "} [", task.GetKey(), "]")
+				return nil
 			}
 			if isCompleted {
 				taskGateService = trigger.GetState().GetCustomFields().(itask.ITask)
@@ -42,23 +43,24 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 				taskGateRepositories := taskGateService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 				taskGateRepositories = append(taskGateRepositories, repository)
 				taskGateService.GetState().SetUpdateContext(taskGateRepositories)
-				for dependentTaskKey := range dependentTasksCompletedFlags {
+				for dependentTaskKey := range dependentTasks {
 					deleteTasks[dependentTaskKey] = struct{}{}
 				}
 				deleteTasks[trigger.GetKey()] = struct{}{}
+
 			}
-		}
-		if taskGateService != nil {
-			updateContext := taskGateService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-			if len(taskGateService.GetState().GetSendContext().([]dataModel.RepositoryModel)) ==
-				len(updateContext) {
-				taskGateService.GetState().SetCompleted(true)
-				for _, update := range updateContext {
-					runtimeinfo.LogInfo("TASK TRIGGER COMPLETED [", trigger.GetKey(), "] FOR: ", update.Name, " WITH ISSUES LIST SIZE OF ", strconv.Itoa(len(update.Issues)))
+			if taskGateService != nil {
+				sendContext := taskGateService.GetState().GetSendContext().([]dataModel.RepositoryModel)
+				updateContext := taskGateService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+				if len(sendContext) == len(updateContext) {
+					taskGateService.GetState().GetCustomFields().(chan itask.ITask) <- taskGateService
 				}
 			}
 		}
+		if taskGateService == nil {
+			runtimeinfo.LogError("TASK COMPLETED WITH ERROR: {NONE EXIST TASK FROM APP SERVICE} [", task.GetKey(), "]")
+		}
 		break
 	}
-	return deleteTasks, saveTasks
+	return deleteTasks
 }

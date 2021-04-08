@@ -19,6 +19,16 @@ github.com/RobertGumpert/gotasker v1.0.9 h1:RTJVdyIw1rtdxpTzb8pBzy5WvyFalN21fRSB
 github.com/RobertGumpert/gotasker v1.0.9/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
 github.com/RobertGumpert/gotasker v1.0.10 h1:WqYoETQZwiXZhonJrwIJaqrG6F/IznL/ubllLGVgMkU=
 github.com/RobertGumpert/gotasker v1.0.10/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
+github.com/RobertGumpert/gotasker v1.0.11 h1:cv/BGx04XmLjrtbERu6yVjlvBQuNOMBzR+wBfY6aS3s=
+github.com/RobertGumpert/gotasker v1.0.11/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
+github.com/RobertGumpert/gotasker v1.0.12 h1:e6GwsR4Kt6NX6DeRniLCPibpEsWTLzT6/t9K0xNHqeA=
+github.com/RobertGumpert/gotasker v1.0.12/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
+github.com/RobertGumpert/gotasker v1.0.13 h1:PQt3b20keN4Gr5Q3k6ugxM9lg8tjchOe5Uin5VZE0Bk=
+github.com/RobertGumpert/gotasker v1.0.13/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
+github.com/RobertGumpert/gotasker v1.0.14 h1:MQTavg3cJG4+OHOTc9Ln6qoI6kcFQlhBiSqVTA6hOHc=
+github.com/RobertGumpert/gotasker v1.0.14/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
+github.com/RobertGumpert/gotasker v1.0.15 h1:FLQEHWciSQr6zS0kCKtRNi+jLCowY3pDflnU4FhzeVw=
+github.com/RobertGumpert/gotasker v1.0.15/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
 github.com/RobertGumpert/vkr-pckg v1.0.6 h1:w7854Uy2SgvgEBo5zC5Q7ODF5NROQ0eT2KzqrDdunig=
 github.com/RobertGumpert/vkr-pckg v1.0.6/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/aaaton/golem/v4 v4.0.0/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=

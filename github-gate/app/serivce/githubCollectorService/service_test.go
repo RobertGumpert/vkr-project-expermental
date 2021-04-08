@@ -42,6 +42,7 @@ func TestMigration(t *testing.T) {
 	storageProvider.SqlDB.Exec("drop table nearest_issues_models cascade")
 	storageProvider.SqlDB.Exec("drop table nearest_repositories_models cascade")
 	storageProvider.SqlDB.Exec("drop table repositories_key_words_models cascade")
+	storageProvider.SqlDB.Exec("drop table number_issue_intersections_models cascade")
 	_ = connect()
 }
 
@@ -97,13 +98,13 @@ func TestTaskFlow(t *testing.T) {
 			context.AbortWithStatus(http.StatusLocked)
 			return
 		}
-		task, _ := service.taskSteward.CreateTask(
+		task, _ := service.taskManager.CreateTask(
 			itask.Type(0),
 			"/repositories",
 			nil,
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
-		)()
+		)
 		err := service.CreateTaskDescriptionRepositories(
 			task,
 			getRepositoriesModels(state.Repositories...)...,
@@ -129,13 +130,13 @@ func TestTaskFlow(t *testing.T) {
 			context.AbortWithStatus(http.StatusLocked)
 			return
 		}
-		task, _ := service.taskSteward.CreateTask(
+		task, _ := service.taskManager.CreateTask(
 			itask.Type(1),
 			"/issues",
 			nil,
 			make([]dataModel.IssueModel, 0),
 			repo.ID, nil, nil,
-		)()
+		)
 		err = service.CreateTaskRepositoryIssues(
 			task,
 			getRepositoriesModels(state.Repositories[0])[0],
@@ -154,13 +155,13 @@ func TestTaskFlow(t *testing.T) {
 			context.AbortWithStatus(http.StatusLocked)
 			return
 		}
-		task, _ := service.taskSteward.CreateTask(
+		task, _ := service.taskManager.CreateTask(
 			itask.Type(0),
 			"/repositories/and/issues",
 			make([]dataModel.RepositoryModel, len(state.Repositories)),
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
-		)()
+		)
 		err := service.CreateTaskRepositoriesDescriptionAndIssues(
 			task,
 			getRepositoriesModels(state.Repositories...)...,

@@ -25,16 +25,12 @@ func (service *CollectorService) restHandlerUpdateDescriptionsRepositories(conte
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	if err := service.taskSteward.UpdateTask(
+	service.taskManager.SetUpdateForTask(
 		state.ExecutionTaskStatus.TaskKey,
 		state,
-	); err != nil {
-		runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED WITH ERROR: ", err)
-		context.AbortWithStatus(http.StatusLocked)
-	} else {
-		runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
-		context.AbortWithStatus(http.StatusOK)
-	}
+	)
+	runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
+	context.AbortWithStatus(http.StatusOK)
 }
 
 func (service *CollectorService) restHandlerUpdateRepositoryIssues(context *gin.Context) {
@@ -44,14 +40,10 @@ func (service *CollectorService) restHandlerUpdateRepositoryIssues(context *gin.
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	if err := service.taskSteward.UpdateTask(
+	service.taskManager.SetUpdateForTask(
 		state.ExecutionTaskStatus.TaskKey,
 		state,
-	); err != nil {
-		runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED WITH ERROR: ", err)
-		context.AbortWithStatus(http.StatusLocked)
-	} else {
-		runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
-		context.AbortWithStatus(http.StatusOK)
-	}
+	)
+	runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
+	context.AbortWithStatus(http.StatusOK)
 }

@@ -6,8 +6,8 @@ import (
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 )
 
-func (service *CollectorService) eventUpdateTaskDescriptionsRepositories(task itask.ITask, interProgramUpdateContext interface{}) (err error) {
-	cast := interProgramUpdateContext.(*jsonSendFromCollectorDescriptionsRepositories)
+func (service *CollectorService) eventUpdateTaskDescriptionsRepositories(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
+	cast := somethingUpdateContext.(*jsonSendFromCollectorDescriptionsRepositories)
 	models := service.writeRepositoriesToDB(cast.Repositories)
 	if cast.ExecutionTaskStatus.TaskCompleted {
 		task.GetState().SetCompleted(true)
@@ -16,11 +16,11 @@ func (service *CollectorService) eventUpdateTaskDescriptionsRepositories(task it
 	updateContext := gateServiceTask.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 	updateContext = append(updateContext, models...)
 	gateServiceTask.GetState().SetUpdateContext(updateContext)
-	return nil
+	return nil, false
 }
 
-func (service *CollectorService) eventUpdateTaskRepositoryIssues(task itask.ITask, interProgramUpdateContext interface{}) (err error) {
-	cast := interProgramUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
+func (service *CollectorService) eventUpdateTaskRepositoryIssues(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
+	cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 	gateServiceTask := task.GetState().GetCustomFields().(itask.ITask)
 	repositoryID := gateServiceTask.GetState().GetCustomFields().(uint)
 	models := service.writeIssuesToDB(cast.Issues, repositoryID)
@@ -30,28 +30,25 @@ func (service *CollectorService) eventUpdateTaskRepositoryIssues(task itask.ITas
 	updateContext := gateServiceTask.GetState().GetUpdateContext().([]dataModel.IssueModel)
 	updateContext = append(updateContext, models...)
 	gateServiceTask.GetState().SetUpdateContext(updateContext)
-	return nil
+	return nil, false
 }
 
-func (service *CollectorService) eventUpdateTriggerDescriptionRepository(task itask.ITask, interProgramUpdateContext interface{}) (err error) {
-	cast := interProgramUpdateContext.(*jsonSendFromCollectorDescriptionsRepositories)
+func (service *CollectorService) eventUpdateTriggerDescriptionRepository(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
+	cast := somethingUpdateContext.(*jsonSendFromCollectorDescriptionsRepositories)
 	models := service.writeRepositoriesToDB(cast.Repositories)
 	if cast.ExecutionTaskStatus.TaskCompleted {
 		task.GetState().SetCompleted(true)
 		task.GetState().SetUpdateContext(models[0])
 	}
-	return nil
+	return nil, false
 }
 
-func (service *CollectorService) eventUpdateDependentRepositoryIssues(task itask.ITask, interProgramUpdateContext interface{}) (err error) {
-	cast := interProgramUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
+func (service *CollectorService) eventUpdateDependentRepositoryIssues(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
+	cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 	triggerTask := task.GetState().GetCustomFields().(itask.ITask)
-	if !triggerTask.GetState().IsCompleted() {
-		return errors.New("Trigger [" + triggerTask.GetKey() + "] isn't completed. ")
-	}
 	repository := triggerTask.GetState().GetUpdateContext().(dataModel.RepositoryModel)
 	if repository.ID == 0 {
-		return errors.New("Repository ID is 0. ")
+		return errors.New("Repository ID is 0. "), true
 	}
 	models := service.writeIssuesToDB(cast.Issues, repository.ID)
 	if cast.ExecutionTaskStatus.TaskCompleted {
@@ -60,5 +57,5 @@ func (service *CollectorService) eventUpdateDependentRepositoryIssues(task itask
 	updateContext := task.GetState().GetUpdateContext().([]dataModel.IssueModel)
 	updateContext = append(updateContext, models...)
 	task.GetState().SetUpdateContext(updateContext)
-	return nil
+	return nil, false
 }

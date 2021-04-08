@@ -5,7 +5,7 @@ import (
 	"issue-indexer/app/service/issueCompator"
 )
 
-func (service *AppService) eventRunTask(task itask.ITask) (doAsTaskDefer, deleteTask bool) {
+func (service *AppService) eventRunTask(task itask.ITask) (doTaskAsDefer, deleteTask bool) {
 	send := task.GetState().GetSendContext().(*sendContext)
 	err := service.comparator.DOCompare(
 		send.GetRules(),

@@ -13,7 +13,7 @@ const (
 	collectorEndpointRepositoryIssues         = "get/repos/issues"
 )
 
-func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceTask itask.ITask, urls ...string) (constructor itask.TaskConstructor, err error) {
+func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceTask itask.ITask, urls ...string) (task itask.ITask, err error) {
 	var (
 		taskKey          string
 		sendTaskContext  *contextTaskSend
@@ -39,7 +39,7 @@ func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceT
 	); err != nil {
 		return nil, err
 	}
-	return service.taskSteward.CreateTask(
+	return service.taskManager.CreateTask(
 		RepositoriesDescription,
 		taskKey,
 		sendTaskContext,
@@ -47,10 +47,10 @@ func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceT
 		gateServiceTask,
 		service.eventRunTask,
 		service.eventUpdateTaskDescriptionsRepositories,
-	), nil
+	)
 }
 
-func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itask.ITask, url string) (constructor itask.TaskConstructor, err error) {
+func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itask.ITask, url string) (task itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
@@ -70,7 +70,7 @@ func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itas
 	); err != nil {
 		return nil, err
 	}
-	return service.taskSteward.CreateTask(
+	return service.taskManager.CreateTask(
 		RepositoryIssues,
 		taskKey,
 		sendTaskContext,
@@ -78,7 +78,7 @@ func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itas
 		gateServiceTask,
 		service.eventRunTask,
 		service.eventUpdateTaskRepositoryIssues,
-	), nil
+	)
 }
 
 func (service *CollectorService) createTriggerDescriptionRepository(gateServiceTask itask.ITask, url string) (task itask.ITask, err error) {
@@ -102,7 +102,7 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 	); err != nil {
 		return nil, err
 	}
-	return service.taskSteward.CreateTask(
+	return service.taskManager.CreateTask(
 		RepositoriesDescriptionAndIssues,
 		taskKey,
 		sendTaskContext,
@@ -110,7 +110,7 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 		gateServiceTask,
 		service.eventRunTask,
 		service.eventUpdateTriggerDescriptionRepository,
-	)()
+	)
 }
 
 func (service *CollectorService) createDependentRepositoryIssues(triggerTask itask.ITask, url string) (constructor itask.ITask, err error) {
@@ -134,7 +134,7 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 	); err != nil {
 		return nil, err
 	}
-	return service.taskSteward.CreateTask(
+	return service.taskManager.CreateTask(
 		RepositoriesDescriptionAndIssues,
 		taskKey,
 		sendTaskContext,
@@ -142,14 +142,14 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 		triggerTask,
 		service.eventRunTask,
 		service.eventUpdateDependentRepositoryIssues,
-	)()
+	)
 }
 
 func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gateServiceTask itask.ITask, urls ...string) (triggers []itask.ITask, err error) {
 	var (
 		countTasks = int64(len(urls)) * 2
 	)
-	if havePlaceInQueue := service.taskSteward.CanAddTask(countTasks); !havePlaceInQueue {
+	if isFilled := service.taskManager.QueueIsFilled(countTasks); isFilled {
 		return nil, gotasker.ErrorQueueIsFilled
 	}
 	triggers = make([]itask.ITask, 0)
@@ -162,7 +162,7 @@ func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gat
 		if err != nil {
 			return nil, err
 		}
-		trigger, err = service.taskSteward.ModifyTaskAsTrigger(
+		trigger, err = service.taskManager.ModifyTaskAsTrigger(
 			trigger,
 			dependent,
 		)

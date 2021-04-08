@@ -16,8 +16,9 @@ import (
 type CollectorService struct {
 	config      *config.Config
 	repository  repository.IRepository
-	taskSteward *tasker.Steward
+	taskManager itask.IManager
 	client      *http.Client
+	channelErrors chan itask.IError
 }
 
 func NewCollectorService(repository repository.IRepository, config *config.Config) *CollectorService {
@@ -25,12 +26,37 @@ func NewCollectorService(repository repository.IRepository, config *config.Confi
 	service.repository = repository
 	service.config = config
 	service.client = new(http.Client)
-	service.taskSteward = tasker.NewSteward(
-		config.SizeQueueTasksForGithubCollectors,
-		time.Minute,
-		service.eventManageCompletedTasks,
+	service.taskManager = tasker.NewManager(
+		tasker.SetBaseOptions(
+			config.SizeQueueTasksForGithubCollectors,
+			service.eventManageCompletedTasks,
+		),
+		tasker.SetRunByTimer(
+			1*time.Minute,
+		),
 	)
+	service.channelErrors = service.taskManager.GetChannelError()
+	go service.scanErrors()
 	return service
+}
+
+func (service *CollectorService) scanErrors() {
+	for err := range service.channelErrors {
+		var(
+			deleteKeys = make(map[string]struct{})
+			deleteTasks = make([]itask.ITask, 0)
+		)
+		task, _ := err.GetTaskIfExist()
+		taskGateService := task.GetState().GetCustomFields().(itask.ITask)
+		taskGateService.GetState().SetError(err.GetError())
+		deleteTasks = service.taskManager.FindRunBanTriggers()
+		deleteTasks = append(deleteTasks, service.taskManager.FindRunBanSimpleTasks()...)
+		for _, task := range deleteTasks {
+			deleteKeys[task.GetKey()] = struct{}{}
+		}
+		runtimeinfo.LogInfo("DELETE TASK WITH ERROR: ", deleteKeys)
+		service.taskManager.DeleteTasksByKeys(deleteKeys)
+	}
 }
 
 func (service *CollectorService) CreateGitHubApiURLForRepositories(repositories ...dataModel.RepositoryModel) (urls []string) {
@@ -63,14 +89,14 @@ func (service *CollectorService) CreateTaskDescriptionRepositories(taskGateServi
 	if len(urls) == 0 {
 		return errors.New("Failed to create url list. ")
 	}
-	constructor, err := service.createTaskRepositoriesDescriptions(
+	task, err := service.createTaskRepositoriesDescriptions(
 		taskGateService,
 		urls...,
 	)
 	if err != nil {
 		return err
 	}
-	_, err = service.taskSteward.CreateTaskAndRun(constructor)
+	err = service.taskManager.AddTaskAndTask(task)
 	if err != nil {
 		return err
 	}
@@ -85,14 +111,14 @@ func (service *CollectorService) CreateTaskRepositoryIssues(taskGateService itas
 	if len(urls) == 0 {
 		return errors.New("Failed to create url list. ")
 	}
-	constructor, err := service.createTaskRepositoryIssues(
+	task, err := service.createTaskRepositoryIssues(
 		taskGateService,
 		urls[0],
 	)
 	if err != nil {
 		return err
 	}
-	_, err = service.taskSteward.CreateTaskAndRun(constructor)
+	err = service.taskManager.AddTaskAndTask(task)
 	if err != nil {
 		return err
 	}
@@ -118,7 +144,7 @@ func (service *CollectorService) CreateTaskRepositoriesDescriptionAndIssues(task
 		return err
 	}
 	for _, trigger := range triggers {
-		err := service.taskSteward.RunTask(trigger)
+		err := service.taskManager.AddTaskAndTask(trigger)
 		if err != nil {
 			runtimeinfo.LogError("RUNNING TRIGGER [", trigger.GetKey(), "] COMPLETED WITH ERROR: ", err)
 		}
