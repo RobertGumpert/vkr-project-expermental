@@ -9,12 +9,14 @@ const (
 	gitHubApiAddress                          = "https://api.github.com"
 	collectorEndpointRepositoriesDescriptions = "api/task/repositories/descriptions"
 	collectorEndpointRepositoryIssues         = "api/task/repository/issues"
+	collectorEndpointRepositoriesByKeyWord    = "api/task/repositories/by/keyword"
 )
 
 const (
-	RepositoriesDescription          itask.Type = 0
-	RepositoryIssues                 itask.Type = 1
-	RepositoriesDescriptionAndIssues itask.Type = 2
+	RepositoriesOnlyDescription itask.Type = 0
+	RepositoryOnlyIssues        itask.Type = 1
+	RepositoryByName            itask.Type = 2
+	RepositoriesByKeyWord       itask.Type = 3
 )
 
 //
@@ -34,33 +36,38 @@ type contextTaskSend struct {
 // Send:
 //
 
-type jsonRepository struct {
+type jsonSendToCollectorRepository struct {
 	Name  string `json:"name"`
 	Owner string `json:"owner"`
 }
 
 type jsonSendToCollectorDescriptionsRepositories struct {
-	TaskKey      string           `json:"task_key"`
-	Repositories []jsonRepository `json:"repositories"`
+	TaskKey      string                          `json:"task_key"`
+	Repositories []jsonSendToCollectorRepository `json:"repositories"`
 }
 
 type jsonSendToCollectorRepositoryIssues struct {
-	TaskKey    string         `json:"task_key"`
-	Repository jsonRepository `json:"repository"`
+	TaskKey    string                        `json:"task_key"`
+	Repository jsonSendToCollectorRepository `json:"repository"`
+}
+
+type jsonSendToCollectorRepositoriesByKeyWord struct {
+	TaskKey string `json:"task_key"`
+	KeyWord string `json:"key_word"`
 }
 
 //
 // Models:
 //
 
-type repositoryDescription struct {
+type jsonSendFromCollectorRepository struct {
 	URL         string   `json:"url"`
 	Topics      []string `json:"topics"`
 	Description string   `json:"description"`
 	Err         error    `json:"err"`
 }
 
-type issueDescription struct {
+type jsonSendFromCollectorIssue struct {
 	Number int    `json:"number"`
 	URL    string `json:"url"`
 	Title  string `json:"title"`
@@ -79,13 +86,18 @@ type jsonExecutionTaskStatus struct {
 }
 
 type jsonSendFromCollectorDescriptionsRepositories struct {
-	ExecutionTaskStatus jsonExecutionTaskStatus `json:"execution_task_status"`
-	Repositories        []repositoryDescription `json:"repositories"`
+	ExecutionTaskStatus jsonExecutionTaskStatus           `json:"execution_task_status"`
+	Repositories        []jsonSendFromCollectorRepository `json:"repositories"`
 }
 
 type jsonSendFromCollectorRepositoryIssues struct {
-	ExecutionTaskStatus jsonExecutionTaskStatus `json:"execution_task_status"`
-	Issues              []issueDescription      `json:"issues"`
+	ExecutionTaskStatus jsonExecutionTaskStatus      `json:"execution_task_status"`
+	Issues              []jsonSendFromCollectorIssue `json:"issues"`
+}
+
+type jsonSendFromCollectorRepositoriesByKeyWord struct {
+	ExecutionTaskStatus jsonExecutionTaskStatus           `json:"execution_task_status"`
+	Repositories        []jsonSendFromCollectorRepository `json:"repositories"`
 }
 
 //

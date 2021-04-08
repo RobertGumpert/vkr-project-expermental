@@ -5,6 +5,7 @@
   "github_gate_address": "http://127.0.0.1:54000",
   "github_gate_endpoints": {
     "send_response_task_repositories_descriptions": "/task/api/collector/update/repositories/descriptions",
-    "send_response_task_repository_issues": "/task/api/collector/update/repository/issues"
+    "send_response_task_repository_issues": "/task/api/collector/update/repository/issues",
+    "send_response_task_repositories_by_key_word":  "/task/api/collector/update/repositories/by/keyword"
   }
 }

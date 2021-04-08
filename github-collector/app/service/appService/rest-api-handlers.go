@@ -20,6 +20,10 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 		"/repository/issues",
 		service.restHandlerCreateTaskRepositoryIssues,
 	)
+	handlers.POST(
+		"/repositories/by/keyword",
+		service.restHandlerCreateTaskRepositoriesByKeyWord,
+	)
 }
 
 func (service *AppService) restHandlerGetState(ctx *gin.Context) {
@@ -54,6 +58,19 @@ func (service *AppService) restHandlerCreateTaskRepositoryIssues(ctx *gin.Contex
 		return
 	}
 	if err := service.CreateTaskRepositoryIssues(state); err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	ctx.AbortWithStatus(http.StatusOK)
+}
+
+func (service *AppService) restHandlerCreateTaskRepositoriesByKeyWord(ctx *gin.Context) {
+	state := new(JsonCreateTaskRepositoriesByKeyWord)
+	if err := ctx.BindJSON(state); err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	if err := service.CreateTaskRepositoriesByKeyWord(state); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}

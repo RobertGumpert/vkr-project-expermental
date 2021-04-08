@@ -37,3 +37,7 @@ func (service *AppService) CreateTaskRepositoriesDescriptions(jsonModel *JsonCre
 func (service *AppService) CreateTaskRepositoryIssues(jsonModel *JsonCreateTaskRepositoryIssues) (err error) {
 	return service.createTaskRepositoryIssues(jsonModel)
 }
+
+func (service *AppService) CreateTaskRepositoriesByKeyWord(jsonModel *JsonCreateTaskRepositoriesByKeyWord) (err error) {
+	return service.createTaskRepositoriesByKeyWord(jsonModel)
+}

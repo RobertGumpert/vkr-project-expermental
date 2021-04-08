@@ -128,10 +128,46 @@ func (service *AppService) sendTaskRepositoryIssues(taskState *githubApiService.
 				continue
 			}
 			dataModels = append(dataModels, list...)
-			//dataModels = append(dataModels, listDataModel...)
 		}
 	}
 	sendBody.Issues = dataModels
+	sendBody.ExecutionTaskStatus = executionStatus
+	err := doResponse()
+	if err != nil {
+		service.repeatedResponses = append(service.repeatedResponses, doResponse)
+	}
+	return
+}
+
+func (service *AppService) sendTaskRepositoriesByKeyWord(taskState *githubApiService.TaskState) {
+	var (
+		sendBody        = JsonUpdateTaskRepositoriesByKeyWord{}
+		executionStatus = JsonExecutionStatus{
+			TaskKey:       taskState.TaskKey,
+			TaskCompleted: taskState.TaskCompleted,
+		}
+		dataModels = make([]RepositoryDataModel, 0)
+		taskKey    string
+		doResponse = func() (err error) {
+			return service.doResponseToGate(
+				&sendBody,
+				service.config.GithubGateEndpoints.SendResponseTaskRepositoriesByKeyWord,
+			)
+		}
+	)
+	if taskState.Responses != nil {
+		response := taskState.Responses[0]
+		if taskKey == "" {
+			taskKey = response.TaskKey
+		}
+		dataModel := RepositoriesByKeyWordDataModel{}
+		err := json.NewDecoder(response.Response.Body).Decode(&dataModel)
+		if err != nil {
+			runtimeinfo.LogError(err)
+		}
+		dataModels = append(dataModels, dataModel.Items...)
+	}
+	sendBody.Repositories = dataModels
 	sendBody.ExecutionTaskStatus = executionStatus
 	err := doResponse()
 	if err != nil {

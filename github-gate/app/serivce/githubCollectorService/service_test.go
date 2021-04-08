@@ -162,7 +162,7 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
 		)
-		err := service.CreateTaskRepositoriesDescriptionAndIssues(
+		err := service.CreateTaskRepositoriesByName(
 			task,
 			getRepositoriesModels(state.Repositories...)...,
 		)

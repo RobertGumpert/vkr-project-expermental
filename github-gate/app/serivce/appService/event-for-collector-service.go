@@ -6,12 +6,35 @@ import (
 	"strings"
 )
 
+func (service *AppService) gettingResultFromCollectorService() {
+	for task := range service.channelResultsFromCollector {
+		repositories := task.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+		service.taskManager.SetUpdateForTask(
+			task.GetKey(),
+			repositories,
+		)
+	}
+}
+
+//
+//---------------------------------------------EVENT RUN----------------------------------------------------------------
+//
+
 func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	switch task.GetType() {
-	case ApiTaskDownloadRepositoryByName:
-		err = service.collectorService.CreateTaskRepositoriesDescriptionAndIssues(
+	case SingleTaskDownloadRepositoryByName:
+		err = service.collectorService.CreateTaskRepositoriesByName(
 			task,
 			task.GetState().GetSendContext().([]dataModel.RepositoryModel)...,
+		)
+		if err != nil {
+			return true, false, nil
+		}
+		break
+	case SingleTaskDownloadRepositoryByKeyWord:
+		err = service.collectorService.CreateTaskRepositoriesByKeyWord(
+			task,
+			task.GetState().GetSendContext().(string),
 		)
 		if err != nil {
 			return true, false, nil
@@ -20,6 +43,10 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 	}
 	return false, false, nil
 }
+
+//
+//---------------------------------------------EVENT UPDATE-------------------------------------------------------------
+//
 
 func (service *AppService) eventUpdateDownloadRepositories(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	if isTrigger, dependentsTasks := task.IsTrigger(); isTrigger {
@@ -33,19 +60,11 @@ func (service *AppService) eventUpdateDownloadRepositories(task itask.ITask, som
 	return nil, false
 }
 
+//
+//---------------------------------------------CREATE TASKS-------------------------------------------------------------
+//
 
-
-func (service *AppService) gettingResultFromCollectorService() {
-	for task := range service.channelResultsFromCollector {
-		repositories := task.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-		service.taskManager.SetUpdateForTask(
-			task.GetKey(),
-			repositories,
-		)
-	}
-}
-
-func (service *AppService) createTaskDownloadRepositoriesByName(taskType itask.Type, jsonModel *ApiJsonDownloadRepositoriesByName) (task itask.ITask, err error) {
+func (service *AppService) createTaskDownloadRepositoriesByName(taskType itask.Type, jsonModel *JsonSingleTaskDownloadRepositoriesByName) (task itask.ITask, err error) {
 	var (
 		taskKey           string
 		repositoriesNames = make([]string, 0)
@@ -73,6 +92,29 @@ func (service *AppService) createTaskDownloadRepositoriesByName(taskType itask.T
 		taskType,
 		taskKey,
 		sendContext,
+		updateContext,
+		customFields,
+		service.eventRunTaskDownloadRepositories,
+		service.eventUpdateDownloadRepositories,
+	)
+}
+
+func (service *AppService) createTaskDownloadRepositoriesByKeyWord(taskType itask.Type, jsonModel *JsonSingleTaskDownloadRepositoriesByKeyWord) (task itask.ITask, err error) {
+	var (
+		taskKey       string
+		updateContext = make([]dataModel.RepositoryModel, 0)
+		customFields  = service.channelResultsFromCollector
+	)
+	taskKey = strings.Join([]string{
+		"download-repositories-by-keyword",
+		"{",
+		jsonModel.KeyWord,
+		"}",
+	}, "")
+	return service.taskManager.CreateTask(
+		taskType,
+		taskKey,
+		jsonModel.KeyWord,
 		updateContext,
 		customFields,
 		service.eventRunTaskDownloadRepositories,

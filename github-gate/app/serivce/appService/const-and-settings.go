@@ -5,18 +5,16 @@ import (
 	"github.com/RobertGumpert/gotasker/itask"
 )
 
-
-const(
-	ApiTaskDownloadRepositoryByName itask.Type = 10
-)
-
-//
-//
-//
-
-var(
+var (
 	ErrorEmptyOrIncompleteJSONData = errors.New("Empty Or Incomplete JSON Data. ")
 )
+
+
+const (
+	SingleTaskDownloadRepositoryByName    itask.Type = 10
+	SingleTaskDownloadRepositoryByKeyWord itask.Type = 11
+)
+
 
 //
 // JSON
@@ -27,6 +25,10 @@ type JsonRepositoryName struct {
 	Owner string `json:"owner"`
 }
 
-type ApiJsonDownloadRepositoriesByName struct {
+type JsonSingleTaskDownloadRepositoriesByName struct {
 	Repositories []JsonRepositoryName `json:"repositories"`
+}
+
+type JsonSingleTaskDownloadRepositoriesByKeyWord struct {
+	KeyWord string `json:"key_word"`
 }

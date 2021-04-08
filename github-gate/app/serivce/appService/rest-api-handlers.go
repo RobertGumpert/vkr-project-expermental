@@ -10,19 +10,34 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 	{
 		collectorGroup := apiGroup.Group("/download/repositories")
 		{
-			collectorGroup.POST("/by/name", service.apiDownloadRepositoriesByName)
-			collectorGroup.POST("/by/keyword")
+			collectorGroup.POST("/by/name", service.restHandlerDownloadRepositoriesByName)
+			collectorGroup.POST("/by/keyword", service.restHandlerDownloadRepositoriesByKeyWord)
 		}
 	}
 }
 
-func (service *AppService) apiDownloadRepositoriesByName(ctx *gin.Context) {
-	requestData := new(ApiJsonDownloadRepositoriesByName)
+func (service *AppService) restHandlerDownloadRepositoriesByName(ctx *gin.Context) {
+	requestData := new(JsonSingleTaskDownloadRepositoriesByName)
 	if err := ctx.BindJSON(requestData); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := service.CreateApiTaskDownloadRepositoriesByNames(
+	err := service.CreateTaskDownloadRepositoriesByNames(
+		requestData,
+	)
+	if err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+	}
+	ctx.AbortWithStatus(http.StatusOK)
+}
+
+func (service *AppService) restHandlerDownloadRepositoriesByKeyWord(ctx *gin.Context) {
+	requestData := new(JsonSingleTaskDownloadRepositoriesByKeyWord)
+	if err := ctx.BindJSON(requestData); err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := service.CreateTaskDownloadRepositoriesByKeyWord(
 		requestData,
 	)
 	if err != nil {

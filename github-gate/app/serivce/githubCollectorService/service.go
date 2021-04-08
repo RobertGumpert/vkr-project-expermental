@@ -40,14 +40,14 @@ func NewCollectorService(repository repository.IRepository, config *config.Confi
 }
 
 func (service *CollectorService) scanErrors() {
-	for err := range service.channelErrors {
+	for _ = range service.channelErrors {
 		var(
 			deleteKeys = make(map[string]struct{})
 			deleteTasks = make([]itask.ITask, 0)
 		)
-		task, _ := err.GetTaskIfExist()
-		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
-		taskAppService.GetState().SetError(err.GetError())
+		//task, _ := err.GetTaskIfExist()
+		//taskAppService := task.GetState().GetCustomFields().(itask.ITask)
+		//taskAppService.GetState().SetError(err.GetError())
 		deleteTasks = service.taskManager.FindRunBanTriggers()
 		deleteTasks = append(deleteTasks, service.taskManager.FindRunBanSimpleTasks()...)
 		for _, task := range deleteTasks {
@@ -98,14 +98,14 @@ func (service *CollectorService) CreateTaskRepositoryIssues(taskAppService itask
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoriesDescriptionAndIssues(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
+func (service *CollectorService) CreateTaskRepositoriesByName(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
 	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
 	if len(repositories) == 0 {
 		return errors.New("Size of slice Data Models Repository is 0. ")
 	}
-	triggers, err := service.createTaskRepositoriesDescriptionsAndIssues(
+	triggers, err := service.createTaskRepositoriesDescriptionsAndIssuesByName(
 		taskAppService,
 		repositories...
 	)
@@ -119,4 +119,22 @@ func (service *CollectorService) CreateTaskRepositoriesDescriptionAndIssues(task
 		}
 	}
 	return nil
+}
+
+func (service *CollectorService) CreateTaskRepositoriesByKeyWord(taskAppService itask.ITask, keyWord string) (err error) {
+	if taskAppService == nil {
+		return ErrorTaskIsNilPointer
+	}
+	trigger, err := service.createTaskRepositoriesDescriptionsAndIssuesByKeyWord(
+		taskAppService,
+		keyWord,
+	)
+	if err != nil {
+		return err
+	}
+	err = service.taskManager.AddTaskAndTask(trigger)
+	if err != nil {
+		runtimeinfo.LogError("RUNNING TRIGGER [", trigger.GetKey(), "] COMPLETED WITH ERROR: ", err)
+	}
+	return err
 }

@@ -8,6 +8,7 @@ import (
 	"github.com/RobertGumpert/gotasker/tasker"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/gin-gonic/gin"
+	"strings"
 )
 
 type AppService struct {
@@ -39,7 +40,7 @@ func NewAppService(db repository.IRepository, config *config.Config, engine *gin
 	return service
 }
 
-func (service *AppService) CreateApiTaskDownloadRepositoriesByNames(apiJsonModel *ApiJsonDownloadRepositoriesByName) (err error) {
+func (service *AppService) CreateTaskDownloadRepositoriesByNames(apiJsonModel *JsonSingleTaskDownloadRepositoriesByName) (err error) {
 	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
 		return gotasker.ErrorQueueIsFilled
 	}
@@ -47,7 +48,28 @@ func (service *AppService) CreateApiTaskDownloadRepositoriesByNames(apiJsonModel
 		return ErrorEmptyOrIncompleteJSONData
 	}
 	task, err := service.createTaskDownloadRepositoriesByName(
-		ApiTaskDownloadRepositoryByName,
+		SingleTaskDownloadRepositoryByName,
+		apiJsonModel,
+	)
+	if err != nil {
+		return err
+	}
+	err = service.taskManager.AddTaskAndTask(task)
+	if err != nil {
+		return gotasker.ErrorQueueIsFilled
+	}
+	return nil
+}
+
+func (service *AppService) CreateTaskDownloadRepositoriesByKeyWord(apiJsonModel *JsonSingleTaskDownloadRepositoriesByKeyWord) (err error) {
+	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
+		return gotasker.ErrorQueueIsFilled
+	}
+	if strings.TrimSpace(apiJsonModel.KeyWord) == "" {
+		return ErrorEmptyOrIncompleteJSONData
+	}
+	task, err := service.createTaskDownloadRepositoriesByKeyWord(
+		SingleTaskDownloadRepositoryByKeyWord,
 		apiJsonModel,
 	)
 	if err != nil {

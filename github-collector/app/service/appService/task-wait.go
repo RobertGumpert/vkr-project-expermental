@@ -66,6 +66,11 @@ func (service *AppService) waitTaskRepositoryIssues(
 		return
 	}(channelNotificationRateLimit)
 	countPagesRequest := <-channelGettingTaskState
+	if countPagesRequest.Responses[0].Response == nil {
+		countPagesRequest.TaskCompleted = true
+		service.sendTaskRepositoryIssues(countPagesRequest)
+		return
+	}
 	err := json.NewDecoder(countPagesRequest.Responses[0].Response.Body).Decode(countPagesDataModel)
 	if err != nil {
 		countPagesRequest.TaskCompleted = true
@@ -132,6 +137,30 @@ func (service *AppService) waitPaginationRepositoryIssues(
 			runtimeinfo.LogInfo("Finish")
 			return
 		}(channelResponsesAfterRateLimit)
+		break
+	}
+	return
+}
+
+func (service *AppService) waitTaskRepositoriesByKeyWord(
+	isRunTaskNow githubApiService.IsRunTaskNow,
+	taskLaunchFunction githubApiService.TaskLaunchFunction,
+	channelNotificationRateLimit chan bool,
+	channelGettingTaskState chan *githubApiService.TaskState,
+) {
+	if isRunTaskNow {
+		go taskLaunchFunction()
+	}
+	select {
+	case allCompletedRequests := <-channelGettingTaskState:
+		service.sendTaskRepositoriesByKeyWord(allCompletedRequests)
+		break
+	case _ = <-channelNotificationRateLimit:
+		go func(channelGettingTaskState chan *githubApiService.TaskState) {
+			allCompletedRequests := <-channelGettingTaskState
+			service.sendTaskRepositoriesByKeyWord(allCompletedRequests)
+			return
+		}(channelGettingTaskState)
 		break
 	}
 	return

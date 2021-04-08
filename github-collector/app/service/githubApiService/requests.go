@@ -42,41 +42,43 @@ func (c *GithubClient) request(request Request, api GitHubLevelAPI) (response *h
 	return response, false, int64(0), nil
 }
 
-func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, signalChannel chan bool, taskStateChannel chan *TaskState) {
+func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, channelNotificationRateLimit chan bool, channelGettingTaskState chan *TaskState) {
 	c.countNowExecuteTask = 1
 	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
 	var (
-		response             *http.Response
-		limitReached         bool
-		err                  error
-		numberSpentAttempts  int
-		resetTimeStamp       int64
-		writeToSignalChannel = false
-		completeTask         = func(err error) {
+		response              *http.Response
+		limitReached          bool
+		err                   error
+		numberSpentAttempts   int
+		resetTimeStamp        int64
+		writeToSignalChannel  = false
+		writeToGettingChannel = func(err error) {
 			runtimeinfo.LogError("url: {", request.URL, "} err: {", err, "} ")
-			taskStateChannel <- &TaskState{
+			channelGettingTaskState <- &TaskState{
 				TaskKey:       request.TaskKey,
 				TaskCompleted: false,
 				Responses:     []*Response{newResponse(request.TaskKey, request.URL, nil, err)},
 			}
 			c.tasksCompetedMessageChannel <- true
 			c.countNowExecuteTask = 0
+			close(channelNotificationRateLimit)
+			close(channelGettingTaskState)
 		}
 	)
 	for {
 		if numberSpentAttempts == limitNumberAttempts {
 			err := errors.New("Number of attempts limit reached. ")
-			completeTask(err)
+			writeToGettingChannel(err)
 			return
 		}
 		response, limitReached, resetTimeStamp, err = c.request(request, api)
 		if err != nil {
-			completeTask(err)
+			writeToGettingChannel(err)
 			return
 		}
 		if limitReached {
 			if !writeToSignalChannel {
-				signalChannel <- true
+				channelNotificationRateLimit <- true
 			}
 			writeToSignalChannel = true
 			c.freezeClient(resetTimeStamp)
@@ -87,15 +89,15 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, signa
 			break
 		}
 	}
-	taskStateChannel <- &TaskState{
+	channelGettingTaskState <- &TaskState{
 		TaskKey:       request.TaskKey,
 		TaskCompleted: true,
 		Responses:     []*Response{newResponse(request.TaskKey, request.URL, response, nil)},
 	}
 	c.tasksCompetedMessageChannel <- true
 	c.countNowExecuteTask = 0
-	close(signalChannel)
-	close(taskStateChannel)
+	close(channelNotificationRateLimit)
+	close(channelGettingTaskState)
 	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
 }
 
@@ -127,7 +129,6 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI,
 		if buffer.Count() != 0 {
 			for item := range buffer.IterBuffered() {
 				request := item.Val.(Request)
-
 				httpResponse, limitReached, rateLimitResetTimestamp, err := c.request(request, api)
 				if limitReached && !writeResponsesToDefer {
 					writeResponsesToDefer = true

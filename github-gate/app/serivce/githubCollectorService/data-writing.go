@@ -23,7 +23,7 @@ func (service *CollectorService) getRepositoryNameFromURL(url string) (name, own
 	return name, owner
 }
 
-func (service *CollectorService) writeRepositoriesToDB(repositories []repositoryDescription) (models []dataModel.RepositoryModel) {
+func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFromCollectorRepository) (models []dataModel.RepositoryModel) {
 	models = make([]dataModel.RepositoryModel, 0)
 	for _, repository := range repositories {
 		if repository.Err != nil {
@@ -59,7 +59,7 @@ func (service *CollectorService) writeRepositoriesToDB(repositories []repository
 	return models
 }
 
-func (service *CollectorService) writeIssuesToDB(issues []issueDescription, repositoryID uint) (models []dataModel.IssueModel) {
+func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorIssue, repositoryID uint) (models []dataModel.IssueModel) {
 	models = make([]dataModel.IssueModel, 0)
 	for _, issue := range issues {
 		if issue.Err != nil {

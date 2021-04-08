@@ -15,6 +15,7 @@ type Config struct {
 	GithubGateEndpoints struct {
 		SendResponseTaskRepositoriesDescriptions string `json:"send_response_task_repositories_descriptions"`
 		SendResponseTaskRepositoryIssues         string `json:"send_response_task_repository_issues"`
+		SendResponseTaskRepositoriesByKeyWord    string `json:"send_response_task_repositories_by_key_word"`
 	} `json:"github_gate_endpoints"`
 }
 
