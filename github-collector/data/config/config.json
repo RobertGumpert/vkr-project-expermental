@@ -4,7 +4,7 @@
   "count_tasks": 2,
   "github_gate_address": "http://127.0.0.1:54000",
   "github_gate_endpoints": {
-    "send_result_task_repos_by_ulr": "/collector/task/update/repositories/descriptions",
-    "send_result_task_issue_repo": "/collector/task/update/repository/issues"
+    "send_response_task_repositories_descriptions": "/task/api/collector/update/repositories/descriptions",
+    "send_response_task_repository_issues": "/task/api/collector/update/repository/issues"
   }
 }

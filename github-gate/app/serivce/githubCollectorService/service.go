@@ -9,7 +9,6 @@ import (
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"net/http"
-	"strings"
 	"time"
 )
 
@@ -47,8 +46,8 @@ func (service *CollectorService) scanErrors() {
 			deleteTasks = make([]itask.ITask, 0)
 		)
 		task, _ := err.GetTaskIfExist()
-		taskGateService := task.GetState().GetCustomFields().(itask.ITask)
-		taskGateService.GetState().SetError(err.GetError())
+		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
+		taskAppService.GetState().SetError(err.GetError())
 		deleteTasks = service.taskManager.FindRunBanTriggers()
 		deleteTasks = append(deleteTasks, service.taskManager.FindRunBanSimpleTasks()...)
 		for _, task := range deleteTasks {
@@ -59,39 +58,17 @@ func (service *CollectorService) scanErrors() {
 	}
 }
 
-func (service *CollectorService) CreateGitHubApiURLForRepositories(repositories ...dataModel.RepositoryModel) (urls []string) {
-	urls = make([]string, 0)
-	for _, repo := range repositories {
-		if strings.TrimSpace(repo.Owner) != "" && strings.TrimSpace(repo.Name) != "" {
-			url := strings.Join([]string{
-				gitHubApiAddress,
-				"repos",
-				repo.Owner,
-				repo.Name,
-			}, "/")
-			urls = append(
-				urls,
-				url,
-			)
-		}
-	}
-	return urls
-}
 
-func (service *CollectorService) CreateTaskDescriptionRepositories(taskGateService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
-	if taskGateService == nil {
+func (service *CollectorService) CreateTaskDescriptionRepositories(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
+	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
 	if len(repositories) == 0 {
 		return errors.New("Size of slice Data Models Repository is 0. ")
-	}
-	urls := service.CreateGitHubApiURLForRepositories(repositories...)
-	if len(urls) == 0 {
-		return errors.New("Failed to create url list. ")
 	}
 	task, err := service.createTaskRepositoriesDescriptions(
-		taskGateService,
-		urls...,
+		taskAppService,
+		repositories...,
 	)
 	if err != nil {
 		return err
@@ -103,17 +80,13 @@ func (service *CollectorService) CreateTaskDescriptionRepositories(taskGateServi
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoryIssues(taskGateService itask.ITask, repository dataModel.RepositoryModel) (err error) {
-	if taskGateService == nil {
+func (service *CollectorService) CreateTaskRepositoryIssues(taskAppService itask.ITask, repository dataModel.RepositoryModel) (err error) {
+	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
-	urls := service.CreateGitHubApiURLForRepositories(repository)
-	if len(urls) == 0 {
-		return errors.New("Failed to create url list. ")
-	}
 	task, err := service.createTaskRepositoryIssues(
-		taskGateService,
-		urls[0],
+		taskAppService,
+		repository,
 	)
 	if err != nil {
 		return err
@@ -125,20 +98,16 @@ func (service *CollectorService) CreateTaskRepositoryIssues(taskGateService itas
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoriesDescriptionAndIssues(taskGateService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
-	if taskGateService == nil {
+func (service *CollectorService) CreateTaskRepositoriesDescriptionAndIssues(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
+	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
 	if len(repositories) == 0 {
 		return errors.New("Size of slice Data Models Repository is 0. ")
 	}
-	urls := service.CreateGitHubApiURLForRepositories(repositories...)
-	if len(urls) == 0 {
-		return errors.New("Failed to create url list. ")
-	}
 	triggers, err := service.createTaskRepositoriesDescriptionsAndIssues(
-		taskGateService,
-		urls...
+		taskAppService,
+		repositories...
 	)
 	if err != nil {
 		return err

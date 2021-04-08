@@ -27,7 +27,7 @@ func (service *CollectorService) collectorIsFree(collectorUrl string) bool {
 func (service *CollectorService) getFreeCollectors(onlyFirst bool) []string {
 	var freeCollectorsAddresses = make([]string, 0)
 	for _, collectorUrl := range service.config.GithubCollectorsAddresses {
-		getStateUrl := collectorUrl + "/get/state"
+		getStateUrl := collectorUrl + "/api/task/get/state"
 		response, err := requests.GET(
 			service.client,
 			getStateUrl,

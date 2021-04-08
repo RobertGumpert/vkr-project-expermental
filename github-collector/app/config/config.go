@@ -1,4 +1,4 @@
-package main
+package config
 
 import (
 	"encoding/json"
@@ -7,22 +7,22 @@ import (
 	"path/filepath"
 )
 
-type config struct {
+type Config struct {
 	Port                string `json:"port"`
 	GithubToken         string `json:"github_token"`
 	CountTasks          int    `json:"count_tasks"`
 	GithubGateAddress   string `json:"github_gate_address"`
 	GithubGateEndpoints struct {
-		SendResultTaskReposByUlr string `json:"send_result_task_repos_by_ulr"`
-		SendResultTaskIssueRepo  string `json:"send_result_task_issue_repo"`
+		SendResponseTaskRepositoriesDescriptions string `json:"send_response_task_repositories_descriptions"`
+		SendResponseTaskRepositoryIssues         string `json:"send_response_task_repository_issues"`
 	} `json:"github_gate_endpoints"`
 }
 
-func NewConfig() *config {
-	return &config{}
+func NewConfig() *Config {
+	return &Config{}
 }
 
-func (c *config) Read() *config {
+func (c *Config) Read() *Config {
 	absPath, err := filepath.Abs("../github-collector/data/config/config.json")
 	if err != nil {
 		runtimeinfo.LogFatal(err)

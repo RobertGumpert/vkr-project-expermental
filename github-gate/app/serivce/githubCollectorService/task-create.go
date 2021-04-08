@@ -7,27 +7,20 @@ import (
 	"strings"
 )
 
-const (
-	gitHubApiAddress                          = "https://api.github.com"
-	collectorEndpointRepositoriesDescriptions = "get/repos/by/url"
-	collectorEndpointRepositoryIssues         = "get/repos/issues"
-)
-
-func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceTask itask.ITask, urls ...string) (task itask.ITask, err error) {
+func (service *CollectorService) createTaskRepositoriesDescriptions(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (task itask.ITask, err error) {
 	var (
 		taskKey          string
 		sendTaskContext  *contextTaskSend
 		uniqueKey        string
 		repositoriesName []string
 	)
-	for _, url := range urls {
-		name, _ := service.getRepositoryNameFromURL(url)
-		repositoriesName = append(repositoriesName, name)
+	for _, repository := range repositories {
+		repositoriesName = append(repositoriesName, repository.Name)
 	}
 	uniqueKey = strings.Join(repositoriesName, ",")
 	if taskKey, err = service.createKeyForTask(
 		RepositoriesDescription,
-		gateServiceTask,
+		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
@@ -35,7 +28,7 @@ func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceT
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoriesDescription,
 		taskKey,
-		urls,
+		repositories,
 	); err != nil {
 		return nil, err
 	}
@@ -44,21 +37,21 @@ func (service *CollectorService) createTaskRepositoriesDescriptions(gateServiceT
 		taskKey,
 		sendTaskContext,
 		nil,
-		gateServiceTask,
+		taskAppService,
 		service.eventRunTask,
 		service.eventUpdateTaskDescriptionsRepositories,
 	)
 }
 
-func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itask.ITask, url string) (task itask.ITask, err error) {
+func (service *CollectorService) createTaskRepositoryIssues(taskAppService itask.ITask, repository dataModel.RepositoryModel) (task itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
-		uniqueKey, _    = service.getRepositoryNameFromURL(url)
+		uniqueKey       = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
 		RepositoryIssues,
-		gateServiceTask,
+		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
@@ -66,7 +59,7 @@ func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itas
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoryIssues,
 		taskKey,
-		url,
+		repository,
 	); err != nil {
 		return nil, err
 	}
@@ -75,21 +68,21 @@ func (service *CollectorService) createTaskRepositoryIssues(gateServiceTask itas
 		taskKey,
 		sendTaskContext,
 		nil,
-		gateServiceTask,
+		taskAppService,
 		service.eventRunTask,
 		service.eventUpdateTaskRepositoryIssues,
 	)
 }
 
-func (service *CollectorService) createTriggerDescriptionRepository(gateServiceTask itask.ITask, url string) (task itask.ITask, err error) {
+func (service *CollectorService) createTriggerDescriptionRepository(taskAppService itask.ITask, repository dataModel.RepositoryModel) (task itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
-		uniqueKey, _    = service.getRepositoryNameFromURL(url)
+		uniqueKey       = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
 		RepositoriesDescriptionAndIssues,
-		gateServiceTask,
+		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
@@ -98,7 +91,7 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoriesDescription,
 		taskKey,
-		[]string{url},
+		[]dataModel.RepositoryModel{repository},
 	); err != nil {
 		return nil, err
 	}
@@ -107,17 +100,17 @@ func (service *CollectorService) createTriggerDescriptionRepository(gateServiceT
 		taskKey,
 		sendTaskContext,
 		dataModel.RepositoryModel{},
-		gateServiceTask,
+		taskAppService,
 		service.eventRunTask,
 		service.eventUpdateTriggerDescriptionRepository,
 	)
 }
 
-func (service *CollectorService) createDependentRepositoryIssues(triggerTask itask.ITask, url string) (constructor itask.ITask, err error) {
+func (service *CollectorService) createDependentRepositoryIssues(triggerTask itask.ITask, repository dataModel.RepositoryModel) (constructor itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
-		uniqueKey, _    = service.getRepositoryNameFromURL(url)
+		uniqueKey       = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
 		RepositoriesDescriptionAndIssues,
@@ -130,7 +123,7 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 	if sendTaskContext, err = service.createSendContextForTask(
 		RepositoryIssues,
 		taskKey,
-		url,
+		repository,
 	); err != nil {
 		return nil, err
 	}
@@ -145,20 +138,20 @@ func (service *CollectorService) createDependentRepositoryIssues(triggerTask ita
 	)
 }
 
-func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gateServiceTask itask.ITask, urls ...string) (triggers []itask.ITask, err error) {
+func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (triggers []itask.ITask, err error) {
 	var (
-		countTasks = int64(len(urls)) * 2
+		countTasks = int64(len(repositories)) * 2
 	)
 	if isFilled := service.taskManager.QueueIsFilled(countTasks); isFilled {
 		return nil, gotasker.ErrorQueueIsFilled
 	}
 	triggers = make([]itask.ITask, 0)
-	for _, url := range urls {
-		trigger, err := service.createTriggerDescriptionRepository(gateServiceTask, url)
+	for _, repository := range repositories {
+		trigger, err := service.createTriggerDescriptionRepository(taskAppService, repository)
 		if err != nil {
 			return nil, err
 		}
-		dependent, err := service.createDependentRepositoryIssues(trigger, url)
+		dependent, err := service.createDependentRepositoryIssues(trigger, repository)
 		if err != nil {
 			return nil, err
 		}
@@ -174,12 +167,12 @@ func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssues(gat
 	return triggers, nil
 }
 
-func (service *CollectorService) createKeyForTask(taskType itask.Type, gateServiceTask itask.ITask, uniqueKey string) (taskKey string, err error) {
+func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppService itask.ITask, uniqueKey string) (taskKey string, err error) {
 	var (
-		gateServiceTaskKey = strings.Join(
+		taskAppServiceKey = strings.Join(
 			[]string{
 				"[gate task key:{",
-				gateServiceTask.GetKey(),
+				taskAppService.GetKey(),
 				"}]",
 			},
 			"",
@@ -198,7 +191,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, gateServi
 		return strings.Join(
 			[]string{
 				"task for collector:{repositories-descriptions-for",
-				gateServiceTaskKey,
+				taskAppServiceKey,
 				uniqueKey,
 				"}",
 			}, "",
@@ -207,7 +200,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, gateServi
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-issues-for",
-				gateServiceTaskKey,
+				taskAppServiceKey,
 				uniqueKey,
 				"}",
 			}, "",
@@ -216,7 +209,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, gateServi
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-description-and-issues-for",
-				gateServiceTaskKey,
+				taskAppServiceKey,
 				uniqueKey,
 				"}",
 			}, "",
@@ -236,23 +229,40 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 	}
 	switch taskType {
 	case RepositoriesDescription:
+		var (
+			jsonData = make([]jsonRepository, 0)
+		)
+		models := data.([]dataModel.RepositoryModel)
+		for _, model := range models {
+			jsonData = append(jsonData, jsonRepository{
+				Name:  model.Name,
+				Owner: model.Owner,
+			})
+		}
 		return &contextTaskSend{
 			CollectorAddress:  "",
 			CollectorURL:      "",
 			CollectorEndpoint: collectorEndpointForTaskContext,
 			JSONBody: &jsonSendToCollectorDescriptionsRepositories{
-				TaskKey: taskKey,
-				URLS:    data.([]string),
+				TaskKey:      taskKey,
+				Repositories: jsonData,
 			},
 		}, nil
 	case RepositoryIssues:
+		var (
+			model    = data.(dataModel.RepositoryModel)
+			jsonData = jsonRepository{
+				Name:  model.Name,
+				Owner: model.Owner,
+			}
+		)
 		return &contextTaskSend{
 			CollectorAddress:  "",
 			CollectorURL:      "",
 			CollectorEndpoint: collectorEndpointForTaskContext,
 			JSONBody: &jsonSendToCollectorRepositoryIssues{
-				TaskKey: taskKey,
-				URL:     data.(string),
+				TaskKey:    taskKey,
+				Repository: jsonData,
 			},
 		}, nil
 	default:

@@ -7,7 +7,7 @@ import (
 )
 
 func (service *CollectorService) ConcatTheirRestHandlers(engine *gin.Engine) {
-	updateTaskStateHandlers := engine.Group("/collector/task/update")
+	updateTaskStateHandlers := engine.Group("/task/api/collector/update")
 	updateTaskStateHandlers.POST(
 		"/repositories/descriptions",
 		service.restHandlerUpdateDescriptionsRepositories,

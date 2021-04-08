@@ -6,6 +6,12 @@ import (
 )
 
 const (
+	gitHubApiAddress                          = "https://api.github.com"
+	collectorEndpointRepositoriesDescriptions = "api/task/repositories/descriptions"
+	collectorEndpointRepositoryIssues         = "api/task/repository/issues"
+)
+
+const (
 	RepositoriesDescription          itask.Type = 0
 	RepositoryIssues                 itask.Type = 1
 	RepositoriesDescriptionAndIssues itask.Type = 2
@@ -28,14 +34,19 @@ type contextTaskSend struct {
 // Send:
 //
 
+type jsonRepository struct {
+	Name  string `json:"name"`
+	Owner string `json:"owner"`
+}
+
 type jsonSendToCollectorDescriptionsRepositories struct {
-	TaskKey string   `json:"task_key"`
-	URLS    []string `json:"urls"`
+	TaskKey      string           `json:"task_key"`
+	Repositories []jsonRepository `json:"repositories"`
 }
 
 type jsonSendToCollectorRepositoryIssues struct {
-	TaskKey string `json:"task_key"`
-	URL     string `json:"url"`
+	TaskKey    string         `json:"task_key"`
+	Repository jsonRepository `json:"repository"`
 }
 
 //

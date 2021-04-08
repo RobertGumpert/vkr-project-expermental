@@ -1,15 +1,20 @@
 package main
 
-var(
-	CONFIG *config
-	SERVER *server
-	APP *appService
+import (
+	"github-collector/app/config"
+	"github-collector/app/service/appService"
 )
 
+var (
+	CONFIG *config.Config
+	SERVER *server
+	APP    *appService.AppService
+)
 
 func main() {
-	CONFIG = NewConfig().Read()
-	APP = NewAppService(CONFIG)
-	SERVER = NewServer(CONFIG, APP)
+	CONFIG = config.NewConfig().Read()
+	APP = appService.NewAppService(CONFIG)
+	SERVER = NewServer(CONFIG)
+	APP.ConcatTheirRestHandlers(SERVER.engine)
 	SERVER.RunServer()
 }
