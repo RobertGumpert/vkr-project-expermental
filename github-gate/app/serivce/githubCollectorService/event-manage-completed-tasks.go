@@ -25,6 +25,7 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 		taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
 		break
 	case RepositoriesByKeyWord:
+		deleteTasks = service.manageCompletedTaskRepositoriesByKeyWord(task)
 		break
 	case RepositoryByName:
 		deleteTasks = service.manageCompletedTaskRepositoryByName(task)
@@ -74,7 +75,7 @@ func (service *CollectorService) manageCompletedTaskRepositoriesByKeyWord(task i
 	if isDependent {
 		_, dependentsTasks := trigger.IsTrigger()
 		repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-		for _, dependentTask := range dependentsTasks {
+		for _, dependentTask := range *dependentsTasks {
 			if dependentTask.GetState().IsCompleted() {
 				countCompletedDependentTasks++
 			}

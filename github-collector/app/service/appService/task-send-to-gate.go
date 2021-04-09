@@ -45,7 +45,6 @@ func (service *AppService) doResponseToGate(body interface{}, endpoint string) (
 		runtimeinfo.LogError(err)
 		return err
 	}
-	runtimeinfo.LogInfo("[", url, "] OK.")
 	return nil
 }
 
@@ -59,6 +58,7 @@ func (service *AppService) sendTaskRepositoriesDescriptions(taskState *githubApi
 		dataModels = make([]RepositoryDataModel, 0)
 		taskKey    string
 		doResponse = func() (err error) {
+			runtimeinfo.LogInfo("DO SEND TASK: [", sendBody.ExecutionTaskStatus.TaskKey, "]")
 			return service.doResponseToGate(
 				&sendBody,
 				service.config.GithubGateEndpoints.SendResponseTaskRepositoriesDescriptions,
@@ -97,6 +97,7 @@ func (service *AppService) sendTaskRepositoryIssues(taskState *githubApiService.
 		dataModels = make([]IssueDataModel, 0)
 		taskKey    string
 		doResponse = func() (err error) {
+			runtimeinfo.LogInfo("DO SEND TASK: [", sendBody.ExecutionTaskStatus.TaskKey, "]")
 			return service.doResponseToGate(
 				&sendBody,
 				service.config.GithubGateEndpoints.SendResponseTaskRepositoryIssues,
@@ -149,6 +150,7 @@ func (service *AppService) sendTaskRepositoriesByKeyWord(taskState *githubApiSer
 		dataModels = make([]RepositoryDataModel, 0)
 		taskKey    string
 		doResponse = func() (err error) {
+			runtimeinfo.LogInfo("DO SEND TASK: [", sendBody.ExecutionTaskStatus.TaskKey, "]")
 			return service.doResponseToGate(
 				&sendBody,
 				service.config.GithubGateEndpoints.SendResponseTaskRepositoriesByKeyWord,

@@ -47,7 +47,7 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 		sendTaskContext   *contextTaskSend
 		customFields      = dataModel.RepositoryModel{}
 		updateTaskContext = make([]dataModel.IssueModel, 0)
-		uniqueKey         = keyWord
+		uniqueKey         = "%s"
 	)
 	if taskKey, err = service.createKeyForTask(
 		RepositoriesByKeyWord,

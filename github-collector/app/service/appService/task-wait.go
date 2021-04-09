@@ -128,13 +128,13 @@ func (service *AppService) waitPaginationRepositoryIssues(
 			for {
 				nextPartOfCompletedRequests, _ := <-channelResponsesAfterRateLimit
 				countPartOfRequests++
-				runtimeinfo.LogInfo("PART OF REQUESTS: [", countPartOfRequests, "] IS COMPLETED: [", nextPartOfCompletedRequests.TaskCompleted, "]")
+				runtimeinfo.LogInfo("PART OF REQUESTS: [", countPartOfRequests, "]; IS COMPLETED: [", nextPartOfCompletedRequests.TaskCompleted, "]; TASK: [", nextPartOfCompletedRequests.TaskKey, "]")
 				service.sendTaskRepositoryIssues(nextPartOfCompletedRequests)
 				if nextPartOfCompletedRequests.TaskCompleted {
+					runtimeinfo.LogInfo("Finish")
 					break
 				}
 			}
-			runtimeinfo.LogInfo("Finish")
 			return
 		}(channelResponsesAfterRateLimit)
 		break

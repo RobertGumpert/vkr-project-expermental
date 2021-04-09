@@ -40,27 +40,39 @@ func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFr
 		textClearing.ClearASCII(&topics)
 		textClearing.ClearSymbols(&topics)
 		repository.Topics = *(textClearing.GetLemmas(&topics, false, lemmatizer))
+		if len(repository.Topics) == 0 && strings.TrimSpace(repository.Description) == "" {
+			continue
+		}
+		model := &dataModel.RepositoryModel{
+			URL:         repository.URL,
+			Name:        name,
+			Owner:       owner,
+			Topics:      repository.Topics,
+			Description: repository.Description,
+		}
+		err := service.repository.AddRepository(model)
+		if err != nil {
+			runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
+			continue
+		}
 		models = append(
 			models,
-			dataModel.RepositoryModel{
-				URL:         repository.URL,
-				Name:        name,
-				Owner:       owner,
-				Topics:      repository.Topics,
-				Description: repository.Description,
-			},
+			*model,
 		)
 	}
-	err := service.repository.AddRepositories(models)
-	if err != nil {
-		runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
-		return models
-	}
+	//err := service.repository.AddRepositories(models)
+	//if err != nil {
+	//	runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
+	//	return models
+	//}
 	return models
 }
 
 func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorIssue, repositoryID uint) (models []dataModel.IssueModel) {
 	models = make([]dataModel.IssueModel, 0)
+	if len(issues) == 0 {
+		return models
+	}
 	for _, issue := range issues {
 		if issue.Err != nil {
 			runtimeinfo.LogError("CREATE REPOSITORY DATA MODELS ERROR: ", issue.Err)
@@ -69,6 +81,9 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 		textClearing.ClearASCII(&issue.Title)
 		textClearing.ClearSymbols(&issue.Title)
 		slice := textClearing.GetLemmas(&issue.Title, false, lemmatizer)
+		if len(*slice) == 0 || len(*slice) == 1 {
+			continue
+		}
 		issue.Title = strings.Join(*slice, " ")
 		dictionary := textDictionary.TextTransformToFeaturesSlice(issue.Title)
 		frequency := textVectorized.GetFrequencyMap(dictionary)
@@ -77,6 +92,9 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 			m[item.Key] = item.Val.(float64)
 		}
 		frequencyJsonBytes, _ := json.Marshal(&dataModel.TitleFrequencyJSON{Dictionary: m})
+		if strings.TrimSpace(issue.Title) == "" {
+			continue
+		}
 		models = append(
 			models,
 			dataModel.IssueModel{
@@ -85,7 +103,6 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 				URL:                issue.URL,
 				Title:              issue.Title,
 				State:              issue.State,
-				//Body:               issue.Body,
 				TitleDictionary:    dictionary,
 				TitleFrequencyJSON: frequencyJsonBytes,
 			},

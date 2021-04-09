@@ -29,11 +29,11 @@ func (service *CollectorService) restHandlerUpdateDescriptionsRepositories(conte
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
+	runtimeinfo.LogInfo("COLLECTOR -> : UPDATE TASK [",state.ExecutionTaskStatus.TaskKey,"]")
 	service.taskManager.SetUpdateForTask(
 		state.ExecutionTaskStatus.TaskKey,
 		state,
 	)
-	runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
 	context.AbortWithStatus(http.StatusOK)
 }
 
@@ -44,11 +44,11 @@ func (service *CollectorService) restHandlerUpdateRepositoryIssues(context *gin.
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
+	runtimeinfo.LogInfo("COLLECTOR -> : UPDATE TASK [",state.ExecutionTaskStatus.TaskKey,"]")
 	service.taskManager.SetUpdateForTask(
 		state.ExecutionTaskStatus.TaskKey,
 		state,
 	)
-	runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
 	context.AbortWithStatus(http.StatusOK)
 }
 
@@ -59,10 +59,10 @@ func (service *CollectorService) restHandlerUpdateRepositoriesByKeyWord(context 
 		context.AbortWithStatus(http.StatusLocked)
 		return
 	}
+	runtimeinfo.LogInfo("COLLECTOR -> : UPDATE TASK [",state.ExecutionTaskStatus.TaskKey,"]")
 	service.taskManager.SetUpdateForTask(
 		state.ExecutionTaskStatus.TaskKey,
 		state,
 	)
-	runtimeinfo.LogInfo("(RESP. TO: -> GITHUB-COLLECTOR) COMPLETED OK")
 	context.AbortWithStatus(http.StatusOK)
 }

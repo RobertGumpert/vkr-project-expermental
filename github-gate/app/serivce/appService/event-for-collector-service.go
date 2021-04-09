@@ -50,8 +50,8 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 
 func (service *AppService) eventUpdateDownloadRepositories(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	if isTrigger, dependentsTasks := task.IsTrigger(); isTrigger {
-		for next := 0; next < len(dependentsTasks); next++ {
-			dependent := dependentsTasks[next]
+		for next := 0; next < len(*dependentsTasks); next++ {
+			dependent := (*dependentsTasks)[next]
 			repositories := dependent.GetState().GetSendContext().([]dataModel.RepositoryModel)
 			repositories = append(repositories, somethingUpdateContext.([]dataModel.RepositoryModel)...)
 		}

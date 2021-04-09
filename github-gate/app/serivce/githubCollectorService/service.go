@@ -40,7 +40,7 @@ func NewCollectorService(repository repository.IRepository, config *config.Confi
 }
 
 func (service *CollectorService) scanErrors() {
-	for _ = range service.channelErrors {
+	for err := range service.channelErrors {
 		var(
 			deleteKeys = make(map[string]struct{})
 			deleteTasks = make([]itask.ITask, 0)
@@ -48,6 +48,7 @@ func (service *CollectorService) scanErrors() {
 		//task, _ := err.GetTaskIfExist()
 		//taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		//taskAppService.GetState().SetError(err.GetError())
+		runtimeinfo.LogError(err)
 		deleteTasks = service.taskManager.FindRunBanTriggers()
 		deleteTasks = append(deleteTasks, service.taskManager.FindRunBanSimpleTasks()...)
 		for _, task := range deleteTasks {

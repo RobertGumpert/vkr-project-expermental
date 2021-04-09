@@ -2,8 +2,10 @@ package githubCollectorService
 
 import (
 	"errors"
+	"fmt"
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 )
 
 func (service *CollectorService) eventUpdateSingleDescriptionsRepositories(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
@@ -73,18 +75,22 @@ func (service *CollectorService) eventUpdateTriggerRepositoriesByKeyWord(task it
 			)
 			for ; next < len(models); next++ {
 				model := models[next]
-				dependent := dependentsTasks[next]
+				dependent := (*dependentsTasks)[next]
 				sendContext := dependent.GetState().GetSendContext().(*contextTaskSend)
+				updateKey := fmt.Sprintf(dependent.GetKey(), model.Name)
+				sendContext.JSONBody.(*jsonSendToCollectorRepositoryIssues).TaskKey = updateKey
 				sendContext.JSONBody.(*jsonSendToCollectorRepositoryIssues).Repository.Name = model.Name
 				sendContext.JSONBody.(*jsonSendToCollectorRepositoryIssues).Repository.Owner = model.Owner
 				dependent.GetState().SetSendContext(sendContext)
 				dependent.GetState().SetCustomFields(model)
+				dependent.SetKey(updateKey)
 			}
-			deleteDependentTasks = dependentsTasks[next:]
+			deleteDependentTasks = (*dependentsTasks)[next:]
 			for _, dependent := range deleteDependentTasks {
 				deleteTasksKeys[dependent.GetKey()] = struct{}{}
 			}
 			service.taskManager.DeleteTasksByKeys(deleteTasksKeys)
+			*dependentsTasks = (*dependentsTasks)[:next]
 		} else {
 			return errors.New("Isn't trigger. "), true
 		}
@@ -98,7 +104,9 @@ func (service *CollectorService) eventUpdateDependentIssuesByKeyWord(task itask.
 	cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 	repository := task.GetState().GetCustomFields().(dataModel.RepositoryModel)
 	if repository.ID == 0 {
-		return errors.New("Repository ID is 0. "), true
+		err = errors.New("Repository ID is 0. ")
+		runtimeinfo.LogError(err)
+		return err, true
 	}
 	models := service.writeIssuesToDB(cast.Issues, repository.ID)
 	if cast.ExecutionTaskStatus.TaskCompleted {

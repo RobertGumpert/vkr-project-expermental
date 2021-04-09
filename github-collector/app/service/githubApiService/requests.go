@@ -5,10 +5,8 @@ import (
 	"github-collector/pckg/requests"
 	"github-collector/pckg/runtimeinfo"
 	cmap "github.com/streamrail/concurrent-map"
-	"log"
 	"net/http"
 	"strconv"
-	"strings"
 	"time"
 )
 
@@ -103,14 +101,15 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 
 func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI, channelResponsesBeforeRateLimit, channelResponsesAfterRateLimit chan *TaskState) {
 	c.countNowExecuteTask = 1
-	runtimeinfo.LogInfo("TASK START [",requests[0].TaskKey,"]............................................................................")
+	runtimeinfo.LogInfo("TASK START [", requests[0].TaskKey, "]............................................................................")
 	var (
+		taskKey               = requests[0].TaskKey
 		taskState             = new(TaskState)
 		writeResponsesToDefer = false
 		buffer                = cmap.New()
 		writeResponse         = func(response *Response) {
 			if taskState.TaskKey == "" {
-				taskState.TaskKey = requests[0].TaskKey
+				taskState.TaskKey = taskKey
 			}
 			if taskState.Responses == nil {
 				taskState.Responses = make([]*Response, 0)
@@ -150,18 +149,17 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI,
 						channelResponsesAfterRateLimit <- taskState
 					}
 					taskState = new(TaskState)
+					taskState.TaskKey = taskKey
 					runtimeinfo.LogInfo("Repeat requests...")
 					c.freezeClient(rateLimitResetTimestamp)
 					continue
 				}
 				if len(taskState.Responses) > 5 {
-					if strings.Contains(request.URL, "page") {
-						log.Println()
-					}
 					writeResponsesToDefer = true
 					taskState.TaskCompleted = false
 					channelResponsesAfterRateLimit <- taskState
 					taskState = new(TaskState)
+					taskState.TaskKey = taskKey
 				}
 			}
 		} else {
@@ -179,7 +177,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI,
 	c.countNowExecuteTask = 0
 	close(channelResponsesAfterRateLimit)
 	close(channelResponsesBeforeRateLimit)
-	runtimeinfo.LogInfo("TASK FINISH [",requests[0].TaskKey,"]............................................................................")
+	runtimeinfo.LogInfo("TASK FINISH [", requests[0].TaskKey, "]............................................................................")
 }
 
 func newResponse(taskKey, url string, response *http.Response, err error) *Response {
