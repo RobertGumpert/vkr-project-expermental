@@ -127,11 +127,11 @@ func (service *CollectorService) eventUpdateTriggerRepositoryAndRepositoriesKeyW
 			updateContext dataModel.RepositoryModel
 		)
 		if isTrigger, dependentsTasks := task.IsTrigger(); isTrigger {
-			updateContext := service.writeRepositoriesToDB(cast.Repositories)
+			updateContext = service.writeRepositoriesToDB(cast.Repositories)[0]
 			for _, dependentTask := range *dependentsTasks {
 				customFields := dependentTask.GetState().GetCustomFields().(*compositeCustomFields)
 				if customFields.TaskType == OnlyIssues {
-					customFields.Fields = updateContext[0]
+					customFields.Fields = updateContext
 					dependentTask.GetState().SetCustomFields(customFields)
 					service.taskManager.TakeOffRunBanInQueue(dependentTask)
 				}
@@ -148,10 +148,7 @@ func (service *CollectorService) eventUpdateTriggerRepositoryAndRepositoriesKeyW
 func (service *CollectorService) eventUpdateDependentRepositoryAndRepositoriesKeyWord(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	customFields := task.GetState().GetCustomFields().(*compositeCustomFields)
 	runtimeinfo.LogInfo(customFields.TaskType)
-
 	switch customFields.TaskType {
-	case 0:
-		break
 	case CompositeByKeyWord:
 		var (
 			isTrigger, _   = task.IsTrigger()
