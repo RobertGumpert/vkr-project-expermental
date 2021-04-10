@@ -7,7 +7,10 @@ import (
 	"strings"
 )
 
-func (service *CollectorService) createTaskRepositoriesDescriptions(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (task itask.ITask, err error) {
+func (service *CollectorService) createTaskOnlyRepositoriesDescriptions(
+	taskAppService itask.ITask,
+	repositories ...dataModel.RepositoryModel,
+) (task itask.ITask, err error) {
 	var (
 		taskKey          string
 		sendTaskContext  *contextTaskSend
@@ -19,62 +22,68 @@ func (service *CollectorService) createTaskRepositoriesDescriptions(taskAppServi
 	}
 	uniqueKey = strings.Join(repositoriesName, ",")
 	if taskKey, err = service.createKeyForTask(
-		RepositoriesOnlyDescription,
+		OnlyDescriptions,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
 	}
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoriesOnlyDescription,
+		OnlyDescriptions,
 		taskKey,
 		repositories,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoriesOnlyDescription,
+		OnlyDescriptions,
 		taskKey,
 		sendTaskContext,
 		nil,
 		taskAppService,
 		service.eventRunTask,
-		service.eventUpdateSingleDescriptionsRepositories,
+		service.eventUpdateOnlyDescriptions,
 	)
 }
 
-func (service *CollectorService) createTaskRepositoryIssues(taskAppService itask.ITask, repository dataModel.RepositoryModel) (task itask.ITask, err error) {
+func (service *CollectorService) createTaskOnlyRepositoryIssues(
+	taskAppService itask.ITask,
+	repository dataModel.RepositoryModel,
+) (task itask.ITask, err error) {
 	var (
 		taskKey         string
 		sendTaskContext *contextTaskSend
 		uniqueKey       = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		RepositoryOnlyIssues,
+		OnlyIssues,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
 	}
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoryOnlyIssues,
+		OnlyIssues,
 		taskKey,
 		repository,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoryOnlyIssues,
+		OnlyIssues,
 		taskKey,
 		sendTaskContext,
 		nil,
 		taskAppService,
 		service.eventRunTask,
-		service.eventUpdateSingleRepositoryIssues,
+		service.eventUpdateOnlyIssues,
 	)
 }
 
-func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssuesByName(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (triggers []itask.ITask, err error) {
+func (service *CollectorService) createCompositeTaskSearchByName(
+	taskAppService itask.ITask,
+	repositories ...dataModel.RepositoryModel,
+) (triggers []itask.ITask, err error) {
 	var (
 		countTasks = int64(len(repositories)) * 2
 	)
@@ -103,7 +112,10 @@ func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssuesByNa
 	return triggers, nil
 }
 
-func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssuesByKeyWord(taskAppService itask.ITask, keyWord string) (trigger itask.ITask, err error) {
+func (service *CollectorService) createCompositeTaskSearchByKeyWord(
+	taskAppService itask.ITask,
+	keyWord string,
+) (trigger itask.ITask, err error) {
 	var (
 		countTasks      = int64(31)
 		dependentsTasks = make([]itask.ITask, 0)
@@ -131,6 +143,80 @@ func (service *CollectorService) createTaskRepositoriesDescriptionsAndIssuesByKe
 	)
 }
 
+func (service *CollectorService) createTaskRepositoryAndRepositoriesContainingKeyWord(
+	taskAppService itask.ITask,
+	repository dataModel.RepositoryModel,
+	keyWord string,
+) (task itask.ITask, err error) {
+	var (
+		countTasks           = int64(33)
+		repositoryDependents = make([]itask.ITask, 0)
+		keywordDependents    = make([]itask.ITask, 0)
+	)
+	if isFilled := service.taskManager.QueueIsFilled(countTasks); isFilled {
+		return nil, gotasker.ErrorQueueIsFilled
+	}
+	repositoryTrigger, err := service.createTriggerRepositoryByName(taskAppService, repository)
+	if err != nil {
+		return nil, err
+	}
+	repositoryIssues, err := service.createDependentIssuesByName(repositoryTrigger, repository)
+	if err != nil {
+		return nil, err
+	}
+	keywordRepositoriesTrigger, err := service.createTriggerRepositoriesByKeyWord(
+		taskAppService,
+		keyWord,
+	)
+	if err != nil {
+		return nil, err
+	}
+	for next := 0; next < 30; next++ {
+		keywordIssues, err := service.createDependentIssuesByKeyWord(keywordRepositoriesTrigger, next, keyWord)
+		if err != nil {
+			return nil, err
+		}
+		keywordIssues.GetState().SetCustomFields(&compositeCustomFields{
+			TaskType: CompositeByKeyWord,
+			Fields:   dataModel.RepositoryModel{},
+		})
+		keywordIssues.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
+		keywordIssues.SetType(RepositoryAndRepositoriesContainingKeyWord)
+		keywordDependents = append(keywordDependents, keywordIssues)
+	}
+	//
+	keywordRepositoriesTrigger.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	keywordRepositoriesTrigger.GetState().SetCustomFields(&compositeCustomFields{
+		TaskType: CompositeByKeyWord,
+	})
+	keywordRepositoriesTrigger.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
+	keywordRepositoriesTrigger, err = service.taskManager.ModifyTaskAsTrigger(
+		keywordRepositoriesTrigger,
+		keywordDependents...,
+	)
+	if err != nil {
+		return nil, gotasker.ErrorQueueIsFilled
+	}
+	repositoryTrigger.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	repositoryTrigger.GetState().SetCustomFields(&compositeCustomFields{
+		TaskType: OnlyDescriptions,
+		Fields:   taskAppService,
+	})
+	repositoryTrigger.GetState().SetEventUpdateState(service.eventUpdateTriggerRepositoryAndRepositoriesKeyWord)
+	repositoryIssues.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	repositoryIssues.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
+	repositoryIssues.GetState().SetCustomFields(&compositeCustomFields{
+		TaskType: OnlyIssues,
+		Fields:   dataModel.RepositoryModel{},
+	})
+	repositoryDependents = append(repositoryDependents, repositoryIssues, keywordRepositoriesTrigger)
+	service.taskManager.SetRunBan(repositoryDependents...)
+	return service.taskManager.ModifyTaskAsTrigger(
+		repositoryTrigger,
+		repositoryDependents...,
+	)
+}
+
 func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppService itask.ITask, uniqueKey string) (taskKey string, err error) {
 	var (
 		taskAppServiceKey = strings.Join(
@@ -151,7 +237,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 		"",
 	)
 	switch taskType {
-	case RepositoriesOnlyDescription:
+	case OnlyDescriptions:
 		return strings.Join(
 			[]string{
 				"task for collector:{repositories-descriptions-for",
@@ -160,7 +246,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case RepositoryOnlyIssues:
+	case OnlyIssues:
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-issues-for",
@@ -169,7 +255,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case RepositoryByName:
+	case CompositeByName:
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-description-and-issues-for",
@@ -178,7 +264,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case RepositoriesByKeyWord:
+	case CompositeByKeyWord:
 		return strings.Join(
 			[]string{
 				"task for collector:{repositories-by-keyword",
@@ -201,7 +287,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 		return nil, err
 	}
 	switch taskType {
-	case RepositoriesOnlyDescription:
+	case OnlyDescriptions:
 		var (
 			jsonData = make([]jsonSendToCollectorRepository, 0)
 		)
@@ -221,7 +307,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 				Repositories: jsonData,
 			},
 		}, nil
-	case RepositoryOnlyIssues:
+	case OnlyIssues:
 		var (
 			model    = data.(dataModel.RepositoryModel)
 			jsonData = jsonSendToCollectorRepository{
@@ -238,7 +324,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 				Repository: jsonData,
 			},
 		}, nil
-	case RepositoriesByKeyWord:
+	case CompositeByKeyWord:
 		var (
 			jsonData = data.(string)
 		)
@@ -258,11 +344,11 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 
 func (service *CollectorService) getCollectorUrlForTaskContext(taskType itask.Type) (url string, err error) {
 	switch taskType {
-	case RepositoriesOnlyDescription:
+	case OnlyDescriptions:
 		return collectorEndpointRepositoriesDescriptions, nil
-	case RepositoryOnlyIssues:
+	case OnlyIssues:
 		return collectorEndpointRepositoryIssues, nil
-	case RepositoriesByKeyWord:
+	case CompositeByKeyWord:
 		return collectorEndpointRepositoriesByKeyWord, nil
 	default:
 		return url, ErrorTaskTypeNotExist

@@ -23,7 +23,7 @@ func (service *AppService) gettingResultFromCollectorService() {
 func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	switch task.GetType() {
 	case SingleTaskDownloadRepositoryByName:
-		err = service.collectorService.CreateTaskRepositoriesByName(
+		err = service.collectorService.CreateTriggerTaskRepositoriesByName(
 			task,
 			task.GetState().GetSendContext().([]dataModel.RepositoryModel)...,
 		)
@@ -32,7 +32,7 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 		}
 		break
 	case SingleTaskDownloadRepositoryByKeyWord:
-		err = service.collectorService.CreateTaskRepositoriesByKeyWord(
+		err = service.collectorService.CreateTriggerTaskRepositoriesByKeyWord(
 			task,
 			task.GetState().GetSendContext().(string),
 		)
@@ -40,7 +40,24 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 			return true, false, nil
 		}
 		break
+	case SingleTaskRepositoryAndRepositoriesByKeyWord:
+		sendContext := task.GetState().GetSendContext().(*JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord)
+		keyWord := sendContext.KeyWord
+		repository := dataModel.RepositoryModel{
+			Name:  sendContext.Repository.Name,
+			Owner: sendContext.Repository.Owner,
+		}
+		err = service.collectorService.CreateTaskRepositoryAndRepositoriesByKeyWord(
+			task,
+			repository,
+			keyWord,
+		)
+		if err != nil {
+			return true, false, nil
+		}
+		break
 	}
+
 	return false, false, nil
 }
 
@@ -115,6 +132,29 @@ func (service *AppService) createTaskDownloadRepositoriesByKeyWord(taskType itas
 		taskType,
 		taskKey,
 		jsonModel.KeyWord,
+		updateContext,
+		customFields,
+		service.eventRunTaskDownloadRepositories,
+		service.eventUpdateDownloadRepositories,
+	)
+}
+
+func (service *AppService) createTaskDownloadRepositoryAndRepositoriesByKeyWord(taskType itask.Type, jsonModel *JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord) (task itask.ITask, err error) {
+	var (
+		taskKey       string
+		updateContext = make([]dataModel.RepositoryModel, 0)
+		customFields  = service.channelResultsFromCollector
+	)
+	taskKey = strings.Join([]string{
+		"download-repository-and-repositories-by-keyword",
+		"{",
+		jsonModel.KeyWord,
+		"}",
+	}, "")
+	return service.taskManager.CreateTask(
+		taskType,
+		taskKey,
+		jsonModel,
 		updateContext,
 		customFields,
 		service.eventRunTaskDownloadRepositories,

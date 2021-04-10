@@ -81,3 +81,24 @@ func (service *AppService) CreateTaskDownloadRepositoriesByKeyWord(apiJsonModel 
 	}
 	return nil
 }
+
+func (service *AppService) CreateTaskDownloadRepositoryAndRepositoriesByKeyWord(apiJsonModel *JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord) (err error) {
+	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
+		return gotasker.ErrorQueueIsFilled
+	}
+	if strings.TrimSpace(apiJsonModel.KeyWord) == "" {
+		return ErrorEmptyOrIncompleteJSONData
+	}
+	task, err := service.createTaskDownloadRepositoryAndRepositoriesByKeyWord(
+		SingleTaskRepositoryAndRepositoriesByKeyWord,
+		apiJsonModel,
+	)
+	if err != nil {
+		return err
+	}
+	err = service.taskManager.AddTaskAndTask(task)
+	if err != nil {
+		return gotasker.ErrorQueueIsFilled
+	}
+	return nil
+}

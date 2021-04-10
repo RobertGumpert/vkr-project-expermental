@@ -48,7 +48,7 @@ func (service *CollectorService) scanErrors() {
 		//task, _ := err.GetTaskIfExist()
 		//taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		//taskAppService.GetState().SetError(err.GetError())
-		runtimeinfo.LogError(err)
+		runtimeinfo.LogError(err.GetError())
 		deleteTasks = service.taskManager.FindRunBanTriggers()
 		deleteTasks = append(deleteTasks, service.taskManager.FindRunBanSimpleTasks()...)
 		for _, task := range deleteTasks {
@@ -60,14 +60,14 @@ func (service *CollectorService) scanErrors() {
 }
 
 
-func (service *CollectorService) CreateTaskDescriptionRepositories(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
+func (service *CollectorService) CreateSimpleTaskRepositoriesDescriptions(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
 	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
 	if len(repositories) == 0 {
 		return errors.New("Size of slice Data Models Repository is 0. ")
 	}
-	task, err := service.createTaskRepositoriesDescriptions(
+	task, err := service.createTaskOnlyRepositoriesDescriptions(
 		taskAppService,
 		repositories...,
 	)
@@ -81,11 +81,11 @@ func (service *CollectorService) CreateTaskDescriptionRepositories(taskAppServic
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoryIssues(taskAppService itask.ITask, repository dataModel.RepositoryModel) (err error) {
+func (service *CollectorService) CreateSimpleTaskRepositoryIssues(taskAppService itask.ITask, repository dataModel.RepositoryModel) (err error) {
 	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
-	task, err := service.createTaskRepositoryIssues(
+	task, err := service.createTaskOnlyRepositoryIssues(
 		taskAppService,
 		repository,
 	)
@@ -99,14 +99,14 @@ func (service *CollectorService) CreateTaskRepositoryIssues(taskAppService itask
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoriesByName(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
+func (service *CollectorService) CreateTriggerTaskRepositoriesByName(taskAppService itask.ITask, repositories ...dataModel.RepositoryModel) (err error) {
 	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
 	if len(repositories) == 0 {
 		return errors.New("Size of slice Data Models Repository is 0. ")
 	}
-	triggers, err := service.createTaskRepositoriesDescriptionsAndIssuesByName(
+	triggers, err := service.createCompositeTaskSearchByName(
 		taskAppService,
 		repositories...
 	)
@@ -122,12 +122,31 @@ func (service *CollectorService) CreateTaskRepositoriesByName(taskAppService ita
 	return nil
 }
 
-func (service *CollectorService) CreateTaskRepositoriesByKeyWord(taskAppService itask.ITask, keyWord string) (err error) {
+func (service *CollectorService) CreateTriggerTaskRepositoriesByKeyWord(taskAppService itask.ITask, keyWord string) (err error) {
 	if taskAppService == nil {
 		return ErrorTaskIsNilPointer
 	}
-	trigger, err := service.createTaskRepositoriesDescriptionsAndIssuesByKeyWord(
+	trigger, err := service.createCompositeTaskSearchByKeyWord(
 		taskAppService,
+		keyWord,
+	)
+	if err != nil {
+		return err
+	}
+	err = service.taskManager.AddTaskAndTask(trigger)
+	if err != nil {
+		runtimeinfo.LogError("RUNNING TRIGGER [", trigger.GetKey(), "] COMPLETED WITH ERROR: ", err)
+	}
+	return err
+}
+
+func (service *CollectorService) CreateTaskRepositoryAndRepositoriesByKeyWord(taskAppService itask.ITask, repository dataModel.RepositoryModel, keyWord string) (err error) {
+	if taskAppService == nil {
+		return ErrorTaskIsNilPointer
+	}
+	trigger, err := service.createTaskRepositoryAndRepositoriesContainingKeyWord(
+		taskAppService,
+		repository,
 		keyWord,
 	)
 	if err != nil {

@@ -16,7 +16,7 @@ func (service *CollectorService) createTriggerRepositoriesByKeyWord(taskAppServi
 		uniqueKey         = keyWord
 	)
 	if taskKey, err = service.createKeyForTask(
-		RepositoriesByKeyWord,
+		CompositeByKeyWord,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
@@ -24,33 +24,35 @@ func (service *CollectorService) createTriggerRepositoriesByKeyWord(taskAppServi
 	}
 	taskKey = strings.Join([]string{"(trigger)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoriesByKeyWord,
+		CompositeByKeyWord,
 		taskKey,
 		keyWord,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoriesByKeyWord,
+		CompositeByKeyWord,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
 		customFields,
 		service.eventRunTask,
-		service.eventUpdateTriggerRepositoriesByKeyWord,
+		service.eventUpdateTriggerByKeyWord,
 	)
 }
 
 func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itask.ITask, number int, keyWord string) (constructor itask.ITask, err error) {
 	var (
-		taskKey           string
-		sendTaskContext   *contextTaskSend
-		customFields      = dataModel.RepositoryModel{}
+		taskKey         string
+		sendTaskContext *contextTaskSend
+		customFields    = &compositeCustomFields{
+			Fields: dataModel.RepositoryModel{},
+		}
 		updateTaskContext = make([]dataModel.IssueModel, 0)
 		uniqueKey         = "%s"
 	)
 	if taskKey, err = service.createKeyForTask(
-		RepositoriesByKeyWord,
+		CompositeByKeyWord,
 		triggerTask.GetState().GetCustomFields().(itask.ITask),
 		uniqueKey,
 	); err != nil {
@@ -59,7 +61,7 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 	dependentNumberKey := strings.Join([]string{"(dependent-", strconv.Itoa(number), ")"}, "")
 	taskKey = strings.Join([]string{dependentNumberKey, taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoryOnlyIssues,
+		OnlyIssues,
 		taskKey,
 		dataModel.RepositoryModel{
 			Name:  keyWord,
@@ -69,13 +71,13 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoriesByKeyWord,
+		CompositeByKeyWord,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
 		customFields,
 		service.eventRunTask,
-		service.eventUpdateDependentIssuesByKeyWord,
+		service.eventUpdateDependentKeyWord,
 	)
 }
 
@@ -88,7 +90,7 @@ func (service *CollectorService) createTriggerRepositoryByName(taskAppService it
 		uniqueKey         = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		RepositoryByName,
+		CompositeByName,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
@@ -96,20 +98,20 @@ func (service *CollectorService) createTriggerRepositoryByName(taskAppService it
 	}
 	taskKey = strings.Join([]string{"(trigger)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoriesOnlyDescription,
+		OnlyDescriptions,
 		taskKey,
 		[]dataModel.RepositoryModel{repository},
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoryByName,
+		CompositeByName,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
 		customFields,
 		service.eventRunTask,
-		service.eventUpdateTriggerRepositoryByName,
+		service.eventUpdateTriggerByName,
 	)
 }
 
@@ -122,7 +124,7 @@ func (service *CollectorService) createDependentIssuesByName(triggerTask itask.I
 		uniqueKey         = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		RepositoryByName,
+		CompositeByName,
 		triggerTask.GetState().GetCustomFields().(itask.ITask),
 		uniqueKey,
 	); err != nil {
@@ -130,19 +132,19 @@ func (service *CollectorService) createDependentIssuesByName(triggerTask itask.I
 	}
 	taskKey = strings.Join([]string{"(dependent)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		RepositoryOnlyIssues,
+		OnlyIssues,
 		taskKey,
 		repository,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		RepositoryByName,
+		CompositeByName,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
 		customFields,
 		service.eventRunTask,
-		service.eventUpdateDependentIssuesByName,
+		service.eventUpdateDependentByName,
 	)
 }

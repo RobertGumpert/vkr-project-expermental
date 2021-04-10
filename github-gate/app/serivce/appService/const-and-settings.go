@@ -9,12 +9,11 @@ var (
 	ErrorEmptyOrIncompleteJSONData = errors.New("Empty Or Incomplete JSON Data. ")
 )
 
-
 const (
-	SingleTaskDownloadRepositoryByName    itask.Type = 10
-	SingleTaskDownloadRepositoryByKeyWord itask.Type = 11
+	SingleTaskDownloadRepositoryByName           itask.Type = 10
+	SingleTaskDownloadRepositoryByKeyWord        itask.Type = 11
+	SingleTaskRepositoryAndRepositoriesByKeyWord itask.Type = 12
 )
-
 
 //
 // JSON
@@ -31,4 +30,9 @@ type JsonSingleTaskDownloadRepositoriesByName struct {
 
 type JsonSingleTaskDownloadRepositoriesByKeyWord struct {
 	KeyWord string `json:"key_word"`
+}
+
+type JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord struct {
+	Repository JsonRepositoryName `json:"repository"`
+	KeyWord    string             `json:"key_word"`
 }

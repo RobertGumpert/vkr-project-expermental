@@ -12,6 +12,7 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 		{
 			collectorGroup.POST("/by/name", service.restHandlerDownloadRepositoriesByName)
 			collectorGroup.POST("/by/keyword", service.restHandlerDownloadRepositoriesByKeyWord)
+			collectorGroup.POST("/by/keyword/and/by/name", service.restHandlerDownloadRepositoryAndRepositoriesByKeyWord)
 		}
 	}
 }
@@ -38,6 +39,21 @@ func (service *AppService) restHandlerDownloadRepositoriesByKeyWord(ctx *gin.Con
 		return
 	}
 	err := service.CreateTaskDownloadRepositoriesByKeyWord(
+		requestData,
+	)
+	if err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+	}
+	ctx.AbortWithStatus(http.StatusOK)
+}
+
+func (service *AppService) restHandlerDownloadRepositoryAndRepositoriesByKeyWord(ctx *gin.Context) {
+	requestData := new(JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord)
+	if err := ctx.BindJSON(requestData); err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := service.CreateTaskDownloadRepositoryAndRepositoriesByKeyWord(
 		requestData,
 	)
 	if err != nil {

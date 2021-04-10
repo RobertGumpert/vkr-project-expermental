@@ -9,14 +9,14 @@ import (
 func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
 	deleteTasks = make(map[string]struct{})
 	switch task.GetType() {
-	case RepositoriesOnlyDescription:
+	case OnlyDescriptions:
 		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		repositories := taskAppService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 		runtimeinfo.LogInfo("TASK COMPLETED [", task.GetKey(), "] LEN. [", len(repositories), "]")
 		deleteTasks[task.GetKey()] = struct{}{}
 		taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
 		break
-	case RepositoryOnlyIssues:
+	case OnlyIssues:
 		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		repositoryID := taskAppService.GetState().GetCustomFields().(uint)
 		issues := taskAppService.GetState().GetUpdateContext().([]dataModel.IssueModel)
@@ -24,11 +24,27 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 		deleteTasks[task.GetKey()] = struct{}{}
 		taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
 		break
-	case RepositoriesByKeyWord:
-		deleteTasks = service.manageCompletedTaskRepositoriesByKeyWord(task)
+	case CompositeByKeyWord:
+		var (
+			triggerIsCompleted bool
+			trigger            itask.ITask
+		)
+		deleteTasks, trigger, triggerIsCompleted = service.manageCompletedTaskRepositoriesByKeyWord(task)
+		if triggerIsCompleted {
+			deleteTasks[trigger.GetKey()] = struct{}{}
+			repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+			taskAppService := trigger.GetState().GetCustomFields().(itask.ITask)
+			taskAppService.GetState().SetUpdateContext(repositories)
+			taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+		} else {
+			deleteTasks = nil
+		}
 		break
-	case RepositoryByName:
+	case CompositeByName:
 		deleteTasks = service.manageCompletedTaskRepositoryByName(task)
+		break
+	case RepositoryAndRepositoriesContainingKeyWord:
+		deleteTasks = service.manageCompletedRepositoryAndRepositoriesByKeyWord(task)
 		break
 	}
 	return deleteTasks
@@ -64,15 +80,16 @@ func (service *CollectorService) manageCompletedTaskRepositoryByName(task itask.
 	return deleteTasks
 }
 
-func (service *CollectorService) manageCompletedTaskRepositoriesByKeyWord(task itask.ITask) (deleteTasks map[string]struct{}) {
+func (service *CollectorService) manageCompletedTaskRepositoriesByKeyWord(task itask.ITask) (deleteTasks map[string]struct{}, trigger itask.ITask, triggerIsCompleted bool) {
 	deleteTasks = make(map[string]struct{})
 	var (
 		countCompletedDependentTasks int
-		triggerIsCompleted           = false
-		taskAppService               itask.ITask
-		isDependent, trigger         = task.IsDependent()
+		isDependent, isTrigger       = false, false
 	)
-	if isDependent {
+	triggerIsCompleted = false
+	isDependent, trigger = task.IsDependent()
+	isTrigger, _ = task.IsTrigger()
+	if isDependent && !isTrigger {
 		_, dependentsTasks := trigger.IsTrigger()
 		repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 		for _, dependentTask := range *dependentsTasks {
@@ -82,17 +99,57 @@ func (service *CollectorService) manageCompletedTaskRepositoriesByKeyWord(task i
 			deleteTasks[dependentTask.GetKey()] = struct{}{}
 		}
 		if len(repositories) == countCompletedDependentTasks {
-			deleteTasks[trigger.GetKey()] = struct{}{}
 			triggerIsCompleted = true
 		}
+	}
+	return deleteTasks, trigger, triggerIsCompleted
+}
+
+func (service *CollectorService) manageCompletedRepositoryAndRepositoriesByKeyWord(task itask.ITask) (deleteTasks map[string]struct{}) {
+	deleteTasks = make(map[string]struct{})
+	customFields := task.GetState().GetCustomFields().(*compositeCustomFields)
+	switch customFields.TaskType {
+	case CompositeByKeyWord:
+		var (
+			countCompletedDependentTasks     int
+			triggerIsCompleted               bool
+			triggerSearchByKeyWord           itask.ITask
+			repositoryTrigger                itask.ITask
+			repositoryTriggerDependentsTasks *[]itask.ITask
+		)
+		deleteTasks, triggerSearchByKeyWord, triggerIsCompleted = service.manageCompletedTaskRepositoriesByKeyWord(task)
 		if triggerIsCompleted {
-			repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-			taskAppService = trigger.GetState().GetCustomFields().(itask.ITask)
+			updateContext := triggerSearchByKeyWord.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+			taskAppService := triggerSearchByKeyWord.GetState().GetCustomFields().(itask.ITask)
+			repositories := taskAppService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+			repositories = append(repositories, updateContext...)
 			taskAppService.GetState().SetUpdateContext(repositories)
-			taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+			_, repositoryTrigger = triggerSearchByKeyWord.IsDependent()
+			_, repositoryTriggerDependentsTasks = repositoryTrigger.IsTrigger()
+			for _, dependentTask := range *repositoryTriggerDependentsTasks {
+				if dependentTask.GetState().IsCompleted() {
+					countCompletedDependentTasks++
+				}
+				deleteTasks[dependentTask.GetKey()] = struct{}{}
+			}
+			if countCompletedDependentTasks == len(*repositoryTriggerDependentsTasks) {
+				deleteTasks[repositoryTrigger.GetKey()] = struct{}{}
+				taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+			} else {
+				deleteTasks = nil
+			}
 		} else {
 			deleteTasks = nil
 		}
+		break
+	case OnlyDescriptions:
+		updateContext := task.GetState().GetUpdateContext().(dataModel.RepositoryModel)
+		taskAppService := customFields.Fields.(itask.ITask)
+		repositories := taskAppService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+		repositories = append(repositories, updateContext)
+		taskAppService.GetState().SetUpdateContext(repositories)
+		deleteTasks = nil
+		break
 	}
 	return deleteTasks
 }

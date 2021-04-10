@@ -23,6 +23,13 @@ func (service *AppService) eventManageCompletedTasks(task itask.ITask) (deleteTa
 		}
 		deleteTasks[task.GetKey()] = struct{}{}
 		break
+	case SingleTaskRepositoryAndRepositoriesByKeyWord:
+		repositories := task.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+		for _, repository := range repositories {
+			log.Println(repository.ID)
+		}
+		deleteTasks[task.GetKey()] = struct{}{}
+		break
 	}
 	return deleteTasks
 }

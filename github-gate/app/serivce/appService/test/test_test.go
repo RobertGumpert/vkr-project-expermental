@@ -1,4 +1,4 @@
-package testSingleTasks
+package test
 
 import (
 	"github-gate/app/config"

@@ -105,7 +105,7 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
 		)
-		err := service.CreateTaskDescriptionRepositories(
+		err := service.CreateSimpleTaskRepositoriesDescriptions(
 			task,
 			getRepositoriesModels(state.Repositories...)...,
 		)
@@ -137,7 +137,7 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.IssueModel, 0),
 			repo.ID, nil, nil,
 		)
-		err = service.CreateTaskRepositoryIssues(
+		err = service.CreateSimpleTaskRepositoryIssues(
 			task,
 			getRepositoriesModels(state.Repositories[0])[0],
 		)
@@ -162,7 +162,7 @@ func TestTaskFlow(t *testing.T) {
 			make([]dataModel.RepositoryModel, 0),
 			nil, nil, nil,
 		)
-		err := service.CreateTaskRepositoriesByName(
+		err := service.CreateTriggerTaskRepositoriesByName(
 			task,
 			getRepositoriesModels(state.Repositories...)...,
 		)

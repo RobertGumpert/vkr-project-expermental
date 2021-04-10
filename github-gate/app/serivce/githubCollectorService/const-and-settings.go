@@ -13,11 +13,21 @@ const (
 )
 
 const (
-	RepositoriesOnlyDescription itask.Type = 0
-	RepositoryOnlyIssues        itask.Type = 1
-	RepositoryByName            itask.Type = 2
-	RepositoriesByKeyWord       itask.Type = 3
+	OnlyDescriptions                           itask.Type = 0
+	OnlyIssues                                 itask.Type = 1
+	CompositeByName                            itask.Type = 2
+	CompositeByKeyWord                         itask.Type = 3
+	RepositoryAndRepositoriesContainingKeyWord itask.Type = 4
 )
+
+//
+// COMPOSITE CUSTOM FIELDS----------------------------------------------------------------------------------------------
+//
+
+type compositeCustomFields struct {
+	TaskType itask.Type
+	Fields interface{}
+}
 
 //
 // CONTEXT--------------------------------------------------------------------------------------------------------------
