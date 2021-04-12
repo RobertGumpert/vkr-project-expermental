@@ -26,14 +26,16 @@ type Config struct {
 	//
 	// SETTINGS COMPARATOR
 	//
-	MaxCountThreads                  int     `json:"max_count_threads"`
-	MinimumTextCompletenessThreshold float64 `json:"minimum_text_completeness_threshold"`
+	MaxCountThreads                       int     `json:"max_count_threads"`
+	MinimumTextCompletenessThreshold      float64 `json:"minimum_text_completeness_threshold"`
+	MaximumDurationDatabaseQueryInMinutes int     `json:"maximum_duration_database_query_in_minutes"`
 	//
 	// GITHUB-GATE
 	//
 	GithubGateAddress   string `json:"github_gate_address"`
 	GithubGateEndpoints struct {
-		SendResultTaskCompareIssuesInPairs string `json:"send_result_task_compare_issues_in_pairs"`
+		SendResultTaskCompareGroup  string `json:"send_result_task_compare_group"`
+		SendResultTaskCompareBeside string `json:"send_result_task_compare_beside"`
 	} `json:"github_gate_endpoints"`
 }
 

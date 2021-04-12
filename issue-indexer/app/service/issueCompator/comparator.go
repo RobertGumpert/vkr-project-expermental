@@ -4,6 +4,7 @@ import (
 	"errors"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"gorm.io/gorm"
 	"runtime"
 	"sync"
@@ -44,6 +45,9 @@ func (comparator *Comparator) DOCompare(rules *CompareRules, result *CompareResu
 }
 
 func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules *CompareRules, result *CompareResult, intersections map[uint]countIntersectionForIssues, wg *sync.WaitGroup) {
+	var(
+		nearestIssues = make([]dataModel.NearestIssuesModel, 0)
+	)
 	for i := from; i < to; i++ {
 		for j := 0; j < len(whatToCompareWith); j++ {
 			a := whatToCompare[i]
@@ -54,13 +58,7 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 				rules,
 			)
 			if isNearest == nil {
-				err := comparator.db.AddNearestIssues(nearest)
-				if err != nil {
-					result.nearestCompletedWithError = append(
-						result.nearestCompletedWithError,
-						nearest,
-					)
-				}
+				nearestIssues = append(nearestIssues, nearest)
 			}
 			comparator.mx.Lock()
 			intersection, repositoryIsExist := intersections[b.RepositoryID]
@@ -75,6 +73,12 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 				intersection[b.ID] = intersection[b.ID] + 1
 			}
 			comparator.mx.Unlock()
+		}
+	}
+	if len(nearestIssues) != 0 {
+		err := comparator.db.AddListNearestIssues(nearestIssues)
+		if err != nil {
+			runtimeinfo.LogError(err)
 		}
 	}
 	runtime.GC()

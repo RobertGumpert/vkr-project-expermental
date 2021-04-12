@@ -25,7 +25,7 @@ func NewSampler(db repository.IRepository, timeOutContext time.Duration) *Implem
 func (implement *ImplementRules) IssuesOnlyFromGroupRepositories(rules *issueCompator.CompareRules) (toCompare, doNotCompare []dataModel.IssueModel, err error) {
 	var (
 		ctx, cancel          = context.WithTimeout(context.Background(), implement.timeOutContext)
-		condition            = rules.GetSamplingCondition().(ConditionIssuesFromGroupRepository)
+		condition            = rules.GetSamplingCondition().(*ConditionIssuesFromGroupRepository)
 		channelGettingIssues = make(chan []dataModel.IssueModel)
 	)
 	defer cancel()

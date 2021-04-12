@@ -3,8 +3,8 @@ module github-gate
 go 1.15
 
 require (
-	github.com/RobertGumpert/gotasker v1.0.20
-	github.com/RobertGumpert/vkr-pckg v1.0.13
+	github.com/RobertGumpert/gotasker v1.0.21
+	github.com/RobertGumpert/vkr-pckg v1.0.16
 	github.com/aaaton/golem/v4 v4.0.1
 	github.com/aaaton/golem/v4/dicts/en v1.0.1
 	github.com/gin-contrib/cors v1.3.1

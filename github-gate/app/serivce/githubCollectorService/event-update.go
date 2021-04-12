@@ -114,9 +114,6 @@ func (service *CollectorService) eventUpdateDependentKeyWord(task itask.ITask, s
 	if cast.ExecutionTaskStatus.TaskCompleted {
 		task.GetState().SetCompleted(true)
 	}
-	//updateContext := task.GetState().GetUpdateContext().([]dataModel.IssueModel)
-	//updateContext = append(updateContext, models...)
-	//task.GetState().SetUpdateContext(updateContext)
 	return nil, false
 }
 

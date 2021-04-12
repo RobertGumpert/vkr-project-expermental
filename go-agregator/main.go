@@ -40,6 +40,27 @@ func main() {
 	e := en.New()
 	lemmatizer, _ := golem.New(e)
 
+	scanner := bufio.NewScanner(os.Stdin)
+	for scanner.Scan() {
+		if scanner.Text() == "end" {
+			os.Exit(1)
+		}
+		str := scanner.Text()
+		textClearing.ClearMarkdown(&str)
+		textClearing.ClearByRegex(&str, textClearing.UrlRegex)
+		textClearing.ClearByRegex(&str, textClearing.AsciiRegex)
+		textClearing.ClearByRegex(&str, textClearing.CodeRegex)
+		slice := textClearing.GetLemmas(&str, false, lemmatizer)
+		txt := strings.Join(*slice, " ")
+		textClearing.ClearByRegex(&txt, textClearing.SymbolsRegex)
+		err := textClearing.ClearSingleCharacters(&txt)
+		if err != nil {
+			fmt.Println(err)
+			continue
+		}
+		fmt.Println(txt)
+	}
+
 	defer func() {
 		if r := recover(); r != nil {
 			fmt.Println("Panic: ", r)
@@ -55,7 +76,7 @@ func main() {
 
 	//str := "Hello, мир сделай f myClass.myMethod(a), MyClass.MyMethod(a) / myclass.mymethod(a) fast? [Yes] or [no]? d f g"
 	//str := "Hello f / \r\n? [Yes] or [no]? d f g Hello-my-friend f / \r\n? [Yes] or [No]? d f g [yes] or [no]"
-	str := "refactor(browser): merge static & dynamic platforms"
+	str := ""
 
 	doClearTopics := textClearing.CustomClear(
 		false,
@@ -125,13 +146,13 @@ func main() {
 	//cosineDistance(repositoriesFiles, "descriptions", "result")
 
 	fmt.Println("Final...")
-	scanner := bufio.NewScanner(os.Stdin)
-	for scanner.Scan() {
-		fmt.Println(scanner.Text())
-		if scanner.Text() == "end" {
-			os.Exit(1)
-		}
-	}
+	//scanner := bufio.NewScanner(os.Stdin)
+	//for scanner.Scan() {
+	//	fmt.Println(scanner.Text())
+	//	if scanner.Text() == "end" {
+	//		os.Exit(1)
+	//	}
+	//}
 	return
 }
 

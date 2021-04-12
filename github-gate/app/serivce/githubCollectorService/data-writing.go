@@ -12,6 +12,10 @@ import (
 	"strings"
 )
 
+const (
+	maxBodyLength = 1000000
+)
+
 var (
 	lemmatizer, _ = golem.New(en.New())
 )
@@ -78,9 +82,22 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 			runtimeinfo.LogError("CREATE REPOSITORY DATA MODELS ERROR: ", issue.Err)
 			continue
 		}
+		//
+		textClearing.ClearMarkdown(&issue.Body)
+		textClearing.ClearByRegex(&issue.Body, textClearing.UrlRegex)
+		textClearing.ClearByRegex(&issue.Body, textClearing.AsciiRegex)
+		textClearing.ClearByRegex(&issue.Body, textClearing.CodeRegex)
+		slice := textClearing.GetLemmas(&issue.Body, false, lemmatizer)
+		body := strings.Join(*slice, " ")
+		textClearing.ClearByRegex(&body, textClearing.SymbolsRegex)
+		_ = textClearing.ClearSingleCharacters(&body)
+		if len(body) >= maxBodyLength {
+			body = body[:maxBodyLength]
+		}
+		//
 		textClearing.ClearASCII(&issue.Title)
 		textClearing.ClearSymbols(&issue.Title)
-		slice := textClearing.GetLemmas(&issue.Title, false, lemmatizer)
+		slice = textClearing.GetLemmas(&issue.Title, false, lemmatizer)
 		if len(*slice) == 0 || len(*slice) == 1 {
 			continue
 		}
@@ -105,6 +122,7 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 				State:              issue.State,
 				TitleDictionary:    dictionary,
 				TitleFrequencyJSON: frequencyJsonBytes,
+				Body:               body,
 			},
 		)
 	}

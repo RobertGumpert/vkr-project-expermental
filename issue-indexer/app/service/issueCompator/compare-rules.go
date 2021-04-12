@@ -13,15 +13,15 @@ type CompareRules struct {
 	samplingCondition   interface{}
 }
 
-func (c CompareRules) GetSamplingCondition() interface{} {
+func (c *CompareRules) GetSamplingCondition() interface{} {
 	return c.samplingCondition
 }
 
-func (c CompareRules) GetComparisonCondition() interface{} {
+func (c *CompareRules) GetComparisonCondition() interface{} {
 	return c.comparisonCondition
 }
 
-func (c CompareRules) GetRepositoryID() uint {
+func (c *CompareRules) GetRepositoryID() uint {
 	return c.repositoryID
 }
 
