@@ -27,6 +27,8 @@ github.com/RobertGumpert/vkr-pckg v1.0.16 h1:G0Z6PjJuA42JEJpRdETLoqoZpbQeKOyyucB
 github.com/RobertGumpert/vkr-pckg v1.0.16/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/RobertGumpert/vkr-pckg v1.0.17 h1:9NFhNN+ElAnbvqH6vZPfb/giHwAiit7vHDaWpJux/Hc=
 github.com/RobertGumpert/vkr-pckg v1.0.17/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.18 h1:wcYAuN1THqS0viXpKRclQ1VrcUVt1kgpLEiM30KNQvk=
+github.com/RobertGumpert/vkr-pckg v1.0.18/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/aaaton/golem/v4 v4.0.0/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=
 github.com/aaaton/golem/v4 v4.0.1 h1:jvnnTmzdfZC8cUGIo6obIcnmB3stTaf5Uw64OMx3C84=
 github.com/aaaton/golem/v4 v4.0.1/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=

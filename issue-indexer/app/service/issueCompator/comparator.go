@@ -79,6 +79,12 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 		err := comparator.db.AddListNearestIssues(nearestIssues)
 		if err != nil {
 			runtimeinfo.LogError(err)
+			for _, nearest := range nearestIssues {
+				err := comparator.db.AddNearestIssues(nearest)
+				if err != nil {
+					runtimeinfo.LogError(err)
+				}
+			}
 		}
 	}
 	runtime.GC()

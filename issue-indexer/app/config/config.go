@@ -43,8 +43,9 @@ func NewConfig() *Config {
 	return &Config{}
 }
 
+
 func (c *Config) Read() *Config {
-	absPath, err := filepath.Abs("../github-gate/data/config/config.json")
+	absPath, err := filepath.Abs("../issue-indexer/data/config/config.json")
 	if err != nil {
 		runtimeinfo.LogFatal(err)
 	}

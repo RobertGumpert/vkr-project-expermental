@@ -19,6 +19,7 @@ func NewServer(config *config.Config) *server {
 		config:      config,
 	}
 	//
+	gin.SetMode(gin.ReleaseMode)
 	engine, run := s.createServerEngine(s.config.Port)
 	s.RunServer = run
 	s.engine = engine

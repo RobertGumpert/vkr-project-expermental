@@ -4,15 +4,19 @@ import (
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"issue-indexer/app/config"
+	"issue-indexer/app/service/appService"
+	"runtime"
 )
 
 var (
-	POSTGRES    *repository.SQLRepository
-	SERVER      *server
-	CONFIG      *config.Config
+	APPSERVICE *appService.AppService
+	POSTGRES   *repository.SQLRepository
+	SERVER     *server
+	CONFIG     *config.Config
 )
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
 	CONFIG = config.NewConfig().Read()
 	POSTGRES = repository.NewSQLRepository(
 		repository.SQLCreateConnection(
@@ -31,6 +35,8 @@ func main() {
 			runtimeinfo.LogFatal(err)
 		}
 	}()
+	APPSERVICE = appService.NewAppService(POSTGRES, CONFIG)
 	SERVER = NewServer(CONFIG)
+	APPSERVICE.ConcatTheirRestHandlers(SERVER.engine)
 	SERVER.RunServer()
 }
