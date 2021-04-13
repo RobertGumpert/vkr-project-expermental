@@ -1,0 +1,18 @@
+{
+  "port": "45000",
+  "postgres": {
+    "username": "postgres",
+    "password": "toster123",
+    "port": "5432",
+    "db_name": "vkr-db",
+    "ssl": "disable"
+  },
+  "maximum_size_of_queue": 2,
+  "minimum_cosine_distance_threshold": 40.0,
+  "github_gate_address": "http://127.0.0.1:54000",
+  "github_gate_endpoints": {
+    "send_result_task_reindexing_for_all": "/task/api/repositoryindexer/update/reindexing/for/all",
+    "send_result_task_reindexing_for_repository": "/task/api/repositoryindexer/update/reindexing/for/repository",
+    "send_result_task_reindexing_for_group_repositories": "/task/api/repositoryindexer/update/reindexing/for/group/repositories"
+  }
+}

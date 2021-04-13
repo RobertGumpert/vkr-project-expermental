@@ -16,8 +16,20 @@ type Config struct {
 		DbName   string `json:"db_name"`
 		Ssl      string `json:"ssl"`
 	} `json:"postgres"`
-	SizeQueueTasksForGithubCollectors int64    `json:"size_queue_tasks_for_github_collectors"`
-	GithubCollectorsAddresses         []string `json:"github_collectors_addresses"`
+	//
+	//
+	//
+	MaximumSizeOfQueue             int64   `json:"maximum_size_of_queue"`
+	MinimumCosineDistanceThreshold float64 `json:"minimum_cosine_distance_threshold"`
+	//
+	// GITHUB-GATE
+	//
+	GithubGateAddress   string `json:"github_gate_address"`
+	GithubGateEndpoints struct {
+		SendResultTaskReindexingForAll               string `json:"send_result_task_reindexing_for_all"`
+		SendResultTaskReindexingForRepository        string `json:"send_result_task_reindexing_for_repository"`
+		SendResultTaskReindexingForGroupRepositories string `json:"send_result_task_reindexing_for_group_repositories"`
+	} `json:"github_gate_endpoints"`
 }
 
 func NewConfig() *Config {
@@ -25,7 +37,7 @@ func NewConfig() *Config {
 }
 
 func (c *Config) Read() *Config {
-	absPath, err := filepath.Abs("../github-gate/data/config/config.json")
+	absPath, err := filepath.Abs("../repository-indexer/data/config/config.json")
 	if err != nil {
 		runtimeinfo.LogFatal(err)
 	}

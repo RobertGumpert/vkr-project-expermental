@@ -26,20 +26,41 @@ func NearestRepositories(repositories string) (interface{}, error) {
 	var (
 		split   = strings.Split(repositories, ",")
 		nearest = dataModel.NearestRepositoriesJSON{
-			Repositories: make([]dataModel.RepositoryModel, 0),
+			Repositories: make(map[uint]float64),
 		}
 	)
 	if len(split) == 0 {
 		return nearest, nil
 	}
 	for i := 0; i < len(split); i++ {
-		id, err := strconv.ParseUint(split[i], 10, 64)
+		var (
+			objToString                  []string
+			distanceToString, idToString string
+			id                           uint
+			distance                     float64
+		)
+		objToString = strings.Split(split[i], ":")
+		if strings.TrimSpace(objToString[0]) != "" {
+			idToString = objToString[0]
+		} else {
+			continue
+		}
+		if strings.TrimSpace(objToString[1]) != "" {
+			distanceToString = objToString[1]
+		} else {
+			continue
+		}
+		id64, err := strconv.ParseUint(idToString, 10, 64)
+		if err != nil {
+			continue
+		} else {
+			id = uint(id64)
+		}
+		distance, err = strconv.ParseFloat(distanceToString, 64)
 		if err != nil {
 			continue
 		}
-		repository := dataModel.RepositoryModel{}
-		repository.ID = uint(id)
-		nearest.Repositories = append(nearest.Repositories, repository)
+		nearest.Repositories[id] = distance
 	}
 	return nearest, nil
 }

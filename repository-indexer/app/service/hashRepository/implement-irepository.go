@@ -9,6 +9,10 @@ import (
 // IMPLEMENT
 //
 
+func (storage *LocalHashStorage) CloseConnection() error {
+	return gosimstor.Destructor(storage.storage)
+}
+
 func (storage *LocalHashStorage) AddKeyWord(keyWord string, position int64, repositories dataModel.RepositoriesIncludeKeyWordsJSON) (dataModel.RepositoriesKeyWordsModel, error) {
 	var (
 		model dataModel.RepositoriesKeyWordsModel
@@ -45,7 +49,7 @@ func (storage *LocalHashStorage) RewriteAllKeyWords(models []dataModel.Repositor
 			Data: model.Position,
 		})
 	}
-	return storage.storage.Rewrite(
+	return storage.storage.UpdateAll(
 		dictionary,
 		rows,
 	)
@@ -138,7 +142,7 @@ func (storage *LocalHashStorage) RewriteAllNearestRepositories(repositoryId []ui
 			Data: models[i],
 		})
 	}
-	return storage.storage.Rewrite(
+	return storage.storage.UpdateAll(
 		nearestRepositories,
 		rows,
 	)

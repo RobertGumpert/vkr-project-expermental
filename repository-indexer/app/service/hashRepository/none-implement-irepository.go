@@ -21,11 +21,8 @@ func (storage *LocalHashStorage) Migration() error {
 	return 	errors.New("implement me")
 }
 
-func (storage *LocalHashStorage) CloseConnection() error {
-	return 	errors.New("implement me")
-}
 
-func (storage *LocalHashStorage) AddRepository(repository dataModel.RepositoryModel) error {
+func (storage *LocalHashStorage) AddRepository(repository *dataModel.RepositoryModel) error {
 	return 	errors.New("implement me")
 }
 
@@ -45,7 +42,7 @@ func (storage *LocalHashStorage) GetAllRepositories() ([]dataModel.RepositoryMod
 	return nil,	errors.New("implement me")
 }
 
-func (storage *LocalHashStorage) AddIssue(issue dataModel.IssueModel) error {
+func (storage *LocalHashStorage) AddIssue(issue *dataModel.IssueModel) error {
 	return 	errors.New("implement me")
 }
 
@@ -73,3 +70,30 @@ func (storage *LocalHashStorage) GetNearestIssuesForRepository(repositoryId uint
 	return  nil, errors.New("implement me")
 }
 
+func (storage *LocalHashStorage) AddListNearestIssues(nearest []dataModel.NearestIssuesModel) error {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) GetIssuesOnlyGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error) {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) GetIssuesBesidesGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error) {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) AddNumbersIntersections(intersections []dataModel.NumberIssueIntersectionsModel) error {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) AddNumberIntersections(intersection *dataModel.NumberIssueIntersectionsModel) error {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) GetNumberIntersectionsForRepository(repositoryID uint) ([]dataModel.NumberIssueIntersectionsModel, error) {
+	panic("implement me")
+}
+
+func (storage *LocalHashStorage) GetNumberIntersectionsForPair(repositoryID, comparableRepositoryID uint) (dataModel.NumberIssueIntersectionsModel, error) {
+	panic("implement me")
+}

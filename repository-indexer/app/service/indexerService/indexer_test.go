@@ -3,6 +3,7 @@ package indexerService
 import (
 	"fmt"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
+	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/RobertGumpert/vkr-pckg/textPreprocessing/textClearing"
 	"github.com/aaaton/golem/v4"
@@ -14,7 +15,25 @@ import (
 	"testing"
 )
 
+
+func connect() repository.IRepository {
+	sqlRepository := repository.NewSQLRepository(
+		storageProvider,
+	)
+	return sqlRepository
+}
+
 var (
+	storageProvider = repository.SQLCreateConnection(
+		repository.TypeStoragePostgres,
+		repository.DSNPostgres,
+		nil,
+		"postgres",
+		"toster123",
+		"vkr-db",
+		"5432",
+		"disable",
+	)
 	root          = "C:/VKR/vkr-project-expermental/go-agregator/data/group-by-elements/topics+descriptions"
 	lemmatizer, _ = golem.New(en.New())
 )
@@ -59,8 +78,17 @@ func createDataModels() []dataModel.RepositoryModel {
 	return models
 }
 
+func createRealData() []dataModel.RepositoryModel {
+	db := connect()
+	models, err := db.GetAllRepositories()
+	if err != nil {
+		log.Fatal(err)
+	}
+	return models
+}
+
 func TestIndexingFlow(t *testing.T) {
-	models := createDataModels()
+	models := createRealData()
 	result, err := Indexing(models)
 	if err != nil {
 		runtimeinfo.LogFatal(err)
@@ -71,17 +99,17 @@ func TestIndexingFlow(t *testing.T) {
 		log.Println(item.Key)
 		count++
 	}
-	runtimeinfo.LogInfo("COUNT = ", count, ", LEN = ", len(models))
+	log.Println("COUNT = ", count, ", LEN = ", len(models))
 	log.Println("FINISH PRINT DICTIONARY.")
 	log.Println("START PRINT NEAREST...")
-	for _, repository := range result.GetNearestRepositories() {
-		log.Println("MAIN: ", repository.GetRepositoryID())
+	for _, r := range result.GetNearestRepositories() {
+		log.Println("MAIN: ", r.GetRepositoryID())
 		type kv struct {
 			Key   uint
 			Value float64
 		}
 		var ss []kv
-		for k, v := range repository.GetNearestRepositories() {
+		for k, v := range r.GetNearestRepositories() {
 			ss = append(ss, kv{k, v})
 		}
 		sort.Slice(ss, func(i, j int) bool {

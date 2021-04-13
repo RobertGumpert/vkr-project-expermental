@@ -11,6 +11,14 @@ type indexingResults struct {
 	minIdf                      uint
 }
 
+func (results *indexingResults) GetNearestRepositories() []nearestRepository {
+	return results.nearest
+}
+
+func (results *indexingResults) GetDictionary() concurrentMap.ConcurrentMap {
+	return results.dictionary
+}
+
 func IndexingIDF(models []dataModel.RepositoryModel, minIdf uint) (*indexingResults, error) {
 	indexer := new(indexingResults)
 	indexer.dictionary = concurrentMap.New()
@@ -27,12 +35,4 @@ func Indexing(models []dataModel.RepositoryModel) (*indexingResults, error) {
 	indexer.minIdf = 0
 	err := indexer.indexing(models)
 	return indexer, err
-}
-
-func (results *indexingResults) GetNearestRepositories() []nearestRepository {
-	return results.nearest
-}
-
-func (results *indexingResults) GetDictionary() concurrentMap.ConcurrentMap {
-	return results.dictionary
 }
