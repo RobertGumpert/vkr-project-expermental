@@ -5,6 +5,7 @@ import (
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/gotasker/tasker"
 	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/requests"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"issue-indexer/app/config"
 	"issue-indexer/app/service/issueCompator"
@@ -26,7 +27,6 @@ func NewAppService(db repository.IRepository, config *config.Config) *AppService
 	service := new(AppService)
 	service.db = db
 	service.config = config
-
 	service.taskManager = tasker.NewManager(
 		tasker.SetBaseOptions(
 			int64(config.MaxCountRunnableTasks),
@@ -176,11 +176,11 @@ func (service *AppService) returnResultToGate(ctx *sendToGateContext) {
 		"/",
 	)
 	runtimeinfo.LogInfo("SEND TASK: [", ctx.taskKey, "] TO: [", url, "] WITH ERROR/NON ERROR: [", ctx.GetErr(), "]")
-	//response, err := requests.POST(service.client, url, nil, ctx.jsonBody)
-	//if err != nil {
-	//	runtimeinfo.LogError(err)
-	//}
-	//if response.StatusCode != http.StatusOK {
-	//	runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
-	//}
+	response, err := requests.POST(service.client, url, nil, ctx.jsonBody)
+	if err != nil {
+		runtimeinfo.LogError(err)
+	}
+	if response.StatusCode != http.StatusOK {
+		runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
+	}
 }

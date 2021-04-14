@@ -4,6 +4,7 @@ import (
 	"github.com/RobertGumpert/gotasker"
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/requests"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"net/http"
 	"repository-indexer/app/config"
@@ -69,29 +70,31 @@ func (service *AppService) WordIsExist(input *jsonInputWordIsExist) (output *jso
 	var (
 		haveTaskForReindexing = service.nowHaveRunningTask
 	)
-	model, err := service.localStorage.GetKeyWord(input.Word)
-	if err != nil || model.ID == 0 {
+	if haveTaskForReindexing {
 		return &jsonOutputWordIsExist{
 			WordIsExist:          false,
 			DatabaseIsReindexing: haveTaskForReindexing,
 		}
-	}
-	if model.KeyWord == input.Word {
-		if haveTaskForReindexing {
+	} else {
+		model, err := service.localStorage.GetKeyWord(input.Word)
+		if err != nil {
 			return &jsonOutputWordIsExist{
-				WordIsExist:          true,
+				WordIsExist:          false,
 				DatabaseIsReindexing: haveTaskForReindexing,
 			}
 		} else {
-			return &jsonOutputWordIsExist{
-				WordIsExist:          true,
-				DatabaseIsReindexing: haveTaskForReindexing,
+			if model.KeyWord == input.Word {
+				return &jsonOutputWordIsExist{
+					WordIsExist:          true,
+					DatabaseIsReindexing: haveTaskForReindexing,
+				}
+			} else {
+				return &jsonOutputWordIsExist{
+					WordIsExist:          false,
+					DatabaseIsReindexing: haveTaskForReindexing,
+				}
 			}
 		}
-	}
-	return &jsonOutputWordIsExist{
-		WordIsExist:          false,
-		DatabaseIsReindexing: haveTaskForReindexing,
 	}
 }
 
@@ -222,14 +225,11 @@ func (service *AppService) sendTaskUpdateToGate(result resultIndexing) {
 		err = result.jsonBody.(jsonSendToGateReindexingForGroupRepositories).ExecutionTaskStatus.Error
 		break
 	}
-	runtimeinfo.LogInfo("SEND TASK: [", result.taskKey, "] TO: [", url, "] WITH ERROR/NON ERROR: [", err, "]")
-	runtimeinfo.LogInfo("SEND TASK: [", result.taskKey, "] TO: [", url, "] BODY: [", result.jsonBody, "]")
-
-	//response, err := requests.POST(service.client, url, nil, result.jsonBody)
-	//if err != nil {
-	//	runtimeinfo.LogError(err)
-	//}
-	//if response.StatusCode != http.StatusOK {
-	//	runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
-	//}
+	response, err := requests.POST(service.client, url, nil, result.jsonBody)
+	if err != nil {
+		runtimeinfo.LogError(err)
+	}
+	if response.StatusCode != http.StatusOK {
+		runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
+	}
 }

@@ -6,15 +6,7 @@ import (
 	"strings"
 )
 
-func (service *AppService) gettingResultFromCollectorService() {
-	for task := range service.channelResultsFromCollector {
-		repositories := task.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-		service.taskManager.SetUpdateForTask(
-			task.GetKey(),
-			repositories,
-		)
-	}
-}
+
 
 //
 //---------------------------------------------EVENT RUN----------------------------------------------------------------
@@ -22,7 +14,7 @@ func (service *AppService) gettingResultFromCollectorService() {
 
 func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	switch task.GetType() {
-	case SingleTaskDownloadRepositoryByName:
+	case TaskTypeDownloadRepositoryByName:
 		err = service.collectorService.CreateTriggerTaskRepositoriesByName(
 			task,
 			task.GetState().GetSendContext().([]dataModel.RepositoryModel)...,
@@ -31,7 +23,7 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 			return true, false, nil
 		}
 		break
-	case SingleTaskDownloadRepositoryByKeyWord:
+	case TaskTypeDownloadRepositoryByKeyWord:
 		err = service.collectorService.CreateTriggerTaskRepositoriesByKeyWord(
 			task,
 			task.GetState().GetSendContext().(string),
@@ -40,7 +32,7 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 			return true, false, nil
 		}
 		break
-	case SingleTaskRepositoryAndRepositoriesByKeyWord:
+	case TaskTypeRepositoryAndRepositoriesByKeyWord:
 		sendContext := task.GetState().GetSendContext().(*JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord)
 		keyWord := sendContext.KeyWord
 		repository := dataModel.RepositoryModel{
@@ -51,6 +43,15 @@ func (service *AppService) eventRunTaskDownloadRepositories(task itask.ITask) (d
 			task,
 			repository,
 			keyWord,
+		)
+		if err != nil {
+			return true, false, nil
+		}
+		break
+	case CompositeTaskNewRepositoryWithExistWord:
+		err = service.collectorService.CreateTriggerTaskRepositoriesByName(
+			task,
+			task.GetState().GetSendContext().([]dataModel.RepositoryModel)...,
 		)
 		if err != nil {
 			return true, false, nil
@@ -87,7 +88,7 @@ func (service *AppService) createTaskDownloadRepositoriesByName(taskType itask.T
 		repositoriesNames = make([]string, 0)
 		sendContext       = make([]dataModel.RepositoryModel, 0)
 		updateContext     = make([]dataModel.RepositoryModel, 0)
-		customFields      = service.channelResultsFromCollector
+		customFields      = service.channelResultsFromCollectorService
 	)
 	for _, repository := range jsonModel.Repositories {
 		if strings.TrimSpace(repository.Name) == "" || strings.TrimSpace(repository.Owner) == "" {
@@ -120,7 +121,7 @@ func (service *AppService) createTaskDownloadRepositoriesByKeyWord(taskType itas
 	var (
 		taskKey       string
 		updateContext = make([]dataModel.RepositoryModel, 0)
-		customFields  = service.channelResultsFromCollector
+		customFields  = service.channelResultsFromCollectorService
 	)
 	taskKey = strings.Join([]string{
 		"download-repositories-by-keyword",
@@ -143,7 +144,7 @@ func (service *AppService) createTaskDownloadRepositoryAndRepositoriesByKeyWord(
 	var (
 		taskKey       string
 		updateContext = make([]dataModel.RepositoryModel, 0)
-		customFields  = service.channelResultsFromCollector
+		customFields  = service.channelResultsFromCollectorService
 	)
 	taskKey = strings.Join([]string{
 		"download-repository-and-repositories-by-keyword",

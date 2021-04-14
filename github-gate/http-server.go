@@ -22,42 +22,6 @@ func NewServer(config *config.Config) *server {
 	engine, run := s.createServerEngine(s.config.Port)
 	s.RunServer = run
 	s.engine = engine
-	//
-	//api := s.engine.Group("/api")
-	//{
-	//	collector := api.Group("/collector")
-	//	{
-	//		task := collector.Group("/task")
-	//		{
-	//			result := task.Group("/result")
-	//			{
-	//				repos := result.Group("/repos")
-	//				{
-	//					repos.POST("/by/url", s.updateStateTaskRepositoriesByURL)
-	//				}
-	//				issues := result.Group("/issue")
-	//				{
-	//					issues.POST("/by/repo", s.updateStateTaskRepositoryIssues)
-	//				}
-	//			}
-	//			create := task.Group("/create")
-	//			{
-	//				repos := create.Group("/repos")
-	//				{
-	//					repos.POST("/by/url", s.createTaskRepositoriesByURL)
-	//					repos.POST("/issues", s.createTaskRepositoriesAndIssues)
-	//				}
-	//				issues := create.Group("/issue")
-	//				{
-	//					issues.POST("/by/repos", s.createTaskRepositoriesIssues)
-	//				}
-	//			}
-	//		}
-	//	}
-	//}
-	//s.engine.GET("/get/state", s.getState)
-	//s.engine.POST("/get/repos/by/url", s.getReposByURL)
-	//
 	return s
 }
 
@@ -87,8 +51,4 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 		}
 	}
 }
-
-//
-//----------------------------------------------HANDLERS (Task's create)------------------------------------------------
-//
 

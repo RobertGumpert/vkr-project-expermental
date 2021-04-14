@@ -9,7 +9,7 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 	api := engine.Group("/api/task")
 	api.GET(
 		"/get/state",
-		nil,
+		service.restHandlerGateState,
 	)
 	api.POST(
 		"/compare/all/beside",

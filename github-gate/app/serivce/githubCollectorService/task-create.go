@@ -22,21 +22,21 @@ func (service *CollectorService) createTaskOnlyRepositoriesDescriptions(
 	}
 	uniqueKey = strings.Join(repositoriesName, ",")
 	if taskKey, err = service.createKeyForTask(
-		OnlyDescriptions,
+		TaskTypeDownloadOnlyDescriptions,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
 	}
 	if sendTaskContext, err = service.createSendContextForTask(
-		OnlyDescriptions,
+		TaskTypeDownloadOnlyDescriptions,
 		taskKey,
 		repositories,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		OnlyDescriptions,
+		TaskTypeDownloadOnlyDescriptions,
 		taskKey,
 		sendTaskContext,
 		nil,
@@ -56,21 +56,21 @@ func (service *CollectorService) createTaskOnlyRepositoryIssues(
 		uniqueKey       = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		OnlyIssues,
+		TaskTypeDownloadOnlyIssues,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
 		return nil, err
 	}
 	if sendTaskContext, err = service.createSendContextForTask(
-		OnlyIssues,
+		TaskTypeDownloadOnlyIssues,
 		taskKey,
 		repository,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		OnlyIssues,
+		TaskTypeDownloadOnlyIssues,
 		taskKey,
 		sendTaskContext,
 		nil,
@@ -177,17 +177,17 @@ func (service *CollectorService) createTaskRepositoryAndRepositoriesContainingKe
 			return nil, err
 		}
 		keywordIssues.GetState().SetCustomFields(&compositeCustomFields{
-			TaskType: CompositeByKeyWord,
+			TaskType: TaskTypeDownloadCompositeByKeyWord,
 			Fields:   dataModel.RepositoryModel{},
 		})
 		keywordIssues.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
-		keywordIssues.SetType(RepositoryAndRepositoriesContainingKeyWord)
+		keywordIssues.SetType(TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord)
 		keywordDependents = append(keywordDependents, keywordIssues)
 	}
 	//
-	keywordRepositoriesTrigger.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	keywordRepositoriesTrigger.SetType(TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord)
 	keywordRepositoriesTrigger.GetState().SetCustomFields(&compositeCustomFields{
-		TaskType: CompositeByKeyWord,
+		TaskType: TaskTypeDownloadCompositeByKeyWord,
 	})
 	keywordRepositoriesTrigger.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
 	keywordRepositoriesTrigger, err = service.taskManager.ModifyTaskAsTrigger(
@@ -197,16 +197,16 @@ func (service *CollectorService) createTaskRepositoryAndRepositoriesContainingKe
 	if err != nil {
 		return nil, gotasker.ErrorQueueIsFilled
 	}
-	repositoryTrigger.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	repositoryTrigger.SetType(TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord)
 	repositoryTrigger.GetState().SetCustomFields(&compositeCustomFields{
-		TaskType: OnlyDescriptions,
+		TaskType: TaskTypeDownloadOnlyDescriptions,
 		Fields:   taskAppService,
 	})
 	repositoryTrigger.GetState().SetEventUpdateState(service.eventUpdateTriggerRepositoryAndRepositoriesKeyWord)
-	repositoryIssues.SetType(RepositoryAndRepositoriesContainingKeyWord)
+	repositoryIssues.SetType(TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord)
 	repositoryIssues.GetState().SetEventUpdateState(service.eventUpdateDependentRepositoryAndRepositoriesKeyWord)
 	repositoryIssues.GetState().SetCustomFields(&compositeCustomFields{
-		TaskType: OnlyIssues,
+		TaskType: TaskTypeDownloadOnlyIssues,
 		Fields:   dataModel.RepositoryModel{},
 	})
 	repositoryDependents = append(repositoryDependents, repositoryIssues, keywordRepositoriesTrigger)
@@ -237,7 +237,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 		"",
 	)
 	switch taskType {
-	case OnlyDescriptions:
+	case TaskTypeDownloadOnlyDescriptions:
 		return strings.Join(
 			[]string{
 				"task for collector:{repositories-descriptions-for",
@@ -246,7 +246,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case OnlyIssues:
+	case TaskTypeDownloadOnlyIssues:
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-issues-for",
@@ -255,7 +255,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case CompositeByName:
+	case TaskTypeDownloadCompositeByName:
 		return strings.Join(
 			[]string{
 				"task for collector:{repository-description-and-issues-for",
@@ -264,7 +264,7 @@ func (service *CollectorService) createKeyForTask(taskType itask.Type, taskAppSe
 				"}",
 			}, "",
 		), nil
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		return strings.Join(
 			[]string{
 				"task for collector:{repositories-by-keyword",
@@ -287,7 +287,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 		return nil, err
 	}
 	switch taskType {
-	case OnlyDescriptions:
+	case TaskTypeDownloadOnlyDescriptions:
 		var (
 			jsonData = make([]jsonSendToCollectorRepository, 0)
 		)
@@ -307,7 +307,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 				Repositories: jsonData,
 			},
 		}, nil
-	case OnlyIssues:
+	case TaskTypeDownloadOnlyIssues:
 		var (
 			model    = data.(dataModel.RepositoryModel)
 			jsonData = jsonSendToCollectorRepository{
@@ -324,7 +324,7 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 				Repository: jsonData,
 			},
 		}, nil
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		var (
 			jsonData = data.(string)
 		)
@@ -344,11 +344,11 @@ func (service *CollectorService) createSendContextForTask(taskType itask.Type, t
 
 func (service *CollectorService) getCollectorUrlForTaskContext(taskType itask.Type) (url string, err error) {
 	switch taskType {
-	case OnlyDescriptions:
+	case TaskTypeDownloadOnlyDescriptions:
 		return collectorEndpointRepositoriesDescriptions, nil
-	case OnlyIssues:
+	case TaskTypeDownloadOnlyIssues:
 		return collectorEndpointRepositoryIssues, nil
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		return collectorEndpointRepositoriesByKeyWord, nil
 	default:
 		return url, ErrorTaskTypeNotExist

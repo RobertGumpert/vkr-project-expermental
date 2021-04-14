@@ -16,7 +16,7 @@ func (service *CollectorService) createTriggerRepositoriesByKeyWord(taskAppServi
 		uniqueKey         = keyWord
 	)
 	if taskKey, err = service.createKeyForTask(
-		CompositeByKeyWord,
+		TaskTypeDownloadCompositeByKeyWord,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
@@ -24,14 +24,14 @@ func (service *CollectorService) createTriggerRepositoriesByKeyWord(taskAppServi
 	}
 	taskKey = strings.Join([]string{"(trigger)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		CompositeByKeyWord,
+		TaskTypeDownloadCompositeByKeyWord,
 		taskKey,
 		keyWord,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		CompositeByKeyWord,
+		TaskTypeDownloadCompositeByKeyWord,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
@@ -52,7 +52,7 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 		uniqueKey         = "%s"
 	)
 	if taskKey, err = service.createKeyForTask(
-		CompositeByKeyWord,
+		TaskTypeDownloadCompositeByKeyWord,
 		triggerTask.GetState().GetCustomFields().(itask.ITask),
 		uniqueKey,
 	); err != nil {
@@ -61,7 +61,7 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 	dependentNumberKey := strings.Join([]string{"(dependent-", strconv.Itoa(number), ")"}, "")
 	taskKey = strings.Join([]string{dependentNumberKey, taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		OnlyIssues,
+		TaskTypeDownloadOnlyIssues,
 		taskKey,
 		dataModel.RepositoryModel{
 			Name:  keyWord,
@@ -71,7 +71,7 @@ func (service *CollectorService) createDependentIssuesByKeyWord(triggerTask itas
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		CompositeByKeyWord,
+		TaskTypeDownloadCompositeByKeyWord,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
@@ -90,7 +90,7 @@ func (service *CollectorService) createTriggerRepositoryByName(taskAppService it
 		uniqueKey         = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		CompositeByName,
+		TaskTypeDownloadCompositeByName,
 		taskAppService,
 		uniqueKey,
 	); err != nil {
@@ -98,14 +98,14 @@ func (service *CollectorService) createTriggerRepositoryByName(taskAppService it
 	}
 	taskKey = strings.Join([]string{"(trigger)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		OnlyDescriptions,
+		TaskTypeDownloadOnlyDescriptions,
 		taskKey,
 		[]dataModel.RepositoryModel{repository},
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		CompositeByName,
+		TaskTypeDownloadCompositeByName,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,
@@ -124,7 +124,7 @@ func (service *CollectorService) createDependentIssuesByName(triggerTask itask.I
 		uniqueKey         = repository.Name
 	)
 	if taskKey, err = service.createKeyForTask(
-		CompositeByName,
+		TaskTypeDownloadCompositeByName,
 		triggerTask.GetState().GetCustomFields().(itask.ITask),
 		uniqueKey,
 	); err != nil {
@@ -132,14 +132,14 @@ func (service *CollectorService) createDependentIssuesByName(triggerTask itask.I
 	}
 	taskKey = strings.Join([]string{"(dependent)", taskKey}, " ")
 	if sendTaskContext, err = service.createSendContextForTask(
-		OnlyIssues,
+		TaskTypeDownloadOnlyIssues,
 		taskKey,
 		repository,
 	); err != nil {
 		return nil, err
 	}
 	return service.taskManager.CreateTask(
-		CompositeByName,
+		TaskTypeDownloadCompositeByName,
 		taskKey,
 		sendTaskContext,
 		updateTaskContext,

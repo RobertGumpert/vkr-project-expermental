@@ -14,7 +14,26 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 			collectorGroup.POST("/by/keyword", service.restHandlerDownloadRepositoriesByKeyWord)
 			collectorGroup.POST("/by/keyword/and/by/name", service.restHandlerDownloadRepositoryAndRepositoriesByKeyWord)
 		}
+		compositeApi := apiGroup.Group("/composite")
+		{
+			compositeApi.POST("/new/repository/with/exist/keyword", service.restHandlerCompositeNewRepositoryWithExistKeyWord)
+		}
 	}
+}
+
+func (service *AppService) restHandlerCompositeNewRepositoryWithExistKeyWord(ctx *gin.Context) {
+	requestData := new(JsonSingleTaskDownloadRepositoriesByName)
+	if err := ctx.BindJSON(requestData); err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	err := service.CreateTaskCompositeNewRepositoryWithExistKeyWord(
+		requestData,
+	)
+	if err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+	}
+	ctx.AbortWithStatus(http.StatusOK)
 }
 
 func (service *AppService) restHandlerDownloadRepositoriesByName(ctx *gin.Context) {

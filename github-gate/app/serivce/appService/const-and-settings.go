@@ -10,9 +10,10 @@ var (
 )
 
 const (
-	SingleTaskDownloadRepositoryByName           itask.Type = 10
-	SingleTaskDownloadRepositoryByKeyWord        itask.Type = 11
-	SingleTaskRepositoryAndRepositoriesByKeyWord itask.Type = 12
+	TaskTypeDownloadRepositoryByName           itask.Type = 10
+	TaskTypeDownloadRepositoryByKeyWord        itask.Type = 11
+	TaskTypeRepositoryAndRepositoriesByKeyWord itask.Type = 12
+	CompositeTaskNewRepositoryWithExistWord           itask.Type = 100
 )
 
 //

@@ -127,7 +127,7 @@ func (service *CollectorService) eventUpdateTriggerRepositoryAndRepositoriesKeyW
 			updateContext = service.writeRepositoriesToDB(cast.Repositories)[0]
 			for _, dependentTask := range *dependentsTasks {
 				customFields := dependentTask.GetState().GetCustomFields().(*compositeCustomFields)
-				if customFields.TaskType == OnlyIssues {
+				if customFields.TaskType == TaskTypeDownloadOnlyIssues {
 					customFields.Fields = updateContext
 					dependentTask.GetState().SetCustomFields(customFields)
 					service.taskManager.TakeOffRunBanInQueue(dependentTask)
@@ -146,7 +146,7 @@ func (service *CollectorService) eventUpdateDependentRepositoryAndRepositoriesKe
 	customFields := task.GetState().GetCustomFields().(*compositeCustomFields)
 	runtimeinfo.LogInfo(customFields.TaskType)
 	switch customFields.TaskType {
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		var (
 			isTrigger, _   = task.IsTrigger()
 			isDependent, _ = task.IsDependent()
@@ -158,7 +158,7 @@ func (service *CollectorService) eventUpdateDependentRepositoryAndRepositoriesKe
 			return service.eventUpdateDependentKeyWord(task, somethingUpdateContext)
 		}
 		break
-	case OnlyIssues:
+	case TaskTypeDownloadOnlyIssues:
 		cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 		customFields := task.GetState().GetCustomFields().(*compositeCustomFields)
 		repositoryID := customFields.Fields.(dataModel.RepositoryModel).ID
@@ -169,7 +169,7 @@ func (service *CollectorService) eventUpdateDependentRepositoryAndRepositoriesKe
 			_, dependentsTasks := trigger.IsTrigger()
 			for _, dependentTask := range *dependentsTasks {
 				customFields := dependentTask.GetState().GetCustomFields().(*compositeCustomFields)
-				if customFields.TaskType == CompositeByKeyWord {
+				if customFields.TaskType == TaskTypeDownloadCompositeByKeyWord {
 					service.taskManager.TakeOffRunBanInQueue(dependentTask)
 				}
 			}

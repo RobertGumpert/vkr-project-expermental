@@ -1,6 +1,7 @@
 package githubCollectorService
 
 import (
+	"github-gate/app/models/customFieldsModel"
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
@@ -9,22 +10,22 @@ import (
 func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
 	deleteTasks = make(map[string]struct{})
 	switch task.GetType() {
-	case OnlyDescriptions:
+	case TaskTypeDownloadOnlyDescriptions:
 		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		repositories := taskAppService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 		runtimeinfo.LogInfo("TASK COMPLETED [", task.GetKey(), "] LEN. [", len(repositories), "]")
 		deleteTasks[task.GetKey()] = struct{}{}
-		taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+		taskAppService.GetState().GetCustomFields().(*customFieldsModel.Model).GetFields().(chan itask.ITask) <- taskAppService
 		break
-	case OnlyIssues:
+	case TaskTypeDownloadOnlyIssues:
 		taskAppService := task.GetState().GetCustomFields().(itask.ITask)
 		repositoryID := taskAppService.GetState().GetCustomFields().(uint)
 		issues := taskAppService.GetState().GetUpdateContext().([]dataModel.IssueModel)
 		runtimeinfo.LogInfo("TASK COMPLETED [", task.GetKey(), "] LEN. [", len(issues), "] FOR REPO [", repositoryID, "]")
 		deleteTasks[task.GetKey()] = struct{}{}
-		taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+		taskAppService.GetState().GetCustomFields().(*customFieldsModel.Model).GetFields().(chan itask.ITask) <- taskAppService
 		break
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		var (
 			triggerIsCompleted bool
 			trigger            itask.ITask
@@ -35,15 +36,15 @@ func (service *CollectorService) eventManageCompletedTasks(task itask.ITask) (de
 			repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 			taskAppService := trigger.GetState().GetCustomFields().(itask.ITask)
 			taskAppService.GetState().SetUpdateContext(repositories)
-			taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+			taskAppService.GetState().GetCustomFields().(*customFieldsModel.Model).GetFields().(chan itask.ITask) <- taskAppService
 		} else {
 			deleteTasks = nil
 		}
 		break
-	case CompositeByName:
+	case TaskTypeDownloadCompositeByName:
 		deleteTasks = service.manageCompletedTaskRepositoryByName(task)
 		break
-	case RepositoryAndRepositoriesContainingKeyWord:
+	case TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord:
 		deleteTasks = service.manageCompletedRepositoryAndRepositoriesByKeyWord(task)
 		break
 	}
@@ -74,7 +75,7 @@ func (service *CollectorService) manageCompletedTaskRepositoryByName(task itask.
 				deleteTasks[dependentTaskKey] = struct{}{}
 			}
 			deleteTasks[trigger.GetKey()] = struct{}{}
-			taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+			taskAppService.GetState().GetCustomFields().(*customFieldsModel.Model).GetFields().(chan itask.ITask) <- taskAppService
 		}
 	}
 	return deleteTasks
@@ -109,7 +110,7 @@ func (service *CollectorService) manageCompletedRepositoryAndRepositoriesByKeyWo
 	deleteTasks = make(map[string]struct{})
 	customFields := task.GetState().GetCustomFields().(*compositeCustomFields)
 	switch customFields.TaskType {
-	case CompositeByKeyWord:
+	case TaskTypeDownloadCompositeByKeyWord:
 		var (
 			countCompletedDependentTasks     int
 			triggerIsCompleted               bool
@@ -137,7 +138,7 @@ func (service *CollectorService) manageCompletedRepositoryAndRepositoriesByKeyWo
 				}
 				if countCompletedDependentTasks == len(*repositoryTriggerDependentsTasks) {
 					deleteTasks[repositoryTrigger.GetKey()] = struct{}{}
-					taskAppService.GetState().GetCustomFields().(chan itask.ITask) <- taskAppService
+					taskAppService.GetState().GetCustomFields().(*customFieldsModel.Model).GetFields().(chan itask.ITask) <- taskAppService
 				} else {
 					deleteTasks = nil
 				}
@@ -146,7 +147,7 @@ func (service *CollectorService) manageCompletedRepositoryAndRepositoriesByKeyWo
 			}
 		}
 		break
-	case OnlyDescriptions:
+	case TaskTypeDownloadOnlyDescriptions:
 		updateContext := task.GetState().GetUpdateContext().(dataModel.RepositoryModel)
 		taskAppService := customFields.Fields.(itask.ITask)
 		repositories := taskAppService.GetState().GetUpdateContext().([]dataModel.RepositoryModel)

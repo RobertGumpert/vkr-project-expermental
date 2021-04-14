@@ -38,6 +38,19 @@ func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 			return
 		},
 	)
+	api.POST(
+		"/nearest/for/repository",
+		func(ctx *gin.Context) {
+			state := new(jsonInputNearestRepositoriesForRepository)
+			if err := ctx.BindJSON(state); err != nil {
+				runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) JSON UNMARSHAL COMPLETED WITH ERROR: ", err)
+				ctx.AbortWithStatus(http.StatusLocked)
+				return
+			}
+			ctx.AbortWithStatusJSON(http.StatusOK, service.RepositoryNearest(state))
+			return
+		},
+	)
 }
 
 func (service *AppService) restHandlerGetState(ctx *gin.Context) {

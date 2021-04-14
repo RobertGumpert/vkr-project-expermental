@@ -5,6 +5,8 @@ github.com/RobertGumpert/gosimstor v1.0.3 h1:0baGMAT5JAwoSVvXSG2OakHPjt4j95rdyFL
 github.com/RobertGumpert/gosimstor v1.0.3/go.mod h1:J/WoeRqHq1+JABaptqBpmA202EVTrODSPCUpm1PPaHs=
 github.com/RobertGumpert/gosimstor v1.0.4 h1:7ceLvQGqtbUb6dV3u9MAxh67Ch0YukJNE+3rDn8hfXo=
 github.com/RobertGumpert/gosimstor v1.0.4/go.mod h1:J/WoeRqHq1+JABaptqBpmA202EVTrODSPCUpm1PPaHs=
+github.com/RobertGumpert/gosimstor v1.0.5 h1:fZwBmo2wMcQohWX3mNL6IVe/3rPj9m6DITcAc89lOZY=
+github.com/RobertGumpert/gosimstor v1.0.5/go.mod h1:J/WoeRqHq1+JABaptqBpmA202EVTrODSPCUpm1PPaHs=
 github.com/RobertGumpert/gotasker v1.0.22 h1:QyriCO4BLpUvgtZFQYf8L7RXt9kj0rKXgEpmR4r1JCc=
 github.com/RobertGumpert/gotasker v1.0.22/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
 github.com/RobertGumpert/vkr-pckg v1.0.19 h1:zQ5jZj9RIoqkDceNONC/300Go3/f+KMReuPV0E4D1wg=

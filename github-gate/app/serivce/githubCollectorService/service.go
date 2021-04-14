@@ -8,6 +8,7 @@ import (
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
+	"github.com/gin-gonic/gin"
 	"net/http"
 	"time"
 )
@@ -20,7 +21,7 @@ type CollectorService struct {
 	channelErrors chan itask.IError
 }
 
-func NewCollectorService(repository repository.IRepository, config *config.Config) *CollectorService {
+func NewCollectorService(repository repository.IRepository, config *config.Config, engine *gin.Engine) *CollectorService {
 	service := new(CollectorService)
 	service.repository = repository
 	service.config = config
@@ -34,6 +35,7 @@ func NewCollectorService(repository repository.IRepository, config *config.Confi
 			1*time.Minute,
 		),
 	)
+	service.ConcatTheirRestHandlers(engine)
 	service.channelErrors = service.taskManager.GetChannelError()
 	go service.scanErrors()
 	return service

@@ -2,14 +2,16 @@ package main
 
 import (
 	"github-gate/app/config"
+	"github-gate/app/serivce/appService"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 )
 
 var (
-	POSTGRES *repository.SQLRepository
-	CONFIG   *config.Config
-	SERVER   *server
+	APPSERVICE *appService.AppService
+	POSTGRES   *repository.SQLRepository
+	CONFIG     *config.Config
+	SERVER     *server
 )
 
 func main() {
@@ -32,5 +34,11 @@ func main() {
 		}
 	}()
 	SERVER = NewServer(CONFIG)
+	APPSERVICE = appService.NewAppService(
+		POSTGRES,
+		CONFIG,
+		SERVER.engine,
+	)
+	APPSERVICE.ConcatTheirRestHandlers(SERVER.engine)
 	SERVER.RunServer()
 }

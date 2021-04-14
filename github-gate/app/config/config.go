@@ -18,6 +18,20 @@ type Config struct {
 	} `json:"postgres"`
 	SizeQueueTasksForGithubCollectors int64    `json:"size_queue_tasks_for_github_collectors"`
 	GithubCollectorsAddresses         []string `json:"github_collectors_addresses"`
+	//
+	IssueIndexerAddress   string `json:"issue_indexer_address"`
+	IssueIndexerEndpoints struct {
+		GetState                    string `json:"get_state"`
+		CompareForGroupRepositories string `json:"compare_for_group_repositories"`
+	} `json:"issue_indexer_endpoints"`
+	//
+	RepositoryIndexerAddress   string `json:"repository_indexer_address"`
+	RepositoryIndexerEndpoints struct {
+		GetState                       string `json:"get_state"`
+		ReindexingForGroupRepositories string `json:"reindexing_for_group_repositories"`
+		ReindexingForRepository        string `json:"reindexing_for_repository"`
+		ReindexingForAll               string `json:"reindexing_for_all"`
+	} `json:"repository_indexer_endpoints"`
 }
 
 func NewConfig() *Config {

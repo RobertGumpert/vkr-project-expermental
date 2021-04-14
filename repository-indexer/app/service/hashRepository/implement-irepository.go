@@ -49,7 +49,7 @@ func (storage *LocalHashStorage) RewriteAllKeyWords(models []dataModel.Repositor
 			Data: model.Position,
 		})
 	}
-	return storage.storage.UpdateAll(
+	return storage.storage.Rewrite(
 		dictionary,
 		rows,
 	)
@@ -142,7 +142,7 @@ func (storage *LocalHashStorage) RewriteAllNearestRepositories(repositoryId []ui
 			Data: models[i],
 		})
 	}
-	return storage.storage.UpdateAll(
+	return storage.storage.Rewrite(
 		nearestRepositories,
 		rows,
 	)

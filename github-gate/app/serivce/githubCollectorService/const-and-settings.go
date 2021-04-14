@@ -13,11 +13,11 @@ const (
 )
 
 const (
-	OnlyDescriptions                           itask.Type = 0
-	OnlyIssues                                 itask.Type = 1
-	CompositeByName                            itask.Type = 2
-	CompositeByKeyWord                         itask.Type = 3
-	RepositoryAndRepositoriesContainingKeyWord itask.Type = 4
+	TaskTypeDownloadOnlyDescriptions                                    itask.Type = 1000
+	TaskTypeDownloadOnlyIssues                                          itask.Type = 1001
+	TaskTypeDownloadCompositeByName                                     itask.Type = 1002
+	TaskTypeDownloadCompositeByKeyWord                                  itask.Type = 1003
+	TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord itask.Type = 1004
 )
 
 //
