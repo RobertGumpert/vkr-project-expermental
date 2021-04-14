@@ -52,8 +52,8 @@ func (service *IndexerService) ReindexingForRepository(task itask.ITask) (err er
 		return err
 	}
 	url := strings.Join([]string{
-		service.config.IssueIndexerAddress,
-		service.config.IssueIndexerEndpoints.CompareForGroupRepositories,
+		service.config.RepositoryIndexerAddress,
+		service.config.RepositoryIndexerEndpoints.ReindexingForRepository,
 	}, "/")
 	response, err := requests.POST(
 		service.client,
