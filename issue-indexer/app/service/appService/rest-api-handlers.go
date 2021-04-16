@@ -33,7 +33,7 @@ func (service *AppService) restHandlerGateState(ctx *gin.Context) {
 
 func (service *AppService) restHandlerCompareBeside(ctx *gin.Context) {
 	state := new(jsonSendFromCompareBeside)
-	if err := ctx.Bind(state); err != nil {
+	if err := ctx.BindJSON(state); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
@@ -48,7 +48,7 @@ func (service *AppService) restHandlerCompareBeside(ctx *gin.Context) {
 
 func (service *AppService) restHandlerCompareGroup(ctx *gin.Context) {
 	state := new(jsonSendFromGateCompareGroup)
-	if err := ctx.Bind(state); err != nil {
+	if err := ctx.BindJSON(state); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}

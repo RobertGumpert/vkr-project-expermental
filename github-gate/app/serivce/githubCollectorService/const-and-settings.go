@@ -2,6 +2,7 @@ package githubCollectorService
 
 import (
 	"errors"
+	"github.com/RobertGumpert/gotasker"
 	"github.com/RobertGumpert/gotasker/itask"
 )
 
@@ -26,7 +27,7 @@ const (
 
 type compositeCustomFields struct {
 	TaskType itask.Type
-	Fields interface{}
+	Fields   interface{}
 }
 
 //
@@ -115,9 +116,11 @@ type jsonSendFromCollectorRepositoriesByKeyWord struct {
 //
 
 var (
-	ErrorTaskTypeNotExist   = errors.New("Task Type Not Exist. ")
-	ErrorNoFreeCollector    = errors.New("No Free Collector. ")
-	ErrorCollectorIsBusy    = errors.New("Collector Is Busy. ")
-	ErrorNotFullSendContext = errors.New("Not Full Send Context. ")
-	ErrorTaskIsNilPointer   = errors.New("Task is nil pointer. ")
+	ErrorTaskTypeNotExist  = errors.New("Task Type Not Exist. ")
+	ErrorNoFreeCollector   = errors.New("No Free Collector. ")
+	ErrorCollectorIsBusy   = errors.New("Collector Is Busy. ")
+	ErrorNoneCorrectData   = errors.New("Not Full Send Context. ")
+	ErrorTaskIsNilPointer  = errors.New("Task is nil pointer. ")
+	ErrorRepositoryIsExist = errors.New("Repository is exist. ")
+	ErrorQueueIsFilled     = gotasker.ErrorQueueIsFilled
 )

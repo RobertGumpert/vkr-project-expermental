@@ -16,13 +16,13 @@ func (service *CollectorService) eventRunTask(task itask.ITask) (doTaskAsDefer, 
 	)
 	sendContext = task.GetState().GetSendContext().(*contextTaskSend)
 	if sendContext.JSONBody == nil {
-		runtimeinfo.LogError(ErrorNotFullSendContext)
-		task.GetState().SetError(ErrorNotFullSendContext)
+		runtimeinfo.LogError(ErrorNoneCorrectData)
+		task.GetState().SetError(ErrorNoneCorrectData)
 		return true, false, nil
 	}
 	if sendContext.CollectorEndpoint == "" {
-		runtimeinfo.LogError(ErrorNotFullSendContext)
-		task.GetState().SetError(ErrorNotFullSendContext)
+		runtimeinfo.LogError(ErrorNoneCorrectData)
+		task.GetState().SetError(ErrorNoneCorrectData)
 		return true, false, nil
 	}
 	listFreeCollectors = service.getFreeCollectors(true)

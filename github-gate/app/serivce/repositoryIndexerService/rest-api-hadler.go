@@ -24,6 +24,7 @@ func (service *IndexerService) restHandlerReindexingForRepository(ctx *gin.Conte
 	obj, exist := service.tasks.Get(taskKey)
 	if exist {
 		task := obj.(itask.ITask)
+		task.GetState().SetUpdateContext(state)
 		go func(service *IndexerService, task itask.ITask) {
 			task.GetState().SetError(state.ExecutionTaskStatus.Error)
 			service.channelSendToAppService <- task

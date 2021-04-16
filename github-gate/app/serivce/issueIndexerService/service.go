@@ -55,7 +55,7 @@ func (service *IndexerService) CompareGroupRepositories(task itask.ITask) (err e
 			service.config.IssueIndexerEndpoints.CompareForGroupRepositories,
 		}, "/"),
 		nil,
-		task.GetState().GetSendContext().(JsonSendToIndexerCompareGroup),
+		task.GetState().GetSendContext().(*JsonSendToIndexerCompareGroup),
 	)
 	if err != nil {
 		return err

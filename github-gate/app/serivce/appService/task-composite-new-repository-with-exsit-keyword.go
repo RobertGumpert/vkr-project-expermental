@@ -97,11 +97,11 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForRepositor
 	return composite.taskManager.CreateTask(
 		CompositeTaskNewRepositoryWithExistWord,
 		repositoryIndexerTaskKey,
-		repositoryIndexerService.JsonSendToIndexerReindexingForRepository{
+		&repositoryIndexerService.JsonSendToIndexerReindexingForRepository{
 			TaskKey:      repositoryIndexerTaskKey,
 			RepositoryID: 0,
 		},
-		repositoryIndexerService.JsonSendFromIndexerReindexingForRepository{},
+		&repositoryIndexerService.JsonSendFromIndexerReindexingForRepository{},
 		&customFieldsModel.Model{
 			TaskType: repositoryIndexerService.TaskTypeReindexingForRepository,
 			Fields:   nil,
@@ -121,12 +121,12 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForIssueInde
 	return composite.taskManager.CreateTask(
 		CompositeTaskNewRepositoryWithExistWord,
 		issueIndexerTaskKey,
-		issueIndexerService.JsonSendToIndexerCompareGroup{
+		&issueIndexerService.JsonSendToIndexerCompareGroup{
 			TaskKey:                  issueIndexerTaskKey,
 			RepositoryID:             0,
 			ComparableRepositoriesID: nil,
 		},
-		issueIndexerService.JsonSendFromIndexerCompareGroup{},
+		&issueIndexerService.JsonSendFromIndexerCompareGroup{},
 		&customFieldsModel.Model{
 			TaskType: issueIndexerService.TaskTypeCompareGroupRepositories,
 			Fields:   nil,
@@ -209,7 +209,7 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskStat
 				repository := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)[0]
 				group := func() (ids []uint) {
 					ids = make([]uint, 0)
-					nearest := task.GetState().GetUpdateContext().(repositoryIndexerService.JsonSendFromIndexerReindexingForRepository).Result.NearestRepositoriesID
+					nearest := task.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository).Result.NearestRepositoriesID
 					for id, _ := range nearest {
 						ids = append(ids, id)
 					}
@@ -220,15 +220,17 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskStat
 					dependentTask := (*dependentsTasks)[next]
 					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
 					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareGroupRepositories {
+						composite.taskManager.TakeOffRunBanInQueue(dependentTask)
 						if len(group) == 0 {
 							dependentTask.GetState().SetCompleted(true)
+							dependentTask.GetState().SetRunnable(true)
 							composite.taskManager.SetUpdateForTask(task.GetKey(), nil)
 							break
 						} else {
-							sendContext := dependentTask.GetState().GetSendContext().(issueIndexerService.JsonSendToIndexerCompareGroup)
+							sendContext := dependentTask.GetState().GetSendContext().(*issueIndexerService.JsonSendToIndexerCompareGroup)
 							sendContext.RepositoryID = repository.ID
+							sendContext.ComparableRepositoriesID = group
 							dependentTask.GetState().SetSendContext(sendContext)
-							composite.taskManager.TakeOffRunBanInQueue(dependentTask)
 							break
 						}
 					}
@@ -244,7 +246,7 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskStat
 				dependentTask := (*dependentsTasks)[next]
 				customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
 				if customFields.GetTaskType() == repositoryIndexerService.TaskTypeReindexingForRepository {
-					sendContext := dependentTask.GetState().GetSendContext().(repositoryIndexerService.JsonSendToIndexerReindexingForRepository)
+					sendContext := dependentTask.GetState().GetSendContext().(*repositoryIndexerService.JsonSendToIndexerReindexingForRepository)
 					sendContext.RepositoryID = repository.ID
 					dependentTask.GetState().SetSendContext(sendContext)
 					composite.taskManager.TakeOffRunBanInQueue(dependentTask)

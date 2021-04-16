@@ -59,7 +59,7 @@ func (service *IndexerService) ReindexingForRepository(task itask.ITask) (err er
 		service.client,
 		url,
 		nil,
-		task.GetState().GetSendContext().(JsonSendToIndexerReindexingForRepository),
+		task.GetState().GetSendContext().(*JsonSendToIndexerReindexingForRepository),
 	)
 	if err != nil {
 		return err

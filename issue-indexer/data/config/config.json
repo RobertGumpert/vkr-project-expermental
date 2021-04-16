@@ -13,7 +13,7 @@
   "maximum_duration_database_query_in_minutes": 5,
   "github_gate_address": "http://127.0.0.1:54000",
   "github_gate_endpoints": {
-    "send_result_task_compare_group": "/task/api/issueindexer/update/compare/group",
-    "send_result_task_compare_beside": "/task/api/issueindexer/update/compare/beside"
+    "send_result_task_compare_group": "task/api/issueindexer/update/compare/group",
+    "send_result_task_compare_beside": "task/api/issueindexer/update/compare/beside"
   }
 }

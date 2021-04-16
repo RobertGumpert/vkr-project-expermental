@@ -2,6 +2,7 @@ package issueCompator
 
 import (
 	"errors"
+	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
@@ -45,7 +46,7 @@ func (comparator *Comparator) DOCompare(rules *CompareRules, result *CompareResu
 }
 
 func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataModel.IssueModel, from, to int64, rules *CompareRules, result *CompareResult, intersections map[uint]countIntersectionForIssues, wg *sync.WaitGroup) {
-	var(
+	var (
 		nearestIssues = make([]dataModel.NearestIssuesModel, 0)
 	)
 	for i := from; i < to; i++ {
@@ -101,12 +102,14 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 		lengthOfPartComparableIssuesSlice int64
 		from, to                          int64
 		//
+		taskKey               = result.identifier.(itask.ITask).GetKey()
 		intersectionModels    = make([]dataModel.NumberIssueIntersectionsModel, 0)
 		repositoryID          = rules.GetRepositoryID()
 		countIssuesRepository = int64(len(repositoryIssues))
 		intersections         = make(map[uint]countIntersectionForIssues)
 		wg                    = new(sync.WaitGroup)
 	)
+	runtimeinfo.LogInfo("START COMPARE TASK [", taskKey, "].")
 	comparableIssues, doNotCompare, err = rules.GetRuleForSamplingComparableIssues()(rules)
 	if err != nil {
 		result.err = err
@@ -131,9 +134,12 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 			intersections,
 			nil,
 		)
+		runtimeinfo.LogInfo("RUN TASK [", taskKey, "] IN ONE THREAD.")
 	} else {
 		to = lengthOfPartComparableIssuesSlice
+		runtimeinfo.LogInfo("RUN TASK [", taskKey, "] IN MULT. THREAD.")
 		for {
+			runtimeinfo.LogInfo("\t\t\t->RUN TASK [", taskKey, "] IN NEXT THREAD.")
 			if to >= int64(len(repositoryIssues)) {
 				wg.Add(1)
 				go comparator.iterating(
@@ -185,6 +191,7 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 	if err != nil {
 		result.err = err
 	}
+	runtimeinfo.LogInfo("FINISH COMPARE TASK [", taskKey, "].")
 	rules.GetReturnResult()(result)
 	return
 }
