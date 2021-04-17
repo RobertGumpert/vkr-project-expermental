@@ -11,21 +11,25 @@ type taskDownloadRepositoriesByKeyword struct {
 	service *CollectorService
 }
 
+func newTaskDownloadRepositoriesByKeyword(service *CollectorService) *taskDownloadRepositoriesByKeyword {
+	return &taskDownloadRepositoriesByKeyword{service: service}
+}
+
 func (t *taskDownloadRepositoriesByKeyword) CreateTask(
 	taskAppService itask.ITask,
 	keyWord string,
-) (trigger itask.ITask, dependentTasks []itask.ITask, err error) {
+) (trigger itask.ITask, err error) {
 	if t.service.taskManager.QueueIsFilled(31) {
-		return nil, nil, ErrorQueueIsFilled
+		return nil, ErrorQueueIsFilled
 	}
 	trigger, err = t.service.createTaskDownloadRepositoriesByKeyword(
 		TaskTypeDownloadCompositeByKeyWord,
 		keyWord,
 	)
 	if err != nil {
-		return nil, nil, err
+		return nil, err
 	}
-	dependentTasks = make([]itask.ITask, 0)
+	dependentTasks := make([]itask.ITask, 0)
 	for next := 0; next < 30; next++ {
 		repositoryDataModel := &dataModel.RepositoryModel{
 			Name:  keyWord,
@@ -36,7 +40,7 @@ func (t *taskDownloadRepositoriesByKeyword) CreateTask(
 			*repositoryDataModel,
 		)
 		if err != nil {
-			return nil, nil, err
+			return nil, err
 		}
 		//
 		dependentTask.SetKey("(download-issues){%s}")
@@ -64,7 +68,7 @@ func (t *taskDownloadRepositoriesByKeyword) CreateTask(
 		trigger,
 		dependentTasks...,
 	)
-	return trigger, dependentTasks, nil
+	return trigger, nil
 }
 
 func (t *taskDownloadRepositoriesByKeyword) EventManageTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
@@ -97,11 +101,14 @@ func (t *taskDownloadRepositoriesByKeyword) EventUpdateTaskState(task itask.ITas
 	customFields := task.GetState().GetCustomFields().(*customFieldsModel.Model)
 	switch customFields.GetTaskType() {
 	case TaskTypeDownloadOnlyDescriptions:
+		var (
+			dataModels []dataModel.RepositoryModel
+		)
 		cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoriesByKeyWord)
 		cf := task.GetState().GetCustomFields().(*customFieldsModel.Model)
 		appServiceTask := cf.GetFields().(itask.ITask)
 		if len(cast.Repositories) != 0 {
-			dataModels := t.service.writeRepositoriesToDB(cast.Repositories)
+			dataModels, _ = t.service.writeRepositoriesToDB(cast.Repositories)
 			appServiceUpdateContext := appServiceTask.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
 			appServiceUpdateContext = append(
 				appServiceUpdateContext,
@@ -112,16 +119,38 @@ func (t *taskDownloadRepositoriesByKeyword) EventUpdateTaskState(task itask.ITas
 		if cast.ExecutionTaskStatus.TaskCompleted {
 			task.GetState().SetCompleted(true)
 			var (
-				deleteDependentTasks []itask.ITask
+				deleteDependentTasks    []itask.ITask
 				appServiceUpdateContext []dataModel.RepositoryModel
 				//
 				deleteTaskKeys = make(map[string]struct{})
-				next = 0
+				next           = 0
 			)
 			appServiceUpdateContext = appServiceTask.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-			if isTrigger, dependentTasks := task.IsTrigger(); isTrigger {
+			if isTrigger, dependentsTasks := task.IsTrigger(); isTrigger {
+				if len(appServiceUpdateContext) == 0 {
+					var(
+						dependentTask itask.ITask
+					)
+					if len(*dependentsTasks) != 0 {
+						for next = 0; next < len(*dependentsTasks); next++ {
+							dependentTask = (*dependentsTasks)[next]
+							dependentTask.GetState().SetRunnable(true)
+							dependentTask.GetState().SetCompleted(true)
+						}
+						if dependentTask != nil {
+							t.service.taskManager.SetUpdateForTask(dependentTask.GetKey(), nil)
+							return nil, false
+						} else {
+							// TO DO: error
+							return nil, true
+						}
+					} else {
+						// TO DO: error
+						return nil, true
+					}
+				}
 				for next = 0; next < len(appServiceUpdateContext); next++ {
-					dependentTask := (*dependentTasks)[next]
+					dependentTask := (*dependentsTasks)[next]
 					repositoryDataModel := appServiceUpdateContext[next]
 					cf := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
 					cf.Fields = &repositoryDataModel
@@ -131,18 +160,21 @@ func (t *taskDownloadRepositoriesByKeyword) EventUpdateTaskState(task itask.ITas
 					sendContext.JSONBody.(*jsonSendToCollectorRepositoryIssues).Repository.Name = repositoryDataModel.Name
 					sendContext.JSONBody.(*jsonSendToCollectorRepositoryIssues).Repository.Owner = repositoryDataModel.Owner
 					dependentTask.GetState().SetSendContext(sendContext)
-					dependentTask.GetState().SetCustomFields(customFields)
+					dependentTask.GetState().SetCustomFields(cf)
 				}
-				deleteDependentTasks = (*dependentTasks)[next:]
+				deleteDependentTasks = (*dependentsTasks)[next:]
 				for _, dependent := range deleteDependentTasks {
 					deleteTaskKeys[dependent.GetKey()] = struct{}{}
 				}
 				t.service.taskManager.DeleteTasksByKeys(deleteTaskKeys)
-				*dependentTasks = (*dependentTasks)[:next]
+				*dependentsTasks = (*dependentsTasks)[:next]
 			}
 		}
 		break
 	case TaskTypeDownloadOnlyIssues:
+		if task.GetState().IsCompleted() && task.GetState().IsRunnable() {
+			return nil, false
+		}
 		cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 		var (
 			repositoryId    uint
@@ -155,7 +187,7 @@ func (t *taskDownloadRepositoriesByKeyword) EventUpdateTaskState(task itask.ITas
 		} else {
 			repositoryId = repositoryModel.ID
 		}
-		if len(cast.Issues) == 0 {
+		if len(cast.Issues) != 0 {
 			t.service.writeIssuesToDB(cast.Issues, repositoryId)
 		}
 		if cast.ExecutionTaskStatus.TaskCompleted {

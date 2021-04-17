@@ -27,8 +27,9 @@ func (service *CollectorService) getRepositoryNameFromURL(url string) (name, own
 	return name, owner
 }
 
-func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFromCollectorRepository) (models []dataModel.RepositoryModel) {
+func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFromCollectorRepository) (models,existModels []dataModel.RepositoryModel) {
 	models = make([]dataModel.RepositoryModel, 0)
+	existModels = make([]dataModel.RepositoryModel, 0)
 	for _, repository := range repositories {
 		if repository.Err != nil {
 			runtimeinfo.LogError("CREATE REPOSITORY DATA MODELS ERROR: ", repository.Err)
@@ -56,7 +57,12 @@ func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFr
 		}
 		err := service.repository.AddRepository(model)
 		if err != nil {
-			runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
+			m, err := service.repository.GetRepositoryByName(model.Name)
+			if err != nil {
+				runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
+			} else {
+				existModels = append(existModels, m)
+			}
 			continue
 		}
 		models = append(
@@ -64,12 +70,7 @@ func (service *CollectorService) writeRepositoriesToDB(repositories []jsonSendFr
 			*model,
 		)
 	}
-	//err := service.repository.AddRepositories(models)
-	//if err != nil {
-	//	runtimeinfo.LogError("WRITE REPOSITORIES MODELS ERROR: ", err)
-	//	return models
-	//}
-	return models
+	return models, existModels
 }
 
 func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorIssue, repositoryID uint) (models []dataModel.IssueModel) {
@@ -129,6 +130,13 @@ func (service *CollectorService) writeIssuesToDB(issues []jsonSendFromCollectorI
 	err := service.repository.AddIssues(models)
 	if err != nil {
 		runtimeinfo.LogError("WRITE ISSUES MODELS ERROR: ", err)
+		for next := 0; next < len(models); next++ {
+			model := models[next]
+			err := service.repository.AddIssue(&model)
+			if err != nil {
+				runtimeinfo.LogError("\t\t\t--->WRITE ISSUES MODELS ERROR: ", err)
+			}
+		}
 		return models
 	}
 	return models

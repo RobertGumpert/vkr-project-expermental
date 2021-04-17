@@ -11,6 +11,10 @@ type taskDownloadRepositoriesByName struct {
 	service *CollectorService
 }
 
+func newTaskDownloadRepositoriesByName(service *CollectorService) *taskDownloadRepositoriesByName {
+	return &taskDownloadRepositoriesByName{service: service}
+}
+
 func (t *taskDownloadRepositoriesByName) CreateTask(
 	taskAppService itask.ITask,
 	repositoryDataModels ...dataModel.RepositoryModel,
@@ -24,13 +28,10 @@ func (t *taskDownloadRepositoriesByName) CreateTask(
 			strings.TrimSpace(repositoryDataModel.Owner) == "" {
 			return nil, ErrorNoneCorrectData
 		}
-		r, err := t.service.repository.GetRepositoryByName(
+		_, err := t.service.repository.GetRepositoryByName(
 			repositoryDataModel.Name,
 		)
-		if err != nil {
-			return nil, err
-		}
-		if r.ID != 0 || r.Name == repositoryDataModel.Name {
+		if err == nil {
 			return nil, ErrorRepositoryIsExist
 		}
 		taskRepositoryDescriptions, err := t.service.createTaskDownloadRepositoriesDescription(
@@ -102,13 +103,42 @@ func (t *taskDownloadRepositoriesByName) EventUpdateTaskState(task itask.ITask, 
 	customFields := task.GetState().GetCustomFields().(*customFieldsModel.Model)
 	switch customFields.GetTaskType() {
 	case TaskTypeDownloadOnlyDescriptions:
+		var(
+			updateContext *dataModel.RepositoryModel
+		)
 		cast := somethingUpdateContext.(*jsonSendFromCollectorDescriptionsRepositories)
 		if len(cast.Repositories) == 0 {
 			// TO DO: error
 			return nil, true
 		}
-		dataModels := t.service.writeRepositoriesToDB(cast.Repositories)
-		updateContext := &dataModels[0]
+		dataModels, existRepositories := t.service.writeRepositoriesToDB(cast.Repositories)
+		if len(existRepositories) != 0 {
+			updateContext = &existRepositories[0]
+			list, _ := t.service.repository.GetIssueRepository(updateContext.ID)
+			if len(list) != 0 {
+				_, dependentsTasks := task.IsTrigger()
+				var(
+					dependentTask itask.ITask
+				)
+				for next := 0; next < len(*dependentsTasks); next++ {
+					dependentTask = (*dependentsTasks)[next]
+					dependentTask.GetState().SetRunnable(true)
+					dependentTask.GetState().SetCompleted(true)
+				}
+				cf := task.GetState().GetCustomFields().(*customFieldsModel.Model)
+				appServiceTask := cf.GetFields().(itask.ITask)
+				appServiceUpdateContext := appServiceTask.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
+				appServiceUpdateContext = append(
+					appServiceUpdateContext,
+					*updateContext,
+				)
+				appServiceTask.GetState().SetUpdateContext(appServiceUpdateContext)
+				t.service.taskManager.SetUpdateForTask(task.GetKey(), nil)
+				return nil, false
+			}
+		} else {
+			updateContext = &dataModels[0]
+		}
 		task.GetState().SetUpdateContext(updateContext)
 		//
 		if cast.ExecutionTaskStatus.TaskCompleted {
@@ -125,6 +155,9 @@ func (t *taskDownloadRepositoriesByName) EventUpdateTaskState(task itask.ITask, 
 		}
 		break
 	case TaskTypeDownloadOnlyIssues:
+		if task.GetState().IsRunnable() && task.GetState().IsCompleted() {
+			return nil, false
+		}
 		cast := somethingUpdateContext.(*jsonSendFromCollectorRepositoryIssues)
 		var (
 			repositoryId    uint
@@ -137,7 +170,7 @@ func (t *taskDownloadRepositoriesByName) EventUpdateTaskState(task itask.ITask, 
 		} else {
 			repositoryId = repositoryModel.ID
 		}
-		if len(cast.Issues) == 0 {
+		if len(cast.Issues) != 0 {
 			t.service.writeIssuesToDB(cast.Issues, repositoryId)
 		}
 		if cast.ExecutionTaskStatus.TaskCompleted {
