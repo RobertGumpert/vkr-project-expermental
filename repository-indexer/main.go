@@ -7,6 +7,7 @@ import (
 	"repository-indexer/app/config"
 	"repository-indexer/app/service/appService"
 	"repository-indexer/app/service/hashRepository"
+	"runtime"
 )
 
 var (
@@ -18,6 +19,8 @@ var (
 )
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
+	//
 	var err error
 	runtimeinfo.LogInfo("START.")
 	CONFIG = config.NewConfig().Read()

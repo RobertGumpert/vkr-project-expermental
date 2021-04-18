@@ -8,27 +8,22 @@ import (
 func (service *AppService) ConcatTheirRestHandlers(engine *gin.Engine) {
 	apiGroup := engine.Group("/api")
 	{
-		collectorGroup := apiGroup.Group("/download/repositories")
+		downloadGroup := apiGroup.Group("/download/and/analyze")
 		{
-			collectorGroup.POST("/by/name", service.restHandlerDownloadRepositoriesByName)
-			collectorGroup.POST("/by/keyword", service.restHandlerDownloadRepositoriesByKeyWord)
-			collectorGroup.POST("/by/keyword/and/by/name", service.restHandlerDownloadRepositoryAndRepositoriesByKeyWord)
-		}
-		compositeApi := apiGroup.Group("/composite")
-		{
-			compositeApi.POST("/new/repository/with/exist/keyword", service.restHandlerCompositeNewRepositoryWithExistKeyWord)
+			downloadGroup.POST("/new/repository/exist/keyword", service.restHandlerNewRepositoryExistKeyword)
+			downloadGroup.POST("/new/repository/new/keyword", service.restHandlerNewRepositoryNewKeyword)
 		}
 	}
 }
 
-func (service *AppService) restHandlerCompositeNewRepositoryWithExistKeyWord(ctx *gin.Context) {
-	requestData := new(JsonSingleTaskDownloadRepositoriesByName)
-	if err := ctx.BindJSON(requestData); err != nil {
+func (service *AppService) restHandlerNewRepositoryExistKeyword(ctx *gin.Context) {
+	state := new(JsonNewRepositoryWithExistKeyword)
+	if err := ctx.BindJSON(state); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := service.CreateTaskCompositeNewRepositoryWithExistKeyWord(
-		requestData,
+	err := service.DownloadAndAnalyzeNewRepositoryWithExistKeyword(
+		state,
 	)
 	if err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
@@ -36,44 +31,14 @@ func (service *AppService) restHandlerCompositeNewRepositoryWithExistKeyWord(ctx
 	ctx.AbortWithStatus(http.StatusOK)
 }
 
-func (service *AppService) restHandlerDownloadRepositoriesByName(ctx *gin.Context) {
-	requestData := new(JsonSingleTaskDownloadRepositoriesByName)
-	if err := ctx.BindJSON(requestData); err != nil {
+func (service *AppService) restHandlerNewRepositoryNewKeyword(ctx *gin.Context) {
+	state := new(JsonNewRepositoryWithNewKeyword)
+	if err := ctx.BindJSON(state); err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-	err := service.CreateTaskDownloadRepositoriesByNames(
-		requestData,
-	)
-	if err != nil {
-		ctx.AbortWithStatus(http.StatusLocked)
-	}
-	ctx.AbortWithStatus(http.StatusOK)
-}
-
-func (service *AppService) restHandlerDownloadRepositoriesByKeyWord(ctx *gin.Context) {
-	requestData := new(JsonSingleTaskDownloadRepositoriesByKeyWord)
-	if err := ctx.BindJSON(requestData); err != nil {
-		ctx.AbortWithStatus(http.StatusLocked)
-		return
-	}
-	err := service.CreateTaskDownloadRepositoriesByKeyWord(
-		requestData,
-	)
-	if err != nil {
-		ctx.AbortWithStatus(http.StatusLocked)
-	}
-	ctx.AbortWithStatus(http.StatusOK)
-}
-
-func (service *AppService) restHandlerDownloadRepositoryAndRepositoriesByKeyWord(ctx *gin.Context) {
-	requestData := new(JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord)
-	if err := ctx.BindJSON(requestData); err != nil {
-		ctx.AbortWithStatus(http.StatusLocked)
-		return
-	}
-	err := service.CreateTaskDownloadRepositoryAndRepositoriesByKeyWord(
-		requestData,
+	err := service.DownloadAndAnalyzeNewRepositoryWithNewKeyword(
+		state,
 	)
 	if err != nil {
 		ctx.AbortWithStatus(http.StatusLocked)

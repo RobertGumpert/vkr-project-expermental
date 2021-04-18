@@ -3,6 +3,7 @@ package main
 import (
 	"github-collector/app/config"
 	"github-collector/app/service/appService"
+	"runtime"
 )
 
 var (
@@ -12,6 +13,8 @@ var (
 )
 
 func main() {
+	runtime.GOMAXPROCS(runtime.NumCPU())
+	//
 	CONFIG = config.NewConfig().Read()
 	APP = appService.NewAppService(CONFIG)
 	SERVER = NewServer(CONFIG)

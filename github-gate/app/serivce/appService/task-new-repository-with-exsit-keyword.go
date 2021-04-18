@@ -10,52 +10,41 @@ import (
 	"strings"
 )
 
-type taskCompositeNewRepositoryWithExistKeyWord struct {
-	taskManager                itask.IManager
-	collectorService           *githubCollectorService.CollectorService
-	issuesIndexerService       *issueIndexerService.IndexerService
-	repositoriesIndexerService *repositoryIndexerService.IndexerService
+type taskNewRepositoryWithExistKeyWord struct {
+	appService *AppService
 }
 
-func newTaskCompositeNewRepositoryWithExistKeyWord(
-	taskManager itask.IManager,
-	collectorService *githubCollectorService.CollectorService,
-	issuesIndexerService *issueIndexerService.IndexerService,
-	repositoriesIndexerService *repositoryIndexerService.IndexerService,
-) *taskCompositeNewRepositoryWithExistKeyWord {
-	task := new(taskCompositeNewRepositoryWithExistKeyWord)
-	task.taskManager = taskManager
-	task.collectorService = collectorService
-	task.issuesIndexerService = issuesIndexerService
-	task.repositoriesIndexerService = repositoriesIndexerService
+func newTaskNewRepositoryWithExistKeyWord(appService *AppService) *taskNewRepositoryWithExistKeyWord {
+	task := new(taskNewRepositoryWithExistKeyWord)
+	task.appService = appService
 	return task
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) CreateTask(jsonModel *JsonSingleTaskDownloadRepositoriesByName, channel chan itask.ITask) (task itask.ITask, err error) {
+func (t *taskNewRepositoryWithExistKeyWord) CreateTask(jsonModel *JsonNewRepositoryWithExistKeyword) (task itask.ITask, err error) {
 	var (
 		taskKey = strings.Join([]string{
-			"composite-new-repository-with-exist-keyword:{",
+			"new-repository-with-exist-keyword:{",
 			jsonModel.Repositories[0].Name,
 			"}",
 		}, "")
 	)
-	downloadTask, err := composite.getTaskForCollector(taskKey, jsonModel, channel)
+	downloadTask, err := t.getTaskForCollector(taskKey, jsonModel)
 	if err != nil {
 		return nil, err
 	}
-	issueIndexerTask, err := composite.getTaskForIssueIndexer(taskKey)
+	issueIndexerTask, err := t.getTaskForIssueIndexer(taskKey)
 	if err != nil {
 		return nil, err
 	}
-	repositoryIndexerTask, err := composite.getTaskForRepositoryIndexer(taskKey)
+	repositoryIndexerTask, err := t.getTaskForRepositoryIndexer(taskKey)
 	if err != nil {
 		return nil, err
 	}
-	composite.taskManager.SetRunBan(issueIndexerTask, repositoryIndexerTask)
-	return composite.taskManager.ModifyTaskAsTrigger(downloadTask, repositoryIndexerTask, issueIndexerTask)
+	t.appService.taskManager.SetRunBan(issueIndexerTask, repositoryIndexerTask)
+	return t.appService.taskManager.ModifyTaskAsTrigger(downloadTask, repositoryIndexerTask, issueIndexerTask)
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForCollector(taskKey string, jsonModel *JsonSingleTaskDownloadRepositoriesByName, channel chan itask.ITask) (task itask.ITask, err error) {
+func (t *taskNewRepositoryWithExistKeyWord) getTaskForCollector(taskKey string, jsonModel *JsonNewRepositoryWithExistKeyword) (task itask.ITask, err error) {
 	var (
 		downloadTaskKey = strings.Join([]string{
 			taskKey,
@@ -66,7 +55,7 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForCollector
 		updateContext     = make([]dataModel.RepositoryModel, 0)
 		customFields      = &customFieldsModel.Model{
 			TaskType: githubCollectorService.TaskTypeDownloadCompositeByName,
-			Fields:   channel,
+			Fields:   t.appService.channelResultsFromCollectorService,
 		}
 	)
 	for _, repository := range jsonModel.Repositories {
@@ -76,67 +65,73 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForCollector
 		})
 		repositoriesNames = append(repositoriesNames, repository.Name)
 	}
-	return composite.taskManager.CreateTask(
-		CompositeTaskNewRepositoryWithExistWord,
+	return t.appService.taskManager.CreateTask(
+		TaskTypeNewRepositoryWithExistKeyword,
 		downloadTaskKey,
 		sendContext,
 		updateContext,
 		customFields,
-		composite.EventRunTask,
-		composite.EventUpdateTaskState,
+		t.EventRunTask,
+		t.EventUpdateTaskState,
 	)
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForRepositoryIndexer(taskKey string) (task itask.ITask, err error) {
+func (t *taskNewRepositoryWithExistKeyWord) getTaskForRepositoryIndexer(taskKey string) (task itask.ITask, err error) {
 	var (
 		repositoryIndexerTaskKey = strings.Join([]string{
 			taskKey,
 			"-[repository-indexer-reindexing-for-repository]",
 		}, "")
-	)
-	return composite.taskManager.CreateTask(
-		CompositeTaskNewRepositoryWithExistWord,
-		repositoryIndexerTaskKey,
-		&repositoryIndexerService.JsonSendToIndexerReindexingForRepository{
+		sendContext = &repositoryIndexerService.JsonSendToIndexerReindexingForRepository{
 			TaskKey:      repositoryIndexerTaskKey,
 			RepositoryID: 0,
-		},
-		&repositoryIndexerService.JsonSendFromIndexerReindexingForRepository{},
-		&customFieldsModel.Model{
+		}
+		updateContext = &repositoryIndexerService.JsonSendFromIndexerReindexingForRepository{}
+		customFields  = &customFieldsModel.Model{
 			TaskType: repositoryIndexerService.TaskTypeReindexingForRepository,
 			Fields:   nil,
-		},
-		composite.EventRunTask,
-		composite.EventUpdateTaskState,
+		}
+	)
+	return t.appService.taskManager.CreateTask(
+		TaskTypeNewRepositoryWithExistKeyword,
+		repositoryIndexerTaskKey,
+		sendContext,
+		updateContext,
+		customFields,
+		t.EventRunTask,
+		t.EventUpdateTaskState,
 	)
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) getTaskForIssueIndexer(taskKey string) (task itask.ITask, err error) {
+func (t *taskNewRepositoryWithExistKeyWord) getTaskForIssueIndexer(taskKey string) (task itask.ITask, err error) {
 	var (
 		issueIndexerTaskKey = strings.Join([]string{
 			taskKey,
 			"-[issue-indexer-compare-group-repositories]",
 		}, "")
-	)
-	return composite.taskManager.CreateTask(
-		CompositeTaskNewRepositoryWithExistWord,
-		issueIndexerTaskKey,
-		&issueIndexerService.JsonSendToIndexerCompareGroup{
+		sendContext = &issueIndexerService.JsonSendToIndexerCompareGroup{
 			TaskKey:                  issueIndexerTaskKey,
 			RepositoryID:             0,
 			ComparableRepositoriesID: nil,
-		},
-		&issueIndexerService.JsonSendFromIndexerCompareGroup{},
-		&customFieldsModel.Model{
+		}
+		updateContext = &issueIndexerService.JsonSendFromIndexerCompareGroup{}
+		customFields  = &customFieldsModel.Model{
 			TaskType: issueIndexerService.TaskTypeCompareGroupRepositories,
 			Fields:   nil,
-		},
-		composite.EventRunTask,
-		composite.EventUpdateTaskState,
+		}
+	)
+	return t.appService.taskManager.CreateTask(
+		TaskTypeNewRepositoryWithExistKeyword,
+		issueIndexerTaskKey,
+		sendContext,
+		updateContext,
+		customFields,
+		t.EventRunTask,
+		t.EventUpdateTaskState,
 	)
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventManageTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
+func (t *taskNewRepositoryWithExistKeyWord) EventManageTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
 	deleteTasks = make(map[string]struct{})
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
@@ -168,23 +163,23 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventManageTasks(ta
 	return deleteTasks
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventRunTask(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
+func (t *taskNewRepositoryWithExistKeyWord) EventRunTask(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
 	case issueIndexerService.TaskTypeCompareGroupRepositories:
-		err := composite.issuesIndexerService.CompareGroupRepositories(task)
+		err := t.appService.serviceForIssueIndexer.CompareGroupRepositories(task)
 		if err != nil {
 			return true, false, nil
 		}
 		break
 	case repositoryIndexerService.TaskTypeReindexingForRepository:
-		err := composite.repositoriesIndexerService.ReindexingForRepository(task)
+		err := t.appService.serviceForRepositoryIndexer.ReindexingForRepository(task)
 		if err != nil {
 			return true, false, nil
 		}
 		break
 	case githubCollectorService.TaskTypeDownloadCompositeByName:
-		err = composite.collectorService.CreateTriggerTaskRepositoriesByName(
+		err = t.appService.serviceForCollector.CreateTaskRepositoriesByName(
 			task,
 			task.GetState().GetSendContext().([]dataModel.RepositoryModel)...,
 		)
@@ -196,7 +191,7 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventRunTask(task i
 	return false, false, nil
 }
 
-func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskState(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
+func (t *taskNewRepositoryWithExistKeyWord) EventUpdateTaskState(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
 	case issueIndexerService.TaskTypeCompareGroupRepositories:
@@ -220,11 +215,11 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskStat
 					dependentTask := (*dependentsTasks)[next]
 					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
 					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareGroupRepositories {
-						composite.taskManager.TakeOffRunBanInQueue(dependentTask)
+						t.appService.taskManager.TakeOffRunBanInQueue(dependentTask)
 						if len(group) == 0 {
 							dependentTask.GetState().SetCompleted(true)
 							dependentTask.GetState().SetRunnable(true)
-							composite.taskManager.SetUpdateForTask(task.GetKey(), nil)
+							t.appService.taskManager.SetUpdateForTask(task.GetKey(), nil)
 							break
 						} else {
 							sendContext := dependentTask.GetState().GetSendContext().(*issueIndexerService.JsonSendToIndexerCompareGroup)
@@ -249,7 +244,7 @@ func (composite *taskCompositeNewRepositoryWithExistKeyWord) EventUpdateTaskStat
 					sendContext := dependentTask.GetState().GetSendContext().(*repositoryIndexerService.JsonSendToIndexerReindexingForRepository)
 					sendContext.RepositoryID = repository.ID
 					dependentTask.GetState().SetSendContext(sendContext)
-					composite.taskManager.TakeOffRunBanInQueue(dependentTask)
+					t.appService.taskManager.TakeOffRunBanInQueue(dependentTask)
 					break
 				}
 			}

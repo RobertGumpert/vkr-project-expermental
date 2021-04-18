@@ -39,6 +39,5 @@ func main() {
 		CONFIG,
 		SERVER.engine,
 	)
-	APPSERVICE.ConcatTheirRestHandlers(SERVER.engine)
 	SERVER.RunServer()
 }
