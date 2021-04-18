@@ -15,6 +15,7 @@ const (
 	TaskTypeRepositoryAndRepositoriesByKeyWord itask.Type = 12
 	TaskTypeNewRepositoryWithExistKeyword      itask.Type = 100
 	TaskTypeNewRepositoryWithNewKeyword        itask.Type = 101
+	TaskTypeExistRepository                    itask.Type = 102
 )
 
 //
@@ -35,12 +36,7 @@ type JsonNewRepositoryWithNewKeyword struct {
 	Repository JsonRepository `json:"repository"`
 }
 
-//
-type JsonSingleTaskDownloadRepositoriesByKeyWord struct {
-	KeyWord string `json:"key_word"`
-}
-
-type JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord struct {
-	Repository JsonRepository `json:"repository"`
-	KeyWord    string         `json:"key_word"`
+type JsonExistRepository struct {
+	RepositoryID uint           `json:"repository_id"`
+	Repository   JsonRepository `json:"repository"`
 }

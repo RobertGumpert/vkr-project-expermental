@@ -138,6 +138,11 @@ func (t *taskNewRepositoryWithNewKeyword) EventManageTasks(task itask.ITask) (de
 			if isTrigger, dependentsTasks := trigger.IsTrigger(); isTrigger {
 				for next := 0; next < len(*dependentsTasks); next++ {
 					dependentTask := (*dependentsTasks)[next]
+					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
+					if customFields.GetTaskType() == repositoryIndexerService.TaskTypeReindexingForRepository {
+						nearest := dependentTask.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository)
+						trigger.GetState().SetUpdateContext(nearest)
+					}
 					if dependentTask.GetState().IsCompleted() {
 						countCompletedTask++
 					}

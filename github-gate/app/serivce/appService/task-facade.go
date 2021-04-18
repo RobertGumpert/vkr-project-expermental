@@ -17,9 +17,12 @@ import (
 type taskFacade struct {
 	newRepositoryExistKeyword *taskNewRepositoryWithExistKeyWord
 	newRepositoryNewKeyword   *taskNewRepositoryWithNewKeyword
+	existRepository           *taskExistRepository
 	//
 	appService *AppService
 }
+
+
 
 func newTaskFacade(appService *AppService, db repository.IRepository, config *config.Config, engine *gin.Engine) *taskFacade {
 	facade := new(taskFacade)
@@ -52,6 +55,7 @@ func newTaskFacade(appService *AppService, db repository.IRepository, config *co
 	facade.appService = appService
 	facade.newRepositoryExistKeyword = newTaskNewRepositoryWithExistKeyWord(appService)
 	facade.newRepositoryNewKeyword = newTaskNewRepositoryWithNewKeyword(appService)
+	facade.existRepository = newTaskExistRepository(appService)
 	//
 	go facade.scanChannelForCollectorService()
 	go facade.scanChannelForIssueIndexerService()
@@ -66,6 +70,10 @@ func (facade *taskFacade) GetNewRepositoryExistKeyword() *taskNewRepositoryWithE
 
 func (facade *taskFacade) GetNewRepositoryNewKeyword() *taskNewRepositoryWithNewKeyword {
 	return facade.newRepositoryNewKeyword
+}
+
+func (facade *taskFacade) GetExistRepository() *taskExistRepository {
+	return facade.existRepository
 }
 
 func (facade *taskFacade) scanChannelForCollectorService() {
@@ -103,9 +111,9 @@ func (facade *taskFacade) eventManageCompletedTasks(task itask.ITask) (deleteTas
 		deleteTasks = facade.newRepositoryExistKeyword.EventManageTasks(task)
 		if len(deleteTasks) != 0 {
 			if idDependent, trigger := task.IsDependent(); idDependent {
-				repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-				for _, repositoryDataModel := range repositories {
-					log.Println("\t->Task Results : ", repositoryDataModel.ID)
+				repositories := trigger.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository)
+				for id, distance := range repositories.Result.NearestRepositoriesID {
+					log.Println("\t->Task Results : ", id, " = ", distance)
 				}
 			}
 		}
@@ -114,9 +122,20 @@ func (facade *taskFacade) eventManageCompletedTasks(task itask.ITask) (deleteTas
 		deleteTasks = facade.newRepositoryNewKeyword.EventManageTasks(task)
 		if len(deleteTasks) != 0 {
 			if idDependent, trigger := task.IsDependent(); idDependent {
-				repositories := trigger.GetState().GetUpdateContext().([]dataModel.RepositoryModel)
-				for _, repositoryDataModel := range repositories {
-					log.Println("\t->Task Results : ", repositoryDataModel.ID)
+				repositories := trigger.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository)
+				for id, distance := range repositories.Result.NearestRepositoriesID {
+					log.Println("\t->Task Results : ", id, " = ", distance)
+				}
+			}
+		}
+		break
+	case TaskTypeExistRepository:
+		deleteTasks = facade.existRepository.EventManageTasks(task)
+		if len(deleteTasks) != 0 {
+			if idDependent, trigger := task.IsDependent(); idDependent {
+				repositories := trigger.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository)
+				for id, distance := range repositories.Result.NearestRepositoriesID {
+					log.Println("\t->Task Results : ", id, " = ", distance)
 				}
 			}
 		}

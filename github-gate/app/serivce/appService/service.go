@@ -76,6 +76,23 @@ func (service *AppService) DownloadAndAnalyzeNewRepositoryWithNewKeyword(jsonMod
 	}
 	return nil
 }
+
+func (service *AppService) ReanalyzeExistRepository(jsonModel *JsonExistRepository) (err error) {
+	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
+		return gotasker.ErrorQueueIsFilled
+	}
+	t := service.facade.GetExistRepository()
+	task, err := t.CreateTask(jsonModel)
+	if err != nil {
+		return err
+	}
+	err = service.taskManager.AddTaskAndTask(task)
+	if err != nil {
+		return gotasker.ErrorQueueIsFilled
+	}
+	return nil
+}
+
 //
 //func (service *AppService) CreateTaskCompositeNewRepositoryWithExistKeyWord(jsonModel *JsonNewRepositoryWithExistKeyword) (err error) {
 //	if isFilled := service.taskManager.QueueIsFilled(3); isFilled {

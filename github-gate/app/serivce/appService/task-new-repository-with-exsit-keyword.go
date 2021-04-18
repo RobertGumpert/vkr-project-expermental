@@ -146,6 +146,11 @@ func (t *taskNewRepositoryWithExistKeyWord) EventManageTasks(task itask.ITask) (
 			if isTrigger, dependentsTasks := trigger.IsTrigger(); isTrigger {
 				for next := 0; next < len(*dependentsTasks); next++ {
 					dependentTask := (*dependentsTasks)[next]
+					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
+					if customFields.GetTaskType() == repositoryIndexerService.TaskTypeReindexingForRepository {
+						nearest := dependentTask.GetState().GetUpdateContext().(*repositoryIndexerService.JsonSendFromIndexerReindexingForRepository)
+						trigger.GetState().SetUpdateContext(nearest)
+					}
 					if dependentTask.GetState().IsCompleted() {
 						countCompletedTask++
 					}
@@ -219,7 +224,7 @@ func (t *taskNewRepositoryWithExistKeyWord) EventUpdateTaskState(task itask.ITas
 						if len(group) == 0 {
 							dependentTask.GetState().SetCompleted(true)
 							dependentTask.GetState().SetRunnable(true)
-							t.appService.taskManager.SetUpdateForTask(task.GetKey(), nil)
+							t.appService.taskManager.SetUpdateForTask(dependentTask.GetKey(), nil)
 							break
 						} else {
 							sendContext := dependentTask.GetState().GetSendContext().(*issueIndexerService.JsonSendToIndexerCompareGroup)
