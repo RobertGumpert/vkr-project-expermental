@@ -102,7 +102,7 @@ func (service *AppService) createTaskRepositoriesByKeyWord(jsonModel *JsonCreate
 			[]string{
 				"https://api.github.com/search/repositories?q=topic:",
 				jsonModel.KeyWord,
-				"&per_page=3",
+				"&per_page=30",
 			},
 			"",
 		)

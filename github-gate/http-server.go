@@ -2,7 +2,7 @@ package main
 
 import (
 	"github-gate/app/config"
-	//"github.com/RobertGumpert/vkr-pckg/tree/main/runtimeinfo"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/gin-contrib/cors"
 	"github.com/gin-gonic/gin"
 	"strings"
@@ -47,7 +47,7 @@ func (s *server) createServerEngine(port ...string) (*gin.Engine, func()) {
 			err = engine.Run()
 		}
 		if err != nil {
-			//runtimeinfo.LogFatal(err)
+			runtimeinfo.LogFatal(err)
 		}
 	}
 }

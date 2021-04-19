@@ -3,6 +3,7 @@ package hashRepository
 import (
 	"github.com/RobertGumpert/gosimstor"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
+	"sort"
 )
 
 //
@@ -91,7 +92,7 @@ func (storage *LocalHashStorage) GetAllKeyWords() ([]dataModel.RepositoriesKeyWo
 		if err != nil {
 			continue
 		}
-		model = append(model, dataModel.RepositoriesKeyWordsModel{KeyWord: row.ID.(string), Position:row.Data.(int64)})
+		model = append(model, dataModel.RepositoriesKeyWordsModel{KeyWord: row.ID.(string), Position: row.Data.(int64)})
 	}
 	return model, err
 }
@@ -129,6 +130,7 @@ func (storage *LocalHashStorage) GetNearestRepositories(repositoryId uint) (data
 		return model, err
 	}
 	model = row.Data.(dataModel.NearestRepositoriesJSON)
+	model.Repositories = rankByDistance(model.Repositories)
 	return model, err
 }
 
@@ -146,4 +148,26 @@ func (storage *LocalHashStorage) RewriteAllNearestRepositories(repositoryId []ui
 		nearestRepositories,
 		rows,
 	)
+}
+
+type tuple struct {
+	Key   uint
+	Value float64
+}
+type tupleList []tuple
+
+
+func rankByDistance(wordFrequencies map[uint]float64) map[uint]float64 {
+	pl := make(tupleList, 0)
+	for k, v := range wordFrequencies {
+		pl = append(pl, tuple{k, v})
+	}
+	sort.Slice(pl, func(i, j int) bool {
+		return pl[i].Value > pl[j].Value
+	})
+	sortMp := make(map[uint]float64)
+	for _, elem := range pl {
+		sortMp[elem.Key] = elem.Value
+	}
+	return sortMp
 }

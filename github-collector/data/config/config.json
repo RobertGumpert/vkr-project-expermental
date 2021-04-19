@@ -1,7 +1,7 @@
 {
   "port": "54100",
   "github_token": "aef3219befb0b5a71ebfcf5876dd8c8d9eeb0077",
-  "count_tasks": 2,
+  "count_tasks": 100,
   "github_gate_address": "http://127.0.0.1:54000",
   "github_gate_endpoints": {
     "send_response_task_repositories_descriptions": "/task/api/collector/update/repositories/descriptions",

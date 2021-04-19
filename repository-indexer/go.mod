@@ -3,7 +3,7 @@ module repository-indexer
 go 1.15
 
 require (
-	github.com/RobertGumpert/gosimstor v1.0.5
+	github.com/RobertGumpert/gosimstor v1.0.6
 	github.com/RobertGumpert/gotasker v1.0.22
 	github.com/RobertGumpert/vkr-pckg v1.0.19
 	github.com/aaaton/golem/v4 v4.0.1
