@@ -22,5 +22,9 @@
     "reindexing_for_group_repositories": "api/task/reindexing/for/group/repositories",
     "reindexing_for_repository": "api/task/reindexing/for/repository",
     "reindexing_for_all": "api/task/reindexing/for/all"
+  },
+  "app_address" : "http://127.0.0.1:60000",
+  "app_endpoints" : {
+    "nearest_repositories" : "task/api/update/nearest/repositories"
   }
 }

@@ -38,3 +38,4 @@ type JsonSendFromIndexerReindexingForRepository struct {
 	ExecutionTaskStatus JsonExecutionTaskStatus `json:"execution_task_status"`
 	Result              JsonNearestRepository   `json:"result"`
 }
+

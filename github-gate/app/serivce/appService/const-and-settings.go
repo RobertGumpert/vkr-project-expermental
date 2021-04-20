@@ -22,21 +22,44 @@ const (
 // JSON
 //
 
+type JsonUserRequest struct {
+	UserKeyword string `json:"user_keyword"`
+	UserName    string `json:"user_name"`
+	UserOwner   string `json:"user_owner"`
+	UserEmail   string `json:"user_email"`
+}
+
 type JsonRepository struct {
 	Name  string `json:"name"`
 	Owner string `json:"owner"`
 }
 
 type JsonNewRepositoryWithExistKeyword struct {
+	UserRequest JsonUserRequest `json:"user_request"`
+	//
 	Repositories []JsonRepository `json:"repositories"`
 }
 
 type JsonNewRepositoryWithNewKeyword struct {
+	UserRequest JsonUserRequest `json:"user_request"`
+	//
 	Keyword    string         `json:"keyword"`
 	Repository JsonRepository `json:"repository"`
 }
 
 type JsonExistRepository struct {
+	UserRequest JsonUserRequest `json:"user_request"`
+	//
 	RepositoryID uint           `json:"repository_id"`
 	Repository   JsonRepository `json:"repository"`
+}
+
+//
+//
+//
+
+type JsonSendToAppNearestRepositories struct {
+	UserRequest JsonUserRequest `json:"user_request"`
+	//
+	Repositories map[uint]float64 `json:"repositories"`
 }

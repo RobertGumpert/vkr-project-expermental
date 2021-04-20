@@ -1,8 +1,94 @@
 package appService
 
-type JsonTaskFindNearestRepositories struct {
+import (
+	"encoding/base64"
+	"encoding/json"
+	"errors"
+	"sort"
+)
+
+var (
+	ErrorGateQueueIsFilled                   = errors.New("Error Gate Queue Is Filled. ")
+	ErrorRequestReceivedLater                = errors.New("Error Request Received Later. ")
+	ErrorRepositoryDoesntNearestRepositories = errors.New("Error Repository Doesnt Nearest Repositories. ")
+)
+
+type JsonCreateTaskFindNearestRepositories struct {
 	Keyword string `json:"keyword"`
 	Name    string `json:"name"`
 	Owner   string `json:"owner"`
 	Email   string `json:"email"`
+}
+
+//
+//
+//
+
+type JsonUserRequest struct {
+	UserKeyword string `json:"user_keyword"`
+	UserName    string `json:"user_name"`
+	UserOwner   string `json:"user_owner"`
+	UserEmail   string `json:"user_email"`
+}
+
+type JsonFromGetNearestRepositories struct {
+	UserRequest JsonUserRequest `json:"user_request"`
+	//
+	Repositories map[uint]float64 `json:"repositories"`
+}
+
+//
+//
+//
+
+type JsonResultTaskFindNearestRepositories struct {
+	Keyword string `json:"keyword"`
+	Name    string `json:"name"`
+	Owner   string `json:"owner"`
+	Email   string `json:"email"`
+	//
+	Top []JsonNearestRepository `json:"top"`
+}
+
+type JsonNearestRepository struct {
+	URL   string `json:"url"`
+	Name  string `json:"name"`
+	Owner string `json:"owner"`
+	//
+	DescriptionDistance     float64 `json:"description_distance"`
+	NumberPairIntersections float64 `json:"number_pair_intersections"`
+}
+
+func (find *JsonResultTaskFindNearestRepositories) makeTop() {
+	sort.Slice(find.Top, func(i, j int) bool {
+		return find.Top[i].NumberPairIntersections > find.Top[j].NumberPairIntersections
+	})
+	if len(find.Top) > 10 {
+		find.Top = find.Top[:10]
+	}
+}
+
+func (find *JsonResultTaskFindNearestRepositories) encodeHash() (hash string, err error) {
+	bts, err := json.Marshal(find)
+	if err != nil {
+		return "", err
+	}
+	return base64.URLEncoding.EncodeToString(bts), nil
+}
+
+func (find *JsonResultTaskFindNearestRepositories) decodeHash(hash string) (err error) {
+	bts, err := base64.URLEncoding.DecodeString(hash)
+	if err != nil {
+		return err
+	}
+	f := new(JsonResultTaskFindNearestRepositories)
+	err = json.Unmarshal(bts, f)
+	if err != nil {
+		return err
+	}
+	find.Top = f.Top
+	find.Keyword = f.Keyword
+	find.Owner = f.Owner
+	find.Name = f.Name
+	return nil
 }

@@ -51,14 +51,14 @@ func (t *taskExistRepository) CreateTask(jsonModel *JsonExistRepository) (task i
 	if err != nil {
 		return nil, err
 	}
-	repositoryIndexerTask, err := t.getTaskForRepositoryIndexer(taskKey, repositoryId)
+	repositoryIndexerTask, err := t.getTaskForRepositoryIndexer(taskKey, repositoryId, jsonModel)
 	if err != nil {
 		return nil, err
 	}
 	return t.appService.taskManager.ModifyTaskAsTrigger(repositoryIndexerTask, issueIndexerTask)
 }
 
-func (t *taskExistRepository) getTaskForRepositoryIndexer(taskKey string, repositoryId uint) (task itask.ITask, err error) {
+func (t *taskExistRepository) getTaskForRepositoryIndexer(taskKey string, repositoryId uint, jsonModel *JsonExistRepository) (task itask.ITask, err error) {
 	var (
 		repositoryIndexerTaskKey = strings.Join([]string{
 			taskKey,
@@ -72,6 +72,7 @@ func (t *taskExistRepository) getTaskForRepositoryIndexer(taskKey string, reposi
 		customFields  = &customFieldsModel.Model{
 			TaskType: repositoryIndexerService.TaskTypeReindexingForRepository,
 			Fields:   nil,
+			Context:  jsonModel.UserRequest,
 		}
 	)
 	return t.appService.taskManager.CreateTask(

@@ -9,10 +9,12 @@ import (
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/gin-gonic/gin"
+	"net/http"
 )
 
 type AppService struct {
 	db          repository.IRepository
+	client      *http.Client
 	config      *config.Config
 	taskManager itask.IManager
 	//
@@ -41,9 +43,9 @@ func NewAppService(db repository.IRepository, config *config.Config, engine *gin
 		engine,
 	)
 	service.ConcatTheirRestHandlers(engine)
+	service.client = new(http.Client)
 	return service
 }
-
 
 func (service *AppService) DownloadAndAnalyzeNewRepositoryWithExistKeyword(jsonModel *JsonNewRepositoryWithExistKeyword) (err error) {
 	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
@@ -92,87 +94,3 @@ func (service *AppService) ReanalyzeExistRepository(jsonModel *JsonExistReposito
 	}
 	return nil
 }
-
-//
-//func (service *AppService) CreateTaskCompositeNewRepositoryWithExistKeyWord(jsonModel *JsonNewRepositoryWithExistKeyword) (err error) {
-//	if isFilled := service.taskManager.QueueIsFilled(3); isFilled {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	trigger, err := service.taskNewRepositoryWithExistWord.CreateTask(
-//		jsonModel,
-//		service.channelResultsFromCollectorService,
-//	)
-//	if err != nil {
-//		return err
-//	}
-//	err = service.taskManager.AddTaskAndTask(trigger)
-//	if err != nil {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	return nil
-//}
-//
-//
-//
-//func (service *AppService) CreateTaskDownloadRepositoriesByNames(apiJsonModel *JsonNewRepositoryWithExistKeyword) (err error) {
-//	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	if len(apiJsonModel.Repositories) == 0 {
-//		return ErrorEmptyOrIncompleteJSONData
-//	}
-//	task, err := service.createTaskDownloadRepositoriesByName(
-//		TaskTypeDownloadRepositoryByName,
-//		apiJsonModel,
-//	)
-//	if err != nil {
-//		return err
-//	}
-//	err = service.taskManager.AddTaskAndTask(task)
-//	if err != nil {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	return nil
-//}
-//
-//func (service *AppService) CreateTaskDownloadRepositoriesByKeyWord(apiJsonModel *JsonSingleTaskDownloadRepositoriesByKeyWord) (err error) {
-//	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	if strings.TrimSpace(apiJsonModel.KeyWord) == "" {
-//		return ErrorEmptyOrIncompleteJSONData
-//	}
-//	task, err := service.createTaskDownloadRepositoriesByKeyWord(
-//		TaskTypeDownloadRepositoryByKeyWord,
-//		apiJsonModel,
-//	)
-//	if err != nil {
-//		return err
-//	}
-//	err = service.taskManager.AddTaskAndTask(task)
-//	if err != nil {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	return nil
-//}
-//
-//func (service *AppService) CreateTaskDownloadRepositoryAndRepositoriesByKeyWord(apiJsonModel *JsonSingleTaskDownloadRepositoryAndRepositoriesByKeyWord) (err error) {
-//	if isFilled := service.taskManager.QueueIsFilled(1); isFilled {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	if strings.TrimSpace(apiJsonModel.KeyWord) == "" {
-//		return ErrorEmptyOrIncompleteJSONData
-//	}
-//	task, err := service.createTaskDownloadRepositoryAndRepositoriesByKeyWord(
-//		TaskTypeRepositoryAndRepositoriesByKeyWord,
-//		apiJsonModel,
-//	)
-//	if err != nil {
-//		return err
-//	}
-//	err = service.taskManager.AddTaskAndTask(task)
-//	if err != nil {
-//		return gotasker.ErrorQueueIsFilled
-//	}
-//	return nil
-//}

@@ -32,6 +32,11 @@ type Config struct {
 		ReindexingForRepository        string `json:"reindexing_for_repository"`
 		ReindexingForAll               string `json:"reindexing_for_all"`
 	} `json:"repository_indexer_endpoints"`
+	//
+	AppAddress string `json:"app_address"`
+	AppEndpoints struct{
+		NearestRepositories string `json:"nearest_repositories"`
+	} `json:"app_endpoints"`
 }
 
 func NewConfig() *Config {

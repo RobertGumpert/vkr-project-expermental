@@ -56,6 +56,7 @@ func (t *taskNewRepositoryWithExistKeyWord) getTaskForCollector(taskKey string, 
 		customFields      = &customFieldsModel.Model{
 			TaskType: githubCollectorService.TaskTypeDownloadCompositeByName,
 			Fields:   t.appService.channelResultsFromCollectorService,
+			Context:  jsonModel.UserRequest,
 		}
 	)
 	for _, repository := range jsonModel.Repositories {

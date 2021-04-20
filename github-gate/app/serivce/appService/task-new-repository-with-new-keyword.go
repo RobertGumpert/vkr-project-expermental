@@ -55,6 +55,7 @@ func (t *taskNewRepositoryWithNewKeyword) getTaskForCollector(taskKey string, js
 		customFields  = &customFieldsModel.Model{
 			TaskType: githubCollectorService.TaskTypeDownloadCompositeRepositoryAndRepositoriesContainingKeyWord,
 			Fields:   t.appService.channelResultsFromCollectorService,
+			Context:  jsonModel.UserRequest,
 		}
 	)
 	return t.appService.taskManager.CreateTask(
