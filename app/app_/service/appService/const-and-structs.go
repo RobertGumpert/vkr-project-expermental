@@ -41,19 +41,37 @@ type JsonFromGetNearestRepositories struct {
 //
 //
 
+type JsonUserRepository struct {
+	URL   string `json:"url"`
+	Name  string `json:"name"`
+	Owner string `json:"owner"`
+	//
+	Topics      []string `json:"topics"`
+	Description string   `json:"description"`
+}
+
 type JsonResultTaskFindNearestRepositories struct {
+	Defer bool `json:"defer"`
+	//
 	Keyword string `json:"keyword"`
 	Name    string `json:"name"`
 	Owner   string `json:"owner"`
 	Email   string `json:"email"`
 	//
-	Top []JsonNearestRepository `json:"top"`
+	UserRepository JsonUserRepository      `json:"user_repository"`
+	Top            []JsonNearestRepository `json:"top"`
 }
 
 type JsonNearestRepository struct {
 	URL   string `json:"url"`
 	Name  string `json:"name"`
 	Owner string `json:"owner"`
+	//
+	Topics      []string `json:"topics"`
+	Description string   `json:"description"`
+	//
+	TopicsIntersections      []string `json:"topics_intersections"`
+	DescriptionIntersections []string `json:"description_intersections"`
 	//
 	DescriptionDistance     float64 `json:"description_distance"`
 	NumberPairIntersections float64 `json:"number_pair_intersections"`

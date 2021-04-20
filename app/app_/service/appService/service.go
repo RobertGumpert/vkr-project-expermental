@@ -27,6 +27,14 @@ func NewAppService(db repository.IRepository, config *config.Config, engine *gin
 	service := &AppService{db: db, config: config}
 	service.ConcatTheirRestHandlers(engine)
 	service.client = new(http.Client)
+	service.repositoryIndexer = repositoryIndexerService.NewService(
+		service.config,
+		service.client,
+	)
+	service.gateService = githubGateService.NewService(
+		service.client,
+		service.config,
+	)
 	return service
 }
 
@@ -34,15 +42,15 @@ func (service *AppService) SendDeferResponseToClient(jsonModel *JsonFromGetNeare
 
 }
 
-func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFindNearestRepositories) (err error) {
+func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFindNearestRepositories) (responseJsonBody *JsonResultTaskFindNearestRepositories, err error) {
 	if strings.TrimSpace(jsonModel.Name) == "" ||
 		strings.TrimSpace(jsonModel.Owner) == "" ||
 		strings.TrimSpace(jsonModel.Keyword) == "" ||
 		strings.TrimSpace(jsonModel.Email) == "" {
-		return errors.New("Empty JSON data. ")
+		return nil, errors.New("Empty JSON data. ")
 	}
 	if !service.isExistRepositoryAtGithub(jsonModel.Name, jsonModel.Owner) {
-		return errors.New("Empty JSON data. ")
+		return nil, errors.New("Empty JSON data. ")
 	}
 	var (
 		userRequest = githubGateService.JsonUserRequest{
@@ -51,18 +59,18 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 			UserOwner:   jsonModel.Owner,
 			UserEmail:   jsonModel.Email,
 		}
-		responseJsonBody = &JsonResultTaskFindNearestRepositories{
-			Keyword: jsonModel.Keyword,
-			Name:    jsonModel.Name,
-			Owner:   jsonModel.Owner,
-			Email:   jsonModel.Email,
-			Top:     make([]JsonNearestRepository, 0),
-		}
 		repositoryModel dataModel.RepositoryModel
 	)
+	responseJsonBody = &JsonResultTaskFindNearestRepositories{
+		Keyword: jsonModel.Keyword,
+		Name:    jsonModel.Name,
+		Owner:   jsonModel.Owner,
+		Email:   jsonModel.Email,
+		Top:     make([]JsonNearestRepository, 0),
+	}
 	jsonWordIsExist, err := service.repositoryIndexer.WordIsExist(jsonModel.Keyword)
 	if err != nil {
-		return err
+		return nil, err
 	}
 	model, err := service.db.GetRepositoryByName(jsonModel.Name)
 	if err == nil {
@@ -82,9 +90,10 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 				userRequest,
 			)
 			if err != nil {
-				return ErrorGateQueueIsFilled
+				return nil, ErrorGateQueueIsFilled
 			}
-			return ErrorRequestReceivedLater
+			responseJsonBody.Defer = true
+			return responseJsonBody, ErrorRequestReceivedLater
 		}
 		if jsonWordIsExist.WordIsExist == true {
 			repositoryModel = model
@@ -97,11 +106,12 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 						userRequest,
 					)
 					if err != nil {
-						return ErrorGateQueueIsFilled
+						return nil, ErrorGateQueueIsFilled
 					}
-					return ErrorRequestReceivedLater
+					responseJsonBody.Defer = true
+					return responseJsonBody, ErrorRequestReceivedLater
 				} else {
-					return err
+					return nil, err
 				}
 			}
 		}
@@ -122,9 +132,10 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 					userRequest,
 				)
 				if err != nil {
-					return ErrorGateQueueIsFilled
+					return nil, ErrorGateQueueIsFilled
 				}
-				return ErrorRequestReceivedLater
+				responseJsonBody.Defer = true
+				return responseJsonBody, ErrorRequestReceivedLater
 			}
 			if jsonWordIsExist.WordIsExist == false {
 				//
@@ -139,14 +150,18 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 					userRequest,
 				)
 				if err != nil {
-					return ErrorGateQueueIsFilled
+					return nil, ErrorGateQueueIsFilled
 				}
-				return ErrorRequestReceivedLater
+				responseJsonBody.Defer = true
+				return responseJsonBody, ErrorRequestReceivedLater
 			}
 		} else {
-			return err
+			return nil, err
 		}
 	}
+	responseJsonBody.Defer = false
+	service.sortingTop(repositoryModel, responseJsonBody)
+	return responseJsonBody, nil
 }
 
 func (service *AppService) repositoryIsExist(
@@ -224,8 +239,57 @@ func (service *AppService) repositoryIsExist(
 	return nil
 }
 
-func (service *AppService) taskNewRepositoryWithExistKeyWord(jsonModel *JsonCreateTaskFindNearestRepositories) {
-
+func (service *AppService) sortingTop(userRepository dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories) {
+	responseJsonBody.makeTop()
+	responseJsonBody.UserRepository = JsonUserRepository{
+		URL:         userRepository.URL,
+		Name:        userRepository.Name,
+		Owner:       userRepository.Owner,
+		Topics:      userRepository.Topics,
+		Description: userRepository.Description,
+	}
+	var (
+		makeTopicsToMap = func(topics []string) map[string]bool {
+			mp := make(map[string]bool)
+			for _, topic := range topics {
+				mp[topic] = true
+			}
+			return mp
+		}
+		makeDescriptionToMap = func(description string) map[string]bool {
+			mp := make(map[string]bool)
+			words := strings.Split(description, " ")
+			for _, word := range words {
+				word = strings.TrimSpace(word)
+				mp[word] = true
+			}
+			return mp
+		}
+		mapIntersections = func(mpUserRepository, mpNearestRepository map[string]bool) []string {
+			intersections := make([]string, 0)
+			for topic, _ := range mpNearestRepository {
+				if _, exist := mpUserRepository[topic]; exist {
+					intersections = append(
+						intersections,
+						topic,
+					)
+				}
+			}
+			return intersections
+		}
+		userRepositoryTopicsMap = makeTopicsToMap(userRepository.Topics)
+		userRepositoryDescriptionMap = makeDescriptionToMap(userRepository.Description)
+	)
+	for next := 0; next < len(responseJsonBody.Top); next++ {
+		nearest := &responseJsonBody.Top[next]
+		nearestRepositoryTopicsMap := makeTopicsToMap(nearest.Topics)
+		nearestRepositoryDescriptionMap := makeDescriptionToMap(nearest.Description)
+		intersectionsTopics := mapIntersections(userRepositoryTopicsMap, nearestRepositoryTopicsMap)
+		intersectionsDescriptions := mapIntersections(userRepositoryDescriptionMap, nearestRepositoryDescriptionMap)
+		nearest.TopicsIntersections = intersectionsTopics
+		nearest.DescriptionIntersections = intersectionsDescriptions
+	}
+	return
 }
 
 func (service *AppService) fillTopNearestRepositories(repositoryId uint, responseJsonBody *JsonResultTaskFindNearestRepositories, mapDistanceWithNearest map[uint]float64) (err error) {
@@ -242,9 +306,13 @@ func (service *AppService) fillTopNearestRepositories(repositoryId uint, respons
 			responseJsonBody.Top = append(
 				responseJsonBody.Top,
 				JsonNearestRepository{
-					URL:                     comparableModel.URL,
-					Name:                    comparableModel.Name,
-					Owner:                   comparableModel.Owner,
+					URL:   comparableModel.URL,
+					Name:  comparableModel.Name,
+					Owner: comparableModel.Owner,
+					//
+					Topics:      comparableModel.Topics,
+					Description: comparableModel.Description,
+					//
 					DescriptionDistance:     distance,
 					NumberPairIntersections: intersections.NumberIntersections,
 				},

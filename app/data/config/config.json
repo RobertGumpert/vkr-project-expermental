@@ -1,5 +1,5 @@
 {
-  "port": "54000",
+  "port": "60000",
   "postgres": {
     "username": "postgres",
     "password": "toster123",
@@ -7,20 +7,16 @@
     "db_name": "vkr-db",
     "ssl": "disable"
   },
-  "size_queue_tasks_for_github_collectors": 1000000,
-  "github_collectors_addresses": [
-    "http://127.0.0.1:54100"
-  ],
-  "issue_indexer_address": "http://127.0.0.1:44000",
-  "issue_indexer_endpoints": {
-    "get_state": "api/task/get/state",
-    "compare_for_group_repositories": "api/task/compare/group"
+  "github_gate_address": "http://127.0.0.1:54000",
+  "github_gate_endpoints": {
+    "new_repository_new_keyword": "api/reanalyze/exist/repository",
+    "new_repository_exist_keyword": "api/download/and/analyze/new/repository/exist/keyword",
+    "exist_repository_new_keyword": "api/download/and/analyze/new/repository/new/keyword",
+    "exist_repository_update_nearest": "api/reanalyze/exist/repository"
   },
   "repository_indexer_address": "http://127.0.0.1:45000",
   "repository_indexer_endpoints": {
-    "get_state": "api/task/get/state",
-    "reindexing_for_group_repositories": "api/task/reindexing/for/group/repositories",
-    "reindexing_for_repository": "api/task/reindexing/for/repository",
-    "reindexing_for_all": "api/task/reindexing/for/all"
+    "word_is_exist": "api/get/word",
+    "get_nearest_repositories": "api/get/nearest/for/repository"
   }
 }

@@ -31,14 +31,23 @@ func (service *AppService) restHandlerUpdateTaskStateNearestRepositories(ctx *gi
 }
 
 func (service *AppService) restHandlerGetNearestRepositories(ctx *gin.Context) {
-	//state := new(JsonFromGetNearestRepositories)
-	//if err := ctx.BindJSON(state); err != nil {
-	//	runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) JSON UNMARSHAL COMPLETED WITH ERROR: ", err)
-	//	ctx.AbortWithStatus(http.StatusLocked)
-	//	return
-	//}
-	//service.SendDeferResponseToClient(state)
-	//ctx.AbortWithStatus(http.StatusOK)
+	state := new(JsonCreateTaskFindNearestRepositories)
+	if err := ctx.BindJSON(state); err != nil {
+		runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) JSON UNMARSHAL COMPLETED WITH ERROR: ", err)
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	jsonBody, err := service.FindNearestRepositories(state)
+	if err != nil {
+		if err == ErrorRequestReceivedLater {
+			ctx.AbortWithStatusJSON(http.StatusNoContent, jsonBody)
+			return
+		} else {
+			ctx.AbortWithStatus(http.StatusLocked)
+			return
+		}
+	}
+	ctx.AbortWithStatusJSON(http.StatusOK, jsonBody)
 }
 
 func (service *AppService) restHandlerGetNearestIssues(ctx *gin.Context) {

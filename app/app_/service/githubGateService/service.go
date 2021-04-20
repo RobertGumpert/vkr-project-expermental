@@ -57,13 +57,15 @@ func (service *Service) CreateTaskNewRepositoryWithExistKeyword(name, owner stri
 		service.client,
 		url,
 		nil,
-		jsonCreateTaskNewRepositoryWithExistKeyword{Repositories: []jsonRepositoryModel{
+		jsonCreateTaskNewRepositoryWithExistKeyword{
 			UserRequest: userRequest,
-			{
-				Name:  name,
-				Owner: owner,
+			Repositories: []jsonRepositoryModel{
+				{
+					Name:  name,
+					Owner: owner,
+				},
 			},
-		}},
+		},
 	)
 	if err != nil {
 		return err
