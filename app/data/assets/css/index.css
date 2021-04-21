@@ -12,7 +12,16 @@ body {
     padding: 0;
 }
 
+footer {
+    margin-top: 10%;
+    background-color: #1c1c1c;
+    width: 100%;
+    height: 200px;
+}
+
+
 .header-container {
+
     background-color: #1c1c1c;
     width: 100%;
     height: 100px;
@@ -84,7 +93,6 @@ body {
     width: 150px;
     height: 40px;
     text-align: center;
-
     margin: 0;
     position: absolute;
     top: 50%;
@@ -114,10 +122,7 @@ body {
     border: 2px solid white;
     border-radius: 30px;
     background-color: white;
-    /*padding-left: 5%;*/
-    /*padding-right: 5%;*/
     padding: 3% 5%;
-
     margin-top: 10%;
     margin-left: 30%;
     margin-right: 30%;
@@ -125,7 +130,6 @@ body {
 
 .field-container {
     width: 100%;
-
 }
 
 .field-name {
@@ -143,6 +147,30 @@ body {
     padding-bottom: 12%;
 }
 
+.button-nearest-repositories-container {
+    width: 160px;
+    height: 80px;
+}
+
+.button-nearest-repositories-body {
+    width: 100%;
+    height: 100%;
+    border-radius: 30px;
+    background-color: #1fd4af;
+    text-align: center;
+    position: relative;
+}
+
+.button-nearest-repositories-body:hover {
+    background-image: -webkit-linear-gradient(top, #7ce9ca, #1fd4af);
+    background-image: -moz-linear-gradient(top, #7ce9ca, #1fd4af);
+    background-image: -o-linear-gradient(top, #7ce9ca, #1fd4af);
+    background-image: -ms-linear-gradient(top, #7ce9ca, #1fd4af);
+    background-image: linear-gradient(top, #7ce9ca, #1fd4af);
+    color: #1c1c1c;
+    cursor: pointer;
+}
+
 input[type="text"] {
     width: 100%;
     outline: 0;
@@ -152,6 +180,48 @@ input[type="text"] {
     font-family: "Open Sans Regular", sans-serif;
 }
 
-/*input:focus {*/
-/*    border-color: #1c1c1c*/
-/*}*/
+.formula-container {
+    height: 100%;
+    margin-top: 10%;
+    margin-left: 30%;
+    margin-right: 30%;
+}
+
+.formula-step {
+    margin-top: 10%;
+    display: flex;
+    flex-direction: row;
+    min-height: 400px;
+    width: 100%;
+    border: 2px solid white;
+    border-radius: 30px;
+    /*padding-left: 5%;*/
+    /*padding-right: 5%;*/
+    position: relative;
+}
+
+.formula-text {
+    height: 100%;
+    width: 50%;
+    flex-direction: column;
+    display: inline-block;
+    margin-left: 5%;
+    float: left;
+}
+
+.formula-picture {
+    margin-top: 5%;
+    margin-bottom: 5%;
+    width: 50%;
+    display: inline-block;
+    height: 100%;
+    flex-direction: column;
+    position: relative;
+    /*float: right;*/
+    margin-right: 5%;
+}
+
+.block-header {
+    height: 100%;
+    margin: 10% 30% -5%;
+}

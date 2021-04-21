@@ -47,8 +47,251 @@
         </div>
     </div>
 </header>
+
 <div class="content-container">
+    <div class="block-header">
+        <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 48px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+            Как это работает?
+        </p>
+    </div>
+    <div class="formula-container">
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск репозиториев по предметной области. Часть 1
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        Поиск предметных областей начинается со сбора данных из описаний репозиториев.
+                        Данный, которые используются в анализе - блок About и блок Topics (тэги).
+                        Система выполняе усечение количества ключевых слов из блоков, за счет выделения самых значимых
+                        слов.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Словарь.png"
+                     style="float: right;">
+            </div>
+        </div>
+        <!--
+
+
+
+        -->
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск репозиториев по предметной области. Часть 2
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        После выделеения ключевых слов, формируется словарь и для каждого репозитория
+                        составляется вектор.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Векторы.png"
+                     style="float: right;"></div>
+        </div>
+        <!--
+
+
+
+        -->
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск репозиториев по предметной области. Часть 3
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        Из полученных векторов, построенных на ключевых словах, выполняется расчет косинусного
+                        расстояния для каждого с каждым.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Косинусное расстояние.png"
+                     style="float: right;"></div>
+        </div>
+        <!--
+
+
+
+        -->
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск похожих репозиториев на основе сравнения Issue. Часть 1.
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        Для вашего репозитория выполняется сравнение близости текста каждого Issue с каждым Issue
+                        похожих по предметной области репозиториев. Сравнение схожести текстов состоит из двух этапов:
+                        сравненеие текстов блока Title, сравнение блоков Body. На первом этапе сравнивается процентное
+                        соотношения общих слов в блоке Title.
+                        Если число пересечений менее 70%, то считается что такие Issue не являются похожими.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Пересечения.png"
+                     style="float: right;"></div>
+        </div>
+        <!--
+
+
+
+        -->
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск похожих репозиториев на основе сравнения Issue. Часть 2.
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        Формируется общий словарь для пар Title и Body. После строятся вектора и выполнется рассчет
+                        схожести в несколько этапов:
+                        Первый этап - считаются проценты содержимого в каждом векторе относительного словарей.
+                        Второй этап - считаются косинусные расстояния.
+                        Третий этап - коэффициенты суммируются и получется итоговая оценка схожести.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Пересечения на словаре.png"
+                     style="float: right;"></div>
+        </div>
+        <!--
+
+
+
+-->
+        <div class="formula-step">
+            <div class="formula-text">
+                <div class="formula-title">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 32px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+                        Поиск похожих репозиториев на основе сравнения Issue. Часть 3.
+                    </p>
+                </div>
+                <div class="form-description">
+                    <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 5%;
+                     margin-bottom: 10%;
+                     color: #1c1c1c;">
+                        Формируется оценка схожести репозиториев по формуле:
+                        K / (M x N), где K - количество пар похожих Issue, M и N - количество Issue двух
+                        репозиториев соответственно. Такая оценка называется - Рангом.
+                    </p>
+                </div>
+            </div>
+            <div class="formula-picture">
+                <img src="../images/Формула.png"
+                     style="float: right;"></div>
+        </div>
+    </div>
+    <!--
+    --------------
+        Форма
+    --------------
+    -->
+
+    <div class="block-header">
+        <p class="site-name-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 48px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+            Заполните форму и получите ТОП 10 репозиториев, похожих на ваш репозиторий.
+        </p>
+        <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 24px;
+                     margin-top: 5%;
+                     color: #1c1c1c;">
+            Если репозиторий, который вы укажите в форме уже проиндексирован в базе данных, то вы будете переброшены на
+            страницу с ТОП 10, иначе в отложенном режиме, спустя некоторое время, вам на почту будет отправлено письмо
+            содержащее ссылку на загрузку результата.
+        </p>
+    </div>
     <div class="form-container">
+        <div class="form-title-container" style="margin-bottom: 15%">
+            <div class="field-name">
+                <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 24px;
+                     color: #1c1c1c;">
+                    Укажите данные для поиска похожих репозиториев.
+                </p>
+            </div>
+        </div>
         <div class="field-container">
             <div class="field-name">
                 <p class="site-name-p" style="
@@ -189,8 +432,25 @@
                 </p>
             </div>
         </div>
-
+        <div class="button-nearest-repositories-container">
+            <div class="button-nearest-repositories-body">
+                <p class="site-name-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     color: #1c1c1c;
+                     margin: 0;
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     -ms-transform: translate(-50%, -50%);
+                     transform: translate(-50%, -50%);">
+                    Отправить
+                </p>
+            </div>
+        </div>
     </div>
 </div>
+<footer>
+</footer>
 </body>
 </html>
