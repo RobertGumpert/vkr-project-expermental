@@ -50,15 +50,19 @@ type JsonUserRepository struct {
 	Description string   `json:"description"`
 }
 
+type JsonStateTask struct {
+	IsDefer  bool   `json:"is_defer"`
+	Endpoint string `json:"endpoint"`
+}
+
 type JsonResultTaskFindNearestRepositories struct {
 	Defer bool `json:"defer"`
 	//
-	Keyword string `json:"keyword"`
-	Name    string `json:"name"`
-	Owner   string `json:"owner"`
-	Email   string `json:"email"`
+	TaskState *JsonStateTask `json:"task_state"`
 	//
-	UserRepository JsonUserRepository      `json:"user_repository"`
+	UserRequest *JsonUserRequest `json:"user_request"`
+	//
+	UserRepository *JsonUserRepository     `json:"user_repository"`
 	Top            []JsonNearestRepository `json:"top"`
 }
 
@@ -105,8 +109,8 @@ func (find *JsonResultTaskFindNearestRepositories) decodeHash(hash string) (err 
 		return err
 	}
 	find.Top = f.Top
-	find.Keyword = f.Keyword
-	find.Owner = f.Owner
-	find.Name = f.Name
+	find.Defer = f.Defer
+	find.UserRepository = f.UserRepository
+	find.UserRequest = f.UserRequest
 	return nil
 }

@@ -5,6 +5,7 @@ import (
 	"app/app_/service/appService"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
+	"path/filepath"
 	"runtime"
 )
 
@@ -39,9 +40,16 @@ func main() {
 	}()
 	SERVER = NewServer(CONFIG)
 	APPSERVICE = appService.NewAppService(
+		getRoot(),
 		POSTGRES,
 		CONFIG,
 		SERVER.engine,
 	)
 	SERVER.RunServer()
+}
+
+func getRoot() string {
+	_, file, _, _ := runtime.Caller(0)
+	root := filepath.Dir(file)
+	return root
 }

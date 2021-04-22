@@ -8,8 +8,10 @@ import (
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/requests"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
+	"html/template"
 	"net/http"
 	"strings"
 )
@@ -19,13 +21,15 @@ type AppService struct {
 	config *config.Config
 	client *http.Client
 	//
+	nearestRepositoriesTemplate *template.Template
+	//
 	repositoryIndexer *repositoryIndexerService.Service
 	gateService       *githubGateService.Service
 }
 
-func NewAppService(db repository.IRepository, config *config.Config, engine *gin.Engine) *AppService {
+func NewAppService(root string, db repository.IRepository, config *config.Config, engine *gin.Engine) *AppService {
 	service := &AppService{db: db, config: config}
-	service.ConcatTheirRestHandlers(engine)
+	service.ConcatTheirRestHandlers(root, engine)
 	service.client = new(http.Client)
 	service.repositoryIndexer = repositoryIndexerService.NewService(
 		service.config,
@@ -35,6 +39,15 @@ func NewAppService(db repository.IRepository, config *config.Config, engine *gin
 		service.client,
 		service.config,
 	)
+	tmp, err := template.ParseFiles(strings.Join([]string{
+		root,
+		"/data/assets/html/nearest-repositories-template.html",
+	}, ""))
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+		return nil
+	}
+	service.nearestRepositoriesTemplate = tmp
 	return service
 }
 
@@ -62,11 +75,13 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 		repositoryModel dataModel.RepositoryModel
 	)
 	responseJsonBody = &JsonResultTaskFindNearestRepositories{
-		Keyword: jsonModel.Keyword,
-		Name:    jsonModel.Name,
-		Owner:   jsonModel.Owner,
-		Email:   jsonModel.Email,
-		Top:     make([]JsonNearestRepository, 0),
+		UserRequest: &JsonUserRequest{
+			UserKeyword: jsonModel.Keyword,
+			UserName:    jsonModel.Name,
+			UserOwner:   jsonModel.Owner,
+			UserEmail:   jsonModel.Email,
+		},
+		Top: make([]JsonNearestRepository, 0),
 	}
 	jsonWordIsExist, err := service.repositoryIndexer.WordIsExist(jsonModel.Keyword)
 	if err != nil {
@@ -241,7 +256,7 @@ func (service *AppService) repositoryIsExist(
 
 func (service *AppService) sortingTop(userRepository dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories) {
 	responseJsonBody.makeTop()
-	responseJsonBody.UserRepository = JsonUserRepository{
+	responseJsonBody.UserRepository = &JsonUserRepository{
 		URL:         userRepository.URL,
 		Name:        userRepository.Name,
 		Owner:       userRepository.Owner,
@@ -277,7 +292,7 @@ func (service *AppService) sortingTop(userRepository dataModel.RepositoryModel, 
 			}
 			return intersections
 		}
-		userRepositoryTopicsMap = makeTopicsToMap(userRepository.Topics)
+		userRepositoryTopicsMap      = makeTopicsToMap(userRepository.Topics)
 		userRepositoryDescriptionMap = makeDescriptionToMap(userRepository.Description)
 	)
 	for next := 0; next < len(responseJsonBody.Top); next++ {
