@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="../css/nearest-issues.css">
+    <script src="../js/index.js" type="text/javascript"></script>
+    <title>Title</title>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="title">
+            <div class="logo-container">
+                <img class="logo-img" src="../images/logo.png">
+            </div>
+            <div class="site-name-container">
+                <div class="site-name-text-box">
+                    <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     color: white;">
+                        Issue
+                    </p>
+                    <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 20px;
+                     color: white;">
+                        Analyzer
+                    </p>
+                </div>
+            </div>
+            <div class="find-nearest-repositories-button-container">
+                <div class="find-nearest-repositories-button-body">
+                    <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 12px;
+                     color: white;
+                     margin: 0;
+                     position: absolute;
+                     top: 50%;
+                     left: 50%;
+                     -ms-transform: translate(-50%, -50%);
+                     transform: translate(-50%, -50%);">
+                        Найти
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content-container">
+    <!--
+    *
+    *
+    *
+    -->
+    <div class="block-header">
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 24px;
+                     margin-top: 10%;
+                     color: #1c1c1c;">
+            ТОП похожих Issue:
+        </p>
+        <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     margin-top: 2%;
+                     color: #1c1c1c;">
+            Здесь собраны в один отсортированный список самый похожие Issue вашего репозиторя.
+        </p>
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 42px;
+                      margin-top: 10%;
+                     color: #1c1c1c;">
+            {{.UserRepositoryName}} / {{.ComparableRepositoryName}}
+        </p>
+    </div>
+    <!--
+    *
+    *
+    *
+    -->
+    <div class="list-nearest-repositories-container">
+        {{range .Top}}
+            <div class="nearest-repository">
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Regular', serif;font-size: 16px; display: inline-block;">
+                            Заголовок Issue репозитория
+                        </p>
+                        <p class="site-p"
+                           style="font-family: 'Open Sans ExtraBold', serif;font-size: 16px;  display: inline-block;">
+                            {{.UserRepositoryName}}:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            {{.UserRepositoryTitle}}
+                        </p>
+                    </div>
+                    <div class="field-value" style="margin-top: -20px;">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            <a href="{{.UserRepositoryURL}}" target="_blank">
+                                {{.UserRepositoryURL}}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Regular', serif;font-size: 16px; display: inline-block;">
+                            Заголовок Issue репозитория
+                        </p>
+                        <p class="site-p"
+                           style="font-family: 'Open Sans ExtraBold', serif;font-size: 16px;  display: inline-block;">
+                            {{.ComparableRepositoryName}}:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            {{.ComparableRepositoryTitle}}
+                        </p>
+                    </div>
+                    <div class="field-value" style="margin-top: -20px;">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            <a href="{{.ComparableRepositoryURL}}" target="_blank">
+                                {{.ComparableRepositoryURL}}
+                            </a>
+                        </p>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans ExtraBold', serif;font-size: 16px; display: inline-block;">
+                            Ранг
+                        </p>
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Regular', serif;font-size: 16px; display: inline-block;">
+                            схожести Issue:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            {{.Rank}}
+                        </p>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 16px;">
+                            Пересечения заголовков:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <div class="topics-container">
+                            {{range .TopicsIntersections}}
+                                <div class="topic">
+                                    {{.}}
+                                </div>
+                            {{end}}
+                        </div>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Regular', serif;font-size: 16px; display: inline-block;">
+                            Косинусное расстояние заголовков Issue:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            {{.TitleCosine}}
+                        </p>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Regular', serif;font-size: 16px; display: inline-block;">
+                            Косинусное расстояние тела Issue:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            {{.BodyCosine}}
+                        </p>
+                    </div>
+                </div>
+            </div>
+        {{end}}
+    </div>
+</div>
+<footer>
+</footer>
+</body>
+</html>

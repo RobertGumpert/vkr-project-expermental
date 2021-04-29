@@ -30,7 +30,7 @@ func (service *AppService) ConcatTheirRestHandlers(root string, engine *gin.Engi
 	{
 		userEndpoints.GET("/:digest", service.restHandlerDigest)
 		userEndpoints.POST("/nearest/repositories", service.restHandlerGetNearestRepositories)
-		userEndpoints.POST("/nearest/issues", service.restHandlerGetNearestIssues)
+		userEndpoints.GET("/nearest/issues/:userRepository/:nearestRepository", service.restHandlerGetNearestIssues)
 	}
 }
 
@@ -83,14 +83,10 @@ func (service *AppService) restHandlerGetNearestRepositories(ctx *gin.Context) {
 }
 
 func (service *AppService) restHandlerGetNearestIssues(ctx *gin.Context) {
-	//state := new(JsonFromGetNearestRepositories)
-	//if err := ctx.BindJSON(state); err != nil {
-	//	runtimeinfo.LogError("(RESP. TO: -> GITHUB-COLLECTOR) JSON UNMARSHAL COMPLETED WITH ERROR: ", err)
-	//	ctx.AbortWithStatus(http.StatusLocked)
-	//	return
-	//}
-	//service.SendDeferResponseToClient(state)
-	//ctx.AbortWithStatus(http.StatusOK)
+	userRepository := ctx.Param("userRepository")
+	nearestRepository := ctx.Param("nearestRepository")
+	runtimeinfo.LogInfo(userRepository)
+	runtimeinfo.LogInfo(nearestRepository)
 }
 
 func (service *AppService) restHandlerDigest(ctx *gin.Context) {
@@ -101,7 +97,6 @@ func (service *AppService) restHandlerDigest(ctx *gin.Context) {
 		ctx.AbortWithStatus(http.StatusLocked)
 		return
 	}
-
 	ctx.HTML(
 		http.StatusOK,
 		"nearest-repositories-template.html",

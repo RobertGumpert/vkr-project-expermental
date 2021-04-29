@@ -55,6 +55,58 @@ func (service *AppService) SendDeferResponseToClient(jsonModel *JsonFromGetNeare
 
 }
 
+func (service *AppService) GetNearestIssuesInPairNearestRepositories(mainRepositoryName, secondRepositoryName string) (responseJsonBody *JsonNearestIssues, err error) {
+	if strings.TrimSpace(mainRepositoryName) == "" ||
+		strings.TrimSpace(secondRepositoryName) == "" {
+		return nil, errors.New("Empty JSON data. ")
+	}
+	mainRepository, err := service.db.GetRepositoryByName(mainRepositoryName)
+	if err != nil {
+		return nil, err
+	}
+	secondRepository, err := service.db.GetRepositoryByName(secondRepositoryName)
+	if err != nil {
+		return nil, err
+	}
+	nearestIssuesList, err := service.db.GetNearestIssuesForPairRepositories(mainRepository.ID, secondRepository.ID)
+	if err != nil {
+		return nil, err
+	}
+	responseJsonBody = &JsonNearestIssues{
+		UserRepositoryName:       mainRepository.Name,
+		ComparableRepositoryName: secondRepository.Name,
+		Top:                      make([]JsonNearestIssue, 0),
+	}
+	for next := 0; next < len(nearestIssuesList); next++ {
+		nearestIssues := nearestIssuesList[next]
+		mainRepositoryIssue, err := service.db.GetIssueByID(nearestIssues.IssueID)
+		if err != nil {
+			continue
+		}
+		secondRepositoryIssue, err := service.db.GetIssueByID(nearestIssues.NearestIssueID)
+		if err != nil {
+			continue
+		}
+		jsonModelNearestIssues := JsonNearestIssue{
+			UserRepositoryName:  mainRepository.Name,
+			UserRepositoryTitle: mainRepositoryIssue.Title,
+			UserRepositoryURL:   mainRepositoryIssue.URL,
+			//
+			ComparableRepositoryName:  secondRepository.Name,
+			ComparableRepositoryTitle: secondRepositoryIssue.Title,
+			ComparableRepositoryURL:   secondRepositoryIssue.URL,
+			//
+			Rank:          nearestIssues.Rank,
+			TitleCosine:   nearestIssues.TitleCosineDistance,
+			BodyCosine:    nearestIssues.BodyCosineDistance,
+			Intersections: nearestIssues.Intersections,
+		}
+		responseJsonBody.Top = append(responseJsonBody.Top, jsonModelNearestIssues)
+	}
+	responseJsonBody.makeTop()
+	return responseJsonBody, nil
+}
+
 func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFindNearestRepositories) (responseJsonBody *JsonResultTaskFindNearestRepositories, err error) {
 	if strings.TrimSpace(jsonModel.Name) == "" ||
 		strings.TrimSpace(jsonModel.Owner) == "" ||

@@ -38,7 +38,7 @@ type JsonFromGetNearestRepositories struct {
 }
 
 //
-//
+//----------------------------------------------------------------------------------------------------------------------
 //
 
 type JsonUserRepository struct {
@@ -113,4 +113,41 @@ func (find *JsonResultTaskFindNearestRepositories) decodeHash(hash string) (err 
 	find.UserRepository = f.UserRepository
 	find.UserRequest = f.UserRequest
 	return nil
+}
+
+//
+//----------------------------------------------------------------------------------------------------------------------
+//
+
+type JsonNearestIssue struct {
+	UserRepositoryName       string `json:"user_repository_name"`
+	ComparableRepositoryName string `json:"comparable_repository_name"`
+	//
+	UserRepositoryTitle       string `json:"user_repository_title"`
+	ComparableRepositoryTitle string `json:"comparable_repository_title"`
+	//
+	UserRepositoryURL       string `json:"user_repository_url"`
+	ComparableRepositoryURL string `json:"comparable_repository_url"`
+	//
+	Rank        float64 `json:"rank"`
+	TitleCosine float64 `json:"title_cosine"`
+	BodyCosine  float64 `json:"body_cosine"`
+	//
+	Intersections []string `json:"intersections"`
+}
+
+type JsonNearestIssues struct {
+	UserRepositoryName       string `json:"user_repository_name"`
+	ComparableRepositoryName string `json:"comparable_repository_name"`
+	//
+	Top []JsonNearestIssue `json:"top"`
+}
+
+func (find *JsonNearestIssues) makeTop() {
+	sort.Slice(find.Top, func(i, j int) bool {
+		return find.Top[i].Rank > find.Top[j].Rank
+	})
+	if len(find.Top) > 20 {
+		find.Top = find.Top[:20]
+	}
 }
