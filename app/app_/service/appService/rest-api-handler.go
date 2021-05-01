@@ -12,10 +12,10 @@ func (service *AppService) ConcatTheirRestHandlers(root string, engine *gin.Engi
 	engine.Use(
 		cors.Default(),
 	)
-	engine.Static("../js", root+"/data/assets/js")
-	engine.Static("../css", root+"/data/assets/css")
-	engine.Static("../images/", root+"/data/assets/images")
-	engine.LoadHTMLGlob(root + "/data/assets/html/*.html")
+	engine.Static("/js", root+"/data/assets/js")
+	engine.Static("/css", root+"/data/assets/css")
+	engine.Static("/images", root+"/data/assets/images")
+	engine.LoadHTMLGlob(root + "/data/assets/*.html")
 	//
 	engine.GET("/", func(context *gin.Context) {
 		context.HTML(http.StatusOK, "index.html", nil)
@@ -30,7 +30,7 @@ func (service *AppService) ConcatTheirRestHandlers(root string, engine *gin.Engi
 	{
 		userEndpoints.GET("/:digest", service.restHandlerDigest)
 		userEndpoints.POST("/nearest/repositories", service.restHandlerGetNearestRepositories)
-		userEndpoints.GET("/nearest/issues/:userRepository/:nearestRepository", service.restHandlerGetNearestIssues)
+		userEndpoints.GET("/nearest/issues/:userRepository/with/:nearestRepository", service.restHandlerGetNearestIssues)
 	}
 }
 
@@ -85,8 +85,20 @@ func (service *AppService) restHandlerGetNearestRepositories(ctx *gin.Context) {
 func (service *AppService) restHandlerGetNearestIssues(ctx *gin.Context) {
 	userRepository := ctx.Param("userRepository")
 	nearestRepository := ctx.Param("nearestRepository")
-	runtimeinfo.LogInfo(userRepository)
-	runtimeinfo.LogInfo(nearestRepository)
+	jsonModel, err:= service.GetNearestIssuesInPairNearestRepositories(
+		userRepository,
+		nearestRepository,
+	)
+	if err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	ctx.HTML(
+		http.StatusOK,
+		"nearest-issues-template.html",
+		jsonModel,
+	)
+	return
 }
 
 func (service *AppService) restHandlerDigest(ctx *gin.Context) {

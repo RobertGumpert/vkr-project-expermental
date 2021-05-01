@@ -4,6 +4,7 @@ import (
 	"github.com/RobertGumpert/gotasker"
 	"github.com/RobertGumpert/gotasker/itask"
 	"github.com/RobertGumpert/vkr-pckg/repository"
+	"github.com/RobertGumpert/vkr-pckg/requests"
 	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	concurrentMap "github.com/streamrail/concurrent-map"
 	"net/http"
@@ -247,11 +248,11 @@ func (service *AppService) sendTaskUpdateToGate(result resultIndexing) {
 		break
 	}
 	runtimeinfo.LogInfo(url, err)
-	//response, err := requests.POST(service.client, url, nil, result.jsonBody)
-	//if err != nil {
-	//	runtimeinfo.LogError(err)
-	//}
-	//if response.StatusCode != http.StatusOK {
-	//	runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
-	//}
+	response, err := requests.POST(service.client, url, nil, result.jsonBody)
+	if err != nil {
+		runtimeinfo.LogError(err)
+	}
+	if response.StatusCode != http.StatusOK {
+		runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")
+	}
 }

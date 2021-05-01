@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <link rel="stylesheet" href="../css/nearest-repositories.css">
+    <link rel="stylesheet" href="/css/nearest-repositories.css">
     <title>Title</title>
 </head>
 <body>
@@ -11,7 +11,11 @@
     <div class="header-container">
         <div class="title">
             <div class="logo-container">
-                <img class="logo-img" src="../images/logo.png">
+                <div class="logo-container">
+                    <a href="/">
+                        <img class="logo-img" src="/images/logo.png">
+                    </a>
+                </div>
             </div>
             <div class="site-name-container">
                 <div class="site-name-text-box">
@@ -161,6 +165,7 @@
         </p>
     </div>
     <div class="list-nearest-repositories-container">
+        {{$userRepositoryName := .UserRepository.Name}}
         {{range .Top}}
             <div class="nearest-repository">
                 <div class="field-container">
@@ -190,6 +195,20 @@
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
                             {{.DescriptionDistance}}%
+                        </p>
+                    </div>
+                </div>
+                <div class="field-container">
+                    <div class="field-title">
+                        <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 16px;">
+                            Количество пар похожих Issue:
+                        </p>
+                    </div>
+                    <div class="field-value">
+                        <p class="site-p"
+                           style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                            Нашлось {{.CountNearestPairs}} похожих пар из {{.RepositoryCountIssues}} всех Issue, вашего
+                            репозитория
                         </p>
                     </div>
                 </div>
@@ -260,12 +279,18 @@
                     </div>
                     <div class="field-value">
                         <div class="topics-container">
-                            {{range .TopicsIntersections}}
-                                <div class="topic">
-                                    <a class="topic-p" href="https://github.com/search?q={{.}}">
-                                        {{.}}
-                                    </a>
-                                </div>
+                            {{if not .TopicsIntersections}}
+                                <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 14px;">
+                                    Пересечения отсутсвуют.
+                                </p>
+                            {{else}}
+                                {{range .TopicsIntersections}}
+                                    <div class="topic">
+                                        <a class="topic-p" href="https://github.com/search?q={{.}}">
+                                            {{.}}
+                                        </a>
+                                    </div>
+                                {{end}}
                             {{end}}
                         </div>
                     </div>
@@ -278,19 +303,26 @@
                     </div>
                     <div class="field-value">
                         <div class="topics-container">
-                            {{range .DescriptionIntersections}}
-                                <div class="topic">
-                                    <a class="topic-p" href="https://github.com/search?q={{.}}">
-                                        {{.}}
-                                    </a>
-                                </div>
+                            {{if not .DescriptionIntersections}}
+                                <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 14px;">
+                                    Пересечения отсутсвуют.
+                                </p>
+                            {{else}}
+                                {{range .DescriptionIntersections}}
+                                    <div class="topic">
+                                        <a class="topic-p" href="https://github.com/search?q={{.}}">
+                                            {{.}}
+                                        </a>
+                                    </div>
+                                {{end}}
                             {{end}}
                         </div>
                     </div>
                 </div>
                 <div class="button-nearest-issues-container">
                     <div class="button-nearest-issues-body">
-                        <p class="site-p" style="
+                        <a href="/get/nearest/issues/{{$userRepositoryName}}/with/{{.Name}}">
+                            <p class="site-p" style="
                      font-family: 'Open Sans ExtraBold', serif;
                      font-size: 12px;
                      color: #1c1c1c;
@@ -300,8 +332,9 @@
                      left: 50%;
                      -ms-transform: translate(-50%, -50%);
                      transform: translate(-50%, -50%);">
-                            Похожие Issue
-                        </p>
+                                Похожие Issue
+                            </p>
+                        </a>
                     </div>
                 </div>
             </div>

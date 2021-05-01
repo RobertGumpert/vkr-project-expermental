@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"sort"
+	"strings"
 )
 
 var (
@@ -78,12 +79,15 @@ type JsonNearestRepository struct {
 	DescriptionIntersections []string `json:"description_intersections"`
 	//
 	DescriptionDistance     float64 `json:"description_distance"`
-	NumberPairIntersections float64 `json:"number_pair_intersections"`
+	NumberPairIntersections string `json:"number_pair_intersections"`
+	//
+	RepositoryCountIssues int64 `gorm:"not null;"`
+	CountNearestPairs     int64 `gorm:"not null;"`
 }
 
 func (find *JsonResultTaskFindNearestRepositories) makeTop() {
 	sort.Slice(find.Top, func(i, j int) bool {
-		return find.Top[i].NumberPairIntersections > find.Top[j].NumberPairIntersections
+		return find.Top[i].CountNearestPairs > find.Top[j].CountNearestPairs
 	})
 	if len(find.Top) > 10 {
 		find.Top = find.Top[:10]
@@ -129,11 +133,11 @@ type JsonNearestIssue struct {
 	UserRepositoryURL       string `json:"user_repository_url"`
 	ComparableRepositoryURL string `json:"comparable_repository_url"`
 	//
-	Rank        float64 `json:"rank"`
-	TitleCosine float64 `json:"title_cosine"`
-	BodyCosine  float64 `json:"body_cosine"`
+	Rank        int64 `json:"rank"`
+	TitleCosine int64 `json:"title_cosine"`
+	BodyCosine  int64 `json:"body_cosine"`
 	//
-	Intersections []string `json:"intersections"`
+	TopicsIntersections []string `json:"intersections"`
 }
 
 type JsonNearestIssues struct {
@@ -144,10 +148,25 @@ type JsonNearestIssues struct {
 }
 
 func (find *JsonNearestIssues) makeTop() {
+	issuesUrls := make(map[string]bool)
+	clearTopByDuplicate := make([]JsonNearestIssue, 0)
+	for next := 0; next < len(find.Top); next++ {
+		key := strings.Join([]string{
+			find.Top[next].ComparableRepositoryURL,
+			find.Top[next].UserRepositoryURL,
+		},"&")
+		if _, exist := issuesUrls[key]; exist {
+			continue
+		} else {
+			issuesUrls[key] = true
+			clearTopByDuplicate = append(clearTopByDuplicate, find.Top[next])
+		}
+	}
+	find.Top = clearTopByDuplicate
 	sort.Slice(find.Top, func(i, j int) bool {
 		return find.Top[i].Rank > find.Top[j].Rank
 	})
-	if len(find.Top) > 20 {
-		find.Top = find.Top[:20]
-	}
+	//if len(find.Top) > 30 {
+	//	find.Top = find.Top[:30]
+	//}
 }

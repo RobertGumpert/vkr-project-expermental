@@ -13,6 +13,8 @@ github.com/RobertGumpert/gotasker v1.0.22 h1:QyriCO4BLpUvgtZFQYf8L7RXt9kj0rKXgEp
 github.com/RobertGumpert/gotasker v1.0.22/go.mod h1:iaAL6a2NhVlcc2c8W0H8OzJ1H9zxPj1KuEnDFXQ+lpI=
 github.com/RobertGumpert/vkr-pckg v1.0.19 h1:zQ5jZj9RIoqkDceNONC/300Go3/f+KMReuPV0E4D1wg=
 github.com/RobertGumpert/vkr-pckg v1.0.19/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.20 h1:nB3teUXf7eiDI8xjg8r8f20E2LBbb4fVQWIQC1Azns0=
+github.com/RobertGumpert/vkr-pckg v1.0.20/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/aaaton/golem/v4 v4.0.0/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=
 github.com/aaaton/golem/v4 v4.0.1 h1:jvnnTmzdfZC8cUGIo6obIcnmB3stTaf5Uw64OMx3C84=
 github.com/aaaton/golem/v4 v4.0.1/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=

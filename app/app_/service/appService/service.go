@@ -5,10 +5,10 @@ import (
 	"app/app_/service/githubGateService"
 	"app/app_/service/repositoryIndexerService"
 	"errors"
+	"fmt"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/requests"
-	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 	"html/template"
@@ -39,15 +39,6 @@ func NewAppService(root string, db repository.IRepository, config *config.Config
 		service.client,
 		service.config,
 	)
-	tmp, err := template.ParseFiles(strings.Join([]string{
-		root,
-		"/data/assets/html/nearest-repositories-template.html",
-	}, ""))
-	if err != nil {
-		runtimeinfo.LogFatal(err)
-		return nil
-	}
-	service.nearestRepositoriesTemplate = tmp
 	return service
 }
 
@@ -90,16 +81,16 @@ func (service *AppService) GetNearestIssuesInPairNearestRepositories(mainReposit
 		jsonModelNearestIssues := JsonNearestIssue{
 			UserRepositoryName:  mainRepository.Name,
 			UserRepositoryTitle: mainRepositoryIssue.Title,
-			UserRepositoryURL:   mainRepositoryIssue.URL,
+			UserRepositoryURL:   strings.ReplaceAll(mainRepositoryIssue.URL, "api.github.com/repos", "github.com"),
 			//
 			ComparableRepositoryName:  secondRepository.Name,
 			ComparableRepositoryTitle: secondRepositoryIssue.Title,
-			ComparableRepositoryURL:   secondRepositoryIssue.URL,
+			ComparableRepositoryURL:   strings.ReplaceAll(secondRepositoryIssue.URL, "api.github.com/repos", "github.com"),
 			//
-			Rank:          nearestIssues.Rank,
-			TitleCosine:   nearestIssues.TitleCosineDistance,
-			BodyCosine:    nearestIssues.BodyCosineDistance,
-			Intersections: nearestIssues.Intersections,
+			Rank:                int64(nearestIssues.Rank * 100),
+			TitleCosine:         int64(nearestIssues.TitleCosineDistance),
+			BodyCosine:          int64(nearestIssues.BodyCosineDistance),
+			TopicsIntersections: nearestIssues.Intersections,
 		}
 		responseJsonBody.Top = append(responseJsonBody.Top, jsonModelNearestIssues)
 	}
@@ -227,7 +218,7 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 		}
 	}
 	responseJsonBody.Defer = false
-	service.sortingTop(repositoryModel, responseJsonBody)
+	service.sortingTopRepositories(repositoryModel, responseJsonBody)
 	return responseJsonBody, nil
 }
 
@@ -306,7 +297,7 @@ func (service *AppService) repositoryIsExist(
 	return nil
 }
 
-func (service *AppService) sortingTop(userRepository dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories) {
+func (service *AppService) sortingTopRepositories(userRepository dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories) {
 	responseJsonBody.makeTop()
 	responseJsonBody.UserRepository = &JsonUserRepository{
 		URL:         userRepository.URL,
@@ -381,7 +372,10 @@ func (service *AppService) fillTopNearestRepositories(repositoryId uint, respons
 					Description: comparableModel.Description,
 					//
 					DescriptionDistance:     distance,
-					NumberPairIntersections: intersections.NumberIntersections,
+					NumberPairIntersections: fmt.Sprintf("%.6f", intersections.NumberIntersections),
+					//
+					RepositoryCountIssues: intersections.RepositoryCountIssues,
+					CountNearestPairs:     intersections.CountNearestPairs,
 				},
 			)
 		}

@@ -97,3 +97,7 @@ func (storage *LocalHashStorage) GetNumberIntersectionsForRepository(repositoryI
 func (storage *LocalHashStorage) GetNumberIntersectionsForPair(repositoryID, comparableRepositoryID uint) (dataModel.NumberIssueIntersectionsModel, error) {
 	panic("implement me")
 }
+
+func (storage *LocalHashStorage) GetNearestIssuesForPairRepositories(mainRepositoryID, secondRepositoryID uint) ([]dataModel.NearestIssuesModel, error) {
+	panic("implement me")
+}

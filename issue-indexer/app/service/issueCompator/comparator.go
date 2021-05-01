@@ -184,6 +184,9 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 				RepositoryID:           repositoryID,
 				ComparableRepositoryID: comparableRepositoryID,
 				NumberIntersections:    coefficient,
+				//
+				RepositoryCountIssues: countIssuesRepository,
+				CountNearestPairs:     allCountIntersections,
 			},
 		)
 	}

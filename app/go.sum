@@ -3,6 +3,8 @@ github.com/RobertGumpert/vkr-pckg v1.0.19 h1:zQ5jZj9RIoqkDceNONC/300Go3/f+KMReuP
 github.com/RobertGumpert/vkr-pckg v1.0.19/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/RobertGumpert/vkr-pckg v1.0.20 h1:nB3teUXf7eiDI8xjg8r8f20E2LBbb4fVQWIQC1Azns0=
 github.com/RobertGumpert/vkr-pckg v1.0.20/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
+github.com/RobertGumpert/vkr-pckg v1.0.21 h1:2R/NA4ks57blC2c7l7TCPH8Gb1xVE4YgNVym6V2PNHQ=
+github.com/RobertGumpert/vkr-pckg v1.0.21/go.mod h1:rW7orpZo50duJAvQVp5f4MCPtwzmtF/XK698SJsiu5k=
 github.com/aaaton/golem/v4 v4.0.0/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=
 github.com/aaaton/golem/v4 v4.0.1/go.mod h1:OfK/S5v9Exsx1yO21WorREuIVV+Y5K2hygP0A9oJCCI=
 github.com/aaaton/golem/v4/dicts/en v1.0.1/go.mod h1:1YKRrQNng+KbS+peA7sj3TIa8eqR6T2UqdJ+Tc9xeoA=
