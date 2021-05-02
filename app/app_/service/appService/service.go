@@ -184,14 +184,18 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 				// считаем задачу как добавлеие нового
 				// репозитория.
 				//
-				err := service.gateService.CreateTaskNewRepositoryWithExistKeyword(
-					jsonModel.Name,
-					jsonModel.Owner,
-					userRequest,
-				)
-				if err != nil {
-					return nil, ErrorGateQueueIsFilled
-				}
+
+
+				//err := service.gateService.CreateTaskNewRepositoryWithExistKeyword(
+				//	jsonModel.Name,
+				//	jsonModel.Owner,
+				//	userRequest,
+				//)
+				//if err != nil {
+				//	return nil, ErrorGateQueueIsFilled
+				//}
+
+
 				responseJsonBody.Defer = true
 				return responseJsonBody, ErrorRequestReceivedLater
 			}
@@ -201,15 +205,19 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 				// считаем задачу как добавлеие нового
 				// репозитория и нового слова.
 				//
-				err := service.gateService.CreateTaskNewRepositoryWithNewKeyword(
-					jsonModel.Name,
-					jsonModel.Owner,
-					jsonModel.Keyword,
-					userRequest,
-				)
-				if err != nil {
-					return nil, ErrorGateQueueIsFilled
-				}
+
+
+				//err := service.gateService.CreateTaskNewRepositoryWithNewKeyword(
+				//	jsonModel.Name,
+				//	jsonModel.Owner,
+				//	jsonModel.Keyword,
+				//	userRequest,
+				//)
+				//if err != nil {
+				//	return nil, ErrorGateQueueIsFilled
+				//}
+
+
 				responseJsonBody.Defer = true
 				return responseJsonBody, ErrorRequestReceivedLater
 			}

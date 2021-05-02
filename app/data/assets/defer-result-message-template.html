@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="/css/defer-result.css">
+    <title>Title</title>
+</head>
+<body>
+
+<header>
+    <div class="header-container">
+        <div class="title">
+            <div class="logo-container">
+                <div class="logo-container">
+                    <a href="/">
+                        <img class="logo-img" src="/images/logo.png">
+                    </a>
+                </div>
+            </div>
+            <div class="site-name-container">
+                <div class="site-name-text-box">
+                    <p class="site-p" style="
+                         font-family: 'Open Sans Regular', serif;
+                         font-size: 16px;
+                         color: white;">
+                        Issue
+                    </p>
+                    <p class="site-p" style="
+                         font-family: 'Open Sans ExtraBold', serif;
+                         font-size: 20px;
+                         color: white;">
+                        Analyzer
+                    </p>
+                </div>
+            </div>
+            <div class="find-nearest-repositories-button-container">
+                <div class="find-nearest-repositories-button-body">
+                    <p class="site-p" style="
+                         font-family: 'Open Sans Regular', serif;
+                         font-size: 12px;
+                         color: white;
+                         margin: 0;
+                         position: absolute;
+                         top: 50%;
+                         left: 50%;
+                         -ms-transform: translate(-50%, -50%);
+                         transform: translate(-50%, -50%);">
+                        Найти
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</header>
+
+<div class="content-container">
+    <div class="block-header">
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 30px;
+                     color: #1c1c1c;">
+            &#128337; Поиск похожих репозиториев займет некоторое время...
+        </p>
+
+        <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 2%;
+                     display: inline-block;
+                     color: #1c1c1c;">
+            &#x1f4e7; Поиск займет от
+        </p>
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 18px;
+                     margin-top: 2%;
+                     display: inline-block;
+                     color: #1c1c1c;">
+            нескольких минут
+        </p>
+        <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 18px;
+                     margin-top: 2%;
+                     display: inline-block;
+                     color: #1c1c1c;">
+            до
+        </p>
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 18px;
+                     margin-top: 2%;
+                     display: inline-block;
+                     color: #1c1c1c;">
+            нескольких часов.
+        </p>
+        <div class="field-value" style="margin-top: 10%; background-color: #f0f3fa;">
+            <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     color: #1c1c1c;">
+                Ваш репозиторий:
+            </p>
+            <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     margin-left: 5%;
+                     margin-top: 2%;
+                     color: #1c1c1c;">
+                &#128581; либо не проиндексирован в нашей базе данных;
+            </p>
+            <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     margin-left: 5%;
+                     margin-top: 2%;
+                     color: #1c1c1c;">
+                &#128187; либо для него были добавлены новые репозитории, похожие по предметной области, но еще не был
+                проведен анализ
+                похожих Issue;
+            </p>
+        </div>
+        <div class="field-value" style="margin-top: 5%; background-color: #f0f3fa;">
+            <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     color: #1c1c1c;">
+                Поиск похожих репозиториев был добавлен в очередь задач нашей системы. Результат будет отправлен вам
+                на
+                почту ввиде ссылки, перейдя по которой вы сможете посмотреть какие репозитории похожи на ваш.
+            </p>
+        </div>
+
+    </div>
+    <div class="block-header">
+        <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 24px;
+                     color: #1c1c1c;">
+            На форме вы указали такие данные:
+        </p>
+    </div>
+    <div class="form-container">
+        <div class="form">
+            <div class="field-container">
+                <div class="field-title">
+                    <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 16px;">
+                        Репозиторий:
+                    </p>
+                </div>
+                <div class="field-value">
+                    <p class="site-p"
+                       style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                        {{.Owner}}
+                    </p>
+                    <p class="site-p"
+                       style="font-family: 'Open Sans ExtraBold', serif;font-size: 14px; display: inline-block;">
+                        /{{.Name}}
+                    </p>
+                </div>
+            </div>
+            <div class="field-container">
+                <div class="field-title">
+                    <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 16px;">
+                        Почта:
+                    </p>
+                </div>
+                <div class="field-value">
+                    <p class="site-p"
+                       style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
+                        {{.Email}}
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer>
+</footer>
+
+
+</body>
+</html>

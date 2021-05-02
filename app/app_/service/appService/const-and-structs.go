@@ -21,6 +21,30 @@ type JsonCreateTaskFindNearestRepositories struct {
 	Email   string `json:"email"`
 }
 
+func (j *JsonCreateTaskFindNearestRepositories) encodeHash() (hash string, err error) {
+	bts, err := json.Marshal(j)
+	if err != nil {
+		return "", err
+	}
+	return base64.URLEncoding.EncodeToString(bts), nil
+}
+
+func (j *JsonCreateTaskFindNearestRepositories) decodeHash(hash string) (err error) {
+	bts, err := base64.URLEncoding.DecodeString(hash)
+	if err != nil {
+		return err
+	}
+	f := new(JsonCreateTaskFindNearestRepositories)
+	err = json.Unmarshal(bts, f)
+	if err != nil {
+		return err
+	}
+	j.Email = f.Email
+	j.Name = f.Name
+	j.Owner = f.Owner
+	return nil
+}
+
 //
 //
 //
@@ -79,7 +103,7 @@ type JsonNearestRepository struct {
 	DescriptionIntersections []string `json:"description_intersections"`
 	//
 	DescriptionDistance     float64 `json:"description_distance"`
-	NumberPairIntersections string `json:"number_pair_intersections"`
+	NumberPairIntersections string  `json:"number_pair_intersections"`
 	//
 	RepositoryCountIssues int64 `gorm:"not null;"`
 	CountNearestPairs     int64 `gorm:"not null;"`
@@ -154,7 +178,7 @@ func (find *JsonNearestIssues) makeTop() {
 		key := strings.Join([]string{
 			find.Top[next].ComparableRepositoryURL,
 			find.Top[next].UserRepositoryURL,
-		},"&")
+		}, "&")
 		if _, exist := issuesUrls[key]; exist {
 			continue
 		} else {

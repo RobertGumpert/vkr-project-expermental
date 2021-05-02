@@ -78,7 +78,7 @@
                      font-size: 42px;
                       margin-top: 10%;
                      color: #1c1c1c;">
-            {{.UserRepositoryName}} / {{.ComparableRepositoryName}}
+            {{.UserRepositoryName}} &#129309; {{.ComparableRepositoryName}}
         </p>
     </div>
     <!--
@@ -87,8 +87,59 @@
     *
     -->
     <div class="list-nearest-repositories-container">
-        {{range .Top}}
+        {{range $i, $e := .Top}}
+            {{if eq $i 0}}
+                <div class="block-header" style="margin: 10% 0;">
+                    <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 24px;
+                     color: #1c1c1c;">
+                        Призовые места.
+                    </p>
+                    <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     margin-top: 2%;
+                     color: #1c1c1c;">
+                        ТОП 3 самых похожих пар Issue.
+                    </p>
+                </div>
+            {{end}}
+            {{if eq $i 3}}
+                <div class="block-header" style="margin: 10% 0;">
+                    <p class="site-p" style="
+                     font-family: 'Open Sans ExtraBold', serif;
+                     font-size: 24px;
+                     color: #1c1c1c;">
+                        Не призовые места.
+                    </p>
+                    <p class="site-p" style="
+                     font-family: 'Open Sans Regular', serif;
+                     font-size: 16px;
+                     margin-top: 2%;
+                     color: #1c1c1c;">
+                        Похожие пары Issue.
+                    </p>
+                </div>
+            {{end}}
             <div class="nearest-repository">
+
+                {{if lt $i 3}}
+                    <div class="field-container" style="margin-top: 5%">
+                        <p class="site-p" style="font-family: 'Open Sans Regular', serif;font-size: 36px;">
+                            {{if eq $i 0}}
+                                &#129351;
+                            {{end}}
+                            {{if eq $i 1}}
+                                &#129352;
+                            {{end}}
+                            {{if eq $i 2}}
+                                &#x1F949;
+                            {{end}}
+                        </p>
+                    </div>
+                {{end}}
+
                 <div class="field-container">
                     <div class="field-title">
                         <p class="site-p"
@@ -97,20 +148,20 @@
                         </p>
                         <p class="site-p"
                            style="font-family: 'Open Sans ExtraBold', serif;font-size: 16px;  display: inline-block;">
-                            {{.UserRepositoryName}}:
+                            {{$e.UserRepositoryName}}:
                         </p>
                     </div>
                     <div class="field-value">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            {{.UserRepositoryTitle}}
+                            {{$e.UserRepositoryTitle}}
                         </p>
                     </div>
                     <div class="field-value" style="margin-top: -20px;">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            <a href="{{.UserRepositoryURL}}" target="_blank">
-                                {{.UserRepositoryURL}}
+                            <a href="{{$e.UserRepositoryURL}}" target="_blank">
+                                {{$e.UserRepositoryURL}}
                             </a>
                         </p>
                     </div>
@@ -123,20 +174,20 @@
                         </p>
                         <p class="site-p"
                            style="font-family: 'Open Sans ExtraBold', serif;font-size: 16px;  display: inline-block;">
-                            {{.ComparableRepositoryName}}:
+                            {{$e.ComparableRepositoryName}}:
                         </p>
                     </div>
                     <div class="field-value">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            {{.ComparableRepositoryTitle}}
+                            {{$e.ComparableRepositoryTitle}}
                         </p>
                     </div>
                     <div class="field-value" style="margin-top: -20px;">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            <a href="{{.ComparableRepositoryURL}}" target="_blank">
-                                {{.ComparableRepositoryURL}}
+                            <a href="{{$e.ComparableRepositoryURL}}" target="_blank">
+                                {{$e.ComparableRepositoryURL}}
                             </a>
                         </p>
                     </div>
@@ -155,7 +206,7 @@
                     <div class="field-value">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            {{.Rank}} %
+                            {{$e.Rank}} %
                         </p>
                     </div>
                 </div>
@@ -188,7 +239,7 @@
                     <div class="field-value">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            {{.TitleCosine}} %
+                            {{$e.TitleCosine}} %
                         </p>
                     </div>
                 </div>
@@ -202,7 +253,7 @@
                     <div class="field-value">
                         <p class="site-p"
                            style="font-family: 'Open Sans Light', serif;font-size: 14px; display: inline-block;">
-                            {{.BodyCosine}} %
+                            {{$e.BodyCosine}} %
                         </p>
                     </div>
                 </div>

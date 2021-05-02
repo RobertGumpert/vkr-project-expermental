@@ -26,11 +26,15 @@ func (service *AppService) ConcatTheirRestHandlers(root string, engine *gin.Engi
 	{
 		taskApi.POST("/nearest/repositories", service.restHandlerUpdateTaskStateNearestRepositories)
 	}
-	userEndpoints := engine.Group("/get")
+	gettingEndpoints := engine.Group("/get")
 	{
-		userEndpoints.GET("/:digest", service.restHandlerDigest)
-		userEndpoints.POST("/nearest/repositories", service.restHandlerGetNearestRepositories)
-		userEndpoints.GET("/nearest/issues/:userRepository/with/:nearestRepository", service.restHandlerGetNearestIssues)
+		gettingEndpoints.GET("/:digest", service.restHandlerNearestRepositoriesDigest)
+		gettingEndpoints.POST("/nearest/repositories", service.restHandlerGetNearestRepositories)
+		gettingEndpoints.GET("/nearest/issues/:userRepository/with/:nearestRepository", service.restHandlerGetNearestIssues)
+	}
+	notificationEndpoints := engine.Group("/notification")
+	{
+		notificationEndpoints.GET("/:digest", service.restHandlerNotificationDigest)
 	}
 }
 
@@ -55,9 +59,17 @@ func (service *AppService) restHandlerGetNearestRepositories(ctx *gin.Context) {
 	jsonBody, err := service.FindNearestRepositories(state)
 	if err != nil {
 		if err == ErrorRequestReceivedLater {
-			jsonBody := &JsonResultTaskFindNearestRepositories{TaskState: &JsonStateTask{
-				IsDefer: true,
-			}}
+			hash, err := state.encodeHash()
+			if err != nil {
+				ctx.AbortWithStatus(http.StatusLocked)
+				return
+			}
+			jsonBody := &JsonResultTaskFindNearestRepositories{
+				TaskState: &JsonStateTask{
+					IsDefer:  true,
+					Endpoint: strings.Join([]string{"/notification", hash}, "/"),
+				},
+			}
 			ctx.AbortWithStatusJSON(http.StatusOK, jsonBody)
 			return
 		} else {
@@ -85,7 +97,7 @@ func (service *AppService) restHandlerGetNearestRepositories(ctx *gin.Context) {
 func (service *AppService) restHandlerGetNearestIssues(ctx *gin.Context) {
 	userRepository := ctx.Param("userRepository")
 	nearestRepository := ctx.Param("nearestRepository")
-	jsonModel, err:= service.GetNearestIssuesInPairNearestRepositories(
+	jsonModel, err := service.GetNearestIssuesInPairNearestRepositories(
 		userRepository,
 		nearestRepository,
 	)
@@ -101,7 +113,7 @@ func (service *AppService) restHandlerGetNearestIssues(ctx *gin.Context) {
 	return
 }
 
-func (service *AppService) restHandlerDigest(ctx *gin.Context) {
+func (service *AppService) restHandlerNearestRepositoriesDigest(ctx *gin.Context) {
 	hash := ctx.Param("digest")
 	state := new(JsonResultTaskFindNearestRepositories)
 	err := state.decodeHash(hash)
@@ -112,6 +124,22 @@ func (service *AppService) restHandlerDigest(ctx *gin.Context) {
 	ctx.HTML(
 		http.StatusOK,
 		"nearest-repositories-template.html",
+		state,
+	)
+	return
+}
+
+func (service *AppService) restHandlerNotificationDigest(ctx *gin.Context) {
+	hash := ctx.Param("digest")
+	state := new(JsonCreateTaskFindNearestRepositories)
+	err := state.decodeHash(hash)
+	if err != nil {
+		ctx.AbortWithStatus(http.StatusLocked)
+		return
+	}
+	ctx.HTML(
+		http.StatusOK,
+		"defer-result-message-template.html",
 		state,
 	)
 	return

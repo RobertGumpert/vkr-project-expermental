@@ -36,13 +36,8 @@ window.onload = () => {
                 setError();
             } else {
                 const json = JSON.parse(request.response);
-                console.log(json);
-                const isDefer = json["task_state"]["is_defer"];
-                if (isDefer === false) {
-                    window.location = json["task_state"]["endpoint"];
-                } else {
-                    console.log(json);
-                }
+                console.log(json["task_state"]["endpoint"]);
+                window.location = json["task_state"]["endpoint"];
             }
         } else {
             setError();
