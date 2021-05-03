@@ -83,7 +83,6 @@ func (service *AppService) CreateTaskCompareGroup(jsonModel *jsonSendFromGateCom
 	if err != nil {
 		return err
 	}
-
 	return nil
 }
 

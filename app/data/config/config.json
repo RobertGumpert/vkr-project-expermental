@@ -18,5 +18,19 @@
   "repository_indexer_endpoints": {
     "word_is_exist": "api/get/word",
     "get_nearest_repositories": "api/get/nearest/for/repository"
-  }
+  },
+  "posts" : [
+    {
+      "host": "smtp.gmail.com",
+      "tcp_port": 465,
+      "tls_port": 465,
+      "boxes": [
+        {
+          "username": "walkmanmail19@gmail.com",
+          "password": "QUADRopheniamail12345",
+          "identity": ""
+        }
+      ]
+    }
+  ]
 }

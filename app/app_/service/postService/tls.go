@@ -8,7 +8,7 @@ import (
 	"strings"
 )
 
-type tlsAgent struct {
+type Agent struct {
 	clientBox      string
 	clientPassword string
 	clientIdentity string
@@ -23,7 +23,7 @@ type tlsAgent struct {
 	smtpAuth       smtp.Auth
 }
 
-func NewTlsAgent(clientBox, clientPassword, clientIdentity string, smtpServerTlsPort int, smtpServerDomain string, tlsConfig *tls.Config) (*tlsAgent, error) {
+func NewTlsAgent(clientBox, clientPassword, clientIdentity string, smtpServerTlsPort int, smtpServerDomain string, tlsConfig *tls.Config) (*Agent, error) {
 	smtpServerTlsAddress := strings.Join(
 		[]string{
 			smtpServerDomain,
@@ -31,7 +31,7 @@ func NewTlsAgent(clientBox, clientPassword, clientIdentity string, smtpServerTls
 		},
 		":",
 	)
-	agent := &tlsAgent{
+	agent := &Agent{
 		smtpServerDomain:     smtpServerDomain,
 		clientBox:            clientBox,
 		smtpServerTlsPort:    smtpServerTlsPort,
@@ -49,7 +49,7 @@ func NewTlsAgent(clientBox, clientPassword, clientIdentity string, smtpServerTls
 	return agent, nil
 }
 
-func (agent *tlsAgent) connect() (*tls.Conn, *smtp.Client, error) {
+func (agent *Agent) connect() (*tls.Conn, *smtp.Client, error) {
 	connection, err := tls.Dial(
 		"tcp",
 		agent.smtpServerTlsAddress,
@@ -77,7 +77,7 @@ func (agent *tlsAgent) connect() (*tls.Conn, *smtp.Client, error) {
 	return connection, client, nil
 }
 
-func (agent *tlsAgent) checkRCPTReceivers(receivers ...string) error {
+func (agent *Agent) checkRCPTReceivers(receivers ...string) error {
 	if err := agent.smtpClient.Mail(agent.clientBox); err != nil {
 		return err
 	}
@@ -89,11 +89,11 @@ func (agent *tlsAgent) checkRCPTReceivers(receivers ...string) error {
 	return nil
 }
 
-func (agent *tlsAgent) ClientBox() string {
+func (agent *Agent) ClientBox() string {
 	return agent.clientBox
 }
 
-func (agent *tlsAgent) SendLetter(msg []byte, receivers ...string) error {
+func (agent *Agent) SendLetter(msg []byte, receivers ...string) error {
 	if err := agent.checkRCPTReceivers(receivers...); err != nil {
 		return err
 	}

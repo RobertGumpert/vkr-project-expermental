@@ -7,6 +7,8 @@ import (
 	"path/filepath"
 )
 
+
+
 type Config struct {
 	Port     string `json:"port"`
 	Postgres struct {
@@ -30,6 +32,17 @@ type Config struct {
 		WordIsExist            string `json:"word_is_exist"`
 		GetNearestRepositories string `json:"get_nearest_repositories"`
 	} `json:"repository_indexer_endpoints"`
+	//
+	Posts []struct {
+		Host    string `json:"host"`
+		TCPPort int    `json:"tcp_port"`
+		TLSPort int    `json:"tls_port"`
+		Boxes   []struct {
+			Username string `json:"username"`
+			Password string `json:"password"`
+			Identity string `json:"identity"`
+		} `json:"boxes"`
+	} `json:"posts"`
 }
 
 func NewConfig() *Config {

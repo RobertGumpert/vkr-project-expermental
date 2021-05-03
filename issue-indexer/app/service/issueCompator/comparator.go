@@ -122,7 +122,7 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 		return
 	}
 	result.doNotCompare = doNotCompare
-	lengthOfPartComparableIssuesSlice = int64(len(comparableIssues)) / rules.GetMaxCountThreads()
+	lengthOfPartComparableIssuesSlice = int64(len(repositoryIssues)) / rules.GetMaxCountThreads()
 	if lengthOfPartComparableIssuesSlice <= 1 {
 		comparator.iterating(
 			repositoryIssues,

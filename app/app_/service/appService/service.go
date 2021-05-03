@@ -3,12 +3,15 @@ package appService
 import (
 	"app/app_/config"
 	"app/app_/service/githubGateService"
+	"app/app_/service/postService"
 	"app/app_/service/repositoryIndexerService"
+	"crypto/tls"
 	"errors"
 	"fmt"
 	"github.com/RobertGumpert/vkr-pckg/dataModel"
 	"github.com/RobertGumpert/vkr-pckg/repository"
 	"github.com/RobertGumpert/vkr-pckg/requests"
+	"github.com/RobertGumpert/vkr-pckg/runtimeinfo"
 	"github.com/gin-gonic/gin"
 	"gorm.io/gorm"
 	"html/template"
@@ -21,10 +24,11 @@ type AppService struct {
 	config *config.Config
 	client *http.Client
 	//
-	nearestRepositoriesTemplate *template.Template
+	deferResultEmailTemplate *template.Template
 	//
 	repositoryIndexer *repositoryIndexerService.Service
 	gateService       *githubGateService.Service
+	postAgent         *postService.Agent
 }
 
 func NewAppService(root string, db repository.IRepository, config *config.Config, engine *gin.Engine) *AppService {
@@ -39,6 +43,26 @@ func NewAppService(root string, db repository.IRepository, config *config.Config
 		service.client,
 		service.config,
 	)
+	tmpl, err := template.ParseFiles(strings.Join([]string{
+		root,
+		"/data/assets/email-defer-message.html",
+	}, ""))
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
+	service.deferResultEmailTemplate = tmpl
+	postAgent, err := postService.NewTlsAgent(
+		config.Posts[0].Boxes[0].Username,
+		config.Posts[0].Boxes[0].Password,
+		config.Posts[0].Boxes[0].Identity,
+		config.Posts[0].TCPPort,
+		config.Posts[0].Host,
+		&tls.Config{ServerName: config.Posts[0].Host},
+	)
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
+	service.postAgent = postAgent
 	return service
 }
 
@@ -54,21 +78,41 @@ func (service *AppService) SendDeferResponseToClient(jsonModel *JsonFromGetNeare
 	}
 	userRepository, err := service.db.GetRepositoryByName(jsonModel.UserRequest.UserName)
 	if err != nil {
+		runtimeinfo.LogError("DO NOT SEND LETTER TO CLIENT {", jsonModel.UserRequest.UserEmail, "} REPOS. { ", jsonModel.UserRequest.UserOwner, "/", jsonModel.UserRequest.UserName, " } WITH ERROR: {", err, "}")
 		return
 	}
 	err = service.fillTopNearestRepositories(userRepository.ID, responseJsonBody, jsonModel.Repositories)
 	if err != nil {
+		runtimeinfo.LogError("DO NOT SEND LETTER TO CLIENT {", jsonModel.UserRequest.UserEmail, "} REPOS. { ", jsonModel.UserRequest.UserOwner, "/", jsonModel.UserRequest.UserName, " } WITH ERROR: {", err, "}")
 		return
 	}
 	service.sortingTopRepositories(userRepository, responseJsonBody)
 	hash, err := responseJsonBody.encodeHash()
 	if err != nil {
+		runtimeinfo.LogError("DO NOT SEND LETTER TO CLIENT {", jsonModel.UserRequest.UserEmail, "} REPOS. { ", jsonModel.UserRequest.UserOwner, "/", jsonModel.UserRequest.UserName, " } WITH ERROR: {", err, "}")
 		return
 	}
 	url := strings.Join([]string{
 		"get",
 		hash,
 	}, "/")
+	msg := postService.NewMessage(service.postAgent.ClientBox(), jsonModel.UserRequest.UserEmail).Subject(
+		"Пришли результаты поиска похожих репозиториев!",
+	).DynamicHtml(
+		service.deferResultEmailTemplate,
+		struct {
+			Name, Owner, URL string
+		}{
+			Name:  jsonModel.UserRequest.UserName,
+			Owner: jsonModel.UserRequest.UserOwner,
+			URL:   url,
+		},
+	)
+	err = service.postAgent.SendLetter(msg.GetBytes(), msg.GetReceiver())
+	if err != nil {
+		runtimeinfo.LogError("DO NOT SEND LETTER TO CLIENT {", jsonModel.UserRequest.UserEmail, "} REPOS. { ", jsonModel.UserRequest.UserOwner, "/", jsonModel.UserRequest.UserName, " } WITH ERROR: {", err, "}")
+	}
+	return
 }
 
 func (service *AppService) GetNearestIssuesInPairNearestRepositories(mainRepositoryName, secondRepositoryName string) (responseJsonBody *JsonNearestIssues, err error) {
