@@ -109,7 +109,7 @@ func (t *taskNewRepositoryWithNewKeyword) getTaskForIssueIndexer(taskKey string)
 		}
 		updateContext = &issueIndexerService.JsonSendFromIndexerCompareGroup{}
 		customFields  = &customFieldsModel.Model{
-			TaskType: issueIndexerService.TaskTypeCompareGroupRepositories,
+			TaskType: issueIndexerService.TaskTypeCompareIssuesGroupRepositories,
 			Fields:   nil,
 		}
 	)
@@ -128,7 +128,7 @@ func (t *taskNewRepositoryWithNewKeyword) EventManageTasks(task itask.ITask) (de
 	deleteTasks = make(map[string]struct{})
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		var (
 			countCompletedTask int
 		)
@@ -220,7 +220,7 @@ func (t *taskNewRepositoryWithNewKeyword) EventUpdateTaskState(task itask.ITask,
 				for next := 0; next < len(*dependentsTasks); next++ {
 					dependentTask := (*dependentsTasks)[next]
 					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
-					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareGroupRepositories {
+					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareIssuesGroupRepositories {
 						t.appService.taskManager.TakeOffRunBanInQueue(dependentTask)
 						if len(group) == 0 {
 							dependentTask.GetState().SetCompleted(true)
@@ -240,7 +240,7 @@ func (t *taskNewRepositoryWithNewKeyword) EventUpdateTaskState(task itask.ITask,
 			task.GetState().SetCompleted(true)
 		}
 		break
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		task.GetState().SetCompleted(true)
 		break
 	}
@@ -250,7 +250,7 @@ func (t *taskNewRepositoryWithNewKeyword) EventUpdateTaskState(task itask.ITask,
 func (t *taskNewRepositoryWithNewKeyword) EventRunTask(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		err := t.appService.serviceForIssueIndexer.CompareGroupRepositories(task)
 		if err != nil {
 			return true, false, nil

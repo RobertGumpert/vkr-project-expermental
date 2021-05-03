@@ -117,7 +117,7 @@ func (t *taskNewRepositoryWithExistKeyWord) getTaskForIssueIndexer(taskKey strin
 		}
 		updateContext = &issueIndexerService.JsonSendFromIndexerCompareGroup{}
 		customFields  = &customFieldsModel.Model{
-			TaskType: issueIndexerService.TaskTypeCompareGroupRepositories,
+			TaskType: issueIndexerService.TaskTypeCompareIssuesGroupRepositories,
 			Fields:   nil,
 		}
 	)
@@ -136,7 +136,7 @@ func (t *taskNewRepositoryWithExistKeyWord) EventManageTasks(task itask.ITask) (
 	deleteTasks = make(map[string]struct{})
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		var (
 			countCompletedTask int
 		)
@@ -172,7 +172,7 @@ func (t *taskNewRepositoryWithExistKeyWord) EventManageTasks(task itask.ITask) (
 func (t *taskNewRepositoryWithExistKeyWord) EventRunTask(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		err := t.appService.serviceForIssueIndexer.CompareGroupRepositories(task)
 		if err != nil {
 			return true, false, nil
@@ -200,7 +200,7 @@ func (t *taskNewRepositoryWithExistKeyWord) EventRunTask(task itask.ITask) (doTa
 func (t *taskNewRepositoryWithExistKeyWord) EventUpdateTaskState(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		task.GetState().SetCompleted(true)
 		break
 	case repositoryIndexerService.TaskTypeReindexingForRepository:
@@ -220,7 +220,7 @@ func (t *taskNewRepositoryWithExistKeyWord) EventUpdateTaskState(task itask.ITas
 				for next := 0; next < len(*dependentsTasks); next++ {
 					dependentTask := (*dependentsTasks)[next]
 					customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
-					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareGroupRepositories {
+					if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareIssuesGroupRepositories {
 						t.appService.taskManager.TakeOffRunBanInQueue(dependentTask)
 						if len(group) == 0 {
 							dependentTask.GetState().SetCompleted(true)

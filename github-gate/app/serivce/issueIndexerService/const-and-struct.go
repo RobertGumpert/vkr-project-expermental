@@ -3,7 +3,7 @@ package issueIndexerService
 import "github.com/RobertGumpert/gotasker/itask"
 
 const(
-	TaskTypeCompareGroupRepositories itask.Type = 2000
+	TaskTypeCompareIssuesGroupRepositories itask.Type = 2000
 )
 
 //

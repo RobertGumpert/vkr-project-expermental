@@ -43,7 +43,32 @@ func NewAppService(root string, db repository.IRepository, config *config.Config
 }
 
 func (service *AppService) SendDeferResponseToClient(jsonModel *JsonFromGetNearestRepositories) {
-
+	responseJsonBody := &JsonResultTaskFindNearestRepositories{
+		UserRequest: &JsonUserRequest{
+			UserKeyword: jsonModel.UserRequest.UserKeyword,
+			UserName:    jsonModel.UserRequest.UserName,
+			UserOwner:   jsonModel.UserRequest.UserOwner,
+			UserEmail:   jsonModel.UserRequest.UserEmail,
+		},
+		Top: make([]JsonNearestRepository, 0),
+	}
+	userRepository, err := service.db.GetRepositoryByName(jsonModel.UserRequest.UserName)
+	if err != nil {
+		return
+	}
+	err = service.fillTopNearestRepositories(userRepository.ID, responseJsonBody, jsonModel.Repositories)
+	if err != nil {
+		return
+	}
+	service.sortingTopRepositories(userRepository, responseJsonBody)
+	hash, err := responseJsonBody.encodeHash()
+	if err != nil {
+		return
+	}
+	url := strings.Join([]string{
+		"get",
+		hash,
+	}, "/")
 }
 
 func (service *AppService) GetNearestIssuesInPairNearestRepositories(mainRepositoryName, secondRepositoryName string) (responseJsonBody *JsonNearestIssues, err error) {
@@ -184,18 +209,14 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 				// считаем задачу как добавлеие нового
 				// репозитория.
 				//
-
-
-				//err := service.gateService.CreateTaskNewRepositoryWithExistKeyword(
-				//	jsonModel.Name,
-				//	jsonModel.Owner,
-				//	userRequest,
-				//)
-				//if err != nil {
-				//	return nil, ErrorGateQueueIsFilled
-				//}
-
-
+				err := service.gateService.CreateTaskNewRepositoryWithExistKeyword(
+					jsonModel.Name,
+					jsonModel.Owner,
+					userRequest,
+				)
+				if err != nil {
+					return nil, ErrorGateQueueIsFilled
+				}
 				responseJsonBody.Defer = true
 				return responseJsonBody, ErrorRequestReceivedLater
 			}
@@ -205,19 +226,15 @@ func (service *AppService) FindNearestRepositories(jsonModel *JsonCreateTaskFind
 				// считаем задачу как добавлеие нового
 				// репозитория и нового слова.
 				//
-
-
-				//err := service.gateService.CreateTaskNewRepositoryWithNewKeyword(
-				//	jsonModel.Name,
-				//	jsonModel.Owner,
-				//	jsonModel.Keyword,
-				//	userRequest,
-				//)
-				//if err != nil {
-				//	return nil, ErrorGateQueueIsFilled
-				//}
-
-
+				err := service.gateService.CreateTaskNewRepositoryWithNewKeyword(
+					jsonModel.Name,
+					jsonModel.Owner,
+					jsonModel.Keyword,
+					userRequest,
+				)
+				if err != nil {
+					return nil, ErrorGateQueueIsFilled
+				}
 				responseJsonBody.Defer = true
 				return responseJsonBody, ErrorRequestReceivedLater
 			}
@@ -367,6 +384,9 @@ func (service *AppService) fillTopNearestRepositories(repositoryId uint, respons
 		if distance, exist := mapDistanceWithNearest[intersections.ComparableRepositoryID]; exist {
 			comparableModel, err := service.db.GetRepositoryByID(intersections.ComparableRepositoryID)
 			if err != nil {
+				continue
+			}
+			if comparableModel.ID == repositoryId {
 				continue
 			}
 			responseJsonBody.Top = append(

@@ -99,7 +99,7 @@ func (t *taskExistRepository) getTaskForIssueIndexer(taskKey string) (task itask
 		}
 		updateContext = &issueIndexerService.JsonSendFromIndexerCompareGroup{}
 		customFields  = &customFieldsModel.Model{
-			TaskType: issueIndexerService.TaskTypeCompareGroupRepositories,
+			TaskType: issueIndexerService.TaskTypeCompareIssuesGroupRepositories,
 			Fields:   nil,
 		}
 	)
@@ -117,7 +117,7 @@ func (t *taskExistRepository) getTaskForIssueIndexer(taskKey string) (task itask
 func (t *taskExistRepository) EventManageTasks(task itask.ITask) (deleteTasks map[string]struct{}) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		deleteTasks = make(map[string]struct{})
 		_, trigger := task.IsDependent()
 		_, dependentsTasks := trigger.IsTrigger()
@@ -142,7 +142,7 @@ func (t *taskExistRepository) EventManageTasks(task itask.ITask) (deleteTasks ma
 func (t *taskExistRepository) EventUpdateTaskState(task itask.ITask, somethingUpdateContext interface{}) (err error, sendToErrorChannel bool) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		task.GetState().SetCompleted(true)
 		break
 	case repositoryIndexerService.TaskTypeReindexingForRepository:
@@ -171,7 +171,7 @@ func (t *taskExistRepository) EventUpdateTaskState(task itask.ITask, somethingUp
 		for next := 0; next < len(*dependentsTasks); next++ {
 			dependentTask := (*dependentsTasks)[next]
 			customFields := dependentTask.GetState().GetCustomFields().(*customFieldsModel.Model)
-			if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareGroupRepositories {
+			if customFields.GetTaskType() == issueIndexerService.TaskTypeCompareIssuesGroupRepositories {
 				if len(group) == 0 {
 					dependentTask.GetState().SetCompleted(true)
 					dependentTask.GetState().SetRunnable(true)
@@ -195,7 +195,7 @@ func (t *taskExistRepository) EventUpdateTaskState(task itask.ITask, somethingUp
 func (t *taskExistRepository) EventRunTask(task itask.ITask) (doTaskAsDefer, sendToErrorChannel bool, err error) {
 	taskType := task.GetState().GetCustomFields().(*customFieldsModel.Model).GetTaskType()
 	switch taskType {
-	case issueIndexerService.TaskTypeCompareGroupRepositories:
+	case issueIndexerService.TaskTypeCompareIssuesGroupRepositories:
 		err := t.appService.serviceForIssueIndexer.CompareGroupRepositories(task)
 		if err != nil {
 			return true, false, nil
