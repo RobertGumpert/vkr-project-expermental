@@ -7,7 +7,7 @@
     "db_name": "vkr-db",
     "ssl": "disable"
   },
-  "max_count_runnable_tasks": 100,
+  "max_count_runnable_tasks": 2,
   "max_count_threads": 100,
   "minimum_text_completeness_threshold": 70.0,
   "maximum_duration_database_query_in_minutes": 5,

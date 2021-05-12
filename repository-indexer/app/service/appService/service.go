@@ -11,6 +11,7 @@ import (
 	"repository-indexer/app/config"
 	"strings"
 	"sync"
+	"time"
 )
 
 type AppService struct {
@@ -187,7 +188,8 @@ func (service *AppService) addTaskReindexingForGroupRepositories(jsonModel *json
 
 func (service *AppService) scanChannel() {
 	for result := range service.chanResult {
-		runtimeinfo.LogInfo("TASK [", result.taskType, "] FINISH.")
+		runtimeinfo.LogInfo("TASK [", result.taskKey, "] FINISH.")
+		time.Sleep(2*time.Second)
 		service.sendTaskUpdateToGate(result)
 		service.popFirstFromQueue()
 		if len(service.queue) == 0 {
@@ -196,7 +198,6 @@ func (service *AppService) scanChannel() {
 			continue
 		} else {
 			service.databaseIsReindexing = true
-			runtimeinfo.LogInfo("RUN TASK")
 			go service.queue[0]()
 		}
 	}
@@ -247,10 +248,13 @@ func (service *AppService) sendTaskUpdateToGate(result resultIndexing) {
 		err = result.jsonBody.(jsonSendToGateReindexingForGroupRepositories).ExecutionTaskStatus.Error
 		break
 	}
+	//runtimeinfo.LogInfo("Send task ", result.taskKey, " = ",
+	//	result.jsonBody, " to ", url, ", err : ", err)
 	runtimeinfo.LogInfo(url, err)
 	response, err := requests.POST(service.client, url, nil, result.jsonBody)
 	if err != nil {
 		runtimeinfo.LogError(err)
+		return
 	}
 	if response.StatusCode != http.StatusOK {
 		runtimeinfo.LogError("(REQ. -> TO GATE) STATUS NOT 200.")

@@ -1,6 +1,11 @@
 package test
 
-import "testing"
+import (
+	"github.com/RobertGumpert/vkr-pckg/repository"
+	"issue-indexer/app/config"
+	"issue-indexer/app/service/appService"
+	"testing"
+)
 
 func TestApi(t *testing.T) {
 	var (
@@ -12,3 +17,5 @@ func TestApi(t *testing.T) {
 		t.Fatal(err)
 	}
 }
+
+

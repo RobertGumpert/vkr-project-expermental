@@ -59,3 +59,15 @@ func (c *Config) Read() *Config {
 	}
 	return c
 }
+
+func (c *Config) ReadWithPath(absPath string) *Config {
+	content, err := ioutil.ReadFile(absPath)
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
+	err = json.Unmarshal(content, c)
+	if err != nil {
+		runtimeinfo.LogFatal(err)
+	}
+	return c
+}
