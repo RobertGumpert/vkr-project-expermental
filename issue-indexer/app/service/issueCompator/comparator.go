@@ -77,16 +77,16 @@ func (comparator *Comparator) iterating(whatToCompare, whatToCompareWith []dataM
 		}
 	}
 	if len(nearestIssues) != 0 {
-		//err := comparator.db.AddListNearestIssues(nearestIssues)
-		//if err != nil {
-		//	runtimeinfo.LogError(err)
-		//	for _, nearest := range nearestIssues {
-		//		err := comparator.db.AddNearestIssues(nearest)
-		//		if err != nil {
-		//			runtimeinfo.LogError(err)
-		//		}
-		//	}
-		//}
+		err := comparator.db.AddListNearestIssues(nearestIssues)
+		if err != nil {
+			runtimeinfo.LogError(err)
+			for _, nearest := range nearestIssues {
+				err := comparator.db.AddNearestIssues(nearest)
+				if err != nil {
+					runtimeinfo.LogError(err)
+				}
+			}
+		}
 	}
 	runtime.GC()
 	if wg != nil {
@@ -190,10 +190,10 @@ func (comparator *Comparator) doCompareIntoMultipleStreams(rules *CompareRules, 
 			},
 		)
 	}
-	//err = comparator.db.AddNumbersIntersections(intersectionModels)
-	//if err != nil {
-	//	result.err = err
-	//}
+	err = comparator.db.AddNumbersIntersections(intersectionModels)
+	if err != nil {
+		result.err = err
+	}
 	runtimeinfo.LogInfo("FINISH COMPARE TASK [", taskKey, "].")
 	rules.GetReturnResult()(result)
 	return

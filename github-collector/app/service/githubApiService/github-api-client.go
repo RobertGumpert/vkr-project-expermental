@@ -2,8 +2,10 @@ package githubApiService
 
 import (
 	"errors"
+	"github-collector/pckg/runtimeinfo"
 	"net/http"
 	"strings"
+	"sync"
 )
 
 type TaskIndexInQueue int
@@ -65,6 +67,8 @@ type FunctionInsertGroupRequests func(
 
 
 type GithubClient struct {
+	mx *sync.Mutex
+	//
 	client              *http.Client
 	token               string
 	isAuth              bool
@@ -83,6 +87,7 @@ func NewGithubClient(token string, maxCountTasks int) (*GithubClient, error) {
 	c.client = new(http.Client)
 	c.WaitRateLimitsReset = false
 	c.maxCountTasks = maxCountTasks
+	c.mx = new(sync.Mutex)
 	c.countNowExecuteTask = 0
 	c.tasksCompetedMessageChannel = make(chan bool, maxCountTasks)
 	c.tasksToGroupRequests = make([]TaskLaunchFunction, 0)
@@ -161,18 +166,8 @@ func (c *GithubClient) MakeFunctionInsertOneRequest(makeTaskDefer bool) (Functio
 		var runTask = func() {
 			c.taskOneRequest(request, api, signalChannel, taskStateChannel)
 		}
-		if c.countNowExecuteTask == 0 {
-			return runTask, true, 0
-		}
-		if len(c.tasksToOneRequest) != 0 || c.countNowExecuteTask == 1 {
-			c.tasksToOneRequest = append(c.tasksToOneRequest, runTask)
-		}
-		return runTask, false, TaskIndexInQueue(len(c.tasksToOneRequest) - 1)
+		return c.addTask(runTask, false)
 	}, false
-}
-
-func (c *GithubClient) DropReservedOneRequestTask(index int) {
-	c.tasksToOneRequest = append(c.tasksToOneRequest[:index], c.tasksToOneRequest[index+1:]...)
 }
 
 // Для создания новой задачи на выполнение группы запросов
@@ -206,16 +201,26 @@ func (c *GithubClient) MakeFunctionInsertGroupRequests(makeTaskDefer bool) (Func
 		var runTask = func() {
 			c.taskGroupRequests(requests, api, taskStateChannel, deferTaskStateChannel)
 		}
-		if c.countNowExecuteTask == 0 {
-			return runTask, true, 0
-		}
-		if len(c.tasksToGroupRequests) != 0 || c.countNowExecuteTask == 1 {
-			c.tasksToGroupRequests = append(c.tasksToGroupRequests, runTask)
-		}
-		return runTask, false, TaskIndexInQueue(len(c.tasksToGroupRequests) - 1)
+		return c.addTask(runTask, true)
 	}, false
 }
 
-func (c *GithubClient) DropReservedGroupRequestTask(index int) {
-	c.tasksToGroupRequests = append(c.tasksToGroupRequests[:index], c.tasksToGroupRequests[index+1:]...)
+func (c *GithubClient) addTask(runTask func(), isGroup bool) (TaskLaunchFunction, IsRunTaskNow, TaskIndexInQueue) {
+	c.mx.Lock()
+	defer c.mx.Unlock()
+	//
+	if c.countNowExecuteTask == 0 {
+		c.countNowExecuteTask++
+		runtimeinfo.LogInfo("Add new request/s as runnable.")
+		return runTask, true, 0
+	}
+	if len(c.tasksToGroupRequests) != 0 || c.countNowExecuteTask == 1 {
+		runtimeinfo.LogInfo("Add new request/s as defer.")
+		if isGroup {
+			c.tasksToGroupRequests = append(c.tasksToGroupRequests, runTask)
+		} else {
+			c.tasksToOneRequest = append(c.tasksToOneRequest, runTask)
+		}
+	}
+	return runTask, false, TaskIndexInQueue(len(c.tasksToGroupRequests) - 1)
 }

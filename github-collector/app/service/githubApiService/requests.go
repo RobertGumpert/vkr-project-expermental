@@ -18,7 +18,9 @@ func (c *GithubClient) request(request Request, api GitHubLevelAPI) (response *h
 	if err != nil {
 		return nil, false, int64(0), err
 	}
-	runtimeinfo.LogInfo("Request on {", request.URL, "} with status code {", response.StatusCode, "}")
+
+	//  with status code {", response.StatusCode, "}
+	runtimeinfo.LogInfo("Request on {", request.URL, "}")
 	if response.StatusCode != 200 {
 		if response.StatusCode == 422 || response.StatusCode == 403 {
 			rate, err := c.getRateLimit()
@@ -41,7 +43,9 @@ func (c *GithubClient) request(request Request, api GitHubLevelAPI) (response *h
 }
 
 func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, channelNotificationRateLimit chan bool, channelGettingTaskState chan *TaskState) {
-	c.countNowExecuteTask = 1
+	if c.countNowExecuteTask == 0 {
+		c.countNowExecuteTask = 1
+	}
 	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
 	var (
 		response              *http.Response
@@ -63,6 +67,9 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 			close(channelGettingTaskState)
 		}
 	)
+	//
+	count := 0
+	//
 	for {
 		if numberSpentAttempts == limitNumberAttempts {
 			err := errors.New("Number of attempts limit reached. ")
@@ -74,13 +81,20 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 			writeToGettingChannel(err)
 			return
 		}
+		//
+		count++
+		if count == 1 {
+			limitReached = true
+			resetTimeStamp = time.Now().Add(5 * time.Second).Unix()
+		}
+		//
 		if limitReached {
 			if !writeToSignalChannel {
 				channelNotificationRateLimit <- true
 			}
 			writeToSignalChannel = true
+			runtimeinfo.LogInfo("Limit is reached on request [", request.URL, "] for task [", request.TaskKey, "]")
 			c.freezeClient(resetTimeStamp)
-			runtimeinfo.LogInfo("Repeat request on {", request.URL, "} ")
 			numberSpentAttempts++
 			continue
 		} else {
@@ -96,11 +110,13 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 	c.countNowExecuteTask = 0
 	close(channelNotificationRateLimit)
 	close(channelGettingTaskState)
-	runtimeinfo.LogInfo("TASK START [", request.TaskKey, "]............................................................................")
+	runtimeinfo.LogInfo("TASK FINISH [", request.TaskKey, "]............................................................................")
 }
 
 func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI, channelResponsesBeforeRateLimit, channelResponsesAfterRateLimit chan *TaskState) {
-	c.countNowExecuteTask = 1
+	if c.countNowExecuteTask == 0 {
+		c.countNowExecuteTask = 1
+	}
 	runtimeinfo.LogInfo("TASK START [", requests[0].TaskKey, "]............................................................................")
 	var (
 		taskKey               = requests[0].TaskKey
@@ -150,7 +166,7 @@ func (c *GithubClient) taskGroupRequests(requests []Request, api GitHubLevelAPI,
 					}
 					taskState = new(TaskState)
 					taskState.TaskKey = taskKey
-					runtimeinfo.LogInfo("Repeat requests...")
+					runtimeinfo.LogInfo("Limit is reached on request [", request.URL, "] for task [", request.TaskKey, "]")
 					c.freezeClient(rateLimitResetTimestamp)
 					continue
 				}
