@@ -67,9 +67,9 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 			close(channelGettingTaskState)
 		}
 	)
-	//
-	count := 0
-	//
+	////
+	//count := 0
+	////
 	for {
 		if numberSpentAttempts == limitNumberAttempts {
 			err := errors.New("Number of attempts limit reached. ")
@@ -81,13 +81,13 @@ func (c *GithubClient) taskOneRequest(request Request, api GitHubLevelAPI, chann
 			writeToGettingChannel(err)
 			return
 		}
-		//
-		count++
-		if count == 1 {
-			limitReached = true
-			resetTimeStamp = time.Now().Add(5 * time.Second).Unix()
-		}
-		//
+		////
+		//count++
+		//if count == 1 {
+		//	limitReached = true
+		//	resetTimeStamp = time.Now().Add(5 * time.Second).Unix()
+		//}
+		////
 		if limitReached {
 			if !writeToSignalChannel {
 				channelNotificationRateLimit <- true

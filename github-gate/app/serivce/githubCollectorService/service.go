@@ -24,7 +24,9 @@ func NewCollectorService(repository repository.IRepository, config *config.Confi
 	service.repository = repository
 	service.config = config
 	service.client = new(http.Client)
-	service.ConcatTheirRestHandlers(engine)
+	if engine != nil {
+		service.ConcatTheirRestHandlers(engine)
+	}
 	//
 	service.facade = newTaskFacade(service)
 	return service
