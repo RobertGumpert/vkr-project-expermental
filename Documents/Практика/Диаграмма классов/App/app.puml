@@ -1,0 +1,67 @@
+namespace app {
+     class AppService << (S,Aquamarine) >> {
+        - db repository.IRepository
+        - config *config.Config
+        - client *http.Client
+        - deferResultEmailTemplate *template.Template
+        - repositoryIndexer *repositoryIndexerService.Service
+        - gateService *githubGateService.Service
+        - postAgent *postService.Agent
+
+        - restHandlerUpdateTaskStateNearestRepositories(ctx *gin.Context) 
+        - restHandlerGetNearestRepositories(ctx *gin.Context) 
+        - restHandlerGetNearestIssues(ctx *gin.Context) 
+        - restHandlerNearestRepositoriesDigest(ctx *gin.Context) 
+        - restHandlerNotificationDigest(ctx *gin.Context) 
+        - repositoryIsExist(jsonModel *JsonCreateTaskFindNearestRepositories, repositoryModel dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories, databaseIsReindexing bool) error
+        - sortingTopRepositories(userRepository dataModel.RepositoryModel, responseJsonBody *JsonResultTaskFindNearestRepositories) 
+        - fillTopNearestRepositories(repositoryId uint, responseJsonBody *JsonResultTaskFindNearestRepositories, mapDistanceWithNearest <font color=blue>map</font>[uint]float64) error
+        - isExistRepositoryAtGithub(name string, owner string) bool
+        - isExistRepositoryAtDatabase(name string) (dataModel.RepositoryModel, []dataModel.NumberIssueIntersectionsModel, error)
+
+        + ConcatTheirRestHandlers(root string, engine *gin.Engine) 
+        + SendDeferResponseToClient(jsonModel *JsonFromGetNearestRepositories) 
+        + GetNearestIssuesInPairNearestRepositories(mainRepositoryName string, secondRepositoryName string) (*JsonNearestIssues, error)
+        + FindNearestRepositories(jsonModel *JsonCreateTaskFindNearestRepositories) (*JsonResultTaskFindNearestRepositories, error)
+
+    }
+	
+	class GateService << (S,Aquamarine) >> {
+        - client *http.Client
+        - config *config.Config
+
+        + CreateTaskNewRepositoryWithNewKeyword(name string, owner string, keyword string, userRequest JsonUserRequest) error
+        + CreateTaskNewRepositoryWithExistKeyword(name string, owner string, userRequest JsonUserRequest) error
+        + CreateTaskExistRepositoryReindexing(name string, owner string, userRequest JsonUserRequest) error
+
+    }
+	
+	class RepositoryIndexerService << (S,Aquamarine) >> {
+        - config *config.Config
+        - client *http.Client
+
+        + WordIsExist(word string) (*jsonSendFromServiceWordIsExist, error)
+        + GetNearestRepositories(repositoryId uint) (*jsonSendFromServiceNearestRepositoriesForRepository, error)
+
+    }
+	
+	 class PostAgent << (S,Aquamarine) >> {
+        - clientBox string
+        - clientPassword string
+        - clientIdentity string
+        - smtpServerDomain string
+        - smtpServerTlsPort int
+        - smtpServerTlsAddress string
+        - tlsConfig *tls.Config
+        - smtpConnection *tls.Conn
+        - smtpClient *smtp.Client
+        - smtpAuth smtp.Auth
+
+        - connect() (*tls.Conn, *smtp.Client, error)
+        - checkRCPTReceivers(receivers ...string) error
+
+        + ClientBox() string
+        + SendLetter(msg []byte, receivers ...string) error
+
+    }
+}

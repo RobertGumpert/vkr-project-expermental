@@ -1,0 +1,109 @@
+namespace repository-indexer {
+	namespace appService {
+		class AppService << (S,Aquamarine) >> {
+			- config *config.Config
+			- mainStorage repository.IRepository
+			- reservedCopyKeywords concurrent-map.ConcurrentMap
+			- chanResult <font color=blue>chan</font> resultIndexing
+			- databaseIsReindexing bool
+			- queue []doReindexing
+			- mx *sync.Mutex
+			- client *http.Client
+
+			- restHandlerGetState(ctx *gin.Context) 
+			- restHandlerReindexingForAll(ctx *gin.Context) 
+			- restHandlerReindexingForRepository(ctx *gin.Context) 
+			- restHandlerReindexingForGroupRepositories(ctx *gin.Context) 
+			- createCopyKeywords() error
+			- addTaskReindexingForRepository(jsonModel *jsonSendFromGateReindexingForRepository) 
+			- addTaskReindexingForAll(jsonModel *jsonSendFromGateReindexingForAll) 
+			- addTaskReindexingForGroupRepositories(jsonModel *jsonSendFromGateReindexingForGroupRepositories) 
+			- scanChannel() 
+			- popFirstFromQueue() 
+			- sendTaskUpdateToGate(result resultIndexing) 
+			- reindexing() ([]uint, []dataModel.NearestRepositoriesJSON, []dataModel.RepositoriesKeyWordsModel, error)
+			- getIndexerForRepository(settings *jsonSendFromGateReindexingForRepository) doReindexing
+			- getIndexerForAll(settings *jsonSendFromGateReindexingForAll) doReindexing
+			- getIndexerForGroupRepositories(settings *jsonSendFromGateReindexingForGroupRepositories) doReindexing
+
+			+ ConcatTheirRestHandlers(engine *gin.Engine) 
+			+ RepositoryNearest(input *jsonInputNearestRepositoriesForRepository) *jsonOutputNearestRepositoriesForRepository
+			+ WordIsExist(input *jsonInputWordIsExist) *jsonOutputWordIsExist
+			+ QueueIsFilled() bool
+			+ AddTask(jsonModel <font color=blue>interface</font>{}, taskType itask.Type) error
+		}
+	}
+	
+	namespace hashRepository {
+		class LocalHashStorage << (S,Aquamarine) >> {
+			- storage *gosimstor.Storage
+			- pathRootProject string
+
+			- createLocalStorage() (*gosimstor.Storage, error)
+
+			+ CloseConnection() error
+			+ AddKeyWord(keyWord string, position int64, repositories dataModel.RepositoriesIncludeKeyWordsJSON) (dataModel.RepositoriesKeyWordsModel, error)
+			+ UpdateKeyWord(keyWord string, position int64, repositories dataModel.RepositoriesIncludeKeyWordsJSON) (dataModel.RepositoriesKeyWordsModel, error)
+			+ RewriteAllKeyWords(models []dataModel.RepositoriesKeyWordsModel) error
+			+ GetKeyWord(keyWord string) (dataModel.RepositoriesKeyWordsModel, error)
+			+ GetAllKeyWords() ([]dataModel.RepositoriesKeyWordsModel, error)
+			+ AddNearestRepositories(repositoryId uint, nearest dataModel.NearestRepositoriesJSON) error
+			+ UpdateNearestRepositories(repositoryId uint, nearest dataModel.NearestRepositoriesJSON) error
+			+ GetNearestRepositories(repositoryId uint) (dataModel.NearestRepositoriesJSON, error)
+			+ RewriteAllNearestRepositories(repositoryId []uint, models []dataModel.NearestRepositoriesJSON) error
+			+ HasEntities() error
+			+ CreateEntities() error
+			+ Migration() error
+			+ AddRepository(repository *dataModel.RepositoryModel) error
+			+ AddRepositories(repositories []dataModel.RepositoryModel) error
+			+ GetRepositoryByName(name string) (dataModel.RepositoryModel, error)
+			+ GetRepositoryByID(repositoryId uint) (dataModel.RepositoryModel, error)
+			+ GetAllRepositories() ([]dataModel.RepositoryModel, error)
+			+ AddIssue(issue *dataModel.IssueModel) error
+			+ AddIssues(issues []dataModel.IssueModel) error
+			+ AddNearestIssues(nearest dataModel.NearestIssuesModel) error
+			+ GetIssueByID(issueId uint) (dataModel.IssueModel, error)
+			+ GetIssueRepository(repositoryId uint) ([]dataModel.IssueModel, error)
+			+ GetNearestIssuesForIssue(issueId uint) ([]dataModel.NearestIssuesModel, error)
+			+ GetNearestIssuesForRepository(repositoryId uint) ([]dataModel.NearestIssuesModel, error)
+			+ AddListNearestIssues(nearest []dataModel.NearestIssuesModel) error
+			+ GetIssuesOnlyGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error)
+			+ GetIssuesBesidesGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error)
+			+ AddNumbersIntersections(intersections []dataModel.NumberIssueIntersectionsModel) error
+			+ AddNumberIntersections(intersection *dataModel.NumberIssueIntersectionsModel) error
+			+ GetNumberIntersectionsForRepository(repositoryID uint) ([]dataModel.NumberIssueIntersectionsModel, error)
+			+ GetNumberIntersectionsForPair(repositoryID uint, comparableRepositoryID uint) (dataModel.NumberIssueIntersectionsModel, error)
+			+ GetNearestIssuesForPairRepositories(mainRepositoryID uint, secondRepositoryID uint) ([]dataModel.NearestIssuesModel, error)
+
+		}
+	}
+	
+	namespace indexerService {
+		class indexingResults << (S,Aquamarine) >> {
+			- nearest []nearestRepository
+			- dictionary concurrent-map.ConcurrentMap
+			- minIdf uint
+
+			- indexingIDF(models []dataModel.RepositoryModel) error
+			- indexing(models []dataModel.RepositoryModel) error
+			- createCorpus(models []dataModel.RepositoryModel) []string
+			- createDictionary(corpus []string) (concurrent-map.ConcurrentMap, [][]string, error)
+			- createBagOfWords(dictionary concurrent-map.ConcurrentMap, vectorsOfWords [][]string) ([][]float64, error)
+			- calculateCosineDistance(bagOfWords [][]float64) [][]float64
+
+			+ GetNearestRepositories() []nearestRepository
+			+ GetDictionary() concurrent-map.ConcurrentMap
+
+		}
+		class nearestRepository << (S,Aquamarine) >> {
+			- id uint
+			- text string
+			- nearest <font color=blue>map</font>[uint]float64
+
+			+ GetText() string
+			+ GetRepositoryID() uint
+			+ GetNearestRepositories() <font color=blue>map</font>[uint]float64
+
+		}
+	}
+}

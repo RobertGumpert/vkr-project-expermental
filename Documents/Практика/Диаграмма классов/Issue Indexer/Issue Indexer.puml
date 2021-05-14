@@ -1,0 +1,130 @@
+namespace issue-indexer {
+	namespace appService {
+		class AppService << (S,Aquamarine) >> {
+			- taskManager itask.IManager
+			- channelErrors <font color=blue>chan</font> itask.IError
+			- facade *tasksFacade
+			- db repository.IRepository
+			- config *config.Config
+			- client *http.Client
+
+			- restHandlerGateState(ctx *gin.Context) 
+			- restHandlerCompareBeside(ctx *gin.Context) 
+			- restHandlerCompareGroup(ctx *gin.Context) 
+			- eventManageTasks(task itask.ITask) <font color=blue>map</font>[string]<font color=blue>struct</font>{}
+			- returnResultFromComparator(result *issueCompator.CompareResult) 
+			- scanErrors() 
+			- returnResultToGate(ctx *sendToGateContext) 
+
+			+ ConcatTheirRestHandlers(engine *gin.Engine) 
+			+ CreateTaskCompareBeside(jsonModel *jsonSendFromCompareBeside) error
+			+ CreateTaskCompareGroup(jsonModel *jsonSendFromGateCompareGroup) error
+			+ QueueIsFilled() bool
+
+		}
+		
+		class taskCompareBesideRepository << (S,Aquamarine) >> {
+			- taskManager itask.IManager
+			- comparator *issueCompator.Comparator
+			- config *config.Config
+			- samplingRules *sampling.ImplementRules
+			- comparisonRules *comparison.ImplementRules
+
+			+ CreateTask(taskKey string, repositoryID uint, returnResult issueCompator.ReturnResult) (itask.ITask, error)
+			+ EventManageTasks(task itask.ITask) <font color=blue>map</font>[string]<font color=blue>struct</font>{}
+			+ EventRunTask(task itask.ITask) (bool, error)
+			+ EventUpdateTaskState(task itask.ITask, somethingUpdateContext <font color=blue>interface</font>{}) (error, bool)
+
+		}
+		class taskCompareWithGroupRepositories << (S,Aquamarine) >> {
+			- taskManager itask.IManager
+			- comparator *issueCompator.Comparator
+			- config *config.Config
+			- samplingRules *sampling.ImplementRules
+			- comparisonRules *comparison.ImplementRules
+
+			+ CreateTask(taskKey string, repositoryID uint, comparableRepositoriesID []uint, returnResult issueCompator.ReturnResult) (itask.ITask, error)
+			+ EventManageTasks(task itask.ITask) <font color=blue>map</font>[string]<font color=blue>struct</font>{}
+			+ EventRunTask(task itask.ITask) (bool, error)
+			+ EventUpdateTaskState(task itask.ITask, somethingUpdateContext <font color=blue>interface</font>{}) (error, bool)
+
+		}
+		class tasksFacade << (S,Aquamarine) >> {
+			- taskManager itask.IManager
+			- comparator *issueCompator.Comparator
+			- config *config.Config
+			- samplingRules *sampling.ImplementRules
+			- comparisonRules *comparison.ImplementRules
+			- taskGroup *taskCompareWithGroupRepositories
+			- taskBeside *taskCompareBesideRepository
+
+			+ GetTaskCompareBesideRepository() *taskCompareBesideRepository
+			+ GetTaskCompareGroupRepositories() *taskCompareWithGroupRepositories
+
+		}
+	}
+	
+	namespace comparison {
+		class ConditionIntersections << (S,Aquamarine) >> {
+			+ CrossingThreshold float64
+
+		}
+		class ImplementRules << (S,Aquamarine) >> {
+			- stopWords <font color=blue>map</font>[string]int
+
+			- compareTitlesByConditionIntersections(a dataModel.IssueModel, b dataModel.IssueModel, rules *issueCompator.CompareRules) ([][]float64, float64, []string, error)
+
+			+ CompareTitlesWithConditionIntersection(a dataModel.IssueModel, b dataModel.IssueModel, rules *issueCompator.CompareRules) (dataModel.NearestIssuesModel, error)
+			+ CompareBodyAfterCompareTitles(a dataModel.IssueModel, b dataModel.IssueModel, rules *issueCompator.CompareRules) (dataModel.NearestIssuesModel, error)
+
+		}
+	}
+	
+	namespace issueCompator {
+		class Comparator << (S,Aquamarine) >> {
+			- db repository.IRepository
+			- mx *sync.Mutex
+
+			- iterating(whatToCompare []dataModel.IssueModel, whatToCompareWith []dataModel.IssueModel, from int64, to int64, rules *CompareRules, result *CompareResult, intersections <font color=blue>map</font>[uint]countIntersectionForIssues, wg *sync.WaitGroup) 
+			- doCompareIntoMultipleStreams(rules *CompareRules, result *CompareResult, repositoryIssues []dataModel.IssueModel) 
+
+			+ DOCompare(rules *CompareRules, result *CompareResult) error
+
+		}
+		class CompareResult << (S,Aquamarine) >> {
+			- identifier <font color=blue>interface</font>{}
+			- nearestCompletedWithError []dataModel.NearestIssuesModel
+			- doNotCompare []dataModel.IssueModel
+			- err error
+
+			+ GetIdentifier() <font color=blue>interface</font>{}
+			+ GetNearestCompletedWithError() []dataModel.NearestIssuesModel
+			+ GetDoNotCompare() []dataModel.IssueModel
+			+ GetErr() error
+
+		}
+		class CompareRules << (S,Aquamarine) >> {
+			- repositoryID uint
+			- maxCountThreads int64
+			- ruleForSamplingComparableIssues RuleForSamplingComparableIssues
+			- ruleForComparisonIssues RuleForComparisonIssues
+			- returnResult ReturnResult
+			- comparisonCondition <font color=blue>interface</font>{}
+			- samplingCondition <font color=blue>interface</font>{}
+
+			+ GetSamplingCondition() <font color=blue>interface</font>{}
+			+ GetComparisonCondition() <font color=blue>interface</font>{}
+			+ GetRepositoryID() uint
+			+ GetMaxCountThreads() int64
+			+ GetRuleForSamplingComparableIssues() RuleForSamplingComparableIssues
+			+ GetRuleForComparisonIssues() RuleForComparisonIssues
+			+ GetReturnResult() ReturnResult
+
+		}
+		class intersectionsForComparableRepository << (S,Aquamarine) >> {
+			+ Issues <font color=blue>map</font>[uint]int64
+			+ CountIntersections int64
+
+		}
+	}
+}

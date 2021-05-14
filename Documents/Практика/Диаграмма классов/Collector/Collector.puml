@@ -1,0 +1,61 @@
+namespace github-collector {
+    class AppService << (S,Aquamarine) >> {
+        - config *config.Config
+        - client *http.Client
+        - repeatedResponses []sendResponse
+
+        + GithubClient *githubApiService.GithubClient
+
+        - restHandlerGetState(ctx *gin.Context) 
+        - restHandlerCreateTaskRepositoriesDescriptions(ctx *gin.Context) 
+        - restHandlerCreateTaskRepositoryIssues(ctx *gin.Context) 
+        - restHandlerCreateTaskRepositoriesByKeyWord(ctx *gin.Context) 
+        - createTaskRepositoriesDescriptions(jsonModel *JsonCreateTaskRepositoriesDescriptions) error
+        - createTaskRepositoryIssues(jsonModel *JsonCreateTaskRepositoryIssues) error
+        - createTaskRepositoriesByKeyWord(jsonModel *JsonCreateTaskRepositoriesByKeyWord) error
+        - repeatResponsesToGithubGate() 
+        - doResponseToGate(body <font color=blue>interface</font>{}, endpoint string) error
+        - sendTaskRepositoriesDescriptions(taskState *githubApiService.TaskState) 
+        - sendTaskRepositoryIssues(taskState *githubApiService.TaskState) 
+        - sendTaskRepositoriesByKeyWord(taskState *githubApiService.TaskState) 
+        - waitTaskRepositoriesDescriptions(isRunTaskNow githubApiService.IsRunTaskNow, taskLaunchFunction githubApiService.TaskLaunchFunction, channelResponsesBeforeRateLimit <font color=blue>chan</font> *githubApiService.TaskState, channelResponsesAfterRateLimit <font color=blue>chan</font> *githubApiService.TaskState) 
+        - waitTaskRepositoryIssues(isRunTaskNow githubApiService.IsRunTaskNow, taskLaunchFunction githubApiService.TaskLaunchFunction, channelNotificationRateLimit <font color=blue>chan</font> bool, channelGettingTaskState <font color=blue>chan</font> *githubApiService.TaskState, functionInsertGroupRequests githubApiService.FunctionInsertGroupRequests, repositoryIssuesURL string, taskKey string) 
+        - waitPaginationRepositoryIssues(isRunTaskNow githubApiService.IsRunTaskNow, taskLaunchFunction githubApiService.TaskLaunchFunction, channelResponsesBeforeRateLimit <font color=blue>chan</font> *githubApiService.TaskState, channelResponsesAfterRateLimit <font color=blue>chan</font> *githubApiService.TaskState) 
+        - waitTaskRepositoriesByKeyWord(isRunTaskNow githubApiService.IsRunTaskNow, taskLaunchFunction githubApiService.TaskLaunchFunction, channelNotificationRateLimit <font color=blue>chan</font> bool, channelGettingTaskState <font color=blue>chan</font> *githubApiService.TaskState) 
+
+        + ConcatTheirRestHandlers(engine *gin.Engine) 
+        + CreateTaskRepositoriesDescriptions(jsonModel *JsonCreateTaskRepositoriesDescriptions) error
+        + CreateTaskRepositoryIssues(jsonModel *JsonCreateTaskRepositoryIssues) error
+        + CreateTaskRepositoriesByKeyWord(jsonModel *JsonCreateTaskRepositoriesByKeyWord) error
+
+    }
+	
+	class GithubClient << (S,Aquamarine) >> {
+        - mx *sync.Mutex
+        - client *http.Client
+        - token string
+        - isAuth bool
+        - maxCountTasks int
+        - countNowExecuteTask int
+        - tasksCompetedMessageChannel <font color=blue>chan</font> bool
+        - tasksToOneRequest []TaskLaunchFunction
+        - tasksToGroupRequests []TaskLaunchFunction
+
+        + WaitRateLimitsReset bool
+
+        - auth() error
+        - addAuthHeader(header <font color=blue>map</font>[string]string) <font color=blue>map</font>[string]string
+        - scanTask() 
+        - addTask(runTask <font color=blue>func</font>() , isGroup bool) (TaskLaunchFunction, IsRunTaskNow, TaskIndexInQueue)
+        - getRateLimit() (*resourcesRateLimitsJSON, error)
+        - freezeClient(reset int64) 
+        - request(request Request, api GitHubLevelAPI) (*http.Response, bool, int64, error)
+        - taskOneRequest(request Request, api GitHubLevelAPI, channelNotificationRateLimit <font color=blue>chan</font> bool, channelGettingTaskState <font color=blue>chan</font> *TaskState) 
+        - taskGroupRequests(requests []Request, api GitHubLevelAPI, channelResponsesBeforeRateLimit <font color=blue>chan</font> *TaskState, channelResponsesAfterRateLimit <font color=blue>chan</font> *TaskState) 
+
+        + GetState() (error, int)
+        + MakeFunctionInsertOneRequest(makeTaskDefer bool) (FunctionInsertOneRequest, QueueIsFilled)
+        + MakeFunctionInsertGroupRequests(makeTaskDefer bool) (FunctionInsertGroupRequests, QueueIsFilled)
+
+    }
+}
