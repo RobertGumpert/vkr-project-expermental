@@ -127,4 +127,27 @@ namespace issue-indexer {
 
 		}
 	}
+	
+	namespace sampling {
+		class ConditionIssuesBesidesRepository << (S,Aquamarine) >> {
+			+ RepositoryID uint
+
+		}
+		class ConditionIssuesFromGroupRepository << (S,Aquamarine) >> {
+			+ RepositoryID uint
+			+ GroupRepositories []uint
+
+		}
+		class ImplementRules << (S,Aquamarine) >> {
+			- timeOutContext time.Duration
+			- db repository.IRepository
+
+			- getIssueOnlyBesidesGroupRepositories(result <font color=blue>chan</font> []dataModel.IssueModel, repositoryID ...uint) 
+			- getIssueOnlyFromGroupRepositories(result <font color=blue>chan</font> []dataModel.IssueModel, repositoryID ...uint) 
+
+			+ IssuesOnlyFromGroupRepositories(rules *issueCompator.CompareRules) ([]dataModel.IssueModel, error)
+			+ IssuesOnlyBesidesRepository(rules *issueCompator.CompareRules) ([]dataModel.IssueModel, error)
+
+		}
+	}
 }

@@ -1,0 +1,40 @@
+namespace repository {
+    class SQLRepository << (S,Aquamarine) >> {
+        - storage *ApplicationStorageProvider
+
+        + AddNumbersIntersections(intersections []dataModel.NumberIssueIntersectionsModel) error
+        + AddNumberIntersections(intersection *dataModel.NumberIssueIntersectionsModel) error
+        + GetNumberIntersectionsForRepository(repositoryID uint) ([]dataModel.NumberIssueIntersectionsModel, error)
+        + GetNumberIntersectionsForPair(repositoryID uint, comparableRepositoryID uint) (dataModel.NumberIssueIntersectionsModel, error)
+        + AddRepository(repository *dataModel.RepositoryModel) error
+        + AddRepositories(repositories []dataModel.RepositoryModel) error
+        + AddNearestRepositories(repositoryId uint, nearest dataModel.NearestRepositoriesJSON) error
+        + UpdateNearestRepositories(repositoryId uint, nearest dataModel.NearestRepositoriesJSON) error
+        + GetRepositoryByName(name string) (dataModel.RepositoryModel, error)
+        + GetRepositoryByID(repositoryId uint) (dataModel.RepositoryModel, error)
+        + GetNearestRepositories(repositoryId uint) (dataModel.NearestRepositoriesJSON, error)
+        + GetAllRepositories() ([]dataModel.RepositoryModel, error)
+        + RewriteAllNearestRepositories(repositoryId []uint, models []dataModel.NearestRepositoriesJSON) error
+        + AddIssue(issue *dataModel.IssueModel) error
+        + AddIssues(issues []dataModel.IssueModel) error
+        + GetNearestIssuesForPairRepositories(mainRepositoryID uint, secondRepositoryID uint) ([]dataModel.NearestIssuesModel, error)
+        + AddNearestIssues(nearest dataModel.NearestIssuesModel) error
+        + AddListNearestIssues(nearest []dataModel.NearestIssuesModel) error
+        + GetIssueByID(issueId uint) (dataModel.IssueModel, error)
+        + GetIssuesOnlyGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error)
+        + GetIssuesBesidesGroupRepositories(repositoryId ...uint) ([]dataModel.IssueModel, error)
+        + GetIssueRepository(repositoryId uint) ([]dataModel.IssueModel, error)
+        + GetNearestIssuesForIssue(issueId uint) ([]dataModel.NearestIssuesModel, error)
+        + GetNearestIssuesForRepository(repositoryId uint) ([]dataModel.NearestIssuesModel, error)
+        + AddKeyWord(keyWord string, position int64, repositories dataModel.RepositoriesIncludeKeyWordsJSON) (dataModel.RepositoriesKeyWordsModel, error)
+        + UpdateKeyWord(keyWord string, position int64, repositories dataModel.RepositoriesIncludeKeyWordsJSON) (dataModel.RepositoriesKeyWordsModel, error)
+        + GetKeyWord(keyWord string) (dataModel.RepositoriesKeyWordsModel, error)
+        + GetAllKeyWords() ([]dataModel.RepositoriesKeyWordsModel, error)
+        + RewriteAllKeyWords(models []dataModel.RepositoriesKeyWordsModel) error
+        + HasEntities() error
+        + CreateEntities() error
+        + Migration() error
+        + CloseConnection() error
+
+    }
+}
